@@ -1,0 +1,69 @@
+Points à régler ou à améliorer
+==============================
+
+Points subsistant à régler
+
+Le curseur reste parfois affiché après déplacement...
+Bien surveiller la coupure de connexion (telnetd se plante parfois; est-ce dû à une déconnexion incomplète ?) Voir du coté de l'option SO_LINGER
+Intégrer une aide Windows 95 (bouton [?] dans la barre de titre)
+De temps en temps le Tab devient destructeur ???
+Mémoriser dans les connexions récentes login, password, ...
+La connexion sur un host qui ne répond pas bloque complètement le système pendant 20 secondes...
+Problème de mémorisation des options quand plusieurs instances fonctionnent simultanément
+
+
+A plus long terme
+
+Voir pour l'implantation du protocole rlogin, à mettre en option avancée
+Transformer l'application en serveur OLE
+Transformer l'application en serveur OLE automation
+Option de capture de la connexion dans un fichier
+
+==============================================================================================
+
+Version 1.4.1 (7/12/98)
+Messages internes (ex: Déconnecté) convertis avec sANSItoLocale
+Nouvelle mire de test
+
+Version 1.4.0 (29/10/98)
+Affichage des caractères semi-graphiques toujours en police OEM
+
+Version 1.3.1 (29/9/98)
+- Visual Studio 6
+- Copie de rectangle
+- Pas d'agrandissement automatique de la fenêtre document en 1024x768
+- Plus d'affichage de la mémoire totale dans la boîte "A propos"
+
+Modifications de la version 1.2.1 (2/11/96)
+Le focus est positionné correctement après l'affichage de la partie avancée de la boîte de dialogue de connexion, et du coup ESC ferme cette boîte
+Plantage sur athos lors de la connexion locale à kim... Contournement: le nom du système retourné par gethostname est tronqué au premier point et ça marche...
+La connexion via le menu Fichier gère les ports correctement
+Francisation des boutons Cancel...
+
+
+Modifications de la version 1.2.0 (1/11/96)
+Codage 8 bits OEM ou ANSI dans les options
+Intégration du port dans le nom de host (:port) en dialogue et en ligne de commande
+Mémoriser le port dans les connexions récentes
+Bug de reconnexion via les menus, le port vaut 0, réglé
+La séquence ESC V retourne l'adresse IP de la machine qui exécute VTerm, suiri c'un CR
+Code des tests de scroll, de performances... éliminé de la version release
+Élargir les boutons de connexion récente. Ajouter :n°port au nom du host si port<>23 (idem pour les menus)
+
+
+Modifications de la version 1.1.4 (29/7/96)
+Taille du champ type de terminal dans la connexion avancée augmentée (AutoHScroll + login: max 20 car, passwd: max 30, term: max 100 car)
+L'accélérateur 'A' est utilisé deux fois dans la boîte de dialogue de connexion ! -> V pour Avancé
+Bouton [Effacer les connexions récentes] dans la partie avancée de la boîte de connexion pour les paranoïaques...
+Le numéro de port est paramétrable dans la partie avancée de la boîte de connexion
+La sélection de zone à la souris pouvait remonter plus haut que la première ligne et plus à gauche que la première colonne !!!
+Afficher des messages dans la barre d'état plus variés que "Prêt": Recherche de l'adresse du host 'xxx', Connexion à l'adresse x.y.z.t en cours, ...
+Ne pas empêcher la connexion si le gethostbyaddr échoue si on entre l'adresse du host (on peut se connecter sans DNS)
+Affichage des coordonnées du curseur dans la barre d'état
+Décor avec icones des boites de connexion et à propos de WinSock
+
+
+Modifications (en partie) de la version 1.1.3 (1/7/96)
+Problème de taille des polices au réaffichage quand deux fenêtres n'ont pas la même taille réglé
+Mécanisme de connexion automatique
+

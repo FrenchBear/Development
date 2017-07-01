@@ -1,0 +1,2 @@
+/* fselect.ref */
+int2 fileselect(const char *,const char *,couleur,couleur,couleur,couleur,int2,char *,const char *,const char *,const char *,void (*)(const char *,const char *));

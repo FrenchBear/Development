@@ -1,0 +1,1984 @@
+  screen(HW)
+  **********
+
+  ____________________________________________________________________________
+  screen -- tty [01-n], color, monochrome, ega, vga display adapter and video
+  monitor
+
+  Description
+  ===========
+
+  console- console device driver
+
+  mono- monochrome ANSI adapter routines for console device driver
+
+  cga- CGA screen routines for console device driver
+
+  vga- VGA screen routines for console device driver
+
+  ega- EGA screen routines for console device driver
+
+  systty- device on which system error messages are displayed
+
+  syscon- system console device
+
+  The tty [01-n] device files provide a character interface to the video
+  display monitor and keyboard. Each file corresponds to a separate teletype
+  device. Although there is a maximum of 12 screens, the exact number
+  available (n) depends upon the amount of memory in the computer. The
+  screens are modeled after a 25-line, 80-column ASCII terminal, unless
+  specified otherwise.
+
+  The system console device can be either a terminal (a serial adapter device,
+  tty1a) or a system keyboard display adapter monitor (tty01).
+
+  /dev/console is the device used by the system administrator for system
+  maintenance (single-user) operations. It is the tty to which the first
+  default shell is attached.
+
+  System error messages from the kernel are written to /dev/console, which is
+  normally the current multiscreen. If /dev/console is the default output
+  device for system error messages, and the display being used is switched to
+  graphics mode, console messages are not displayed.
+
+  When the video device returns to text mode, a notice message is displayed
+  and the text of the kernel error can be recovered from /usr/adm/messages.
+
+  Initially, /dev/console is linked to /dev/systty. The actual physical device
+  accessed via /dev/systty is selected during boot, and is typically the
+  device used to control the bootup procedure. The default physical device
+  /dev/systty is determined by boot(HW) when the system is brought up.
+
+  /dev/syscon is the system console device used by init. See init(M) for more
+  information.
+
+  Although all tty[01-n] devices may be open concurrently, only one of the
+  corresponding devices can be active at any given time. The active device
+  displays its own screen and takes sole possession of the keyboard. It is an
+  error to attempt to access the color, monochrome, ega, or vga file when no
+  corresponding adapter exists or no multiscreens are associated with it.
+
+  To get to the next consecutive console screen, enter <Ctrl><PrtSc>. Any
+  active screen may be selected by entering <Alt><Fn> (or <Ctrl><Alt><Fn>
+  when running in a graphical environment), where <Fn> is one of the function
+  keys. For example, <F1> refers to the tty01 device.
+
+  Code examples are included in the section ``Examples'' in screen(HW) to help
+  programmers use the ioctl(S) calls documented here.
+
+  Control modes
+  +++++++++++++
+
+  Multiscreens can be reassigned to different adapters (in multi-adapter
+  systems) with these ioctls :
+
+  SWAPCGA
+          Selects the regular color display as the output device for the
+          multiscreen.
+
+  SWAPEGA
+          Selects the enhanced color display as the output device for the
+          multiscreen.
+
+  SWAPMONO
+          Selects the monochrome display as the output device for the
+          multiscreen.
+
+  SWAPVGA
+          Selects the video graphics array color display as the output device
+          for the multiscreen.
+
+  To find out which display adapter type is currently attached to the
+  multiscreen, you can use ioctl with the following request:
+
+  CONS_CURRENT
+          Returns the display adapter type currently associated with the
+          multiscreen. The return value can be one of: MONO, CGA, EGA, or
+          VGA.
+
+  Changing the VGA color map
+  ++++++++++++++++++++++++++
+
+  These ioctls can be used to examine and change the color map for VGA color
+  displays. The color map is held in the video dac registers as a 192-byte
+  array. The elements of the array are arranged in groups of three
+  representing the red, green, and blue intensities respectively for each of
+  the 64 color map entries (numbered 0 to 63). The intensity of each color is
+  encoded by values in the range 0 (minimum) to 255 (maximum intensity).
+
+  For example, the red, green, and blue intensities for the nth color map
+  entry are represented by the values of the array members n*3, n*3+1, and
+  n*3+2 respectively.
+
+  The argument arg to ioctl should point to an array of 192 unsigned
+  characters. This array may be used to read the existing color map, or to
+  set a new color map.
+
+  VGA_GETPALLET
+          Read the existing color map entries into the array pointed to by arg.
+
+  VGA_SETPALLET
+          Set new color map entries read from the array pointed to by arg.
+
+  Display modes
+  +++++++++++++
+
+  The following ioctls can be used to change the video display mode:
+
+  SW_B80x25
+          Selects 80x25 black and white text display mode. (MONO, CGA, EGA,
+          VGA)
+
+  SW_C80x25
+          Selects 80x25 color text display mode. (CGA, EGA, VGA)
+
+  SW_B40x25
+          Selects 40x25 black and white text display mode. (MONO, CGA, EGA,
+          VGA)
+
+  SW_C40x25
+          Selects 40x25 color text display mode. (CGA, EGA, VGA)
+
+  SW_BG320
+          Selects 320x200 black and white graphics display mode. (CGA, EGA,
+          VGA)
+
+  SW_CG320
+          Selects 320x200 color graphics display mode. (CGA, EGA, VGA)
+
+  SW_BG640
+          Selects 640x200 black and white graphics display mode. (CGA, EGA,
+          VGA)
+
+  SW_EGAMONO80x25
+          Selects EGA (Enhanced Graphics Adapter) mode 7 -- emulates support
+          provided by the monochrome display. (EGA, VGA)
+
+  SW_EGAMONOAPA
+          Selects EGA support for 640x350 graphics display mode (EGA mode F,
+          EGA with mono monitor)
+
+  SW_ENH_MONOAPA2
+          Selects EGA mode F*. (EGA with mono monitor)
+
+  SW_ENHB40x25
+          Selects enhanced EGA support for 40x25 black and white text display
+          mode. (EGA, VGA)
+
+  SW_ENHC40x25
+          Selects enhanced EGA support for the 40x25 color text display mode.
+          (EGA, VGA)
+
+  SW_ENHB80x25
+          Selects enhanced EGA support for 80x25 black and white text display
+          mode. (EGA, VGA)
+
+  SW_ENHC80x25
+          Selects enhanced EGA support for 80x25 color text display mode.
+          (EGA, VGA)
+
+  SW_ENHB80x43
+          Selects enhanced EGA support for 80x43 black and white text display
+          mode. (EGA, VGA)
+
+  SW_ENHC80x43
+          Selects enhanced EGA support for 80x43 color text display mode.
+          (EGA, VGA)
+
+  SW_CG320_D
+          Selects EGA support for 320x200 graphics display mode (EGA mode D).
+          (EGA, VGA)
+
+  SW_CG640_E
+          Selects EGA support for 640x200 graphics display mode (EGA mode E).
+          (EGA, VGA)
+
+  SW_CG640x350
+          Selects EGA support for 640x350 graphics display mode (EGA mode 10).
+          (EGA, VGA)
+
+  SW_ENH_CG640
+          Selects EGA mode 10*. (EGA, VGA)
+
+  SW_MCAMODE
+          Reinitializes the monochrome adapter. (MONO)
+
+  SW_VGA40x25
+          Selects VGA support for the 40x25 color text display mode (VGA mode
+          1+).
+
+  SW_VGA80x25
+          Selects VGA support for the 80x25 black and white text display mode
+          (VGA mode 2+).
+
+  SW_VGAM80x25
+          Selects VGA mode 7+ -- emulates support provided by the monochrome
+          display. (VGA with mono monitor)
+
+  SW_VGA11
+          Selects VGA support for the 640x480 graphics display mode (VGA mode
+          11).
+
+  SW_VGA12
+          Selects VGA support for the 640x480 graphics display mode (VGA mode
+          12).
+
+  SW_VGA13
+          Selects VGA support for the 320x200 graphics display mode (VGA mode
+          13).
+
+  Switching to an invalid display mode for a display device will result in an
+  error.
+
+  Getting display modes
+  +++++++++++++++++++++
+
+  The following ioctl requests are provided to obtain information about the
+  current display modes:
+
+  CONS_GET
+          Returns the current display mode setting for current display
+          adapter. (All)
+
+  CGA_GET
+          Returns the current display mode setting of the color graphics
+          adapter. (CGA only)
+
+  EGA_GET
+          Returns the current display mode setting of the enhanced graphics
+          adapter. (EGA only)
+
+  MCA_GET
+          Returns the current display mode setting of the monochrome adapter.
+          (MONO only)
+
+  VGA_GET
+          Returns the current display mode of the video graphics adapters.
+          (VGA only)
+
+  CONS_GETINFO
+          Returns structure vid_info. Size of structure (first field) must be
+          filled in by user.
+
+          struct vid_info
+          {
+            short  size;           /* must be first field          */
+            short  m_num;          /* multiscreen number, 0 based  */
+            ushort mv_row, mv_col; /* cursor position              */
+            ushort mv_rsz, mv_csz; /* text screen size             */
+            struct colors mv_norm, /* normal attributes            */
+                          mv_rev,  /* reverse video attributes     */
+                          mv_grfc; /* graphic character attributes */
+            uchar_t mv_ovscan;     /* border color                 */
+            uchar_t mk_keylock;    /* caps/num/scroll lock         */
+          };
+
+  CONS_6845INFO
+          Returns structure m6845_info. Size of structure (first field) must
+          be filled in by user.
+
+          struct m6845_info
+          {
+            short   size;          /* must be first field        */
+            ushort  screen_top;    /* offset of screen in video  */
+            ushort  cursor_type;   /* cursor shape               */
+          };
+
+  CONSADP
+          Returns the number of the current multiscreen displayed on the
+          adapter specified by the value of the argument arg to ioctl.
+          Possible adapter types are MONO, CGA, PGA, EGA, and VGA (defined in
+          /usr/include/sys/comcrt.h). If no match is found, ioctl returns -1
+          and errno is set to ENXIO.
+
+  GIO_ATTR
+          Return value of ioctl is 6845-style attribute byte in effect.
+
+  GIO_COLOR
+          Return value of ioctl is 0 or 2 depending on whether the device
+          supports color.
+
+  GIO_SCRNMAP
+          Gets the 256-byte screen map table, which is the mapping of ASCII
+          values (0-255) onto the PC video ROM font characters (0-255). Note
+          that control characters (ASCII values less than hex 20) have
+          control functions and do not display ROM characters (for example,
+          ^J is newline).
+
+          This is often used to map the low font values that normally
+          correspond to ASCII control values to higher ASCII values, thus
+          displaying the desired ROM characters.
+
+  PIO_SCRNMAP
+          Puts the 256-byte screen map table (see GIO_SCRNMAP).
+
+  GIO_KEYMAP
+          See keyboard(HW).
+
+  GIO_FONT8Xn
+          Gets font, where n is 8, 14, and 16. Argument is a pointer to a font
+          table. Size of 8x8 font table is 8X256 bytes, 8x14 is 14X256 bytes,
+          etc.
+
+  PIO_FONT8Xn
+          Puts font, where n is 8, 14, and 16. Argument is a pointer to a font
+          table. Size of 8x8 font table is 8X256 bytes, 8x14 is 14X256 bytes,
+          etc.
+
+  Memory mapping modes
+  ++++++++++++++++++++
+
+  The ioctl routine is used to map the display memory of the various devices
+  into the user's data space.
+
+  Note that the MAP* ioctls map the memory associated with the current mode.
+  You must put the adapter into the desired mode before performing mapping,
+  or the pointers returned will not be appropriate. Refer to your hardware
+  manual for details on various displays, adapters, and controllers.
+
+  These ioctl requests can be used to map the display memory:
+
+  MAPCGA  Maps the color adapter's display memory into the user's data space.
+          (CGA only)
+
+  MAPCONS
+          Maps the display memory of the adapter currently being used into the
+          user's data space. (All)
+
+  MAPEGA  Maps the enhanced graphics adapter's display memory into the user's
+          data space. (EGA only)
+
+  MAPMONO
+          Maps the monochrome adapter's display memory into the user's data
+          space. (MONO only)
+
+  MAPVGA  Maps the video graphics adapter's display memory into the user's
+          data space. (VGA only)
+
+  For example, the following code can be used to acquire a pointer to the
+  start of the user data space associated with the color graphics adapter
+  display memory:
+
+     char *dp;
+     int retval;
+     .
+     .
+     .
+     /* fd is a file descriptor for a multiscreen device */
+     retval = ioctl (fd, MAPCONS,0L);
+     dp = (char *) retval;
+     .
+     .
+     .
+
+  Note that when the display memory is mapped into the user space, the
+  adapter's m6845 start address registers are not set. The start address can
+  be reset in two ways, so that the start address of the display memory
+  corresponds to the upper left-hand corner of the screen:
+
+  1. Switch modes with an ioctl. (The ``switch'' can be to the present mode.)
+     See the ``Display modes'' section of this manual page.
+
+  2. Change the start address high and low addresses with the
+     in-on-port/out-on-port ioctl.
+
+  The in-on-port/out-on-port ioctl can also be used to determine the current
+  value in the start address register, and then set up a pointer to the
+  offset in the mapped-in data space.
+
+  MAP_CLASS
+          Package ioctl that gives I/O privileges to an arbitrary list of
+          ports and maps an arbitrary frame buffer into the user's address
+          space identified by a string found in the struct vidclass
+          vidclasslist[]. For example:
+
+          char *
+          ioctl(fd, MAP_CLASS, video_class_name)
+          char *video_class_name;
+
+          This returns a pointer to the frame buffer. See
+          /etc/conf/pack.d/cn/class.h for descriptions of the existing
+          classes. Note that the link kit must be installed in order to find
+          this file. (The class.h file is normally generated by mkdev
+          graphics.)
+
+  EGA_IOPRIVL
+  VGA_IOPRIVL
+          These add the list of I/O ports found on standard EGA and VGA cards
+          into the process' TSS I/O permission bitmap. This allows the
+          process to access the EGA I/O ports directly from user space with
+          386 IN and OUT instructions. (See sample code under ``Examples''.)
+          I/O instructions executed in this manner are slower than I/O
+          instructions executed when the I/O privilege level is raised to 3
+          (see instruction timings in Intel's 80386 Programmer's Reference
+          Manual).
+
+          A process' I/O privilege level can be set, allowing for the faster
+          execution of I/O instructions with the sysi86(S) subfunction
+          V86SC_IOPL:
+
+          sysi86 (SI86V86, V86SC_IOPL, 0x3000)
+
+          This sets the I/O privilege to 3 as described above. Only the
+          superuser can do this.
+
+  KDDISPTYPE
+          This call returns display information to the user. The argument
+          expected is the buffer address of a structure of type kd_disparam
+          into which display information is returned to the user. The
+          kd_disparam structure is defined as follows:
+
+          struct kd_disparam
+                 {
+                    long type;    /* display type */
+                    char *addr;   /* display memory address */
+                 }
+
+          Possible values for the type field include:
+
+          KD_MONO for the IBM monochrome display adapter
+          KD_HERCULES for the Hercules monochrome graphics adapter
+          KD_CGA for the IBM color graphics adapter
+          KD_EGA for the IBM enhanced graphics adapter
+          KD_VGA for the IBM video graphics adapter
+
+  KDDISPINFO
+          Returns struct kd_dispinfo, which contains adapter type and physical
+          address of frame buffer, as follows:
+
+          struct kd_dispinfo{
+                  char *vaddr;          /* memory address */
+                  paddr_t physaddr;     /* memory address */
+                  unsigned long size;   /* memory size */
+          }
+
+  KIOCSOUND
+          Starts sound generation. Turns on sound. The arg is the period of
+          the bell tone in units of 840.3 nanoseconds. A value of 0 turns off
+          the sound. This is useful for generating tones while in graphics
+          mode.
+
+  KDGETLED
+          Gets keyboard LED status. The argument is a pointer to a character.
+          The character will be filled with a Boolean combination of the
+          following values:
+
+          0x10 Caps lock and Scroll lock are on
+          0x11 Scroll lock and Num lock are on
+          0x04 Scroll lock is on
+          0x02 Num lock is on
+          0x01 Caps lock is on
+
+  KDSETLED
+          Sets keyboard LED status. The argument is a character whose value is
+          the Boolean combination of the values listed under ``KDGETLED''.
+
+  KDMKTONE
+          (See KIOCSOUND.) The argument is a 32-bit value, with the lower 16
+          bits set to the frequency and the upper 16 bits set to the duration
+          (in milliseconds).
+
+  KDSETMODE
+          Sets console in text or graphics mode. The argument is of type
+          integer, which should contain one of the following values:
+
+          KD_TEXT (sets console to text mode)
+          KD_GRAPHICS (sets console in graphics mode)
+
+          Note, the user is responsible for programming the color/graphics
+          adapter registers for the appropriate graphical state.
+
+  KDGETMODE
+          Gets current mode of console. Returns integer argument containing
+          either KD_TEXT or KD_GRAPHICS as defined in the KDSETMODE ioctl
+          description.
+
+  KDENABIO
+          Enable in's and out's to video adapter ports. No argument.
+
+  KDDISABIO
+          Disable in's and out's to video adapter ports. No argument.
+
+  KDGKBTYPE
+          Always returns 0.
+
+  KIOCINFO
+          Always returns 0x6B64.
+
+  VT_SETMODE
+          Sets the virtual terminal mode. The argument is a pointer to a
+          vt_mode structure.
+
+  VT_GETMODE
+          Determines what mode the active virtual terminal is currently in,
+          either VT_AUTO or VT_PROCESS. The argument to the ioctl is the
+          address of the following type of structure:
+
+          struct vt_mode {
+             char   mode;   /* VT mode */
+             char   waitv;  /* if !=0, vt hangs on writes when
+                               not active */
+             short  relsig; /* signal to use for release request */
+             short  acqsig; /* signal to use for display acquired */
+             short  frsig;  /* signal to use for forced release */
+             }
+
+             #define VT_AUTO     0x00  /* automatic VT switching */
+             #define VT_PROCESS  0x01  /* process controls
+                                          switching */
+
+          The vt_mode structure will be filled in with the current value for
+          each field.
+
+  VT_RELDISP
+          Tells the virtual terminal manager whether the display has been
+          released by the process.
+
+          0 release refused
+          1 release acknowledged
+          2 acquire acknowledged
+
+  VT_ACTIVATE
+          Makes the multiscreen number specified in the argument the active
+          multiscreen. The video driver will cause a switch to occur in the
+          same manner as if a hotkey sequence had been typed at the keyboard.
+          If the specified multiscreen is not open or does not exist, the
+          call will fail and errno will be set to EINVAL.
+
+  Graphics adapter port I/O
+  +++++++++++++++++++++++++
+
+  You can use ioctl to read or write a byte from or to the graphics adapter
+  port. The arg parameter of the ioctl call uses the port_io_arg data
+  structure:
+
+     struct port_io_arg {
+          struct port_io_struct args[4];
+     };
+
+  As shown above, the port_io_arg structure points to an array of four
+  port_io_struct data structures. The port_io_struct structure has the
+  following format:
+
+     struct port_io_struct {
+             char dir;    /* direction flag (in vs. out) */
+             unsigned short port;   /* port address */
+             char data;   /* byte of data */
+     };
+
+  You may specify one, two, three, or four of the port_io_struct structures in
+  the array for one ioctl call. The value of dir can be either IN_ON_PORT to
+  specify a byte being input to the graphics adapter port or OUT_ON_PORT to
+  specify a byte being output to the graphics adapter port. port is an
+  integer specifying the port address of the desired graphics adapter port.
+  data is the byte of data being input or output as specified by the call.
+
+  If you are not using any of the port_io_struct structures, load the port
+  with 0, and leave the unused structures at the end of the array. Refer to
+  hardware manuals for port addresses and functions for the various adapters.
+
+  You can use the following ioctl commands to input or output a byte on the
+  graphics adapter port:
+
+  CONSIO  Inputs or outputs a byte on the current graphics adapter port as
+          specified. (All)
+
+  MCAIO   Inputs or outputs a byte on the monochrome adapter port as
+          specified. (MONO only)
+
+  CGAIO   Inputs or outputs a byte on the color graphics adapter port as
+          specified. (CGA only)
+
+  EGAIO   Inputs or outputs a byte on the enhanced graphics adapter port as
+          specified. (EGA only)
+
+  VGAIO   Inputs or outputs a byte on the video graphics array adapter port as
+          specified. (VGA only)
+
+  To input a byte on any of the graphics adapter ports, load dir with
+  IN_ON_PORT and load port with the port address of the graphics adapter. The
+  byte input from the graphics adapter port will be returned in data.
+
+  To output a byte, load dir with OUT_ON_PORT, load port with the port address
+  of the graphics adapter, and load data with the byte you want output to the
+  graphics adapter port.
+
+  Function keys
+  +++++++++++++
+
+  ioctl can be used to define or obtain the current definition of a function
+  key. The arg parameter of the ioctl call uses the fkeyarg data structure:
+
+     struct fkeyarg {
+        unsigned short keynum;
+        char keydef [MAXFK];
+        char flen;
+     }
+
+  You can use the following ioctl(S) request to assign function key
+  definitions:
+
+  SETLOCKLOCK
+          Toggles the <Caps Lock> and <Num Lock> keys to be either global to
+          all the multiscreens, or local to each individual multiscreen. To
+          make the <Caps Lock> global (its default), set the arg parameter to
+          1. To make the <Caps Lock> local to each screen, set the arg
+          parameter to 0.
+
+  See the scancode(HW) manual page for more function key ioctls.
+
+  SCOANSI terminal emulation
+  ++++++++++++++++++++++++++
+
+  The SCO console driver supports character sequences that form a superset of
+  the ANSI X3.64-1979 standard. The full set of sequences described here
+  defines the terminal type known in the termcap(F) and terminfo(M) databases
+  as ``scoansi''.
+
+  The definition of ``scoansi'' changed with SCO SCO OpenServer Release 5.0.6.
+  Earlier versions of SCO SCO OpenServer supported most (but not all) of the
+  sequences described here. Most applications should experience no problems
+  with the new functionality, but a backward compatibility mode is available
+  for applications that rely on the previous behavior.
+
+  To enable backwards compatibility mode, run mkdev scoansi and select the
+  option to use the new in-kernel scoansi emulator. You are then asked to
+  relink the kernel and reboot the system. See mkdev(ADM) for details.
+
+  ____________________________________________________________________________
+  NOTE: It is possible to update the console driver on earlier releases of SCO
+  SCO OpenServer. Consult http://www.sco.com for details, or contact your
+  support representative.
+  ____________________________________________________________________________
+
+  SCOANSI screen attribute sequences
+  ++++++++++++++++++++++++++++++++++
+
+  With the exception of special ASCII control characters, each sequence begins
+  with the ASCII ESC character (0x1b). The characters that follow the ESC
+  character define the command. For many of the sequences, this takes the
+  form ESC [ p1 ; p2 C, where ``p1'' and ``p2'' are parameters to the
+  sequence, and ``C'' is the sequence terminator, which defines the action to
+  be taken. The sequence ``ESC ['' is known as the ``control sequence
+  initiator'', abbreviated as CSI. SCO specific escape sequences begin with
+  the sequence ``ESC [ ='', abbreviated here as CSIS.
+
+  The console driver accepts both 7-bit CSI sequences and 8-bit sequences. The
+  8-bit CSI sequence collapses ``ESC ['' into a single 8-bit character, 0x9b.
+  Thus, ``ESC [ 2 J'' (0x1b-0x5b-0x32-0x4a) and ``CSI 2 J'' (0x9b-0x32-0x4a)
+  are equivalent.
+
+  In all of the sequences described here, if an argument is expected but
+  omitted, a default value of 1 is implied. For example, ``CSI 1 B'' and
+  ``CSI B'' are equivalent. Where this is not the case, it is highlighted and
+  described in the text.
+
+  Beginning with SCO SCO OpenServer Release 5.0.6 (or earlier versions if you
+  have an updated console driver), the console driver now supports what is
+  known as a scrolling region, a virtual screen defined by the CSR control
+  sequence. Any lines outside the defined margins are not subject to
+  scrolling, and under normal circumstances you cannot move the cursor
+  outside of the scrolling region. In effect, this reduces the addressable
+  size of the display (even though the physical screen may still be at 80
+  columns and 25 rows). All cursor addressing sequences and scrolling is
+  limited to the defined region. In this way, a scrolling region is no
+  different from a window that occupies the full screen. However, certain
+  control sequences deal with absolute cursor position and thus can violate
+  the boundaries of the scrolling region. Care must be taken when using these
+  absolute position control sequences to avoid unexpected results.
+
+  Attributes
+  ++++++++++
+
+  A ``scoansi'' terminal can display characters using a variety of attributes.
+  Understanding how and when attributes are used is important in
+  understanding the semantics of the various control sequences. At all times,
+  ``scoansi'' has a ``current attribute'' set. By default, this attribute is
+  gray text on a black background. It is possible to modify an attribute by
+  enabling one or more ``attribute modes''. These modes include reverse video
+  text (that is, black text on a grey background), bold text (white text
+  instead of grey) and, on certain display adapters, italic or underlined
+  text.
+
+  The attributes and modes used to display characters on the screen are known
+  as the graphics rendition, and can be controlled by the SGR (``set graphics
+  rendition'') sequence described later. A set of SCO-specific control
+  sequences can be used to control individuals portions of the graphics
+  rendition. See -1 in screen(HW) for details.
+
+  ``scoansi'' always uses four sets of graphics attributes: current, normal,
+  reverse and graphics. The current attribute is the attribute that is used
+  when the screen is cleared, when new lines are introduced as a result of
+  scrolling the screen, or when new characters are drawn on the screen. The
+  normal attribute is the fallback attribute that is used when no attribute
+  modifiers are active. The reverse attribute is used when reverse video mode
+  is active, and the graphics attribute is used when a graphics (or linedraw)
+  character neeeds to be displayed. It is possible, although uncommon, for
+  all of these attributes to be completely different. For example, it is
+  possible for the normal attribute to be grey text on a black background,
+  for graphics characters to be displayed with a bright magenta foreground on
+  a blue background, and for characters in reverse vide to be displayed as
+  yellow text on a cyan background.
+
+  When you use the SGR or SCO-specific escape sequences to change attributes,
+  you affect one or more of the attribute values. For example, setting the
+  foreground color to red using the SGR sequence will set the normal and
+  graphics foreground colors to red, and the reverse video background to red.
+  Using the SCO-specific escape sequences, you can set just the normal and
+  graphics foreground color without affecting the background color of the
+  reverse video attribute. Once the color has been set, ``scoansi'' selects
+  the appropriate attribute value (either normal, reverse or graphics,
+  depending on the attribute modifiers and the character to be drawn) and
+  makes that the current attribute. This attribute is then used for drawing
+  new characters and when the screen is scrolled or a line or character is
+  cleared.
+
+  It is possible to change the attributes that are used when new lines are
+  created by a scroll, and the attributes used when characters are erased for
+  any reason. The default behavior is to use the current attribute. However,
+  it is possible to set a special terminal mode that will force the normal
+  attribute to be used. See -1 in screen(HW) for details.
+
+  Attributes are treated subtly differently if you enable backwards
+  compatibility mode in screen(HW). This mode handles attributes (and other
+  semantics) as the console driver did prior to SCO OpenServer Release 5.0.6.
+  Where such differences exist, they are described for the graphics rendition
+  that is affected. To understand how these attributes are used, print the
+  various escape sequences out and study the visual effect that they have.
+
+  Display Fonts
+  +++++++++++++
+
+  The ``font'' in which characters are displayed can be controlled by the SGR
+  control sequence in screen(HW). Please note that the term ``font'' as used
+  here does not imply a different shape of character as you would find in a
+  word processor. Rather, the term ``font'' is used as defined in ANSI
+  X3.64-1979, and defines what portion of the PC ROM BIOS character set can
+  be displayed. ``scoansi'' supports 4 fonts, numbered 0 through 3. Font 0 is
+  the normal font. When using it, lower ASCII characters (characters less
+  than 0x20) are obeyed as described in ``ASCII Control Sequences'' in
+  screen(HW). None of the actual ROM BIOS glyphs for these lower ASCII values
+  are displayed.
+
+  Font 1 can be used to display the actual glyphs as defined by the PC ROM
+  BIOS. This font is used to display the so-called ``graphics'' characters,
+  or linedraw characters. All characters are displayed without
+  interpretation.
+
+  Font 2 is used to display ROM BIOS characters as well, but with slightly
+  different rules. This font was invented in order to be able to display
+  upper ASCII characters (8-bit ASCII characters, or characters above 0x7f).
+  When using this font, all of the lower ASCII characters will have their
+  glyphs displayed. For all other characters, if the high bit of the
+  character is set, this font will unset it and then display the resulting
+  glyph. If, however, the high bit is not set, the this font will set it and
+  display the resulting glyph.
+
+  Font 3 is similar to font 2, except that the lower ASCII characters are
+  processed as they are in font 0 (that is, they follow the semantics
+  described for ``ASCII Control Sequences'' in screen(HW)). Any other
+  character is displayed as in font 2. In other words, any character that has
+  its high bit set will have it unset by this font and the resulting glyph
+  displayed, and any input character that does not have its high bit set will
+  have it set by the font, and the resulting glyph displayed.
+
+  For example, suppose that the character that was sent to the console was the
+  character ``D''. In font 0, it would appear exactly like that, as a ``D''.
+  The same applies in font 1. In fonts 2 and 3 however, since the character
+  does not have its high bit set, the font will set it and then display the
+  resulting glyph. Thus, the character 0x44 is now displayed as 0xc4, which
+  is the character used to draw a single horizontal line.
+
+  If the character sent to the console was the actual character 0xc4, then in
+  both fonts 0 and 1, it would appear as the horizontal line draw character.
+  However, in fonts 2 and 3, because its high bit is set, the font will
+  remove it and then display the resulting glyph, which is the character
+  ``D''.
+
+  ASCII Control Sequences
+  +++++++++++++++++++++++
+
+  The following table lists all of the ASCII control sequences which the
+  console driver will obey. All other lower ASCII characters are ignored,
+  unless a suitable font is selected, in which case the corresponding glyph
+  is displayed.
+
+   ---------------------------------------------------------------------
+   Name                                    Sequence   Termcap   Terminfo
+   ---------------------------------------------------------------------
+   NL (Newline)                            0x0a       n/a       n/a
+   Moves the cursor down one line. Does
+   not change the cursor's horizontal
+   position. If this would cause the
+   cursor to move beyond the bottom
+   margin, the region will scroll
+   upwards.
+   CR (Carriage Return)                    0x0d       cr        cr
+   Moves the cursor to the left margin.
+   BS (Backspace)                          0x07       n/a       n/a
+   Moves the cursor backwards one
+   position, non-destructively. Will not
+   move backwards beyond the left
+   margin.
+
+   HT (Horizontal Tab)                     0x09   ta     ht
+   Moves the cursor forwards to the next
+   tab stop. Initially, tab stops are
+   set 8 characters apart, although it
+   is possible to change the tab stops
+   beyond the right margin, and will not
+   cause a scroll. However, if backwards
+   compatibility mode is on (see below),
+   then an attempt to tab beyond the
+   right margin will cause the screen to
+   scroll, and leave the cursor at the
+   left margin.
+   BEL (Bell) Sounds the bell.  The        0x07   bl     bel
+   frequency and duration of the bell
+   can be set by an SCO-specific escape
+   sequence. See -1 for details.
+   FF (Form Feed)                          0x0c   ff     ff
+   Clears the region and moves the
+   cursor to the top and left margin. If
+   the scrolling region is active, this
+   sequence will still erase the entire
+   screen. If the scrolling window is
+   active, it will only erase the
+   contents of the window. If backwards
+   compatibility mode is on, the cursor
+   will always be left at the top left
+   corner of the screen. In the default
+   mode, the cursor will be left at the
+   top left of the region.
+
+  ANSI screen control sequences
+  +++++++++++++++++++++++++++++
+
+  This set of sequences is largely defined by ANSI X3.64-1979, with some
+  extensions. The semantics of some of these sequences differs if backwards
+  compatibility mode is selected. In the description of the sequences, the
+  text ``p1'', ``p2'' ... ``p9'' is used to describe positional parameters.
+  The console driver will accept a maximum of 9 parameters for any control
+  sequence, although most sequences only use one or two parameters.
+
+   ---------------------------------------------------------------------
+   Name                                    Sequence   Termcap   Terminfo
+   ---------------------------------------------------------------------
+   CUU (CUrsor Up)                         CSI p1 A   UP        cuu
+   Moves the cursor up p1 lines. Will
+   never cause text to scroll, and the
+   cursor will not move above the top
+   margin.
+   CUD (CUrsor Down)                       CSI p1 B   DO        cud
+   Moves the cursor down p1 lines. Will
+   never cause text to scroll, and the
+   cursor will not move below the bottom
+   margin.
+   CUF (CUrsor Forward)                    CSI p1 C   RI        cuf
+   Moves the cursor right p1 columns.
+   Will not scroll text, and will not
+   move beyond the right margin. Will
+   not cause the cursor to wrap around
+   to the next line (i.e there is no
+   vertical motion).
+
+   CUB (CUrsor Backward)                   CSI p1 D   LE     cub
+   Moves the cursor left p1 columns.
+   Will not scroll text or move beyond
+   the left margin. Will not cause the
+   cursor to wrap up to the previous
+   line (meaning there is no vertical
+   motion).
+   CNL (Cursor to Next Line)               CSI p1 E   n/a    n/a
+   Moves the cursor to the left margin,
+   p1 lines down. Will not scroll text
+   or allow the cursor to move below the
+   bottom margin.
+   CPL (Cursor to Previous Line)           CSI p1 F   n/a    n/a
+   Move the cursor to the left margin,
+   p1 lines up.  Will not scroll text or
+   allow the cursor to move above the
+   top margin.
+
+   HPA (Horizontal Position Absolute)      CSI p1 G      ch     hpa
+   Move the cursor to column p1. This is
+   the only way to move the cursor
+   outside of the scrolling region if
+   one has been defined. This command is
+   bound only by the screen size.
+   CUP (CUrsor Position)                   CSI p1;p2 H   cm     cup
+   Move the cursor to row p1, column p2.
+   p1 and p2 are relative to the top
+   left hand corner of the screen,
+   unless a scrolling region is defined,
+   in which case they are relative to
+   the top left corner of the active
+   region.  Note that the addressing is
+   row and column, which is the exact
+   inverse of cartesian addressing
+   (X,Y). If a scrolling region is
+   active and cursor motion is bound by
+   the region (see below on how to set
+   this mode), then this sequence will
+   move the cursor relative to the top
+   left of the region, not the screen.
+   CFT (Cursor Forward Tab)                CSI p1 I      ta     ht
+   Move the cursor forward to the column
+   p1 tab stops away. See -1 for
+   semantic details.
+   ED (Erase in Display)                   CSI p1 J      cd     ed
+   Erases all or part of the active
+   region. p1 indicates how much of the
+   region to erase. p1=0 means erase
+   from the current cursor position to
+   the end.  p1=1 means erase from the
+   beginning of the active region to the
+   current cursor position, inclusive.
+   p1=2 means erase the entire region.
+   If a scrolling region is active, this
+   command still works across the entire
+   screen boundary. If a scrolling
+   region is active, it only works
+   within the window.
+   EL (Erase in Line)                      CSI p1 K      ce     el
+   Erases all or part of a line. p1
+   indicates how much of the line to
+   erase. p1=0 means erase from the
+   current cursor position to the the
+   right margin). p1=1 means erase from
+   the left margin to the current cursor
+   position, inclusive. p1=2 means erase
+   from the left to the right margins,
+   inclusive.
+   IL (Insert Line)                        CSI p1 L      AL     il
+   Insert p1 blank lines below the
+   current cursor position. If the
+   scrolling region is active and the
+   cursor is outside of the bounds of
+   the active region, no action is taken
+   and this sequence is ignored.
+   Introduces blank lines at the cursor
+   point.
+   DL (Delete Lines)                       CSI p1 M      DL     dl
+   Delete p1 lines at the current cursor
+   position. If the scrolling region is
+   active and the cursor is outside of
+   the bounds of the active region, then
+   no action is takes and this sequence
+   is ignored. Causes blank lines to be
+   introduced at the bottom of the
+   region.
+   DCH (Delete CHaracters)                 CSI p1 P      DC     dch
+   Deletes p1 characters at the current
+   cursor position. If the scrolling
+   region is defined, this command will
+   still erase characters. However, if
+   the scrolling region is active and
+   the cursor is out of bounds, then the
+   command is ignored. Introduces blank
+   characters at the right margin, and
+   causes characters to shift to the
+   left.
+   DL (Delete Lines)                       CSI p1 R      DL     dl
+   An alternate form of CSI p1 M,
+   described above.
+   SU (Scroll Up)                          CSI p1 S      SF     indn
+   Causes the active region to scroll
+   upward p1 lines. In backwards
+   compatibility mode, always scroll the
+   entire screen. Introduces blank lines
+   at the bottom margin. This
+   instruction is always executed
+   regardless of where the cursor
+   position is.
+   SD (Scroll Down)                        CSI p1 T      SR     rin
+   Causes the active region to scroll
+   upward p1 lines. In backwards
+   compatibility mode, always scroll the
+   entire screen. Introduces blank lines
+   at the top margin. This instruction
+   is always executed regardless of
+   where the cursor position is.
+
+   RIS (Reset Initial Screen)              CSI U         n/a    n/a
+   Fully reset the emulator state. This
+   will clear all margins (that is,
+   remove any scrolling region), move
+   the cursor to the top left corner of
+   the screen (the ``home'' position),
+   turn off any attribute modes such as
+   bold, reverse, blink, underline etc,
+   set the display font to font 0, set
+   the current attribute to the defined
+   normal attribute, clear the screen,
+   and reset all TAB stops to be 8
+   spaces apart. Alternate control
+   sequences defined below have the same
+   effect.
+   ER (Erase in Region)                    CSI p1 V      n/a    n/a
+   If the scrolling region is active,
+   erase all or part of the region. p1
+   indicates how much of the region to
+   erase. p1=0 erases from the current
+   cursor position to the end of the
+   region, inclusive. p1=1 erases from
+   the start of the region to the
+   current cursor position, inclusive.
+   p1=2 erases the entire region.  If
+   the cursor is out of bounds, the
+   command is ignored.
+   ECH (Erase CHaracters)                  CSI p1 X      ec     ech
+   Erases p1 characters from the cursor
+   position towards the right margin.
+   Will not erase characters beyond the
+   right margin.
+   CBT (Cursor Backwards Tabulation)       CSI p1 Z      bt     cbt
+   Moves the cursor backwards p1 tab
+   stops. Will never move beyond the
+   left margin, and never wraps.
+   HPR (Horizontal Position Relative)      CSI p1 a      RI     cuf
+   A synonym for CUF, described above.
+   RCH (Repeat Character)                  CSI p1;p2 b   rp     rep
+   Repeat character p1 p2 times. This is
+   achieved as if a stream of characters
+   p2 in length, all consisting of
+   character p1 has been sent to the
+   console. The same rules as apply for
+   normal character scrolling and
+   attribute values apply.
+   VPA (Vertical Position Absolute)        CSI p1 d      cv     vpa
+   Sets the cursor to row p1. This
+   sequence ignores the scrolling region
+   and is the only way to move the
+   cursor out of bounds (limited only by
+   the screen size).
+   VPR (Vertical Position Relative)        CSI p1 e      DO     cud
+   A synonym for CUD, described above.
+   HVP (Horizontal and Vertical Position   CSI p1;p2 f   n/a    n/a
+   Absolute)
+   Sets the cursor to the absolute
+   column p1 and absolute row p2,
+   ignoring the scrolling region and
+   scrolling region. This is one of the
+   only ways to move the cursor outside
+   of the bounds of the scrolling
+   region. The only bounds to this
+   function are the screen size.
+   DGC (Display Graphics Character)        CSI p1 g      n/a    n/a
+   If iBCS2 mode is not active, display
+   the character p1 as a PC ROM BIOS
+   glyph. If iBCS2 mode is active, then
+   this command clears tab stops. In
+   this mode, p1=0 clears the tab under
+   the cursor position, and p1=3 clears
+   all tabs. See the description of CAT
+   below for a description of how the
+   cursor behaves when no TAB stops are
+   set.
+   SM (Set Mode)                           CSI p1 h      n/a    n/a
+   RM (Reset Mode)                         CSI p1 l      n/a    n/a
+   Sets or resets various terminal
+   modes. p1 indicates which mode to set
+   (or reset) according to the following
+   table:
+
+   ---------------------------------------------------------------
+   Value   Meaning
+   ---------------------------------------------------------------
+   2       Lock/unlock the keyboard. When the keyboard is locked,
+           it is not possible to enter ANY key strokes, not even a
+           multiscreen switch. This is a dangerous mode to set, as
+           it can cause the console to freeze, giving the
+           impression that the keyboard is hung. Take care when
+           setting this mode.
+   3       Set 132-column mode. This is currently ignored and will
+           only be available in future versions of scoansi.
+   4       Enable / disable jump-scroll mode. This has no meaning
+           on the console, but other scoansi compliant
+           applications such as scoterm or TERMVision may change
+           the way in which text is scrolled.
+   6       Forces cursor motion to be relative to the top left
+           corner.  This is ignored if backwards compatibility
+           mode is enabled.  In the default mode, all relative
+           cursor motion commands will be unbound.  Thus causes
+           commands like CUP to move the cursor relative to the
+           top left corner of the region.
+   7       Disable or enable automatic margins. Please note that
+           this is the inverse of what you would expect. CSI 7 h
+           will reset automatic margins, and CSI 7 l will set
+           them.  When automatic margins are disabled, characters
+           printing at the right margin will simply start
+           overwriting the last character.  When automatic margins
+           are set (the default), inserting a character at the
+           right margin causes the cursor to wrap to the next
+           line, scrolling the active region if necessary.
+   25      Enable or disable the cursor. When you re-enable the
+           cursor, it will return to its previous shape.
+   30      Scrollbars on or off. Ignored on the console. Used only
+           by scoterm and other GUI-based scoansi emulators.
+   44      Enable or disable margin bell. This is ignored on the
+           console, but in scoterm and other GUI emulators, causes
+           the bell to ring when you approach the right margin.
+   48      Enable or disable the cursor, as per 25 above.
+   1048    Enable or disable the cursor, as per 25 above.
+
+   ---------------------------------------------------------------------
+   Name                                    Sequence   Termcap   Terminfo
+   ---------------------------------------------------------------------
+   MC (Media Copy)                         CSI p1 i   ps        mc0
+   Causes all or part of the screen to
+   be sent to the pass-through printer.
+   Parameter p1 indicates how much of
+   the screen to send to the printer.
+   Currently, only p1=2 is supported,
+   which sends the entire screen
+   contents. Future versions of scoansi
+   may support other values.
+   EDK (Enable or Disable Keyboard         CSI p1 k   n/a       n/a
+   click)
+   If p1=0, enable the keyboard click,
+   which causes a very brief tone to be
+   played each time a key is pressed.
+   This is no longer supported on the
+   console. Only GUI versions of scoansi
+   support this sequence (the console
+   driver will recognize this, but
+   simply ignore it). Any other value
+   for p1 disables the keyboard click.
+
+   SGR (Set Graphics Rendition)            CSI px m   various   various
+   Changes the attributes with which
+   characters are displayed. This
+   command can accept up to nine
+   parameters. The parameters can be in
+   any order. The table below shows the
+   meaning of each value:
+
+   -----------------------------------------------------------------
+   Value     Meaning
+   -----------------------------------------------------------------
+   0         Disable all attribute modifiers (bold, underline,
+             italic, reverse video, concealed and blinking). In the
+             default mode, set the font back to font 0. In backwards
+             compatibility mode, only set the font if the SGR0
+             control option is set (see below). Sets the current
+             attribute back to the defined normal attribute.
+   1         Turn on bold mode. The current foreground color will
+             now appear as a brighter color, if it was not already
+             set to be a bright color by the SCO color sequences
+             defined below.
+   2         Sets the foreground colors. This sequence takes the
+             next two arguments as the foreground and background
+             color to set, respectively. It then sets the stored
+             normal color to this attribute, and selects it. The
+             color numbers used for this sequence are the ISO color
+             numbers, not the ANSI color numbers (this is an SCO
+             extension.) For example, the sequence CSI 2;0;5 m sets
+             the current normal attribute to be black text on a
+             magenta background.
+   3         Italic / blink mode. In the default mode, this sequence
+             enables italic mode on monochrome video adapters. It is
+             ignored on CGA, EGA or color VGA adapters. If backwards
+             compatibility mode is enabled, then this sequence is
+             used to control the role of the blink bit in the M6845
+             video controller.  The argument following the 3
+             indicated whether this bit should be interpreted as
+             blink, or as bold background.  For example, the
+             sequence CSI 3;1 m will enable blinking text, whereas
+             the sequence CSI 3;0 m will enable bright background
+             colors.
+   4         Enable underline mode on monochrome adapters.
+   5         Enable blinking mode. If the M6845 has been programmed
+             to allow blinking text, this will enable that mode.
+             Otherwise, this will have the effect of making all
+             background colors bright.
+   6         Disable blinking mode. If the M6845 has been programmed
+             to allow blinking text, this will cause subsequent
+             characters not to blink.
+   7         Enable reverse video. This will start using the
+             attribute defined as the reverse video attribute.
+   8         Enable concealed mode.  This will cause characters
+             printed to be invisible (i.e. they will have the same
+             foreground and background values).
+   10        Set display font 0. If backwards compatibility mode is
+             enabled, this command will start using the normal
+             attribute again, unless reverse video mode is active,
+             in which case that attribute is used.
+   11        Set display fonts 1, 2 or 3 respectively. If backwards
+   12        compatibility mode is enabled or the ``do not use
+   13        graphics attribute'' mode is not set in the default
+             mode, then these commands will start using the defined
+             graphics attribute.
+   21        Disable bold mode.
+   23        Disable italic mode on monochrome adapters.
+   24        Disable underline mode on monochrome adapters.
+   25        Disable blinking mode. Synonymous with 6 above.
+   26        Enable blinking mode. Synonymous with 5 above.
+   27        Disable reverse video mode. In backwards compatibility
+             mode this also stops using the graphics character
+             printing attribute and will revert to using the normal
+             attribute.
+   28        Disable concealed mode. Characters will now be
+             displayed according to the correct attribute (normal,
+             reverse or graphics, depending on other modes set).
+   30-37     Set the foreground color according to the chart below:
+             30   Black         34   Blue
+             31   Red           35   Magenta
+             32   Green         36   Cyan
+             33   Brown         37   White
+             In backwards compatibility mode, this has the effect of
+             removing bold mode, setting the normal and graphics
+             attributes foreground to the specified color, and
+             setting the reverse video attribute background to the
+             specified color. In the default mode, if reverse video
+             is active, this sets the current background to the
+             color specified, else it sets the current foreground to
+             the color specified. In this mode the bold bit is not
+             modified.
+   39        Set the current foreground to the defined default. In
+             backwards compatibility mode, this sets the current
+             foreground to white text. In the default mode, it sets
+             the current foreground to the color defined for the
+             ``normal'' attribute.
+   40-47     Set the background color according to the chart below:
+             40   Black         44   Blue
+             41   Red           45   Magenta
+             42   Green         46   Cyan
+             43   Brown         47   White
+             If backwards compatibility mode, this has the effect of
+             removing blink mode, setting the normal and graphics
+             attributes background to the specified color, and
+             setting the reverse video attribute foreground to the
+             specified color. In the default mode, if reverse video
+             is active, this sets the current foreground to the
+             color specified, else it sets the current background to
+             the color specified. In this mode the blink bit is not
+             modified.
+   49        Set the current background to the defined default. In
+             backwards compatibility mode, this sets the current
+             background to black.  In the default mode, it sets the
+             current background to the color defined for the
+             ``normal'' attribute.
+   50        Reset to the original color pair. In backwards
+             compatibility mode, set the normal attribute to white
+             text on a black background, and reverse video to black
+             text on a white background.  In the default (new) mode,
+             set the current attribute according to the current mode
+             and the current values for reverse, normal or graphics
+             modes.
+   51        Resets all colors to the system default of gray for the
+             foreground and reverse background, and black for the
+             background and reverse foreground.  Only valid in new
+             mode.
+   90-97     Only valid in the new (default) emulation mode. Sets
+             the current foreground to the color specified. These
+             colors are different to the ANSI colors, as they use
+             the standard ISO color numbering scheme. Colors set
+             with these sequences are always bright colors (using
+             one of these sequences enables bold mode
+             automatically).  The color values are:
+             90      Black         94     Red
+             91      Blue          95     Magenta
+             92      Green         96     Yellow
+             93      Cyan          97     White
+             If reverse video mode is active, these sequences set
+             the current background color. Note that these sequences
+             operate only on the current display attribute, they do
+             not modify the default values that sequences like CSI
+             50 m would revert to.
+   100-107   Only valid in the new (default) emulation mode. Sets
+             the current background to the color specified. These
+             colors are different to the ANSI colors, as they use
+             the standard ISO color numbering scheme. Colors set
+             with these sequences are always bright colors (i.e.
+             using one of these sequences enables bold mode
+             automatically and will program the M6845 controller to
+             allow for bold background colors). The color values
+             are:
+             100    Black          104    Red
+             101    Blue           105    Magenta
+             102    Green          106    Yellow
+             103    Cyan           107    White
+             If reverse video mode is active, these sequences set
+             the current background color. Note that these sequences
+             operate only on the current display attribute, they do
+             not modify the default values that sequences like CSI
+             50 m would revert to.
+
+   ---------------------------------------------------------------------
+   Name                                    Sequence   Termcap   Terminfo
+   ---------------------------------------------------------------------
+   TCP (Transmit Cursor Position)          CSI n      n/a       n/a
+   Cause the driver to return, via the
+   keyboard input stream, the current
+   cursor position. The string returned
+   is the current row and column
+   position, separated by a space and
+   terminated with a newline. Thus, if
+   the cursor was at row 5, column 12,
+   this sequence would eject the string
+   ``5 12\n''.  Only valid in new mode.
+   TMP (Transmit Margin Position)          CSI p1 o   n/a       n/a
+   Cause the driver to return, via the
+   keyboard input stream, the current
+   margin position(s).  Only valid in
+   new mode.  Parameter p1 indicates
+   which margin position should be
+   returned, and can be one of the
+   following values (all strings are
+   terminated with a newline):
+
+   ---------------------------------------------------------------
+   Value   Meaning
+   ---------------------------------------------------------------
+   0       Return all margin positions, each separated by a space
+           and terminated with a newline. The order in which the
+           margins are returned is top, bottom, left and right.
+           For example, if a scrolling region is defined, and its
+           upper left corner is at row 5 column 5, and its lower
+           right corner is at row 20 column 75, this sequence
+           would return the string ``5 20 5 75\n''.
+   1       Return just the top margin.
+   2       Return just the bottom margin.
+   3       Return just the left margin.
+   4       Return just the right margin.
+
+  The following two sequences are not available in backwards compatibility
+  mode (where scrolling regions are not supported):
+
+   ------------------------------------------------------------------------
+   Name                                    Sequence      Termcap   Terminfo
+   ------------------------------------------------------------------------
+   CSR (Change Scrolling Region)           CSI p1;p2 r   cs        csr
+                                           CSI p1-4 r    wi        wind
+
+  These set the scrolling region. In the first form of the sequence, where
+  only two values are specified, p1 and p2 specify the top and bottom margins
+  of the scrolling region. If only one argument is used, then it specifies
+  the top margin, and the scrolling region will extend from the specified row
+  to the end of the screen.
+
+  In the second form, where 3 or more parameters are specified, the parameters
+  are the top, bottom, left and right margins respectively. If you omit the
+  last parameter, the extreme edge of the screen is assumed to be the right
+  margin.
+
+  If any of the parameters are out of bounds, they are clipped. If any of the
+  parameters would cause an overlap (i.e. the bottom margin is higher than
+  the top margin, or the right margin is less that the left margin), then
+  this command is ignored and no scrolling region or window will be active.
+  If all of the parameters are correct, then the cursor is moved to the top
+  left hand corner of the newly-created region. The new region will now
+  define the bounds of all scroll and cursor motion operations.
+
+   ---------------------------------------------------------------------
+   Name                                    Sequence   Termcap   Terminfo
+   ---------------------------------------------------------------------
+   SCP (Save Cursor Position)              CSI s      sc        sc
+   Save the current cursor position. The
+   cursor position can be restored later
+   using the RCP sequence. Alternate
+   control sequences described here have
+   the same effect.
+
+   RCP (Restore Cursor Position)           CSI u          rc     rc
+   Restore the cursor to the position it
+   occupied at the last time an SCP
+   sequence was received. Alternate
+   control sequences described here the
+   same effect.
+   SSW (Screen SWitch)                     CSI p1 z       n/a    n/a
+   Make the multiscreen number specified
+   by parameter p1 the current one.  If
+   p1 refers to an invalid multiscreen
+   number, no action is taken.
+   HPA2 (Horizontal Position Absolute)     CSI p1 `       ch     hpa
+   This is a synonym for the  sequence.
+   ICH (Insert CHaracter)                  CSI p1         IC     ich
+   Insert p1 blank characters at the
+   current cursor position. This will
+   cause the characters following the
+   cursor to shift to the right.
+   Characters that would move beyond the
+   right margin are lost.
+   CUB (CUrsor Backwards)                  CSI p1 SPACE   LE     cub
+   This is a synonym for the CUB
+   sequence.
+
+  Additional screen control sequences
+  +++++++++++++++++++++++++++++++++++
+
+  This section describes a set of control sequences for which there is no ANSI
+  standard definition. Most of these extensions are used to provide some
+  basic level of compatibility with DEC VT100 terminals, and other programs
+  and drivers which emulate these terminals, such as xterm(XC) or the Linux
+  console. A set of sequences which are unique to SCO are also included in
+  this section. These sequences begin with the SCO CSI sequence, ``CSI =''.
+  In the table that follows, these sequences are prefixed as CSIS.
+
+   -----------------------------------------------------------------------
+   Name                                    Sequence     Termcap   Terminfo
+   -----------------------------------------------------------------------
+   SCP (Save Cursor Position)              ESC 7        sc        sc
+   Save the current cursor position.
+   This is a synonym for the ANSI SCP
+   sequence
+   RCP (Restore Cursor Position)           ESC 8        rc        rc
+   Restore the cursor to the position it
+   occupied at the last time an SCP
+   sequence was received. This is a
+   synonym for the ANSI RCP sequence
+   CFI (Cursor Forward Index)              ESC D        n/a       n/a
+   Moves the cursor down exactly one
+   line, scrolling the active region.
+   CBNL (Cursor to Beginning of Next       ESC E        n/a       n/a
+   Line)
+   Move the cursor to the beginning of
+   the next line. If the cursor is at
+   the bottom margin, the screen, region
+   or window will scroll.
+   SHT (Set Horizontal TAB)                ESC H        st        hts
+   Set a tab stop at the current column,
+   for all rows.
+   CBPL (Cursor to Beginning of Previous   ESC I        n/a       n/a
+   Line)
+   Move the cursor to the left margin
+   and then move up one line. If the
+   cursor was on the top margin, this
+   will cause the active region to
+   scroll.
+   CRI (Cursor Reverse Index)              ESC M        n/a       n/a
+   Move the cursor up exactly one line.
+   If the cursor is already at the top
+   margin, this will cause the active
+   region to scroll.
+   SFK (Set Function Key)                  ESC Q defn   n/a       n/a
+   This sequence is used to program the
+   function keys, using the same syntax
+   as the DOS ANSI.SYS driver does. defn
+   is the definition of the function
+   key, and is in the form: K"string".
+   K is the function key number starting
+   at zero plus the ASCII Value of 0.
+   For example, <F1> would be ``0'',
+   <F16> would be ``?'', and so on.  The
+   delimiter ``"'' may be any character
+   not in ``string''.  ``string'' is the
+   set of characters to be transmitted
+   when the specified function key is
+   pressed.  In ``string'' the ``^''
+   character causes the next character
+   to have 32 subtracted from its ASCII
+   value.  Thus, ``^!'' results in an
+   SOH (^A) character.
+   RIS (Reset Initial Screen)              ESC c        n/a       n/a
+   Fully reset the emulator state. This
+   sequence is a synonym for the ANSI
+   RIS sequence
+   LMA (Lock Memory Above)                 ESC l        n/a       n/a
+   This is an alternative way to set the
+   scrolling region, and is not valid in
+   backwards compatibility mode.  This
+   sequence sets the top margin to the
+   current line, and the bottom margin
+   extends to the last row of the
+   screen.  This has the effect of
+   locking the rows above the current
+   line.  This sequence will move the
+   cursor to the beginning of the new
+   region.
+   USR (Unlock Scrolling Region)           ESC m        n/a       n/a
+   This sequence can be used to remove
+   the scrolling region.  The cursor is
+   not moved from its current position.
+   The top, bottom, left and right
+   margins are set to cover the entire
+   screen.
+
+  Additional SCO screen control sequences
+  +++++++++++++++++++++++++++++++++++++++
+
+  This section describes a set of control sequences provided by SCO that
+  further extend the ANSI standard definition.
+
+   ----------------------------------------------------------------------
+   Name                                    Sequence    Termcap   Terminfo
+   ----------------------------------------------------------------------
+   SBC (Set Border Color)                  CSIS p1 A   n/a       n/a
+   Set the overscan (border) to the
+   color specified.  The color number
+   comes from ``ISO Color Map''
+
+   SBP (Set Bell Parameters)               CSIS p1;p2 B   n/a    n/a
+   Set the frequency (p1) and duration
+   (p2) of the audible bell.  The
+   frequency is in units of 840.3
+   nanoseconds, and the duration is in
+   units of 100 milliseconds.
+   SCS (Set Cursor Shape)                  CSIS p1;p2 C   n/a    n/a
+   Set the shape of the flashing cursor.
+   Parameter p1 is the top scanline of
+   the cursor, and p2 is the bottom
+   scanline of the cursor. If you set
+   the bottom scan line to a value less
+   than the top scan line, the cursor
+   will disappear.
+   SBI (Set Background Intensity)          CSIS p1 D      n/a    n/a
+   Turns the intensity of background
+   colors on (p1 = 1) or off (p1 = 0).
+   Any characters printed with the
+   ``blink'' attribute modifier will
+   instead be displayed as having an
+   intense background.
+   SBB ( Set Background Blink bit)         CSIS p1 E      n/a    n/a
+   Sets (p1 = 1) or clears (p1 = 0) the
+   Blink versus Bold background bit in
+   the M6845 CRT controller.  The
+   parameters are the exact inverse of
+   the SBI sequence above.  Other than
+   that, they behave the same on the
+   console.  In GUI versions of scoansi,
+   the application may distinguish
+   between these two sequences.
+   SNF (Set Normal Foreground color)       CSIS p1 F      n/a    n/a
+   Sets the normal foreground color to
+   ISO color p1.
+   SNB (Set Normal Background color)       CSIS p1 G      n/a    n/a
+   Sets the normal background color to
+   ISO color p1.
+   SRF (Set Reverse Foreground color)      CSIS p1 H      n/a    n/a
+   Sets the reverse video foreground
+   color to ISO color p1.
+   SRB (Set Reverse Foreground color)      CSIS p1 I      n/a    n/a
+   Sets the reverse video background
+   color to ISO color p1.
+   SGF (Set Reverse Foreground color)      CSIS p1 J      n/a    n/a
+   Sets the graphic character foreground
+   color to ISO color p1.
+   SGB (Set Reverse Foreground color)      CSIS p1 K      n/a    n/a
+   Sets the graphic character background
+   color to ISO color p1.
+   SEF (Set Emulation Feature)             CSIS p1 L      n/a    n/a
+   Control the various emulator
+   features. Parameter p1 indicates the
+   action to be taken:
+
+   ----------------------------------------------------------------
+   Value   Meaning
+   ----------------------------------------------------------------
+   0       New regions filled with the current attribute (default)
+   1       New regions filled with the normal attribute
+   2       Disable iBCS2 compliance (default)
+   3       Enable iBCS2 compliance
+   4       Disable ANSI SGR0 interpretation (default)
+   5       Enable ANSI SGR0 interpretation
+   6       Disable backwards compatibility mode (default)
+   7       Enable backwards compatibility mode (resets margins too)
+   8       Cursor motion bound by region (default)
+   9       Cursor motion unbound
+   10      Enable 8-bit keyboard meta mode (default)
+   11      Disable 8-bit keyboard meta mode
+   12      Disable debugging for this screen (default)
+   13      Enable debugging for this screen (do not use)
+   14      Disable global video loop debugging (default)
+   15      Enable global video loop debugging (do not use)
+   16      Enable M6845 frame buffer optimization (default)
+   17      Disable M6845 frame buffer optimization (debugging only)
+   20      Disable using ESC for meta (high) bit.
+   21      Enable using ESC for meta (high) bit.
+
+  See ``Scan codes'' in keyboard(HW) in keyboard(HW) for details on meta-
+  versus non-meta mode.
+
+   ----------------------------------------------------------------------
+   Name                                    Sequence    Termcap   Terminfo
+   ----------------------------------------------------------------------
+   RAS (Return Attribute Setting)          CSIS p1 M   n/a       n/a
+   Use this sequence to return the
+   current settings for the attribute
+   type specified by p1. Attributes are
+   returned via the keyboard data input
+   stream as text decimal numbers
+   separated by a space and terminated
+   with a newline. The attribute values
+   returned use the ISO color numbering
+   scheme. For example, if the current
+   normal attribute setting is bright
+   yellow on a blue background, CSIN 0 M
+   would return ``14 1\n''. p1 can be
+   one of the following values:
+
+   ---------------------------------------------------------------
+   Value   Meaning
+   ---------------------------------------------------------------
+   0       Return the current normal attribute setting
+   1       Return the current reverse video attribute setting
+   2       Return the current graphic character attribute setting
+
+   ----------------------------------------------------------------------
+   Name                                    Sequence    Termcap   Terminfo
+   ----------------------------------------------------------------------
+   HSC (Hide or Show Cursor)               CSIS p1 c   various   various
+   Either hide or show the cursor. When
+   you hide the cursor, scoansi
+   remembers its previous shape, so that
+   if you restore it, it is restored to
+   its previous shape. p1 specifies how
+   to handle the cursor, and can be one
+   of the following values:
+
+   ---------------------------------------------------------------
+   Value   Meaning
+   ---------------------------------------------------------------
+   0       Hide the cursor, saving its shape for a future restore
+   1       Restore the cursor after hiding or making it very
+           visible
+   2       Make the cursor very visible, saving its shape for a
+           future restore. If you move from a hidden to a very
+           visible shape, the cursor shape is not stored. This
+           ensures that when a restore command is given, the
+           original cursor shape is restored.
+
+   -------------------------------------------------------------------------
+   Name                                    Sequence       Termcap   Terminfo
+   -------------------------------------------------------------------------
+   PRC (Print ROM Character)               CSIS p1 g      n/a       n/a
+   If only one argument is passed to
+   this function, display the glyph for
+   the PC ROM character specified by p1.
+   If 3 parameters are passed, then then
+   p2 and p3 are used to set the graphic
+   character attribute foreground and
+   background respectively, using the
+   ISO color numbering scheme described
+   below.
+   CHC (Clear and Home Cursor)             CSIS l         n/a       n/a
+   Much like the Form Feed (FF) ASCII
+   control character, this sequence will
+   erase the entire screen using the
+   current fill attribute, but it will
+   ignore the current scrolling region
+   if set (the entire screen is always
+   cleared, regardless of the scrolling
+   region settings).  The cursor will be
+   left at the top left of the scrolling
+   region.
+   SSM (Set Specific Margin)               CSIS p1;p2 m   n/a       n/a
+   This sequence can be used to set any
+   one of the 4 margins. Parameter p1
+   indicates which margin to set (p1=0
+   for the top margin, p1=1 for the
+   bottom, p1=2 for the left and p1=3
+   for the right). p2 is the row or
+   column to set the margin to. If after
+   this control sequence has been
+   processed, the top or bottom margins
+   are not at the top of the screen, and
+   the left and right margins are at the
+   screen boundary, then the scrolling
+   region is set to the size specified.
+   If either of the left or right
+   margins are not at the screen
+   boundary then the scrolling region is
+   bound by the current margins.
+   RSM (ReSet Margins)                     CSIS r         n/a       n/a
+   This sequence can be used to reset
+   all of the margins to cover the
+   entire screen. This will deactivate
+   the scrolling region (if defined). If
+   not, this sequence has no effect.
+   The cursor is not moved.
+   CAT (Clear All TABs)                    CSIS z         ct        tbc
+   Clear all tab stops. If a TAB
+   character is received and there are
+   no TAB stops set, then the TAB
+   character will move the cursor to the
+   right margin. If backwards
+   compatibility mode is on, then the
+   cursor moves one position beyond the
+   margin, thus causing the cursor to
+   wrap to the left margin on the next
+   line, performing a scroll if
+   necessary.
+
+  ISO Color Map
+  +++++++++++++
+
+  Several control sequences use ISO color numbering. The table below shows the
+  color numbers and the colors they display:
+
+   ---------------------------------------
+   Value   Color     Value   Color
+   ---------------------------------------
+   0       Black     8       Gray
+   1       Blue      9       Light Blue
+   2       Green     10      Light Green
+   3       Cyan      11      Light Cyan
+   4       Red       12      Light Red
+   5       Magenta   13      Light Magenta
+   6       Brown     14      Yellow
+   7       White     15      Bright White
+
+  Diagnostics
+  ===========
+
+  The following error messages may be displayed on the console. See messages
+  (M) for general information about kernel error messages, including a list of
+  generic device driver errors.
+
+  CONFIG: console: Cannot allocate SCRNMEM = nk (NSCRN = n too many screens)
+
+  Not enough memory was available for the video driver. Decrease the number of
+  screens as set by the configurable parameter NSCRN.
+
+  WARNING: console: Kernel messages lost on non-text screen
+           Check kernel messages logfile
+
+  Kernel messages were lost while the console was in graphics mode and did not
+  appear. Check the last few lines of /usr/adm/messages to find the messages.
+
+  PANIC: console: Too many keyboard groups (MAXKBGRPS max)
+
+  There are more video devices attached to your system than the kernel is
+  designed to support.
+
+  Examples
+  ========
+
+  The following module includes examples of getting the display mode, screen
+  switching, I/O privilege, and memory mapping.
+
+  Sample code (part 1 of 4)
+  +++++++++++++++++++++++++
+
+  #include <stdio.h>
+
+  #include <sys/types.h>
+  #include <sys/signal.h>
+  #include <sys/vtkd.h>
+
+  #define SIG_REL SIGUSR1
+  #define SIG_ACQ SIGUSR2
+
+  int Isdisplayed;                /* flag: when are we flipped away */
+  char *Screenmem;                /* physical map to the video RAM  */
+  int graf();                     /* Set everything up              */
+  void grafend();                 /* Restore user's text mode       */
+  void grafquit();                /* Clean-up and exit              */
+  void rel_screen(), acq_screen();
+  int Oldmode;                    /* save mode of user shell screen */
+
+  /*
+   * Set up the graphics multiscreen stuff and call another
+   * routine to set up card.
+   */
+  graf()
+  {
+          struct vt_mode smode;
+
+          Isdisplayed = 1;
+  /*
+   *  Set up to catch the screen switch signals.
+   */
+          signal(SIG_REL, rel_screen);
+          signal(SIG_ACQ, acq_screen);
+  /*
+   * Set up the data structure that asks the driver
+   * to send you signals when the screens are switched.
+   * mode == VT_PROCESS means send screen switch signals.
+   * mode == VT_AUTO means turn off screen switch signals (regular mode).
+   * relsig == the signal you want when the user switches away.
+   * acqsig == the signal you want when the user switches back to you.
+   */
+          smode.mode = VT_PROCESS;
+          smode.waitv = 0;        /* not implemented, reserved */
+          smode.relsig = SIG_REL;
+          smode.acqsig = SIG_ACQ;
+          smode.frsig  = SIGINT;  /* not implemented, reserved */
+
+          if(-1 == ioctl(0, VT_SETMODE, &smode))
+          {
+                  perror("screen switch signal ioctl VT_SETMODE");
+                  exit(1);
+          }
+          signal(SIGINT, grafquit);
+          grafmode();
+  }
+
+  Sample code (part 2 of 4)
+  +++++++++++++++++++++++++
+
+  /*
+   * this is the signal handler for when the user screen flips
+   * away from us.
+   */
+  void
+  rel_screen()
+  {
+          signal(SIG_REL, rel_screen);
+          Isdisplayed = 0;
+          ega_save();
+  /*
+   * Tell the video driver that you have saved your state
+   * and it can now have the card to switch to the new screen.
+   * The video driver waits (forever) for this ioctl before
+   * it will complete the screen switch requested by the user.
+   * If you don't make this ioctl the screen switcher will
+   * be wedged until it gets one.  It is best to have a
+   * small one line reldisp.c program to unwedge your screen
+   * switcher when development programs screw up from time
+   * to time.
+   */
+          ioctl(0, VT_RELDISP, VT_TRUE);
+  }
+
+  /*
+   * this is the signal handler for when the user screen flips
+   * back to us.
+   */
+  void
+  acq_screen()
+  {
+          signal(SIG_ACQ, acq_screen);
+          Isdisplayed = 1;
+          ega_restore();
+  /*
+   * Tell the video driver that you have restored your state
+   * and screen switching can now continue.
+   */
+          ioctl(0, VT_RELDISP, VT_ACKACQ);
+  }
+
+  void
+  grafquit()
+  {
+          grafend();
+          exit(0);
+  }
+
+  Sample code (3 of 4)
+  ++++++++++++++++++++
+
+  /*
+   * restore text mode.
+   */
+  void
+  grafend()
+  {
+          ioctl(0, MODESWITCH | Oldmode, (char *)0);
+  }
+
+  grafmode()
+  {
+          int adapter, privlcmd;
+  /*
+   * Confirm that we are on a supported video adapter.
+   */
+          adapter = ioctl(0, CONS_CURRENT, (char *)0);
+          if(EGA != adapter && VGA != adapter)
+          {
+                  puts("Stdin must be an EGA or VGA multiscreen");
+                  exit(0);
+          }
+
+  Sample code (4 of 4)
+  ++++++++++++++++++++
+
+  /*
+   * Save the user's current text mode so you
+   * can restore it on exit.
+   */
+          Oldmode = ioctl(0, CONS_GET, (char *)0);
+  /*
+   * Get privilege to do direct INs and OUTs to the video card.
+   */
+          if(EGA == adapter)
+                  privlcmd = EGA_IOPRIVL;
+          else
+                  privlcmd = VGA_IOPRIVL;
+          if(-1 == ioctl(0, privlcmd, 1))
+          {
+                  perror("I/O privilege denied");
+                  exit(1);
+          }
+  /*
+   * Have the video driver reprogram the card for EGA 640x350 16 color mode.
+   */
+          ega_grafmode();
+  /*
+   * Map the video card's frame buffer into your address space.
+   * This must be done after the mode switch command or you get
+   * frame buffer address for the wrong mode mapped in.
+   */
+          Screenmem = (char *)ioctl(0, MAPCONS, (char *)0);
+  }
+
+  Warning
+  =======
+
+  Do not enable(C) or disable(C) /dev/console because this may corrupt the
+  /etc/inittab file; instead, enable or disable the display adapter (tty01),
+  or the serial adapter (tty?a) if the console is configured to be on a
+  particular serial device.
+
+  Limitations
+  ===========
+
+  A serial console cannot be attached to a multiport card or one that uses
+  special drivers; it must be on a standard COM1 card.
+
+  Files
+  =====
+
+  /dev/console
+          tty to which first shell is attached, used for system maintenance
+
+  /dev/systty
+          system error messages display device, linked initially to
+          /dev/console
+
+  /dev/syscon
+          system console device, linked to the tty from which init(M) was last
+          invoked
+
+  /etc/ioctl.syscon
+          default console ioctl(S) settings used by init(M)
+
+  /dev/tty[02-n]
+          provide character I/O between keyboard and monitor
+
+  /dev/color
+
+  /dev/monochrome
+
+  /dev/ega
+
+  /dev/vga
+
+  /etc/conf/pack.d/cn/class.h
+          list of existing video classes, generated by mkdev graphics
+
+  /usr/include/sys/vtkd.h
+
+  /usr/include/sys/comcrt.h
+          adapter types for console multiscreens
+
+  /usr/include/sys/console.h
+
+  /usr/include/sys/keyboard.h
+
+  See also
+  ========
+
+  boot(HW), init(M), ioctl(S), keyboard(HW), mapchan(M), mapkey(M),
+  multiscreen(M), scancode(HW), setcolor(C), stty(C), termcap(F), tty(M), vidi
+  (C),
+
+  ``System console bootstring'' in the SCO OpenServer Handbook
+
+  Chapter 1, ``Configuring video adapters'' in Configuring Video Adapters
+
+  ``Setting up serial consoles'' in the SCO OpenServer Handbook
+
+  SCO OpenServer Release 5.0.6 -- 1 August 2000
+

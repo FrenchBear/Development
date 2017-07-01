@@ -1,0 +1,41 @@
+; This file is maintained by HCW. Do not modify this file directly.
+
+[OPTIONS]
+COMPRESS=HIGH
+ERRORLOG=synff__.err
+REPORT=Yes
+CONTENTS=GBP00000
+TITLE=Guide de Bonnes Pratiques Hygiéniques
+COPYRIGHT=CITPPM 1996
+
+[FILES]
+.\Synff__.rtf
+.\synffch3.rtf
+.\Synffch4.rtf
+.\Synffch5.rtf
+.\Synffch6.rtf
+.\Reglt1.rtf
+.\Reglt2.rtf
+.\Synffan1.rtf
+.\Synffan2.rtf
+.\Synffan3.rtf
+.\Synffan4.rtf
+.\Synffan5.rtf
+.\Synffan6.rtf
+.\Synffch7.rtf
+.\Pertin~1.rtf
+
+[MAP]
+GBP00000 0          ; Guide de bonnes pratiques SYNAFAP
+GBP04000 1          ; Glossaire
+GBP06000 4          ; Eléments de maîtise
+GBP07000 5          ; Eléments de surveillane et de preuve
+GBP10140 2          ; Les principaux germes
+GBP80000 6          ; Pertinence des dangers
+GBP90000 3          ; La réglementation
+
+[WINDOWS]
+Main="Guide de bonnes pratiques hygiéniques SYNAFAP",(0,0,1023,1023 ),,, (192,192,192 )
+
+[CONFIG]
+BrowseButtons()

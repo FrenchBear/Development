@@ -1,0 +1,11 @@
+[DEFAULT]
+BASEURL=http://msdn.microsoft.com/library/default.asp?url=/library/en-us/odc_wd2003_ta/html/odc_wdov.asp
+[DOC#6#7]
+BASEURL=http://msdn.microsoft.com/library/shared/deeptree/asp/toolbar.asp?tbcfg=/library/toolbarconfig.xml
+ORIGURL=/library/shared/deeptree/asp/toolbar.asp?tbcfg=/library/toolbarconfig.xml
+[DOC#6#8#9#8#9]
+BASEURL=http://msdn.microsoft.com/library/shared/searchtab/search.asp?stcfg=/library/searchtabconfig.xml&dtcfg=/library/deeptreeconfig.xml&url=/library/en-us/odc_wd2003_ta/html/odc_wdov.asp?frame=true
+ORIGURL=/library/shared/searchtab/search.asp?stcfg=/library/searchtabconfig.xml&dtcfg=/library/deeptreeconfig.xml&url=/library/en-us/odc_wd2003_ta/html/odc_wdov.asp?frame=true
+[InternetShortcut]
+URL=http://msdn.microsoft.com/library/default.asp?url=/library/en-us/odc_wd2003_ta/html/odc_wdov.asp
+Modified=7028BEC273B7C30106

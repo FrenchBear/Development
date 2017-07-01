@@ -1,0 +1,296 @@
+<ToggleButton x:Class="SudokuFX.Stopwatch"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	Height="{Binding RelativeSource={RelativeSource Self}, Path=ActualWidth}"
+	xmlns:clr="clr-namespace:SudokuFX">
+  <ToggleButton.Resources>
+    <clr:AngleConverter x:Key="AngleConverter"/>
+  </ToggleButton.Resources>
+  <ToggleButton.Template>
+    <ControlTemplate TargetType ="{x:Type ToggleButton}">
+      <Grid x:Name="MainGrid">
+        <Rectangle x:Name ="OnLight" Visibility="Hidden" HorizontalAlignment ="Stretch" VerticalAlignment ="Stretch">
+          <Rectangle.BitmapEffect>
+            <OuterGlowBitmapEffect GlowSize="10" GlowColor ="LimeGreen"/>
+          </Rectangle.BitmapEffect>
+          <Rectangle.Fill>
+            <DrawingBrush Stretch ="Uniform">
+              <DrawingBrush.Drawing>
+                <DrawingGroup>
+                  <GeometryDrawing>
+                    <GeometryDrawing.Geometry>
+                      <RectangleGeometry Rect ="0,0,1,1"/>
+                    </GeometryDrawing.Geometry>
+                  </GeometryDrawing>
+                  <GeometryDrawing Brush ="GreenYellow">
+                    <GeometryDrawing.Pen>
+                      <Pen Brush ="LimeGreen" Thickness ="0.02"/>
+                    </GeometryDrawing.Pen>
+                    <GeometryDrawing.Geometry>
+                      <RectangleGeometry RadiusX ="0.05" RadiusY ="0.05" Rect ="0.375,0,0.25,0.33"/>
+                    </GeometryDrawing.Geometry>
+                  </GeometryDrawing>
+                  <GeometryDrawing>
+                    <GeometryDrawing.Brush>
+                      <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color ="#A0FFFFFF" Offset="0"/>
+                        <GradientStop Color ="#00FFFFFF" Offset="1"/>
+                      </LinearGradientBrush>
+                    </GeometryDrawing.Brush>
+                    <GeometryDrawing.Geometry>
+                      <RectangleGeometry RadiusX ="0.05" RadiusY ="0.05" Rect ="0.4,0.025,0.2,0.075"/>
+                    </GeometryDrawing.Geometry>
+                  </GeometryDrawing>
+                </DrawingGroup>
+              </DrawingBrush.Drawing>
+            </DrawingBrush>
+          </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle x:Name ="OffLight" HorizontalAlignment ="Stretch" VerticalAlignment ="Stretch">
+          <Rectangle.Fill>
+            <DrawingBrush Stretch ="Uniform">
+              <DrawingBrush.Drawing>
+                <DrawingGroup>
+                  <GeometryDrawing>
+                    <GeometryDrawing.Geometry>
+                      <RectangleGeometry Rect ="0,0,1,1"/>
+                    </GeometryDrawing.Geometry>
+                  </GeometryDrawing>
+                  <GeometryDrawing Brush ="Green">
+                    <GeometryDrawing.Pen>
+                      <Pen Brush ="DarkGreen" Thickness ="0.02"/>
+                    </GeometryDrawing.Pen>
+                    <GeometryDrawing.Geometry>
+                      <RectangleGeometry RadiusX ="0.05" RadiusY ="0.05" Rect ="0.375,0,0.25,0.33"/>
+                    </GeometryDrawing.Geometry>
+                  </GeometryDrawing>
+                  <GeometryDrawing>
+                    <GeometryDrawing.Brush>
+                      <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color ="#A0FFFFFF" Offset="0"/>
+                        <GradientStop Color ="#00FFFFFF" Offset="1"/>
+                      </LinearGradientBrush>
+                    </GeometryDrawing.Brush>
+                    <GeometryDrawing.Geometry>
+                      <RectangleGeometry RadiusX ="0.05" RadiusY ="0.05" Rect ="0.4,0.025,0.2,0.075"/>
+                    </GeometryDrawing.Geometry>
+                  </GeometryDrawing>
+                </DrawingGroup>
+              </DrawingBrush.Drawing>
+            </DrawingBrush>
+          </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle x:Name ="Watch" Margin ="10" HorizontalAlignment ="Stretch" VerticalAlignment ="Stretch">
+          <Rectangle.Fill>
+            <DrawingBrush Stretch ="Uniform">
+              <DrawingBrush.Drawing>
+                <DrawingGroup>
+                  <!-- Clock Body -->
+                  <GeometryDrawing >
+                    <GeometryDrawing.Brush>
+                      <LinearGradientBrush StartPoint ="0,0" EndPoint ="1,1">
+                        <GradientStop Color='#FF7C888E' Offset='0'/>
+                        <GradientStop Color='#FFbDc3cC' Offset='0.229492'/>
+                        <GradientStop Color='#FF94a0a5' Offset='0.364258'/>
+                        <GradientStop Color='#FFd8dEe1' Offset='0.584961'/>
+                        <GradientStop Color='#FFa8aEbA' Offset='0.699219'/>
+                        <GradientStop Color='#FFcCcFd5' Offset='0.78418'/>
+                        <GradientStop Color='#FFa2a8aE' Offset='0.879883'/>
+                        <GradientStop Color='#FFd8dEe7' Offset='1'/>
+                      </LinearGradientBrush>
+                    </GeometryDrawing.Brush>
+                    <GeometryDrawing.Pen>
+                      <Pen Thickness ='2'>
+                        <Pen.Brush>
+                          <LinearGradientBrush StartPoint ='0,0' EndPoint ='1,1'>
+                            <GradientStop Color ='#FFcCcFd5' Offset ='0'/>
+                            <GradientStop Color ='#FF7C888E' Offset ='1'/>
+                          </LinearGradientBrush>
+                        </Pen.Brush>
+                      </Pen>
+                    </GeometryDrawing.Pen>
+                    <GeometryDrawing.Geometry>
+                      <CombinedGeometry GeometryCombineMode='Union' >
+                        <CombinedGeometry.Geometry1>
+                          <EllipseGeometry Center ="50,66" RadiusX ="40" RadiusY ="40"/>
+                        </CombinedGeometry.Geometry1>
+                        <CombinedGeometry.Geometry2>
+                          <CombinedGeometry GeometryCombineMode ="Union">
+                            <CombinedGeometry.Geometry1>
+                              <RectangleGeometry RadiusX ="5" RadiusY ="5" Rect ="37.5,20,25,33">
+                                <RectangleGeometry.Transform>
+                                  <RotateTransform CenterX ="50" CenterY ="66" Angle ="45"/>
+                                </RectangleGeometry.Transform>
+                              </RectangleGeometry >
+                            </CombinedGeometry.Geometry1>
+                            <CombinedGeometry.Geometry2>
+                              <RectangleGeometry RadiusX ="5" RadiusY ="5" Rect ="37.5,20,25,33">
+                                <RectangleGeometry.Transform>
+                                  <RotateTransform CenterX ="50" CenterY ="66" Angle ="-45"/>
+                                </RectangleGeometry.Transform>
+                              </RectangleGeometry >
+                            </CombinedGeometry.Geometry2>
+                          </CombinedGeometry>
+                        </CombinedGeometry.Geometry2>
+                      </CombinedGeometry>
+                    </GeometryDrawing.Geometry>
+                  </GeometryDrawing>
+                  <!-- Clock Face-->
+                  <GeometryDrawing>
+                    <GeometryDrawing.Pen>
+                      <Pen Thickness ='2'>
+                        <Pen.Brush>
+                          <LinearGradientBrush StartPoint ='1,1' EndPoint ='0,0'>
+                            <GradientStop Color ='#FFcCcFd5' Offset ='0'/>
+                            <GradientStop Color ='#FF7C888E' Offset ='1'/>
+                          </LinearGradientBrush>
+                        </Pen.Brush>
+                      </Pen>
+                    </GeometryDrawing.Pen>
+                    <GeometryDrawing.Brush>
+                      <LinearGradientBrush Opacity='1' StartPoint ='0,0' EndPoint ='1,1'>
+                        <GradientStop Color ='Gainsboro'  Offset ='0'/>
+                        <GradientStop Color ='LightGray' Offset ='1'/>
+                      </LinearGradientBrush>
+                    </GeometryDrawing.Brush>
+                    <GeometryDrawing.Geometry>
+                      <EllipseGeometry Center ="50,66" RadiusX ="30" RadiusY ="30"/>
+                    </GeometryDrawing.Geometry>
+                  </GeometryDrawing>
+                  <!-- Clock Ticks-->
+                  <GeometryDrawing>
+                    <GeometryDrawing.Pen>
+                      <Pen Brush ="Gray" Thickness ="1.5"/>
+                    </GeometryDrawing.Pen>
+                    <GeometryDrawing.Geometry>
+                      <GeometryGroup>
+                        <LineGeometry StartPoint ="50,43" EndPoint ="50,51"/>
+                        <LineGeometry StartPoint ="50,43" EndPoint ="50,47">
+                          <LineGeometry.Transform>
+                            <RotateTransform CenterX ="50" CenterY ="66" Angle ="30"/>
+                          </LineGeometry.Transform>
+                        </LineGeometry>
+                        <LineGeometry StartPoint ="50,43" EndPoint ="50,47">
+                          <LineGeometry.Transform>
+                            <RotateTransform CenterX ="50" CenterY ="66" Angle ="60"/>
+                          </LineGeometry.Transform>
+                        </LineGeometry>
+                        <LineGeometry StartPoint ="50,43" EndPoint ="50,47">
+                          <LineGeometry.Transform>
+                            <RotateTransform CenterX ="50" CenterY ="66" Angle ="90"/>
+                          </LineGeometry.Transform>
+                        </LineGeometry>
+                        <LineGeometry StartPoint ="50,43" EndPoint ="50,47">
+                          <LineGeometry.Transform>
+                            <RotateTransform CenterX ="50" CenterY ="66" Angle ="120"/>
+                          </LineGeometry.Transform>
+                        </LineGeometry>
+                        <LineGeometry StartPoint ="50,43" EndPoint ="50,47">
+                          <LineGeometry.Transform>
+                            <RotateTransform CenterX ="50" CenterY ="66" Angle ="150"/>
+                          </LineGeometry.Transform>
+                        </LineGeometry>
+                        <LineGeometry StartPoint ="50,43" EndPoint ="50,47">
+                          <LineGeometry.Transform>
+                            <RotateTransform CenterX ="50" CenterY ="66" Angle ="180"/>
+                          </LineGeometry.Transform>
+                        </LineGeometry>
+                        <LineGeometry StartPoint ="50,43" EndPoint ="50,47">
+                          <LineGeometry.Transform>
+                            <RotateTransform CenterX ="50" CenterY ="66" Angle ="-30"/>
+                          </LineGeometry.Transform>
+                        </LineGeometry>
+                        <LineGeometry StartPoint ="50,43" EndPoint ="50,47">
+                          <LineGeometry.Transform>
+                            <RotateTransform CenterX ="50" CenterY ="66" Angle ="-60"/>
+                          </LineGeometry.Transform>
+                        </LineGeometry>
+                        <LineGeometry StartPoint ="50,43" EndPoint ="50,47">
+                          <LineGeometry.Transform>
+                            <RotateTransform CenterX ="50" CenterY ="66" Angle ="-90"/>
+                          </LineGeometry.Transform>
+                        </LineGeometry>
+                        <LineGeometry StartPoint ="50,43" EndPoint ="50,47">
+                          <LineGeometry.Transform>
+                            <RotateTransform CenterX ="50" CenterY ="66" Angle ="-120"/>
+                          </LineGeometry.Transform>
+                        </LineGeometry>
+                        <LineGeometry StartPoint ="50,43" EndPoint ="50,47">
+                          <LineGeometry.Transform>
+                            <RotateTransform CenterX ="50" CenterY ="66" Angle ="-150"/>
+                          </LineGeometry.Transform>
+                        </LineGeometry>
+                      </GeometryGroup>
+                    </GeometryDrawing.Geometry>
+                  </GeometryDrawing>
+                  <!-- Hand Shadow-->
+                  <GeometryDrawing Brush ="#50000000">
+                    <GeometryDrawing.Geometry>
+                      <PathGeometry>
+                        <PathFigure IsClosed ="True" IsFilled ="True" StartPoint ="50,40">
+                          <LineSegment Point ="51,66"/>
+                          <LineSegment Point ="49,66"/>
+                        </PathFigure>
+                        <PathGeometry.Transform>
+                          <TransformGroup>
+                            <RotateTransform CenterX ="50" CenterY ="66" Angle ="{Binding Path=CurrentTime, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource AngleConverter}}"/>
+                            <TranslateTransform Y ="1"/>
+                          </TransformGroup>
+                        </PathGeometry.Transform>
+                      </PathGeometry>
+                    </GeometryDrawing.Geometry>
+                  </GeometryDrawing>
+                  <!-- Hand -->
+                  <GeometryDrawing Brush ="Red">
+                    <GeometryDrawing.Geometry>
+                      <PathGeometry>
+                        <PathFigure IsClosed ="True" IsFilled ="True" StartPoint ="50,40">
+                          <LineSegment Point ="51,66"/>
+                          <LineSegment Point ="49,66"/>
+                        </PathFigure>
+                        <PathGeometry.Transform>
+                          <RotateTransform CenterX ="50" CenterY ="66" Angle ="{Binding Path=CurrentTime, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource AngleConverter}}"/>
+                        </PathGeometry.Transform>
+                      </PathGeometry>
+                    </GeometryDrawing.Geometry>
+                  </GeometryDrawing>
+                  <!--Glass Reflection-->
+                  <GeometryDrawing>
+                    <GeometryDrawing.Pen>
+                      <Pen Thickness ='5' Brush='Transparent'/>
+                    </GeometryDrawing.Pen>
+                    <GeometryDrawing.Brush>
+                      <RadialGradientBrush RadiusX ='1.25' RadiusY='1' Center='0.5,0' GradientOrigin='0.5,0' >
+                        <GradientStop Color='#FFFFFFFF' Offset='0'/>
+                        <GradientStop Color='#40FFFFFF' Offset='0.55'/>
+                        <GradientStop Color='#00FFFFFF' Offset='0.56'/>
+                        <GradientStop Color='#00FFFFFF' Offset='0.75'/>
+                        <GradientStop Color='#FFFFFFFF' Offset='1'/>
+                      </RadialGradientBrush>
+                    </GeometryDrawing.Brush>
+                    <GeometryDrawing.Geometry>
+                      <EllipseGeometry Center ="50,66" RadiusX ="29" RadiusY ="29"/>
+                    </GeometryDrawing.Geometry>
+                  </GeometryDrawing>
+                </DrawingGroup>
+              </DrawingBrush.Drawing>
+            </DrawingBrush>
+          </Rectangle.Fill>
+        </Rectangle>
+      </Grid>
+      <ControlTemplate.Triggers>
+        <Trigger Property ="ToggleButton.IsChecked" Value="True">
+          <Setter TargetName ="OffLight" Property="Visibility" Value="Hidden"/>
+          <Setter TargetName ="OnLight" Property="Visibility" Value="Visible"/>
+        </Trigger>
+        <Trigger Property ="ToggleButton.IsPressed" Value="True">
+          <Setter TargetName="MainGrid" Property="RenderTransform">
+            <Setter.Value>
+              <TranslateTransform X ="1" Y ="1"/>
+            </Setter.Value>
+          </Setter>
+        </Trigger>
+      </ControlTemplate.Triggers>
+    </ControlTemplate>
+  </ToggleButton.Template>
+</ToggleButton>

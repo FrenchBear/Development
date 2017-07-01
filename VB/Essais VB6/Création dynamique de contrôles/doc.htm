@@ -1,0 +1,308 @@
+
+
+<HTML>
+<HEAD>
+<TITLE>HOWTO: Dynamically Add Controls to a Form with Visual Basic 6.0</TITLE>
+
+<!--STYLE_START-->
+
+	<LINK REL="STYLESHEET" HREF="/support/stylenn.css" TYPE="text/css">
+
+<!--STYLE_END-->
+
+<!--META_START-->
+<META HTTP-EQUIV="CONTENT-Type" CONTENT="text/html; charset=us-ascii">
+<META NAME="ms.locale" CONTENT="EN-US">
+<META NAME="Category" CONTENT="Support; KB Article">
+<META NAME="KBID" CONTENT="Q190670">
+<META NAME="KBModify" CONTENT="1998/08/07">
+<META NAME="KBCreate" CONTENT="1998/07/31">
+<META NAME="Keywords" CONTENT="">
+<META NAME="KBArea" CONTENT="Support; KB; vbwin, vstudio">
+<META NAME="Description" CONTENT="  Visual Basic 6.0 allows you to dynamically add control to a form at run- time using the new Add method of the Controls collection. This article shows how to dynamically add intrinsic and ActiveX controls.  MORE INFORMATION  The following example dy...">
+<META NAME="Product" CONTENT="Visual Basic for Windows">
+<META NAME="Platform" CONTENT="Windows">
+<META NAME="Premium" CONTENT="support">
+<META HTTP-EQUIV="PICS-Label" CONTENT='(PICS-1.1 "http://www.rsac.org/ratingsv01.html" l gen true comment "RSACi North America Server" by "Inet@microsoft.com" for "http://support.microsoft.com" on "1998.02.17T12:28-0800" r (n 0 s 0 v 0 l 0))'>
+<!--META_END-->
+
+<META NAME="nyms" CONTENT="QAB5,QA7O,QAMN,QAPN,QAOE,QBS0,QAHV,QAH4,QBXO,QADZ,QAVX,QAVW,QBXS,QAGF,QAFF V02180118">
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" LEFTMARGIN="0" RIGHTMARGIN="0" TOPMARGIN="0">
+
+
+<!--TOOLBAR_START-->
+<A NAME="TOP"></A>
+
+<TABLE BGCOLOR="#000000" WIDTH="100%" CELLPADDING="0" CELLSPACING="0" BORDER="0">
+	<TR>
+<TD ALIGN="left" VALIGN="top" WIDTH="459"><NOBR><A HREF="http://www.microsoft.com/" TARGET="_top" onMouseOver="flipImage('/library/images/support/toolbar/home_ylw.gif', 'home_mo')" onMouseOut="flipImage('/library/images/support/toolbar/home.gif', 'home_mo')"><IMG SRC="/library/images/support/toolbar/home.gif" WIDTH="103" HEIGHT="21" NAME="home_mo" BORDER=0 ALT="Microsoft Home"></A><A HREF="http://www.microsoft.com/products/default.asp" TARGET="_top" onMouseOver="flipImage('/library/images/support/toolbar/prod_ylw.gif', 'prod_mo')" onMouseOut="flipImage('/library/images/support/toolbar/prod.gif', 'prod_mo')"><IMG SRC="/library/images/support/toolbar/prod.gif" WIDTH="81" HEIGHT="21" NAME="prod_mo" BORDER=0 ALT="Products"></A><A HREF="http://www.microsoft.com/search/default.asp?SPath=\support&SName=Support%20Online" TARGET="_top" onMouseOver="flipImage('/library/images/support/toolbar/search_ylw.gif', 'search_mo')" onMouseOut="flipImage('/library/images/support/toolbar/search.gif', 'search_mo')"><IMG SRC="/library/images/support/toolbar/search.gif" WIDTH="68" HEIGHT="21" NAME="search_mo" BORDER=0 ALT="Search"></A><A HREF="/support/default.asp?PR=ALL&T1=7d&FR=0&A=T&T=B&S=F&" TARGET="_top"><IMG SRC="/library/images/support/toolbar/support_on.gif" WIDTH="74" HEIGHT="21" BORDER=0 ALT="Support"></A><A HREF="http://www.microsoft.com/referral/default.asp" TARGET="_top" onMouseOver="flipImage('/library/images/support/toolbar/shop_ylw.gif', 'shop_mo')" onMouseOut="flipImage('/library/images/support/toolbar/shop.gif', 'shop_mo')"><IMG SRC="/library/images/support/toolbar/shop.gif" WIDTH="55" HEIGHT="21" NAME="shop_mo" BORDER=0 ALT="Shop"></A><A HREF="http://register.microsoft.com/regwiz/regwiz.asp" TARGET="_top" onMouseOver="flipImage('/library/images/support/toolbar/write_ylw.gif', 'write_mo')" onMouseOut="flipImage('/library/images/support/toolbar/write.gif', 'write_mo')"><IMG SRC="/library/images/support/toolbar/write.gif" WIDTH="78" HEIGHT="21" NAME="write_mo" BORDER=0 ALT="Write Us"></A></NOBR></TD><TD ALIGN="left" VALIGN="top" WIDTH="100%"><IMG BORDER="0" HEIGHT="21" SRC="/library/images/support/toolbar/spacer.gif" WIDTH="100%"></TD><TD ALIGN="left" VALIGN="top" WIDTH="91"><A HREF="http://www.microsoft.com/" TARGET="_top"><IMG SRC="/library/images/support/toolbar/msft.gif" WIDTH="91" HEIGHT="21" NAME="msft_mo" BORDER=0 ALT="Microsoft Home"></A></TD>
+	</TR>
+</TABLE>
+<!--TOOLBAR_END-->
+
+<!--PRODUCTBAR_START-->
+
+<SCRIPT LANGUAGE="javascript">
+	<!--
+		function flipImage(url, names)
+		{
+		if(navigator.appVersion.lastIndexOf("MSIE 3.0") == -1) document[names].src = url;
+		}
+	// -->
+</SCRIPT>
+<TABLE BGCOLOR="#FFCC00" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%">
+	<TR VALIGN="top">
+		<TD ALIGN="left" HEIGHT="80" VALIGN="top" WIDTH="126">
+			<IMG ALT="Microsoft Technical Support" BORDER="0" HEIGHT="80" ID="MSTech" SRC="/library/images/support/mtsroad.gif" WIDTH="126"><BR>
+		</TD>
+		<TD ALIGN="left" HEIGHT="80" VALIGN="top" WIDTH="199">
+			<IMG ALT="Microsoft Technical Support" BORDER="0" HEIGHT="80" ID="Support" SRC="/library/images/support/support.gif" WIDTH="199"><BR>
+		</TD>
+		<TD ALIGN="left" HEIGHT="80" VALIGN="top" WIDTH="100%">
+			<IMG BORDER="0" HEIGHT="80" ID="ProductbarSpacer" SRC="/library/images/support/ylwspacer.gif" WIDTH="100%"><BR>
+		</TD>
+	</TR>
+</TABLE>
+<TABLE BGCOLOR="#000000" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%">
+	<TR>
+		<TD>
+			<IMG HEIGHT="1" SRC="/library/images/support/line.gif" WIDTH="100%"><BR>
+		</TD>
+	</TR>
+</TABLE>
+
+<!--PRODUCTBAR_END-->
+
+<!--BUTTONBAR_START-->
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" HEIGHT="82" VALIGN="top" WIDTH="100%">
+	<TR VALIGN="top">
+		<TD VALIGN="top" WIDTH="126">
+			<A HREF="/support/default.asp?PR=ALL&T1=7d&FR=0&A=T&T=B&S=F&"><IMG ALT="Search Support Online: Search the entire collection of articles and self-help tools." BORDER="0" SRC="/library/images/support/searchso_up.gif" HEIGHT="20" NAME="SearchHome" WIDTH="126"></A><BR>
+			<A HREF="/support/glossary/default.asp?PR=ALL&T1=7d&FR=0&A=T&T=B&S=F&"><IMG ALT="Glossary: Learn computer terms and abbreviations used throughout Support Online." BORDER=0 WIDTH=126 HEIGHT=20 NAME="Glossary" SRC="/library/images/support/glossary_up.gif"></A><BR>
+			<A HREF="/support/contact/default_wrtest.asp?PR=ALL&T1=7d&FR=0&A=T&T=B&S=F&"><IMG ALT="Contact Microsoft Technical Support: Give feedback, look up phone numbers, and submit or look up Web Response incidents." BORDER="0" SRC="/library/images/support/contact_up.gif" HEIGHT="30" NAME="Contact" WIDTH="126"></A><BR>
+			
+				<IMG BORDER="0" HEIGHT="28" ID="Returnto" SRC="/library/images/support/endcap.gif" WIDTH="126">
+			
+		</TD>
+		<TD>
+<!--BUTTONBAR_END-->
+
+<!--DOCBODY_START-->
+<BR>
+<CENTER>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" VALIGN="top" WIDTH="90%">
+	<TR>
+		<TD VALIGN="top">
+			<H1>HOWTO: Dynamically Add Controls to a Form with Visual Basic 6.0</H1>
+			<P ALIGN="right">
+			<FONT FACE="verdana,arial,helvetica" SIZE="2"><B>Last reviewed: August 7, 1998</B></FONT><BR>
+			<FONT FACE="verdana,arial,helvetica" SIZE="2"><B>Article ID: Q190670</B></FONT>
+		</TD>
+	</TR>
+</TABLE>
+		</TD>
+	</TR>
+</TABLE>
+</CENTER>
+<HR width=90%>
+<CENTER>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" VALIGN="top" WIDTH="90%">
+	<TR>
+		<TD>
+			<FONT FACE="Verdana, Arial, Helvetica" SIZE=2>
+
+
+ 
+ 
+The information in this article applies to:
+
+<UL><LI>Microsoft Visual Basic Learning, Professional, and Enterprise Editions
+   for Windows, version 6.0
+</UL> 
+<P>
+<P><h2>SUMMARY</h2>
+ 
+<P>
+Visual Basic 6.0 allows you to dynamically add control to a form at run-
+time using the new Add method of the Controls collection. This article
+shows how to dynamically add intrinsic and ActiveX controls.
+<P>
+<P><h2>MORE INFORMATION</h2>
+ 
+<P>
+The following example dynamically adds two intrinsic and one ActiveX
+control to an application at run-time. The sample shows how to program the
+events of a dynamically added control. If you are dynamically adding a
+control that is not referenced in the project, you may need to add the
+control's License key to the Licenses collection. For more information on
+the Licenses collection, please see the REFERENCES section of this article.
+<P>
+When you reference properties of the dynamically-added control, you must
+use the Object keyword to access the properties of the control. If you
+don't use the Object keyword, you will only be able to access the extender
+properties of the control.
+<P>
+When an ActiveX control is dynamically added using the VBControlExtender
+object and WithEvents in the declare statement, you will need to use the
+ObjectEvent method to code all of the control's events. If you declare an
+intrinsic control WithEvents, you will get all the standard event methods
+for the type of control you declared. You can see this by adding the
+following declare statement in the Code window and then checking the Events
+dropdown for the declared variable in the Code window:
+<P>
+<PRE>   Dim WithEvents cmdMyCommand as VB.CommandButton
+
+</PRE><h3>Steps to Create Sample Project</h3>
+ 
+
+<OL><P><LI>Create a new Standard EXE project. Form1 is created by default.
+
+<P><LI>Add the following code to the code window of Form1:
+<P>
+<P><PRE>      Option Explicit
+      ' If you are adding an ActiveX control at run-time that is
+      ' not referenced in your project, you need to declare it
+      ' as VBControlExtender.
+      Dim WithEvents ctlDynamic As VBControlExtender
+      Dim WithEvents ctlText As VB.TextBox
+      Dim WithEvents ctlCommand As VB.CommandButton
+</PRE><P>
+<P><PRE>      Private Sub ctlCommand_Click()
+<PRE></PRE>        ctlText.Text = "You Clicked the Command button"
+      End Sub
+
+      Private Sub ctlDynamic_ObjectEvent(Info As EventInfo)
+      ' test for the click event of the TreeView
+        If Info.Name = "Click" Then
+          ctlText.Text = "You clicked " _
+           &amp; ctlDynamic.object.selecteditem.Text
+        End If
+      End Sub
+
+      Private Sub Form_Load()
+        Dim i As Integer
+        ' Add the license for the treeview to the license collection.
+        ' If the license is already in the collection you will get
+        ' the run-time error number 732.
+        Licenses.Add "MSComctlLib.TreeCtrl"
+        ' Dynamically add a TreeView control to the form.
+        ' If you want the control to be added to a different
+        ' container such as a Frame or PictureBox, you use the third
+        ' parameter of the Controls.Add to specify the container.
+        Set ctlDynamic = Controls.Add("MSComctlLib.TreeCtrl", _
+          "myctl", Form1)
+        ' set the location and size of the control.
+        ctlDynamic.Move 1, 1, 2500, 3500
+        ' Add some nodes to the control.
+        For i = 1 To 10
+          ctlDynamic.object.nodes.Add Key:="Test" &amp; Str(i), Text:="Test" _
+            &amp; Str(i)
+          ctlDynamic.object.nodes.Add Relative:="Test" &amp; Str(i), _
+            Relationship:=4, Text:="TestChild" &amp; Str(i)
+        Next i
+        ' Make the control visible.
+        ctlDynamic.Visible = True
+        ' add a textbox
+        Set ctlText = Controls.Add("VB.TextBox", "ctlText1", Form1)
+        ' Set the location and size of the textbox
+        ctlText.Move (ctlDynamic.Left + ctlDynamic.Width + 50), _
+          1, 2500, 100
+        ' Change the backcolor.
+        ctlText.BackColor = vbYellow
+        ' Make it visible
+        ctlText.Visible = True
+        ' Add a CommandButton.
+        Set ctlCommand = Controls.Add("VB.CommandButton", _
+          "ctlCommand1", Form1)
+        ' Set the location and size of the CommandButton.
+        ctlCommand.Move (ctlDynamic.Left + ctlDynamic.Width + 50), _
+          ctlText.Height + 50, 1500, 500
+        ' Set the caption
+        ctlCommand.Caption = "Click Me"
+        ' Make it visible
+        ctlCommand.Visible = True
+      End Sub
+
+</PRE><P><LI>Save and run the project. Try clicking the CommandButton and on
+   different Nodes in the TreeView. The TextBox will show what you click.
+<P>
+</OL><h2>REFERENCES</h2>
+ 
+<P>
+For additional information, please see the following article in the
+Microsoft Knowledge Base:
+<P>
+<PRE>   ARTICLE-ID: <B><A HREF="/support/kb/articles/Q188/5/77.asp">Q188577</A></B>
+   TITLE     : HOWTO: What is the Licenses Collection Used For?
+
+</PRE></OL>Also search On-line Help for the following topics:
+<P>
+<PRE>   Add Method (Controls Collection)
+   Add Method (Licenses Collection)
+</PRE>
+			</FONT>
+		</TD>
+	</TR>
+</TABLE>
+<P>
+<!--VOTING_START-->
+<P>
+<FORM NAME="VOTE" ACTION="/support/contentvoting/voting_idc.asp?" METHOD="POST">
+	<INPUT TYPE="hidden" NAME="KBID" VALUE="Q190670">
+	<INPUT TYPE="hidden" NAME="PROD" VALUE="Visual Basic for Windows">
+	<INPUT TYPE="hidden" NAME="KBAREA" VALUE="vbwin, vstudio">
+	<INPUT TYPE="hidden" NAME="SRV" VALUE="support.microsoft.com">
+<INPUT TYPE="hidden" NAME="URL" VALUE="/support/kb/articles/Q190/6/70.asp">
+<A NAME="VOTE">&nbsp;</A>
+<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 BGCOLOR="#FFCC00" VALIGN="top" WIDTH=396>
+<TR>
+<TD  WIDTH=396><FONT FACE="Verdana, Arial, Helvetica" SIZE=2>
+<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 BGCOLOR="#FFCC00" VALIGN="top" WIDTH=396><TR><TD>&nbsp;</TD></TR><TR><TD VALIGN="middle" COLSPAN="9"><CENTER><B><FONT SIZE="3">Did this information help answer your&nbsp;question?</FONT></B></CENTER></TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD WIDTH=15>&nbsp;</TD><TD ALIGN="right" VALIGN="middle"><INPUT TYPE="RADIO" NAME="VOTE" VALUE=1></TD><TD>&nbsp;<FONT SIZE="2"><B>Yes</B></FONT></TD><TD WIDTH=15>&nbsp;</TD><TD ALIGN="right" VALIGN="middle"><INPUT TYPE="RADIO" NAME="VOTE" VALUE=2></TD><TD>&nbsp;<FONT SIZE="2"><B>No</B></FONT></TD><TD WIDTH=15>&nbsp;</TD><TD ALIGN="right" VALIGN="middle"><INPUT TYPE="RADIO" NAME="VOTE" VALUE=3></TD><TD WIDTH=80>&nbsp;<FONT SIZE="2"><B>Didn't&nbsp;apply</B></FONT></TD></TR><TR><TD>&nbsp;</TD><TD>&nbsp;</TD></TR></TABLE><TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 BGCOLOR="#FFCC00" VALIGN="top" WIDTH=396><TR><TD><CENTER><FONT SIZE="3"><B>Please comment.</B></FONT><BR><FONT SIZE="2">Comment can be up to 255 characters.</FONT><BR><TEXTAREA WRAP="VIRTUAL" COLS=40 ID="COMMENTS" NAME="COMMENTS" ROWS=4 ONKEYPRESS="if (COMMENTS.value.length > 255) event.returnValue = false;"></TEXTAREA></CENTER></TD></TR></TABLE></TD></TR><TR><TD ALIGN="RIGHT">&nbsp;<INPUT TYPE="IMAGE" SRC="/library/images/support/v_submit.gif" ALT="Submit" WIDTH=66 HEIGHT=30 BORDER=0 ALIGN="RIGHT"></TD></TR></TABLE>
+</FONT>
+</TD>
+</TR>
+</TABLE>
+</FORM>
+
+<!--VOTING_END-->
+
+<!--DOCBODY_END-->
+
+<!--FOOTER_START-->
+<HR WIDTH="90%">
+<TABLE CELLPADDING="5" BORDER="0" WIDTH="90%">
+	<TR>
+		<TD>
+			<BLOCKQUOTE>
+				<FONT FACE="Verdana, Arial, Helvetica" SIZE="1">
+				<SPAN STYLE="font-family:verdana,arial,helvetica; font-size:8pt">
+Additional query words: kbDSupport kbDSD kbCtrlCreate kbVBp kbVBp600<BR>
+kbActiveX<BR>
+(c) Microsoft Corporation 1998. All Rights Reserved.<BR>
+Contributions by Brian Combs, Microsoft Corporation<BR>
+Platform          : WINDOWS<BR>
+Issue type        : kbhowto<BR>
+
+				</SPAN>
+				</FONT>
+				<BR>
+				<BR>
+				THE INFORMATION PROVIDED IN THE MICROSOFT KNOWLEDGE BASE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND.  MICROSOFT DISCLAIMS ALL WARRANTIES, EITHER EXPRESS OR IMPLIED, INCLUDING THE WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.  IN NO EVENT SHALL MICROSOFT CORPORATION OR ITS SUPPLIERS BE LIABLE FOR ANY DAMAGES WHATSOEVER INCLUDING DIRECT, INDIRECT, INCIDENTAL, CONSEQUENTIAL, LOSS OF BUSINESS PROFITS OR SPECIAL DAMAGES, EVEN IF MICROSOFT CORPORATION OR ITS SUPPLIERS HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.  SOME STATES DO NOT ALLOW THE EXCLUSION OR LIMITATION OF LIABILITY FOR CONSEQUENTIAL OR INCIDENTAL DAMAGES SO THE FOREGOING LIMITATION MAY NOT APPLY.
+			</BLOCKQUOTE>
+		</TD>
+	</TR>
+</TABLE>
+<CENTER>
+<P>
+<!--LAST_REVIEWED_DATE_START-->
+<FONT FACE="Verdana,Arial,Helvetica" SIZE="1">Last reviewed: August 7, 1998<BR>
+<!--LAST_REVIEWED_DATE_END-->
+<!--COPYRIGHT_START-->
+&copy; 1998 Microsoft Corporation. All rights reserved. <A HREF="/support/misc/cpyright.asp?PR=ALL&T1=7d&FR=0&A=T&T=B&S=F&" STYLE="font: bold 7pt Verdana,Arial,Helvetica">Terms of Use.</A></FONT><BR>
+<!--COPYRIGHT_END-->
+</CENTER>
+<!--FOOTER_END-->
+</BODY>
+</HTML>

@@ -1,0 +1,1 @@
+This sample uses a generic data class.  For small data sets you should use DataMode 4 - Storage with XArrayDB.

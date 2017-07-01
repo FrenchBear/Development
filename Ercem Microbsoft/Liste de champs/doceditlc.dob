@@ -1,0 +1,501 @@
+VERSION 5.00
+Begin VB.UserDocument doceditlc 
+   BackColor       =   &H00FFC0C0&
+   ClientHeight    =   5445
+   ClientLeft      =   0
+   ClientTop       =   0
+   ClientWidth     =   7395
+   BeginProperty Font 
+      Name            =   "Verdana"
+      Size            =   9
+      Charset         =   0
+      Weight          =   400
+      Underline       =   0   'False
+      Italic          =   0   'False
+      Strikethrough   =   0   'False
+   EndProperty
+   HScrollSmallChange=   225
+   KeyPreview      =   -1  'True
+   ScaleHeight     =   5445
+   ScaleWidth      =   7395
+   VScrollSmallChange=   225
+   Begin VB.CommandButton btnInfo 
+      Caption         =   "A &Propos..."
+      Height          =   375
+      Left            =   6000
+      TabIndex        =   10
+      ToolTipText     =   "Affiche des informations sur la version du programme"
+      Top             =   60
+      Width           =   1275
+   End
+   Begin VB.CommandButton btnSuite 
+      Caption         =   "&Tableau de CRA"
+      Height          =   375
+      Left            =   3240
+      TabIndex        =   6
+      ToolTipText     =   "Affiche le tableau avec la liste des colonnes sélectionnées"
+      Top             =   4680
+      Width           =   1755
+   End
+   Begin VB.CommandButton btnDescendre 
+      Caption         =   "&Descendre"
+      Height          =   375
+      Left            =   6060
+      TabIndex        =   5
+      ToolTipText     =   "Déplace la colonne sélectionnée vers la droite du tableau"
+      Top             =   4200
+      Width           =   1215
+   End
+   Begin VB.CommandButton btnMonter 
+      Caption         =   "&Monter"
+      Height          =   375
+      Left            =   4560
+      TabIndex        =   4
+      ToolTipText     =   "Déplace la colonne sélectionnée vers la gauche du tableau"
+      Top             =   4200
+      Width           =   1215
+   End
+   Begin VB.CommandButton btnRetirer 
+      Caption         =   "<< &Retirer"
+      Height          =   375
+      Left            =   2880
+      TabIndex        =   3
+      ToolTipText     =   "Retirer une colonne du tableau"
+      Top             =   3420
+      Width           =   1575
+   End
+   Begin VB.CommandButton btnAjouter 
+      Caption         =   "&Ajouter >>"
+      Height          =   375
+      Left            =   2880
+      TabIndex        =   2
+      ToolTipText     =   "Ajouter une colonne au tableau"
+      Top             =   2100
+      Width           =   1575
+   End
+   Begin VB.ListBox lstSelect 
+      Height          =   2790
+      Left            =   4560
+      TabIndex        =   1
+      Top             =   1260
+      Width           =   2700
+   End
+   Begin VB.ListBox lstChamps 
+      Height          =   2790
+      Left            =   60
+      TabIndex        =   0
+      Top             =   1260
+      Width           =   2700
+   End
+   Begin VB.Label lblSuite 
+      AutoSize        =   -1  'True
+      BackStyle       =   0  'Transparent
+      Caption         =   "Veuillez patienter, connexion en cours..."
+      BeginProperty Font 
+         Name            =   "Verdana"
+         Size            =   11.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00C00000&
+      Height          =   270
+      Left            =   60
+      TabIndex        =   16
+      Top             =   5100
+      Visible         =   0   'False
+      Width           =   4845
+   End
+   Begin VB.Label Label8 
+      BackStyle       =   0  'Transparent
+      Caption         =   "Sélectionnez un champ retenu, et retirez-le"
+      Height          =   615
+      Left            =   2880
+      TabIndex        =   15
+      Top             =   2700
+      Width           =   1590
+   End
+   Begin VB.Label Label7 
+      BackStyle       =   0  'Transparent
+      Caption         =   "Sélectionnez un champ disponible, puis  ajoutez-le"
+      Height          =   930
+      Left            =   2880
+      TabIndex        =   14
+      Top             =   1200
+      Width           =   1590
+   End
+   Begin VB.Line Line1 
+      BorderWidth     =   2
+      X1              =   60
+      X2              =   5760
+      Y1              =   420
+      Y2              =   420
+   End
+   Begin VB.Label Label6 
+      BackStyle       =   0  'Transparent
+      Caption         =   "3. Visualisez le résultat :"
+      BeginProperty Font 
+         Name            =   "Verdana"
+         Size            =   11.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00C00000&
+      Height          =   270
+      Left            =   60
+      TabIndex        =   13
+      Top             =   4740
+      Width           =   3120
+   End
+   Begin VB.Label Label5 
+      BackStyle       =   0  'Transparent
+      Caption         =   "2. Définissez l'ordre des colonnes :"
+      BeginProperty Font 
+         Name            =   "Verdana"
+         Size            =   11.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00C00000&
+      Height          =   270
+      Left            =   60
+      TabIndex        =   12
+      Top             =   4260
+      Width           =   4380
+   End
+   Begin VB.Label Label4 
+      BackStyle       =   0  'Transparent
+      Caption         =   "1. Choisissez la liste des colonnes à inclure dans le tableau"
+      BeginProperty Font 
+         Name            =   "Verdana"
+         Size            =   11.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00C00000&
+      Height          =   270
+      Left            =   60
+      TabIndex        =   11
+      Top             =   600
+      Width           =   7140
+   End
+   Begin VB.Label Label3 
+      AutoSize        =   -1  'True
+      BackStyle       =   0  'Transparent
+      Caption         =   "Éditeur de liste de colonnes"
+      BeginProperty Font 
+         Name            =   "Verdana"
+         Size            =   15.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00FF0000&
+      Height          =   375
+      Left            =   60
+      TabIndex        =   9
+      Top             =   60
+      Width           =   4860
+   End
+   Begin VB.Label Label2 
+      AutoSize        =   -1  'True
+      BackStyle       =   0  'Transparent
+      Caption         =   "C&hamps retenus :"
+      BeginProperty Font 
+         Name            =   "Verdana"
+         Size            =   9
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   210
+      Left            =   4560
+      TabIndex        =   8
+      Top             =   960
+      Width           =   1725
+   End
+   Begin VB.Label Label1 
+      AutoSize        =   -1  'True
+      BackStyle       =   0  'Transparent
+      Caption         =   "&Champs disponibles :"
+      BeginProperty Font 
+         Name            =   "Verdana"
+         Size            =   9
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   210
+      Left            =   60
+      TabIndex        =   7
+      Top             =   960
+      Width           =   2085
+   End
+   Begin VB.Menu mnuHelp 
+      Caption         =   "&?"
+      NegotiatePosition=   3  'Right
+      Begin VB.Menu cmdAPropos 
+         Caption         =   "A propos d'EditLC"
+      End
+   End
+End
+Attribute VB_Name = "doceditlc"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = True
+' docEditLC
+' Document ActiveX Éditeur de liste de champs
+' 18/11/97 PV
+' 29/10/98 PV Nouveau mécanisme de passage de paramètres (VB6/Win98)
+
+Option Explicit
+
+Const sNomApp As String = "Éditeur de liste de colonnes"
+
+' Pour éviter les ping-pong d'événements entre les deux listes
+Private bIgnore As Boolean
+
+' Paramètres transmis
+Private sColonnes As String
+Private sParamètres As String
+
+
+Private Sub btnInfo_Click()
+  frmAPropos.Show vbModal
+End Sub
+
+Private Sub btnSuite_Click()
+  Dim i As Integer
+  Dim sOrdre As String
+  
+  If lstSelect.ListCount = 0 Then
+    MsgBox "Vous ne pouvez pas afficher le tableau tant qu'il n'y a aucune colonne de retenue !", vbExclamation, sNomApp
+    Exit Sub
+  End If
+  
+  For i = 0 To lstSelect.ListCount - 1
+    sOrdre = sOrdre + Left(lstSelect.List(i), 1)
+  Next
+  btnSuite.Enabled = False
+  lblSuite.Visible = True
+  On Error GoTo Problème
+  'http://serveur.ercem.com
+  Hyperlink.NavigateTo "/cgi-bin/rechana?txtColonnes=" & sOrdre & "&" & sParamètres, , "_top"
+  Exit Sub
+  
+Problème:
+  MsgBox "Erreur lors de la navigation." & vbCrLf & vbCrLf & "err: " & Err & ": " & Error, vbExclamation, sNomApp
+  btnSuite.Enabled = True
+  lblSuite.Visible = False
+End Sub
+
+Private Sub RecupParamètres()
+  On Error GoTo Problème
+  
+  Dim d As Object, f As Object
+  Set d = Parent.Parent
+  If TypeName(d) <> "HTMLDocument" Then
+    MsgBox "Pas de paramètres, le document ActiveX n'est pas dans un frame situé dans un document HTML.", vbExclamation, sNomApp
+    btnSuite.Enabled = False
+    Exit Sub
+  End If
+  
+  sParamètres = Parent.Name
+  Dim p As Integer, p2 As Integer
+  p = InStr(1, sParamètres, "txtColonnes=")
+  p2 = InStr(p, sParamètres, "&")
+  sColonnes = Mid(sParamètres, p + 12, p2 - p - 12)
+  sParamètres = Left(sParamètres, p - 1) & Mid(sParamètres, p2 + 1)
+
+'  MsgBox "Colonnes: " & sColonnes & vbCrLf & "Paramètres: " & sParamètres
+  Exit Sub
+  
+Problème:
+  MsgBox "Erreur lors de la récupération des paramètres." & vbCrLf & vbCrLf & "err: " & Err & ": " & Error, vbExclamation, sNomApp
+End Sub
+
+
+Private Sub lstChamps_DblClick()
+  btnAjouter_Click
+End Sub
+
+Private Sub lstSelect_DblClick()
+  btnRetirer_Click
+End Sub
+
+Private Sub UserDocument_Initialize()
+  lstChamps.AddItem "A Référence"
+  lstChamps.AddItem "B N° produit"
+  lstChamps.AddItem "C Nom produit"
+  lstChamps.AddItem "D Complément Nom"
+  lstChamps.AddItem "E Observations"
+  lstChamps.AddItem "F Critère"
+  lstChamps.AddItem "G Version du critère"
+  lstChamps.AddItem "H MétaMéthode"
+  lstChamps.AddItem "I Température produit"
+  lstChamps.AddItem "J Température ambiance"
+  lstChamps.AddItem "K Température réception"
+  lstChamps.AddItem "L Date début analyse"
+  lstChamps.AddItem "M Date+Heure prélèvement"
+  lstChamps.AddItem "N Date préparation"
+  lstChamps.AddItem "O Code article"
+  lstChamps.AddItem "P Conditions de prélèvement"
+  lstChamps.AddItem "Q Conditionnement"
+  lstChamps.AddItem "R N° fabricant"
+  lstChamps.AddItem "S Nom fabricant"
+  lstChamps.AddItem "T N° distributeur"
+  lstChamps.AddItem "U Nom distributeur"
+  lstChamps.AddItem "V Date fabrication"
+  lstChamps.AddItem "W Date livraison"
+  lstChamps.AddItem "X Date conditionnement"
+  lstChamps.AddItem "Y DLC"
+  lstChamps.AddItem "Z DLUO"
+  lstChamps.AddItem "a Identification de lot"
+  lstChamps.AddItem "b Code emballeur"
+  lstChamps.AddItem "c Date de retrait"
+  lstChamps.AddItem "d Cadre de prélèvement"
+  lstChamps.AddItem "e Référence origine/client"
+  lstChamps.AddItem "f Code fabricant"
+  lstChamps.AddItem "g Unité de vente"
+  lstChamps.AddItem "h Marque"
+  lstChamps.AddItem "i Aspect à réception"
+  lstChamps.AddItem "j Date de réception"
+  lstChamps.AddItem "k Etat labo"
+  lstChamps.AddItem "l Résultats par germe"
+  lstChamps.AddItem "m N°conclusion"
+  lstChamps.AddItem "n Conclusion principale"
+  lstChamps.AddItem "o Remarques labo"
+
+  lstChamps.ListIndex = 0
+  btnRetirer.Enabled = False
+  btnMonter.Enabled = False
+  btnDescendre.Enabled = False
+End Sub
+
+
+Private Sub DoOrdre(ByVal sLettres As String)
+  Dim i As Integer, j As Integer
+  Dim c As String
+  
+  For i = 1 To Len(sLettres)
+    c = Mid(sLettres, i, 1)
+    For j = 0 To lstChamps.ListCount - 1
+      If Left(lstChamps.List(j), 1) = c Then
+        lstChamps.ListIndex = j
+        Exit For
+      End If
+    Next
+    If j = lstChamps.ListCount Then Exit Sub
+    btnAjouter_Click
+  Next
+  lstChamps.ListIndex = -1
+End Sub
+
+Private Sub lstChamps_Click()
+  If bIgnore Then Exit Sub
+  
+  bIgnore = True
+  lstSelect.ListIndex = -1
+  bIgnore = False
+  btnAjouter.Enabled = True
+  btnRetirer.Enabled = False
+  btnMonter.Enabled = False
+  btnDescendre.Enabled = False
+End Sub
+
+Private Sub btnAjouter_Click()
+  If lstChamps.ListIndex < 0 Then Exit Sub
+  
+  Dim iIndex As Integer
+  
+  lstSelect.AddItem lstChamps.Text
+  iIndex = lstChamps.ListIndex
+  lstChamps.RemoveItem iIndex
+  If lstChamps.ListCount = 0 Then
+    btnAjouter.Enabled = False
+  Else
+    If iIndex = lstChamps.ListCount Then iIndex = iIndex - 1
+    lstChamps.ListIndex = iIndex
+  End If
+End Sub
+
+Private Sub lstSelect_Click()
+  If bIgnore Then Exit Sub
+  
+  bIgnore = True
+  lstChamps.ListIndex = -1
+  bIgnore = False
+  btnAjouter.Enabled = False
+  btnRetirer.Enabled = True
+  btnMonter.Enabled = (lstSelect.ListCount > 1) And lstSelect.ListIndex > 0
+  btnDescendre.Enabled = (lstSelect.ListCount > 1) And lstSelect.ListIndex < lstSelect.ListCount - 1
+End Sub
+
+Private Sub btnRetirer_Click()
+  If lstSelect.ListIndex < 0 Then Exit Sub
+  
+  Dim iIndex As Integer
+  
+  lstChamps.AddItem lstSelect.Text
+  iIndex = lstSelect.ListIndex
+  lstSelect.RemoveItem iIndex
+  If lstSelect.ListCount = 0 Then
+    btnRetirer.Enabled = False
+  Else
+    If iIndex = lstSelect.ListCount Then iIndex = iIndex - 1
+    lstSelect.ListIndex = iIndex
+  End If
+End Sub
+
+Private Sub btnMonter_Click()
+  Dim iIndex As Integer
+  
+  iIndex = lstSelect.ListIndex
+  lstSelect.AddItem lstSelect.Text, lstSelect.ListIndex - 1
+  lstSelect.RemoveItem iIndex + 1
+  lstSelect.ListIndex = iIndex - 1
+End Sub
+
+Private Sub btnDescendre_Click()
+  Dim iIndex As Integer
+  
+  iIndex = lstSelect.ListIndex
+  lstSelect.AddItem lstSelect.Text, lstSelect.ListIndex + 2
+  lstSelect.RemoveItem iIndex
+  lstSelect.ListIndex = iIndex + 1
+End Sub
+
+Private Sub UserDocument_KeyDown(KeyCode As Integer, Shift As Integer)
+  If KeyCode = vbKeyS And Shift = (vbShiftMask Or vbCtrlMask) Then
+    Shell "sol", vbNormalFocus
+    KeyCode = 0
+  End If
+End Sub
+
+Private Sub UserDocument_Show()
+  RecupParamètres
+  DoOrdre sColonnes
+End Sub
+
+Private Sub cmdAPropos_Click()
+  frmAPropos.Show vbModal
+End Sub
+

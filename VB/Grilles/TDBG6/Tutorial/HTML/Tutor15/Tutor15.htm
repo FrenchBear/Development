@@ -1,0 +1,57 @@
+<HTML>
+<HEAD>
+<TITLE>True DBGrid Pro 6.0 (OLEDB)</TITLE>
+</HEAD>
+<BODY>
+Tutorial 15 - Creating a Grid with Fixed, Nonscrolling Columns<P>
+
+<OBJECT CLASSID="CLSID:BD96C556-65A3-11D0-983A-00C04FC29E33" ID="adcTutor" HEIGHT=1 WIDTH=1>
+	<PARAM NAME="Server" VALUE="http://passat">
+	<PARAM NAME="Connect" VALUE="DSN=TDBGDemo">
+	<PARAM NAME="SQL" VALUE="Select * From Composer">
+</OBJECT>
+<OBJECT id=tDBGrid CLASSID="clsid:0D6234D0-DBA2-11D1-B5DF-0060976089D0" WIDTH=500 HEIGHT=300>
+	<PARAM NAME="DataSource" DATASRC="#adcTutor">
+</OBJECT>
+</BODY>
+</HTML>
+<SCRIPT LANGUAGE="VBSCRIPT">
+Sub window_OnLoad()
+	' Create an additional split:
+	Dim S
+	Dim C
+	Dim Cols
+
+	Set S = tDBGrid.Splits.Add(0) 
+
+	' Hide all columns in the leftmost split, Splits(0),
+	' except for columns 0 and 1
+	Set Cols = tDBGrid.Splits.Item(0).Columns
+	For Each C In Cols
+		C.Visible = False
+	Next
+	Cols(0).Visible = True
+	Cols(1).Visible = True
+
+	' Configure Splits(0) to display exactly two columns, 
+	' and disable resizing
+	tDBGrid.Splits.Item(0).SizeMode = 2 ' dbgNumberOfColumns
+	tDBGrid.Splits.Item(0).Size = 2
+	tDBGrid.Splits.Item(0).AllowSizing = False
+
+	' Usually, if you fix columns 0 and 1 from scrolling 
+	' in a split, you will want to make them invisible in 
+	' other splits:
+	Set Cols = tDBGrid.Splits.Item(1).Columns
+	Cols(0).Visible = False
+	Cols(1).Visible = False
+
+	' Turn off the record selectors in Split 1:
+	tDBGrid.Splits.Item(1).RecordSelectors = False
+
+	' This is necessary to initialize the grid after
+	' the changes above have been made
+	tDBGrid.HoldFields
+	tDBGrid.ReBind
+End Sub
+</SCRIPT>

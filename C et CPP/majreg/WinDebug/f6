@@ -1,0 +1,201 @@
+majreg
+HKEY_CURRENT_USER\Control Panel\Cursors\Schemes\
+  3D Pointers                   REG_SZ:               C:\WIN4\cursors\arrow_1.cur,C:\WIN4\cursors\help_1.cur,C:\WIN4\cursors\wait_1.cur,C:\WIN4\cursors\busy_1.cur,C:\WIN4\cursors\cross_1.cur,C:\WIN4\cursors\beam_1.cur,C:\WIN4\cursors\pen_1.cur,C:\WIN4\cursors\no_1.cur,C:\WIN4\cursors\size4_1.cur,C:\WIN4\cursors\size3_1.cur,C:\WIN4\cursors\size2_1.cur,C:\WIN4\cursors\size1_1.cur,C:\WIN4\cursors\move_1.cur,C:\WIN4\cursors\up_1.cur
+HKEY_CURRENT_USER\Control Panel\Cursors\Schemes\
+  Windows Standard (large)      REG_SZ:               C:\WIN4\cursors\arrow_M.cur,C:\WIN4\cursors\help_M.cur,C:\WIN4\cursors\wait_M.cur,C:\WIN4\cursors\busy_M.cur,C:\WIN4\cursors\cross_M.cur,C:\WIN4\cursors\beam_M.cur,C:\WIN4\cursors\pen_M.cur,C:\WIN4\cursors\no_M.cur,C:\WIN4\cursors\size4_M.cur,C:\WIN4\cursors\size3_M.cur,C:\WIN4\cursors\size2_M.cur,C:\WIN4\cursors\size1_M.cur,C:\WIN4\cursors\move_M.cur,C:\WIN4\cursors\up_M.cur
+HKEY_CURRENT_USER\Control Panel\Cursors\Schemes\
+  Windows Stnadard (extra large)REG_SZ:               C:\WIN4\cursors\arrow_L.cur,C:\WIN4\cursors\help_L.cur,C:\WIN4\cursors\wait_L.cur,C:\WIN4\cursors\busy_L.cur,C:\WIN4\cursors\cross_L.cur,C:\WIN4\cursors\beam_L.cur,C:\WIN4\cursors\pen_L.cur,C:\WIN4\cursors\no_L.cur,C:\WIN4\cursors\size4_L.cur,C:\WIN4\cursors\size3_L.cur,C:\WIN4\cursors\size2_L.cur,C:\WIN4\cursors\size1_L.cur,C:\WIN4\cursors\move_L.cur,C:\WIN4\cursors\up_L.cur
+HKEY_CURRENT_USER\Control Panel\Cursors\Schemes\
+  Pointeurs 3D                  REG_SZ:               C:\WIN4\cursors\arrow_1.cur,C:\WIN4\cursors\help_1.cur,C:\WIN4\cursors\wait_1.cur,C:\WIN4\cursors\busy_1.cur,C:\WIN4\cursors\cross_1.cur,C:\WIN4\cursors\beam_1.cur,C:\WIN4\cursors\pen_1.cur,C:\WIN4\cursors\no_1.cur,C:\WIN4\cursors\size4_1.cur,C:\WIN4\cursors\size3_1.cur,C:\WIN4\cursors\size2_1.cur,C:\WIN4\cursors\size1_1.cur,C:\WIN4\cursors\move_1.cur,C:\WIN4\cursors\up_1.cur
+HKEY_CURRENT_USER\Control Panel\Cursors\Schemes\
+  Windows Standard (grande policREG_SZ:               C:\WIN4\cursors\arrow_M.cur,C:\WIN4\cursors\help_M.cur,C:\WIN4\cursors\wait_M.cur,C:\WIN4\cursors\busy_M.cur,C:\WIN4\cursors\cross_M.cur,C:\WIN4\cursors\beam_M.cur,C:\WIN4\cursors\pen_M.cur,C:\WIN4\cursors\no_M.cur,C:\WIN4\cursors\size4_M.cur,C:\WIN4\cursors\size3_M.cur,C:\WIN4\cursors\size2_M.cur,C:\WIN4\cursors\size1_M.cur,C:\WIN4\cursors\move_M.cur,C:\WIN4\cursors\up_M.cur
+HKEY_CURRENT_USER\Control Panel\Cursors\Schemes\
+  Windows Standard (très grande REG_SZ:               C:\WIN4\cursors\arrow_L.cur,C:\WIN4\cursors\help_L.cur,C:\WIN4\cursors\wait_L.cur,C:\WIN4\cursors\busy_L.cur,C:\WIN4\cursors\cross_L.cur,C:\WIN4\cursors\beam_L.cur,C:\WIN4\cursors\pen_L.cur,C:\WIN4\cursors\no_L.cur,C:\WIN4\cursors\size4_L.cur,C:\WIN4\cursors\size3_L.cur,C:\WIN4\cursors\size2_L.cur,C:\WIN4\cursors\size1_L.cur,C:\WIN4\cursors\move_L.cur,C:\WIN4\cursors\up_L.cur
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\.Default\.Default\
+                                REG_SZ:               C:\WIN4\media\ding.wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\.Default\.Current\
+                                REG_SZ:               C:\WIN4\media\Son Nature par défaut .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\.Default\Musica0\
+                                REG_SZ:               C:\WIN4\media\Son Musica par défaut .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\.Default\Nature0\
+                                REG_SZ:               C:\WIN4\media\Son Nature par défaut .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\.Default\Robotz0\
+                                REG_SZ:               C:\WIN4\media\Son Robotz par défaut.wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\.Default\Utopia0\
+                                REG_SZ:               C:\WIN4\media\Son Utopia par défaut .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemStart\.Default\
+                                REG_SZ:               C:\WIN4\media\tada.wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemStart\.Current\
+                                REG_SZ:               C:\WIN4\media\Son Nature démarrage de Windows  .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemStart\Musica0\
+                                REG_SZ:               C:\WIN4\media\Son Musica démarrage de Windows .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemStart\Nature0\
+                                REG_SZ:               C:\WIN4\media\Son Nature démarrage de Windows  .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemStart\Robotz0\
+                                REG_SZ:               C:\WIN4\media\Son Robotz démarrage de Windows .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemStart\Utopia0\
+                                REG_SZ:               C:\WIN4\media\Son Utopia démarrage de Windows .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemExit\.Default\
+                                REG_SZ:               C:\WIN4\media\tada.wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemExit\.Current\
+                                REG_SZ:               C:\WIN4\media\Son Nature sortie de Windows .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemExit\Musica0\
+                                REG_SZ:               C:\WIN4\media\Son Musica sortie de Windows .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemExit\Nature0\
+                                REG_SZ:               C:\WIN4\media\Son Nature sortie de Windows .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemExit\Robotz0\
+                                REG_SZ:               C:\WIN4\media\Son Robotz sortie de Windows .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemExit\Utopia0\
+                                REG_SZ:               C:\WIN4\media\Son Utopia sortie de Windows .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemHand\.Default\
+                                REG_SZ:               C:\WIN4\media\chord.wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemHand\.Current\
+                                REG_SZ:               C:\WIN4\media\Son Nature arrêt critique .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemHand\Musica0\
+                                REG_SZ:               C:\WIN4\media\Son Musica arrêt critique .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemHand\Nature0\
+                                REG_SZ:               C:\WIN4\media\Son Nature arrêt critique .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemHand\Robotz0\
+                                REG_SZ:               C:\WIN4\media\Son Robotz arrêt critique .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemHand\Utopia0\
+                                REG_SZ:               C:\WIN4\media\Son Utopia arrêt critique .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemQuestion\.Default\
+                                REG_SZ:               C:\WIN4\media\chord.wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemQuestion\.Current\
+                                REG_SZ:               C:\WIN4\media\Son Nature question .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemQuestion\Musica0\
+                                REG_SZ:               C:\WIN4\media\Son Musica question .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemQuestion\Nature0\
+                                REG_SZ:               C:\WIN4\media\Son Nature question .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemQuestion\Robotz0\
+                                REG_SZ:               C:\WIN4\media\Son Robotz question.wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemQuestion\Utopia0\
+                                REG_SZ:               C:\WIN4\media\Son Utopia question .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemExclamation\.Default\
+                                REG_SZ:               C:\WIN4\media\chord.wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemExclamation\.Current\
+                                REG_SZ:               C:\WIN4\media\Son Nature exclamation.wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemExclamation\Musica0\
+                                REG_SZ:               C:\WIN4\media\Son Musica exclamation .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemExclamation\Nature0\
+                                REG_SZ:               C:\WIN4\media\Son Nature exclamation.wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemExclamation\Robotz0\
+                                REG_SZ:               C:\WIN4\media\Son Robotz exclamation.wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemExclamation\Utopia0\
+                                REG_SZ:               C:\WIN4\media\Son Utopia exclamation .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemAsterisk\.Default\
+                                REG_SZ:               C:\WIN4\media\chord.wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemAsterisk\.Current\
+                                REG_SZ:               C:\WIN4\media\Son Nature astérisque.wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemAsterisk\Musica0\
+                                REG_SZ:               C:\WIN4\media\Son Musica astérisque .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemAsterisk\Nature0\
+                                REG_SZ:               C:\WIN4\media\Son Nature astérisque.wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemAsterisk\Robotz0\
+                                REG_SZ:               C:\WIN4\media\Son Robotz astérisque.wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemAsterisk\Utopia0\
+                                REG_SZ:               C:\WIN4\media\Son Utopia astérisque .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\Open\.Current\
+                                REG_SZ:               C:\WIN4\media\Son Nature ouvrir.wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\Open\Musica0\
+                                REG_SZ:               C:\WIN4\media\Son Musica ouvrir .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\Open\Nature0\
+                                REG_SZ:               C:\WIN4\media\Son Nature ouvrir.wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\Open\Robotz0\
+                                REG_SZ:               C:\WIN4\media\Son Robotz ouvrir.wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\Open\Utopia0\
+                                REG_SZ:               C:\WIN4\media\Son Utopia ouvrir .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\Close\.Current\
+                                REG_SZ:               C:\WIN4\media\Son Nature fermeture.wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\Close\Musica0\
+                                REG_SZ:               C:\WIN4\media\Son Musica fermer .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\Close\Nature0\
+                                REG_SZ:               C:\WIN4\media\Son Nature fermeture.wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\Close\Robotz0\
+                                REG_SZ:               C:\WIN4\media\Son Robotz fermer.wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\Close\Utopia0\
+                                REG_SZ:               C:\WIN4\media\Son Utopia fermer .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\Maximize\.Current\
+                                REG_SZ:               C:\WIN4\media\Son Nature maximiser.wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\Maximize\Musica0\
+                                REG_SZ:               C:\WIN4\media\Son Musica maximiser .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\Maximize\Nature0\
+                                REG_SZ:               C:\WIN4\media\Son Nature maximiser.wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\Maximize\Robotz0\
+                                REG_SZ:               C:\WIN4\media\Son Robotz maximiser.wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\Maximize\Utopia0\
+                                REG_SZ:               C:\WIN4\media\Son Utopia maximiser .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\Minimize\.Current\
+                                REG_SZ:               C:\WIN4\media\Son Nature minimiser .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\Minimize\Musica0\
+                                REG_SZ:               C:\WIN4\media\Son Musica minimiser .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\Minimize\Nature0\
+                                REG_SZ:               C:\WIN4\media\Son Nature minimiser .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\Minimize\Robotz0\
+                                REG_SZ:               C:\WIN4\media\Son Robotz minimiser.wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\Minimize\Utopia0\
+                                REG_SZ:               C:\WIN4\media\Son Utopia minimiser .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\RestoreDown\.Current\
+                                REG_SZ:               C:\WIN4\media\Son Nature niveau inférieur .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\RestoreDown\Musica0\
+                                REG_SZ:               C:\WIN4\media\Son Musica niveau inférieur.wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\RestoreDown\Nature0\
+                                REG_SZ:               C:\WIN4\media\Son Nature niveau inférieur .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\RestoreDown\Robotz0\
+                                REG_SZ:               C:\WIN4\media\Son Robotz niveau inférieur.wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\RestoreDown\Utopia0\
+                                REG_SZ:               C:\WIN4\media\Son Utopia niveau inférieur .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\RestoreUp\.Current\
+                                REG_SZ:               C:\WIN4\media\Son Nature niveau inférieur .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\RestoreUp\Musica0\
+                                REG_SZ:               C:\WIN4\media\Son Musica niveau supérieur .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\RestoreUp\Nature0\
+                                REG_SZ:               C:\WIN4\media\Son Nature niveau inférieur .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\RestoreUp\Robotz0\
+                                REG_SZ:               C:\WIN4\media\Son Robotz niveau supérieur .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\RestoreUp\Utopia0\
+                                REG_SZ:               C:\WIN4\media\Son Utopia niveau supérieur .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\AppGPFault\.Current\
+                                REG_SZ:               C:\WIN4\media\Son Nature erreur .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\AppGPFault\Musica0\
+                                REG_SZ:               C:\WIN4\media\Son Musica erreur .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\AppGPFault\Nature0\
+                                REG_SZ:               C:\WIN4\media\Son Nature erreur .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\AppGPFault\Robotz0\
+                                REG_SZ:               C:\WIN4\media\Son Robotz erreur.wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\AppGPFault\Utopia0\
+                                REG_SZ:               C:\WIN4\media\Son Utopia erreur .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\MenuCommand\.Current\
+                                REG_SZ:               C:\WIN4\media\Son Nature commande menu .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\MenuCommand\Musica0\
+                                REG_SZ:               C:\WIN4\media\Son Musica commande menu .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\MenuCommand\Nature0\
+                                REG_SZ:               C:\WIN4\media\Son Nature commande menu .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\MenuCommand\Robotz0\
+                                REG_SZ:               C:\WIN4\media\Son Robotz commande menu .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\MenuCommand\Utopia0\
+                                REG_SZ:               C:\WIN4\media\Son Utopia commande menu .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\MenuPopup\.Current\
+                                REG_SZ:               C:\WIN4\media\Son Nature menu automatique .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\MenuPopup\Musica0\
+                                REG_SZ:               C:\WIN4\media\Son Musica menu automatique .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\MenuPopup\Nature0\
+                                REG_SZ:               C:\WIN4\media\Son Nature menu automatique .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\MenuPopup\Robotz0\
+                                REG_SZ:               C:\WIN4\media\Son Robotz menu automatique .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\MenuPopup\Utopia0\
+                                REG_SZ:               C:\WIN4\media\Son Utopia menu automatique .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\MailBeep\.Default\
+                                REG_SZ:               C:\WIN4\media\ding.wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\Explorer\EmptyRecycleBin\.Default\
+                                REG_SZ:               C:\WIN4\media\ding.wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\Explorer\EmptyRecycleBin\.Current\
+                                REG_SZ:               C:\WIN4\media\Son Nature corbeille .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\Explorer\EmptyRecycleBin\Musica0\
+                                REG_SZ:               C:\WIN4\media\Son Musica corbeille.wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\Explorer\EmptyRecycleBin\Nature0\
+                                REG_SZ:               C:\WIN4\media\Son Nature corbeille .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\Explorer\EmptyRecycleBin\Robotz0\
+                                REG_SZ:               C:\WIN4\media\Son Robotz corbeille .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\Explorer\EmptyRecycleBin\Utopia0\
+                                REG_SZ:               C:\WIN4\media\Son Utopia corbeille.wav

@@ -1,0 +1,12 @@
+
+CFLAGS	= 
+LDFLAGS	= -ltinfo
+SHELL	= /bin/sh
+BIBERC	= ../../lib/biberc/biberc.a
+
+make:	ffgrep
+
+ffgrep: ffgrep.c
+	cc $(CFLAGS) $(LDFLAGS) ffgrep.c $(BIBERC) -o ffgrep
+
+

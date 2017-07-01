@@ -1,0 +1,571 @@
+<html>
+
+<head>
+<title>Appointment book</title>
+</head>
+
+<body>
+
+<table>
+    <tr>
+        <td width="65%">
+		<object id="tDBGrid" classid="clsid:0D6234D0-DBA2-11D1-B5DF-0060976089D0"
+		        align="baseline" border="0" width="510" height="360">
+		</object>
+        </td>
+        <td width="35%">
+		<font size="4"><strong>Select the appointment type for this entry:
+		</strong></font><p>
+		<input type="radio" name="btnApptType" value="Phone" id="btnPhone">
+			<em>Phone</em> <br>
+	        <input type="radio" name="btnApptType" value="Meeting" id="btnMeeting">
+			<em>Meeting</em><br>
+	        <input type="radio" name="btnApptType" value="Travel" id="btnTravel">
+			<em>Travel</em><br>
+	        <input type="radio" name="btnApptType" value="Lunch" id="btnLunch">
+			<em>Lunch</em><br>
+	        <br>
+        	</p>
+	        <p><font size="4"><strong>Extended information on this appointment:
+		</strong></font></p>
+	        <p><em>Appointment type:</em><br>
+		<input type="text" size="20" name="txtAppttype"><br>
+	        <em>Time of the appointment:</em><br>
+		<input type="text" size="20" name="txtAppttime"><br>
+	        <em>Comments: </em><font color="#000000"><br>
+		<input type="text" size="20" name="txtAppttext"></font><br>
+		<BUTTON ID="btnSave">Save</BUTTON> </p>
+        </td>
+    </tr>
+</table>
+
+<script language="VBSCRIPT">
+Dim ApptTimes(19)
+Dim ApptInfo(4, 19)
+
+Dim rowMax
+Dim ApptStyle
+Dim Initialized
+
+Dim GridCols(5)
+
+Sub window_OnLoad()
+' The initialization code for the grid. Since design time property
+' pages of the grid are unavailable, all initialization has to be
+' done manually.
+
+	Dim I, T
+
+	' Clear the grid
+	For I = 1 to tDBGrid.Columns.Count
+		tDBGrid.Columns.Remove(0)
+	Next
+
+	tDBGrid.Caption = "This week's appointments"
+
+	' Fill the grid with columns and set their properties
+	Set GridCols(0) = tDBGrid.Columns.Add(0)
+	GridCols(0).Caption = "Time"
+	GridCols(0).Width = 60
+	GridCols(0).HeadAlignment = 2   'dbgCenter
+	GridCols(0).Alignment = 2   'dbgCenter
+	GridCols(0).AllowFocus = False
+	GridCols(0).Visible = True
+	Set GridCols(1) = tDBGrid.Columns.Add(1)
+	GridCols(1).Caption = "Monday"
+	GridCols(1).Width = 80
+	GridCols(1).HeadAlignment = 2   'dbgCenter
+	FillValueItems(GridCols(1))
+	GridCols(1).Visible = True
+	Set GridCols(2) = tDBGrid.Columns.Add(2)
+	GridCols(2).Caption = "Tuesday"
+	GridCols(2).Width = 80
+	GridCols(2).HeadAlignment = 2   'dbgCenter
+	FillValueItems(GridCols(2))
+	GridCols(2).Visible = True
+	Set GridCols(3) = tDBGrid.Columns.Add(3)
+	GridCols(3).Caption = "Wednesday"
+	GridCols(3).Width = 80
+	GridCols(3).HeadAlignment = 2   'dbgCenter
+	FillValueItems(GridCols(3))
+	GridCols(3).Visible = True
+	Set GridCols(4) = tDBGrid.Columns.Add(4)
+	GridCols(4).Caption = "Thursday"
+	GridCols(4).Width = 80
+	GridCols(4).HeadAlignment = 2   'dbgCenter
+	FillValueItems(GridCols(4))
+	GridCols(4).Visible = True
+	Set GridCols(5) = tDBGrid.Columns.Add(5)
+	GridCols(5).Caption = "Friday"
+	GridCols(5).Width = 80
+	GridCols(5).HeadAlignment = 2   'dbgCenter
+	FillValueItems(GridCols(5))
+	GridCols(5).Visible = True
+
+	' Fill the ApptTimes array with values
+	T = TimeValue("08:00")
+	For I = 0 To 18
+		ApptTimes(I) = FormatDateTime(T, vbShortTime)
+		T = T + TimeValue("00:30")
+	Next
+
+	' Set ambient properties
+	rowMax = 19
+
+	tDBGrid.BackColor = &H80FFFF   ' A faint yellow
+	GridCols(0).BackColor = &HC0C0C0   ' Window gray
+	GridCols(0).Locked = True
+
+	for I = 1 to 5
+		tDBGrid.Columns.Item(I).FetchStyle = True
+		tDBGrid.Columns.Item(I).Width = 80
+	Next
+
+	tDBGrid.ScrollBars = 0   'dbgNone
+
+	tDBGrid.Styles.Item("Normal").Font.Name = "Tahoma"
+	tDBGrid.Styles.Item("Normal").Font.Bold = True
+	tDBGrid.Styles.Item("Normal").Font.Size = 8
+	tDBGrid.RowHeight = 17
+	tDBGrid.ExtendRightColumn = True
+	tDBGrid.MarqueeStyle = 2
+
+	tDBGrid.DataMode = 2   'dbgUnboundEx
+	
+	Initialized = True
+End Sub
+
+Sub btnPhone_OnClick()
+	ApptInfo(tDBGrid.Col - 1, FindRowNum(GridCols(0).Text)) = "Phone: " 
+	GridCols(tDBGrid.Col).Text = "Phone: "
+	ApptEdit
+End Sub
+
+Sub btnMeeting_OnClick()
+	ApptInfo(tDBGrid.Col - 1, FindRowNum(GridCols(0).Text)) = "Meeting: " 
+	GridCols(tDBGrid.Col).Text = "Meeting: "
+	ApptEdit
+End Sub
+
+Sub btnTravel_OnClick()
+	ApptInfo(tDBGrid.Col - 1, FindRowNum(GridCols(0).Text)) = "Travel: " 
+	GridCols(tDBGrid.Col).Text = "Travel: "
+	ApptEdit
+End Sub
+
+Sub btnLunch_OnClick()
+	ApptInfo(tDBGrid.Col - 1, FindRowNum(GridCols(0).Text)) = "Lunch: " 
+	GridCols(tDBGrid.Col).Text = "Lunch: "
+	ApptEdit
+End Sub
+
+Sub btnSave_OnClick()
+' Save the data from the editing area to the grid
+
+	Dim aText, colonPos
+	Dim tempCol, tempText
+
+	tDBGrid.Update
+
+	tempCol = tDBGrid.Col
+
+	aText = ExtractApptType(GridCols(tDBGrid.Col).Text, colonPos)
+
+	If aText = "" then
+		If txtApptType.Value <> "" then
+			tempText = txtApptType.Value  & ":"
+			If ValidateAppt(tempText) then
+				aText = Left(tempText, InStr(tempText, ":") - 1)
+			End If
+		Else
+			aText = ""
+		End If
+	End If
+
+	If aText = "" Then
+		MsgBox "No appointment specified"
+		Exit Sub
+	End If
+
+	ApptInfo(tDBGrid.Col - 1, FindRowNum(GridCols(0).Text)) = aText & ": " & txtApptText.Value
+	' We have to use ReBind here, and not Refresh, because the current cell
+	' might have been modified, but not saved. We need to cancel that
+	' modification, and ReBind will cancel it whereas Refresh will not.
+	tDBGrid.ReBind
+	tDBGrid.Col = tempCol
+End Sub
+
+Sub tDBGrid_RowColChange(LastRow, LastCol)
+' Fire ApptEdit only after the window has loaded
+
+	If Initialized then ApptEdit
+End Sub
+
+Sub tDBGrid_BeforeColUpdate(ColIndex, OldValue, Cancel)
+	Dim ColText
+	ColText = GridCols(ColIndex).Text
+	If Not ValidateAppt(ColText) Then
+		MsgBox "Incorrect appointment type or no colon at end of appointment type"
+		Cancel = True
+		Exit Sub
+	End If
+	GridCols(ColIndex).Text = ColText
+End Sub
+
+Sub tDBGrid_AfterColEdit(ColIndex)
+' Update the editing area if a ValueItem has been selected or
+' the user changed the cell's content manually
+
+	If Initialized then ApptEdit
+End Sub
+
+Sub tDBGrid_UnboundReadDataEx(RowBuf, StartLocation, Offset, ApproximatePosition)
+' UnboundReadData is fired by an unbound grid whenever
+' it requires data for display.  This event will fire
+' when the grid is first shown, when Refresh or ReBind
+' is used, when the grid is scrolled, and after a
+' record in the grid is modified and the user commits
+' the change by moving off of the current row.  The
+' grid fetches data in "chunks", and the number of rows
+' the grid is asking for is given by RowBuf.RowCount.
+   
+' RowBuf is the row buffer where you place the data
+' the bookmarks for the rows that the grid is
+' requesting to display.  It will also hold the number
+' of rows that were successfully supplied to the grid.
+   
+' StartLocation is a bookmark which, together with
+' Offset, specifies the row for the programmer to start
+' transferring data.  A StartLocation of Null indicates
+' a request for data from BOF or EOF.
+   
+' Offset specifies the relative position (from
+' StartLocation) of the row for the programmer to start
+' transferring data.  A positive number indicates a
+' forward relative position while a negative number
+' indicates a backward relative position.  Regardless
+' of whether the rows to be read are before or after
+' StartLocation, rows are always fetched going forward
+' (this is why there is no ReadPriorRows parameter to
+' the procedure).
+   
+' If you page down on the grid, for instance, the new
+' top row of the grid will have an index greater than
+' the StartLocation (Offset > 0).  If you page up on
+' the grid, the new index is less than that of
+' StartLocation, so Offset < 0.  If StartLocation is
+' a bookmark to row N, the grid always asks for row
+' data in the following order:
+'   (N + Offset), (N + Offset + 1), (N + Offset + 2)...
+   
+' ApproximatePosition is a value you can set to indicate
+' the ordinal position of (StartLocation + Offset).
+' Setting this variable will enhance the ability of the
+' grid to display its vertical scroll bar accurately.
+' If the exact ordinal position of the new location is
+' not known, you can set it to a reasonable,
+' approximate value, or just ignore this parameter.
+
+	Dim RowsFetched, I
+	Dim ColIndex, J
+	Dim Bookmark
+
+	RowsFetched = 0
+
+	For I = 0 To RowBuf.RowCount - 1
+	        ' Get the bookmark of the next available row
+		Bookmark = GetRelativeBookmark(StartLocation, Offset + I)
+ 
+	        ' If the next row is BOF or EOF, then stop fetching
+        	' and return any rows fetched up to this point.
+		If IsNull(Bookmark) Then Exit For
+    
+	        ' Place the record data into the row buffer
+		For J = 0 To RowBuf.ColumnCount - 1
+			ColIndex = RowBuf.ColumnIndex(I, J)
+			RowBuf.Value(I, J) = GetUserData(Bookmark, ColIndex)
+		Next
+    
+	        ' Set the bookmark for the row
+		RowBuf.Bookmark(I) = Bookmark
+		RowsFetched = RowsFetched + 1
+	Next
+
+	' Tell the grid how many rows were fetched
+	RowBuf.RowCount = RowsFetched
+End Sub
+
+Sub tDBGrid_UnboundWriteData(RowBuf, WriteLocation)
+' UnboundWriteData event is fired when the user
+' modifies an existing row within an unbound grid and
+' attempts to commit the changes by moving to another
+' row or calling the Update method of the grid.  This
+' notifies the program that data has changed in the
+' grid and it needs to be stored in the data source.
+
+' RowBuf is the row buffer from which you retrieve the
+' data to be stored in the data source.  Since only
+' one row can be updated at a time, RowBuf.RowCount
+' always equals 1.  If a particular column in the row
+' has not been changed, its element in the RowBuf.Value
+' array will be null.
+
+' WriteLocation is a bookmark that identifies the row
+' to be updated.
+
+' Assume that a function StoreUserData(bookmark, col,
+' value) takes a row bookmark, a column index, and a
+' variant with the appropriate data to be stored in
+' an array or database.  The function returns True if
+' the data is acceptable and can be stored, False
+' otherwise.
+
+	Dim I
+	' Loop over all the columns of the row, storing
+	' non-Null values
+	For I = 0 To RowBuf.ColumnCount - 1
+		If Not IsNull(RowBuf.Value(0, i)) Then
+			If Not StoreUserData(WriteLocation, i, RowBuf.Value(0, i)) Then
+				RowBuf.RowCount = 0   ' Update failed
+			End If
+		End If
+	Next
+End Sub
+
+Sub ApptEdit()
+' Update the editing area with the current information from the grid
+
+	Dim aText, colonPos
+
+	aText = ExtractApptType(GridCols(tDBGrid.Col).Text, colonPos)
+
+	' The colon determines if there is an appointment
+	If aText = "" Then
+		' No appointment - clear editing area
+		txtApptText.Value = ""
+		txtApptTime.Value = GridCols(0).Text
+		txtApptType.Value = ""
+		btnPhone.Checked = False
+		btnMeeting.Checked = False
+		btnTravel.Checked = False
+		btnLunch.Checked = False
+	Else
+		' An appointment - fill the editing area
+		txtApptType.Value = aText
+		txtApptText.Value = Mid(GridCols(tDBGrid.Col).Text, colonPos + 2)
+		txtApptTime.Value = GridCols(0).Text
+		If not NeedsReBind Then 
+			Select Case aText
+				Case "Phone"
+					btnPhone.Checked = True
+				Case "Meeting"
+					btnMeeting.Checked = True
+				Case "Travel"
+					btnTravel.Checked = True
+				Case "Lunch"
+					btnLunch.Checked = True
+			End Select
+		End If
+	End If
+End Sub
+
+Function StoreUserData(Bookmark, Col, Userval)
+' StoreUserData is called from UnboundWriteData to
+' write the newly changed information in the grid to
+' the array.  This function is called once for each
+' field that needs to be stored.  The grid cell that
+' this function is called to store is referenced in
+' the same way as in GetUserData.
+
+	Dim Index
+
+	' Figure out which row the bookmark refers to
+	Index = IndexFromBookmark(Bookmark, 0)
+
+	If Index < 0 Or Index >= rowMax Then
+		' Cell position is invalid, so return false
+		' to indicate failure
+		StoreUserData = False
+	Else
+		StoreUserData = True
+		If Col = 0 Then
+			ApptTimes(Index) = Userval
+		Else
+			ApptInfo(Col - 1, Index) = Userval
+		End If
+	End If
+End Function
+
+Function GetRelativeBookmark(Bookmark, Offset)
+' GetRelativeBookmark is used to get a bookmark for a
+' row that is a specified number of rows away from the
+' given row.  Offset specifies the number of rows to
+' move.  A positive Offset indicates that the desired
+' row is after the one referred to by Bookmark, and a
+' negative Offset means it is before the one referred
+' to by Bookmark.
+
+	Dim Index
+
+	' Compute the row index for the desired row
+	Index = IndexFromBookmark(Bookmark, Offset)
+
+	If Index < 0 Or Index >= rowMax Then
+		' Index refers to a row before the first or after
+		' the last, so just return Null.
+		GetRelativeBookmark = Null
+	Else
+		GetRelativeBookmark = Index
+	End If
+End Function
+
+Function GetUserData(Bookmark, Col)
+' In this example, GetUserData is called by
+' UnboundReadData to ask the user what data should be
+' displayed in a specific cell in the grid.  The grid
+' row the cell is in is the one referred to by the
+' Bookmark parameter, and the column it is in it given
+' by the Col parameter.  GetUserData is called on a
+' cell-by-cell basis.
+
+	Dim Index
+
+	' Figure out which row the bookmark refers to
+	Index = IndexFromBookmark(Bookmark, 0)
+
+	If Index < 0 Or Index >= rowMax Then
+		' Cell position is invalid, so just return null to
+		' indicate failure
+		GetUserData = Null
+	Else
+		If Col = 0 Then
+			GetUserData = ApptTimes(Index)
+		Else
+			GetUserData = ApptInfo(Col - 1, Index)
+		End If
+	End If
+End Function
+
+Function IndexFromBookmark(Bookmark, Offset)
+' This support function is used only by the remaining
+' support functions.  It is not used directly by the
+' unbound events.
+
+' IndexFromBookmark computes the row index that
+' corresponds to a row that is (Offset) rows from the
+' row specified by the Bookmark parameter.  For example,
+' if Bookmark refers to the index 50 of the dataset
+' array and Offset = -10, then IndexFromBookmark will
+' return 50 + (-10), or 40.  Thus to get the index of
+' the row specified by the bookmark itself, call
+' IndexFromBookmark with an Offset of 0.  If the given
+' Bookmark is Null, it refers to BOF or EOF.  If
+' Offset < 0, the grid is requesting rows before the
+' row specified by Bookmark, and so we must be at EOF
+' because prior rows do not exist for BOF.  Conversely,
+' if Offset > 0, we are at BOF.
+
+	Dim Index
+
+	Index = -1
+
+	If IsNull(Bookmark) Then
+		If Offset <= 0 Then
+			' Bookmark refers to EOF.
+			Index = rowMax + Offset
+		Else
+			' Bookmark refers to BOF.
+			Index = Offset - 1
+		End If
+	Else
+		Index = Bookmark + Offset
+	End If
+
+	' Check to see if the row index is valid:
+	' If not, set it to BOF or EOF.
+	If Index < 0 Then
+		IndexFromBookmark = -1
+	Else If Index >= rowMax Then
+		IndexFromBookmark = rowMax
+             Else
+		IndexFromBookmark = Index
+	     End If	         
+	End If
+End Function
+
+Function FindRowNum(ColTime)
+' This function finds the number of a row in the grid. It does so
+' by getting the time that that row refers to and searching in
+' ApptTimes for it.
+
+	Dim colonPos
+	Dim TimeValue
+	Dim I
+
+	' Extract the integer value of the time by extracting the colon
+	colonPos = InStr(ColTime, ":")
+	TimeValue = Left(ColTime, colonPos - 1) & Mid(ColTime, colonPos)
+
+	' Find the index of the time given and return it
+	For I = 0 To rowMax - 1
+		If ApptTimes(I) = TimeValue Then
+			FindRowNum = I
+		End If
+	Next
+End Function
+
+Sub FillValueItems(Col)
+' This is used to fill the ValueItems collection of a given column
+
+	Dim I
+	for I = 0 to 3
+		Col.ValueItems.Add(CreateObject("TrueOleDBGrid60.ValueItem"))
+	next
+	Col.ValueItems.Item(0).Value = "Phone: "
+	Col.ValueItems.Item(1).Value = "Meeting: "
+	Col.ValueItems.Item(2).Value = "Travel: "
+	Col.ValueItems.Item(3).Value = "Lunch: "
+	Col.ValueItems.Presentation = 2
+End Sub
+
+Function ExtractApptType(ExtractText, colonPos)
+' This procedure extracts the appointment type from a string given
+' to it in the ExtractText parameter
+
+	colonPos = InStr(ExtractText, ":")
+
+	' If no colon, there is no appointment
+	If colonPos = 0 then
+		ExtractApptType = ""
+	Else
+		ExtractApptType = Left(ExtractText, colonPos - 1)
+	End If
+End Function
+
+Function ValidateAppt(ApptText)
+' Check that the typed in appointment type is correct and set the proper 
+' letter case
+
+	Dim aText, colonPos
+	ValidateAppt = True
+	aText = ExtractApptType(ApptText, colonPos)
+	Select Case aText
+		Case "Phone"
+		Case "phone"
+			ApptText = "P" & Right(ApptText, Len(ApptText) - 1)
+		Case "Meeting"
+		Case "meeting"
+			ApptText = "M" & Right(ApptText, Len(ApptText) - 1)
+		Case "Travel"
+		Case "travel"
+			ApptText = "T" & Right(ApptText, Len(ApptText) - 1)
+		Case "Lunch"
+		Case "lunch"
+			ApptText = "L" & Right(ApptText, Len(ApptText) - 1)
+		Case Else
+			ValidateAppt = False
+	End Select
+End Function
+</script>
+</body>
+</html>

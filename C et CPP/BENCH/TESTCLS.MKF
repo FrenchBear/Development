@@ -1,0 +1,15 @@
+
+# makefile de testcls
+
+.c.obj:
+	cc -c $*.c
+
+
+testcls.obj:	testcls.c
+
+chorl.obj:	chorl.c
+
+testcls.exe:	testcls.obj chorl.obj
+		link $**;
+
+

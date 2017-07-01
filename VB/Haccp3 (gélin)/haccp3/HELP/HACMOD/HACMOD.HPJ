@@ -1,0 +1,42 @@
+[OPTIONS]
+Contents=Sommaire
+
+[FILES]
+f:\real\haccp\help\hacmod\texte1.rtf
+[BITMAPS]
+E:\AIDEDIT\rondn.bmp
+
+[MAP]
+Sommaire 25
+Menus	1
+MenuFichier	2
+OngletGeneral	9
+Onglets	4
+DefRepertoire	5
+FenImpression	6
+FenChoixRep	87
+DefFenOnglet	8
+MenuAffichage	3
+OngletTextes	10
+OngletSuggestions	11
+OngletNaturesSpecificites	12
+OngletPertinenceDangers	13
+OngletCriticiteDangers	14
+DefModuleActif	15
+MenuFenetre	16
+MenuAide	17
+GenerationAide	18
+Fenetres	19
+FenAPropos	20
+DistributionModule	21
+Methodologie	22
+CreationModule	23
+CompleterModule	24
+
+[CONFIG]
+
+[BUILDTAGS]
+
+[WINDOWS]
+
+

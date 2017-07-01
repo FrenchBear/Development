@@ -1,0 +1,43 @@
+[Divers]
+Titre=Ercem consultants [PV]
+logo=ercemc.bmp
+Aide=synafap.hlp
+
+[Niveaux]
+Niveau1=Étape
+Niveau2=Produit
+Niveau3=Danger
+Niveau4=Point à maitriser
+Niveau5=Mesure préventive
+Niveau6=Valeur cible
+Niveau7=Elément de surveillance
+Niveau8=Corrections et actions correctives
+Niveau9=Vérifica- tion
+Niveau10=Enregis- trement
+
+[Affichages]
+Titre1=Paramètres
+Commentaire1=Informations administratives générales sur le projet
+Titre2=Équipe
+Commentaire2=La première étape d'une analyse HACCP consiste à définir l'équipe HACCP, c'est à dire le tableau des personnes et des fonctions
+Titre3=Documentation
+Commentaire3=La documentation HACCP inclut généralement le diagramme de fabrication, la déclaration d'intention...
+Titre4=Étapes et sujets
+Commentaire4=Définissez les étapes et sujets concernés par l'existant et l'analyse HACCP
+Titre5=Dispositions en place
+Commentaire5=Ce schéma représente la structure existant actuellement dans l'entreprise
+Titre6=Identification des dangers
+Commentaire6=Cette étape dresse l'inventaire des dangers liés au processus dans son ensemble, évalue leur pertinence et définit les étapes au niveau desquelles le danger peut intervenir
+Titre7=Arbre HACCP
+Commentaire7=Ce shéma représente le tableau d'analyse HACCP
+
+[Menu Documentation Bas]
+NbSujets=4
+Sujet1=Guide des bonnes pratiques du SYNAFAP
+Topic1=0
+Sujet2=Glossaire du SYNAFAP
+Topic2=1
+Sujet3=Définition relative aux caractéristiques des germes
+Topic3=2
+Sujet4=Les principaux germes
+Topic4=3

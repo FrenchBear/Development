@@ -1,0 +1,1090 @@
+[Root]
+Most Recent Package=VB6 (SP4) Components
+Most Recent Deploy=Déploiement Web Install VB6
+
+
+[Package|Logiciel d'installation standard 1|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=Z:\Install\Microbsoft\InstallVB6
+
+[Package|Logiciel d'installation standard 1|Configure DAO ISAMs]
+Applicable=No
+
+[Package|Logiciel d'installation standard 1|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|Logiciel d'installation standard 1|Files Found]
+
+[Package|Logiciel d'installation standard 1|Files Released]
+
+[Package|Logiciel d'installation standard 1|Missing Dependency Information]
+
+[Package|Logiciel d'installation standard 1|Out-of-Date Dependency Information]
+C:\WINDOWS\SYSTEM\MsCal.ocx=
+
+[Package|Logiciel d'installation standard 1|Files Added]
+
+[Package|Logiciel d'installation standard 1|Files Removed]
+
+[Package|Logiciel d'installation standard 1|Files In Project]
+D:\Microbsoft\Outils\Installation composants VB\InstallVB.exe=Yes
+C:\WINDOWS\SYSTEM\MSVBVM60.DLL=Yes
+C:\WINDOWS\SYSTEM\OLEAUT32.DLL=Yes
+C:\WINDOWS\SYSTEM\OLEPRO32.DLL=Yes
+C:\WINDOWS\SYSTEM\ASYCFILT.DLL=Yes
+C:\WINDOWS\SYSTEM\STDOLE2.TLB=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\WINDOWS\SYSTEM\VB6FR.DLL=Yes
+C:\WINDOWS\SYSTEM\MSRDO20.DLL=Yes
+C:\WINDOWS\SYSTEM\RDOCURS.DLL=Yes
+C:\WINDOWS\SYSTEM\Rdo20FR.dll=Yes
+C:\WINDOWS\SYSTEM\SCRRUN.DLL=Yes
+C:\WINDOWS\SYSTEM\MSVCRT.DLL=Yes
+C:\WINDOWS\SYSTEM\SCRRNFR.DLL=Yes
+C:\WINDOWS\SYSTEM\COMDLG32.OCX=Yes
+C:\WINDOWS\SYSTEM\CmDlgFR.dll=Yes
+C:\WINDOWS\SYSTEM\MsCal.ocx=Yes
+C:\WINDOWS\SYSTEM\Msflxgrd.ocx=Yes
+C:\WINDOWS\SYSTEM\FlxGdFR.dll=Yes
+C:\WINDOWS\SYSTEM\Comctl32.ocx=Yes
+C:\WINDOWS\SYSTEM\Cmctlfr.dll=Yes
+C:\WINDOWS\SYSTEM\Msinet.ocx=Yes
+C:\WINDOWS\SYSTEM\InetFR.dll=Yes
+C:\WINDOWS\SYSTEM\Mswinsck.ocx=Yes
+C:\WINDOWS\SYSTEM\Winskfr.dll=Yes
+C:\WINDOWS\SYSTEM\Comct232.ocx=Yes
+C:\WINDOWS\SYSTEM\CmCt2FR.dll=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\WINDOWS\SYSTEM\VB6STKIT.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+
+[Package|Logiciel d'installation standard 1|Configure Registry Files]
+Applicable=No
+
+[Package|Logiciel d'installation standard 1|Configure Remote Servers]
+Applicable=No
+
+[Package|Logiciel d'installation standard 1|Install Locations]
+D:\Microbsoft\Outils\Installation composants VB\InstallVB.exe=$(AppPath)
+C:\WINDOWS\SYSTEM\MSVBVM60.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\OLEAUT32.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\OLEPRO32.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\ASYCFILT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\STDOLE2.TLB=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\VB6FR.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSRDO20.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\RDOCURS.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\Rdo20FR.dll=$(WinSysPath)
+C:\WINDOWS\SYSTEM\SCRRUN.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSVCRT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\SCRRNFR.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\COMDLG32.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\CmDlgFR.dll=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MsCal.ocx=$(WinSysPath)
+C:\WINDOWS\SYSTEM\Msflxgrd.ocx=$(WinSysPath)
+C:\WINDOWS\SYSTEM\FlxGdFR.dll=$(WinSysPath)
+C:\WINDOWS\SYSTEM\Comctl32.ocx=$(WinSysPath)
+C:\WINDOWS\SYSTEM\Cmctlfr.dll=$(WinSysPath)
+C:\WINDOWS\SYSTEM\Msinet.ocx=$(WinSysPath)
+C:\WINDOWS\SYSTEM\InetFR.dll=$(WinSysPath)
+C:\WINDOWS\SYSTEM\Mswinsck.ocx=$(WinSysPath)
+C:\WINDOWS\SYSTEM\Winskfr.dll=$(WinSysPath)
+C:\WINDOWS\SYSTEM\Comct232.ocx=$(WinSysPath)
+C:\WINDOWS\SYSTEM\CmCt2FR.dll=$(WinSysPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\WINDOWS\SYSTEM\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+
+[Package|Logiciel d'installation standard 1|Configure Shared Files]
+Applicable=Yes
+D:\Microbsoft\Outils\Installation composants VB\InstallVB.exe=No
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=No
+
+[Package|Logiciel d'installation standard 1|Distribution]
+Type=single
+Size=
+Title=Composants VB6
+
+[Package|Logiciel d'installation standard 1|Package]
+PackageFolder=Z:\Install\Microbsoft\InstallVB6
+ProjectFolder=D:\Microbsoft\Outils\Installation composants VB
+ServerSideCab=
+File1=Z:\Install\Microbsoft\InstallVB6\setup.exe
+File2=Z:\Install\Microbsoft\InstallVB6\Setup.Lst
+File3=Z:\Install\Microbsoft\InstallVB6\InstallVB.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz
+
+
+[Package|Composants VB6|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=D:\Microbsoft\Outils\Installation composants VB\Package
+
+[Package|Composants VB6|Configure DAO ISAMs]
+Applicable=No
+
+[Package|Composants VB6|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|Composants VB6|Files Found]
+
+[Package|Composants VB6|Files Released]
+
+[Package|Composants VB6|Missing Dependency Information]
+
+[Package|Composants VB6|Out-of-Date Dependency Information]
+C:\WINDOWS\SYSTEM\MsCal.ocx=
+C:\WINDOWS\SYSTEM\COMCT332.OCX=
+
+[Package|Composants VB6|Files Added]
+
+[Package|Composants VB6|Files Removed]
+
+[Package|Composants VB6|Files In Project]
+C:\WINDOWS\SYSTEM\MSVBVM60.DLL=Yes
+C:\WINDOWS\SYSTEM\OLEAUT32.DLL=Yes
+C:\WINDOWS\SYSTEM\OLEPRO32.DLL=Yes
+C:\WINDOWS\SYSTEM\ASYCFILT.DLL=Yes
+C:\WINDOWS\SYSTEM\STDOLE2.TLB=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\WINDOWS\SYSTEM\VB6FR.DLL=Yes
+C:\WINDOWS\SYSTEM\MSRDO20.DLL=Yes
+C:\WINDOWS\SYSTEM\RDOCURS.DLL=Yes
+C:\WINDOWS\SYSTEM\Rdo20FR.dll=Yes
+C:\WINDOWS\SYSTEM\SCRRUN.DLL=Yes
+C:\WINDOWS\SYSTEM\MSVCRT.DLL=Yes
+C:\WINDOWS\SYSTEM\SCRRNFR.DLL=Yes
+C:\WINDOWS\SYSTEM\COMDLG32.OCX=Yes
+C:\WINDOWS\SYSTEM\CmDlgFR.dll=Yes
+C:\WINDOWS\SYSTEM\MsCal.ocx=Yes
+C:\WINDOWS\SYSTEM\Msflxgrd.ocx=Yes
+C:\WINDOWS\SYSTEM\FlxGdFR.dll=Yes
+C:\WINDOWS\SYSTEM\Comctl32.ocx=Yes
+C:\WINDOWS\SYSTEM\Cmctlfr.dll=Yes
+C:\WINDOWS\SYSTEM\Msinet.ocx=Yes
+C:\WINDOWS\SYSTEM\InetFR.dll=Yes
+C:\WINDOWS\SYSTEM\Mswinsck.ocx=Yes
+C:\WINDOWS\SYSTEM\Winskfr.dll=Yes
+C:\WINDOWS\SYSTEM\Comct232.ocx=Yes
+C:\WINDOWS\SYSTEM\CmCt2FR.dll=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\WINDOWS\SYSTEM\VB6STKIT.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+D:\Microbsoft\Outils\Installation VB6\InstallVB6.exe=Yes
+C:\WINDOWS\SYSTEM\MSCOMCTL.OCX=Yes
+C:\WINDOWS\SYSTEM\MSCMCFR.DLL=Yes
+C:\WINDOWS\SYSTEM\MSCOMCT2.OCX=Yes
+C:\WINDOWS\SYSTEM\MSCC2FR.DLL=Yes
+C:\WINDOWS\SYSTEM\COMCT332.OCX=Yes
+C:\WINDOWS\SYSTEM\CMCT3FR.DLL=Yes
+
+[Package|Composants VB6|Configure Registry Files]
+Applicable=No
+
+[Package|Composants VB6|Configure Remote Servers]
+Applicable=No
+
+[Package|Composants VB6|Install Locations]
+D:\Microbsoft\Outils\Installation composants VB\InstallVB.exe=$(AppPath)
+C:\WINDOWS\SYSTEM\MSVBVM60.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\OLEAUT32.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\OLEPRO32.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\ASYCFILT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\STDOLE2.TLB=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\VB6FR.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSRDO20.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\RDOCURS.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\Rdo20FR.dll=$(WinSysPath)
+C:\WINDOWS\SYSTEM\SCRRUN.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSVCRT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\SCRRNFR.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\COMDLG32.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\CmDlgFR.dll=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MsCal.ocx=$(WinSysPath)
+C:\WINDOWS\SYSTEM\Msflxgrd.ocx=$(WinSysPath)
+C:\WINDOWS\SYSTEM\FlxGdFR.dll=$(WinSysPath)
+C:\WINDOWS\SYSTEM\Comctl32.ocx=$(WinSysPath)
+C:\WINDOWS\SYSTEM\Cmctlfr.dll=$(WinSysPath)
+C:\WINDOWS\SYSTEM\Msinet.ocx=$(WinSysPath)
+C:\WINDOWS\SYSTEM\InetFR.dll=$(WinSysPath)
+C:\WINDOWS\SYSTEM\Mswinsck.ocx=$(WinSysPath)
+C:\WINDOWS\SYSTEM\Winskfr.dll=$(WinSysPath)
+C:\WINDOWS\SYSTEM\Comct232.ocx=$(WinSysPath)
+C:\WINDOWS\SYSTEM\CmCt2FR.dll=$(WinSysPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\WINDOWS\SYSTEM\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+D:\Microbsoft\Outils\Installation VB6\InstallVB6.exe=$(AppPath)
+C:\WINDOWS\SYSTEM\MSCOMCTL.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSCMCFR.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSCOMCT2.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSCC2FR.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\COMCT332.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\CMCT3FR.DLL=$(WinSysPath)
+
+[Package|Composants VB6|Configure Shared Files]
+Applicable=Yes
+D:\Microbsoft\Outils\Installation composants VB\InstallVB.exe=No
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=No
+D:\Microbsoft\Outils\Installation VB6\InstallVB6.exe=No
+
+[Package|Composants VB6|Distribution]
+Type=single
+Size=
+Title=Composants VB6
+
+[Package|Composants VB6|Package]
+PackageFolder=D:\Microbsoft\Outils\Installation composants VB\Package
+ProjectFolder=D:\Microbsoft\Outils\Installation VB6
+ServerSideCab=
+File1=D:\Microbsoft\Outils\Installation composants VB\Package\setup.exe
+File2=D:\Microbsoft\Outils\Installation composants VB\Package\Setup.Lst
+File3=D:\Microbsoft\Outils\Installation composants VB\Package\InstallVB6.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz
+
+[Deploy|Déploiement install VB6|Root]
+Package=Composants VB6
+Handler=PDWizard.FolderDplySubWiz
+Folder=D:\Microbsoft\Outils\Installation VB6\deploy
+
+
+[Deploy|Déploiement Web Install VB6|Root]
+Package=Composants VB6
+Handler=PDWizard.WebPostDplySubWiz
+Folder=D:\Microbsoft\Outils\Installation VB6\deploy
+
+[Deploy|Déploiement Web Install VB6|Package Files]
+D:\Microbsoft\Outils\Installation composants VB\Package\setup.exe=Yes
+D:\Microbsoft\Outils\Installation composants VB\Package\SETUP.LST=Yes
+D:\Microbsoft\Outils\Installation composants VB\Package\InstallVB6.CAB=Yes
+
+[Deploy|Déploiement Web Install VB6|Other Files and Folders]
+
+[Deploy|Déploiement Web Install VB6|WebPost Site]
+URL=http://uranus/depl/
+Provider={8B14B770-748C-11D0-A309-00C04FD7CFC5}
+Explode=No
+
+
+[Package|Composants VB6 (SP1)|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=D:\Microbsoft\Outils\Installation VB6\Paquetage
+
+[Package|Composants VB6 (SP1)|Configure DAO ISAMs]
+Applicable=No
+
+[Package|Composants VB6 (SP1)|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|Composants VB6 (SP1)|Files Found]
+
+[Package|Composants VB6 (SP1)|Files Released]
+
+[Package|Composants VB6 (SP1)|Missing Dependency Information]
+
+[Package|Composants VB6 (SP1)|Out-of-Date Dependency Information]
+C:\WINDOWS\SYSTEM\MsCal.ocx=
+C:\WINDOWS\SYSTEM\COMCT332.OCX=
+
+[Package|Composants VB6 (SP1)|Files Added]
+
+[Package|Composants VB6 (SP1)|Files Removed]
+
+[Package|Composants VB6 (SP1)|Files In Project]
+C:\WINDOWS\SYSTEM\MSVBVM60.DLL=Yes
+C:\WINDOWS\SYSTEM\OLEAUT32.DLL=Yes
+C:\WINDOWS\SYSTEM\OLEPRO32.DLL=Yes
+C:\WINDOWS\SYSTEM\ASYCFILT.DLL=Yes
+C:\WINDOWS\SYSTEM\STDOLE2.TLB=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\WINDOWS\SYSTEM\VB6FR.DLL=Yes
+C:\WINDOWS\SYSTEM\MSRDO20.DLL=Yes
+C:\WINDOWS\SYSTEM\RDOCURS.DLL=Yes
+C:\WINDOWS\SYSTEM\Rdo20FR.dll=Yes
+C:\WINDOWS\SYSTEM\SCRRUN.DLL=Yes
+C:\WINDOWS\SYSTEM\MSVCRT.DLL=Yes
+C:\WINDOWS\SYSTEM\SCRRNFR.DLL=Yes
+C:\WINDOWS\SYSTEM\COMDLG32.OCX=Yes
+C:\WINDOWS\SYSTEM\CmDlgFR.dll=Yes
+C:\WINDOWS\SYSTEM\Msflxgrd.ocx=Yes
+C:\WINDOWS\SYSTEM\FlxGdFR.dll=Yes
+C:\WINDOWS\SYSTEM\Comctl32.ocx=Yes
+C:\WINDOWS\SYSTEM\Cmctlfr.dll=Yes
+C:\WINDOWS\SYSTEM\Msinet.ocx=Yes
+C:\WINDOWS\SYSTEM\InetFR.dll=Yes
+C:\WINDOWS\SYSTEM\Mswinsck.ocx=Yes
+C:\WINDOWS\SYSTEM\Winskfr.dll=Yes
+C:\WINDOWS\SYSTEM\Comct232.ocx=Yes
+C:\WINDOWS\SYSTEM\CmCt2FR.dll=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\WINDOWS\SYSTEM\VB6STKIT.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+D:\Microbsoft\Outils\Installation VB6\InstallVB6.exe=Yes
+C:\WINDOWS\SYSTEM\MSCOMCTL.OCX=Yes
+C:\WINDOWS\SYSTEM\MSCMCFR.DLL=Yes
+C:\WINDOWS\SYSTEM\MSCOMCT2.OCX=Yes
+C:\WINDOWS\SYSTEM\MSCC2FR.DLL=Yes
+C:\WINDOWS\SYSTEM\COMCT332.OCX=Yes
+C:\WINDOWS\SYSTEM\CMCT3FR.DLL=Yes
+
+[Package|Composants VB6 (SP1)|Configure Registry Files]
+Applicable=No
+
+[Package|Composants VB6 (SP1)|Configure Remote Servers]
+Applicable=No
+
+[Package|Composants VB6 (SP1)|Install Locations]
+D:\Microbsoft\Outils\Installation composants VB\InstallVB.exe=$(AppPath)
+C:\WINDOWS\SYSTEM\MSVBVM60.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\OLEAUT32.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\OLEPRO32.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\ASYCFILT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\STDOLE2.TLB=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\VB6FR.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSRDO20.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\RDOCURS.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\Rdo20FR.dll=$(WinSysPath)
+C:\WINDOWS\SYSTEM\SCRRUN.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSVCRT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\SCRRNFR.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\COMDLG32.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\CmDlgFR.dll=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MsCal.ocx=$(WinSysPath)
+C:\WINDOWS\SYSTEM\Msflxgrd.ocx=$(WinSysPath)
+C:\WINDOWS\SYSTEM\FlxGdFR.dll=$(WinSysPath)
+C:\WINDOWS\SYSTEM\Comctl32.ocx=$(WinSysPath)
+C:\WINDOWS\SYSTEM\Cmctlfr.dll=$(WinSysPath)
+C:\WINDOWS\SYSTEM\Msinet.ocx=$(WinSysPath)
+C:\WINDOWS\SYSTEM\InetFR.dll=$(WinSysPath)
+C:\WINDOWS\SYSTEM\Mswinsck.ocx=$(WinSysPath)
+C:\WINDOWS\SYSTEM\Winskfr.dll=$(WinSysPath)
+C:\WINDOWS\SYSTEM\Comct232.ocx=$(WinSysPath)
+C:\WINDOWS\SYSTEM\CmCt2FR.dll=$(WinSysPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\WINDOWS\SYSTEM\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+D:\Microbsoft\Outils\Installation VB6\InstallVB6.exe=$(AppPath)
+C:\WINDOWS\SYSTEM\MSCOMCTL.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSCMCFR.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSCOMCT2.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSCC2FR.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\COMCT332.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\CMCT3FR.DLL=$(WinSysPath)
+
+[Package|Composants VB6 (SP1)|Configure Shared Files]
+Applicable=Yes
+D:\Microbsoft\Outils\Installation composants VB\InstallVB.exe=No
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=No
+D:\Microbsoft\Outils\Installation VB6\InstallVB6.exe=No
+
+[Package|Composants VB6 (SP1)|Distribution]
+Type=single
+Size=
+Title=Composants VB6 (SP1)
+
+[Package|Composants VB6 (SP1)|Package]
+PackageFolder=D:\Microbsoft\Outils\Installation VB6\Paquetage
+ProjectFolder=D:\Microbsoft\Outils\Installation VB6
+ServerSideCab=
+File1=D:\Microbsoft\Outils\Installation VB6\Paquetage\setup.exe
+File2=D:\Microbsoft\Outils\Installation VB6\Paquetage\Setup.Lst
+File3=D:\Microbsoft\Outils\Installation VB6\Paquetage\InstallVB6.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz
+
+
+[Package|Installation composants VB6 (SP1+DR)|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=D:\Microbsoft\Outils\Installation VB6 SP1 DR\Package
+
+[Package|Installation composants VB6 (SP1+DR)|Configure DAO ISAMs]
+Applicable=No
+
+[Package|Installation composants VB6 (SP1+DR)|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|Installation composants VB6 (SP1+DR)|Files Found]
+
+[Package|Installation composants VB6 (SP1+DR)|Files Released]
+
+[Package|Installation composants VB6 (SP1+DR)|Missing Dependency Information]
+
+[Package|Installation composants VB6 (SP1+DR)|Out-of-Date Dependency Information]
+C:\WINDOWS\SYSTEM\COMCT332.OCX=
+C:\WINDOWS\SYSTEM\scrrun.dll=
+
+[Package|Installation composants VB6 (SP1+DR)|Files Added]
+
+[Package|Installation composants VB6 (SP1+DR)|Files Removed]
+
+[Package|Installation composants VB6 (SP1+DR)|Files In Project]
+D:\Microbsoft\Outils\Installation VB6\InstallVB6.exe=Yes
+C:\WINDOWS\SYSTEM\MSVBVM60.DLL=Yes
+C:\WINDOWS\SYSTEM\OLEAUT32.DLL=Yes
+C:\WINDOWS\SYSTEM\OLEPRO32.DLL=Yes
+C:\WINDOWS\SYSTEM\ASYCFILT.DLL=Yes
+C:\WINDOWS\SYSTEM\STDOLE2.TLB=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\WINDOWS\SYSTEM\VB6FR.DLL=Yes
+C:\WINDOWS\SYSTEM\MSRDO20.DLL=Yes
+C:\WINDOWS\SYSTEM\RDOCURS.DLL=Yes
+C:\WINDOWS\SYSTEM\Rdo20FR.dll=Yes
+C:\WINDOWS\SYSTEM\scrrun.dll=Yes
+C:\WINDOWS\SYSTEM\MSVCRT.DLL=Yes
+C:\WINDOWS\SYSTEM\scrrnfr.dll=Yes
+C:\WINDOWS\SYSTEM\MSDBRPTR.DLL=Yes
+C:\WINDOWS\SYSTEM\MSSTDFMT.DLL=Yes
+C:\WINDOWS\SYSTEM\STDFTFR.DLL=Yes
+C:\WINDOWS\SYSTEM\DBRPRFR.DLL=Yes
+C:\WINDOWS\SYSTEM\COMDLG32.OCX=Yes
+C:\WINDOWS\SYSTEM\CmDlgFR.dll=Yes
+C:\WINDOWS\SYSTEM\Msflxgrd.ocx=Yes
+C:\WINDOWS\SYSTEM\FlxGdFR.dll=Yes
+C:\WINDOWS\SYSTEM\MSCOMCTL.OCX=Yes
+C:\WINDOWS\SYSTEM\MSCMCFR.DLL=Yes
+C:\WINDOWS\SYSTEM\Msinet.ocx=Yes
+C:\WINDOWS\SYSTEM\InetFR.dll=Yes
+C:\WINDOWS\SYSTEM\Mswinsck.ocx=Yes
+C:\WINDOWS\SYSTEM\Winskfr.dll=Yes
+C:\WINDOWS\SYSTEM\Comct232.ocx=Yes
+C:\WINDOWS\SYSTEM\CmCt2FR.dll=Yes
+C:\WINDOWS\SYSTEM\Comctl32.ocx=Yes
+C:\WINDOWS\SYSTEM\Cmctlfr.dll=Yes
+C:\WINDOWS\SYSTEM\MSCOMCT2.OCX=Yes
+C:\WINDOWS\SYSTEM\MSCC2FR.DLL=Yes
+C:\WINDOWS\SYSTEM\COMCT332.OCX=Yes
+C:\WINDOWS\SYSTEM\CMCT3FR.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\WINDOWS\SYSTEM\VB6STKIT.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+
+[Package|Installation composants VB6 (SP1+DR)|Configure Registry Files]
+Applicable=No
+
+[Package|Installation composants VB6 (SP1+DR)|Configure Remote Servers]
+Applicable=No
+
+[Package|Installation composants VB6 (SP1+DR)|Install Locations]
+D:\Microbsoft\Outils\Installation VB6\InstallVB6.exe=$(AppPath)
+C:\WINDOWS\SYSTEM\MSVBVM60.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\OLEAUT32.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\OLEPRO32.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\ASYCFILT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\STDOLE2.TLB=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\VB6FR.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSRDO20.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\RDOCURS.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\Rdo20FR.dll=$(WinSysPath)
+C:\WINDOWS\SYSTEM\scrrun.dll=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSVCRT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\scrrnfr.dll=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSDBRPTR.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSSTDFMT.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\STDFTFR.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\DBRPRFR.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\COMDLG32.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\CmDlgFR.dll=$(WinSysPath)
+C:\WINDOWS\SYSTEM\Msflxgrd.ocx=$(WinSysPath)
+C:\WINDOWS\SYSTEM\FlxGdFR.dll=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSCOMCTL.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSCMCFR.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\Msinet.ocx=$(WinSysPath)
+C:\WINDOWS\SYSTEM\InetFR.dll=$(WinSysPath)
+C:\WINDOWS\SYSTEM\Mswinsck.ocx=$(WinSysPath)
+C:\WINDOWS\SYSTEM\Winskfr.dll=$(WinSysPath)
+C:\WINDOWS\SYSTEM\Comct232.ocx=$(WinSysPath)
+C:\WINDOWS\SYSTEM\CmCt2FR.dll=$(WinSysPath)
+C:\WINDOWS\SYSTEM\Comctl32.ocx=$(WinSysPath)
+C:\WINDOWS\SYSTEM\Cmctlfr.dll=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSCOMCT2.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSCC2FR.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\COMCT332.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\CMCT3FR.DLL=$(WinSysPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\WINDOWS\SYSTEM\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+
+[Package|Installation composants VB6 (SP1+DR)|Configure Shared Files]
+Applicable=Yes
+D:\Microbsoft\Outils\Installation VB6\InstallVB6.exe=No
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=No
+
+[Package|Installation composants VB6 (SP1+DR)|Distribution]
+Type=single
+Size=
+Title=Installation composants VB6 (SP1+DR)
+
+[Package|Installation composants VB6 (SP1+DR)|Package]
+PackageFolder=D:\Microbsoft\Outils\Installation VB6 SP1 DR\Package
+ProjectFolder=D:\Microbsoft\Outils\Installation VB6
+ServerSideCab=
+File1=D:\Microbsoft\Outils\Installation VB6 SP1 DR\Package\setup.exe
+File2=D:\Microbsoft\Outils\Installation VB6 SP1 DR\Package\Setup.Lst
+File3=D:\Microbsoft\Outils\Installation VB6 SP1 DR\Package\InstallVB6.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz
+
+
+[Package|Composants VB6 (SP3)|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=D:\Microbsoft\Outils\Installation VB6 SP3\Package
+
+[Package|Composants VB6 (SP3)|Configure DAO ISAMs]
+Applicable=No
+
+[Package|Composants VB6 (SP3)|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|Composants VB6 (SP3)|Files Found]
+
+[Package|Composants VB6 (SP3)|Files Released]
+
+[Package|Composants VB6 (SP3)|Missing Dependency Information]
+
+[Package|Composants VB6 (SP3)|Out-of-Date Dependency Information]
+C:\WINDOWS\SYSTEM\scrrun.dll=
+
+[Package|Composants VB6 (SP3)|Files Added]
+
+[Package|Composants VB6 (SP3)|Files Removed]
+
+[Package|Composants VB6 (SP3)|Files In Project]
+D:\Microbsoft\Outils\Installation VB6 SP3\InstallVB6.exe=Yes
+C:\WINDOWS\SYSTEM\MSVBVM60.DLL=Yes
+C:\WINDOWS\SYSTEM\OLEAUT32.DLL=Yes
+C:\WINDOWS\SYSTEM\OLEPRO32.DLL=Yes
+C:\WINDOWS\SYSTEM\ASYCFILT.DLL=Yes
+C:\WINDOWS\SYSTEM\STDOLE2.TLB=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\WINDOWS\SYSTEM\VB6FR.DLL=Yes
+C:\WINDOWS\SYSTEM\MSRDO20.DLL=Yes
+C:\WINDOWS\SYSTEM\RDOCURS.DLL=Yes
+C:\WINDOWS\SYSTEM\Rdo20FR.dll=Yes
+C:\WINDOWS\SYSTEM\scrrun.dll=Yes
+C:\WINDOWS\SYSTEM\MSVCRT.DLL=Yes
+C:\WINDOWS\SYSTEM\scrrnfr.dll=Yes
+C:\WINDOWS\SYSTEM\MSDBRPTR.DLL=Yes
+C:\WINDOWS\SYSTEM\MSSTDFMT.DLL=Yes
+C:\WINDOWS\SYSTEM\STDFTFR.DLL=Yes
+C:\WINDOWS\SYSTEM\DBRPRFR.DLL=Yes
+C:\WINDOWS\SYSTEM\COMDLG32.OCX=Yes
+C:\WINDOWS\SYSTEM\CmDlgFR.dll=Yes
+C:\WINDOWS\SYSTEM\Msflxgrd.ocx=Yes
+C:\WINDOWS\SYSTEM\FlxGdFR.dll=Yes
+C:\WINDOWS\SYSTEM\MSCOMCTL.OCX=Yes
+C:\WINDOWS\SYSTEM\MSCMCFR.DLL=Yes
+C:\WINDOWS\SYSTEM\Msinet.ocx=Yes
+C:\WINDOWS\SYSTEM\InetFR.dll=Yes
+C:\WINDOWS\SYSTEM\Mswinsck.ocx=Yes
+C:\WINDOWS\SYSTEM\Winskfr.dll=Yes
+C:\WINDOWS\SYSTEM\MSCOMCT2.OCX=Yes
+C:\WINDOWS\SYSTEM\MSCC2FR.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\WINDOWS\SYSTEM\VB6STKIT.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+
+[Package|Composants VB6 (SP3)|Configure Registry Files]
+Applicable=No
+
+[Package|Composants VB6 (SP3)|Configure Remote Servers]
+Applicable=No
+
+[Package|Composants VB6 (SP3)|Install Locations]
+D:\Microbsoft\Outils\Installation VB6 SP3\InstallVB6.exe=$(AppPath)
+C:\WINDOWS\SYSTEM\MSVBVM60.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\OLEAUT32.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\OLEPRO32.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\ASYCFILT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\STDOLE2.TLB=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\VB6FR.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSRDO20.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\RDOCURS.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\Rdo20FR.dll=$(WinSysPath)
+C:\WINDOWS\SYSTEM\scrrun.dll=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSVCRT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\scrrnfr.dll=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSDBRPTR.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSSTDFMT.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\STDFTFR.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\DBRPRFR.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\COMDLG32.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\CmDlgFR.dll=$(WinSysPath)
+C:\WINDOWS\SYSTEM\Msflxgrd.ocx=$(WinSysPath)
+C:\WINDOWS\SYSTEM\FlxGdFR.dll=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSCOMCTL.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSCMCFR.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\Msinet.ocx=$(WinSysPath)
+C:\WINDOWS\SYSTEM\InetFR.dll=$(WinSysPath)
+C:\WINDOWS\SYSTEM\Mswinsck.ocx=$(WinSysPath)
+C:\WINDOWS\SYSTEM\Winskfr.dll=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSCOMCT2.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSCC2FR.DLL=$(WinSysPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\WINDOWS\SYSTEM\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+
+[Package|Composants VB6 (SP3)|Configure Shared Files]
+Applicable=Yes
+D:\Microbsoft\Outils\Installation VB6 SP3\InstallVB6.exe=No
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=No
+
+[Package|Composants VB6 (SP3)|Distribution]
+Type=single
+Size=
+Title=Composants VB6 (SP3)
+
+[Package|Composants VB6 (SP3)|Package]
+PackageFolder=D:\Microbsoft\Outils\Installation VB6 SP3\Package
+ProjectFolder=D:\Microbsoft\Outils\Installation VB6 SP3
+ServerSideCab=
+File1=D:\Microbsoft\Outils\Installation VB6 SP3\Package\setup.exe
+File2=D:\Microbsoft\Outils\Installation VB6 SP3\Package\Setup.Lst
+File3=D:\Microbsoft\Outils\Installation VB6 SP3\Package\InstallVB6.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz
+
+
+[Package|Composants VB6 (SP3+TDBG)|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=D:\Microbsoft\Outils\Installation VB6 SP3+TDBG\Package
+
+[Package|Composants VB6 (SP3+TDBG)|Configure DAO ISAMs]
+Applicable=No
+
+[Package|Composants VB6 (SP3+TDBG)|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|Composants VB6 (SP3+TDBG)|Files Found]
+
+[Package|Composants VB6 (SP3+TDBG)|Files Released]
+
+[Package|Composants VB6 (SP3+TDBG)|Missing Dependency Information]
+
+[Package|Composants VB6 (SP3+TDBG)|Out-of-Date Dependency Information]
+C:\WINDOWS\SYSTEM\scrrun.dll=
+
+[Package|Composants VB6 (SP3+TDBG)|Files Added]
+
+[Package|Composants VB6 (SP3+TDBG)|Files Removed]
+
+[Package|Composants VB6 (SP3+TDBG)|Files In Project]
+D:\Microbsoft\Outils\Installation VB6 SP3\InstallVB6.exe=Yes
+C:\WINDOWS\SYSTEM\MSVBVM60.DLL=Yes
+C:\WINDOWS\SYSTEM\OLEAUT32.DLL=Yes
+C:\WINDOWS\SYSTEM\OLEPRO32.DLL=Yes
+C:\WINDOWS\SYSTEM\ASYCFILT.DLL=Yes
+C:\WINDOWS\SYSTEM\STDOLE2.TLB=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\WINDOWS\SYSTEM\VB6FR.DLL=Yes
+C:\WINDOWS\SYSTEM\MSRDO20.DLL=Yes
+C:\WINDOWS\SYSTEM\RDOCURS.DLL=Yes
+C:\WINDOWS\SYSTEM\Rdo20FR.dll=Yes
+C:\WINDOWS\SYSTEM\scrrun.dll=Yes
+C:\WINDOWS\SYSTEM\MSVCRT.DLL=Yes
+C:\WINDOWS\SYSTEM\scrrnfr.dll=Yes
+C:\WINDOWS\SYSTEM\MSDBRPTR.DLL=Yes
+C:\WINDOWS\SYSTEM\MSSTDFMT.DLL=Yes
+C:\WINDOWS\SYSTEM\STDFTFR.DLL=Yes
+C:\WINDOWS\SYSTEM\DBRPRFR.DLL=Yes
+C:\WINDOWS\SYSTEM\COMDLG32.OCX=Yes
+C:\WINDOWS\SYSTEM\CmDlgFR.dll=Yes
+C:\WINDOWS\SYSTEM\Msflxgrd.ocx=Yes
+C:\WINDOWS\SYSTEM\FlxGdFR.dll=Yes
+C:\WINDOWS\SYSTEM\MSCOMCTL.OCX=Yes
+C:\WINDOWS\SYSTEM\MSCMCFR.DLL=Yes
+C:\WINDOWS\SYSTEM\Msinet.ocx=Yes
+C:\WINDOWS\SYSTEM\InetFR.dll=Yes
+C:\WINDOWS\SYSTEM\Mswinsck.ocx=Yes
+C:\WINDOWS\SYSTEM\Winskfr.dll=Yes
+C:\WINDOWS\SYSTEM\MSCOMCT2.OCX=Yes
+C:\WINDOWS\SYSTEM\MSCC2FR.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\WINDOWS\SYSTEM\VB6STKIT.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+C:\WINDOWS\SYSTEM\xarraydb.ocx=Yes
+C:\WINDOWS\SYSTEM\todg6.ocx=Yes
+C:\WINDOWS\SYSTEM\todgub6.dll=Yes
+C:\WINDOWS\SYSTEM\tdbgpp.dll=Yes
+
+[Package|Composants VB6 (SP3+TDBG)|Configure Registry Files]
+Applicable=No
+
+[Package|Composants VB6 (SP3+TDBG)|Configure Remote Servers]
+Applicable=No
+
+[Package|Composants VB6 (SP3+TDBG)|Install Locations]
+D:\Microbsoft\Outils\Installation VB6 SP3\InstallVB6.exe=$(AppPath)
+C:\WINDOWS\SYSTEM\MSVBVM60.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\OLEAUT32.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\OLEPRO32.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\ASYCFILT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\STDOLE2.TLB=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\VB6FR.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSRDO20.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\RDOCURS.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\Rdo20FR.dll=$(WinSysPath)
+C:\WINDOWS\SYSTEM\scrrun.dll=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSVCRT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\scrrnfr.dll=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSDBRPTR.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSSTDFMT.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\STDFTFR.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\DBRPRFR.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\COMDLG32.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\CmDlgFR.dll=$(WinSysPath)
+C:\WINDOWS\SYSTEM\Msflxgrd.ocx=$(WinSysPath)
+C:\WINDOWS\SYSTEM\FlxGdFR.dll=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSCOMCTL.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSCMCFR.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\Msinet.ocx=$(WinSysPath)
+C:\WINDOWS\SYSTEM\InetFR.dll=$(WinSysPath)
+C:\WINDOWS\SYSTEM\Mswinsck.ocx=$(WinSysPath)
+C:\WINDOWS\SYSTEM\Winskfr.dll=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSCOMCT2.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSCC2FR.DLL=$(WinSysPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\WINDOWS\SYSTEM\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+C:\WINDOWS\SYSTEM\xarraydb.ocx=$(WinSysPath)
+C:\WINDOWS\SYSTEM\todg6.ocx=$(WinSysPath)
+C:\WINDOWS\SYSTEM\todgub6.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\tdbgpp.dll=$(WinSysPathSysFile)
+
+[Package|Composants VB6 (SP3+TDBG)|Configure Shared Files]
+Applicable=Yes
+D:\Microbsoft\Outils\Installation VB6 SP3\InstallVB6.exe=No
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=No
+
+[Package|Composants VB6 (SP3+TDBG)|Distribution]
+Type=single
+Size=
+Title=Composants VB6 (SP3+TDBG)
+
+[Package|Composants VB6 (SP3+TDBG)|Package]
+PackageFolder=D:\Microbsoft\Outils\Installation VB6 SP3+TDBG\Package
+ProjectFolder=D:\Microbsoft\Outils\Installation VB6 SP3
+ServerSideCab=
+File1=D:\Microbsoft\Outils\Installation VB6 SP3+TDBG\Package\setup.exe
+File2=D:\Microbsoft\Outils\Installation VB6 SP3+TDBG\Package\Setup.Lst
+File3=D:\Microbsoft\Outils\Installation VB6 SP3+TDBG\Package\InstallVB6.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz
+
+
+[Package|Composants VB6 (SP4)|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=D:\Microbsoft\Outils\Installation VB6 SP4\Package
+
+[Package|Composants VB6 (SP4)|Configure DAO ISAMs]
+Applicable=No
+
+[Package|Composants VB6 (SP4)|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|Composants VB6 (SP4)|Files Found]
+
+[Package|Composants VB6 (SP4)|Files Released]
+
+[Package|Composants VB6 (SP4)|Missing Dependency Information]
+C:\Program Files\Fichiers communs\SYSTEM\ADO\MSADO21.TLB=
+
+[Package|Composants VB6 (SP4)|Out-of-Date Dependency Information]
+C:\WINDOWS\SYSTEM\scrrun.dll=
+
+[Package|Composants VB6 (SP4)|Files Added]
+
+[Package|Composants VB6 (SP4)|Files Removed]
+
+[Package|Composants VB6 (SP4)|Files In Project]
+D:\Microbsoft\Outils\Installation VB6 SP4\InstallVB6.exe=Yes
+C:\WINDOWS\SYSTEM\MSVBVM60.DLL=Yes
+F:\Visual Studio 6\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=Yes
+F:\Visual Studio 6\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=Yes
+F:\Visual Studio 6\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=Yes
+F:\Visual Studio 6\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=Yes
+F:\Visual Studio 6\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\WINDOWS\SYSTEM\VB6FR.DLL=Yes
+C:\WINDOWS\SYSTEM\MSRDO20.DLL=Yes
+C:\WINDOWS\SYSTEM\RDOCURS.DLL=Yes
+C:\WINDOWS\SYSTEM\RDO20FR.DLL=Yes
+C:\WINDOWS\SYSTEM\scrrun.dll=Yes
+C:\WINDOWS\SYSTEM\MSVCRT.DLL=Yes
+C:\WINDOWS\SYSTEM\scrrnfr.dll=Yes
+C:\WINDOWS\SYSTEM\MSDBRPTR.DLL=Yes
+C:\WINDOWS\SYSTEM\MSSTDFMT.DLL=Yes
+C:\WINDOWS\SYSTEM\STDFTFR.DLL=Yes
+C:\WINDOWS\SYSTEM\DBRPRFR.DLL=Yes
+C:\Program Files\Fichiers communs\SYSTEM\ADO\MSADO21.TLB=Yes
+C:\WINDOWS\SYSTEM\xarraydb.ocx=Yes
+C:\WINDOWS\SYSTEM\COMDLG32.OCX=Yes
+C:\WINDOWS\SYSTEM\CMDLGFR.DLL=Yes
+C:\WINDOWS\SYSTEM\MSFLXGRD.OCX=Yes
+C:\WINDOWS\SYSTEM\FLXGDFR.DLL=Yes
+C:\WINDOWS\SYSTEM\MSCOMCTL.OCX=Yes
+C:\WINDOWS\SYSTEM\MSCMCFR.DLL=Yes
+C:\WINDOWS\SYSTEM\MSINET.OCX=Yes
+C:\WINDOWS\SYSTEM\INETFR.DLL=Yes
+C:\WINDOWS\SYSTEM\MSWINSCK.OCX=Yes
+C:\WINDOWS\SYSTEM\WINSKFR.DLL=Yes
+C:\WINDOWS\SYSTEM\MSCOMCT2.OCX=Yes
+C:\WINDOWS\SYSTEM\MSCC2FR.DLL=Yes
+C:\WINDOWS\SYSTEM\todg6.ocx=Yes
+C:\WINDOWS\SYSTEM\todgub6.dll=Yes
+C:\WINDOWS\SYSTEM\tdbgpp.dll=Yes
+C:\WINDOWS\SYSTEM\mswless.ocx=Yes
+C:\WINDOWS\SYSTEM\mswlsfr.dll=Yes
+F:\Visual Studio 6\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=Yes
+F:\Visual Studio 6\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+F:\Visual Studio 6\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\WINDOWS\SYSTEM\VB6STKIT.DLL=Yes
+F:\Visual Studio 6\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+
+[Package|Composants VB6 (SP4)|Configure Registry Files]
+Applicable=No
+
+[Package|Composants VB6 (SP4)|Configure Remote Servers]
+Applicable=No
+
+[Package|Composants VB6 (SP4)|Install Locations]
+D:\Microbsoft\Outils\Installation VB6 SP4\InstallVB6.exe=$(AppPath)
+C:\WINDOWS\SYSTEM\MSVBVM60.DLL=$(WinSysPathSysFile)
+F:\Visual Studio 6\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=$(WinSysPathSysFile)
+F:\Visual Studio 6\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=$(WinSysPathSysFile)
+F:\Visual Studio 6\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=$(WinSysPathSysFile)
+F:\Visual Studio 6\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=$(WinSysPathSysFile)
+F:\Visual Studio 6\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\VB6FR.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSRDO20.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\RDOCURS.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\RDO20FR.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\scrrun.dll=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSVCRT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\scrrnfr.dll=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSDBRPTR.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSSTDFMT.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\STDFTFR.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\DBRPRFR.DLL=$(WinSysPath)
+C:\Program Files\Fichiers communs\SYSTEM\ADO\MSADO21.TLB=$(WinSysPath)
+C:\WINDOWS\SYSTEM\xarraydb.ocx=$(WinSysPath)
+C:\WINDOWS\SYSTEM\COMDLG32.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\CMDLGFR.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSFLXGRD.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\FLXGDFR.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSCOMCTL.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSCMCFR.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSINET.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\INETFR.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSWINSCK.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\WINSKFR.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSCOMCT2.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSCC2FR.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\todg6.ocx=$(WinSysPath)
+C:\WINDOWS\SYSTEM\todgub6.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\tdbgpp.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\mswless.ocx=$(WinSysPath)
+C:\WINDOWS\SYSTEM\mswlsfr.dll=$(WinSysPath)
+F:\Visual Studio 6\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=$(AppPath)
+F:\Visual Studio 6\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+F:\Visual Studio 6\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\WINDOWS\SYSTEM\VB6STKIT.DLL=$(WinSysPathSysFile)
+F:\Visual Studio 6\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+
+[Package|Composants VB6 (SP4)|Configure Shared Files]
+Applicable=Yes
+D:\Microbsoft\Outils\Installation VB6 SP4\InstallVB6.exe=No
+F:\Visual Studio 6\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=No
+
+[Package|Composants VB6 (SP4)|Distribution]
+Type=single
+Size=
+Title=Composants VB6 (SP4)
+
+[Package|Composants VB6 (SP4)|Package]
+PackageFolder=D:\Microbsoft\Outils\Installation VB6 SP4\Package
+ProjectFolder=D:\Microbsoft\Outils\Installation VB6 SP4
+ServerSideCab=
+File1=D:\Microbsoft\Outils\Installation VB6 SP4\Package\setup.exe
+File2=D:\Microbsoft\Outils\Installation VB6 SP4\Package\Setup.Lst
+File3=D:\Microbsoft\Outils\Installation VB6 SP4\Package\InstallVB6.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz
+
+
+[Package|VB6 (SP4) Components|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=D:\Microbsoft\Outils\Installation VB6 SP4 en\Package
+
+[Package|VB6 (SP4) Components|Configure DAO ISAMs]
+Applicable=No
+
+[Package|VB6 (SP4) Components|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|VB6 (SP4) Components|Files Found]
+
+[Package|VB6 (SP4) Components|Files Released]
+
+[Package|VB6 (SP4) Components|Missing Dependency Information]
+C:\Program Files\Fichiers communs\SYSTEM\ADO\MSADO21.TLB=
+C:\Program Files\Common Files\SYSTEM\ADO\msado21.tlb=
+
+[Package|VB6 (SP4) Components|Out-of-Date Dependency Information]
+C:\WINDOWS\SYSTEM\scrrun.dll=
+
+[Package|VB6 (SP4) Components|Files Added]
+
+[Package|VB6 (SP4) Components|Files Removed]
+
+[Package|VB6 (SP4) Components|Files In Project]
+C:\WINDOWS\SYSTEM\MSVBVM60.DLL=Yes
+C:\WINDOWS\SYSTEM\MSRDO20.DLL=Yes
+C:\WINDOWS\SYSTEM\RDOCURS.DLL=Yes
+C:\WINDOWS\SYSTEM\scrrun.dll=Yes
+C:\WINDOWS\SYSTEM\MSVCRT.DLL=Yes
+C:\WINDOWS\SYSTEM\MSDBRPTR.DLL=Yes
+C:\WINDOWS\SYSTEM\MSSTDFMT.DLL=Yes
+C:\WINDOWS\SYSTEM\xarraydb.ocx=Yes
+C:\WINDOWS\SYSTEM\COMDLG32.OCX=Yes
+C:\WINDOWS\SYSTEM\MSFLXGRD.OCX=Yes
+C:\WINDOWS\SYSTEM\MSCOMCTL.OCX=Yes
+C:\WINDOWS\SYSTEM\MSINET.OCX=Yes
+C:\WINDOWS\SYSTEM\MSWINSCK.OCX=Yes
+C:\WINDOWS\SYSTEM\MSCOMCT2.OCX=Yes
+C:\WINDOWS\SYSTEM\todg6.ocx=Yes
+C:\WINDOWS\SYSTEM\todgub6.dll=Yes
+C:\WINDOWS\SYSTEM\tdbgpp.dll=Yes
+C:\WINDOWS\SYSTEM\mswless.ocx=Yes
+C:\WINDOWS\SYSTEM\VB6STKIT.DLL=Yes
+\\Uranus\d\Microbsoft\Outils\Installation VB6 SP4 en\InstallVB6.exe=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\Program Files\Common Files\SYSTEM\ADO\msado21.tlb=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+
+[Package|VB6 (SP4) Components|Configure Registry Files]
+Applicable=No
+
+[Package|VB6 (SP4) Components|Configure Remote Servers]
+Applicable=No
+
+[Package|VB6 (SP4) Components|Install Locations]
+D:\Microbsoft\Outils\Installation VB6 SP4\InstallVB6.exe=$(AppPath)
+C:\WINDOWS\SYSTEM\MSVBVM60.DLL=$(WinSysPathSysFile)
+F:\Visual Studio 6\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=$(WinSysPathSysFile)
+F:\Visual Studio 6\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=$(WinSysPathSysFile)
+F:\Visual Studio 6\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=$(WinSysPathSysFile)
+F:\Visual Studio 6\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=$(WinSysPathSysFile)
+F:\Visual Studio 6\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\VB6FR.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSRDO20.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\RDOCURS.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\RDO20FR.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\scrrun.dll=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSVCRT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\scrrnfr.dll=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSDBRPTR.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSSTDFMT.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\STDFTFR.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\DBRPRFR.DLL=$(WinSysPath)
+C:\Program Files\Fichiers communs\SYSTEM\ADO\MSADO21.TLB=$(WinSysPath)
+C:\WINDOWS\SYSTEM\xarraydb.ocx=$(WinSysPath)
+C:\WINDOWS\SYSTEM\COMDLG32.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\CMDLGFR.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSFLXGRD.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\FLXGDFR.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSCOMCTL.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSCMCFR.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSINET.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\INETFR.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSWINSCK.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\WINSKFR.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSCOMCT2.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSCC2FR.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\todg6.ocx=$(WinSysPath)
+C:\WINDOWS\SYSTEM\todgub6.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\tdbgpp.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\mswless.ocx=$(WinSysPath)
+C:\WINDOWS\SYSTEM\mswlsfr.dll=$(WinSysPath)
+F:\Visual Studio 6\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=$(AppPath)
+F:\Visual Studio 6\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+F:\Visual Studio 6\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\WINDOWS\SYSTEM\VB6STKIT.DLL=$(WinSysPathSysFile)
+F:\Visual Studio 6\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+\\Uranus\d\Microbsoft\Outils\Installation VB6 SP4 en\InstallVB6.exe=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Common Files\SYSTEM\ADO\msado21.tlb=$(WinSysPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+
+[Package|VB6 (SP4) Components|Configure Shared Files]
+Applicable=Yes
+D:\Microbsoft\Outils\Installation VB6 SP4\InstallVB6.exe=No
+F:\Visual Studio 6\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=No
+\\Uranus\d\Microbsoft\Outils\Installation VB6 SP4 en\InstallVB6.exe=No
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=No
+
+[Package|VB6 (SP4) Components|Distribution]
+Type=single
+Size=
+Title=Composants VB6 (SP4) en
+
+[Package|VB6 (SP4) Components|Package]
+PackageFolder=D:\Microbsoft\Outils\Installation VB6 SP4 en\Package
+ProjectFolder=\\Uranus\d\Microbsoft\Outils\Installation VB6 SP4 en
+ServerSideCab=
+File1=D:\Microbsoft\Outils\Installation VB6 SP4 en\Package\setup.exe
+File2=D:\Microbsoft\Outils\Installation VB6 SP4 en\Package\Setup.Lst
+File3=D:\Microbsoft\Outils\Installation VB6 SP4 en\Package\InstallVB6.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz

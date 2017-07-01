@@ -1,0 +1,1 @@
+This sample dumps everything from a resultset to an XArrayDB.  The advantage is that after this is done you can disconnect from the server and the database and all work is done locally.  The obvious disadvantage is the concurrency issues.

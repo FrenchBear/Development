@@ -1,0 +1,8 @@
+frmHACCP = 0, 0, 0, 0, C, 22, 22, 515, 464, C
+GLOBHACC = 44, 44, 537, 486, Z
+frmSaisie = 66, 66, 559, 508, , 0, 0, 0, 0, C
+frmOuvrir = 0, 0, 0, 0, C, 0, 0, 0, 0, C
+frmAbout = 0, 0, 0, 0, C, 0, 0, 0, 0, C
+frmEnCours = 0, 0, 0, 0, C, 0, 0, 0, 0, C
+frmOptions = 0, 0, 0, 0, C, 0, 0, 0, 0, C
+frmNomProj = 0, 0, 0, 0, C, 0, 0, 0, 0, C

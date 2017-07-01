@@ -1,0 +1,71 @@
+; This file is maintained by HCW. Do not modify this file directly.
+
+[OPTIONS]
+REPORT=Yes
+CONTENTS=P00
+TITLE=Aide du programme HACCP 3
+;BMROOT=..
+
+[FILES]
+Haccppgm.rtf
+
+[MAP]
+P01  1
+P10  1000
+P11  1001
+P12  1010
+P13  1005
+P14  1007
+P15  1011
+P16  1008
+P20  1002
+P21  10
+P22  11
+P23  12
+P24  13
+P25  14
+P26  15
+P27  16
+P30  1009
+P31  2
+P32  3
+P33  40
+P33  41
+P33  50
+P33  51
+P33  52
+P33  53
+P33  54
+P33  55
+P33  70
+P33  71
+P33  72
+P33  73
+P33  74
+P33  75
+P33  76
+P34  60
+P35  61
+P36  81
+P37  82
+P38  84
+P39  86
+P40  5
+P41  88
+P50  1015
+P51  1014
+P52  30
+P60  1003
+P61  1004
+P62  1017
+P63  1012
+P64  1016
+P65  80
+P66  1006
+P67  1013
+
+[WINDOWS]
+main="Aide programme HACCP", (0,0,1023,1023 ),,, (192,192,192 )
+
+[CONFIG]
+BrowseButtons()

@@ -1,0 +1,11 @@
+
+/* proto.ref
+*/
+
+void pro_init(void);
+void pro_close(void);
+
+void pro_from_cla(word);
+void pro_from_com(word);
+
+void pro_inversestatus(void);

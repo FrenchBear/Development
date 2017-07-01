@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets
+    xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>BlueBrick startup template</Title>
+	  <Shortcut>bluebrick</Shortcut>
+    </Header>
+    <Snippet>
+      <Code Language="CSharp">
+        <![CDATA[// BlueBrick (Data Layer) namespaces; adjust with namespace used during generation
+using Eurofins.BlueBrick;
+using Eurofins.YourModule.DataLayer.DataClasses;
+using Eurofins.YourModule.DataLayer.WithSet;  // Retrieve sets using table name
+
+using System.Data.SqlClient;
+
+// ~Object context of EF, support SaveChanges methods...
+public static IEurodatContext myContext;
+		
+private IEurodatContext getEurodatContext(bool isWritable)
+{
+	var CSB = new SqlConnectionStringBuilder();
+	CSB.DataSource = @"LU01ZEPHYR\SQL2008";
+	CSB.InitialCatalog = "Eurodat506_EUMEDM_Dev";
+	CSB.UserID = "eurodatonline";
+	CSB.Password = "madeinchina";
+
+	var ctxtFactory = new EurodatContextFactory(typeof(Operator).Assembly);
+	var context = ctxtFactory.CreateDbEurodatContext(CSB.ToString());
+
+	if (isWritable)
+	{
+		var sargs = new SessionInfoArguments();
+		sargs.OperatorCode = "FPVI";
+		sargs.SetLanguageCode("1");     // French
+		sargs.SetPartnerCode("EUMEDM");
+		context.SetSessionInfo(sargs);
+	}
+
+	return context;
+}
+]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

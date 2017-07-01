@@ -1,0 +1,5 @@
+/* a0.ref */
+void a0_save(void);
+void a0_restore(void);
+void a0_rebuild(int2,int2,int2,int2,booleen);
+void a0_redisplay(void);

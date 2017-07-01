@@ -1,0 +1,115 @@
+/* a0.ref */
+void a0_save(void);
+void a0_restore(void);
+void a0_rebuild(int2,int2,int2,int2,booleen);
+void a0_redisplay(void);
+/* alert.ref*/
+int2 alert(int2,const char *,couleur,couleur,couleur,couleur,const char *,int2 ,int2 ,const char *);
+void alert_ok(const char *,couleur,couleur,couleur,couleur,const char *);
+/* box.ref */
+void drawbox(int2,int2,int2,int2,const char *,booleen);
+void drawboxa(int2,int2,int2,int2,const char *,booleen,uint1);
+/* chaine.ref */
+char instring(const char *,char);
+int2 maj(int2);
+int2 majAZ(int2);
+int2 minaz(int2);
+int2 valid(const char *,int2,booleen *);
+/* clavier.ref */
+void (*vc_hotkey(touche,void (*)(void)))(void);
+touche vc_lircar(void);
+booleen vc_cardispo(void);
+/* cls.ref */
+void ve_cls(void);
+void ve_clszone(int2,int2);
+/* couleurs.ref */
+void ve_ccar(couleur);
+void ve_cfond(couleur);
+void ve_ccarfond(couleur,couleur);
+couleur ve_qccar(void);
+couleur ve_qcfond(void);
+/* curseur.ref */
+void ve_gotolc(int2,int2);
+void ve_wherelc(int2 *,int2 *);
+void ve_curseur(int2);
+int2 ve_qcurseur(void);
+/* fill.ref */
+void ve_fillc(int2,int2,int2,int2,unsigned char);
+void ve_fillca(int2,int2,int2,int2,char,uint1);
+/* MD.REF */
+#ifdef VLIB_MD
+  void	  md_setattrib(uint1,uint1,uint1,uint1,uint1);
+  void	  md_stocke(MD_MENU *);
+  void	  md_dessin(void);
+  MD_MENU *md_exec(MD_MENU *);
+  extern  MD_MENU *md_tabacc[];
+#endif
+/* date.ref */
+void today(char *,char *,char *);
+char *datefr(void);
+/* divers.ref */
+void bipbip(int2);
+char exist(const char *);
+short run(const char *,int2,const char * const *);
+/* ecran.ref */
+void ve_puts2(const char *);
+void ve_putslc(int2,int2,const char *);
+void ve_putslca(int2,int2,const char *,uint1);
+void ve_sorcar(unsigned char );
+void ve_sorcarlc(int2,int2,unsigned char );
+void ve_puts(const char *);
+void ve_printf(const char *, ...);
+/* imprime.ref */
+char okprinter(void);
+char *conv_impr(char);
+/* init.ref */
+void initvlib(void);
+void vlib_err(const char *);
+/* input.ref */
+touche input(char *,int2,const char *,const touche *);
+touche inputlc(int2,int2,char *,int2,const char *,const touche *);
+/* menu.ref */
+int2 menu(int2,const char *,couleur,couleur,couleur,couleur,const char * *,const touche *,int2);
+/* pa.ref */
+void pa_push(int2,int2,int2,int2);
+void pa_pushecran(void);
+void pa_pop(void);
+/* scroll.ref */
+void sc_up(int2,int2,int2);
+void sc_down(int2,int2,int2);
+void sc_left(int2,int2,int2);
+void sc_right(int2,int2,int2);
+/* vbios.ref */
+void vb_sorcar0(unsigned char);
+void vb_sorch0(const char *);
+void vb_sorcar(unsigned char);
+void vb_sorch(const char *);
+void vb_refresh(void);
+touche vb_lircar(void);
+booleen vb_cardispo(void);
+void vb_setattrib(uint1);
+void vb_gotolc(uint1,uint1);
+void vb_wherelc(uint1 *,uint1 *);
+void vb_curseur(uint1);
+void vb_clszone(uint1,uint1);
+void vb_supligne(uint1,uint1);
+void vb_insligne(uint1,uint1);
+/* fselect.ref */
+int2 fileselect(const char *,const char *,couleur,couleur,couleur,couleur,int2,char *,const char *,const char *,const char *,void (*)(const char *,const char *));
+/* VVAR.H	 P.Violent     MSC 4.0|5.0 / MS-DOS
+**
+** Liste des variables publiques de Vlib
+*/
+
+extern const uint1   _vlibmajor,_vlibminor;
+extern const uint1   far * const vb_dptr,vb_at;
+extern const uint1   vb_io,vb_lig,vb_col,vb_curs;
+extern const uint2   vb_index,vt_col2;
+extern const uint1   vt_lig,vt_col,vt_vmode,vt_police,vt_type;
+extern const booleen vt_couleur;
+extern const int2    am_lig,am_col;
+extern const int2    pa_nbitem,pa_stack_free;
+extern const uint2   pa_buffer_free;
+extern const int2    vc_nbhotkey,vc_nbmaxhotkey;
+extern	     booleen vc_okhotkey;
+extern	     booleen md_oknuage,md_oktravail;

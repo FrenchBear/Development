@@ -1,0 +1,26 @@
+VERSION 5.00
+Begin VB.PropertyPage pagTest 
+   Caption         =   "PropertyPage1"
+   ClientHeight    =   3600
+   ClientLeft      =   0
+   ClientTop       =   0
+   ClientWidth     =   4800
+   PaletteMode     =   0  'Halftone
+   ScaleHeight     =   3600
+   ScaleWidth      =   4800
+   Begin VB.Label Label1 
+      Caption         =   "Label1"
+      Height          =   495
+      Left            =   600
+      TabIndex        =   0
+      Top             =   540
+      Width           =   1215
+   End
+End
+Attribute VB_Name = "pagTest"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Explicit
+

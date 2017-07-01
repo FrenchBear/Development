@@ -1,0 +1,1110 @@
+:Base tdbg6.hlp>main
+1 Table of Contents=Contents>main
+1 About True DBGrid Pro 6.0
+2 Product Profile=Product_Profile>main
+2 What's New in Version 6.0?=What's_New_in_Version_6.0?>main
+2 License and Redistributable Files=License_and_Redistributable_Files>main
+2 Technical Support=Technical_Support>main
+
+1 Part 1 - Overviews
+2 Getting Started
+3 Installation=Installation>main
+3 Adding True DBGrid Pro 6.0 to a Visual Basic Project=Adding_True_DBGrid_Pro_6.0_to_a_Visual_Basic_Project>main
+3 Migrating to True DBGrid Pro 6.0=Migrating_to_True_DBGrid_Pro_6.0>main
+3 Style Changes in Version 6.0=Style_Changes_in_Version_6.0>main
+3 Syntax Changes in Version 6.0=Syntax_Changes_in_Version_6.0>main
+3 Syntax Changes in Version 5.0=Syntax_Changes_in_Version_5.0>main
+
+2 The Basics
+3 The Basics=The_Basics>main
+3 Specifying a Data Source
+4 Specifying a Data Source=Specifying_a_Data_Source>main
+4 What is bound mode?=What_is_bound_mode?>main
+4 What is storage mode?=What_is_storage_mode?>main
+4 What is application mode?=What_is_application_mode?>main
+4 What is unbound mode?=What_is_unbound_mode?>main
+3 Choosing a Column Layout
+4 Choosing a Column Layout=Choosing_a_Column_Layout>main
+4 Automatic layouts=Automatic_layouts>main
+4 Customized layouts=Customized_layouts>main
+4 Run-time layouts=Run-time_layouts>main
+4 Switching between layout types=Switching_between_layout_types>main
+3 Configuring Columns at Design Time
+4 Configuring Columns at Design Time=Configuring_Columns_at_Design_Time>main
+4 Visual editing=Visual_editing>main
+4 Specifying database fields=Specifying_database_fields>main
+4 Specifying other column properties=Specifying_other_column_properties>main
+3 Configuring Columns at Run Time
+4 Configuring Columns at Run Time=Configuring_Columns_at_Run_Time>main
+4 Adding and removing columns=Adding_and_removing_columns>main
+4 Referencing column objects=Referencing_column_objects>main
+4 Adjusting column properties in code=Adjusting_column_properties_in_code>main
+3 Understanding Bookmarks
+4 Understanding Bookmarks=Understanding_Bookmarks>main
+
+2 Tutorials
+3 Introduction=Introduction>main
+3 Tutorial 1 - Binding True DBGrid to a Data Control=Tutorial_1>main
+3 Tutorial 2 - Using True DBGrid with SQL Query Results=Tutorial_2>main
+3 Tutorial 3 - Linking Multiple True DBGrid Controls=Tutorial_3>main
+3 Tutorial 4 - Interacting with Code and Other Bound Controls=Tutorial_4>main
+3 Tutorial 5 - Selecting Multiple Rows Using Bookmarks=Tutorial_5>main
+3 Tutorial 6 - Defining Unbound Columns in a Bound Grid=Tutorial_6>main
+3 Tutorial 7 - Displaying Translated Data with the Built-in Combo=Tutorial_7>main
+3 Tutorial 8 - Attaching a True DBDropdown Control to a Grid Cell=Tutorial_8>main
+3 Tutorial 9 - Attaching a Drop-down Control to a Grid Cell=Tutorial_9>main
+3 Tutorial 10 - Enhancing the User Interface with In-Cell Bitmaps=Tutorial_10>main
+3 Tutorial 11 - Using Styles to Highlight Related Data=Tutorial_11>main
+3 Tutorial 12 - Displaying Rows in Alternating Colors=Tutorial_12>main
+3 Tutorial 13 - Implementing Drag-and-Drop in True DBGrid=Tutorial_13>main
+3 Tutorial 14 - OLE Drag-and-Drop=Tutorial_14>main
+3 Tutorial 15 - Creating a Grid with Fixed, Nonscrolling Columns=Tutorial_15>main
+3 Tutorial 16 - Displaying Array Data in Unbound Mode=Tutorial_16>main
+3 Tutorial 17 - Displaying Array Data in Unbound Extended Mode=Tutorial_17>main
+3 Tutorial 18 - Displaying Array Data in Unbound Application Mode=Tutorial_18>main
+3 Tutorial 19 - Displaying Array Data in Unbound Storage Mode=Tutorial_19>main
+3 Tutorial 20 - Searching and Sorting=Tutorial_20>main
+3 Tutorial 21 - Displaying Arbitrary Bitmaps=Tutorial_21>main
+3 Tutorial 22 - Reusable Layouts=Tutorial_22>main
+3 Tutorial 23 - Printing, Print Preview, and Export=Tutorial_23>main
+3 Tutorial 24 - Displaying Hierarchical Data=Tutorial_24>main
+3 Tutorial 25 - Outlook-Style Grouping=Tutorial_25>main
+
+2 Object Model
+3 Object Model=Object_Model>main
+3 True DBGrid Objects and Collections=True_DBGrid_Objects_and_Collections>main
+3 TDBGrid Control=TDBGrid_Control>main
+3 TDBDropDown Control=TDBDropDown_Control>main
+3 Column Object, Columns Collection=Column_Object,_Columns_Collection>main
+3 DataObject Object, DataObjectFiles Collection=DataObject_Object,_DataObjectFiles_Collection>main
+3 GroupColumns Collection=GroupColumns_Collection>Main
+3 Layouts Collection=Layouts_Collection>main
+3 PrintInfo Object, PrintInfos Collection=PrintInfo_Object,_PrintInfos_Collection>main
+3 RowBuffer Object=RowBuffer_Object>main
+3 SelBookmarks Collection=SelBookmarks_Collection>main
+3 Split Object, Splits Collection=Split_Object,_Splits_Collection>main
+3 Style Object, Styles Collection=Style_Object,_Styles_Collection>main
+3 ValueItem Object, ValueItems Collection=ValueItem_Object,_ValueItems_Collection>main
+3 XArrayDB Object=XArrayDB_Object>main
+3 Working with Objects and Collections=Working_with_Objects_and_Collections>main
+
+2 Design Time Interaction
+3 Design Time Interaction=Design_Time_Interaction>main
+3 Context Menu
+4 Context Menu=Context_Menu>main
+3 Visual Editing Mode
+4 Visual Editing Mode=Visual_Editing_Mode>main
+4 Sizing columns and rows=Sizing_columns_and_rows>main
+4 Creating and sizing splits=Creating_and_sizing_splits>main
+4 Selecting and highlighting columns=Selecting_and_highlighting_columns>main
+4 Moving selected columns=Moving_selected_columns>main
+4 Using the visual editing menu=Using_the_visual_editing_menu>main
+3 Property Page Overview
+4 Property Page Overview=Property_Page_Overview>main
+4 Working with property pages=Working_with_property_pages>main
+4 Working with property trees=Working_with_property_trees>main
+4 Changing values in property trees
+5 Changing values in property trees=Changing_values_in_property_trees>main
+5 Boolean properties=Boolean_properties>main
+5 String properties=String_properties>main
+5 String selection properties=String_selection_properties>main
+5 Numeric properties=Numeric_properties>main
+5 Enumerated properties=Enumerated_properties>main
+5 Font properties=Font_properties>main
+5 Color properties=Color_properties>main
+5 Picture properties=Picture_properties>main
+5 Style properties=Style_properties>main
+5 Layout properties=Layout_properties>main
+4 Understanding the object model
+5 Understanding the object model=Understanding_the_object_model>main
+5 Splits in property trees=Splits_in_property_trees>main
+5 Columns in property trees=Columns_in_property_trees>main
+4 Using the property tree context menu=Using_the_property_tree_context_menu>main
+3 TDBGrid Property Pages
+4 TDBGrid Property Pages=TDBGrid_Property_Pages>main
+4 General property page
+5 General property page=General_property_page>main
+5 General properties by alphabet=General_properties_by_alphabet>main
+5 General properties by category=General_properties_by_category>main
+4 Columns property page
+5 Columns property page=Columns_property_page>main
+5 Column properties by alphabet=Column_properties_by_alphabet>main
+5 Column properties by category=Column_properties_by_category>main
+4 Splits property page
+5 Splits property page=Splits_property_page>main
+5 Split properties by alphabet=Split_properties_by_alphabet>main
+5 Split properties by category=Split_properties_by_category>main
+5 Split-specific Column properties by alphabet=Split-specific_Column_properties_by_alphabet>main
+5 Split-specific Column properties by category=Split-specific_Column_properties_by_category>main
+4 Style Factory property page
+5 Style Factory property page=Style_Factory_property_page>main
+5 Using the Style Factory property page=Using_the_Style_Factory_property_page>main
+5 Style properties by alphabet=Style_properties_by_alphabet>main
+5 Style properties by category=Style_properties_by_category>main
+4 Print Info property page
+5 Print Info property page=Print_Info_property_page>main
+5 Using the Print Info property page=Using_the_Print_Info_property_page>main
+5 PrintInfo properties=PrintInfo_properties>main
+4 Values property page
+5 Values property page=Values_property_page>main
+5 Using the Values property page=Using_the_Values_property_page>main
+5 ValueItems properties=ValueItems_properties>main
+5 ValueItem properties=ValueItem_properties>main
+3 TDBDropDown Property Pages
+4 TDBDropDown Property Pages=TDBDropDown_Property_Pages>main
+4 General property page (TDBDropDown)
+5 General property page (TDBDropDown)=General_property_page_TDBDropDown>main
+5 General properties by alphabet (TDBDropDown)=General_properties_by_alphabet_TDBDropDown>main
+5 General properties by category (TDBDropDown)=General_properties_by_category_TDBDropDown>main
+4 Columns property page (TDBDropDown)
+5 Columns property page (TDBDropDown)=Columns_property_page_TDBDropDown>main
+5 Column properties by alphabet (TDBDropDown)=Column_properties_by_alphabet_TDBDropDown>main
+5 Column properties by category (TDBDropDown)=Column_properties_by_category_TDBDropDown>main
+4 Style Factory property page (TDBDropDown)=Style_Factory_property_page_TDBDropDown>main
+4 Values property page (TDBDropDown)=Values_property_page_TDBDropDown>main
+3 Reusable Layouts
+4 Reusable Layouts=Reusable_Layouts>main
+4 Saving the current layout=Saving_the_current_layout>main
+4 Loading a saved layout=Loading_a_saved_layout>main
+4 Removing a saved layout=Removing_a_saved_layout>main
+3 Add-in Design Assistant
+4 Add-in Design Assistant=Add-in_Design_Assistant>main
+4 Using the Design Assistant=Using_the_Design_Assistant>main
+4 Setting column properties=Setting_column_properties_with_the_Design_Assistant>main
+4 Creating fixed, nonscrolling columns=Creating_fixed_nonscrolling_columns_with_the_Design_Assistant>main
+4 Refreshing properties=Refreshing_properties_in_the_Design_Assistant>main
+3 TDBDropDown at Design Time
+4 TDBDropDown at Design Time=TDBDropDown_at_Design_Time>main
+
+2 Run Time Interaction
+3 Run Time Interaction=Run_Time_Interaction>main
+3 Navigation and Scrolling
+4 Navigation and Scrolling=Navigation_and_Scrolling>main
+4 Mouse navigation=Mouse_navigation>main
+4 Clicking the rightmost column=Clicking_the_rightmost_column>main
+4 IntelliMouse support=IntelliMouse_support>main
+4 Keyboard navigation=Keyboard_navigation>main
+4 Navigation at row boundaries=Navigation_at_row_boundaries>main
+4 Navigation at split boundaries=Navigation_at_split_boundaries>main
+4 Restricting cell navigation=Restricting_cell_navigation>main
+3 Selection and Movement
+4 Selection and Movement=Selection_and_Movement>main
+4 Selecting columns=Selecting_columns>main
+4 Moving columns=Moving_columns>main
+4 Selecting rows=Selecting_rows>main
+3 Sizing and Splitting
+4 Sizing and Splitting=Sizing_and_Splitting>main
+4 Sizing rows=Sizing_rows>main
+4 Sizing columns=Sizing_columns>main
+4 Sizing splits=Sizing_splits>main
+3 Database Operations
+4 Database Operations=Database_Operations>main
+4 Editing data=Editing_data>main
+4 Adding a new record=Adding_a_new_record>main
+4 Deleting a record=Deleting_a_record>main
+3 Drag-and-Drop Behavior
+4 Drag-and-Drop Behavior=Drag-and-Drop_Behavior>main
+
+1 Part 2 - Data Access
+2 Bound Mode
+3 Bound Mode=Bound_Mode>main
+3 Binding True DBGrid to a Data Source
+4 Binding True DBGrid to a Data Source=Binding_True_DBGrid_to_a_Data_Source>main
+4 Binding to an ICursor data source=Binding_to_an_ICursor_data_source>main
+4 Binding to an OLE DB data source=Binding_to_an_OLE_DB_data_source>main
+3 Visual Basic Data Control Considerations
+4 Visual Basic Data Control Considerations=Visual_Basic_Data_Control_Considerations>main
+4 How True DBGrid reacts to Recordset changes=How_True_DBGrid_reacts_to_Recordset_changes>main
+4 Interactions between True DBGrid and the Data control=Interactions_between_True_DBGrid_and_the_Data_control>main
+4 Using True DBGrid with a Data control on a different form=Using_True_DBGrid_with_a_Data_control_on_a_different_form>main
+4 Using True DBGrid to display SQL query results=Using_True_DBGrid_to_display_SQL_query_results>main
+3 Remote Data Control (RDC) Considerations
+4 Remote Data Control (RDC) Considerations=Remote_Data_Control_RDC_Considerations>main
+3 Unbound Columns
+4 Unbound Columns=Unbound_Columns>main
+4 Creating unbound columns=Creating_unbound_columns>main
+4 Implementing unbound columns using Recordset clones=Implementing_unbound_columns_using_Recordset_clones>main
+4 Implementing unbound columns using cell access methods=Implementing_unbound_columns_using_cell_access_methods>main
+4 Implementing multiple unbound columns=Implementing_multiple_unbound_columns>main
+4 Updating unbound columns=Updating_unbound_columns>main
+4 Editing unbound columns=Editing_unbound_columns>main
+
+2 Storage Mode
+3 Storage Mode=Storage_Mode>main
+3 When to Use Storage Mode
+4 When to Use Storage Mode=When_to_Use_Storage_Mode>main
+3 Using the XArrayDB Object
+4 Using the XArrayDB Object=Using_the_XArrayDB_Object>main
+4 Adding XArrayDB to a Visual Basic project=Adding_XArrayDB_to_a_Visual_Basic_project>main
+4 Creating an XArrayDB object=Creating_an_XArrayDB_object>main
+4 Redimensioning an XArrayDB object=Redimensioning_an_XArrayDB_object>main
+4 Populating an XArrayDB object=Populating_an_XArrayDB_object>main
+4 Attaching an XArrayDB object to a True DBGrid control=Attaching_an_XArrayDB_object_to_a_True_DBGrid_control>main
+3 Interactions between True DBGrid and XArrayDB
+4 Interactions between True DBGrid and XArrayDB=Interactions_between_True_DBGrid_and_XArrayDB>main
+4 Updating XArrayDB elements=Updating_XArrayDB_elements>main
+4 Inserting and removing XArrayDB rows=Inserting_and_removing_XArrayDB_rows>main
+4 Inserting and removing XArrayDB columns=Inserting_and_removing_XArrayDB_columns>main
+3 Storage Mode Examples
+4 Storage Mode Examples=Storage_Mode_Examples>main
+
+2 Application Mode
+3 Application Mode=Application_Mode>main
+3 When to Use Application Mode
+4 When to Use Application Mode=When_to_Use_Application_Mode>main
+3 How Application Mode Works
+4 How Application Mode Works=How_Application_Mode_Works>main
+3 Application Mode Bookmarks
+4 Application Mode Bookmarks=Application_Mode_Bookmarks>main
+4 Bookmarks in True DBGrid=Bookmarks_in_True_DBGrid>main
+4 Bookmarks in Visual Basic=Bookmarks_in_Visual_Basic>main
+3 Application Mode Events
+4 Application Mode Events=Application_Mode_Events>main
+4 Handling the UnboundGetRelativeBookmark event in mode 3=Handling_the_UnboundGetRelativeBookmark_event_in_mode_3>main
+4 Handling the ClassicRead event in mode 3=Handling_the_ClassicRead_event_in_mode_3>main
+4 Handling the ClassicWrite event in mode 3=Handling_the_ClassicWrite_event_in_mode_3>main
+4 Handling the ClassicAdd event in mode 3=Handling_the_ClassicAdd_event_in_mode_3>main
+4 Handling the ClassicDelete event in mode 3=Handling_the_ClassicDelete_event_in_mode_3>main
+3 Application Mode Programming Considerations
+4 Application Mode Programming Considerations=Application_Mode_Programming_Considerations>main
+4 Refreshing the display in mode 3=Refreshing_the_display_in_mode_3>main
+4 Reinitializing the grid in mode 3=Reinitializing_the_grid_in_mode_3>main
+4 Updating and deleting rows in mode 3=Updating_and_deleting_rows_in_mode_3>main
+3 Application Mode Example
+4 Application Mode Example=Application_Mode_Example>main
+
+2 Unbound Mode
+3 Unbound Mode=Unbound_Mode>main
+3 When to Use Unbound Mode
+4 When to Use Unbound Mode=When_to_Use_Unbound_Mode>main
+3 How Unbound Mode Works
+4 How Unbound Mode Works=How_Unbound_Mode_Works>main
+3 Unbound Mode Bookmarks
+4 Unbound Mode Bookmarks=Unbound_Mode_Bookmarks>main
+3 Using the RowBuffer Object
+4 Using the RowBuffer Object=Using_the_RowBuffer_Object>main
+3 Unbound Mode Events
+4 Unbound Mode Events=Unbound_Mode_Events>main
+4 Handling the UnboundReadData event in mode 1=Handling_the_UnboundReadData_event_in_mode_1>main
+4 Handling the UnboundGetRelativeBookmark event in mode 1=Handling_the_UnboundGetRelativeBookmark_event_in_mode_1>main
+4 Handling the UnboundReadDataEx event in mode 2=Handling_the_UnboundReadDataEx_event_in_mode_2>main
+4 UnboundReadDataEx event examples=UnboundReadDataEx_event_examples>main
+4 Handling the UnboundWriteData event in modes 1 and 2=Handling_the_UnboundWriteData_event_in_modes_1_and_2>main
+4 Handling the UnboundAddData event in modes 1 and 2=Handling_the_UnboundAddData_event_in_modes_1_and_2>main
+4 Handling the UnboundDeleteRow event in modes 1 and 2=Handling_the_UnboundDeleteRow_event_in_modes_1_and_2>main
+3 Unbound Mode Programming Considerations
+4 Unbound Mode Programming Considerations=Unbound_Mode_Programming_Considerations>main
+4 Refreshing the display in mode 1=Refreshing_the_display_in_mode_1>main
+4 Refreshing the display in mode 2=Refreshing_the_display_in_mode_2>main
+4 Reinitializing the grid in modes 1 and 2=Reinitializing_the_grid_in_modes_1_and_2>main
+4 Updating and deleting rows in modes 1 and 2=Updating_and_deleting_rows_in_modes_1_and_2>main
+4 Adding rows in modes 1 and 2=Adding_rows_in_modes_1_and_2>main
+4 Calibrating the vertical scroll bar in modes 1 and 2=Calibrating_the_vertical_scroll_bar_in_modes_1_and_2>main
+3 Unbound Mode Examples
+4 Unbound Mode Examples=Unbound_Mode_Examples>main
+
+2 Database Programming Techniques
+3 Database Programming Techniques=Database_Programming_Techniques>main
+3 Changing the Current Record Position
+4 Changing the Current Record Position=Changing_the_Current_Record_Position>main
+4 Using the Bookmark property=Using_the_Bookmark_property>main
+4 Using the navigation methods=Using_the_navigation_methods>main
+4 Detecting BOF and EOF conditions=Detecting_BOF_and_EOF_conditions>main
+3 Accessing and Manipulating Cell Data
+4 Accessing and Manipulating Cell Data=Accessing_and_Manipulating_Cell_Data>main
+4 Reading and writing cell data within the current record=Reading_and_writing_cell_data_within_the_current_record>main
+4 Reading cell data from non-current records=Reading_cell_data_from_non-current_records>main
+4 Retrieving a bookmark relative to the current record=Retrieving_a_bookmark_relative_to_the_current_record>main
+4 Retrieving a bookmark relative to a displayed row=Retrieving_a_bookmark_relative_to_a_displayed_row>main
+3 Validating Cell Data
+4 Validating Cell Data=Validating_Cell_Data>main
+4 Validating end-user data entries=Validating_end-user_data_entries>main
+4 Validating data before updating to the database=Validating_data_before_updating_to_the_database>main
+3 Selecting and Highlighting Records
+4 Selecting and Highlighting Records=Selecting_and_Highlighting_Records>main
+3 Updating and Deleting the Current Record
+4 Updating and Deleting the Current Record=Updating_and_Deleting_the_Current_Record>main
+3 Refreshing the Display
+4 Refreshing the Display=Refreshing_the_Display>main
+3 Refetching Data from the Data Source
+4 Refetching Data from the Data Source=Refetching_Data_from_the_Data_Source>main
+3 Coordinating with Other Controls
+4 Coordinating with Other Controls=Coordinating_with_Other_Controls>main
+3 Handling Database Errors
+4 Handling Database Errors=Handling_Database_Errors>main
+4 Trapping errors=Trapping_errors>main
+4 Processing trapped errors=Processing_trapped_errors>main
+4 Errors caused by cancellation=Errors_caused_by_cancellation>main
+3 Postponing Illegal Operations in Grid Events
+4 Postponing Illegal Operations in Grid Events=Postponing_Illegal_Operations_in_Grid_Events>main
+
+1 Part 3 - Data Display and Editing
+2 Customizing the Grid's Appearance
+3 Customizing the Grid's Appearance=Customizing_the_Grids_Appearance>main
+3 Captions, Headers, and Footers
+4 Captions, Headers, and Footers=Captions,_Headers,_and_Footers>main
+4 Column and grid captions=Column_and_grid_captions>main
+4 Column footers=Column_footers>main
+4 Multiple-line headers and footers=Multiple-line_headers_and_footers>main
+4 Split captions=Split_captions>main
+3 Three-dimensional versus Flat Display
+4 Three-dimensional versus Flat Display=Three-dimensional_versus_Flat_Display>main
+3 Borders and Dividing Lines
+4 Borders and Dividing Lines=Borders_and_Dividing_Lines>main
+3 Unpopulated Regions
+4 Unpopulated Regions=Unpopulated_Regions>main
+4 The rightmost column=The_rightmost_column>main
+4 Unused data rows=Unused_data_rows>main
+3 Highlighting the Current Row or Cell
+4 Highlighting the Current Row or Cell=Highlighting_the_Current_Row_or_Cell>main
+4 MarqueeStyle 0 - Dotted Cell Border=MarqueeStyle_0>main
+4 MarqueeStyle 1 - Solid Cell Border=MarqueeStyle_1>main
+4 MarqueeStyle 2 - HighlightCell=MarqueeStyle_2>main
+4 MarqueeStyle 3 - Highlight Row=MarqueeStyle_3>main
+4 MarqueeStyle 4 - Highlight Row, Raise Cell=MarqueeStyle_4>main
+4 MarqueeStyle 5 - No Marquee=MarqueeStyle_5>main
+4 MarqueeStyle 6 - Floating Editor=MarqueeStyle_6>main
+4 MarqueeStyle 7 - Dotted Row Border=MarqueeStyle_7>main
+3 Row Height and Multiple-line Displays
+4 Row Height and Multiple-line Displays=Row_Height_and_Multiple-line_Displays>main
+4 Adjusting the height of all grid rows=Adjusting_the_height_of_all_grid_rows>main
+4 Enabling wordwrap in cells=Enabling_wordwrap_in_cells>main
+4 Displaying a single record on multiple lines=Displaying_a_single_record_on_multiple_lines>main
+4 Implications of multiple-line mode=Implications_of_multiple-line_mode>main
+3 Alternating Row Colors
+4 Alternating Row Colors=Alternating_Row_Colors>main
+3 Horizontal and Vertical Alignment
+4 Horizontal and Vertical Alignment=Horizontal_and_Vertical_Alignment>main
+3 Window Animation
+4 Window Animation=Window_Animation>main
+
+2 Data Presentation Techniques
+3 Data Presentation Techniques=Data_Presentation_Techniques>main
+3 Text Formatting
+4 Text Formatting=Text_Formatting>main
+4 Using Visual Basic's built-in formatting=Using_Visual_Basic_built-in_formatting>main
+4 Input validation with built-in formatting=Input_validation_with_built-in_formatting>main
+4 Formatting with an input mask=Formatting_with_an_input_mask>main
+4 Formatting with a custom event handler=Formatting_with_a_custom_event_handler>main
+3 Automatic Data Translation with ValueItems
+4 Automatic Data Translation with ValueItems=Automatic_Data_Translation_with_ValueItems>main
+4 What are ValueItems?=What_are_ValueItems?>main
+4 Specifying text-to-text translations=Specifying_text-to-text_translations>main
+4 Specifying text-to-picture translations=Specifying_text-to-picture_translations>main
+4 Displaying both text and pictures in a cell=Displaying_both_text_and_pictures_in_a_cell>main
+4 Displaying boolean values as check boxes=Displaying_boolean_values_as_check_boxes>main
+4 Displaying allowable values as radio buttons=Displaying_allowable_values_as_radio_buttons>main
+3 Context-sensitive Help with CellTips
+4 Context-sensitive Help with CellTips=Context-sensitive_Help_with_CellTips>main
+3 Data-sensitive Cell Merging
+4 Data-sensitive Cell Merging=Data-sensitive_Cell_Merging>main
+3 Outlook-Style Grouping
+4 Outlook-Style Grouping=Outlook-Style_Grouping>main
+3 Hierarchical Data Display
+4 Hierarchical Data Display=Hierarchical_Data_Display>main
+3 Owner-drawn Cells
+4 Owner-drawn Cells=Owner-drawn_Cells>main
+
+2 How to Use Splits
+3 How to Use Splits=How_to_Use_Splits>main
+3 Referencing Splits and Their Properties
+4 Referencing Splits and Their Properties=Referencing_Splits_and_Their_Properties>main
+4 Split properties common to TDBGrid=Split_properties_common_to_TDBGrid>main
+4 Split-only properties not supported by TDBGrid=Split-only_properties_not_supported_by_TDBGrid>main
+3 Creating and Removing Splits
+4 Creating and Removing Splits=Creating_and_Removing_Splits>main
+3 Working with Columns in Splits
+4 Working with Columns in Splits=Working_with_Columns_in_Splits>main
+4 Global properties and methods of Column object=Global_properties_and_methods_of_Column_object>main
+4 Split-specific properties and methods of Column object=Split-specific_properties_and_methods_of_Column_object>main
+3 Sizing and Scaling Splits
+4 Sizing and Scaling Splits=Sizing_and_Scaling_Splits>main
+3 Creating and Resizing Splits through User Interaction
+4 Creating and Resizing Splits through User Interaction=Creating_and_Resizing_Splits_through_User_Interaction>main
+3 Vertical Scrolling and Split Groups
+4 Vertical Scrolling and Split Groups=Vertical_Scrolling_and_Split_Groups>main
+3 Horizontal Scrolling and Fixed Columns
+4 Horizontal Scrolling and Fixed Columns=Horizontal_Scrolling_and_Fixed_Columns>main
+3 Navigation across Splits
+4 Navigation across Splits=Navigation_across_Splits>main
+
+2 How to Use Styles
+3 How to Use Styles=How_to_Use_Styles>main
+3 Built-in Named Styles
+4 Built-in Named Styles=Built-in_Named_Styles>main
+4 Named style defaults=Named_style_defaults>main
+4 Named style inheritance=Named_style_inheritance>main
+4 Modifying named styles=Modifying_named_styles>main
+3 Working with Style Properties
+4 Working with Style Properties=Working_with_Style_Properties>main
+4 Modifying a style property directly=Modifying_a_style_property_directly>main
+4 Assigning a value to a style property=Assigning_a_value_to_a_style_property>main
+4 Named styles versus anonymous styles=Named_styles_versus_anonymous_styles>main
+4 Anonymous style inheritance=Anonymous_style_inheritance>main
+4 Shortcut style properties=Shortcut_style_properties>main
+3 Applying Styles to Cells
+4 Applying Styles to Cells=Applying_Styles_to_Cells>main
+4 Specifying cell status values=Specifying_cell_status_values>main
+4 Applying cell styles by status=Applying_cell_styles_by_status>main
+4 Applying cell styles by contents=Applying_cell_styles_by_contents>main
+4 Applying cell styles by custom criteria=Applying_cell_styles_by_custom_criteria>main
+4 Cell style evaluation order=Cell_style_evaluation_order>main
+3 Applying Pictures to Grid Elements
+4 Applying Pictures to Grid Elements=Applying_Pictures_to_Grid_Elements>main
+4 Displaying background pictures=Displaying_background_pictures>main
+4 Displaying foreground pictures=Displaying_foreground_pictures>main
+
+2 Cell Editing Techniques
+3 Cell Editing Techniques=Cell_Editing_Techniques>main
+3 How Cell Editing Works
+4 How Cell Editing Works=How_Cell_Editing_Works>main
+4 Initiating cell editing=Initiating_cell_editing>main
+4 Color and wordwrap=Color_and_wordwrap>main
+4 Determining modification status=Determining_modification_status>main
+4 Determining cell contents=Determining_cell_contents>main
+4 Terminating cell editing=Terminating_cell_editing>main
+3 Handling Editing Events
+4 Handling Editing Events=Handling_Editing_Events>main
+4 Standard keystroke events=Standard_keystroke_events>main
+4 Column editing events=Column_editing_events>main
+4 Changing cell contents with a single keystroke=Changing_cell_contents_with_a_single_keystroke>main
+3 Working with Text
+4 Working with Text=Working_with_Text>main
+4 Limiting the size of data entry fields=Limiting_the_size_of_data_entry_fields>main
+4 Providing a drop-down edit control for long fields=Providing_a_drop-down_edit_control_for_long_fields>main
+4 Changing the insertion mode=Changing_the_insertion_mode>main
+4 Selecting and replacing text=Selecting_and_replacing_text>main
+3 Input Masking
+4 Input Masking=Input_Masking>main
+4 Specifying an input mask for a column=Specifying_an_input_mask_for_a_column>main
+4 Specifying a date mask for a column=Specifying_a_date_mask_for_a_column>main
+4 Using an input mask for formatting=Using_an_input_mask_for_formatting>main
+4 Controlling how masked input is updated=Controlling_how_masked_input_is_updated>main
+3 In-Cell Buttons
+4 In-Cell Buttons=In-Cell_Buttons>main
+4 Enabling the in-cell button=Enabling_the_in-cell_button>main
+4 Rendering cells as command buttons=Rendering_cells_as_command_buttons>main
+4 Detecting in-cell button clicks=Detecting_in-cell_button_clicks>main
+4 Customizing the in-cell button bitmap=Customizing_the_in-cell_button_bitmap>main
+3 Drop-down Controls
+4 Drop-down Controls=Drop-down_Controls>main
+4 Using the built-in combo box=Using_the_built-in_combo_box>main
+4 Detecting built-in combo box selections=Detecting_built-in_combo_box_selections>main
+4 Using the TDBDropDown control=Using_the_TDBDropDown_control>main
+4 Using an arbitrary drop-down control=Using_an_arbitrary_drop-down_control>main
+4 Using the built-in column button=Using_the_built-in_column_button>main
+
+1 Part 4 - Reference
+2 Property Reference
+3 Quick Reference for All Properties=Quick_Reference_for_All_Properties>main
+3 By Alphabet
+4 AddNewMode Property=AddNewMode_Property>ref
+4 Alignment Property=Alignment_Property>ref
+4 AllowAddNew Property=AllowAddNew_Property>ref
+4 AllowArrows Property=AllowArrows_Property>ref
+4 AllowColMove Property=AllowColMove_Property>ref
+4 AllowColSelect Property=AllowColSelect_Property>ref
+4 AllowDelete Property=AllowDelete_Property>ref
+4 AllowFocus Property=AllowFocus_Property>ref
+4 AllowRowSelect Property=AllowRowSelect_Property>ref
+4 AllowRowSizing Property=AllowRowSizing_Property>ref
+4 AllowSizing Property=AllowSizing_Property>ref
+4 AllowUpdate Property=AllowUpdate_Property>ref
+4 AlternatingRowStyle Property=AlternatingRowStyle_Property>ref
+4 AnchorRightColumn Property (6.0)=AnchorRightColumn_Property>ref
+4 AnimateWindow Property (6.0b)=AnimateWindow_Property>ref
+4 AnimateWindowClose Property (6.0b)=AnimateWindowClose_Property>ref
+4 AnimateWindowDirection Property (6.0b)=AnimateWindowDirection_Property>ref
+4 AnimateWindowTime Property (6.0b)=AnimateWindowTime_Property>ref
+4 AnnotatePicture Property=AnnotatePicture_Property>ref
+4 Appearance Property=Appearance_Property>ref
+4 ApproxCount Property=ApproxCount_Property>ref
+4 Array Property=Array_Property>ref
+4 AutoDropDown Property (6.0)=AutoDropDown_Property>ref
+4 BackColor Property=BackColor_Property>ref
+4 BackgroundPicture Property (6.0)=BackgroundPicture_Property>ref
+4 BackgroundPictureDrawMode Property (6.0)=BackgroundPictureDrawMode_Property>ref
+4 Bands Property (6.0a)=Bands_Property>ref
+4 BatchUpdates Property (6.0b)=BatchUpdates_Property>ref
+4 BOF Property=BOF_Property>ref
+4 Bookmark Property (RowBuffer)=Bookmark_Property_RowBuffer>ref
+4 Bookmark Property (TDBGrid)=Bookmark_Property_TDBGrid>ref
+4 BookmarkType Property=BookmarkType_Property>ref
+4 BorderStyle Property=BorderStyle_Property>ref
+4 Button Property=Button_Property>ref
+4 ButtonAlways Property (6.0)=ButtonAlways_Property>ref
+4 ButtonFooter Property (6.0)=ButtonFooter_Property>ref
+4 ButtonHeader Property (6.0)=ButtonHeader_Property>ref
+4 ButtonPicture Property=ButtonPicture_Property>ref
+4 ButtonText Property (6.0)=ButtonText_Property>ref
+4 Caption Property=Caption_Property>ref
+4 CaptionStyle Property=CaptionStyle_Property>ref
+4 CellTips Property=CellTips_Property>ref
+4 CellTipsDelay Property=CellTipsDelay_Property>ref
+4 CellTipsWidth Property=CellTipsWidth_Property>ref
+4 CellTop Property=CellTop_Property>ref
+4 Col Property=Col_Property>ref
+4 ColIndex Property=ColIndex_Property>ref
+4 ColumnCount Property=ColumnCount_Property>ref
+4 ColumnFooters Property (6.0)=ColumnFooters_Property>ref
+4 ColumnHeaders Property=ColumnHeaders_Property>ref
+4 ColumnIndex Property=ColumnIndex_Property>ref
+4 ColumnName Property=ColumnName_Property>ref
+4 Columns Property=Columns_Property>ref
+4 ConvertEmptyCell Property (6.0a)=ConvertEmptyCell_Property>ref
+4 Count Property=Count_Property>ref
+4 CurrentCellModified Property=CurrentCellModified_Property>ref
+4 CurrentCellVisible Property=CurrentCellVisible_Property>ref
+4 CycleOnClick Property=CycleOnClick_Property>ref
+4 DataChanged Property=DataChanged_Property>ref
+4 DataField Property (Column)=DataField_Property_Column>ref
+4 DataField Property (TDBDropDown)=DataField_Property_TDBDropDown>ref
+4 DataMember Property=DataMember_Property>ref
+4 DataMode Property=DataMode_Property>ref
+4 DataSource Property=DataSource_Property>ref
+4 DataView Property (6.0a)=DataView_Property>ref
+4 DataWidth Property=DataWidth_Property>ref
+4 DefaultItem Property=DefaultItem_Property>ref
+4 DefaultValue Property=DefaultValue_Property>ref
+4 DefColWidth Property=DefColWidth_Property>ref
+4 DisplayAlignment Property (6.0)=DisplayAlignment_Property>ref
+4 DisplayValue Property=DisplayValue_Property>ref
+4 DividerStyle Property=DividerStyle_Property>ref
+4 DropDown Property=DropDown_Property>ref
+4 DropDownList Property (6.0)=DropDownList_Property>ref
+4 EditActive Property=EditActive_Property>ref
+4 EditBackColor Property=EditBackColor_Property>ref
+4 EditDropDown Property=EditDropDown_Property>ref
+4 EditForeColor Property=EditForeColor_Property>ref
+4 EditMask Property=EditMask_Property>ref
+4 EditMaskRight Property (6.0)=EditMaskRight_Property>ref
+4 EditMaskUpdate Property=EditMaskUpdate_Property>ref
+4 EditorStyle Property=EditorStyle_Property>ref
+4 EmptyRows Property=EmptyRows_Property>ref
+4 Enabled Property=Enabled_Property>ref
+4 EOF Property=EOF_Property>ref
+4 ErrorText Property=ErrorText_Property>ref
+4 EvenRowStyle Property=EvenRowStyle_Property>ref
+4 ExportEOF Property (6.0)=ExportEOF_Property>ref
+4 ExportNextBookmark Property (6.0)=ExportNextBookmark_Property>ref
+4 ExposeCellMode Property=ExposeCellMode_Property>ref
+4 ExtendRightColumn Property=ExtendRightColumn_Property>ref
+4 ExternalEditor Property (6.0)=ExternalEditor_Property>ref
+4 FetchRowStyle Property=FetchRowStyle_Property>ref
+4 FetchStyle Property=FetchStyle_Property>ref
+4 Files Property (6.0)=Files_Property>ref
+4 FirstRow Property=FirstRow_Property>ref
+4 Font Property=Font_Property>ref
+4 FooterAlignment Property (6.0)=FooterAlignment_Property>ref
+4 FooterBackColor Property (6.0)=FooterBackColor_Property>ref
+4 FooterDivider Property (6.0)=FooterDivider_Property>ref
+4 FooterFont Property (6.0)=FooterFont_Property>ref
+4 FooterForeColor Property (6.0)=FooterForeColor_Property>ref
+4 FooterStyle Property (6.0)=FooterStyle_Property>ref
+4 FooterText Property (6.0)=FooterText_Property>ref
+4 FootLines Property (6.0)=FootLines_Property>ref
+4 ForeColor Property=ForeColor_Property>ref
+4 ForegroundPicture Property (6.0)=ForegroundPicture_Property>ref
+4 ForegroundPicturePosition Property (6.0)=ForegroundPicturePosition_Property>ref
+4 Group Property (6.0b)=Group_Property>ref
+4 GroupByCaption Property (6.0b)=GroupByCaption_Property>ref
+4 HeadAlignment Property=HeadAlignment_Property>ref
+4 HeadBackColor Property=HeadBackColor_Property>ref
+4 HeaderDivider Property (6.0)=HeaderDivider_Property>ref
+4 HeadFont Property=HeadFont_Property>ref
+4 HeadForeColor Property=HeadForeColor_Property>ref
+4 HeadingStyle Property=HeadingStyle_Property>ref
+4 HeadLines Property=HeadLines_Property>ref
+4 HighlightRowStyle Property=HighlightRowStyle_Property>ref
+4 HScrollHeight Property=HScrollHeight_Property>ref
+4 hWnd Property=hWnd_Property>ref
+4 hWndEditor Property=hWndEditor_Property>ref
+4 InactiveBackColor Property=InactiveBackColor_Property>ref
+4 InactiveForeColor Property=InactiveForeColor_Property>ref
+4 InactiveStyle Property=InactiveStyle_Property>ref
+4 Index Property=Index_Property>ref
+4 InsertMode Property (6.0)=InsertMode_Property>ref
+4 IntegralHeight Property=IntegralHeight_Property>ref
+4 LayoutFileName Property=LayoutFileName_Property>ref
+4 LayoutName Property=LayoutName_Property>ref
+4 Layouts Property=Layouts_Property>ref
+4 LayoutURL Property (6.0)=LayoutURL_Property>ref
+4 Left Property=Left_Property>ref
+4 LeftCol Property=LeftCol_Property>ref
+4 ListField Property=ListField_Property>ref
+4 Locked Property=Locked_Property>ref
+4 MarqueeStyle Property=MarqueeStyle_Property>ref
+4 MarqueeUnique Property=MarqueeUnique_Property>ref
+4 MaxComboItems Property=MaxComboItems_Property>ref
+4 Merge Property (6.0)=Merge_Property>ref
+4 MouseIcon Property (6.0)=MouseIcon_Property>ref
+4 MousePointer Property (6.0)=MousePointer_Property>ref
+4 MultipleLines Property=MultipleLines_Property>ref
+4 MultiSelect Property (6.0)=MultiSelect_Property>ref
+4 Name Property (Column) (6.0a)=Name_Property_Column>ref
+4 Name Property (Style)=Name_Property_Style>ref
+4 NumberFormat Property=NumberFormat_Property>ref
+4 OddRowStyle Property=OddRowStyle_Property>ref
+4 OLEDragMode Property (6.0)=OLEDragMode_Property>ref
+4 OLEDropMode Property (6.0)=OLEDropMode_Property>ref
+4 Order Property=Order_Property>ref
+4 OwnerDraw Property (6.0)=OwnerDraw_Property>ref
+4 Parent Property=Parent_Property>ref
+4 PartialRightColumn Property (6.0)=PartialRightColumn_Property>ref
+4 PictureAddNewRow Property (6.0)=PictureAddNewRow_Property>ref
+4 PictureCurrentRow Property (6.0)=PictureCurrentRow_Property>ref
+4 PictureFooterRow Property (6.0)=PictureFooterRow_Property>ref
+4 PictureHeaderRow Property (6.0)=PictureHeaderRow_Property>ref
+4 PictureModifiedRow Property (6.0)=PictureModifiedRow_Property>ref
+4 PictureStandardRow Property (6.0)=PictureStandardRow_Property>ref
+4 Presentation Property=Presentation_Property>ref
+4 PrintInfo Property (6.0)=PrintInfo_Property>ref
+4 PrintInfos Property (6.0)=PrintInfos_Property>ref
+4 RecordSelectors Property=RecordSelectors_Property>ref
+4 Row Property=Row_Property>ref
+4 RowCount Property=RowCount_Property>ref
+4 RowDividerStyle Property=RowDividerStyle_Property>ref
+4 RowHeight Property=RowHeight_Property>ref
+4 ScrollBars Property=ScrollBars_Property>ref
+4 ScrollGroup Property=ScrollGroup_Property>ref
+4 SelBookmarks Property=SelBookmarks_Property>ref
+4 SelectedBackColor Property=SelectedBackColor_Property>ref
+4 SelectedForeColor Property=SelectedForeColor_Property>ref
+4 SelectedItem Property=SelectedItem_Property>ref
+4 SelectedStyle Property=SelectedStyle_Property>ref
+4 SelEndCol Property=SelEndCol_Property>ref
+4 SelLength Property=SelLength_Property>ref
+4 SelStart Property=SelStart_Property>ref
+4 SelStartCol Property=SelStartCol_Property>ref
+4 SelText Property=SelText_Property>ref
+4 Size Property=Size_Property>ref
+4 SizeMode Property=SizeMode_Property>ref
+4 Split Property=Split_Property>ref
+4 Splits Property=Splits_Property>ref
+4 Style Property=Style_Property>ref
+4 Styles Property=Styles_Property>ref
+4 TabAcrossSplits Property=TabAcrossSplits_Property>ref
+4 TabAction Property=TabAction_Property>ref
+4 TableName Property (6.0a)=TableName_Property>ref
+4 Text Property=Text_Property>ref
+4 Top Property=Top_Property>ref
+4 Translate Property=Translate_Property>ref
+4 TransparentForegroundPicture Property (6.0)=TransparentForegroundPicture_Property>ref
+4 TransparentRowPictures Property (6.0)=TransparentRowPictures_Property>ref
+4 Validate Property=Validate_Property>ref
+4 Value Property (Column)=Value_Property_Column>ref
+4 Value Property (RowBuffer)=Value_Property_RowBuffer>ref
+4 Value Property (Style)=Value_Property_Style>ref
+4 Value Property (ValueItem)=Value_Property_ValueItem>ref
+4 ValueItems Property=ValueItems_Property>ref
+4 VerticalAlignment Property (6.0)=VerticalAlignment_Property>ref
+4 Visible Property=Visible_Property>ref
+4 VisibleCols Property=VisibleCols_Property>ref
+4 VisibleRows Property=VisibleRows_Property>ref
+4 VScrollWidth Property=VScrollWidth_Property>ref
+4 Width Property=Width_Property>ref
+4 WrapCellPointer Property=WrapCellPointer_Property>ref
+4 WrapText Property=WrapText_Property>ref
+
+3 By Object
+4 TDBGrid Control Properties=TDBGrid_Control_Properties>main
+4 TDBDropDown Control Properties=TDBDropDown_Control_Properties>main
+4 Column Object Properties=Column_Object_Properties>main
+4 Columns Collection Properties=Columns_Collection_Properties>main
+4 DataObject Object Properties=DataObject_Object_Properties>main
+4 GroupColumns Collection Properties=GroupColumns_Collection_Properties>main
+4 Layouts Collection Properties=Layouts_Collection_Properties>main
+4 PrintInfos Collection Properties=PrintInfos_Collection_Properties>main
+4 RowBuffer Object Properties=RowBuffer_Object_Properties>main
+4 SelBookmarks Collection Properties=SelBookmarks_Collection_Properties>main
+4 Split Object Properties=Split_Object_Properties>main
+4 Splits Collection Properties=Splits_Collection_Properties>main
+4 Style Object Properties=Style_Object_Properties>main
+4 Styles Collection Properties=Styles_Collection_Properties>main
+4 ValueItem Object Properties=ValueItem_Object_Properties>main
+4 ValueItems Collection Properties=ValueItems_Collection_Properties>main
+
+3 New in Version 6.0
+4 AnchorRightColumn Property=AnchorRightColumn_Property>ref
+4 AutoDropDown Property=AutoDropDown_Property>ref
+4 BackgroundPicture Property=BackgroundPicture_Property>ref
+4 BackgroundPictureDrawMode Property=BackgroundPictureDrawMode_Property>ref
+4 ButtonAlways Property=ButtonAlways_Property>ref
+4 ButtonFooter Property=ButtonFooter_Property>ref
+4 ButtonHeader Property=ButtonHeader_Property>ref
+4 ButtonText Property=ButtonText_Property>ref
+4 ColumnFooters Property=ColumnFooters_Property>ref
+4 DisplayAlignment Property=DisplayAlignment_Property>ref
+4 DropDownList Property=DropDownList_Property>ref
+4 EditMaskRight Property=EditMaskRight_Property>ref
+4 ExportEOF Property=ExportEOF_Property>ref
+4 ExportNextBookmark Property=ExportNextBookmark_Property>ref
+4 ExternalEditor Property=ExternalEditor_Property>ref
+4 Files Property=Files_Property>ref
+4 FooterAlignment Property=FooterAlignment_Property>ref
+4 FooterBackColor Property=FooterBackColor_Property>ref
+4 FooterDivider Property=FooterDivider_Property>ref
+4 FooterFont Property=FooterFont_Property>ref
+4 FooterForeColor Property=FooterForeColor_Property>ref
+4 FooterStyle Property=FooterStyle_Property>ref
+4 FooterText Property=FooterText_Property>ref
+4 FootLines Property=FootLines_Property>ref
+4 ForegroundPicture Property=ForegroundPicture_Property>ref
+4 ForegroundPicturePosition Property=ForegroundPicturePosition_Property>ref
+4 HeaderDivider Property=HeaderDivider_Property>ref
+4 InsertMode Property=InsertMode_Property>ref
+4 LayoutURL Property=LayoutURL_Property>ref
+4 Merge Property=Merge_Property>ref
+4 MouseIcon Property=MouseIcon_Property>ref
+4 MousePointer Property=MousePointer_Property>ref
+4 MultiSelect Property=MultiSelect_Property>ref
+4 OLEDragMode Property=OLEDragMode_Property>ref
+4 OLEDropMode Property=OLEDropMode_Property>ref
+4 OwnerDraw Property=OwnerDraw_Property>ref
+4 PartialRightColumn Property=PartialRightColumn_Property>ref
+4 PictureAddNewRow Property=PictureAddNewRow_Property>ref
+4 PictureCurrentRow Property=PictureCurrentRow_Property>ref
+4 PictureFooterRow Property=PictureFooterRow_Property>ref
+4 PictureHeaderRow Property=PictureHeaderRow_Property>ref
+4 PictureModifiedRow Property=PictureModifiedRow_Property>ref
+4 PictureStandardRow Property=PictureStandardRow_Property>ref
+4 PrintInfo Property=PrintInfo_Property>ref
+4 PrintInfos Property=PrintInfos_Property>ref
+4 TransparentForegroundPicture Property=TransparentForegroundPicture_Property>ref
+4 TransparentRowPictures Property=TransparentRowPictures_Property>ref
+4 VerticalAlignment Property=VerticalAlignment_Property>ref
+
+3 New in Version 6.0a
+4 Bands Property=Bands_Property>ref
+4 ConvertEmptyCell Property=ConvertEmptyCell_Property>ref
+4 DataView Property=DataView_Property>ref
+4 Name Property (Column)=Name_Property_Column>ref
+4 TableName Property=TableName_Property>ref
+
+3 New in Version 6.0b
+4 AnimateWindow Property=AnimateWindow_Property>ref
+4 AnimateWindowClose Property=AnimateWindowClose_Property>ref
+4 AnimateWindowDirection Property=AnimateWindowDirection_Property>ref
+4 AnimateWindowTime Property=AnimateWindowTime_Property>ref
+4 BatchUpdates Property=BatchUpdates_Property>ref
+4 Group Property=Group_Property>ref
+4 GroupByCaption Property=GroupByCaption_Property>ref
+
+2 Method Reference
+3 Quick Reference for All Methods=Quick_Reference_for_All_Methods>main
+3 By Alphabet
+4 AboutBox Method=AboutBox_Method>ref
+4 Add Method=Add_Method>ref
+4 AddCellStyle Method=AddCellStyle_Method>ref
+4 AddRegexCellStyle Method=AddRegexCellStyle_Method>ref
+4 AutoSize Method (6.0b)=AutoSize_Method>ref
+4 CaptureImage Method=CaptureImage_Method>ref
+4 CellContaining Method (6.0)=CellContaining_Method>ref
+4 CellText Method=CellText_Method>ref
+4 CellValue Method=CellValue_Method>ref
+4 Clear Method=Clear_Method>ref
+4 Clear Method (DataObject) (6.0)=Clear_Method_DataObject>ref
+4 ClearCellStyle Method=ClearCellStyle_Method>ref
+4 ClearFields Method=ClearFields_Method>ref
+4 ClearRegexCellStyle Method=ClearRegexCellStyle_Method>ref
+4 ClearSelCols Method=ClearSelCols_Method>ref
+4 Close Method=Close_Method>ref
+4 ColContaining Method=ColContaining_Method>ref
+4 CollapseBand Method (6.0a)=CollapseBand_Method>ref
+4 Delete Method=Delete_Method>ref
+4 ExpandBand Method (6.0a)=ExpandBand_Method>ref
+4 ExportBegin Method (6.0)=ExportBegin_Method>ref
+4 ExportEnd Method (6.0)=ExportEnd_Method>ref
+4 ExportRows Method (6.0)=ExportRows_Method>ref
+4 ExportToDelimitedFile Method (6.0a)=ExportToDelimitedFile_Method>ref
+4 ExportToFile Method (6.0)=ExportToFile_Method>ref
+4 GetBand Method (6.0a)=GetBand_Method>ref
+4 GetBookmark Method=GetBookmark_Method>ref
+4 GetData Method (6.0)=GetData_Method>ref
+4 GetFormat Method (6.0)=GetFormat_Method>ref
+4 HoldFields Method=HoldFields_Method>ref
+4 IsSelected Method (6.0)=IsSelected_Method>ref
+4 Item Method=Item_Method>ref
+4 LoadLayout Method=LoadLayout_Method>ref
+4 MoveFirst Method=MoveFirst_Method>ref
+4 MoveLast Method=MoveLast_Method>ref
+4 MoveNext Method=MoveNext_Method>ref
+4 MovePrevious Method=MovePrevious_Method>ref
+4 MoveRelative Method=MoveRelative_Method>ref
+4 OLEDrag Method (6.0)=OLEDrag_Method>ref
+4 PointAt Method (6.0)=PointAt_Method>ref
+4 PostMsg Method=PostMsg_Method>ref
+4 ReBind Method=ReBind_Method>ref
+4 Refetch Method (6.0)=Refetch_Method>ref
+4 RefetchCell Method (6.0)=RefetchCell_Method>ref
+4 RefetchCol Method (6.0)=RefetchCol_Method>ref
+4 RefetchRow Method (6.0)=RefetchRow_Method>ref
+4 Refresh Method=Refresh_Method>ref
+4 RefreshCell Method (6.0)=RefreshCell_Method>ref
+4 RefreshCol Method (6.0)=RefreshCol_Method>ref
+4 RefreshRow Method (6.0)=RefreshRow_Method>ref
+4 Remove Method=Remove_Method>ref
+4 ReOpen Method=ReOpen_Method>ref
+4 Reset Method=Reset_Method>ref
+4 RowBookmark Method=RowBookmark_Method>ref
+4 RowContaining Method=RowContaining_Method>ref
+4 RowExpanded Method (6.0a)=RowExpanded_Method>ref
+4 RowTop Method=RowTop_Method>ref
+4 Scroll Method=Scroll_Method>ref
+4 SetData Method (6.0)=SetData_Method>ref
+4 SplitContaining Method=SplitContaining_Method>ref
+4 Update Method=Update_Method>ref
+
+3 By Object
+4 TDBGrid Control Methods=TDBGrid_Control_Methods>main
+4 TDBDropDown Control Methods=TDBDropDown_Control_Methods>main
+4 Column Object Methods=Column_Object_Methods>main
+4 Columns Collection Methods=Columns_Collection_Methods>main
+4 DataObject Object Methods=DataObject_Object_Methods>main
+4 GroupColumns Collection Methods=GroupColumns_Collection_Methods>main
+4 Layouts Collection Methods=Layouts_Collection_Methods>main
+4 PrintInfos Collection Methods=PrintInfos_Collection_Methods>main
+4 SelBookmarks Collection Methods=SelBookmarks_Collection_Methods>main
+4 Split Object Methods=Split_Object_Methods>main
+4 Splits Collection Methods=Splits_Collection_Methods>main
+4 Style Object Methods=Style_Object_Methods>main
+4 Styles Collection Methods=Styles_Collection_Methods>main
+4 ValueItems Collection Methods=ValueItems_Collection_Methods>main
+
+3 New in Version 6.0
+4 CellContaining Method=CellContaining_Method>ref
+4 Clear Method (DataObject)=Clear_Method_DataObject>ref
+4 ExportBegin Method=ExportBegin_Method>ref
+4 ExportEnd Method=ExportEnd_Method>ref
+4 ExportRows Method=ExportRows_Method>ref
+4 ExportToFile Method=ExportToFile_Method>ref
+4 GetData Method=GetData_Method>ref
+4 GetFormat Method=GetFormat_Method>ref
+4 IsSelected Method=IsSelected_Method>ref
+4 OLEDrag Method=OLEDrag_Method>ref
+4 PointAt Method=PointAt_Method>ref
+4 Refetch Method=Refetch_Method>ref
+4 RefetchCell Method=RefetchCell_Method>ref
+4 RefetchCol Method=RefetchCol_Method>ref
+4 RefetchRow Method=RefetchRow_Method>ref
+4 RefreshCell Method=RefreshCell_Method>ref
+4 RefreshCol Method=RefreshCol_Method>ref
+4 RefreshRow Method=RefreshRow_Method>ref
+4 SetData Method=SetData_Method>ref
+
+3 New in Version 6.0a
+4 CollapseBand Method=CollapseBand_Method>ref
+4 ExpandBand Method=ExpandBand_Method>ref
+4 ExportToDelimitedFile Method=ExportToDelimitedFile_Method>ref
+4 GetBand Method=GetBand_Method>ref
+4 RowExpanded Method=RowExpanded_Method>ref
+
+3 New in Version 6.0b
+3 AutoSize Method=AutoSize_Method>ref
+
+2 Event Reference
+3 Quick Reference for All Events=Quick_Reference_for_All_Events>main
+3 By Alphabet
+4 AfterColEdit Event=AfterColEdit_Event>ref
+4 AfterColUpdate Event=AfterColUpdate_Event>ref
+4 AfterDelete Event=AfterDelete_Event>ref
+4 AfterInsert Event=AfterInsert_Event>ref
+4 AfterUpdate Event=AfterUpdate_Event>ref
+4 BeforeColEdit Event=BeforeColEdit_Event>ref
+4 BeforeColUpdate Event=BeforeColUpdate_Event>ref
+4 BeforeDelete Event=BeforeDelete_Event>ref
+4 BeforeInsert Event=BeforeInsert_Event>ref
+4 BeforeRowColChange Event (6.0)=BeforeRowColChange_Event>ref
+4 BeforeUpdate Event=BeforeUpdate_Event>ref
+4 ButtonClick Event=ButtonClick_Event>ref
+4 Change Event=Change_Event>ref
+4 ClassicAdd Event=ClassicAdd_Event>ref
+4 ClassicDelete Event=ClassicDelete_Event>ref
+4 ClassicRead Event=ClassicRead_Event>ref
+4 ClassicWrite Event=ClassicWrite_Event>ref
+4 Click Event=Click_Event>ref
+4 ColEdit Event=ColEdit_Event>ref
+4 Collapse Event (6.0a)=Collapse_Event>ref
+4 ColMove Event=ColMove_Event>ref
+4 ColResize Event=ColResize_Event>ref
+4 ComboSelect Event=ComboSelect_Event>ref
+4 DataSourceChanged Event=DataSourceChanged_Event>ref
+4 DblClick Event=DblClick_Event>ref
+4 DragCell Event=DragCell_Event>ref
+4 DropDownClose Event=DropDownClose_Event>ref
+4 DropDownOpen Event=DropDownOpen_Event>ref
+4 Error Event=Error_Event>ref
+4 Expand Event (6.0a)=Expand_Event>ref
+4 FetchCellStyle Event=FetchCellStyle_Event>ref
+4 FetchCellTips Event=FetchCellTips_Event>ref
+4 FetchRowStyle Event=FetchRowStyle_Event>ref
+4 FirstRowChange Event=FirstRowChange_Event>ref
+4 FootClick Event (6.0)=FootClick_Event>ref
+4 FormatText Event=FormatText_Event>ref
+4 GroupColMove Event (6.0b)=GroupColMove_Event>ref
+4 GroupHeadClick Event (6.0b)=GroupHeadClick_Event>ref
+4 HeadClick Event=HeadClick_Event>ref
+4 KeyDown Event=KeyDown_Event>ref
+4 KeyPress Event=KeyPress_Event>ref
+4 KeyUp Event=KeyUp_Event>ref
+4 LayoutReady Event (6.0)=LayoutReady_Event>ref
+4 LeftColChange Event=LeftColChange_Event>ref
+4 MouseDown Event=MouseDown_Event>ref
+4 MouseMove Event=MouseMove_Event>ref
+4 MouseUp Event=MouseUp_Event>ref
+4 OLECompleteDrag Event (6.0)=OLECompleteDrag_Event>ref
+4 OLEDragDrop Event (6.0)=OLEDragDrop_Event>ref
+4 OLEDragOver Event (6.0)=OLEDragOver_Event>ref
+4 OLEGiveFeedback Event (6.0)=OLEGiveFeedback_Event>ref
+4 OLESetData Event (6.0)=OLESetData_Event>ref
+4 OLEStartDrag Event (6.0)=OLEStartDrag_Event>ref
+4 OnAddNew Event=OnAddNew_Event>ref
+4 OnInit Event (6.0)=OnInit_Event>ref
+4 OwnerDrawCell Event (6.0)=OwnerDrawCell_Event>ref
+4 Paint Event=Paint_Event>ref
+4 PostEvent Event=PostEvent_Event>ref
+4 RowChange Event=RowChange_Event>ref
+4 RowColChange Event=RowColChange_Event>ref
+4 RowResize Event=RowResize_Event>ref
+4 Scroll Event=Scroll_Event>ref
+4 SelChange Event=SelChange_Event>ref
+4 SplitChange Event=SplitChange_Event>ref
+4 UnboundAddData Event=UnboundAddData_Event>ref
+4 UnboundColumnFetch Event=UnboundColumnFetch_Event>ref
+4 UnboundDeleteRow Event=UnboundDeleteRow_Event>ref
+4 UnboundFindData Event=UnboundFindData_Event>ref
+4 UnboundGetRelativeBookmark Event=UnboundGetRelativeBookmark_Event>ref
+4 UnboundReadData Event=UnboundReadData_Event>ref
+4 UnboundReadDataEx Event=UnboundReadDataEx_Event>ref
+4 UnboundWriteData Event=UnboundWriteData_Event>ref
+4 ValueItemError Event=ValueItemError_Event>ref
+
+3 By Object
+4 TDBGrid Control Events=TDBGrid_Control_Events>main
+4 TDBDropDown Control Events=TDBDropDown_Control_Events>main
+
+3 New in Version 6.0
+4 BeforeRowColChange Event=BeforeRowColChange_Event>ref
+4 FootClick Event=FootClick_Event>ref
+4 LayoutReady Event=LayoutReady_Event>ref
+4 OLECompleteDrag Event=OLECompleteDrag_Event>ref
+4 OLEDragDrop Event=OLEDragDrop_Event>ref
+4 OLEDragOver Event=OLEDragOver_Event>ref
+4 OLEGiveFeedback Event=OLEGiveFeedback_Event>ref
+4 OLESetData Event=OLESetData_Event>ref
+4 OLEStartDrag Event=OLEStartDrag_Event>ref
+4 OnInit Event=OnInit_Event>ref
+4 OwnerDrawCell Event=OwnerDrawCell_Event>ref
+
+3 New in Version 6.0a
+4 Collapse Event=Collapse_Event>ref
+4 Expand Event=Expand_Event>ref
+
+3 New in Version 6.0b
+4 GroupColMove Event=GroupColMove_Event>ref
+4 GroupHeadClick Event=GroupHeadClick_Event>ref
+
+2 Constant Reference
+3 AddNewMode Constants=AddNewMode_Constants>ref
+3 Alignment Constants=Alignment_Constants>ref
+3 AnimateWindow Constants=AnimateWindow_Constants>ref
+3 AnimateWindowClose Constants=AnimateWindowClose_Constants>ref
+3 AnimateWindowDirection Constants=AnimateWindowDirection_Constants>ref
+3 Appearance Constants=Appearance_Constants>ref
+3 BackgroundPictureDrawMode Constants=BackgroundPictureDrawMode_Constants>ref
+3 BorderStyle Constants=BorderStyle_Constants>ref
+3 CellStyle Constants=CellStyle_Constants>ref
+3 CellTip Constants=CellTip_Constants>ref
+3 CellTipPresentation Constants=CellTipPresentation_Constants>ref
+3 ConvertEmptyCell Constants (6.0a)=ConvertEmptyCell_Constants>ref
+3 DataMode Constants=DataMode_Constants>ref
+3 DataView Constants (6.0a)=DataView_Constants>ref
+3 DividerStyle Constants=DividerStyle_Constants>ref
+3 Error Constants=Error_Constants>ref
+3 ExposeCellMode Constants=ExposeCellMode_Constants>ref
+3 ForegroundPicturePosition Constants=ForegroundPicturePosition_Constants>ref
+3 MarqueeStyle Constants=MarqueeStyle_Constants>ref
+3 Menu Constants=Menu_Constants>ref
+3 MousePointer Constants=MousePointer_Constants>ref
+3 MultipleLines Constants=MultipleLines_Constants>ref
+3 MultiSelect Constants=MultiSelect_Constants>ref
+3 OLEDragMode Constants=OLEDragMode_Constants>ref
+3 OLEDropMode Constants=OLEDropMode_Constants>ref
+3 PointAt Constants=PointAt_Constants>ref
+3 Presentation Constants=Presentation_Constants>ref
+3 RowSelector Constants=RowSelector_Constants>ref
+3 ScrollBars Constants=ScrollBars_Constants>ref
+3 SplitSizeMode Constants=SplitSizeMode_Constants>ref
+3 TabAction Constants=TabAction_Constants>ref
+3 UnboundFind Constants=UnboundFind_Constants>ref
+3 VerticalAlignment Constants=VerticalAlignment_Constants>ref
+
+2 PrintInfo Reference
+3 PrintInfo Object Properties=PrintInfo_Object_Properties>main
+3 PrintInfo Object Methods=PrintInfo_Object_Methods>main
+3 By Alphabet
+4 Collate Property=Collate_Property_PrintInfo>ref
+4 Default Property=Default_Property_PrintInfo>ref
+4 Draft Property (6.0a)=Draft_Property_PrintInfo>ref
+4 GetMenuText Method (6.0a)=GetMenuText_Method_PrintInfo>ref
+4 GetSubstituteFont Method (6.0a)=GetSubstituteFont_Method_PrintInfo>ref
+4 Name Property=Name_Property_PrintInfo>ref
+4 NumberOfCopies Property=NumberOfCopies_Property_PrintInfo>ref
+4 PageFooter Property=PageFooter_Property_PrintInfo>ref
+4 PageFooterFont Property=PageFooterFont_Property_PrintInfo>ref
+4 PageHeader Property=PageHeader_Property_PrintInfo>ref
+4 PageHeaderFont Property=PageHeaderFont_Property_PrintInfo>ref
+4 PageSetup Method=PageSetup_Method_PrintInfo>ref
+4 PreviewCaption Property=PreviewCaption_Property_PrintInfo>ref
+4 PreviewPageOf Property (6.0a)=PreviewPageOf_Property_PrintInfo>ref
+4 PrintData Method=PrintData_Method_PrintInfo>ref
+4 PrintPreview Method=PrintPreview_Method_PrintInfo>ref
+4 RangeOfPages Property (6.0c)=RangeOfPages_Property_PrintInfo>ref
+4 RepeatColumnFooters Property=RepeatColumnFooters_Property_PrintInfo>ref
+4 RepeatColumnHeaders Property=RepeatColumnHeaders_Property_PrintInfo>ref
+4 RepeatGridHeader Property=RepeatGridHeader_Property_PrintInfo>ref
+4 RepeatSplitHeaders Property=RepeatSplitHeaders_Property_PrintInfo>ref
+4 SetMenuText Method (6.0a)=SetMenuText_Method_PrintInfo>ref
+4 Settings Property=Settings_Property_PrintInfo>ref
+4 SettingsDeviceName Property (6.0b)=SettingsDeviceName_Property_PrintInfo>ref
+4 SettingsMarginBottom Property (6.0b)=SettingsMarginBottom_Property_PrintInfo>ref
+4 SettingsMarginLeft Property (6.0b)=SettingsMarginLeft_Property_PrintInfo>ref
+4 SettingsMarginRight Property (6.0b)=SettingsMarginRight_Property_PrintInfo>ref
+4 SettingsMarginTop Property (6.0b)=SettingsMarginTop_Property_PrintInfo>ref
+4 SettingsOrientation Property (6.0b)=SettingsOrientation_Property_PrintInfo>ref
+4 SettingsPaperBin Property (6.0b)=SettingsPaperBin_Property_PrintInfo>ref
+4 SettingsPaperHeight Property (6.0b)=SettingsPaperHeight_Property_PrintInfo>ref
+4 SettingsPaperSize Property (6.0b)=SettingsPaperSize_Property_PrintInfo>ref
+4 SettingsPaperWidth Property (6.0b)=SettingsPaperWidth_Property_PrintInfo>ref
+4 SubstituteFont Method (6.0a)=SubstituteFont_Method_PrintInfo>ref
+4 VariableRowHeight Property=VariableRowHeight_Property_PrintInfo>ref
+
+2 XArrayDB Reference
+3 XArrayDB Object Properties=XArrayDB_Object_Properties>main
+3 XArrayDB Object Methods=XArrayDB_Object_Methods>main
+3 XArrayDB Object Constants=XArrayDB_Object_Constants>main
+
+3 By Alphabet
+4 AboutBox Method=AboutBox_Method_XArrayDB>ref
+4 AppendColumns Method=AppendColumns_Method_XArrayDB>ref
+4 AppendRows Method=AppendRows_Method_XArrayDB>ref
+4 Clear Method=Clear_Method_XArrayDB>ref
+4 Count Property=Count_Property_XArrayDB>ref
+4 DefaultColumnType Property=DefaultColumnType_Property_XArrayDB>ref
+4 Delete Method=Delete_Method_XArrayDB>ref
+4 DeleteColumns Method=DeleteColumns_Method_XArrayDB>ref
+4 DeleteRows Method=DeleteRows_Method_XArrayDB>ref
+4 Find Method=Find_Method_XArrayDB>ref
+4 Get Method=Get_Method_XArrayDB>ref
+4 Insert Method=Insert_Method_XArrayDB>ref
+4 InsertColumns Method=InsertColumns_Method_XArrayDB>ref
+4 InsertRows Method=InsertRows_Method_XArrayDB>ref
+4 LoadRows Method (6.0b)=LoadRows_Method_XArrayDB>ref
+4 LowerBound Property=LowerBound_Property_XArrayDB>ref
+4 Notify Property=Notify_Property_XArrayDB>ref
+4 Precision Property=Precision_Property_XArrayDB>ref
+4 QuickSort Method=QuickSort_Method_XArrayDB>ref
+4 ReDim Method=ReDim_Method_XArrayDB>ref
+4 Set Method=Set_Method_XArrayDB>ref
+4 UpperBound Property=UpperBound_Property_XArrayDB>ref
+4 Value Property=Value_Property_XArrayDB>ref

@@ -1,0 +1,12 @@
+/* comm.ref
+*/
+
+void comE_init(char *);
+void comE_close(void);
+
+void com_job(void);
+
+void comE_ecritcar(byte);
+void comE_ecritchaine(byte *);
+
+

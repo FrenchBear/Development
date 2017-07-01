@@ -1,0 +1,30 @@
+[OPTIONS]
+errorlog = haccppgm.err
+title = Aide programme HACCP
+COPYRIGHT = ERCEM 1994
+contents = K01
+compress = false
+oldkeyphrase = false
+warning = 3
+
+[FILES]
+haccppgm.rtf
+
+[MAP]
+K01           1
+K02           2
+K11          11
+K12          12
+K13          13
+K21          21
+K31          31
+K32          32
+K41          41
+K51          51
+K52          52
+
+[WINDOWS]
+main = "Aide ERCEM System / HACCP 2.3a", (0,0,1023,1023 ),,, (192,192,192 )
+
+[CONFIG]
+BrowseButtons()

@@ -1,0 +1,15 @@
+/* vbios.ref */
+void vb_sorcar0(unsigned char);
+void vb_sorch0(const char *);
+void vb_sorcar(unsigned char);
+void vb_sorch(const char *);
+void vb_refresh(void);
+touche vb_lircar(void);
+booleen vb_cardispo(void);
+void vb_setattrib(uint1);
+void vb_gotolc(uint1,uint1);
+void vb_wherelc(uint1 *,uint1 *);
+void vb_curseur(uint1);
+void vb_clszone(uint1,uint1);
+void vb_supligne(uint1,uint1);
+void vb_insligne(uint1,uint1);

@@ -1,0 +1,84 @@
+<HTML>
+<HEAD>
+<TITLE>True DBGrid Pro 6.0 (OLEDB)</TITLE>
+</HEAD>
+<BODY>
+Tutorial 4 - Interacting with Code and Other Bound Controls<P>
+
+<OBJECT CLASSID="CLSID:BD96C556-65A3-11D0-983A-00C04FC29E33" ID="adcTutor" HEIGHT=1 WIDTH=1>
+	<PARAM NAME="Server" VALUE="http://passat">
+	<PARAM NAME="Connect" VALUE="DSN=TDBGDemo">
+	<PARAM NAME="SQL" VALUE="Select * From Customer">
+</OBJECT>
+<OBJECT id=tDBGrid CLASSID="clsid:0D6234D0-DBA2-11D1-B5DF-0060976089D0" WIDTH=400 HEIGHT=200>
+	<PARAM NAME="DataSource" DATASRC="#adcTutor">
+</OBJECT>
+<P>
+<TABLE>
+<TR><TD CLASS=ColumnLabel>First Name</TD><TD><INPUT ID=txtFirst TYPE=TEXT DATASRC=#adcTutor DATAFLD=FirstName></TD></TR>
+<TR><TD CLASS=ColumnLabel>Last Name</TD><TD><INPUT ID=txtLast TYPE=TEXT DATASRC=#adcTutor DATAFLD=LastName></TD></TR>
+<TR><TD CLASS=ColumnLabel>Company</TD><TD><INPUT ID=txtCompany TYPE=TEXT DATASRC=#adcTutor DATAFLD=Company></TD></TR>
+</TABLE>
+<P>
+<BUTTON ID="btnUpdate">Update</BUTTON>
+<BUTTON ID="btnAddNew">Add New</BUTTON>
+<BUTTON ID="btnDelete">Delete</BUTTON>
+<P>
+<BUTTON ID="btnFirst">First</BUTTON>
+<BUTTON ID="btnPrev">Previous</BUTTON>
+<BUTTON ID="btnNext">Next</BUTTON>
+<BUTTON ID="btnLast">Last</BUTTON>
+</BODY>
+</HTML>
+<SCRIPT LANGUAGE=VBSCRIPT>
+Sub tDBGrid_BeforeColUpdate(ColIndex, OldValue, Cancel)
+	If tDBGrid.Columns.Item(0).Text = "" then
+		MsgBox "You must enter a UserCode"
+		Cancel = True
+		Exit Sub
+	End If
+End Sub
+
+Sub btnUpdate_OnClick()
+' True DBGrid will automatically respond to the
+' update and will clear the "modified indicator"
+' (the pencil icon) on the record selector column
+' to indicate that the modified data has been written
+' to the database.
+	adcTutor.SubmitChanges
+End Sub
+
+Sub btnDelete_OnClick()
+	adcTutor.Recordset.Delete
+	adcTutor.SubmitChanges
+End Sub
+
+Sub btnAddNew_OnClick()
+	adcTutor.Recordset.AddNew
+	adcTutor.Recordset.Fields.Item(0).Value = "AAAA"
+	adcTutor.SubmitChanges
+	tDBGrid.EditActive = True
+End Sub
+
+Sub btnFirst_OnClick()
+	' Move to the first record of the recordset
+	adcTutor.Recordset.MoveFirst
+End Sub
+
+Sub btnNext_OnClick()
+	' Move to the next record in the recordset.
+	adcTutor.Recordset.MoveNext
+	If adcTutor.Recordset.EOF Then adcTutor.Recordset.MoveLast
+End Sub
+
+Sub btnPrev_OnClick()
+	' Move to the previous record in the recordset.
+	adcTutor.Recordset.MovePrevious
+	If adcTutor.Recordset.BOF Then adcTutor.Recordset.MoveFirst
+End Sub
+
+Sub btnLast_OnClick()
+	' Move to the last record in the recordset
+	adcTutor.Recordset.MoveLast
+End Sub
+</SCRIPT>

@@ -1,0 +1,30 @@
+[OPTIONS]
+errorlog = haccp.err
+title = Documentation HACCP
+COPYRIGHT = ERCEM 1994
+contents = SOMMAIRE
+compress = false
+oldkeyphrase = false
+warning = 3
+
+[FILES]
+haccp.rtf
+
+[MAP]
+SOMMAIRE 1
+CHAPITRE1 2
+CHAPITRE2 3
+CHAPITRE3 4
+CHAPITRE4 5
+CHAPITRE5 6
+CHAPITRE6 7
+CHAPITRE7 8
+CHAPITRE8 9
+CHAPITRE9 10
+
+[WINDOWS]
+main = "Documentation ERCEM System / HACCP", (0,0,1023,1023 ),,, (192,192,192 )
+
+[CONFIG]
+BrowseButtons()
+

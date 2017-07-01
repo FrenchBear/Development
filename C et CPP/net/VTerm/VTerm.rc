@@ -1,0 +1,693 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+// Generated Help ID header file
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "resource.hm"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// French (France) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_FRA)
+#ifdef _WIN32
+LANGUAGE LANG_FRENCH, SUBLANG_FRENCH
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""res\\VTerm.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "\r\n"
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "#include ""l.fra\\afxres.rc""  \t// Standard components\r\n"
+    "#include ""l.fra\\afxprint.rc""\t// printing/print preview resources\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\idr_main.ico"
+IDR_VTERMTYPE           ICON    DISCARDABLE     "res\\VTermDoc.ico"
+IDR_CONNEXION           ICON    DISCARDABLE     "res\\icon1.ico"
+IDR_WINSOCK             ICON    DISCARDABLE     "res\\irr_wins.ico"
+IDR_MINICONNEXION       ICON    DISCARDABLE     "res\\ico00001.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP  MOVEABLE PURE   "res\\toolbar.bmp"
+IDB_MINICONNEXION       BITMAP  FIXED IMPURE    "res\\miniconn.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "&Fichier"
+    BEGIN
+        MENUITEM "&Nouvelle connexion....\tMaj+F12", ID_FILE_NEW
+        MENUITEM SEPARATOR
+        MENUITEM "Fichier récent",              ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM "2",                           ID_FILE_MRU_FILE2, GRAYED
+        MENUITEM "3",                           ID_FILE_MRU_FILE3, GRAYED
+        MENUITEM "4",                           ID_FILE_MRU_FILE4, GRAYED
+        MENUITEM "5",                           ID_FILE_MRU_FILE5, GRAYED
+        MENUITEM "6",                           ID_FILE_MRU_FILE6, GRAYED
+        MENUITEM "7",                           ID_FILE_MRU_FILE7, GRAYED
+        MENUITEM "8",                           ID_FILE_MRU_FILE8, GRAYED
+        MENUITEM "9",                           ID_FILE_MRU_FILE9, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "&Quitter\tAlt+F4",            ID_APP_EXIT
+    END
+    POPUP "&Affichage"
+    BEGIN
+        MENUITEM "&Barre d'outils",             ID_VIEW_TOOLBAR
+        MENUITEM "B&arre d'état",               ID_VIEW_STATUS_BAR
+        MENUITEM SEPARATOR
+        MENUITEM "&Options...",                 ID_OPTIONS
+    END
+    POPUP "&?"
+    BEGIN
+        MENUITEM "&A propos de VTerm...",       ID_APP_ABOUT
+        MENUITEM "A propos de &WinSock...",     ID_ABOUT_WINSOCK
+    END
+END
+
+IDR_VTERMTYPE MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "&Fichier"
+    BEGIN
+        MENUITEM "&Nouvelle connexion...\tMaj+F12", ID_FILE_NEW
+        MENUITEM "&Déconnexion",                ID_FILE_CLOSE
+        MENUITEM SEPARATOR
+        MENUITEM "Fichier récent",              ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM "2",                           ID_FILE_MRU_FILE2, GRAYED
+        MENUITEM "3",                           ID_FILE_MRU_FILE3, GRAYED
+        MENUITEM "4",                           ID_FILE_MRU_FILE4, GRAYED
+        MENUITEM "5",                           ID_FILE_MRU_FILE5, GRAYED
+        MENUITEM "6",                           ID_FILE_MRU_FILE6, GRAYED
+        MENUITEM "7",                           ID_FILE_MRU_FILE7, GRAYED
+        MENUITEM "8",                           ID_FILE_MRU_FILE8, GRAYED
+        MENUITEM "9",                           ID_FILE_MRU_FILE9, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "&Quitter\tAlt+F4",            ID_APP_EXIT
+    END
+    POPUP "&Edition"
+    BEGIN
+        MENUITEM "Co&pier\tMaj+Ctrl+C",         ID_EDIT_COPY
+        MENUITEM "Cop&ier+Coller",              ID_EDIT_COPY_PASTE
+        MENUITEM "Copier &rectangle",           ID_EDIT_COPY_RECT
+        MENUITEM "C&oller\tMaj+Ctrl+V",         ID_EDIT_PASTE
+        MENUITEM SEPARATOR
+        MENUITEM "Test &performances\tMaj+Ctrl+P", ID_TESTPERFORMANCES
+        MENUITEM "Test &défilement\tMaj+Ctrl+D", ID_TESTDEFILEMENT
+        MENUITEM "&Mire de test\tMaj+Ctrl+M",   ID_TESTMIRE
+        MENUITEM "&Statistiques\tMaj+Ctrl+S",   ID_STATS
+    END
+    POPUP "&Affichage"
+    BEGIN
+        MENUITEM "&Barre d'outils",             ID_VIEW_TOOLBAR
+        MENUITEM "B&arre d'état",               ID_VIEW_STATUS_BAR
+        MENUITEM SEPARATOR
+        MENUITEM "Police...",                   ID_POLICE
+        MENUITEM "&Options...",                 ID_OPTIONS
+        MENUITEM "&Couleurs...",                ID_COULEURS
+    END
+    POPUP "Fe&nêtre"
+    BEGIN
+        MENUITEM "&Nouvelle fenêtre",           ID_WINDOW_NEW
+        MENUITEM "&Cascade",                    ID_WINDOW_CASCADE
+        MENUITEM "&Mosaïque",                   ID_WINDOW_TILE_HORZ
+        MENUITEM "&Réorganiser les icônes",     ID_WINDOW_ARRANGE
+        MENUITEM SEPARATOR
+        MENUITEM "Fenêtre suivante\tF12",       ID_NEXT_WINDOW
+    END
+    POPUP "&?"
+    BEGIN
+        MENUITEM "&A propos de VTerm...",       ID_APP_ABOUT
+        MENUITEM "A propos de &WinSock...",     ID_ABOUT_WINSOCK
+    END
+END
+
+CG_IDR_POPUP_VTERM_VIEW MENU DISCARDABLE 
+BEGIN
+    POPUP "_POPUP_"
+    BEGIN
+        MENUITEM "Co&pier",                     ID_EDIT_COPY
+        MENUITEM "Cop&ier+Coller",              ID_EDIT_COPY_PASTE
+        MENUITEM "Copier rectangle",            ID_EDIT_COPY_RECT
+        MENUITEM "C&oller",                     ID_EDIT_PASTE
+        MENUITEM SEPARATOR
+        MENUITEM "&Déconnexion",                ID_FILE_CLOSE
+        MENUITEM "&Nouvelle connexion...",      ID_FILE_NEW
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    "C",            ID_EDIT_COPY,           VIRTKEY, SHIFT, CONTROL, 
+                                                    NOINVERT
+    "D",            ID_TESTDEFILEMENT,      VIRTKEY, SHIFT, CONTROL, 
+                                                    NOINVERT
+    "M",            ID_TESTMIRE,            VIRTKEY, SHIFT, CONTROL, 
+                                                    NOINVERT
+    "P",            ID_TESTPERFORMANCES,    VIRTKEY, SHIFT, CONTROL, 
+                                                    NOINVERT
+    "S",            ID_STATS,               VIRTKEY, SHIFT, CONTROL, 
+                                                    NOINVERT
+    "V",            ID_EDIT_PASTE,          VIRTKEY, SHIFT, CONTROL, 
+                                                    NOINVERT
+    VK_F12,         ID_NEXT_WINDOW,         VIRTKEY, NOINVERT
+    VK_F12,         ID_FILE_NEW,            VIRTKEY, SHIFT, NOINVERT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  34, 22, 217, 50
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "A propos de VTerm"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,7,14,20,20
+    LTEXT           "(version)",IDC_VERSION,35,9,140,8
+    LTEXT           "Copyright ©1996-2002  P.VIOLENT",IDC_STATIC,35,33,119,8
+    DEFPUSHBUTTON   "OK",IDOK,182,6,32,14,WS_GROUP
+    LTEXT           "Émulation de terminal SCO ANSI simple",IDC_STATIC,35,20,
+                    131,8
+END
+
+IDD_ABOUT_WINSOCK DIALOG DISCARDABLE  0, 0, 262, 106
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "A propos de Winsock"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,106,87,50,14
+    LTEXT           "Version :",IDC_LBL_VERSION,37,9,28,8
+    EDITTEXT        IDC_TXT_VERSION,87,6,35,13,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Description :",IDC_LBL_DESCRIPTION,37,25,40,8
+    EDITTEXT        IDC_TXT_DESCRIPTION,87,21,170,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    LTEXT           "System status :",IDC_LBL_SYSSTAT,37,38,48,8
+    EDITTEXT        IDC_TXT_SYSSTAT,87,36,170,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    LTEXT           "Max sockets :",IDC_LBL_MAXSOCKETS,37,54,45,8
+    EDITTEXT        IDC_TXT_MAXSOCKETS,87,51,35,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    LTEXT           "Max UDP dg :",IDC_LBL_MAXUDPDG,37,69,46,8
+    EDITTEXT        IDC_TXT_MAXUDPDG,87,66,35,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    ICON            IDR_WINSOCK,IDC_STATIC,6,9,20,20
+    LTEXT           "High version :",IDC_LBL_VERSION2,131,9,44,8
+    EDITTEXT        IDC_TXT_HIGHVERSION,181,6,35,13,ES_AUTOHSCROLL | 
+                    ES_READONLY
+END
+
+IDD_REMOTE_HOST DIALOGEX 0, 0, 280, 153
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Nouvelle connexion"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    ICON            IDR_CONNEXION,IDC_STATIC,8,4,20,20
+    LTEXT           "&Nom ou adresse du hôte :",IDC_STATIC,37,6,55,17
+    EDITTEXT        IDC_TXT_HOST,96,7,116,14,ES_AUTOHSCROLL,0,HIDC_TXT_HOST
+    DEFPUSHBUTTON   "OK",IDOK,223,7,50,14
+    PUSHBUTTON      "Annuler",IDCANCEL,223,24,50,14
+    PUSHBUTTON      "A&vancé >>>",IDC_AVANCE,223,42,50,14
+    GROUPBOX        "Connexions &récentes",IDC_STATIC,7,31,206,69
+    PUSHBUTTON      "Host 1",IDC_HOST1,14,41,60,14
+    PUSHBUTTON      "Host 2",IDC_HOST2,14,60,60,14
+    PUSHBUTTON      "Host 3",IDC_HOST3,14,79,60,14
+    PUSHBUTTON      "Host 4",IDC_HOST4,80,41,60,14
+    PUSHBUTTON      "Host 5",IDC_HOST5,80,60,60,14
+    PUSHBUTTON      "Host 6",IDC_HOST6,80,79,60,14
+    PUSHBUTTON      "Host 7",IDC_HOST7,146,41,60,14
+    PUSHBUTTON      "Host 8",IDC_HOST8,146,60,60,14
+    PUSHBUTTON      "Host 9",IDC_HOST9,146,79,60,14
+    CONTROL         "Login &automatique",IDC_AUTOLOGIN,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,107,72,11
+    LTEXT           "&Login :",IDC_STATIC,82,108,28,10
+    EDITTEXT        IDC_TXT_LOGIN,120,106,92,12,ES_AUTOHSCROLL | WS_DISABLED
+    LTEXT           "Pass&word :",IDC_STATIC,81,121,36,10
+    EDITTEXT        IDC_TXT_PASSWORD,120,120,92,12,ES_PASSWORD | 
+                    ES_AUTOHSCROLL | WS_DISABLED
+    LTEXT           "&Terminal :",IDC_STATIC,81,136,36,10
+    EDITTEXT        IDC_TXT_TERMINAL,120,134,92,12,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    PUSHBUTTON      "&Effacer les connexions récentes",IDC_CLEAR_RECENT,223,
+                    107,50,28,BS_MULTILINE
+    LTEXT           "Aucune connexion récente, taper le nom du hôte.",
+                    IDC_NORECENT,14,45,186,10,NOT WS_VISIBLE
+END
+
+IDD_OPTIONS DIALOG DISCARDABLE  0, 0, 202, 180
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Options"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,162,7,34,14
+    PUSHBUTTON      "Annuler",IDCANCEL,162,24,34,14
+    GROUPBOX        "Rendu de l'attribut ""Bold""",IDC_STATIC,7,7,104,35
+    CONTROL         "&Couleur brillante",IDC_RENDUBRILLANT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,13,18,66,9
+    CONTROL         "&Police grasse",IDC_RENDUGRAS,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,13,29,58,10
+    GROUPBOX        "Codage des caractères",IDC_STATIC,7,49,104,36
+    CONTROL         "&OEM (CP xxx)",IDC_COD8OEM,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP,13,59,89,10
+    CONTROL         "&ANSI (CP xxx)",IDC_COD8ANSI,"Button",
+                    BS_AUTORADIOBUTTON | WS_TABSTOP,13,70,90,10
+    GROUPBOX        "Taille par défaut",IDC_STATIC,120,43,75,42
+    CONTROL         "ansi &25x80",IDC_TDANSI,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP,125,52,50,10
+    CONTROL         "ansi-m &32x102",IDC_TDANSIM,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,125,63,61,10
+    CONTROL         "ansi-w &43x132",IDC_TDANSIW,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,125,73,61,10
+    GROUPBOX        "Identification du client",IDC_STATIC,7,90,188,39
+    CONTROL         "&Désactiver la séquence d'identification IP (ESC V)",
+                    IDC_NOESCV,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,101,
+                    173,10
+    CONTROL         "&Identification manuelle",IDC_IDENTMAN,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,15,112,86,11
+    EDITTEXT        IDC_ADRCLIENT,105,111,80,12,ES_AUTOHSCROLL
+    GROUPBOX        "Divers",IDC_STATIC,8,135,187,38
+    CONTROL         "A&fficher deux caractères 128 (Ç) consécutifs",
+                    IDC_128128,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,145,
+                    173,10
+    CONTROL         "&La touche . du pavé numérique génère un point",
+                    IDC_POINTPN,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,157,
+                    173,10
+END
+
+IDD_STATS DIALOG DISCARDABLE  0, 0, 409, 209
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Statistiques internes de VTerm"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,352,7,50,14
+    PUSHBUTTON      "Annuler",IDCANCEL,352,24,50,14
+    LISTBOX         IDC_TEXTOUTLENLIST,7,19,147,182,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "&Longueur des chaînes de TextOut:",IDC_STATIC,7,7,114,
+                    10
+    PUSHBUTTON      "&RAZ",IDC_RAZSTATS,354,53,48,16
+    GROUPBOX        "Nb d'appels",IDC_STATIC,166,7,150,98
+    LTEXT           "Longueur moyenne TextOut:",IDC_STATIC,169,112,95,9
+    EDITTEXT        IDC_LONGMOY,269,109,37,12,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "DessineCellule:",IDC_STATIC,169,73,95,9
+    EDITTEXT        IDC_NBDESSINECELLULE,269,71,37,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    LTEXT           "OnDraw:",IDC_STATIC,169,61,95,9
+    EDITTEXT        IDC_NBONDRAW,269,58,37,12,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "InvalidateRect:",IDC_STATIC,169,47,95,9
+    EDITTEXT        IDC_NBINVALIDATERECT,269,45,37,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    LTEXT           "OnUpdate:",IDC_STATIC,169,19,95,9
+    EDITTEXT        IDC_NBONUPDATE,269,17,37,12,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "OnUpdateCellule:",IDC_STATIC,169,33,95,9
+    EDITTEXT        IDC_NBONUPDATECELLULE,269,31,37,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    LTEXT           "TextOut:",IDC_STATIC,169,87,95,9
+    EDITTEXT        IDC_NBTEXTOUT,269,85,37,12,ES_AUTOHSCROLL | ES_READONLY
+    GROUPBOX        "Taille de la fenêtre",IDC_STATIC,166,130,149,71
+    LTEXT           "m_x:",IDC_STATIC,169,141,95,9
+    EDITTEXT        IDC_M_X,269,139,37,12,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "m_y:",IDC_STATIC,169,154,95,9
+    EDITTEXT        IDC_M_Y,269,152,37,12,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "m_cx:",IDC_STATIC,169,168,95,9
+    EDITTEXT        IDC_M_CX,269,166,37,12,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "m_cy:",IDC_STATIC,169,181,95,9
+    EDITTEXT        IDC_M_CY,269,179,37,12,ES_AUTOHSCROLL | ES_READONLY
+END
+
+IDD_COULEURS DIALOG DISCARDABLE  0, 0, 204, 164
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Couleurs"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,147,7,50,14
+    PUSHBUTTON      "Annuler",IDCANCEL,147,24,50,14
+    CTEXT           "Normal",IDC_STATIC,50,7,23,11
+    CTEXT           "Brillant",IDC_STATIC,87,7,28,10
+    LTEXT           "0: Noir",IDC_STATIC,7,19,22,11
+    LTEXT           "1: Bleu",IDC_STATIC,7,35,28,11
+    LTEXT           "2: Vert",IDC_STATIC,7,51,28,11
+    PUSHBUTTON      "&Restaurer",IDC_RESTAURER,148,54,49,15
+    CONTROL         "",IDC_BCBLEU,"Button",BS_OWNERDRAW | BS_NOTIFY | 
+                    WS_TABSTOP,47,34,29,12
+    CONTROL         "",IDC_BCBLEU_BRILLANT,"Button",BS_OWNERDRAW | 
+                    WS_TABSTOP,87,34,29,12
+    CONTROL         "",IDC_BCNOIR,"Button",BS_OWNERDRAW | WS_TABSTOP,47,18,
+                    29,12
+    CONTROL         "",IDC_BCNOIR_BRILLANT,"Button",BS_OWNERDRAW | 
+                    WS_TABSTOP,87,18,29,12
+    CONTROL         "",IDC_BCVERT,"Button",BS_OWNERDRAW | WS_TABSTOP,47,50,
+                    29,12
+    CONTROL         "",IDC_BCVERT_BRILLANT,"Button",BS_OWNERDRAW | 
+                    WS_TABSTOP,87,50,29,12
+    LTEXT           "3: Cyan",IDC_STATIC,7,67,28,11
+    CONTROL         "",IDC_BCCYAN,"Button",BS_OWNERDRAW | WS_TABSTOP,47,66,
+                    29,12
+    CONTROL         "",IDC_BCCYAN_BRILLANT,"Button",BS_OWNERDRAW | 
+                    WS_TABSTOP,87,66,29,12
+    LTEXT           "4: Rouge",IDC_STATIC,7,83,34,11
+    CONTROL         "",IDC_BCROUGE,"Button",BS_OWNERDRAW | WS_TABSTOP,47,82,
+                    29,12
+    CONTROL         "",IDC_BCROUGE_BRILLANT,"Button",BS_OWNERDRAW | 
+                    WS_TABSTOP,87,82,29,12
+    LTEXT           "5: Magenta",IDC_STATIC,7,99,38,11
+    CONTROL         "",IDC_BCMAGENTA,"Button",BS_OWNERDRAW | WS_TABSTOP,47,
+                    98,29,12
+    CONTROL         "",IDC_BCMAGENTA_BRILLANT,"Button",BS_OWNERDRAW | 
+                    WS_TABSTOP,87,98,29,12
+    LTEXT           "6: Jaune",IDC_STATIC,7,115,28,11
+    CONTROL         "",IDC_BCJAUNE,"Button",BS_OWNERDRAW | WS_TABSTOP,47,114,
+                    29,12
+    CONTROL         "",IDC_BCJAUNE_BRILLANT,"Button",BS_OWNERDRAW | 
+                    WS_TABSTOP,87,114,29,12
+    LTEXT           "7: Blanc",IDC_STATIC,7,131,28,11
+    CONTROL         "",IDC_BCBLANC,"Button",BS_OWNERDRAW | WS_TABSTOP,47,130,
+                    29,12
+    CONTROL         "",IDC_BCBLANC_BRILLANT,"Button",BS_OWNERDRAW | 
+                    WS_TABSTOP,87,130,29,12
+    LTEXT           "Cliquer sur une couleur pour la modifier",IDC_STATIC,7,
+                    151,133,9
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2,0,3,0
+ PRODUCTVERSION 2,0,3,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x9L
+#else
+ FILEFLAGS 0x8L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040c04e4"
+        BEGIN
+            VALUE "Comments", "Emulation de terminal ANSI simple sur WinSock\0"
+            VALUE "CompanyName", "SILLIKER\0"
+            VALUE "FileDescription", "Emulateur de terminal VTerm\0"
+            VALUE "FileVersion", "2.0.3 (8 mars 2002)\0"
+            VALUE "InternalName", "VTerm\0"
+            VALUE "LegalCopyright", "Copyright © 1996-2002  P.VIOLENT\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "VTERM.EXE\0"
+            VALUE "PrivateBuild", "Visual Studio 6\0"
+            VALUE "ProductName", "VTerm\0"
+            VALUE "ProductVersion", "2.0.3\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x40c, 1252
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUT_WINSOCK, DIALOG
+    BEGIN
+        RIGHTMARGIN, 227
+        BOTTOMMARGIN, 89
+    END
+
+    IDD_REMOTE_HOST, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 273
+        VERTGUIDE, 14
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 146
+    END
+
+    IDD_OPTIONS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 195
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 173
+    END
+
+    IDD_STATS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 402
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 201
+    END
+
+    IDD_COULEURS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 197
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 157
+        HORZGUIDE, 30
+        HORZGUIDE, 46
+        HORZGUIDE, 62
+        HORZGUIDE, 78
+        HORZGUIDE, 94
+        HORZGUIDE, 110
+        HORZGUIDE, 126
+        HORZGUIDE, 142
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// RT_MANIFEST
+//
+
+CREATEPROCESS_MANIFEST_RESOURCE_ID RT_MANIFEST MOVEABLE PURE "VTerm.exe.manifest"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    CG_IDS_PHYSICAL_MEM     "%lu Ko"
+    IDP_SOCKETS_INIT_FAILED "Échec à l'initialisation des sockets Windows."
+    ID_STATUS_CONNEXION     "Aucune connexion active"
+    ID_COORDONNEES_CURSEUR  "l:43 c:132"
+    ID_CODAGE_8BITS         "ANSI"
+    IDS_VERSION             "VTerm version 2.0.3 (8 mars 2002)"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "VTerm"
+    IDR_VTERMTYPE           "\nVTerm\nVTerm\n\n\nVTerm.Document\nVTerm Document"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "VTerm"
+    AFX_IDS_IDLEMESSAGE     "Prêt"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "MAJ"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "DEF"
+    ID_INDICATOR_OVR        "RFP"
+    ID_INDICATOR_REC        "ENR"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_NEW             "Crée un nouvelle session\nNouvelle connexion (Maj+F12)"
+    ID_FILE_CLOSE           "Termine la session courante\nDéconnecter"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "Affiche des informations sur le programme, la version et les droits de copyright\nA propos de"
+    ID_APP_EXIT             "Quitte l'application si toutes les sessions sont déconnectées\nQuitte"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "Crée une nouvelle session sur ce hôte"
+    ID_FILE_MRU_FILE2       "Crée une nouvelle session sur ce hôte"
+    ID_FILE_MRU_FILE3       "Crée une nouvelle session sur ce hôte"
+    ID_FILE_MRU_FILE4       "Crée une nouvelle session sur ce hôte"
+    ID_FILE_MRU_FILE5       "Crée une nouvelle session sur ce hôte"
+    ID_FILE_MRU_FILE6       "Crée une nouvelle session sur ce hôte"
+    ID_FILE_MRU_FILE7       "Crée une nouvelle session sur ce hôte"
+    ID_FILE_MRU_FILE8       "Crée une nouvelle session sur ce hôte"
+    ID_FILE_MRU_FILE9       "Crée une nouvelle session sur ce hôte"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "Passe au volet suivant de la fenêtre\nVolet suivant"
+    ID_PREV_PANE            "Revient au volet précédent de la fenêtre\nVolet précédent"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_NEW           "Ouvre une autre fenêtre pour le document actif\nNouvelle fenêtre"
+    ID_WINDOW_ARRANGE       "Réorganise les icônes au bas de la fenêtre\nRéorganise les icônes"
+    ID_WINDOW_CASCADE       "Réorganise les fenêtres de sorte qu'elles se superposent\nCascade"
+    ID_WINDOW_TILE_HORZ     "Réorganise les fenêtres en mosaïque de sorte qu'elles ne se superposent pas\nMosaïque"
+    ID_WINDOW_TILE_VERT     "Réorganise les fenêtres en mosaïque de sorte qu'elles ne se superposent pas\nMosaïque"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_COPY            "Copie la sélection et la place dans le Presse-papiers\nCopie"
+    ID_EDIT_PASTE           "Insère le contenu du Presse-papiers\nColle"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Affiche ou masque la barre d'outils\nBarre d'outils"
+    ID_VIEW_STATUS_BAR      "Affiche ou masque la barre d'état\nBarre d'état"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change la taille de la fenêtre"
+    AFX_IDS_SCMOVE          "Change la position de la fenêtre"
+    AFX_IDS_SCMINIMIZE      "Réduit la fenêtre en icône"
+    AFX_IDS_SCMAXIMIZE      "Agrandit la fenêtre au maximum"
+    AFX_IDS_SCNEXTWINDOW    "Passe à la fenêtre de document suivante"
+    AFX_IDS_SCPREVWINDOW    "Passe à la fenêtre de document précédente"
+    AFX_IDS_SCCLOSE         "Ferme la fenêtre active et invite l'utilisateur à enregistrer les documents"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Rend à la fenêtre sa taille normale"
+    AFX_IDS_SCTASKLIST      "Active la Liste des tâches"
+    AFX_IDS_MDICHILD        "Active cette fenêtre"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_ABOUT_WINSOCK        "Affiche des informations relatives à WinSock.dll"
+    ID_NEXT_WINDOW          "Passe à la fenêtre suivante\nFenêtre suivante (F12)"
+    ID_POLICE               "Choix de la police d'affichage\nPolice"
+    ID_OPTIONS              "Options d'affichage\nOptions"
+    ID_TESTMIRE             "Affiche la mire de test\nMire de test"
+    ID_STATS                "Affiche des statistiques internes sur l'application\nStatistiques"
+    ID_TESTPERFORMANCES     "Test des performances d'affichage général\nTest performances"
+    ID_TESTDEFILEMENT       "Teste les performances de défilement du programme\nTest défilement"
+    ID_COULEURS             "Modifie les couleurs du terminal\nCouleurs"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_COPY_RECT       "Copie la sélection avec les espaces de fin de ligne et la place dans le Presse-papiers\nCopie rectangle"
+    ID_RESTAURE             "Restaure une fenêtre document aggrandie"
+    ID_EDIT_COPY_PASTE      "Copie la sélection et la colle immédiatement"
+END
+
+#endif    // French (France) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#include "res\VTerm.rc2"  // non-Microsoft Visual C++ edited resources
+
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+#include "l.fra\afxres.rc"  	// Standard components
+#include "l.fra\afxprint.rc"	// printing/print preview resources
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

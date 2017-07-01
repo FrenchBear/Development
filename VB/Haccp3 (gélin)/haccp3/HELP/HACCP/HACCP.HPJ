@@ -1,0 +1,53 @@
+[OPTIONS]
+Contents=Sommaire
+
+[FILES]
+f:\real\haccp\help\haccp\texte1.rtf
+[BITMAPS]
+E:\AIDEDIT\rondn.bmp
+
+[MAP]
+Menus	1
+MenuFichier	17
+Onglets	3
+DefRepertoire	4
+FenImpression	5
+FenChoixRep	6
+DefFenOnglet	7
+MenuAffichage	8
+DefModuleActif	9
+MenuFenetre	10
+MenuAide	11
+Fenetres	12
+FenAPropos	13
+MenuEdition	14
+MenuDocumentation	15
+OngletParametres	16
+FenAccueil	2
+ModeEvaluation	18
+OngletEquipe	19
+OngletDocumentation	20
+OngletEtapesSujets	21
+OngletDispositionsEnPlace	22
+OngletDangers	23
+OngletArbreHACCP	24
+DefDocument	25
+FenAjoutDonnee	26
+FenAjoutDanger	27
+QuestPertinence	28
+FenAjoutSujetDanger	29
+QuestCriticite	30
+VerificationCoherence	31
+FenOptionsProjet	32
+Questionnaires	33
+CopierCollerDonnee	34
+DefProjetActif	35
+FenConfiguration	36
+
+[CONFIG]
+
+[BUILDTAGS]
+
+[WINDOWS]
+
+

@@ -1,0 +1,14 @@
+NAME            WSFTP
+EXETYPE         WINDOWS
+STUB            'WINSTUB.EXE' 
+CODE            PRELOAD MOVEABLE 
+DATA            PRELOAD MOVEABLE SINGLE
+HEAPSIZE        20480
+STACKSIZE       30760
+EXPORTS         WndProc          @1
+;                DebugWndProc     @2
+                WS_AboutMsgProc  @3
+                WS_HostMsgProc   @4
+                WS_InputMsgProc  @5
+;                WS_StatMsgProc   @6
+

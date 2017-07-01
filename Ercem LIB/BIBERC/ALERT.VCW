@@ -1,0 +1,11 @@
+[MSVC Status File]
+Version=1.00
+ProjectType=10
+External=1
+DebugBuildCmd=NMAKE /f ALERT.C
+ReleaseBuildCmd=NMAKE /f ALERT.C
+RebuildOption=/a
+BuildMode=1
+TargetName=D:\LIB\BIBERC\ALERT.EXE
+BrkptCount=0
+WatchCount=0

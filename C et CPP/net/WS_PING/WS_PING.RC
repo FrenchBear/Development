@@ -1,0 +1,17 @@
+#include "WS_PING.h"
+
+WS_PING ICON  WS_PING.ICO
+WS_PINGD ICON  WS_PINGD.ICO
+
+WS_PING MENU
+  BEGIN
+    MENUITEM "&Lookup",        IDM_LOOKUP
+    MENUITEM "&BlockingPing",  IDM_CONNECT
+    MENUITEM "&AsyncPing",     IDM_ASYNC_CONNECT
+    MENUITEM "E&xit",          IDM_EXIT
+    MENUITEM "&About",         IDM_ABOUT
+  END
+
+#include "WS_PING.DLG"
+#include "WS_PING.VER"
+

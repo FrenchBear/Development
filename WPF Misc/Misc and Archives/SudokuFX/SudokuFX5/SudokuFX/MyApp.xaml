@@ -1,0 +1,337 @@
+﻿<Application x:Class="SudokuFX.MyApp"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    StartupUri="Window1.xaml"
+    >
+  <Application.Resources>
+    <LinearGradientBrush x:Key ="ControlGradient" StartPoint ="0,0" EndPoint ="1,0">
+      <GradientStop Color ="LightGray" Offset ="0"/>
+      <GradientStop Color ="Gray" Offset ="1"/>
+    </LinearGradientBrush>
+    <Style x:Key="CheckedListBoxItem" TargetType="{x:Type ListBoxItem}">
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="{x:Type ListBoxItem}">
+            <DockPanel>
+              <CheckBox DockPanel.Dock="Left" Margin="2" IsChecked="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IsSelected, Mode=TwoWay}"/>
+              <Border 
+							  Background="{TemplateBinding Background}" 
+							  BorderBrush="{TemplateBinding BorderBrush}" 
+							  BorderThickness="{TemplateBinding BorderThickness}" 
+							  Padding="{TemplateBinding Padding}">
+                <ContentPresenter x:Name="ContentSite" 
+								  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+								  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+              </Border>
+            </DockPanel>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+    <Style x:Key ="GradientPanel" TargetType ="{x:Type Panel}">
+      <Setter Property ="Background">
+        <Setter.Value>
+          <DrawingBrush Stretch ="UniformToFill">
+            <DrawingBrush.Drawing>
+              <DrawingGroup>
+                <GeometryDrawing>
+                  <GeometryDrawing.Brush>
+                    <SolidColorBrush Color ="White"/>
+                  </GeometryDrawing.Brush>
+                  <GeometryDrawing.Geometry>
+                    <RectangleGeometry Rect="0,0,1,1"/>
+                  </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+                <GeometryDrawing>
+                  <GeometryDrawing.Brush>
+                    <RadialGradientBrush>
+                      <RadialGradientBrush.RelativeTransform>
+                        <TranslateTransform X ="-0.2" Y ="0"/>
+                      </RadialGradientBrush.RelativeTransform>
+                      <GradientStop Color="#850039d6" Offset ="0"/>
+                      <GradientStop Color="#654577Ff" Offset ="0"/>
+                      <GradientStop Color="#850039d6" Offset ="0.33"/>
+                      <GradientStop Color="#654577FF" Offset ="0.66"/>
+                      <GradientStop Color="#850039D6" Offset ="1"/>
+                    </RadialGradientBrush>
+                  </GeometryDrawing.Brush>
+                  <GeometryDrawing.Geometry>
+                    <RectangleGeometry Rect="0,0,1,1"/>
+                  </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+                <GeometryDrawing>
+                  <GeometryDrawing.Brush>
+                    <RadialGradientBrush>
+                      <RadialGradientBrush.RelativeTransform>
+                        <TransformGroup>
+                          <ScaleTransform CenterX ="0.5" CenterY ="0.5" ScaleX ="0.85" ScaleY ="0.85"/>
+                          <TranslateTransform X ="0.35" Y ="-0.35"/>
+                        </TransformGroup>
+                      </RadialGradientBrush.RelativeTransform>
+                      <GradientStop Color="#650039d6" Offset ="0"/>
+                      <GradientStop Color="#354577Ff" Offset ="0"/>
+                      <GradientStop Color="#650039d6" Offset ="0.33"/>
+                      <GradientStop Color="#354577FF" Offset ="0.66"/>
+                      <GradientStop Color="#650039D6" Offset ="0.9"/>
+                    </RadialGradientBrush>
+                  </GeometryDrawing.Brush>
+                  <GeometryDrawing.Geometry>
+                    <RectangleGeometry Rect="0,0,1,1"/>
+                  </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+                <GeometryDrawing>
+                  <GeometryDrawing.Brush>
+                    <RadialGradientBrush>
+                      <RadialGradientBrush.RelativeTransform>
+                        <TransformGroup>
+                          <ScaleTransform CenterX ="0.5" CenterY ="0.5" ScaleX ="0.75" ScaleY ="0.75"/>
+                          <TranslateTransform X ="0.25" Y ="0.35"/>
+                        </TransformGroup>
+                      </RadialGradientBrush.RelativeTransform>
+                      <GradientStop Color="#650039d6" Offset ="0"/>
+                      <GradientStop Color="#354577Ff" Offset ="0"/>
+                      <GradientStop Color="#650039d6" Offset ="0.33"/>
+                      <GradientStop Color="#004577FF" Offset ="0.66"/>
+                      <GradientStop Color="#000039D6" Offset ="0.9"/>
+                    </RadialGradientBrush>
+                  </GeometryDrawing.Brush>
+                  <GeometryDrawing.Geometry>
+                    <RectangleGeometry Rect="0,0,1,1"/>
+                  </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+                <GeometryDrawing>
+                  <GeometryDrawing.Brush>
+                    <RadialGradientBrush>
+                      <RadialGradientBrush.RelativeTransform>
+                        <TranslateTransform X ="-0.1" Y ="0.05"/>
+                      </RadialGradientBrush.RelativeTransform>
+                      <GradientStop Color="#450031B7" Offset ="0"/>
+                      <GradientStop Color="#251B57F7" Offset ="0.25"/>
+                      <GradientStop Color="#350039D6" Offset ="0.65"/>
+                      <GradientStop Color="#154577FF" Offset ="0.85"/>
+                      <GradientStop Color ="Transparent" Offset ="1"/>
+                    </RadialGradientBrush>
+                  </GeometryDrawing.Brush>
+                  <GeometryDrawing.Geometry>
+                    <RectangleGeometry Rect="0,0,1,1"/>
+                  </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+                <GeometryDrawing>
+                  <GeometryDrawing.Brush>
+                    <RadialGradientBrush>
+                      <RadialGradientBrush.RelativeTransform>
+                        <TransformGroup>
+                          <ScaleTransform CenterX ="0.5" CenterY ="0.5" ScaleX ="1.5" ScaleY ="1.5"/>
+                          <TranslateTransform X ="-0.025" Y ="0.06"/>
+                        </TransformGroup>
+                      </RadialGradientBrush.RelativeTransform>
+                      <GradientStop Color="#351B57F7" Offset ="0"/>
+                      <GradientStop Color="#250031B7" Offset ="0.5"/>
+                      <GradientStop Color="#354577FF" Offset ="0.75"/>
+                      <GradientStop Color ="Transparent" Offset ="0.9"/>
+                      <GradientStop Color="#350039D6" Offset ="1"/>
+                    </RadialGradientBrush>
+                  </GeometryDrawing.Brush>
+                  <GeometryDrawing.Geometry>
+                    <RectangleGeometry Rect="0,0,1,1"/>
+                  </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+              </DrawingGroup>
+            </DrawingBrush.Drawing>
+          </DrawingBrush>
+        </Setter.Value>
+      </Setter>
+      <Style.Triggers>
+        <EventTrigger RoutedEvent ="Control.Loaded">
+          <EventTrigger.Actions>
+            <BeginStoryboard>
+              <Storyboard >
+                <ColorAnimation RepeatBehavior="Forever" Duration ="0:0:4" Storyboard.TargetProperty ="Background.Drawing.Children[1].Brush.GradientStops[0].Color" From ="#654577Ff"/>
+                <DoubleAnimation RepeatBehavior="Forever" Duration="0:0:4" Storyboard.TargetProperty ="Background.Drawing.Children[1].Brush.GradientStops[0].Offset" From ="0" To ="0.33"/>
+                <DoubleAnimation  RepeatBehavior="Forever" Duration="0:0:4" Storyboard.TargetProperty ="Background.Drawing.Children[1].Brush.GradientStops[1].Offset" From ="0" To ="0.66"/>
+                <DoubleAnimation RepeatBehavior="Forever" Duration="0:0:4" Storyboard.TargetProperty ="Background.Drawing.Children[1].Brush.GradientStops[2].Offset" From ="0.33" To ="1"/>
+                <DoubleAnimation RepeatBehavior="Forever" Duration="0:0:4" Storyboard.TargetProperty ="Background.Drawing.Children[1].Brush.GradientStops[3].Offset" From ="0.66" To ="1.33"/>
+                <DoubleAnimation RepeatBehavior="Forever" Duration="0:0:4" Storyboard.TargetProperty ="Background.Drawing.Children[1].Brush.GradientStops[4].Offset" From ="1" To ="1.66"/>
+                <ColorAnimation RepeatBehavior="Forever" Duration ="0:0:2" Storyboard.TargetProperty ="Background.Drawing.Children[2].Brush.GradientStops[0].Color" From ="#654577Ff"/>
+                <DoubleAnimation RepeatBehavior="Forever" Duration="0:0:2" Storyboard.TargetProperty ="Background.Drawing.Children[2].Brush.GradientStops[0].Offset" From ="0" To ="0.33"/>
+                <DoubleAnimation  RepeatBehavior="Forever" Duration="0:0:2" Storyboard.TargetProperty ="Background.Drawing.Children[2].Brush.GradientStops[1].Offset" From ="0" To ="0.66"/>
+                <DoubleAnimation RepeatBehavior="Forever" Duration="0:0:2" Storyboard.TargetProperty ="Background.Drawing.Children[2].Brush.GradientStops[2].Offset" From ="0.33" To ="1"/>
+                <DoubleAnimation RepeatBehavior="Forever" Duration="0:0:2" Storyboard.TargetProperty ="Background.Drawing.Children[2].Brush.GradientStops[3].Offset" From ="0.66" To ="1.33"/>
+                <DoubleAnimation RepeatBehavior="Forever" Duration="0:0:2" Storyboard.TargetProperty ="Background.Drawing.Children[2].Brush.GradientStops[4].Offset" From ="1" To ="1.66"/>
+              </Storyboard>
+            </BeginStoryboard>
+          </EventTrigger.Actions>
+        </EventTrigger>
+      </Style.Triggers>
+    </Style>
+    <Style TargetType ="{x:Type Expander}">
+      <Setter Property ="Background" Value="{StaticResource ControlGradient}"/>
+      <Setter Property ="Padding" Value ="10"/>
+      <Setter Property ="BorderBrush" Value ="DimGray"/>
+      <Setter Property ="BorderThickness" Value ="1"/>
+      <Setter Property ="Margin" Value ="5"/>
+      <Setter Property ="HorizontalContentAlignment" Value ="Stretch"/>
+      <Setter Property ="Foreground" Value ="White"/>
+      <Setter Property ="VerticalContentAlignment" Value ="Stretch"/>
+      <Setter Property ="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType ="{x:Type Expander}">
+            <Grid>
+              <Border BorderBrush="{TemplateBinding Border.BorderBrush}" Margin ="1" CornerRadius="3,3,3,3" 
+									BorderThickness="{TemplateBinding Border.BorderThickness}" 
+									Background="White" SnapsToDevicePixels="True">
+                <Border.BitmapEffect>
+                  <DropShadowBitmapEffect Opacity ="0.5"/>
+                </Border.BitmapEffect>
+              </Border>
+              <Border x:Name ="MainBorder" BorderBrush="{TemplateBinding Border.BorderBrush}" CornerRadius="3,3,3,3" 
+                  BorderThickness="{TemplateBinding Border.BorderThickness}" 
+                  Background="{TemplateBinding Panel.Background}" SnapsToDevicePixels="True">
+                <DockPanel>
+                  <ToggleButton IsChecked="{Binding Path=IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                    MinWidth="0" Margin="3" FontWeight="{TemplateBinding TextElement.FontWeight}" 
+                    HorizontalContentAlignment="{TemplateBinding Control.HorizontalContentAlignment}" 
+                    FontStretch="{TemplateBinding TextElement.FontStretch}" VerticalContentAlignment="{TemplateBinding Control.VerticalContentAlignment}" 
+                    Foreground="{TemplateBinding TextElement.Foreground}" FontFamily="{TemplateBinding TextElement.FontFamily}" 
+                    x:Name="HeaderSite" FontStyle="{TemplateBinding TextElement.FontStyle}" FontSize="{TemplateBinding TextElement.FontSize}" 
+                    MinHeight="0" ContentTemplate="{TemplateBinding HeaderedContentControl.HeaderTemplate}" 
+                    Content="{TemplateBinding HeaderedContentControl.Header}" DockPanel.Dock="Top">
+                    <ToggleButton.Template>
+                      <ControlTemplate TargetType="{x:Type ToggleButton}">
+                        <Border Padding="{TemplateBinding Control.Padding}">
+                          <Grid Background="#00FFFFFF" SnapsToDevicePixels="False">
+                            <Grid.ColumnDefinitions>
+                              <ColumnDefinition Width="19" />
+                              <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Ellipse x:Name ="BackGrad" Height="19" Width="19" HorizontalAlignment="Center" VerticalAlignment ="Center" StrokeThickness="1" Stroke ="DarkBlue">
+                              <Ellipse.Fill>
+                                <LinearGradientBrush StartPoint ="0,0" EndPoint ="0,1">
+                                  <GradientStop Color ="LightSkyBlue" Offset ="0"/>
+                                  <GradientStop Color ="Blue" Offset ="0.5"/>
+                                  <GradientStop Color ="LightSkyBlue" Offset ="1"/>
+                                </LinearGradientBrush>
+                              </Ellipse.Fill>
+                            </Ellipse>
+                            <Ellipse Height="19" Width="19" HorizontalAlignment="Center" VerticalAlignment ="Center" Stroke ="Transparent"  x:Name ="FadeMask" StrokeThickness="1" Opacity ="0">
+                              <Ellipse.Fill>
+                                <SolidColorBrush Color ="AliceBlue"/>
+                              </Ellipse.Fill>
+                            </Ellipse>
+                            <Path Stroke="White" StrokeThickness="2" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="arrow" SnapsToDevicePixels="False" Data="M1,1.5 L4.5,5 8,1.5"/>
+                            <Ellipse Height="19" Width="19" HorizontalAlignment="Center" VerticalAlignment ="Center" x:Name ="Highlight" StrokeThickness ="2" Stroke ="Transparent">
+                              <Ellipse.Fill>
+                                <DrawingBrush>
+                                  <DrawingBrush.Drawing>
+                                    <GeometryDrawing>
+                                      <GeometryDrawing.Brush>
+                                        <LinearGradientBrush Opacity ="0.6" StartPoint ="0,0" EndPoint ="0,1">
+                                          <GradientStop Color ="White" Offset ="0"/>
+                                          <GradientStop Color ="#CCFFFFFF" Offset ="1"/>
+                                        </LinearGradientBrush>
+                                      </GeometryDrawing.Brush>
+                                      <GeometryDrawing.Geometry>
+                                        <EllipseGeometry Center ="0.5,0.5" RadiusX ="0.25" RadiusY ="0.5"/>
+                                      </GeometryDrawing.Geometry>
+                                    </GeometryDrawing>
+                                  </DrawingBrush.Drawing>
+                                  <DrawingBrush.RelativeTransform>
+                                    <ScaleTransform CenterX ="0.5" CenterY ="0" ScaleX ="1.05" ScaleY ="0.6"/>
+                                  </DrawingBrush.RelativeTransform>
+                                </DrawingBrush>
+                              </Ellipse.Fill>
+                            </Ellipse>
+                            <ContentPresenter Margin="4,0,0,0" HorizontalAlignment="Left" x:Name="ContentSite" 
+                              VerticalAlignment="Center" ContentTemplate="{TemplateBinding ContentControl.ContentTemplate}" 
+                              RecognizesAccessKey="True" Content="{TemplateBinding ContentControl.Content}" Grid.Column="1" />
+                          </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                          <Trigger Property="ToggleButton.IsChecked" Value="True">
+                            <Setter Property="LayoutTransform" TargetName="arrow">
+                              <Setter.Value>
+                                <ScaleTransform ScaleY ="-1"/>
+                              </Setter.Value>
+                            </Setter>
+                          </Trigger>
+                          <Trigger Property ="ToggleButton.IsPressed" Value ="True">
+                            <Setter TargetName ="BackGrad"  Property ="RenderTransform">
+                              <Setter.Value>
+                                <TranslateTransform X ="0" Y ="1"/>
+                              </Setter.Value>
+                            </Setter>
+                          </Trigger>
+                          <EventTrigger RoutedEvent ="UIElement.MouseEnter">
+                            <EventTrigger.Actions>
+                              <BeginStoryboard>
+                                <Storyboard>
+                                  <DoubleAnimation Storyboard.TargetName ="FadeMask" Storyboard.TargetProperty ="Opacity" To ="0.4" Duration ="0:0:0.25"/>
+                                </Storyboard>
+                              </BeginStoryboard>
+                            </EventTrigger.Actions>
+                          </EventTrigger>
+                          <EventTrigger RoutedEvent ="UIElement.MouseLeave">
+                            <EventTrigger.Actions>
+                              <BeginStoryboard>
+                                <Storyboard>
+                                  <DoubleAnimation Storyboard.TargetName ="FadeMask" Storyboard.TargetProperty ="Opacity" To ="0" Duration ="0:0:0.25"/>
+                                </Storyboard>
+                              </BeginStoryboard>
+                            </EventTrigger.Actions>
+                          </EventTrigger>
+                        </ControlTemplate.Triggers>
+                      </ControlTemplate>
+                    </ToggleButton.Template>
+                  </ToggleButton>
+                  <Border x:Name="ExpandSite" Margin ="5,0,5,5" Background ="#77FFFFFF" BorderBrush="{TemplateBinding Border.BorderBrush}" BorderThickness="{TemplateBinding Border.BorderThickness}">
+                    <Border.LayoutTransform>
+                      <ScaleTransform ScaleY ="0"/>
+                    </Border.LayoutTransform>
+                    <ContentPresenter Margin="{TemplateBinding Control.Padding}" HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}"
+                       VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}" 
+                      Focusable="False" ContentTemplate="{TemplateBinding ContentControl.ContentTemplate}"
+                      Content="{TemplateBinding ContentControl.Content}" DockPanel.Dock="Bottom">
+                    </ContentPresenter>
+                  </Border >
+                </DockPanel>
+              </Border>
+            </Grid>
+            <ControlTemplate.Triggers>
+              <Trigger Property="Expander.IsExpanded" Value="True">
+                <Trigger.EnterActions>
+                  <BeginStoryboard>
+                    <Storyboard>
+                      <DoubleAnimation Storyboard.TargetName ="ExpandSite" Storyboard.TargetProperty ="LayoutTransform.ScaleY" To ="1" Duration ="0:0:0.5"/>
+                      <DoubleAnimation Storyboard.TargetName ="ExpandSite" Storyboard.TargetProperty="Opacity" To ="1" Duration ="0:0:0.5"/>
+                    </Storyboard>
+                  </BeginStoryboard>
+                </Trigger.EnterActions>
+                <Trigger.ExitActions>
+                  <BeginStoryboard>
+                    <Storyboard>
+                      <DoubleAnimation Storyboard.TargetName ="ExpandSite" Storyboard.TargetProperty ="LayoutTransform.ScaleY" To ="0" Duration ="0:0:0.5"/>
+                      <DoubleAnimation Storyboard.TargetName ="ExpandSite" Storyboard.TargetProperty="Opacity" To ="0" Duration ="0:0:0.5"/>
+                    </Storyboard>
+                  </BeginStoryboard>
+                </Trigger.ExitActions>
+              </Trigger>
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+    <Style x:Key ="ControlBorder" TargetType ="{x:Type Border}">
+      <Setter Property ="Background" Value="{StaticResource ControlGradient}"/>
+      <Setter Property ="CornerRadius" Value ="3"/>
+      <Setter Property ="BorderBrush" Value ="DimGray"/>
+      <Setter Property ="BorderThickness" Value ="1"/>
+      <Setter Property ="Margin" Value ="5"/>
+    </Style>
+    <Style x:Key ="ControlInterior" TargetType ="{x:Type Control}">
+      <Setter Property ="Background" Value ="#77FFFFFF"/>
+      <Setter Property ="BorderBrush" Value ="DimGray"/>
+      <Setter Property ="BorderThickness" Value ="1"/>
+      <Setter Property ="Margin" Value ="5"/>
+    </Style>
+  </Application.Resources>
+</Application>

@@ -1,0 +1,3 @@
+ESSAI.FRM
+ProjWinSize=76,571,226,119
+ProjWinShow=0

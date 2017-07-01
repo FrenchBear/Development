@@ -1,0 +1,24 @@
+[OPTIONS]
+Contents=Sommaire
+
+[FILES]
+f:\real\haccp\help\cles\cles.rtf
+[BITMAPS]
+F:\real\haccp\help\rondn.bmp
+
+[MAP]
+Menus	1
+MenuFichier	2
+MenuAide	3
+Fenetres	4
+FenAPropos	5
+FenAjoutCle	6
+FenPrincipale	7
+
+[CONFIG]
+
+[BUILDTAGS]
+
+[WINDOWS]
+
+

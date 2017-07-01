@@ -1,0 +1,4 @@
+/* divers.ref */
+void bipbip(int2);
+char exist(const char *);
+short run(const char *,int2,const char * const *);

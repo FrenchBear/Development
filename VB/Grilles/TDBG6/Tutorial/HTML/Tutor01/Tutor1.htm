@@ -1,0 +1,18 @@
+<HTML>
+<HEAD>
+<TITLE>True DBGrid Pro 6.0 (OLEDB)</TITLE>
+</HEAD>
+<BODY>
+Tutorial 1 - Binding True DBGrid to a Data Control<P>
+
+<OBJECT CLASSID="CLSID:BD96C556-65A3-11D0-983A-00C04FC29E33" ID="adcTutor" HEIGHT=1 WIDTH=1>
+	<PARAM NAME="Server" VALUE="http://passat">
+	<PARAM NAME="Connect" VALUE="DSN=TDBGDemo">
+	<PARAM NAME="SQL" VALUE="Select * From Composer">
+</OBJECT>
+<OBJECT id=tDBGrid CLASSID="clsid:0D6234D0-DBA2-11D1-B5DF-0060976089D0" WIDTH=600 HEIGHT=400>
+	<PARAM NAME="DataSource" DATASRC="#adcTutor">
+</OBJECT>
+</BODY>
+</HTML>
+</SCRIPT>

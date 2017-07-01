@@ -1,0 +1,2 @@
+ftp://ftp.cdrom.com/.16/FreeBSD/FreeBSD-current/src/usr.bin/telnet/
+6/5/96

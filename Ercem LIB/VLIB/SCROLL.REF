@@ -1,0 +1,5 @@
+/* scroll.ref */
+void sc_up(int2,int2,int2);
+void sc_down(int2,int2,int2);
+void sc_left(int2,int2,int2);
+void sc_right(int2,int2,int2);

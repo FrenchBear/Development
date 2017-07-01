@@ -1,0 +1,33 @@
+Subject:	How to display the "Browse for Folder" dialog box
+Version:	3rd release, 05/24/97
+Filename:	Browsdlg.zip
+Author:		Brad Martinez
+Needs:		Win95/NT, VB4-32, VB5
+
+An example that shows how to display the "Browse for Folder" dialog
+and return a user selected folder.
+
+This is the 2nd update to the original version released on 3/24/96.
+
+The code has been made more readable by simplifying the procedures.
+Updates include checkbox options for Browse dialog return types and
+shows how to retrieve the selected folder's icon from the return value.
+
+Includes translated definitions and documented source for the Browse 
+Dialog's C structures: BROWSEINFO, ITEMIDLIST and SHITEMID, and the
+API calls: SHBrowseForFolder(), SHGetPathFromIDList() and 
+SHGetSpecialFolderLocation().
+
+Distribution notice:
+
+You are free to distribute Browsdlg.zip in it's original state to any 
+public WWW site, online service or BBS without explicitly obtaining
+the authors permission. (Notification would be appreciated).
+
+If you wish to distribute Browsdlg.zip by any other means (i.e. if you
+want to include it on a CD or any other software media) then the 
+EXPRESS PERMISSION of the author is REQUIRED.
+
+Brad Martinez
+btmtz@aol.com
+http://members.aol.com/btmtz/vb

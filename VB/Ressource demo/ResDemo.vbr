@@ -1,0 +1,18 @@
+VBRES VERSION 1.00
+ProjectName=VBPJ Resource Demo
+Description=Demonstration of using resources
+ResName16=ResDem16.RES
+ResName32=ResDem32.RES
+ICON 101=moon01.ico
+ICON 102=moon02.ico
+ICON 103=moon03.ico
+ICON 104=moon04.ico
+ICON 105=moon05.ico
+ICON 106=moon06.ico
+ICON 107=moon07.ico
+ICON 108=moon08.ico
+BITMAP 200=wood1.bmp
+BITMAP 201=options2.bmp
+SOUND 301=birds.wav
+SOUND 302=intro1.wav
+SOUND 303=sound560.wav

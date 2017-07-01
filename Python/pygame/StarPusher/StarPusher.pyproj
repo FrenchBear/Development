@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0bb37ae3-1c90-4b28-b45d-de8ba4a1d96a}</ProjectGuid>
+    <ProjectHome />
+    <StartupFile>starpusher.py</StartupFile>
+    <SearchPath />
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <InterpreterId />
+    <InterpreterVersion />
+    <IsWindowsApplication>True</IsWindowsApplication>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
+    <PtvsTargetsFile>$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets</PtvsTargetsFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="boy.png" />
+    <Content Include="catgirl.png" />
+    <Content Include="Grass_Block.png" />
+    <Content Include="horngirl.png" />
+    <Content Include="pinkgirl.png" />
+    <Content Include="Plain_Block.png" />
+    <Content Include="princess.png" />
+    <Content Include="RedSelector.png" />
+    <Content Include="Rock.png" />
+    <Content Include="Selector.png" />
+    <Content Include="Star.png" />
+    <Content Include="starPusherLevels.txt" />
+    <Content Include="star_solved.png" />
+    <Content Include="star_title.png" />
+    <Content Include="Tree_Short.png" />
+    <Content Include="Tree_Tall.png" />
+    <Content Include="Tree_Ugly.png" />
+    <Content Include="Wall_Block_Tall.png" />
+    <Content Include="Wood_Block_Tall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="starpusher.py" />
+  </ItemGroup>
+  <Import Project="$(PtvsTargetsFile)" Condition="Exists($(PtvsTargetsFile))" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="!Exists($(PtvsTargetsFile))" />
+</Project>

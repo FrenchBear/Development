@@ -1,0 +1,50 @@
+<xsd:schema id="NewDataSet" targetNamespace="http://tempuri.org/Commande.xsd" xmlns="http://tempuri.org/Commande.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xsd:element name="Order">
+    <xsd:complexType content="elementOnly">
+      <xsd:all>
+        <xsd:element name="DueDate" minOccurs="0" type="xsd:string"/>
+        <xsd:element name="CreatedDate" minOccurs="0" type="xsd:string"/>
+        <xsd:element name="Contact" minOccurs="0" type="xsd:string"/>
+        <xsd:element name="Truc" minOccurs="0" type="xsd:string"/>
+        <xsd:element name="OrderItems">
+          <xsd:complexType content="elementOnly">
+            <xsd:all>
+              <xsd:element name="OrderItem">
+                <xsd:complexType content="elementOnly">
+                  <xsd:all>
+                    <xsd:element name="Name" minOccurs="0" type="xsd:string"/>
+                    <xsd:element name="Description" minOccurs="0" type="xsd:string"/>
+                    <xsd:element name="Quantity" minOccurs="0" type="xsd:string"/>
+                    <xsd:element name="Location" minOccurs="0" type="xsd:string"/>
+                  </xsd:all>
+                  <xsd:attribute name="ID" type="xsd:string"/>
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:all>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="Customer">
+          <xsd:complexType content="elementOnly">
+            <xsd:all>
+              <xsd:element name="Name" minOccurs="0" type="xsd:string"/>
+              <xsd:element name="Address" minOccurs="0" type="xsd:string"/>
+              <xsd:element name="City" minOccurs="0" type="xsd:string"/>
+              <xsd:element name="State" minOccurs="0" type="xsd:string"/>
+              <xsd:element name="ZIP" minOccurs="0" type="xsd:string"/>
+              <xsd:element name="Telephone" minOccurs="0" type="xsd:string"/>
+            </xsd:all>
+            <xsd:attribute name="ID" type="xsd:string"/>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:all>
+      <xsd:attribute name="ID" type="xsd:string"/>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="NewDataSet" msdata:IsDataSet="True">
+    <xsd:complexType>
+      <xsd:choice maxOccurs="unbounded">
+        <xsd:element ref="Order"/>
+      </xsd:choice>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

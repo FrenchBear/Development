@@ -1,0 +1,385 @@
+$AbonnerA
+Apple Macintosh utilisant le System 7 ou supérieur uniquement. Abonne à une édition publiée.
+$Abs
+Renvoie la valeur absolue d'un nombre.
+$AccéderDDE
+Ouvre un canal DDE vers une application.
+$Ouvrir
+Permet d'exécuter une opération d'Entrée/Sortie (E/S) sur un fichier.
+$AccèsEcritureRéservé
+Vrai si l'accès en écriture au classeur est réservé. En lecture seule.
+$AccèsEcritureRéservéA
+Renvoie une chaîne de caractères fournissant le nom de l'utilisateur qui possède les droits d'écriture en cours pour le classeur. En lecture seule.
+$Accessible
+Vrai si le contrôle, l'objet dessiné ou l'élément de menu est activé. En lecture-écriture, à l'exception de Menu qui est en écriture seulement.
+$ActionAutreToucheRaccourci
+Renvoie ou définit l'action entreprise lorsque vous appuyez sur l'Autre touche de raccourci de menu ou d'Aide (xlMenusExcel ou xlAideLotus). En lecture-écriture.
+$Activer
+Active l'objet, de la manière indiquée dans le tableau ci-dessous.
+
+Objet	Description
+
+
+
+BarreMenus	Active la barre de menus. Toutes les barres de menus ne peuvent cependant pas être activées à n'importe quel moment. Pour plus 
+d'informations, reportez-vous à la section Remarques ci-dessous.
+Classeur	Active la première fenêtre associée au classeur. Aucune macro Auto_activer ou Auto_désactiver qui serait attachée au classeur 
+n'est cependant exécutée (pour exécuter ces macros, utilisez la méthode ExécuterMacrosAutomatiques).
+Fenêtre	Place la fenêtre au premier plan. Aucune macro Auto_activer ou Auto_désactiver qui serait attachée au classeur n'est cependant 
+exécutée (pour exécuter ces macros, utilisez la méthode ExécuterMacrosAutomatiques).
+
+FeuilleBoîteDialogue, Module, 
+FeuilleCalcul	Transforme cette feuille en feuille active. Equivaut à cliquer sur l'onglet.
+Graphique, ObjetGraphique	Active ce graphique.
+ObjetOLE	Active l'objet.
+Plage	Active une cellule unique qui doit appartenir à la sélection en cours. Pour sélectionner une plage de cellules, utilisez la méthode 
+Sélectionner.
+Volet	Active le volet. Si celui-ci ne se trouve pas dans la fenêtre active, la fenêtre à laquelle il appartient est aussi activée.
+$ActiverApplicationMicrosoft
+Active une application Microsoft. Si l'application est déjà en cours d'exécution, cette méthode l'active. Si l'application n'est pas encore en cours d'exécution, cette 
+méthode démarre une instance de l'application.
+$ActiverPrécédent
+Active la fenêtre précédente en la déplaçant au premier plan de la superposition et en repoussant la fenêtre spécifiée à l'arrière plan.
+$ActiverSuivant
+Active la fenêtre suivante en la déplaçant au premier plan de la superposition et en repoussant la fenêtre spécifiée à l'arrière plan.
+$ActualiserTableau
+Met à jour le tableau croisé dynamique à partir des données source. Renvoie Vrai si la mise à jour réussit.
+$Adresse
+Renvoie la référence de la plage, sous forme d'une chaîne de caractères écrite dans le langage de la macro.
+$AdresseLocale
+Renvoie la référence d'une plage, sous forme d'une chaîne, dans la langue de l'utilisateur.
+$AffecteAttr
+Définit les attributs d'un fichier.
+$AffecteD
+Aligne à droite une chaîne à l'intérieur d'une variable chaîne.
+$AffecteG
+Aligne à gauche une chaîne de caractères dans l'espace d'une variable chaîne ou copie une variable d'un type défini par l'utilisateur vers une autre variable d'un autre 
+type défini par l'utilisateur.
+$AffecteRéf
+Affecte une référence d'objet à une variable ou à une propriété.
+$AffecteRéf
+Affecte une référence d'objet à une variable ou à une propriété.
+$AffecterNoms
+Cette méthode permet d'affecter des noms aux cellules de la plage.
+$AffecteVal
+Affecte la valeur d'une expression à une variable ou à une propriété.
+$AffichageBarreDéfilementHorizontale
+Vrai si la barre de défilement horizontale est affichée. En lecture-écriture.
+$AffichageBarreDéfilementVerticale
+Vrai si la barre de défilement verticale est affichée. En lecture-écriture.
+$AffichageBarreEtat
+Vrai si la barre d'état est affichée. En lecture-écriture.
+$AffichageBarreFormule
+Vrai si la barre de formule est affichée. En lecture-écriture.
+$AffichageBarresDéfilement
+Vrai si les barres de défilement sont affichées pour l'ensemble des classeurs. En lecture-écriture.
+$AffichageCellulesVides
+Renvoie ou définit la façon dont les cellules vierges sont tracées sur un graphique (xlNonTracé, xlInterpolé ou xlZéro). En lecture-écriture.
+$AffichageCoefficientDétermination
+Vrai si le coefficient de détermination de la courbe de tendance est affichée dans le graphique (dans la même étiquette de données que l'équation). Si cette propriété 
+a pour valeur Vrai, les étiquettes de données sont automatiquement activées. En lecture-écriture.
+$AffichageDerniersFichiers
+Vrai si la liste des derniers fichiers ouverts est affichée dans le menu Fichier. En lecture-écriture.
+$AffichageDétail
+Vrai si le plan est étendu pour la plage spécifiée (les détails de la colonne ou de la ligne sont affichés). La plage spécifiée doit être une seule ligne ou colonne de 
+synthèse dans un plan. En lecture-écriture.
+Pour l'objet ElémentDynamique (ou pour l'objet Plage si la plage se trouve dans un tableau croisé dynamique), cette propriété a pour valeur Vrai pour autant que 
+l'élément dynamique affiche des détails.
+$AffichageDroiteAGauche
+Vrai si le contenu de la fenêtre est affiché de droite à gauche plutôt que de gauche à droite. En lecture-écriture.
+$AffichageEnTêtes
+Vrai si les numéros de lignes et les en-têtes de colonnes sont affichés, Faux si aucun numéro ou en-tête n'est affiché. En lecture-écriture.
+$AffichageEquation
+Vrai si l'équation de la courbe de tendance est affichée dans le graphique (dans la même étiquette de données que le coefficient de détermination). Si vous désignez 
+Vrai comme valeur de cette propriété, les étiquettes de données sont automatiquement activées. En lecture-écriture.
+$AffichageFenêtrePressePapiers
+Macintosh uniquement. Vrai si la fenêtre du Presse-papiers est affichée. Désignez Vrai comme valeur de cette propriété pour afficher la fenêtre du Presse-papiers. En 
+lecture-écriture.
+$AffichageFormules
+Vrai si la fenêtre affiche les formules ou Faux si elle affiche les valeurs. En lecture-écriture.
+$AffichageIndicateurAnnotations
+Vrai si les cellules renfermant des annotations affichent un indicateur d'annotation (petit carré apparaissant dans le coin supérieur droit de la cellule). En lecture-écriture.
+$AffichageInfoBulles
+Vrai si l'Assistant Conseil est activé. En lecture-écriture.
+$AffichageMenusExcel4
+Vrai si Microsoft Excel affiche des barres de menus Excel 4. Faux si Microsoft Excel affiche les barres de menus Excel 5. En lecture-écriture.
+$AffichageMessagesAlerte
+Vrai si Microsoft Excel affiche certains messages, notamment d'alerte, au cours de l'exécution d'une macro. En lecture-écriture.
+$AffichageObjetsDessinés
+Renvoie ou établit la manière dont les objets dessinés sont affichés, comme indiqué dans le tableau ci-dessous. En lecture-écriture.
+
+Valeur	Signification
+
+
+
+xlTout	Affiche tous les objets dessinés.
+xlIndicateursPosition	N'affiche que les indicateurs de position.
+xlMasquage	Masque tous les objets dessinés.
+$AffichageOmbrage3D
+Vrai si le contrôle utilise des effets visuels 3-D. Cette propriété ne s'applique qu'à des contrôles dans des feuilles de calcul ou des graphiques. En lecture-écriture.
+$AffichageOngletsClasseur
+Vrai si les onglets du classeur sont affichés. En lecture-écriture.
+$AffichagePlan
+Vrai si les symboles du plan sont affichés. En lecture-écriture.
+$AffichagePleinEcran
+Vrai si Microsoft Excel est en mode plein écran. En lecture-écriture.
+$AffichageQuadrillage
+Vrai si le quadrillage est affiché. En lecture-écriture.
+$AffichageSautsPageAutomatiques
+Vrai si les sauts de page automatiques doivent être affichés dans cette feuille. En lecture-écriture.
+$AffichageSymboleLégende
+Vrai si le symbole de légende de l'étiquette de données est visible. En lecture-écriture.
+$AffichageZéros
+Vrai si les valeurs zéro sont affichées. En lecture-écriture.
+$Affiché
+Vrai si l'objet est visible. Pour un graphique, une feuille boîte de dialogue, un module ou une feuille de calcul, cette propriété peut être définie xlTrèsCaché : l'objet est 
+masqué et ne peut être rendu visible qu'en affectant la valeur Vrai à cette propriété (l'utilisateur ne peut pas rendre l'objet visible).En lecture-écriture.
+$Afficher
+Objet FeuilleBoîteDialogue (Syntaxe 1) : Exécute la boîte de dialogue. Tant que la boîte de dialogue n'est pas fermée ou masquée, la procédure est interrompue. 
+Toutefois, les procédures (qui gèrent les évènements) affectées au contrôle de la boîte de dialogue sont exécutées pendant que la procédure appelante est 
+suspendue.
+Objet Plage (Syntaxe 1) : Fait défiler le contenu de la fenêtre active de manière à afficher la plage. Celle-ci doit être constituée d'une cellule unique appartenant au 
+document actif.
+Objet Scénario (Syntaxe 1) : Affiche le scénario en insérant ses valeurs dans la feuille de calcul. Les cellules ainsi affectées ne sont autres que les cellules à modifier du 
+scénario.
+
+Objet Dialogue (Syntaxe 2) : Affiche la boîte de dialogue et attend que l'utilisateur saisisse des données.
+$AfficherAntécédents
+Affiche ou supprime les flèches d'audit signalant les antécédents de la plage. A chaque appel de cette méthode, un niveau supplémentaire d'antécédents et affiché ou 
+supprimé.
+$AfficherDépendants
+Affiche ou supprime les flèches d'audit signalant les dépendants de la plage. A chaque appel de cette méthode, un niveau supplémentaire de dépendants et affiché ou 
+supprimé.
+$AfficherErreurs
+Affiche des flèches d'audit qui passent par les antécédents en partant de la cellule source de l'erreur. De plus, la méthode renvoie la plage de la source de l'erreur.
+$AfficherGrilleDonnées
+Affiche la grille associée à la feuille de calcul.
+$AfficherNiveaux
+Affiche le nombre spécifié de niveaux de ligne et/ou de colonne d'un plan.
+$AfficherPages
+Crée un nouveau tableau croisé dynamique pour chaque élément du champ de page. Chaque nouveau tableau croisé dynamique est créé dans une nouvelle feuille 
+de calcul.
+$AfficherToutesDonnées
+Affiche toutes les lignes de la liste actuellement filtrée. Si Filtre Automatique est utilisé, cette méthode remplace les flèches par "Tout".
+$Aide
+Affiche une rubrique d'un fichier d'Aide.
+$Ouvrir
+Permet d'exécuter une opération d'Entrée/Sortie (E/S) sur un fichier.
+$Ajouter
+Ajoute un élément à une collection, comme indiqué dans le tableau ci-dessous. Sélectionnez un objet pour obtenir une description détaillée de la méthode Ajouter qui 
+lui est applicable.
+
+
+
+Objet	Description
+
+
+Arcs,  Boutons, Dessins, Ellipses,Images, ObjetsGraphique, Rectangles, Traits, ZonesTexte,	Crée un nouvel objet dessiné. Le type de l'objet dépend de la collection à laquelle vous appliquez Ajouter. Par exemple, Traits.Ajouter crée un nouveau trait tandis que Ellipses.Ajouter crée une nouvelle ellipse.
+BarresMenus,	Crée une nouvelle barre de menus. 
+BarresOutils,	Crée une nouvelle barre d'outils.
+BoutonsBarreOutils,	Ajoute un nouveau bouton à une barre d'outils existante. 
+BarresDéfilement, CasesCocher, CasesOption, Compteurs, Etiquettes, ZonesCombinéesDéroulantes, ZonesGroupe, ZonesListe, ZonesModification, 	Crée un nouveau contrôle. Le type de l'objet dépend de la collection à laquelle vous appliquez Ajouter. Par exemple, ZonesCombinéesDéroulantes.Ajouter crée un nouveau contrôle déroulant tandis que ZonesModification.Ajouter crée une nouvelle zone de modification.
+Classeurs	Crée un nouveau classeur qui devient le classeur actif.
+CourbesTendance	Crée une courbe de tendance fondée sur les paramètres spécifiés.
+ElémentsMenus	Ajoute un nouvel élément au menu. Cette méthode permet aussi de rétablir un élément intégré qui avait été antérieurement supprimé.
+FeuillesBoîteDialogue	Crée une nouvelle feuille boîte de dialogue.
+FeuillesCalcul	Crée une nouvelle feuille de calcul qui devient la feuille de calcul active.
+Feuilles	Crée une nouvelle feuille (une feuille de calcul, un graphique, un module, une feuille boîte de dialogue ou une feuille macro).
+Graphiques	Crée un nouveau graphique.
+MacrosComplémentaires	Ajoute une nouvelle macro complémentaire à la liste des macros complémentaires en cours.
+Menus	Ajoute un nouveau menu. (Il n'est pas possible de créer un nouveau menu contextuel ; vous pouvez seulement modifier un menu contextuel intégré). Cette méthode permet également de rétablir un menu intégré qui avait été antérieurement supprimé.
+Modules	Crée un nouveau module.
+Noms	Crée un nouveau nom défini.
+ObjetsOLE	Ajoute un nouvel objet OLE à la feuille en cours.
+Scénarios	Crée un nouveau scénario et l'ajoute à la liste des scénarios disponibles pour la feuille de calcul en cours.
+Séries	Ajoute une ou plusieurs nouvelles séries à l'objet Séries.
+Styles	Crée un nouveau style et l'ajoute à la liste des styles disponibles pour le classeur en cours.
+$Ajouter
+Ajoute un élément à une collection, comme indiqué dans le tableau ci-dessous. Sélectionnez un objet pour obtenir une description détaillée de la méthode Ajouter qui 
+lui est applicable.
+
+
+
+Objet	Description
+
+
+Arcs,  Boutons, Dessins, Ellipses,Images, ObjetsGraphique, Rectangles, Traits, ZonesTexte,	Crée un nouvel objet dessiné. Le type de l'objet dépend de la collection à laquelle vous appliquez Ajouter. Par exemple, Traits.Ajouter crée un nouveau trait tandis que Ellipses.Ajouter crée une nouvelle ellipse.
+BarresMenus,	Crée une nouvelle barre de menus. 
+BarresOutils,	Crée une nouvelle barre d'outils.
+BoutonsBarreOutils,	Ajoute un nouveau bouton à une barre d'outils existante. 
+BarresDéfilement, CasesCocher, CasesOption, Compteurs, Etiquettes, ZonesCombinéesDéroulantes, ZonesGroupe, ZonesListe, ZonesModification, 	Crée un nouveau contrôle. Le type de l'objet dépend de la collection à laquelle vous appliquez Ajouter. Par exemple, ZonesCombinéesDéroulantes.Ajouter crée un nouveau contrôle déroulant tandis que ZonesModification.Ajouter crée une nouvelle zone de modification.
+Classeurs	Crée un nouveau classeur qui devient le classeur actif.
+CourbesTendance	Crée une courbe de tendance fondée sur les paramètres spécifiés.
+ElémentsMenus	Ajoute un nouvel élément au menu. Cette méthode permet aussi de rétablir un élément intégré qui avait été antérieurement supprimé.
+FeuillesBoîteDialogue	Crée une nouvelle feuille boîte de dialogue.
+FeuillesCalcul	Crée une nouvelle feuille de calcul qui devient la feuille de calcul active.
+Feuilles	Crée une nouvelle feuille (une feuille de calcul, un graphique, un module, une feuille boîte de dialogue ou une feuille macro).
+Graphiques	Crée un nouveau graphique.
+MacrosComplémentaires	Ajoute une nouvelle macro complémentaire à la liste des macros complémentaires en cours.
+Menus	Ajoute un nouveau menu. (Il n'est pas possible de créer un nouveau menu contextuel ; vous pouvez seulement modifier un menu contextuel intégré). Cette méthode permet également de rétablir un menu intégré qui avait été antérieurement supprimé.
+Modules	Crée un nouveau module.
+Noms	Crée un nouveau nom défini.
+ObjetsOLE	Ajoute un nouvel objet OLE à la feuille en cours.
+Scénarios	Crée un nouveau scénario et l'ajoute à la liste des scénarios disponibles pour la feuille de calcul en cours.
+Séries	Ajoute une ou plusieurs nouvelles séries à l'objet Séries.
+Styles	Crée un nouveau style et l'ajoute à la liste des styles disponibles pour le classeur en cours.
+$AjouterChamps
+Ajoute des champs de ligne, de colonne et de page au tableau croisé dynamique.
+$AjouterElément
+Ajoute un élément à une zone de liste ou une zone combinée déroulante.
+$AjouterFormatAutomatiqueGraphique
+Ajoute un format automatique de graphique personnalisé à la liste des formats automatiques de graphique disponibles.
+$AjouterListePersonnalisée
+Ajoute une liste personnalisée pour la recopie incrémentée et/ou le tri personnalisé. 
+$AjouterMenu
+Ajoute un menu secondaire au menu. Cette méthode permet aussi de rétablir un menu secondaire prédéfinit qui a été supprimé, en affectant à l'argument 
+restauration la valeur Vrai.
+$AjouterSommet
+Ajoute un sommet à la fin du dessin.
+$AjoutMiseRetrait
+Vrai si des espaces supplémentaires ont été ajoutés au début et à la fin de chaque ligne de texte ayant pour style l'alignement texte distribué. En lecture-écriture.
+$AjustementPagesHauteur
+Renvoie ou désigne la hauteur (nombre de pages) en fonction de laquelle la feuille de calcul doit être échelonnée lors de l'impression. La propriété Zoom doit avoir 
+pour valeur Faux ou cette propriété est ignorée. En lecture-écriture.
+$AjustementPagesLargeur
+Renvoie ou désigne la largeur (nombre de pages) en fonction de laquelle la feuille de calcul doit être échelonnée lors de l'impression. La propriété Zoom doit avoir 
+pour valeur Faux ou cette propriété est ignorée. En lecture-écriture.
+$AjustementSuivantFenêtre
+Vrai si le graphique est ajusté à la taille de la fenêtre de la feuille graphique. Faux si la taille du graphique n'est pas ajustée à la taille de la fenêtre. S'applique 
+uniquement aux graphiques définis dans des feuilles graphiques d' un classeur, et non à des graphiques incorporés. En lecture-écriture.
+$AjusterAutomatiquement
+Modifie la largeur des colonnes de la plage ou la hauteur des lignes de la plage pour l'ajuster au mieux.
+$Ouvrir
+Permet d'exécuter une opération d'Entrée/Sortie (E/S) sur un fichier.
+$AlerteAvantRemplacement
+Vrai si Microsoft Excel affiche un message avant de remplacer des cellules non vides au cours d'une opération de modification par glissement-déplacement. En 
+lecture-écriture.
+$DclExt
+Utilisée au niveau module pour déclarer les références à des procédures externes dans une bibliothèque de liaison dynamique (DLL) ou une ressource de code 
+Macintosh.
+$AlignementHorizontal
+Renvoie ou définit l'alignement horizontal de l'objet. Pour tous les objets, il peut s'agir soit de xlCentre, xlDistribué, xlJustification, xlGauche ou xlDroite. De plus, 
+l'objet Plage ou Style peut être défini par xlCentréSurPlusieursColonnes, xlRecopié, ou xlStandard. En lecture-écriture.
+$AlignementInclus
+Vrai si le style comprend les propriétés AjoutMiseRetrait, AlignementHorizontal, AlignementVertical, RenvoiLigneAutomatique et Orientation. En 
+lecture-écriture.
+$AlignementVertical
+Renvoie ou définit l'alignement vertical de l'objet. Il peut s'agir soit de xlBas, xlCentre, xlDistribué, xlJustification ou xlHaut. En lecture-écriture.
+$Si...Alors...Sinon
+Permet l'exécution conditionnelle d'un groupe d'instructions en fonction du résultat d'une expression donnée.
+$Altitude
+Renvoie ou définit l'altitude (en degrés) à partir de laquelle le graphique 3D est visualisé. En lecture-écriture.
+$AnglePremierSecteur
+Renvoie ou définit l'angle du premier secteur d'un graphique en secteurs, en secteurs 3D ou d'un graphique en anneau. Cet angle, exprimé en degrés, est calculé dans 
+le sens des aiguilles d'une montre, à partir de la verticale. Cette propriété ne s'applique qu'aux graphiques en secteurs, en secteurs 3D et en anneau. En 
+lecture-écriture.
+$Année
+Renvoie un nombre entier qui représente l'année.
+$AnnotationSonore
+Une annotation sonore dans une cellule.
+$AnnotationSonore
+Renvoie l'objet AnnotationSonore associé à la cellule supérieure gauche de l'objet Plage. En lecture seule.
+$AnnulerCommande
+Annule la dernière action exécutée au niveau de l'interface utilisateur.
+$Antécédents
+Renvoie un objet Plage contenant tous les antécédents d'une cellule. Il peut s'agir d'une sélection multiple (une union d'objets Plage) s'il existe plusieurs antécédents. 
+En lecture seule.
+$AntécédentsDirects
+Renvoie un objet Plage qui contient tous les antécédents directs d'une cellule. Il peut s'agir d'une sélection multiple (une union d'objets Plage) s'il existe plusieurs 
+antécédents. En lecture seule.
+$AperçuAvantImpression
+Affiche un aperçu de l'objet tel qu'il serait imprimé.
+$AppActiver
+Active une fenêtre d'application.
+$ApparencePrédéfinie
+Vrai si le bouton utilise son apparence prédéfinie. Faux si le bouton possède une apparence personnalisée. En lecture-écriture.
+$AppartientTableau
+Vrai si la cellule spécifiée appartient à un tableau Visual Basic (une matrice). En lecture seule.
+$Appeler
+Transfère le contrôle à une procédure Proc, une procédure Fonction, une procédure DLL (Bibliothèque de liaison dynamique) ou une procédure de ressource de 
+code Macintosh.
+$AutresApplicationsIgnorées
+Vrai si les requêtes DDE hors programme sont ignorées. En lecture-écriture.
+$Application
+L'objet Application contient :
+
+	Des options et des paramètres applicables à l'ensemble de l'application (options de la boîte de dialogue Options du menu Outils, par exemple).
+	Fonctions prédéfinies de la feuille de calcul, notamment SOMME, MOYENNE et NBVAL
+	Méthodes qui renvoient des objets de premier niveau, notamment CelluleActive, FeuilleActive, etc.
+
+Remarques
+
+De nombreuses propriétés et méthodes qui renvoient les objets de l'interface les plus courants, notamment la cellule active (propriété CelluleActive), peuvent être 
+utilisées sans le qualificatif d'objet Application. Par exemple, plutôt que d'écrire Application.CelluleActive.Police.Gras = Vrai, vous pouvez écrire 
+CelluleActive.Police.Gras = Vrai. 
+$Application
+Renvoie l'objet Application qui a créé cet objet. En lecture seule.
+$AppliquerStylesPlan
+Applique les styles du plan à la plage.
+$Arc
+Un objet graphique Arc dessiné dans un graphique ou une feuille de calcul.
+$Arcs
+Renvoie un seul arc (un objet Arc, Syntaxe 1) ou une collection d'arcs (un objet Arcs, Syntaxe 2) dans le graphique ou la feuille. En lecture seule.
+$Arctan
+Renvoie l'arctangente d'un nombre.
+$Stop
+Interrompt l'exécution.
+$ArrièrePlan
+Place l'objet à l'arrière-plan de la superposition.
+$AssistantConseilAccessible
+Vrai si l'Assistant Conseil est activé. En lecture-écriture.
+$AssistantFonction
+Démarre l'Assistant Fonction pour la cellule supérieure gauche de la plage.
+
+Eléments
+
+objet
+
+Requis. L'objet Plage.
+$AssistantGraphique
+Modifie les propriétés d'un graphique déterminé. Permet la mise en forme rapide d'un graphique sans définir individuellement toutes ses propriétés. Cette méthode 
+n'est pas interactive et ne modifie que les propriétés spécifiées.
+$AssistantTableauCroiséDynamique
+Crée un objet TableauCroiséDynamique. Cette méthode n'affiche pas l'Assistant Tableau croisé dynamique.
+$Atteindre
+Sélectionne une plage ou une procédure Visual Basic quelconque dans n'importe quel classeur et active ce dernier s'il n'est pas encore actif.
+$AllerA
+Effectue un branchement inconditionnel vers une ligne spécifiée d'une procédure.
+$Attendre
+Suspend l'exécution d'une macro jusqu'à ce qu'une heure spécifiée soit atteinte.
+
+
+
+Important	La méthode Attendre suspend toute activité de Microsoft Excel et peut vous empêcher d'exécuter d'autres opérations sur votre ordinateur. Cependant 
+les traitements d'arrière-plan, notamment l'impression et le recalcul, se poursuivent normalement.
+
+
+$AttribuerEtiquettesDonnées
+Attribue des étiquettes de données au point, à la série ou à toutes les séries du graphique.
+$Auteur
+Renvoie ou désigne l'auteur d'un objet, sous forme d'une chaîne de caractères. En lecture seule  pour MacroComplémentaire, en lecture-écriture pour Classeur.
+$AutreCheminAccèsDémarrage
+Renvoie ou désigne le nom d'un autre dossier ou répertoire de démarrage. En lecture-écriture. Ce nom est une chaîne de caractères.
+$AutreInterprétationFormules
+Vrai si Microsoft Excel applique à cette feuille de calcul le mode d'interprétation des formules propres à Lotus 1-2-3. En lecture-écriture.
+$AutreModeDéplacement
+Vrai si l'Autre mode de déplacement est actif. En lecture-écriture
+$AutreModeSaisieFormules
+Vrai si Microsoft Excel applique à cette feuille de calcul le mode de saisie des formules propres à Lotus 1-2-3. En lecture-écriture.
+$AutreToucheRaccourci
+Renvoie ou désigne l'Autre touche de raccourci ou d'aide, généralement "/". En lecture-écriture.
+$AuxDestinataires
+Renvoie ou définit les destinataires directs de l'enveloppe. En lecture-écriture.
+$Avec
+Exécute une série d'instructions sur un objet unique ou un type défini par l'utilisateur.
+$Axe
+Un axe d'un graphique.
+$AxeEntreCatégories
+Vrai si l'axe des valeurs coupe l'axe des catégories (x) entre des catégories.
+$Axes
+Renvoie un seul axe (un objet Axe, Syntaxe 1) ou une collection d'axes pour le graphique (un objet Axes, Syntaxe 2). En lecture seule.
+$Axes
+Une collection d'objets Axe.
+$AxesAngleDroit
+Vrai si les axes du graphique sont à angle droit, quelle que soit l'altitude ou la rotation du graphique. Cette méthode s'applique uniquement aux graphiques à barres, 
+aux histogrammes et aux graphiques en courbes 3D. En lecture-écriture.

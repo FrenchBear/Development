@@ -1,0 +1,66 @@
+[Natures]
+Nature1=Microbiologique
+Nature2=Chimique
+NbNatures=2
+
+[Spécificités]
+Spécificité1,1=Listeria
+Spécificité1,2=Coliforme
+Spécificité1,3=Coliforme fécaux
+Spécificité1,4=Stafilococus orelus
+NbSpécificités1=4
+Spécificité2,1=Acidification
+Spécificité2,2=Ionisation négative
+Spécificité2,3=Salinification à outrance
+Spécificité2,4=Poivrification
+NbSpécificités2=4
+
+[QuestionsPertinence]
+IDQuestionPertinence1,1,1=1
+QuestionPertinence1,1,1=Le produit suit-il un traitement thermique ayant une VP > 10
+QuestionPertinenceReponseOui1,1,1=2
+QuestionPertinenceReponseNon1,1,1=3
+IDQuestionPertinence1,1,2=2
+QuestionPertinence1,1,2=Ce danger est non pertinent. Voulez-vous le maintenir tel qu
+QuestionPertinenceReponseOui1,1,2=NON
+QuestionPertinenceReponseNon1,1,2=OUI
+IDQuestionPertinence1,1,3=3
+QuestionPertinence1,1,3=Ce danger est pertinent. Voulez-vous le maintenir tel quel ?
+QuestionPertinenceReponseOui1,1,3=OUI
+QuestionPertinenceReponseNon1,1,3=NON
+NbQuestionsPertinence1,1=3
+NbQuestionsPertinence1,2=0
+NbQuestionsPertinence1,3=0
+NbQuestionsPertinence1,4=0
+NbQuestionsPertinence2,1=0
+NbQuestionsPertinence2,2=0
+NbQuestionsPertinence2,3=0
+NbQuestionsPertinence2,4=0
+
+[QuestionsCriticité]
+NbNiveauxCriticité=3
+NbQuestionsCriticité=8
+QuestionCriticité1,1=Q1: Des mesures de maitrise sont-elle en place ou peuvent-el
+QuestionCriticité1,2=Q1b: La maitrise à cette étape est-elle nécessaire pour la s
+QuestionCriticité1,3=Q2: Cette étape est-elle spécifiquement destinée à éliminer
+QuestionCriticité1,4=Q3: Une contamination peut-elle intervenir à cette étape oul
+QuestionCriticité1,5=Q4: Une étape ultérieure peut-elle éliminer le danger ou en
+QuestionCriticité1,6=T1: Modifier l'étape, le procédé ou le produit
+QuestionCriticité1,7=T2: Point critique pour la maitrise = CCP
+QuestionCriticité1,8=Stop: L'étape n'est pas un CCP; appliquer l'arbre de décision à la cause, au danger ou à l'étape suivante.
+QuestionCriticité2,1=
+QuestionCriticité2,2=
+QuestionCriticité2,3=
+QuestionCriticité2,4=
+QuestionCriticité2,5=
+QuestionCriticité2,6=
+QuestionCriticité2,7=
+QuestionCriticité2,8=
+QuestionCriticité3,1=
+QuestionCriticité3,2=
+QuestionCriticité3,3=
+QuestionCriticité3,4=
+QuestionCriticité3,5=
+QuestionCriticité3,6=
+QuestionCriticité3,7=
+QuestionCriticité3,8=

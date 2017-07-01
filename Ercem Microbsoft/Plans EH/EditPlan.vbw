@@ -1,0 +1,11 @@
+frmEditeur = 44, 44, 556, 412, C, 22, 22, 534, 390, C
+accCaseItem = 88, 88, 613, 629, C
+VBLib = 66, 66, 578, 434, C
+GlobalEditPlan = 88, 88, 622, 453, C
+frmOuvrir = 110, 110, 644, 475, C, 88, 88, 622, 453, C
+modBase = 132, 132, 666, 497, C
+frmAttributsPlan = 110, 110, 644, 475, C, 44, 44, 578, 409, C
+Plan = 0, 0, 534, 365, C
+GlobalPlan = 44, 44, 578, 409, C
+CaseItem = 0, 0, 0, 0, C
+frmImpressionPlan = 22, 22, 556, 387, C, 0, 0, 534, 365, C

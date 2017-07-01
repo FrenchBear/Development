@@ -1,0 +1,1994 @@
+<HTML>
+<HEAD>
+<TITLE>Visual Product Technical Materials: Presentation & Conference Materials</TITLE>
+<META NAME="DESCRIPTION" CONTENT=" "> 
+<META NAME="MS.LOCALE" CONTENT="EN-US">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso8859-1">
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#993366" VLINK="#663366" LEFTMARGIN=0 TOPMARGIN=0>
+<FONT FACE="verdana, arial, helvetica" SIZE=2>
+
+
+
+<!--INTRODUCTION-->
+
+		<FONT FACE="verdana, arial, helvetica" SIZE=3 ALIGN=LEFT><B>Tip of the Week Archive</B></FONT><BR>	
+		
+<FONT FACE="verdana, arial, helvetica" SIZE=2><P>
+
+This page lists all the &quot;Tip of the Week&quot; tips that have appeared on the Visual Basic home page.<P>
+
+If you are looking for more helpful tips on using Visual Basic, check out the <A HREF="/vbasic/techmat/">Technical Materials</A> page.<P>
+
+The Visual Basic Tip of the Week is provided by The Cobb Group, publishers of <A HREF="http://www.cobb.com/ivb/index.htm" TARGET="_top"><I>Inside Visual Basic</I></A>, a monthly publication for Visual Basic users. <A HREF="http://www.cobb.com/ivb/freevw17.htm">Free trial subscriptions</A> are available. Find out how to receive <A HREF="http://www.zdtips.com/ivb/mvb-f.htm" TARGET="_top">the Tip of the Week in e-mail!</A><P>
+
+<HR>
+
+
+<!-- ********************************** -->
+<!-- FUTURE TIPS -->
+<!-- ********************************** -->
+<!--
+
+
+
+<I>March 30, 1998</I><BR>
+<B><FONT FACE="Verdana, Helvetica, Arial" SIZE=2>Dragging items from a list to another one</B><BR>
+By Bassam Alkharashi, <A HREF="MAILTO:bkhrashi@kacst.edu.sa">bkhrashi@kacst.edu.sa</A>
+<P>
+Here's a way that you can let users drag items from one list and drop them in another one.
+Create two lists (lstDraggedItems, lstDroppedItems) and a text box (txtItem) in a form (frmTip).
+<P>
+Put the following code in the load event of your form.
+<P>
+<FONT FACE="COURIER NEW, COURIER" SIZE=2>
+Private Sub Form_Load()<BR>
+    &nbsp;&nbsp;' Set the visible property of txtItem to false<BR>
+    &nbsp;&nbsp;txtItem.Visible = False<BR>
+    &nbsp;&nbsp;'Add items to list1 (lstDraggedItems)<BR>
+    &nbsp;&nbsp;lstDraggedItems.AddItem "Apple"<BR>
+    &nbsp;&nbsp;lstDraggedItems.AddItem "Orange"<BR>
+    &nbsp;&nbsp;lstDraggedItems.AddItem "Grape"<BR>
+    &nbsp;&nbsp;lstDraggedItems.AddItem "Banana"<BR>
+    &nbsp;&nbsp;lstDraggedItems.AddItem "Lemon"<BR>
+    &nbsp;&nbsp;'<BR>
+End Sub
+</FONT>
+<P>
+In the mouseDown event of  the list lstDraggedItems put the following code:
+<P>
+<FONT FACE="COURIER NEW, COURIER" SIZE=2>Private Sub lstDraggedItems_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)<BR>
+    &nbsp;&nbsp;'<BR>
+    &nbsp;&nbsp;txtItem.Text = lstDraggedItems.Text<BR>
+    &nbsp;&nbsp;txtItem.Top = Y + lstDraggedItems.Top<BR>
+    &nbsp;&nbsp;txtItem.Left = X + lstDraggedItems.Left<BR>
+   &nbsp;&nbsp;txtItem.Drag<BR>
+    &nbsp;&nbsp;'<BR>
+End Sub
+</FONT>
+
+<P>
+
+In the dragDrop event of the list lstDroppedItems put the following code:
+<P>
+<FONT FACE="COURIER NEW, COURIER" SIZE=2>
+Private Sub lstDroppedItems_DragDrop(Source As Control, X As Single, Y As Single)<BR>
+    &nbsp;&nbsp;'<BR>
+    &nbsp;&nbsp;If lstDraggedItems.ItemData(lstDraggedItems.ListIndex) = 9 Then<BR>
+        &nbsp;&nbsp;&nbsp;&nbsp;Exit Sub<BR>
+    &nbsp;&nbsp;End If<BR>
+    &nbsp;&nbsp;' To make sure that this item will not be selected again<BR>
+    &nbsp;&nbsp;lstDraggedItems.ItemData(lstDraggedItems.ListIndex) = 9<BR>
+    &nbsp;&nbsp;lstDroppedItems.AddItem txtItem.Text<BR>
+    &nbsp;&nbsp;'<BR>
+End Sub
+</FONT><P>
+
+Now you can drag items from lstDraggedItems and drop them in LstDroppedItems.
+<P>
+Note that you cannot drag from the second list to the first. Also, the dragged item remains in the first list. You'll have to address those limitations yourself.
+<P>
+<hr>
+
+
+-->
+
+<!-- ********************************** -->
+<!-- END FUTURE TIPS -->
+<!-- ********************************** -->
+
+<!-- CONTENT AREA -->
+
+
+<I>March 23, 1998</I><BR>
+<B>Creating a new context menu in editable controls</B><BR>
+By Antonio Almeida, <A HREF="MAILTO:future.systems@mail.telepac.pt">future.systems@mail.telepac.pt</A>
+<P>
+This routine will permit you to replace the original context menu with your private context menu in an editable control.
+<P> 
+Add the following code to your form or to a BAS module:
+<P>
+<FONT FACE="COURIER NEW, COURIER" SIZE=2>Private Const WM_RBUTTONDOWN = &amp;H204
+Private Declare Function SendMessage Lib "user32" Alias "SendMessageA" (ByVal hwnd As Long, ByVal wMsg As Long, ByVal wParam As Long, lParam As Any) As Long
+<P>
+Public Sub OpenContextMenu(FormName As Form, MenuName As Menu)<BR>
+        <BR>
+    &nbsp;&nbsp;'Tell system we did a right-click on the mdi<BR>
+    &nbsp;&nbsp;Call SendMessage(FormName.hwnd, WM_RBUTTONDOWN, 0, 0&amp;)<BR>
+    &nbsp;&nbsp;'Show my context menu<BR>
+    &nbsp;&nbsp;FormName.PopupMenu MenuName<BR>
+    &nbsp;&nbsp;'<BR>
+End Sub
+</FONT>
+<P>
+
+Next, use the Visual Basic Menu Editor and the table below to create a simple menu.
+<P>
+<TABLE BORDER CELLSPACING=1 CELLPADDING=9 WIDTH="100%">
+<TR><TD WIDTH="33%" VALIGN="TOP">
+<B><FONT FACE="Verdana, Helvetica, Arial" SIZE=2><P>Caption</B></FONT></TD>
+<TD WIDTH="33%" VALIGN="TOP">
+<B><FONT FACE="Verdana, Helvetica, Arial" SIZE=2><P>Name</B></FONT></TD>
+<TD WIDTH="33%" VALIGN="TOP">
+<B><FONT FACE="Verdana, Helvetica, Arial" SIZE=2><P>Visible</B></FONT></TD>
+</TR>
+<TR><TD WIDTH="33%" VALIGN="TOP">
+<FONT FACE="Verdana, Helvetica, Arial" SIZE=2><P>Context Menu</FONT></TD>
+<TD WIDTH="33%" VALIGN="TOP">
+<FONT FACE="Verdana, Helvetica, Arial" SIZE=2><P>mnuContext</FONT></TD>
+<TD WIDTH="33%" VALIGN="TOP">
+<FONT FACE="Verdana, Helvetica, Arial" SIZE=2><P>NO</FONT></TD>
+</TR>
+<TR><TD WIDTH="33%" VALIGN="TOP">
+<FONT FACE="Verdana, Helvetica, Arial" SIZE=2><P>...First Item</FONT></TD>
+<TD WIDTH="33%" VALIGN="TOP">
+<FONT FACE="Verdana, Helvetica, Arial" SIZE=2><P>mnuContext1</FONT></TD>
+<TD WIDTH="33%" VALIGN="TOP">&nbsp;</TD>
+</TR>
+<TR><TD WIDTH="33%" VALIGN="TOP">
+<FONT FACE="Verdana, Helvetica, Arial" SIZE=2><P>...Second Item</FONT></TD>
+<TD WIDTH="33%" VALIGN="TOP">
+<FONT FACE="Verdana, Helvetica, Arial" SIZE=2><P>mnuContext2</FONT></TD>
+<TD WIDTH="33%" VALIGN="TOP">&nbsp;</TD>
+</TR>
+</TABLE>
+<P>
+<FONT FACE="Verdana, Helvetica, Arial" SIZE=2>
+
+Note that the last two items in the menu are indented (...) one level and that only the first item in the list ("Context Menu") has the Visible property set to NO.
+<P>
+Now add a text box to your form and enter the code below in the MouseDown event of the text box.
+  <P>
+<FONT FACE="COURIER NEW, COURIER" SIZE=2>
+Private Sub Text1_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)<BR>
+  <BR>
+    &nbsp;&nbsp;If Button = vbRightButton Then<BR>
+        &nbsp;&nbsp;&nbsp;&nbsp;Call OpenContextMenu(Me, Me.mnuContext)<BR>
+    &nbsp;&nbsp;End If<BR>
+  <BR>
+End Sub
+</FONT>
+<P>
+Note: If you just want to kill the system context menu, just comment out the line:<P>
+   <FONT FACE="COURIER NEW, COURIER" SIZE=2> FormName.PopupMenu MenuName 
+</FONT>
+<P>
+in the OpenContextMenu routine.
+<P>
+<hr>
+
+
+
+
+
+
+<i>March 16, 1998</i><BR>
+<B>Quick Custom Dialogs for DBGrid Cells</B><BR>
+By Mike Amundsen, <A HREF="MAILTO:mike@amundsen.com">mike@amundsen.com</A>, <A HREF="http://www.amundsen.com" TARGET="_top">http://www.amundsen.com</A>
+<P>
+It's easy to add custom input dialogs to all the cells in the Microsoft Data Bound Grid control.
+<P>
+First, add a DBGrid control and Data control to your form. Next, set the DatabaseName and RecordSource properties of the data control to a valid database and table ("biblio.mdb" and "Publishers" for example). Then set the DataSource property of the DBGrid control to Data1 (the data control).
+<P>
+Now add the following code to your form.
+<P>
+<FONT FACE="COURIER NEW, COURIER" SIZE=2>
+' general declaration area<BR>
+Dim strDBGridCell As String
+<P>
+
+Private Sub DBGrid1_AfterColEdit(ByVal ColIndex As Integer)<BR>
+    &nbsp;&nbsp;'<BR>
+    &nbsp;&nbsp;DBGrid1.Columns(ColIndex) = strDBGridCell<BR>
+    &nbsp;&nbsp;'<BR>
+End Sub
+<P>
+Private Sub DBGrid1_BeforeColEdit(ByVal ColIndex As Integer, ByVal KeyAscii As Integer, Cancel As Integer)<BR>
+    &nbsp;&nbsp;'<BR>
+    &nbsp;&nbsp;strDBGridCell = InputBox("Edit DBGrid Cell:", , DBGrid1.Columns(ColIndex))<BR>
+    &nbsp;&nbsp;'<BR>
+End Sub
+</FONT>
+<P>
+Now whenever you attempt to edit any cell in the DBGrid, you'll see the InputBox prompt you for input.  You can replace the InputBox with any other custom dialog you wish to build.
+<P>
+<hr>
+
+
+
+
+<i>March 9, 1998</i><BR>
+<B>Using the Alias Option to Prevent API Crashes</B><BR>
+By Mike Amundsen <A HREF="MAILTO:mike@amundsen.com">mike@amundsen.com</A>, <A HREF="http://www.amundsen.com" TARGET="_top">http://www.amundsen.com</A>
+<P>
+A number of Windows APIs have parameters that can be more than one data type. For example, the WinHelp API call can accept the last parameter as a Long or String data type depending on the service requested.
+<P>
+Visual Basic allows you to declare this data type as "Any" in the API call, but this can lead to type mismatch errors or even system crashes if the value is not the proper form.  
+<P>
+You can prevent the errors and improve the run-time type checking by declaring multiple versions of the same API function in your program. By adding a function declaration for each possible parameter type, you can continue to use strong data type checking.
+<P>
+To illustrate this technique, add the following APIs and constants to a Visual Basic form. Notice that the two API declarations differ only in their initial name ("WinHelp" and "WinHelpSearch") and the type declaration of the last parameter ("dwData as Long" and "dwData as String").
+<P>
+<FONT FACE="COURIER NEW, COURIER" SIZE=2>
+' WinHelp APIs<BR>
+Private Declare Function WinHelp Lib "user32" Alias "WinHelpA" (ByVal hwnd As Long, ByVal lpHelpFile As String, ByVal wCommand As Long, ByVal dwData As Long) As Long<BR>
+Private Declare Function WinHelpSearch Lib "user32" Alias "WinHelpA" (ByVal hwnd As Long, ByVal lpHelpFile As String, ByVal wCommand As Long, ByVal dwData As String) As Long<BR>
+'<BR>
+Private Const HELP_PARTIALKEY = &amp;H105&amp;<BR>
+Private Const HELP_HELPONHELP = &amp;H4<BR>
+Private Const HelpFile = "c:\program files\devstudio\vb5\help\vb5.hlp"
+</FONT>
+<P>
+Now add two command buttons to your form (cmdHelpAbout and cmdHelpSearch) and place the following code behind the buttons. Be sure to edit the location of the help file to match your installation of Visual Basic.
+<P>
+<FONT FACE="COURIER NEW, COURIER" SIZE=2>
+Private Sub cmdHelpAbout_Click()<BR>
+    &nbsp;&nbsp;'<BR>
+    &nbsp;&nbsp;WinHelp Me.hwnd, HelpFile, HELP_HELPONHELP, &amp;H0<BR>
+    &nbsp;&nbsp;'<BR>
+End Sub<BR>
+<P><BR>
+Private Sub cmdHelpSearch_Click()<BR>
+    &nbsp;&nbsp;'<BR>
+    &nbsp;&nbsp;WinHelpSearch Me.hwnd, HelpFile, HELP_PARTIALKEY, "option"<BR>
+    &nbsp;&nbsp;'<BR>
+End Sub
+</FONT>
+<P>
+When you press on the HelpAbout button, you'll see help about using the help system. When you press on the HelpSearch button, you'll see a list of help entries on the "option" topic.
+<P>
+<hr>
+
+
+
+<I>March 2, 1998</I><BR>
+<FONT FACE="Verdana, Helvetica, Arial" SIZE=2>
+<b>Increment and decrement dates with the [+] and [-] keys</B><BR>
+By Mike Coleman, <A HREF="MAILTO:Mike.Coleman@anixter.com">Mike.Coleman@anixter.com</A><P>
+
+If you've ever used Quicken, you've probably noticed a handy little feature in that program's date fields. You can press the [+] key to increment one day, [-] to decrement one day, [PgUp] to increment one month, and [PgDn] to decrement one month. In this tip, we'll show you how to emulate this behavior with Visual Basic.
+<P>
+First, insert a text box on a form (txtDate). Set its text property to "" and its Locked property to TRUE.
+<P>
+Now place the following code in the KeyDown event:
+<P>
+<FONT FACE="COURIER NEW, COURIER" SIZE=2>
+Private Sub txtDate_KeyDown(KeyCode As Integer, Shift As Integer)<BR>
+    '<BR>
+    ' 107 = "+" KeyPad<BR>
+    ' 109 = "-" KeyPad<BR>
+    ' 187 = "+" (Actually this is the "=" key, same as "+" w/o the shift)<BR>
+    ' 189 = "-"<BR>
+    ' 33 = PgUp<BR>
+    ' 34 = PgDn<BR>
+    '<BR>
+    Dim strYear As String<BR>
+    Dim strMonth As String<BR>
+    Dim strDay As String<BR>
+    '<BR>
+    If txtDate.Text = "" Then<BR>
+        &nbsp;&nbsp;txtDate.Text = Format(Now, "m/d/yyyy")<BR>
+        &nbsp;&nbsp;Exit Sub<BR>
+    End If<BR>
+    '<BR>
+    strYear = Format(txtDate.Text, "yyyy")<BR>
+    strMonth = Format(txtDate.Text, "mm")<BR>
+    strDay = Format(txtDate.Text, "dd")<BR>
+    '<BR>
+    Select Case KeyCode<BR>
+        &nbsp;&nbsp;Case 107, 187 ' add a day<BR>
+            &nbsp;&nbsp;&nbsp;&nbsp;txtDate.Text = Format(DateSerial(strYear, strMonth, strDay) + 1, "m/d/yyyy")<BR>
+        &nbsp;&nbsp;Case 109, 189 ' sbutract a day<BR>
+            &nbsp;&nbsp;&nbsp;&nbsp;txtDate.Text = Format(DateSerial(strYear, strMonth, strDay) - 1, "m/d/yyyy")<BR>
+        &nbsp;&nbsp;Case 33 ' add a month<BR>
+            &nbsp;&nbsp;&nbsp;&nbsp;txtDate.Text = Format(DateSerial(strYear, strMonth + 1, strDay), "m/d/yyyy")<BR>
+        &nbsp;&nbsp;Case 34 ' subtract a month<BR>
+            &nbsp;&nbsp;&nbsp;&nbsp;txtDate.Text = Format(DateSerial(strYear, strMonth - 1, strDay), "m/d/yyyy")<BR>
+    End Select<BR>
+    '<BR>
+End Sub
+
+</FONT>
+
+<P>
+The one nasty thing about this is that if you have characters that are not the characters usually in a date (i.e.,  1-9, Monday, Tuesday, or /) you get errors in the format command.  To overcome this, I set the Locked property to True. This way, the user can't actually type a character in the field, but the KeyDown event still fires.
+
+<P><hr>
+
+
+
+
+
+
+
+
+
+<I>Febuary 23, 1998</I><BR>
+<B>Creating Win32 region windows</B><BR>
+By AlMoataz B. Ahmed, <A HREF="MAILTO:AlMoataz_m@hotmail.com">AlMoataz_m@hotmail.com</A><P>
+The Win32 API includes a really amazing feature called region windows. A window under Win32 no longer has to be rectangular! In fact, it can be any shape that may be constructed using Win32 region functions. Using the SetWindowRgn Win32 function from within VB is so simple, but the results are unbelievable. The following example shows a VB form that is NOT rectangular. Enjoy!
+<P>
+<FONT FACE="COURIER NEW, COURIER" SIZE=2>
+' This goes into the General Declarations section:<BR>
+&nbsp;<BR>
+Private Declare Function CreateEllipticRgn Lib "gdi32" _<BR>
+ (ByVal X1 As Long, ByVal Y1 As Long, ByVal X2 As Long, _<BR>
+ ByVal Y2 As Long) As Long<BR>
+&nbsp;<BR>
+Private Declare Function SetWindowRgn Lib "user32" _<BR>
+ (ByVal hWnd As Long, ByVal hRgn As Long, _<BR>
+ ByVal bRedraw As Boolean) As Long<BR>
+&nbsp;<BR>
+<BR>
+Private Sub Form_Load()<BR>
+&nbsp;&nbsp;Show 'The form!<BR>
+&nbsp;&nbsp;SetWindowRgn hWnd, _<BR>
+&nbsp;&nbsp;CreateEllipticRgn(0, 0, 300, 200), _<BR>
+&nbsp;&nbsp;True<BR>
+
+End Sub
+</FONT>
+<P>
+<hr>
+
+
+
+<I>Febuary 16, 1998</I><BR>
+<B>Manipulate your controls from the keyboard</B><BR>
+By Narayana Vyas Kondreddi, <A HREF="MAILTO:vyas@aditi.com">vyas@aditi.com</A>,<BR> 
+<A HREF="http://members.tripod.com/~vyaskn/index.html">http://members.tripod.com/~vyaskn/index.html</A><P>
+
+If you're not comfortable using your mouse--or can't achieve the precise results you'd like--these tips will come in handy.
+<P>
+First, you can resize controls at design time by using the [Shift] and arrow keys, as follows:
+<P>
+  <FONT FACE="COURIER NEW, COURIER" SIZE=2>   SHIFT + RIGHT ARROW increases the width of the control<BR>
+     SHIFT + LEFT ARROW decreases the width of the control<BR>
+     SHIFT + DOWN ARROW increases the height of the control<BR>
+    SHIFT + UP ARROW decreases the height of the control
+</FONT>
+<P>
+<FONT FACE="VERDANA, HELVETICA, ARIAL" SIZE=2>Note: The target control must have focus, so click on the control before manipulating it from the keyboard. 
+</FONT><P>
+
+<FONT FACE="VERDANA, HELVETICA, ARIAL" SIZE=2>Second, by using the [Control] key and the arrow keys, you can move your controls at design time, as follows:
+</FONT><P>
+  <FONT FACE="COURIER NEW, COURIER" SIZE=2>   CONTROL + RIGHT ARROW to move the control to the right<BR>
+     CONTROL + LEFT ARROW to move the control to the left<BR>
+     CONTROL + DOWN ARROW to move the control downwards<BR>
+     CONTROL + UP ARROW to move the control upwards
+</FONT>
+<P>
+
+If you select more than one control (by clicking on the first and shift-clicking on the others), the above procedures will affect all the selected controls.
+<P>
+<hr>
+
+
+<I>Febuary 9, 1998</I><BR>
+<B>Simple file checking from anywhere</B><BR>
+By Matthew Kent, <A HREF="MAILTO:mace@pacificcoast.net">mace@pacificcoast.net</A><P>
+To keep my applications running smoothly, I often need to check that certain files exist.  So, I've written a simple routine to make sure they do. Here it is:
+<P>
+<FONT FACE="COURIER NEW, COURIER" SIZE=2>
+Public Sub VerifyFile(FileName As String)<BR>
+    &nbsp;&nbsp;'<BR>
+    &nbsp;&nbsp;On Error Resume Next<BR>
+    &nbsp;&nbsp;'Open a specified existing file<BR>
+    &nbsp;&nbsp;Open FileName For Input As #1<BR>
+    &nbsp;&nbsp;'Error handler generates error message with file and exits the routine<BR>
+    &nbsp;&nbsp;If Err Then<BR>
+        &nbsp;&nbsp;&nbsp;&nbsp;MsgBox ("The file " &amp; FileName &amp; " cannot be found.")<BR>
+        &nbsp;&nbsp;&nbsp;&nbsp;Exit Sub<BR>
+    &nbsp;&nbsp;End If<BR>
+    &nbsp;&nbsp;Close #1<BR>
+    '<BR>
+End Sub<BR>
+</FONT>
+&nbsp;<BR>
+<FONT FACE="VERDANA, HELVETICA, ARIAL" SIZE=2>Now add a button to your form and place the code below behind the "Click" event.</FONT><BR>
+&nbsp;<BR>
+<FONT FACE="COURIER NEW, COURIER" SIZE=2>Private Sub cmdVerify_Click()<BR>
+    &nbsp;&nbsp;'<BR>
+    &nbsp;&nbsp;Call VerifyFile("MyFile.txt")<BR>
+    &nbsp;&nbsp;'<BR>
+End Sub<BR>
+</FONT>
+
+<P>
+<hr>
+
+
+
+
+<FONT FACE="Verdana, Helvetica, Arial" SIZE=2>
+<I>Febuary 2, 1998</I><BR>
+<B>Showing long ListBox entries as a ToolTip</B><BR>
+By Matt Vandenbush, <A HREF="MAILTO:matt_vandenbush@whbrady.com">matt_vandenbush@whbrady.com</A>
+<P>
+Sometimes the data you want to display in a list is too long for the size of ListBox you can use. When this happens, you can use some simple code to display the ListBox entries as ToolTips when the mouse passes over the ListBox.
+<P>
+First, start a new VB project and add a ListBox to the default form. Then declare the SendMessage API call and the constant (LB_ITEMFROMPOINT) needed for the operation:
+<P>
+<FONT FACE="COURIER NEW, COURIER" SIZE=2>Option Explicit
+<P>
+'Declare the API function call.<BR>
+Private Declare Function SendMessage _<BR>
+  Lib "user32" Alias "SendMessageA" _<BR>
+  (ByVal hwnd As Long, _<BR>
+    ByVal wMsg As Long, _<BR>
+    ByVal wParam As Long, _<BR>
+    lParam As Any) As Long<BR>
+' Add API constant<BR>
+Private Const LB_ITEMFROMPOINT = &amp;H1A9
+</FONT>
+<P>
+Next, add some code to the form load event to fill the ListBox with data:
+<P>
+<FONT FACE="COURIER NEW, COURIER" SIZE=2>Private Sub Form_Load()<BR>
+    '<BR>
+    ' load some items in the list box<BR>
+    With List1<BR>
+        .AddItem "Michael Clifford Amundsen"<BR>
+        .AddItem "Walter P.K. Smithworthy, III"<BR>
+        .AddItem "Alicia May Sue McPherson-Pennington"<BR>
+    End With<BR>
+    '<BR>
+End Sub
+</FONT>
+
+<P>
+Finally, in the MouseMove event of the ListBox, put the following code:
+<P>
+<FONT FACE="COURIER NEW, COURIER" SIZE=2>Private Sub List1_MouseMove(Button As Integer, Shift As Integer, _<BR>
+X As Single, Y As Single)<BR>
+    '<BR>
+    ' present related tip message<BR>
+    '<BR>
+    Dim lXPoint As Long<BR>
+    Dim lYPoint As Long<BR>
+    Dim lIndex As Long<BR>
+    '<BR>
+    If Button = 0 Then ' if no button was pressed<BR>
+        &nbsp;&nbsp;lXPoint = CLng(X / Screen.TwipsPerPixelX)<BR>
+        &nbsp;&nbsp;lYPoint = CLng(Y / Screen.TwipsPerPixelY)<BR>
+        &nbsp;&nbsp;'<BR>
+        &nbsp;&nbsp;With List1<BR>
+            &nbsp;&nbsp;&nbsp;&nbsp;' get selected item from list<BR>
+            &nbsp;&nbsp;&nbsp;&nbsp;lIndex = SendMessage(.hwnd, _<BR>
+            &nbsp;&nbsp;&nbsp;&nbsp;LB_ITEMFROMPOINT, _<BR>
+            &nbsp;&nbsp;&nbsp;&nbsp;0, _<BR>
+            &nbsp;&nbsp;&nbsp;&nbsp;ByVal ((lYPoint * 65536) + lXPoint))<BR>
+            &nbsp;&nbsp;&nbsp;&nbsp;' show tip or clear last one<BR>
+            &nbsp;&nbsp;&nbsp;&nbsp;If (lIndex &gt;= 0) And (lIndex &lt;= .ListCount) Then<BR>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.ToolTipText = .List(lIndex)<BR>
+            &nbsp;&nbsp;&nbsp;&nbsp;Else<BR>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.ToolTipText = ""<BR>
+            &nbsp;&nbsp;&nbsp;&nbsp;End If<BR>
+        &nbsp;&nbsp;End With '(List1)<BR>
+    End If '(button=0)<BR>
+    '<BR>
+End Sub
+</FONT>
+<P>
+<hr>
+
+
+
+<FONT FACE="VERDANA, HELVETICA, ARIAL" SIZE=2>
+<I>January 26, 1998</I><BR>
+<B>Creating Short Arrays Using the Variant Data Type<BR>
+</B>By Michael C. Amundsen, <A HREF="MAILTO:mike@amundsen.com">mike@amundsen.com</A>
+<P>
+If you need to create a short list of items in an array, you can save a lot of coding by using the Variant data type instead of a dimensioned standard data type. This is especially handy when you need to create a list of short phrases to support numeric output.
+<P>
+For example, add a button to a standard VB form and paste the following code into the Click event of the button:
+</FONT>
+<P>
+<FONT FACE="COURIER NEW, COURIER" SIZE=2>Private Sub Command1_Click()<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' create a quick array using variants<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dim aryList As Variant<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;aryList = Array("No Access", "Read-Only", "Update", "Delete")<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MsgBox aryList(2)<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'<BR>
+End Sub
+</FONT>
+<P>
+<hr>
+
+
+
+<FONT FACE="VERDANA, HELVETICA, ARIAL" SIZE=2>
+<I>January 19, 1998</I><BR>
+<B>Using GetRows to Quickly Save Data Fields to Memory Variables<BR>
+</B>By Michael C. Amundsen, </FONT><A HREF="mailto:mike@amundsen.com"><FONT FACE="Verdana" SIZE=2>mike@amundsen.com</FONT></A>
+<P>
+
+If you need to copy information from database fields into memory variables, you can do it quickly using the GetRows method of the Recordset object. The GetRows method copies one or more rows of data directly into a Variant data type and stores the information as a two-dimensional array in the formvarData(Field,Column).
+<P>
+To test the GetRow method, add a button to a VB form and paste the following code into the Click event of the button.  Be sure to fix the reference to location of the BIBLIO.MDB database in the OpenDatabase method. Also be sure to set up a reference to the Microsoft DAO 3.5 Object Library.
+</FONT>
+<P>
+<FONT FACE="COURIER NEW, COURIER" SIZE=2>Private Sub cmdGetDataRow_Click()<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' show getrow method<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'<BR><BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dim ws As Workspace<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dim db As Database<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dim rs As Recordset<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'<BR><BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dim varDataRows As Variant<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dim intRows As Integer<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dim intColumns As Integer<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'<BR><BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dim intLoopRow As Integer<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dim intLoopCol As Integer<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dim strMsg As String<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'<BR><BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set ws = DBEngine.CreateWorkspace(App.EXEName, "admin", "")<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set db = ws.OpenDatabase("e:\devstudio\vb\biblio.mdb")<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set rs = db.OpenRecordset("SELECT * FROM Authors")<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'<BR><BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;intRows = InputBox("How Many Rows?", "GetRows Example", 0)<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;intColumns = rs.Fields.Count<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;varDataRows = rs.GetRows(intRows)<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'<BR><BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For intLoopRow = 0 To intRows - 1<BR>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strMsg = ""<BR>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For intLoopCol = 0 To intColumns - 1<BR>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strMsg = strMsg &amp; varDataRows(intLoopCol, intLoopRow) &amp; vbCrLf<BR>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Next<BR>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MsgBox strMsg<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Next<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rs.Close<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;db.Close<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ws.Close<BR>
+    
+End Sub</FONT>
+<P>
+<hr>
+
+
+
+
+<FONT FACE="VERDANA, HELVETICA, ARIAL" SIZE=2><BR>
+<I>January 12, 1998</I><BR>
+<B>Getting sensible Win32 API call errors<BR>
+</B>By Duncan Jones, <A HREF="MAILTO:Duncan_Jones@compuserve.com">Duncan_Jones@compuserve.com</A>
+<P>
+Most of the Win32 API calls return extended error information when they fail. To get this information in a sensible format, you can use the GetLastError and FormatMessage APIs.
+<P>
+Add the following declarations and function to a BAS module in a VB project:
+<P>
+Option Explicit
+<P>
+<FONT FACE="COURIER NEW, COURIER" SIZE=2>Public Declare Function GetLastError _<BR>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lib "kernel32" () As Long<BR>
+Public Declare Function FormatMessage _<BR>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lib "kernel32" Alias "FormatMessageA" _<BR>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(ByVal dwFlags As Long, _<BR>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lpSource As Any, _<BR>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal dwMessageId As Long, _<BR>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal dwLanguageId As Long, _<BR>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal lpBuffer As String, _<BR>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nSize As Long, _<BR>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Arguments As Long) As Long
+<P>
+Public Const FORMAT_MESSAGE_FROM_SYSTEM = &amp;H1000
+<P>
+Public Function LastSystemError() As String<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' better system error<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'<BR><BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dim sError As String * 500<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dim lErrNum As Long<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dim lErrMsg As Long<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'<BR><BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lErrNum = GetLastError<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lErrMsg = FormatMessage(FORMAT_MESSAGE_FROM_SYSTEM, _<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal 0&amp;, lErrNum, 0, sError, Len(sError), 0)<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LastSystemError = Trim(sError)<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'<BR><BR>
+End Function
+</FONT><P>
+Now place a command button on a standard VB form and call the LastSystemError function:
+<P>
+<FONT FACE="COURIER NEW, COURIER" SIZE=2>Private Sub Command1_Click()<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MsgBox LastSystemError<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'<BR><BR>
+End Sub
+</FONT><P>
+If there was no error registered, you'll see a message saying "The operation completed Successfully."
+<P>
+When using this function, keep these points in mind:
+<P>
+1. Many API calls reset the value of GetLastError when successful, so the function must be called immediately after the API call that failed.
+<P>
+2. The last error value is kept on a per-thread basis, therefore the function must be called from the same thread as the API call that failed.
+<P>
+<hr>
+
+
+<FONT FACE="VERDANA, HELVETICA, ARIAL" SIZE=2>
+<I>January 5, 1998</I><BR>
+<B>Simple input validation</B><BR>
+by Juan Lozano, <A HREF="MAILTO:jlozano@truevision.net">jlozano@truevision.net</A><P>
+
+Here's a way to achieve validation in text boxes and other controls that support the KeyPress event. It's simple, but functional.
+<P>
+First, add this function to your project:
+<P>
+
+<FONT FACE="COURIER NEW" size=2>
+Function ValiText(KeyIn As Integer, _<BR>
+   ValidateString As String, _<BR>
+   Editable As Boolean) As Integer<BR>
+   
+    Dim ValidateList As String<BR>
+    Dim KeyOut As Integer<BR>
+    '<BR>
+    If Editable = True Then<BR>
+         ValidateList = UCase(ValidateString) & Chr(8)<BR>
+    Else<BR>
+         ValidateList = UCase(ValidateString)<BR>
+    End If<BR>
+    '<BR>
+    If InStr(1, ValidateList, UCase(Chr(KeyIn)), 1) > 0 Then<BR>
+        KeyOut = KeyIn<BR>
+    Else<BR>
+        KeyOut = 0<BR>
+        Beep<BR>
+    End If<BR>
+    '<BR>
+    ValiText = KeyOut<BR>
+    '<BR>
+End Function<P>
+
+</FONT>
+
+Then, for each control whose input you wish to validate, just put something like this in the KeyPress event of the control:
+<P>
+<FONT FACE="COURIER NEW" size=2>KeyAscii=ValiText(Keyascii, "0123456789/-",True)
+</FONT><P>
+Doing so will filter out any undesired keys that go to the control, accepting only the keys defined by the second parameter. In this case, that parameter ("0123456789/-") defines characters that are valid for a date.
+<P>
+The function's third parameter controls whether the [Backspace] key can be used.
+ <P>
+Note that this implementation of the function ignores the case of the incoming keys, so if your second parameter were "abcdefg", the function would also allow "ABCDEFG" to be entered.
+
+
+</FONT>
+<P>
+<HR>
+
+
+
+<FONT FACE="VERDANA, HELVETICA, ARIAL" SIZE=2>
+<I>December 29, 1997</I><BR>
+<B>Simplying the addition of items to ComboBoxes</B><BR>
+by Brent Langdon, <A HREF="MAILTO:blangdon@sequeltech.com">blangdon@sequeltech.com</A>
+<P>
+I often need to add items to a ComboBox and store an index or ID value in the ItemData property. I've found that the code needed to add items to the ComboBox and to check the ItemData property of the currently selected item looks clumsy. So, I've written two simple helper routines to clean the code up a bit. Here they are:
+<P>
+
+<FONT FACE="COURIER NEW" size=2>
+'----------------------------<BR>
+'   AddComboItem<BR>
+'----------------------------<BR>
+Public Sub AddComboItem( _<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cboAdd As ComboBox, _<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal sText As String, _<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal lData As Long)<P>
+
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cboAdd.AddItem sText<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cboAdd.ItemData(cboAdd.NewIndex) = lData<P>
+    
+End Sub
+<P>
+'----------------------------<BR>
+'   CurrComboData<BR>
+'----------------------------<BR>
+Public Function CurrComboData( _<BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cbo As ComboBox) As Long<P>
+
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If cbo.ListIndex <> -1 Then<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CurrComboData = cbo.ItemData(cbo.ListIndex)<BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Else<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CurrComboData = -1<BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End If<P>
+
+End Function<P>
+</FONT>
+Now, instead of writing<P>
+<FONT FACE="COURIER NEW" size=2>
+cboTest.AddItem "Hello"<BR>
+cboTest.ItemData(cboTest.NewIndex) = 5<P>
+
+</FONT>
+you can just write<P>
+
+<FONT FACE="COURIER NEW" size=2>AddComboItem cboTest, "Hello",5<P>
+</FONT>
+Instead of writing<P>
+
+<FONT FACE="COURIER NEW" size=2>ID = cboTest.ItemData(cboTest.ListIndex)
+</FONT><P>
+
+you can write<P>
+
+<FONT FACE="COURIER NEW" size=2>ID = CurrComboData( cboTest )<P>
+</FONT>
+As an added bonus, CurrComboData protects you from the runtime error generated if ListIndex is -1. Just be sure to check for a return of -1 from CurrComboData.
+
+</FONT>
+<p>
+<hr>
+
+
+
+
+<FONT FACE="VERDANA, HELVETICA, ARIAL" SIZE=2>
+<I>December 22, 1997</I><BR>
+<B>Specifying maximum lengths in a ComboBox</B><BR>
+by Roberto Giacometti Machado, <A HREF="MAILTO:rmachado@opus.com.br">rmachado@opus.com.br</A>
+<P>
+The ComboBox control doesn't have a MaxLength property like a TextBox does. You can add some code to emulate this property, however. Just add the following code to the KeyPress event of your ComboBox:
+<P>
+<FONT FACE="COURIER NEW" size=2>
+Private Sub Combo1_KeyPress(KeyAscii As Integer)<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'If the user is trying to type the eleventh key and...<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' ...this key is not the Backspace Key, cancel the event!<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Const MAXLENGTH = 10<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If Len(Combo1.Text) >= MAXLENGTH And KeyAscii <> vbKeyBack Then KeyAscii = 0<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'<BR>
+End Sub<P>
+
+
+</FONT>
+
+You can change the MaxLength value to any number you want. As you can see, the code allows the user to use the [Backspace] key; you could enable other keys by simply adding their KeyAscii values the way we did with [Backspace].
+
+</FONT>
+<p>
+<hr>
+
+
+<FONT FACE="VERDANA, HELVETICA, ARIAL" SIZE=2>
+<I>December 15, 1997</I><BR>
+<B>Clearing all fields and combo boxes on a form</B><BR>
+By John Baumbach, <A HREF="MAILTO:jbaumbach @kw.edu">jbaumbach @kw.edu</A><P>
+
+Sometimes you want to clear all the fields and combo boxes on a data-entry form. If your form contains many controls, this could become tedious and error prone. The following subroutine clears the contents of such fields on your form automatically:
+<P>
+<FONT FACE="COURIER NEW" size=2>Public Sub ClearAllControls(frmForm As Form)
+Dim ctlControl As Object<P>
+
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' Initialize all controls that can be initialized<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' Any control with a text property or a list-index property<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;On Error Resume Next<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For Each ctlControl In frmForm.Controls<BR>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctlControl.Text = ""<BR>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctlControl.ListIndex = -1<BR>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DoEvents<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Next ctlControl<P>
+
+End Sub<P>
+
+</FONT>
+
+Just call this procedure from your code like this:<P>
+</FONT>
+<FONT FACE="COURIER NEW" size=2>Call ClearAllControls(Me)
+</FONT>
+<p>
+<hr>
+
+<FONT FACE="VERDANA, HELVETICA, ARIAL" SIZE=2>
+<I>December 8, 1997</I><BR>
+<B>Selecting all text when a TextBox gets focus</B><BR>
+By Christopher Buteau, <A HREF="MAILTO:cbuteau@fastech.com">cbuteau@fastech.com</A>
+<P>
+When you present the user with default text in a TextBox, you'll often want to select that text when the TextBox gets focus. That way, the user can easily type over your default text.<P>
+<P>
+The function below will do the trick. The first click on the TextBox will select all the text; the second click will place the cursor.<P>
+
+<FONT FACE="COURIER NEW, courier" SIZE=2>
+Public Sub TextSelected()<BR>
+Dim i As Integer<BR>
+Dim oMyTextBox As Object<P>
+
+Set oMyTextBox = Screen.ActiveControl<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If TypeName(oMyTextBox) = "TextBox" Then<BR>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i = Len(oMyTextBox.Text)<BR>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;oMyTextBox.SelStart = 0<BR>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;oMyTextBox.SelLength = i<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End If<BR>
+End Sub
+<P>
+</FONT>
+
+Just add the function to your project and call it from the TextBox's GotFocus event.<P>
+<FONT FACE="COURIER NEW, courier" SIZE=2>
+Private Sub Text1_GotFocus()<BR>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TextSelected<BR>
+End Sub<P>
+
+</FONT>Editor's Note: A similar tip was submitted by Alan Brown, <A HREF="MAILTO:algernon@btinternet.com">algernon@btinternet.com</A>.
+
+</FONT>
+<P>
+
+<HR>
+
+<I>December 1, 1997</I><br>
+<b>Preventing Add-Ins from loading at launch </b><br>
+by Deborah Kurata, <a href="mailto:deborahk@insteptech.com">deborahk@insteptech.com</a><p>
+
+When you launch Visual Basic 4 or 5, any active Add-Ins also launch. If there's an error in one of the Add-Ins, however, you could encounter a global protection fault.<p>
+
+To prevent this from happening, you can turn off Add-Ins before launching VB. To do so, launch Notepad or WordPad and open the file VBAddin.INI in your Windows directory. You'll see a series of entries like this: <p>
+
+<font size=2 face="courier new, courier">AppWizard.Wizard=1</FONT><p>
+
+Just change the "1" to a "0" in each entry. Then save the file and launch VB. The program will launch without any Add-Ins.<p>
+
+Of course, to add and remove Add-Ins while you're in Visual Basic, just choose Add-In Manager from the Add-Ins menu. <p>
+
+
+
+<HR>
+
+
+<I> November 24, 1997</I><BR>
+<b>Quickly switching an object's Enabled property</b><br>
+by Kevin Brown, <a href="mailto:Kevin@taskware.vaxxine.com"> Kevin@taskware.vaxxine.com</a>, <a href="http://www.basic.ca">www.basic.ca</a><p>
+
+You can easily switch an object's Enabled property with a single line of code:<p>
+<FONT FACE="Courier New" SIZE=2>
+optSwitch.enabled = abs(optSwitch.enabled) - 1<p>
+</FONT>
+Here's how the technique works: When Enabled is True, its numeric value is -1. The absolute value of -1 is 1, so subtracting 1 from 1 would yield 0, which is False. When Enabled is False, its numeric value is 0; 0 - 1 would then yield -1, or True.<p>
+
+This technique is an enhancement of the common usage<p>
+<FONT FACE="Courier New" SIZE=2>
+fraOption.enabled = optSwitch.enabled<p>
+</FONT>
+to have an object follow the value of any other object's Enabled property. <p>
+
+Editor's Note: This technique depends on VB's definition of True and False. To make this technique less dependent on that definition, you can use the following code:<p>
+<FONT FACE="Courier New" SIZE=2>
+OptSwitch.enabled = NOT OptSwitch.enabled<p>
+</FONT>
+This code works for any Boolean data type. <P>
+
+<HR>
+
+<i>November 17, 1997</i><br>
+<B>Dealing with Null strings in Access database fields</b><br>
+by Pradeep Arora, <a href="mailto:PradeepArora@trilogyworld.com">PradeepArora@trilogyworld.com</a><p>
+
+
+By default Access string fields contain NULL values unless a string value (including a blank string like "") has been assigned. When you read these fields using recordsets into VB string variables, you get a runtime type-mismatch error.
+
+The best way to deal with this problem is to use the built-in &amp; operator to concatenate a blank string to each field as you read it. For example,
+
+<P>
+<FONT FACE="Courier New" SIZE=2>Dim DB As Database<br>
+Dim RS As Recordset<br>
+Dim sYear As String<p>
+
+Set DB = OpenDatabase("Biblio.mdb")<br>
+Set RS = DB.OpenRecordset("Authors")<br>
+sYear = "" &amp; RS![Year Born]<p>
+</FONT>
+
+Editor's note: A similar tip was also sent in by Fran Arreciado, <a href="mailto:franac@cinsa.es">franac@cinsa.es</a>
+
+<HR>
+
+
+<i>November 10, 1997</i><br>
+<B>Customizing a text box's pop-up menu</B><br>
+by CMD Software, <a href="mailto:support@cmdsoftware.softnet.co.uk">support@cmdsoftware.softnet.co.uk</a><P>
+
+In Windows 95, right-clicking any text box brings up a context menu with basic edit commands on it. If you want to change this menu, put the following code in the MouseDown event of the text box.<P>
+
+<FONT FACE="Courier New, courier" SIZE=2>If Button = vbRightButton Then<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Text1.Enabled = False<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Text1.Enabled = True<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Text1.SetFocus<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PopUpMenu Menu1<br>
+End If<P>
+</FONT>
+
+where Text1 is the text box and Menu1 is the pop-up menu.<p>
+
+Disabling and re-enabling the control causes Windows to lose the <b>MouseDown</b> message, <b>SetFocus</b> tidies things up a bit, and <b>PopUpMenu</b> shows the menu.<BR>
+Left clicks will work as always, allowing the user to edit the text in the text box.<P>
+
+
+<HR>
+
+
+
+
+<i>November 3, 1997</i><br>
+<B>Retrieving the network logon name<br></B>
+<a href="mailto:bianderson@micron.com">by Barron Anderson, Micron Electronics Inc.</a><p>
+
+You can easily retrieve a user's network logon name by using the following
+API call:<P>
+
+<font face="courier new, courier" size=2>
+Declare Function GetUserName Lib "advapi32.dll" Alias "GetUserNameA" _ <br>
+              (ByVal lpBuffer As String, nSize As Long) As Long<P>
+</FONT>
+<P>To retrieve a "clean" version of the name, use this function:</P>
+
+<font face="courier new, courier" size=2>
+Public Function NTDomainUserName() As String<br>
+Dim strBuffer As String * 255<br>
+Dim lngBufferLength As Long<br>
+Dim lngRet As Long<br>
+Dim strTemp As String<br><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;lngBufferLength = 255<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lngRet = GetUserName(strBuffer, lngBufferLength)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;strTemp = UCase(Trim$(strBuffer))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;NTDomainUserName = Left$(strTemp, Len(strTemp) - 1)<br><br>
+
+End Function <P>
+</FONT>
+<hr>
+
+
+
+<i>October 27, 1997</i><br>
+<B>Preventing multiple instances of VB apps</B><br>
+by <a href="mailto:saptadeep.modi@intl.rx.xerox.com">Saptadeep Dutta</a> <p>
+
+You can easily prevent users from running multiple instances of your
+programs by taking advantage of the PrevInstance property of the
+App object.<P>
+
+To do so, enter the following code in your application's opening form:<P>
+
+<font face="courier new, courier" size=2>
+
+If App.PrevInstance Then<br>
+   &nbsp;&nbsp;&nbsp;&nbsp;MsgBox ("Cannot load program again."), vbExclamation, "The requested " _<br>
+   &nbsp;&nbsp;&nbsp;&nbsp;&amp; "application is already open"<br>
+   &nbsp;&nbsp;&nbsp;&nbsp;Unload me<br>
+End If<p>
+</FONT>
+
+This technique will also prevent multiple users from accessing single-user
+applications.<P>
+
+
+<hr>
+
+
+
+
+<i>October 20, 1997</i><br>
+<B>Case-conversion on the fly</B><br>
+by <a href="mailto:chris_warnke@dell.com">Chris Warnke, Dell Computer Corp.</a><p>
+
+If you want to convert text to uppercase as it's entered in a text box,
+just create an Upper function and call it from the text box's keypress
+event, as shown here:<P>
+
+&nbsp;&nbsp;&nbsp;&nbsp;<font face="courier new, courier" size=2>
+Private Sub Text1_KeyPress(KeyAscii As Integer)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;KeyAscii = Upper(KeyAscii)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;End Sub<P>
+
+     &nbsp;&nbsp;&nbsp;&nbsp;Function Upper(KeyAscii As Integer)<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If KeyAscii &gt; 96 And KeyAscii &lt; 123 Then <br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;KeyAscii = KeyAscii - 32<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End If<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Upper = KeyAscii<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;End Function<P>
+</FONT>
+This technique eliminates the need to "UCase" entered data. It also makes
+"hotseek" data searches much easier.<P>
+<hr>
+
+
+<I>October 13, 1997</I><br>
+<b>Trapping dropdown list errors</b><br>
+by <a href="mailto:datajack@icanect.net">Raul M. Rodriguez</a>, <p>
+
+
+In VB, the Text property of a Combo box whose Style property is set to <font face="courier new, courier" size=2>'2 - Dropdown List' </FONT>is read-only. This means that a statement like
+
+<font face="courier new, courier" size=2>MyCombo.Text = "The Third Item"</FONT>
+
+will return an error if <font face="courier new, courier" size=2>"The Third Item" </FONT>is not part of the list. Wouldn't it be nice if VB just set the Combo box's ListIndex property to -1 (blanking it out) instead of bombing out? Well, here's some code that will do just that:<p>
+
+<font face="courier new, courier" size=2>
+
+Function SetComboText(MyCombo as ComboBox, MyItem as String) as Integer<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;Dim I as Integer<p>
+
+  &nbsp;&nbsp;&nbsp;&nbsp;For I = 0 to MyCombo.ListCount - 1<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If MyCombo.List(I) = MyItem Then<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SetComboText = I<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Exit Function<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End If<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;Next I<p>
+
+  &nbsp;&nbsp;&nbsp;&nbsp;' If the program reaches this point, the string is not in the<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;' list.<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;SetComboText = - 1<br>
+End Function<p>
+</FONT>
+Use the function like this:<br>
+
+<font face="courier new, courier" size=2>AnyCombo.ListIndex = SetComboText(AnyCombo, "Any String")</FONT>
+
+If <font face="courier new, courier" size=2>"Any String" </FONT>is in the list, then the combo box's ListIndex will be set to the correct index; if not, it will be blanked out. The great thing about this code is that if you want to do something else other than blanking out the combo box, all you have to do is replace the line
+
+<font face="courier new, courier" size=2>SetComboText = - 1</FONT>
+
+with whatever you wish.
+<p>
+<hr>
+
+
+
+
+<I>October 06, 1997</I><BR>
+<B>Speed up string buffers</B><BR>
+by <A HREF="mailto:jhancock@pixie.co.za">John C. Hancock</A><P>
+
+Sometimes you need to write a program that builds up a large amount of data in a string variable. You'd normally use a statement such as <P>
+<FONT FACE="Courier New, Courier" SIZE=2>
+strBuffer = strBuffer & strNewData <P>
+</FONT>
+during every loop. The problem with this approach is that the bigger your string buffer becomes, the slower your program runs. <P>
+
+A neat and very simple way around this problem is to use another buffer. Just fill the temporary buffer with data, and when it's big enough, append it to the main buffer. Then, clear the temporary buffer and continue. The code will look like this:<P>
+<FONT FACE="Courier New, Courier" SIZE=2>
+Public Sub NewBuildBuffer()<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dim strBuffer As String, strTemp As String<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dim l As Long, dStart As Date<P>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'Set start time<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dStart = Now<P>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'Build the buffer<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For l = 1 To 10000<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strTemp = strTemp & "New Line" & vbCrLf<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'Append to the main buffer every 100 times<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If l Mod 100 = 0 Then<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strBuffer = strBuffer & strTemp<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strTemp = ""<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End If<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Next<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'Append the last temp buffer<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strBuffer = strBuffer & strTemp<P>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'Report total time<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MsgBox "Seconds taken = " & DateDiff("s", dStart, Now)<BR>
+End Sub<P>
+</FONT>
+For programs that use very large string buffers, you'll see a huge improvement.
+<P>
+
+<hr>
+
+
+
+
+<I>September 29, 1997</I><BR>
+<B>Finding a property quickly</B><BR>
+by <A HREF="mailto:drico@uapinc.com">Domenic Rico</A><P>
+
+Have you ever tried looking for a property in the properties window by typing in the first letter of the property's name? The properties window doesn't work this way.<P>
+
+Here's a tip that will help. In the properties window, hold down [Ctrl][Shift] while pressing the letter you're looking for. The properties window will then scroll to the next property (if any) that begins with the letter.<P>
+
+<hr>
+
+
+
+<I>September 22, 1997</I><BR>
+<B>Centering a form</B><BR>
+by <A HREF="mailto:BIANDERSON@micron.com">Barron Anderson</A>, Micron Electronics, Inc.<P>
+
+To center a form on the screen in VB3 or VB4, you can write a CenterForm subroutine. Then, call CenterForm in the form's Load event. The code is as follows:<P>
+
+<FONT FACE="Courier New, Courier" SIZE=2>
+Public Sub CenterForm(frmTarget As Form)<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;frmTarget.Move (Screen.Width - frmTarget.Width) / 2, _<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Screen.Height - frmTarget.Height) / 2<BR>
+End Sub<P>
+
+Private Sub Form_Load()<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CenterForm Me<BR>
+End Sub<P>
+</FONT>
+
+Editor's Note:<BR>
+In VB5, you can center a form on the screen by setting the StartUpPosition property of the form to CenterScreen or CenterOwner.<P>
+
+<HR>
+
+
+<I>September 15,1997</I><BR>
+<B>Prevent partially painted windows</B><BR>
+by Deborah Kurata; <A HREF="http://www.insteptech.com" TARGET="_top">InStep Technologies, Inc.</A><P>
+Sometimes when you display a form, only some of the controls appear. After a pause, the remaining controls appear. Such partial painting doesn't look professional. (Fortunately, this problem is much less apparent in VB 5.0 because of dramatic improvements in screen painting.)<P>
+
+To avoid partially painted windows when showing a non-modal form, use the following code:<P>
+<FONT FACE="Courier New, Courier" SIZE=2>
+frmPerson.Show vbModeless<BR>
+frmPerson.Refresh<P>
+</FONT>
+The Refresh method will ensure that the form repainting is complete before executing any other code in the routine.<HR>
+
+
+
+<I>September 8,1997</I><BR>
+<B>Sharing resource files between VB and C projects</B><BR>
+by Victor Brito; <A HREF="MAILTO:vbrito@eldcom.eld2.com">vbrito@eldcom.eld2.com</A>; <A HREF="http://www.lacie.com" TARGET="_top">Electronique D2</A><P>
+Suppose you want to use a resource file (RES) in your Visual Basic project, but some of the file's resource indexes are greater than 0x8000. The VB function LoadResString(index) receives an integer argument Index in the range -32,768 to 32,767, so you can't pass values that are larger than 0x8000. You can solve this problem by passing the corresponding negative index value, as follows (with 0 <=X < 0x8000):<P>
+<TABLE WIDTH="50%">
+<TR>
+<TD>
+<FONT FACE="Courier New, Courier" SIZE=2>RES</FONT></TD><TD><FONT FACE="Courier New, Courier" SIZE=2>Visual Basic</FONT></TD></TR>
+<TR>
+<TD>
+<FONT FACE="Courier New, Courier" SIZE=2>0xFFFF - X</FONT></TD><TD><FONT FACE="Courier New, Courier" SIZE=2>-X - 1</FONT></TD></TR>
+<TR>
+<TD>
+<FONT FACE="Courier New, Courier" SIZE=2>0x8000+X</FONT></TD><TD><FONT FACE="Courier New, Courier" SIZE=2>X-0x8000</FONT></TD></TR></TABLE>
+
+
+&nbsp;<BR>
+For example, suppose you have the following RC file:<P>
+<FONT FACE="Courier New, Courier" SIZE=2>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;STRINGTABLE DISCARDABLE <BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BEGIN<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0xFFFF-0x0000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"resource string 1 with VB index -0 - 1 = -1"<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x8000+1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"resource string 2 with VB index 1 - 32,768= -32,767"<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;END<P>
+</FONT>
+To load string 1, you'll use LoadResString(-1). Similarly, to load string 2 you'll use LoadResString(-32767).
+
+<HR>
+
+
+
+
+
+
+
+<I>September 1, 1997</I><BR>
+<B>The CDbl function versus Val</B><BR>
+by Lee Gillie; <A HREF="MAILTO:Lee@odp.com">Lee@odp.com</A>; Online Data Processing, Inc.<P>
+The Val() function is familiar, and it's useful for converting text box numeric values to numbers. But if you use formatters to display large numbers (with commas, for instance), there's a better function for your purpose. The following example illustrate the use of Val versus CDbl:<P>
+<FONT FACE="Courier New, Courier" SIZE=2>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print Val("12345")<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12345<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print Val("12,345")<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print CDbl("12,345")<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12345<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print CDbl("12345")<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12345<P>
+</FONT>
+Why are these functions different? The Visual Basic Help file offers several hints. You should use the CDbl function instead of Val to provide internationally aware conversions from any other data type to a Double. For example, CDbl will recognize different decimal separators and thousands separators properly depending on your system's locale.<BR>
+Also, if you want your display and input routines to be automatically reversible, you may want to consider using named formatters for FORMAT$() rather than display pictures. Doing so helps guarantee a reversible process, given the LOCALE setting of the user's machine.
+
+<HR>
+
+
+
+
+
+
+
+
+<I>August 25, 1997</I><BR>
+<B>Displaying and processing a message box</B><BR>
+by Greg Osborne; <A HREF="MAILTO:greg.osborne@worldnet.att.net">greg.osborne@worldnet.att.net</A>; Osborne Software<P>
+The following code sample demonstrates an easy way to display and process a message box (MsgBox) in any version of Visual Basic:<P>
+<FONT FACE="Courier New, Courier" SIZE=2>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Select Case MsgBox("Would you like to save the file somefile.txt?", _<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vbApplicationModal + vbQuestion + YesNoCancel, App.Title)<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Case vbYes<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'Save then file<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Case vbNo<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'Do something for No<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Case vbCancel<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'Do something else for Cancel<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End Select<P>
+</FONT>
+This method works well, unless you need to save the answer from your Select Case for later use. If you do, you'll need to use the more standard form of prompting for the answer in a variable.
+<HR>
+
+
+
+
+
+
+<I>August 18, 1997</I><BR>
+<B>Passing strings to a DLL</B><BR>
+by Paul Malachowski; <A HREF="MAILTO:paul@softwaregw.com">paul@softwaregw.com</A>; <A HREF="http://www.softwaregw.com" TARGET="_top">Software GW</A><P>
+I recently came across a serious inefficiency in the way Visual Basic sends strings to a DLL. The problem occurs when you want to get back a large string field (32 KB) from a DLL written in C/C++. VB interacts somehow with this string, causing significant overhead.
+In order to call a DLL and get back a string-type data field, you must pass a string and initialize it for as many bytes as you expect to be returned. If you pass this function a small string, it will run quickly. But if you pass it a large string (32 KB), the time will be significantly slower. You'll see this slower performance even when no data is being returned, meaning that the extra time results from some sort of VB overhead. As a result, if speed is an issue when you're calling a DLL and passing a string variable, you should pass a string that's only as large as you need.<BR>
+You can find a sample project that demonstrates this problem in the file Speed.zip at ftp.cobb.com/ivb/tipcode. The project simply loops for a predetermined number of times and issues the standard windows API call GetPrivateProfileString, which gets data from an INI file.
+
+<HR>
+
+
+
+
+
+
+
+<I>August 11, 1997</I><BR>
+<B>Creating a formless application</B><BR>
+by Zafar Faquih; <A HREF="MAILTO:zafar.faquih@bchydro.bc.ca">zafar.faquih@bchydro.bc.ca</A>; <A HREF="http://www.westechinfosys.com" TARGET="_top">Westech Information Systems</A><P>
+To create a VB program that has only console input and output -- that is, no dialog boxes or forms -- you can use the Main procedure. Begin by creating a new project. Open a code window, then choose Insert | Procedure…. In the Insert Procedure dialog box, Select the Sub and Public options and enter Main in the Name box. Click OK to create a new Main subroutine in the General object. All your code will go in this routine; if you have any useful BAS modules, you can add those to the project as well.<BR>
+VB needs to know what code to execute when your application is called. Since you're not using a form, you need to tell VB to start execution with Sub Main. To do so, choose Tools | Options…. Click the Project tab and select Sub Main from the Startup Form list. To remove the project's default form, right-click on it in the Project window and choose Remove File from the speed menu. <BR>
+Testing a formless application can be a headache, so plan ahead: Use a log file to get debug messages from your application. You'll want to read about the Print # statement in VB's Help file, along with Open and Close.<BR>
+Note that you can use this method to create a VB application that will run as a service on NT. (Services can't have any forms or dialog boxes.)
+<HR>
+
+
+
+
+
+
+
+<I>August 4, 1997</I><BR>
+<B>Making a text box read-only</B><BR>
+by Daniel Sobstel; <A HREF="MAILTO:danny@omniquad.com">danny@omniquad.com</A><P>
+Here's a quick and easy way to make a text box read-only. Simply enter the line<P>
+<FONT FACE="Courier New, Courier" SIZE=2>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;keyascii = 0<P>
+</FONT>
+in the textbox_keypress event.
+<HR>
+
+
+
+
+
+
+
+
+<I>July 25, 1997</I><BR>
+<B>Putting months in a combo box</B><BR>
+by James Westgate; <A HREF="MAILTO:JamesW@vircom.co.za">JamesW@vircom.co.za</A>; <A HREF="http://www.vircom.co.za" TARGET="_top">Vircom</A><P>
+Here's a cool technique for loading a combo box with the months of a year: <P>
+<FONT FACE="Courier New, Courier" SIZE=2>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'Load Months Combo<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For i = 1 To 12<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cmbMonth.AddItem Format("28/" & i & "/1997", "mmmm")<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Next<P>
+</FONT>
+
+To see which month the user clicked, you can use the following code:<P>
+<FONT FACE="Courier New, Courier" SIZE=2>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Private Sub cmbMonth_Click ()<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dim myRs as recordset<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;myRs!Month = cmbMonth.listindex + 1<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Next<BR></FONT>
+<HR>
+
+
+
+
+
+
+<I>July 18, 1997</I><BR>
+<B>Checking the value of a control</B><BR>
+<I>by Jeff Brown; <A HREF="MAILTO:Jeff.Brown@piog.com">Jeff.Brown@piog.com</A>; Pioneering Management Corporation</I><P>
+
+I've recently taken over a project from someone else, and I've been left with code that has few naming conventions and a lot of bugs. I often find myself stepping through code wanting to check the value of a field. Unfortunately, I don't know the field's name—it could be Name, UserName, NameUser, txtName, and so on. It's a real pain to stop the program, click on the control in question, press [F4], get the control name, start the program again, and return to the point in the code where I was before. Here's a handy trick to get the control name right away.<BR>
+At runtime, set the focus to the control in question. Then, click the Break button on the VB toolbar, type<P>
+
+
+<FONT FACE="Courier New, Courier" SIZE=2>
+&nbsp;&nbsp;&nbsp;?Screen.ActiveControl.Name<P>
+</FONT>
+in the debug window, and press [Enter]. Voila! VB displays the control name in the debug window—and you didn't have to stop the program.<P>
+<HR>
+
+
+
+
+
+
+<I>July 12, 1997</I><BR>
+<B>Command me, oh great one</B><BR>
+<I>by Chuck Kraatz; ETC Software Solutions; <A HREF="MAILTO:Chuck_Kraatz@msn.com">Chuck_Kraatz@msn.com</A></I><P>
+Suppose you want to use Visual Basic to create an EXE that takes an input value in a format like test.exe 2. Depending on the input value, you'll perform certain tasks. In this situation, you can make use of the Command function, which returns the argument portion of the command line you use to launch VB or an EXE you develop in VB. <P>
+It's easy to send command-line information to an application. For instance, to send information to an application called HappyApp, you could use the line<P>
+
+HappyApp /CMD 1972<P> 
+
+Now, within the application—probably in the <B>Sub Main</B>—you can use the <B>Command</B> function to capture that command-line information. <P>
+To see this technique work, place a text box on a form. In the <B>Form_Load</B> event, place the following line: <p>
+
+Text1.Text = Command<P>
+
+While still in VB, place some code on the command line. To do this in VB 3.0, choose Options | Project; in VB 4.0, choose Tools | Options…, then click the Advanced tab; in VB 5.0, choose Project | Project Properties, then click the Make tab. Next, type This is my argument in the Command Line Arguments section and click OK. Run the application, and your command-line text will appear in the text box.<P>
+Note that if you're working with 32-bit VB, you may want to create an ActiveX EXE or ActiveX DLL (formerly OLE Automation servers). By doing so, you simply deal with property settings. 
+<HR>
+
+
+
+
+
+<I>July 7, 1997</I><BR>
+<B>In-process servers versus out-of-process servers</B><P>
+
+You can compile an OLE server as an OLE Dynamic Link Library (DLL) or an executable (EXE) file. Compiling as a DLL creates an in-process server, while compiling as an EXE file creates an out-of-process server.<P>
+In-process servers run in the client's address space; for this reason, in-process servers are faster than out-of-process servers. On the other hand, because out-of-process servers run in their own address space, they have capabilities that are unavailable with in-process servers. For instance, they can run asynchronously. (An asynchronous process can display modeless forms and run in the background.) In deciding whether to use an in-process or an out-of-process server, you'll need to consider the tradeoff between speed and flexibility.
+<HR>
+
+
+
+
+
+
+
+<I>June 30, 1997</I><BR>
+<B>Validating with the Name property (VB 4.0)</B><BR>
+<I>by Chuck Kraatz; ETC Software Solutions; <A HREF="MAILTO:Chuck_Kraatz@msn.com">Chuck_Kraatz@msn.com</A></I><P>
+The Name property can be very useful when you're validating data. For instance, suppose you have a data input screen with three text fields, and you want to be sure the user has entered a valid date in each control. The trick lies in placing the word Date in the name of every text control that will contain date-type data—for this example, create such a form and name the text fields <I>txtDateOfBirth, txtHireDate,</I> and <I>txtDateLastReview</I>.<P>
+Add an Update command button to the form, and place the following code in its Click event:<P>
+
+<FONT FACE="Courier New, Courier" SIZE=2>
+If Not ValidDates() Then<BR>
+&nbsp;MsgBox "Some of the dates entered are invalid"<BR>
+&nbsp;Screen.MousePointer = vbDefault<BR>
+&nbsp;Exit Sub<BR>
+End If<P>
+</FONT>
+
+Notice that since this block leaves the sub early via the Exit Sub statement, you must reset the mouse pointer to its default shape.<P>
+Next, enter the following ValidDate function, which uses VB's built-in Controls array:<P>
+
+<FONT FACE="Courier New, Courier" SIZE=2>
+Private Function ValidDates() As Boolean<BR>
+Dim ctl As Control<BR>
+Dim bInValid As Boolean<P>
+   
+For Each ctl In Me.Controls<BR>
+&nbsp;Debug.Print ctl.Name<BR>
+&nbsp;If TypeOf ctl Is TextBox Then<BR>
+&nbsp;&nbsp;If InStr(1, ctl.Name, "Date") > 1 And _<BR>
+&nbsp;&nbsp;&nbsp;ctl.Text <> "" Then<BR>
+&nbsp;&nbsp;&nbsp;bInValid = Not IsDate(ctl.Text)<BR>
+&nbsp;&nbsp;&nbsp;If bInValid Then<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;ValidDates = False<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;Exit Function<BR>
+&nbsp;&nbsp;&nbsp;End If<BR>
+&nbsp;&nbsp;End If<BR>
+&nbsp;End If<BR>
+Next<BR>
+ValidDates = True<BR>
+End Function<P>
+</FONT>
+
+Run the project and enter the values 2/7/64, 7/8/93, and To be scheduled in the three fields. When you click Update, a message box will inform you that a date is invalid. Click OK, then enter 10/31/96 in the Date Of Last Review text box—this time, VB won't object when you click Update
+<HR>
+
+
+
+
+
+
+<I>June 19, 1997</I><BR>
+<B>Quick block indents</B><P>
+To quickly indent an entire block of Visual Basic code, select the text and press the [Tab] key. You can just as easily move a code block out one tab stop by selecting the text and pressing [Shift][Tab].
+<HR>
+
+
+
+
+
+
+<I>June 12, 1997</I><BR>
+
+<B>Getting a field name (VB 3.0 and 4.0) </B><BR>
+
+<I>by Chuck Kraatz; ETC Software Solutions; Chuck_Kraatz@msn.com</I><P>
+Suppose you want to use a generic routine to get the name of a field to assign to a variable, while using OLE to write the records of an Access database to an Excel worksheet. Once you have an open recordset—let's call it rsMine—the lines<P>
+
+<FONT FACE="Courier New, Courier" SIZE=2>
+sString = rsMine.Fields(0).Name<BR>
+sString = rsMine.Fields(1).Name<P>
+</FONT>
+
+retrieve the first two fields names. You'll normally loop through the recordset and match the grid columns with the fields in the database. But be cautious—often the field name isn't a good title for the grid. The end user also may not understand a developer's naming conventions.<P>
+For example, place a Grid control on a form and select the Microsoft DAO 2.5/3.0 Compatibility Library option in the References dialog box. Then enter the following code, which is written in VB 4.0 syntax and uses the BIBLIO.MDB database. The code finds the names of the database fields, then enters those names into the grid columns. Notice that you use a Forward Only snapshot type recordset, which is very fast and very small. Since you'll read and move on, you don't need to scroll through the recordset.<P>
+
+<FONT FACE="Courier New, Courier" SIZE=2>
+Option Explicit<P>
+
+'Set form-level DB variable for this example<BR>
+Private dbCurrent As Database<P>
+
+Private Sub Form_Load()<BR>
+Dim rs As Recordset<BR>
+Set dbCurrent = OpenDatabase("C:\Program Files\Microsoft Visual Basic\biblio.mdb")<BR>
+Set rs = dbCurrent.OpenRecordset("Publishers", dbOpenSnapshot, dbForwardOnly)<BR>
+If rs.RecordCount &lt;&gt; 0 Then<BR>
+  &nbsp;&nbsp;ColumnNames rs, Grid1<BR>
+End If<BR>
+End Sub<P>
+
+Private Sub ColumnNames(rs As Recordset, grd As Grid)<BR>
+Dim fld As Field<BR>
+Dim iCol As Integer<BR>
+iCol = 0<BR>
+grd.Cols = rs.Fields.Count<BR>
+grd.Row = 0<BR>
+For Each fld In rs.Fields<BR>
+&nbsp;&nbsp;grd.Col = iCol<BR>
+  &nbsp;&nbsp;grd.Text = fld.Name<BR>
+  &nbsp;&nbsp;iCol = iCol + 1<BR>
+Next<BR>
+End Sub</FONT>
+<HR>
+
+
+
+
+
+<I>June 5, 1997</I><BR>
+
+
+
+<B>Slow to load? </B><BR>
+<I>by Bill Shadish; Fundamental Objects, Inc.</I><P>
+If you find that your application loads slowly, you may be loading more than you think at start-up. Try the following steps to correct the problem: Load your application in Visual Basic's design mode and press [F8] to start it. Keep pressing [F8] to run your code one line at a time, and observe what's really going on as your code executes. For example, suppose your <B>Sub Main()</B> code looks like this:<P>
+
+<FONT FACE="Courier New, Courier" SIZE=2>
+frmSplash.show vbModal<BR>
+frmMain.show<P>
+</FONT>
+
+You may feel confident that you won't execute (or Load) the frmMain code before the user sees the splash screen. But if your splash screen reads application parameters, and those routines set properties on frmMain--perhaps you save the user's frmMain screen color choices between runs, or save the application's WindowState--then frmMain will silently (and slowly) load in the background while frmSplash tries to display itself.<P>
+
+You may also experience slow loading if you call the same routine several times from different places during your start-up process. For example, in heavily maintained code, it isn't impossible for the application to load the application's parameters in a splash screen and again later for use within frmMain. Removing the extraneous, repeated call saves that much time in loading. (There are a number of places where you may find duplicate code, especially if you copy lots of forms and modules from one application to start another.)
+<HR>
+
+
+
+
+
+
+<I>May 26, 1997</I><BR>
+
+<B>Rearranging your PME order (VB 5.0)</B><BR>
+
+
+
+By default, Visual Basic 5.0's Object Browser (View | Object Browser) displays properties, methods, and events in a single, alphabetical list. If you'd prefer to see these members grouped by type, then right-click in the window and choose Group Members from the context menu. VB will group all the elements in the window's Classes and Members lists.
+<HR>
+
+
+
+
+
+
+<I>May 19, 1997</I><BR>
+
+<B>Auto-searching by entering text in a combo box</B><BR>
+
+
+<I>by Chuck Kraatz</I><P>
+
+An auto-searching combo box finds a possible selection as the user enters information directly into the text portion of the combo box. For this example, you can use the Authors table from Visual Basic's BIBLIO.MDB database. Place the following code in a standard module (BAS file):<P>
+<FONT FACE="Courier New, Courier" SIZE=2>
+    Declare Function SendMessage Lib "user32" Alias "SendMessageA" _<BR>
+    (ByVal hwnd As Long, ByVal wMsg As Long, ByVal wParam As Long, _<BR>
+     lParam As Any) As Long<P>
+
+     Public Const CB_FINDSTRING = &amp;H14C<P>
+</FONT>
+
+(If you're using 16-bit VB, make the appropriate adjustments to the declare statement.)<P>
+You'll need a <I>static</I> variable-one that remembers its value from each previous call to that subroutine or function-to keep track of how many characters you've entered in the combo box at any given time.<P>
+Enter the following code in the combo box's <B>Change</B> event: <P>
+
+<FONT FACE="Courier New, Courier" SIZE=2>
+
+    Private Sub Combo1_Change()<BR>
+    Dim iStart As Integer<BR>
+    Dim sString As String<BR>
+    Static iLeftOff As Integer<BR>
+&nbsp;<BR>
+    iStart = 1<BR>
+    iStart = Combo1.SelStart<BR>
+&nbsp;<BR>
+    If iLeftOff &lt;&gt; 0 Then<BR>
+    &nbsp;&nbsp;Combo1.SelStart = iLeftOff<BR>
+    &nbsp;&nbsp;iStart = iLeftOff<BR>
+     End If<P>
+
+    sString = CStr(Left(Combo1.Text, iStart))<BR>
+    Combo1.ListIndex = SendMessage(Combo1.hwnd, _<BR>
+    &nbsp;CB_FINDSTRING, -1, ByVal CStr(Left( _<BR>
+    &nbsp;Combo1.Text, iStart)))<P>
+
+     If Combo1.ListIndex = -1 Then<BR>
+&nbsp;iLeftOff = Len(sString)<BR>
+&nbsp;Combo1.Text = sString<BR>
+     End If<P>
+
+    Combo1.SelStart = iStart<BR>
+    iLeftOff = 0<BR>
+    End Sub<P>
+
+</FONT>
+The static variable <B>iLeftOff</B> helps determine how many characters you need to use in the <B>sString</B> variable that you then pass to the API call. <P>
+Run the application and notice how the cursor position stays at the proper position as you enter characters. The combo box displays a name if VB finds a match; otherwise, only the entered text appears.
+<HR>
+
+
+
+
+
+
+
+<I>May 13, 1997</I><BR>
+<B>Closing a DOS prompt window</B><BR>
+<I>by Chuck Kraatz</I><P>
+
+After you run a DOS application in Windows 95, the MS-DOS Prompt window doesn't close. To prevent this behavior, you can use the API to find the Window handle for the DOS prompt window, wait for the program to finish running, then zap the DOS prompt window into oblivion.<BR>
+	This technique doesn't require any forms. It's just a simple VB 4.0 DLL with two properties: the EXE name of the DOS program and the text that will appear as the caption of the DOS prompt window displaying this application. The core of this app lies in three API calls. Place the following code in a standard module:
+
+
+<BLOCKQUOTE>
+<FONT FACE="Courier New, Courier" SIZE=2>
+
+
+Declare Function FindWindow& Lib "user32" Alias "FindWindowA" _<BR>
+(ByVal lpClassName As String, ByVal lpWindowName As String)<P>
+
+Declare Function SendMessage Lib "user32" Alias "SendMessageA" (ByVal hwnd As Long, _<BR>
+ByVal wMsg As Long, ByVal wParam As Long, lParam As Any) As Long<P>
+
+Declare Sub Sleep Lib "kernel32" (ByVal dwMilliseconds As Long)<P>
+
+Public Const WM_CLOSE = &H10<P></BLOCKQUOTE>
+</FONT>
+
+
+The rest of the code goes in the following class module, named Cclose:<P>
+
+<BLOCKQUOTE><FONT FACE="Courier New, Courier" SIZE=2>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Private m_sEXEName As String<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Private m_sDosCaption As String<P>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Public Sub RunDosApp()<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dim vReturnValue As Variant<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dim lRet As Long<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dim i As Integer<P>
+    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vReturnValue = Shell(m_sEXEName, 1)  ' Run EXE<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AppActivate vReturnValue   ' Activate EXE Window<P>
+    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Do<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Sleep (10000)<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  lRet = FindWindow(vbNullString, m_sDosCaption)<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  If (lRet &lt;&gt; 0) Then<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vReturnValue = SendMessage(lRet, WM_CLOSE, &O0, &O0)<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Exit Do<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  End If<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Loop<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End Sub<BR>
+</FONT>
+</BLOCKQUOTE>
+<HR>
+
+
+
+
+
+
+
+<P>
+<I>May 6, 1997</I><BR>
+<B>Determining whether a file exists</B><BR>
+
+
+Visual Basic doesn't provide any built-in means for telling whether a particular file exists. However, you can use the DIR or DIR$ function to check a file's existence. Simply pass the filename to the DIR function and check the function's return value-if the function returns nothing (""), then there's no such file.<BR>
+To try this technique, create a VB project, place a button on Form1, and enter the following code in the button's Click event:
+<BLOCKQUOTE><FONT FACE="Courier New, Courier" SIZE=2>
+
+
+ Private Sub Command1_Click()<BR>
+     FileInQuestion = Dir("C:\AUTOEXEC.BAT")<BR>
+     If FileInQuestion = "" Then<BR>
+     &nbsp;&nbsp;MsgBox "No such file!"<BR>
+     Else<BR>
+     &nbsp;&nbsp;MsgBox "File exists!"<BR>
+     End If<BR>
+     End Sub<BR>
+
+</FONT></BLOCKQUOTE>
+
+When you run the form and click the button, you'll see the success message box. To complete the test, edit the code so it searches for a file you know doesn't exist on your C: drive.
+<HR>
+
+
+
+
+
+
+
+
+
+
+<I>April 22, 1997</I><BR>
+<B>VB 5.0 IsMissing() caution</B><BR>
+<I>by Bill Shandish</I><BR>
+
+A great enhancement of VB 4.0 was the ability to have optional parameters within your procedures, like so:
+<BLOCKQUOTE><FONT FACE="Courier New, Courier" SIZE=2>Sub CenterButtons(frm As Form, Control1 As Variant, Optional Control2 As Variant)
+</FONT></BLOCKQUOTE>
+
+VB 4.0's <B>isMissing( )</B> function determines whether you've omitted an optional parameter. You can decide on the fly what to do, given the number of parameters supplied by the caller of your procedure. A drawback of the VB 4.0 optional parameters is that you have to declare them as Variants-you must interpret the passed object within your code to decide if it's the type you expect to get.<BR>
+VB 5.0 removes this restriction, and you can now happily pass as optional parameters everything from Bytes to Controls. However, the <B>isMissing( )</B> function has changed. Suppose you omit passing a <B>Control2</B> using the following code: 
+<BLOCKQUOTE><FONT FACE="Courier New, Courier" SIZE=2>
+Sub CenterButtons(frm As Form, Control1 As Control, Optional Control2 As Control)<BR>
+' VB5 code to center buttons across the bottom of the screen.<BR>
+'<BR>
+If Not frm.Visible Then Exit Sub<BR>
+'<BR>
+If IsMissing(Control2) Then<BR>
+&nbsp;&nbsp;&nbsp;' you have only 1 button<BR>
+...
+</FONT></BLOCKQUOTE>
+
+<B>Control2</B> will equal Nothing, and the <B>isMissing( )</B> call will return False rather than True for the omitted control. As a result, the code within the <B>If IsMissing</B> block will be bypassed by mistake. The moral: Test your <B>isMissing( )</B> calls to be sure they're behaving as expected.
+
+
+<HR>
+
+
+
+
+
+
+
+
+	  
+<I>April 10, 1997</I><BR>
+<B>Is VB Running?  A Simple Function Will Tell You</B><BR>
+<I>by David Mendlen</I><BR>
+
+You can write a one-line function that will tell you if Visual Basic 5.0 is in run mode or design mode.  
+The InRunMode() function is as follows:
+
+<BLOCKQUOTE><FONT FACE="Courier New, Courier" SIZE=2>Function InRunMode(VBinst As VBIDE.VBE) As Boolean<BR>
+InRunMode = (VBinst.CommandBars("Run").Controls("End").Enabled = True)<BR>
+End Function
+
+</FONT></BLOCKQUOTE>
+<HR>
+
+
+
+
+
+
+
+	  
+<I>March 31, 1997</I><BR>
+<B>Getting a Reference to a Visual Basic&nbsp;5.0 UserControl</B><BR>
+<I>by David Mendlen</I><BR>
+Visual Basic&nbsp;5.0 allows you to use UserControls to create ActiveX controls in your projects. The following code snippet does two things: It gets a reference to the form in which a UserControl is placed, and it gets a reference to that control on the form.
+<BLOCKQUOTE><FONT FACE="Courier New, Courier" SIZE=2>Dim PControl As Object<BR>
+Dim MyControl As Control<BR>
+Dim AControl As Object<BR>
+'Get my UserControl<BR>
+For Each AControl In ParentControls<BR>
+&nbsp;&nbsp;If AControl.Name = Ambient.DisplayName Then<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;Set MyControl = AControl<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;Exit For<BR>
+&nbsp;&nbsp;End If<BR>
+Next<BR>
+'Get the Form UserControl is on<BR>
+Set PControl = ParentControls.Item(1).Parent<BR>
+While Not (TypeOf PControl Is Form)
+&nbsp;&nbsp;Set PControl = PControl.Parent<BR>
+Wend</FONT></BLOCKQUOTE>
+
+<HR>
+
+
+
+
+
+
+
+
+	  <i>17 March 1997</i>
+		<BR><B>Visible Cues from a Minimized Form.</B><BR>
+<I>by Chuck Kraatz</I><BR>
+Suppose you want a form to perform a task while minimized, then notify the user without a message box and while remaining minimized. You can send a message via a changing icon on the minimized form in the taskbar.
+<P>Create a form containing a timer and an image list. Set the timer's Interval property to 2000, then use the ImageList control's Custom property to add three images. Finally, add this code to the Timer event:
+<BLOCKQUOTE><FONT FACE="Courier New, Courier" SIZE=2>Private Sub Timer1_Timer()<BR>
+Static ilmage As Integer<BR>
+ilmage = ilmage + 1<BR>
+If ilmage &gt; 3 Then ilmage = 1<BR>
+Me.Icon = ImageList1.ListImages(ilmage).Picture<BR>
+EndSub</FONT></BLOCKQUOTE>
+<HR>
+
+	
+
+
+
+
+
+	  <i>7 March 1997</i>
+		<BR><B>Cleaning Out Invalid Registry Entries.</B><BR>
+<I>by David Mendlen</I><BR>
+Tired of all of those obsolete OCXs in your Components dialog box? Run RegClean.EXE. This utility is available for download, free of charge, from the Microsoft Knowledge Base at <A HREF="/kb/articles/q147/7/69.htm">http://www.microsoft.com/kb/articles/q147/7/69.htm</A>.  RegClean runs through your CLSID and GUIDS and checks for valid entries. It also provides a number of Registry Scan options and lets you choose whether the utility should make corrections automatically or simply report its findings.
+	<HR>
+	
+
+
+
+
+
+	  <i>28 February 1997</i>
+		<BR><B>Passing a UDT Between Objects.</B><BR>
+<I>by Chuck Kraatz</I><BR>
+You can use a user-defined type within an object if it passes to private routines or functions&nbsp;&#151; just include a property in the class/object that mirrors every member of the UDT. Suppose you define the UDT:
+<BLOCKQUOTE><PRE><FONT FACE="Courier, Courier New" SIZE=2>Type TestUDT
+Score As Integer
+Player As String
+End Type</PRE></FONT></BLOCKQUOTE>
+<P>
+and a Cgame class with properties for Score and Player. You'd pass each UDT member with code like this:
+<BLOCKQUOTE><PRE><FONT FACE="Courier, Courier New" SIZE=2>Private Sub SendUDT()
+Dim xUDT As TestUDT
+xUDT.Player = "Michael Jordan"
+xUDT.Score = 45
+PassUDT xUDT
+End Sub
+
+Public Sub PassUDT(Z As TestUDT)
+Dim x as New Cgame
+Cgame.Score = Z.Score
+Cgame.Player = Z.Player
+End Sub</PRE></FONT></BLOCKQUOTE>
+	<HR>
+	
+
+
+
+	  <i>21 February 1997</i>
+		<BR><B>Run Time- and Design Time-Only Properties in Visual Basic&nbsp;5.0.</B><BR>
+To distinguish between run time-only and design time-only properties, check for the value of the Ambient.Usermode property within the Property Get and Property Let/Set procedures. Usermode is True at run time and False at design time. Also, in the Procedure Attributes window (Tools | Procedure Attributes...), select the Don't Show In Property Browser option to prevent the developer from trying to set a run time-only property. To create read-only run time properties, bypass the Property Let/Set procedure entirely in the ReadProperties event of the UserControl, and assign the retrieved value to it directly.
+	<HR>
+	
+
+
+
+	  <i>14 February 1997</i>
+		<BR><B>Highlighting Text Upon Entering a Field.</B><BR>
+You can highlight the contents of a text box when you tab to the control by calling the following subroutine from the control's Got_Focus event:
+<BLOCKQUOTE><FONT FACE="Courier New, Courier" SIZE=2>
+Public Sub SelAllText()
+Screen,ActiveControl.SelStart = 0
+Screen.ActiveControl.SelLength = Len(Screen,ActiveControl.Text)
+EndSub
+</FONT></BLOCKQUOTE>
+<P>
+You can also use a second method, which may give you more flexibility if you're going to use it with objects other than text boxes:
+<BLOCKQUOTE><FONT FACE="Courier New, Courier" SIZE=2>
+Public Sub SelAllText(ctl as Control)
+ctl.SelStart = 0
+ctl.SelLength = Len(ctl.Text)
+EndSub
+</FONT></BLOCKQUOTE>
+	<HR>
+	
+
+
+
+	  <i>7 February 1997</i>
+		<BR><B>Drag-and-drop in Visual Basic 5.0.</B><BR>
+Drag-and-drop&nbsp;&#151; It's not just for Word anymore! Visual Basic&nbsp;5.0 offers control properties and events that let you drag and 
+drop just as you can in Word and other Microsoft Office applications. To test 
+this functionality, place two text boxes on a Visual Basic form. Set the text boxes' OLEDragMode property to 1-Automatic and their OLEDropMode property to 
+2-Automatic, then run the form. You can now select a word and drag it from one 
+text box to the other. You can also use this functionality to drag between a Visual Basic 
+text box and Word (or any application that uses drag and drop).
+	<HR>
+	
+
+
+
+	  <i>31 January 1997</i>
+		<BR><B>Save before you play in the API.</B><BR>
+Save your work before working with the API. The Windows API functions are rich in possibilities. These libraries provide access to advanced functionality and you may want to experiment with API calls. But beware: A small misstep while using the API can crash your system, forcing you to reboot. To ensure the integrity of your work as you play with API functions, click Options on the Tools menu, then choose either the Save Before Run, Prompt or the Save Before Run, Don't Prompt option. Either way, Visual Basic will save your project before running it, and your work will be protected.
+	<HR>
+	
+
+
+
+
+	  <i>24 January 1997</i>
+		<BR><B>Avoid misspelled variable names with Option Explicit.</B><BR>
+Avoid misspelled variable names with Option Explicit. Visual Basic gives you the option of entering variable names on the fly. (When you do, Visual Basic assumes that your undeclared variables are of the variant type, unless you specify otherwise in a Def statement.) The problem with using undeclared variables is that it's all too tricky to trace. You can avoid this situation by placing an Option Explicit statement in the general declarations section of your module or form&nbsp;&#151; the statement forces you to declare all variables. If your code includes any undeclared variables, you'll receive a compile time error.
+	<HR>
+	
+
+
+
+	  <i>13 January 1997</i>
+		<BR><B>Creating Two Versions of One Project.</B><BR>
+The MAK and VBP extensions give you flexibility to develop two versions of each 
+project. A Visual Basic&nbsp;4.0 project can have either the MAK or the VBP extension. You can install 
+the professional edition of Visual Basic&nbsp;4.0 as a 16-bit development platform, a 32-bit 
+platform, or both. Choosing &quot;both&quot; installs the 16-bit version in one directory 
+and the 32-bit version in another. After installation, the two versions 
+function independently. By putting the proper associations in place, you can 
+create two versions of the same project&nbsp;&#151; a MAK and a VBP. They can share forms 
+and modules by taking advantage of conditional compilation. Using the Make EXE 
+File dialog box, you can assign the two versions different executable names, 
+version numbers, and statistics. 
+	<HR>
+	
+
+
+
+
+	  <i>6 January 1997</i>
+		<BR><B>One of these Variable Names is not like the Others.</B> 
+In Visual Basic, consistent capitalization makes it easy to spot errors in variable names.
+You can capitalize Visual Basic variable names as you wish. However, the 
+program will enforce consistency by changing all occurrences of a variable name 
+to match the capitalization pattern last used. In other words, if 
+you use the variable myVariable, then later type MyVariable, Visual Basic will adjust the 
+first occurrence to match the second.
+<P>
+You can use this behavior to be sure your variable names are spelled correctly 
+throughout your code. Change one occurrence of the name to all capital letters 
+(for instance, MYVARIABLE) and all other occurrences will be automatically changed to match. 
+Now, if you look through the code and see MyVarible, you know the name is 
+spelled incorrectly. 
+	<HR>
+	
+
+
+                                
+
+</FONT>
+
+
+<FONT FACE="verdana, arial, helvetica" SIZE=1 color="#808080"><I>Last updated: March 30, 1998</I></FONT></P>
+<!-- MSFT COPYRIGHT-->
+<FONT FACE="verdana, arial, helvetica" SIZE=1><A HREF="/misc/cpyright.htm">© 1997 Microsoft Corporation. All rights reserved. Terms of Use.</A></FONT>
+<!--MSFT COPYRIGHT-->
+
+	
+
+</FONT>
+</TD>
+<!--INTRODUCTION_END-->
+
+
+<TD VALIGN=TOP BGCOLOR="#FFFFFF" WIDTH=6>	<!--gutter_spacer-->
+<IMG SRC="/vbasic/art/spacer.gif" WIDTH=6 HEIGHT=1 BORDER=0>
+</TD>
+
+<!--GREY_LINE-->
+<TD VALIGN=TOP BGCOLOR="#666666" WIDTH=1>
+<IMG SRC="/vbasic/art/whitepix.gif" WIDTH=1 HEIGHT=6 BORDER=0><BR>
+</TD>
+
+<!--gutter_spacer-->
+<TD VALIGN=TOP BGCOLOR="#FFFFFF" WIDTH=6>
+<IMG SRC="/vbasic/art/spacer.gif" WIDTH=6 HEIGHT=1 BORDER=0>
+</TD>
+
+<!--Right TOC-->
+<TD VALIGN=TOP WIDTH=125>
+<IMG SRC="/vbasic/art/spacer.gif" WIDTH=125 HEIGHT=6 BORDER=0><BR>
+<FONT FACE=VERDANA SIZE=1>
+<P>
+
+
+
+<P>
+<A HREF="/vbasic/techmat/">White Papers</A><BR>
+Detailed and authoritative reports.</P>
+
+<P>
+<A HREF="/vbasic/techmat/feature/">Featured Article</A><BR>
+Highlighting specific technologies and concepts important to Visual Basic developers.
+</P>
+
+<P>
+<A HREF="/vbasic/techmat/tutorials/">Tutorials</A><BR>
+Learn the latest Visual Basic techniques, features, and capabilities.
+</P>
+
+<P>
+<A HREF="/vbasic/techmat/confmat/">Presentations and Conference Materials</A><BR>
+NetShow, Slides, etc.</P>
+
+<P>
+<A HREF="/vbasic/techmat/tntgtg/">Tips & Tricks</A><BR>
+Geek to Geek</P>
+
+<P>
+<B>Tip of the Week</B><BR>
+Provided by The Cobb Group, publishers of Inside Visual Basic.</P>
+
+<P>
+<A HREF="/msdn/">MSDN Online</A><BR>
+The essential resource for developers.</P>
+
+
+<P>
+<A HREF="/kb/default.asp">Microsoft Technical Support Knowledge Base</A><BR>
+Ask your technical support questions here.</P>
+
+</FONT>
+</TD>
+<!-- RIGHT_TOC_END-->
+
+<!--gutter_spacer-->
+<TD VALIGN=TOP BGCOLOR="#FFFFFF" WIDTH=6>	
+<IMG SRC="/vbasic/art/spacer.gif" WIDTH=6 HEIGHT=1 BORDER=0>
+</TD>
+</TR>
+</TABLE>
+
+
+
+<!-- ******************** -->	
+<!--  END CENTER COLUMN   -->
+<!-- ******************** -->
+</TR>
+</TABLE>
+</BODY>
+</HTML>

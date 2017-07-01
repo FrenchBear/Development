@@ -1,0 +1,1 @@
+This sample allows you to modify, add or delete any number of cells and then optionally revert to the original values.  Before any editing, click the BeginTrans button.  Use of transaction in this fashion is possible only in unbound mode.  In bound mode the data control will commit all pending transactions when you change rows.

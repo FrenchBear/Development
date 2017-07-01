@@ -1,0 +1,6 @@
+Rev = 0, 0, 0, 0, C
+ModFRT = 66, 66, 423, 409, Z
+UtilImprimante = 110, 110, 625, 552, C
+Code128 = 66, 66, 512, 344, C
+UtilImpression = 132, 132, 578, 410, C
+frmImprimante = 44, 44, 401, 387, , 13, 51, 513, 420, C

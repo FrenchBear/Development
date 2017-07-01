@@ -1,0 +1,6 @@
+SELECT Actors.lastname, Actors.firstname, Video_programs.programname;
+ FROM  "video collection!actors" INNER JOIN "video collection!programactorjoin";
+    INNER JOIN "video collection!video_programs" ;
+   ON  Video_programs.programid = Programactorjoin.programid ;
+   ON  Actors.actorid = Programactorjoin.actorid;
+ ORDER BY Video_programs.programname

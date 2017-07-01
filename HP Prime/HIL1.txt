@@ -1,0 +1,48 @@
+﻿// HIL1 - Plot Hilbert Curve
+// Direct programming, Logo style
+// 2014-03-25 PV
+// 2016-07-12 PV  MAJ S1 nom réservé
+
+#pragma mode(separator(.,;) integer(h32))
+
+HI();
+DR();
+EXPORT X1,Y1,A1,MS1;
+
+EXPORT HIL1(D)
+BEGIN
+  A1:=0;
+  X1:=45;
+  Y1:=235;
+  MS1:=230/(2^D-1);
+  RECT();
+  T:=TICKS;
+  HI(D,π/2);
+  T:=(TICKS-T)/1000;
+  WAIT;
+  RETURN T;
+END;
+
+HI(D, S)
+BEGIN
+  A1:=A1-S;
+  IF D>1 THEN HI(D-1,-S) END;
+  DR();
+  A1:=A1+S;
+  IF D>1 THEN HI(D-1,S) END;
+  DR();
+  IF D>1 THEN HI(D-1,S) END;
+  A1:=A1+S;
+  DR();
+  IF D>1 THEN HI(D-1,-S) END;
+  A1:=A1-S; 
+END;
+
+DR()
+BEGIN
+  X:=X1+MS1*COS(A1);
+  Y:=Y1+MS1*SIN(A1);
+  LINE_P(X1,Y1,X,Y,#FF0000);
+  X1:=X;
+  Y1:=Y;
+END;

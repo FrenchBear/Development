@@ -1,0 +1,11 @@
+LONGDYN.FRM
+C:\WIN3\SYSTEM\CMDIALOG.VBX
+C:\WIN3\SYSTEM\GRID.VBX
+LDGLOB.BAS
+LDAIDE.FRM
+LDIMPR.FRM
+ProjWinSize=77,748,276,216
+ProjWinShow=2
+IconForm="frmMain"
+Title="Longueurs Dynamiques"
+ExeName="LONGDYN.EXE"

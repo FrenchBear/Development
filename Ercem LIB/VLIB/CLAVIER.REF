@@ -1,0 +1,4 @@
+/* clavier.ref */
+void (*vc_hotkey(touche,void (*)(void)))(void);
+touche vc_lircar(void);
+booleen vc_cardispo(void);

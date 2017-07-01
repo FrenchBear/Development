@@ -1,0 +1,15 @@
+majreg
+HKEY_CLASSES_ROOT\Note-It\protocol\StdFileEditing\server\
+                                REG_SZ:               C:\win4\msapps\note-it\Note-It.exe
+HKEY_CLASSES_ROOT\MSDraw\protocol\StdFileEditing\server\
+                                REG_SZ:               C:\win4\MSAPPS\MSDRAW\msdraw.exe
+HKEY_CLASSES_ROOT\WordArt\protocol\StdFileEditing\server\
+                                REG_SZ:               C:\win4\MSAPPS\WORDART\wordart.exe
+HKEY_CLASSES_ROOT\MSGraph\protocol\StdFileEditing\server\
+                                REG_SZ:               C:\win4\MSAPPS\MSGRAPH\GRAPH.EXE
+HKEY_CLASSES_ROOT\Equation.2\protocol\StdFileEditing\server\
+                                REG_SZ:               C:\win4\MSAPPS\EQUATION\EQNEDIT.EXE
+HKEY_CLASSES_ROOT\MSWordArt.2\protocol\StdFileEditing\server\
+                                REG_SZ:               C:\win4\MSAPPS\WORDART\WORDART2.EXE
+HKEY_CLASSES_ROOT\Equation\protocol\StdFileEditing\server\
+                                REG_SZ:               C:\win4\MSAPPS\EQUATION\EQNEDIT.EXE

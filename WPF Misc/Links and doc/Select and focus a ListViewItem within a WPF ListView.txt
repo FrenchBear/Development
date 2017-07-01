@@ -1,0 +1,9 @@
+Select and focus a ListViewItem within a WPF ListView
+
+From http://social.msdn.microsoft.com/Forums/vstudio/en-US/89df8b8f-29b8-4915-b2b6-e153e05f9ca9/how-to-programmatically-select-and-focus-a-cell-in-the-new-wpf-datagrid
+
+
+myListView.SelectedItem = myListView.Items[index];
+myListView.ScrollIntoView(myListView.Items[index]);
+ListViewItem listViewItem = myListView.ItemContainerGenerator.ContainerFromIndex(index) as ListViewItem;
+listViewItem.Focus();

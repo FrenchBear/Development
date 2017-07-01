@@ -1,0 +1,52 @@
+<StackPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		      TextElement.FontWeight="Bold">
+  <TextBlock Margin="0,5">Padding</TextBlock>
+  <Grid TextElement.FontWeight="Normal">
+	<Grid.ColumnDefinitions>
+		<ColumnDefinition Width="Auto"/>
+		<ColumnDefinition Width="10"/>
+		<ColumnDefinition Width="Auto"/>
+		<ColumnDefinition Width="10"/>
+		<ColumnDefinition Width="Auto"/>
+		<ColumnDefinition Width="10"/>
+		<ColumnDefinition Width="Auto"/>
+	</Grid.ColumnDefinitions>
+	<Grid.RowDefinitions>
+		<RowDefinition Height="Auto"/>
+	</Grid.RowDefinitions>
+	<Label Grid.Row="0" Grid.Column="0" Padding="0" Background="Orange" VerticalAlignment="Top" >0</Label>
+	<Label Grid.Row="0" Grid.Column="2" Padding="10" Background="Orange" VerticalAlignment="Top">10</Label>
+	<Label Grid.Row="0" Grid.Column="4" Padding="20,5" Background="Orange" VerticalAlignment="Top">20,5</Label>
+	<Label Grid.Row="0" Grid.Column="6" Padding="0,10,20,30" Background="Orange" VerticalAlignment="Top">0,10,20,30</Label>
+  </Grid>
+
+  <TextBlock Margin="0,5">Margin</TextBlock>
+
+  <Grid TextElement.FontWeight="Normal">
+	<Grid.ColumnDefinitions>
+		<ColumnDefinition Width="Auto"/>
+		<ColumnDefinition Width="10"/>
+		<ColumnDefinition Width="Auto"/>
+		<ColumnDefinition Width="10"/>
+		<ColumnDefinition Width="Auto"/>
+		<ColumnDefinition Width="10"/>
+		<ColumnDefinition Width="Auto"/>
+	</Grid.ColumnDefinitions>
+	<Grid.RowDefinitions>
+		<RowDefinition Height="Auto"/>
+	</Grid.RowDefinitions>
+	<Border Grid.Row="0" Grid.Column="0" BorderBrush="Black" BorderThickness="1" VerticalAlignment="Top">
+		<Label Margin="0" Background="Aqua">0</Label>
+	</Border>
+	<Border Grid.Row="0" Grid.Column="2" BorderBrush="Black" BorderThickness="1" VerticalAlignment="Top">
+		<Label Margin="10" Background="Aqua">10</Label>
+	</Border>
+	<Border Grid.Row="0" Grid.Column="4" BorderBrush="Black" BorderThickness="1" VerticalAlignment="Top">
+		<Label Margin="20,-5" Background="Aqua">20,-5</Label>
+	</Border>
+	<Border Grid.Row="0" Grid.Column="6" BorderBrush="Black" BorderThickness="1" VerticalAlignment="Top">
+		<Label Margin="0,10,20,30" Background="Aqua">0,10,20,30</Label>
+	</Border>
+  </Grid>
+</StackPanel>

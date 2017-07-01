@@ -1,0 +1,9 @@
+lowercase
+denormalize
+unicode
+radoteur
+ok
+python
+labyrinthe
+vietnamese
+wildcard

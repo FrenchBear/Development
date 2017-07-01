@@ -1,0 +1,4 @@
+VBGROUP 5.0
+StartupProject=TestMain.vbp
+Project=ComposantCRA.vbp
+Project=ComposantEH.vbp

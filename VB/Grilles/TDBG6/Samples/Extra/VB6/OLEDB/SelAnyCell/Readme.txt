@@ -1,0 +1,1 @@
+This sample shows how you can create the illusion of selecting individual cells (similar to Excel)  The grid 6 has a new RefreshCell method that can repaint only one cell so there is no need for an API call (as for grid 5)

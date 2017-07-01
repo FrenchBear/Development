@@ -1,0 +1,51 @@
+[Setup Wizard Template]
+TemplateDate=19/11/97 22:00:19
+
+[Sélectionner le projet et les options]
+txtProjFile=D:\Microbsoft\Editeur de liste de champs\EditLC.vbp
+chkProjRebuild=0
+optBldSetup=False
+chkIncludeDEP=0
+optInternet=True
+optDEPOnly=False
+
+[Méthode de distribution]
+optFloppyTarg=False
+optSingleDirTarg=False
+optMultDirTarg=False
+
+[Emplacement de distribution Internet]
+cboFloppyDrives=0
+cboFloppyDriveSize=0
+txtDirTarget=D:\Microbsoft\Editeur de liste de champs\Install\
+
+[Coffret Internet]
+optRemoteSite=False
+optLocalSite=True
+txtLocalSite=http://athos/vbcabs/
+Object0=docEditLC
+Object1=
+docEditLC=False|False
+
+[Accès aux données]
+chkUseJet=1
+chkUseODBC=0
+Isam0=
+
+[Composants serveurs ActiveX]
+File1=
+
+[Confirmer les dépendances]
+File1=
+
+[Application ActiveX partagée]
+optDeployApplication=False
+optDeployShared=True
+optRemoteServer1=True
+optRemoteServer0=False
+
+[Récapitulatif des fichiers]
+File1="C:\WIN95\SYSTEM\VB5FR.dll",True,"",,True
+File2="C:\WIN95\SYSTEM\MSVBVM50.dll",True,"$(WinSysPathSysFile)",$(DLLSelfRegister),False
+File3="F:\vb5\SETUPKIT\KITFIL32\SYS32\AsycFilt.dll",True,"$(WinSysPathSysFile)",,False
+File4="D:\Microbsoft\Editeur de liste de champs\EditLC.exe",True,"$(WinSysPath)",$(EXESelfRegister),True

@@ -1,0 +1,25 @@
+Begin3
+
+Title:          RaWriteNT
+
+Version:        1.0
+
+Entered-date:   24AUG99
+
+Description:    A "port" of RaWrite that works under MS Windows NT(TM)
+
+Keywords:       rawrite, bootdisk, rawritent
+
+Author:         Dan (cppace@earthlink.net)
+
+Maintained-by:  Dan (cppace@earthlink.net)
+
+Primary-site:   Metalab.unc.edu/???/rawritent.zip
+
+Alternate-site: http://altern.org/danf/rawritent.zip
+
+Platforms:      Microsoft Windows NT(TM)
+
+Copying-policy: GPL
+
+End

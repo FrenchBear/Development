@@ -1,0 +1,56 @@
+APEX SOFTWARE CORPORATION LICENSE AGREEMENT
+
+
+DO NOT USE THIS PRODUCT UNTIL LICENSEE CAREFULLY READS THE FOLLOWING TERMS AND CONDITIONS.  USING THIS PRODUCT INDICATES THAT THE SINGLE END-USER OF THIS SOFTWARE (THE "LICENSEE") ACCEPTS THESE TERMS AND CONDITIONS.  IF LICENSEE OBJECTS TO ANY TERM OR CONDITION, THEN IMMEDIATELY RETURN THIS PRODUCT TO THE PLACE OF PURCHASE.
+
+
+ENTIRE AGREEMENT
+
+Licensee acknowledges that Licensee has read this agreement and understands this agreement (the "Agreement") is the final, complete and exclusive statement of the entire agreement between APEX Software Corporation ("APEX") and Licensee.  This Agreement supersedes any prior and contemporaneous proposals, purchase orders, advertisements, and all other communications in relation to the subject matter of this agreement, whether oral or written.  No terms or conditions, other than those contained in this Agreement, and no other understanding or agreement which in any way modifies these terms and conditions, shall be binding upon APEX unless made by a written agreement, executed by duly authorized representatives of both APEX and Licensee.
+
+
+LICENSED SOFTWARE AND DOCUMENTATION LICENSE
+
+1.      APEX hereby grants Licensee a non-exclusive and non-transferable license to use the enclosed or installed computer software (the "Licensed Software") and the associated printed or electronic documentation (the "Documentation"), subject to the limitations set forth in this Agreement (the "License").  Licensee may use the Licensed Software only on one central processing unit with one input terminal.  All right, title and interest to the Licensed Software and the Documentation are, and shall remain, in APEX or APEX's licensors, as the case may be.  Licensee have no right of access to the source code of the Licensed Software.  Licensee is not entitled to updates or upgrades of the Licensed Software or Documentation.  
+
+        LICENSE PERIOD:  The Licensee is granted the License for a period of only thirty (30) days after installation (the "Evaluation Period").  After the Evaluation Period, the Licensee shall either (i) delete the Licensed Software and the Documentation from the Central Processing Unit, or (ii) contact APEX or one of its authorized dealers to purchase and extend the license period to a perpetual license, subject to the same terms and limitations set forth in this Agreement for the License.
+
+2.      Licensee may not alter, assign, create derivative works, decompile, disassemble, distribute, lease, modify, reverse engineer, sublicense, transfer or translate in any way the Licensed Software or Documentation (except as specifically and expressly provided below for "redistributable files"); provided, however, that Licensee may permanently and simultaneously transfer all of the Licensed Software, Documentation and the License if: a) Licensee delivers to the transferee the Licensed Software and Documentation; b) notify APEX in writing of such transfer; and c) destroy any archival/backup copy.  Licensee agrees that the transferee must expressly accept all terms and conditions of this Agreement. 
+
+3.      Licensee MAY NOT COPY the Licensed Software or Documentation (except as specifically and expressly provided below for "redistributable files"); provided, however, that Licensee may make one (1) copy of the Licensed Software and the associated electronic documentation for archival/backup purposes.  
+
+4.      Licensee may create application software using the Licensed Software, including the trade secrets and confidential information of APEX, and Licensee may incorporate in such application software, in executable form, those files identified in the Documentation as "redistributable files."  Licensee MAY NOT distribute the Licensed Software, in any format, to other users for development or compiling purposes. In particular, if Licensee creates a control using the Licensed Software as a constituent control, Licensee MAY NOT distribute the control created with the Licensed Software (in any format) to users for development purposes.
+
+5.      If either the Licensed Software or Documentation is used in any way not expressly and specifically permitted by this License, then the License shall immediately terminate.  Upon the termination of the License, Licensee shall thereafter make no further use of the Licensed Software or Documentation, and Licensee shall return to APEX all licensed materials, postage prepaid.  
+
+
+WARRANTIES
+
+1.      LIMITED WARRANTY ON DISTRIBUTION MEDIA.  For a period of thirty (30) days following the date of delivery of the Licensed Software and Documentation to Licensee as the original licensee, if evidenced by Licensee's receipt as such, (the "Warranty Period") APEX warrants the DISTRIBUTION MEDIA (the "Media"), such as diskettes or CDs, on which the Licensed Software is embodied to be free from defects in materials and workmanship under normal use.  The warranty is personal to Licensee, and no warranty is made to Licensee's transferees.  Any implied warranties of merchantability or fitness for a particular purpose for the media are limited in duration to the Warranty Period, after which time all warranties, of whatever nature, are specifically disclaimed. 
+
+2.      NO WARRANTY ON LICENSED SOFTWARE OR DOCUMENTATION.  APEX licenses the Licensed Software and Documentation solely on an "AS IS" basis without warranties of any kind, such as warranties of merchantability or fitness for any particular purpose.  The entire risk of quality and performance is with Licensee.  The Software and Documentation are not represented to be error-free.  If either the License Software, Documentation or both prove to be defective, Licensee assumes the entire cost of all servicing, correction or repair. 
+
+3.      The foregoing warranty gives Licensee specific legal rights, and Licensee may also have other rights which vary from state to state.  Some states do not allow the limitation or exclusion of implied warranties, so the above limitations may not apply to Licensee.
+
+
+REMEDY FOR DEFECTIVE MEDIA
+
+Licensee's sole and exclusive remedy in the event of a defect in a warranted item is expressly limited to replacement of the defective media.  To receive a replacement, Licensee must send the defective media, with proof of purchase, to APEX at 4516 Henry Street, Pittsburgh, PA 15213-3785, postage pre-paid and postmarked within the Warranty Period.  In no event shall APEX be liable for any other obligations or liabilities including, but not limited to, liability for damages (whether general or special, direct or indirect, consequential, incidental, exemplary), or for any claim for the loss of profits, business or information, or damage to good will even if APEX has been advised of the possibility of such damages.  In any event, APEX's maximum liability shall be limited to the amount of the purchase price.  
+
+Some states do not allow the limitation or exclusion of incidental or consequential damages, so the above limitations may not apply to Licensee.
+
+
+U.S. GOVERNMENT RESTRICTED RIGHTS LEGEND
+
+The Licensed Software and Documentation have been developed exclusively at private expense, and are provided with RESTRICTED RIGHTS.  Use, duplication or disclosure by the Government is subject to restrictions as set forth in subparagraph (c)(1)(ii) of the Rights in Technical Data and Computer Licensed Software clause at DFARS 252.227-7013.  APEX is the Contractor, and is located at 4516 Henry Street, Pittsburgh, PA 15213-3785, (412) 681-4343.
+
+
+MISCELLANEOUS
+
+This Agreement shall be considered severable, and if for any reason any term or condition is determined to be invalid, illegal or unenforceable under current or future law, such invalidity shall not impair the operation of, or otherwise effect, the valid terms and conditions of this Agreement, so long as the intent of this Agreement is maintained.
+
+This Agreement shall be governed by, construed and enforced in accordance with the laws of the Commonwealth of Pennsylvania, with the exception of its conflict of law provisions.  The parties consent to the personal jurisdiction of the Commonwealth of Pennsylvania and agree that any legal proceedings arising out of this Agreement shall be conducted solely in such Commonwealth.
+
+No action, regardless of form, arising out of this Agreement may be brought by either party more than one (1) year after a claim has accrued.
+
+Copyright (C) 1991, 1998 APEX Software Corporation.  All rights reserved

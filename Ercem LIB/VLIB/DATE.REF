@@ -1,0 +1,3 @@
+/* date.ref */
+void today(char *,char *,char *);
+char *datefr(void);

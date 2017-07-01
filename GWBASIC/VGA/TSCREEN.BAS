@@ -1,0 +1,12 @@
+10 SCREEN 12
+20 dx = 10: dy = 10:c = 4
+30 FOR i = 0 TO 639 STEP dx
+40 LINE (i, 0)-STEP(0, 480), c
+50 NEXT
+60 LINE (639, 0)-STEP(0, 480), c
+70 FOR i = 0 TO 479 STEP dy
+80 LINE (0, i)-STEP(640, 0), c
+90 NEXT
+100 LINE (0, 479)-STEP(640, 0), c
+110 a$ = INPUT$(1)
+

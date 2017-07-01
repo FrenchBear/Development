@@ -1,0 +1,417 @@
+*       *********************************************************
+*       *                                                         
+*       * 12/08/2004            P1_TOP.MPR              23:56:02  
+*       *                                                         
+*       *********************************************************
+*       *                                                         
+*       * Pierre VIOLENT                                          
+*       *                                                         
+*       * Copyright (C) 2004 ES                                   
+*       * Adresse                                                 
+*       * Ville,     Code posta                                   
+*       * Pays                                              
+*       *                                                         
+*       * Description:                                            
+*       * Ce programme a été généré automatiquement par GENMENU.     
+*       *                                                         
+*       *********************************************************
+
+* To attach this menu to your Top-Level form, 
+* call it from the Init event of the form:
+
+* Syntax: DO <mprname> WITH <oFormRef> [,<cMenuname>|<lRename>][<lUniquePopups>]
+
+*	oFormRef - form object reference (THIS)
+*	cMenuname - name for menu (this is required for Append menus - see below)
+*	lRename - renames Name property of your form
+*	lUniquePopups - determines whether to generate unique ids for popup names
+			
+* 	example:
+
+*	PROCEDURE Init
+*		DO mymenu.mpr WITH THIS,.T.
+*	ENDPROC
+
+* Use the optional 2nd parameter if you plan on running multiple instances
+* of your Top-Level form. The preferred method is to create an empty string
+* variable and pass it by reference so you can receive the form name after
+* the MPR file is run. You can later use this reference to destroy the menu.
+
+*	PROCEDURE Init
+*		LOCAL cGetMenuName
+*		cGetMenuName = ""
+*		DO mymenu.mpr WITH THIS, m.cGetMenuName
+*	ENDPROC
+
+* The logical lRename parameter will change the name property of your 
+* form to the same name given the menu and may cause conflicts in your 
+* code if you directly reference the form by name.
+
+* You will also need to remove the menu when the form is destroyed so that it does 
+* not remain in memory unless you wish to reactivate it later in a new form.
+
+* If you passed the optional lRename parameter as .T. as in the above example, 
+* you can easily remove the menu in the form's Destroy event as shown below.
+* This strategy is ideal when using multiple instances of Top-Level forms.
+
+*	example:
+
+*	PROCEDURE Destroy
+*		RELEASE MENU (THIS.Name) EXTENDED
+*	ENDPROC
+
+* Using Append/Before/After location options:
+
+*   You might want to append a menu to an existing Top-Level form by setting 
+*   the Location option in the General Options dialog. In order to do this, you 
+*   must pass the name of the menu in which to attach the new one. The second
+*   parameter is required here. If you originally created the menu with the lRename 
+*   parameter = .T., then you can update the menu with code similar to the following:
+
+*	example:
+
+*	DO mymenu2.mpr WITH THISFORM,THISFORM.name
+*
+* Using lUniquePopups:
+
+*   If you are running this menu multiple times in your application, such as in multiple 
+*   instances of the same top-level form, you should pass .T. to the lUniquePopups 
+*   parameter so that unique popup names are generated to avoid possible conflicts.
+
+*	example:
+
+*	PROCEDURE Init
+*		DO mymenu.mpr WITH THIS,.T.,.T.
+*	ENDPROC
+*
+* Note: Parm4-Parm9 are not reserved and freely available for use with your menu code.
+*
+
+LPARAMETERS oFormRef, getMenuName, lUniquePopups, parm4, parm5, parm6, parm7, parm8, parm9
+LOCAL cMenuName, nTotPops, a_menupops, cTypeParm2, cSaveFormName
+IF TYPE("m.oFormRef") # "O" OR ;
+  LOWER(m.oFormRef.BaseClass) # 'form' OR ;
+  m.oFormRef.ShowWindow # 2
+	MESSAGEBOX([Ce menu ne peut être appelé que depuis un formulaire de premier niveau. Vérifiez que la propriété ShowWindow de votre formulaire a la valeur 2. Lisez la section d'en-tête du fichier MPR du menu pour plus d'informations.])
+	RETURN
+ENDIF
+m.cTypeParm2 = TYPE("m.getMenuName")
+m.cMenuName = SYS(2015)
+m.cSaveFormName = m.oFormRef.Name
+IF m.cTypeParm2 = "C" OR (m.cTypeParm2 = "L" AND m.getMenuName)
+	m.oFormRef.Name = m.cMenuName
+ENDIF
+IF m.cTypeParm2 = "C" AND !EMPTY(m.getMenuName)
+	m.cMenuName = m.getMenuName
+ENDIF
+DIMENSION a_menupops[9]
+IF TYPE("m.lUniquePopups")="L" AND m.lUniquePopups
+	FOR nTotPops = 1 TO ALEN(a_menupops)
+		a_menupops[m.nTotPops]= SYS(2015)
+	ENDFOR
+ELSE
+	a_menupops[1]="_mfile"
+	a_menupops[2]="_medit"
+	a_menupops[3]="_mtools"
+	a_menupops[4]="_mmacros"
+	a_menupops[5]="_merrorlog"
+	a_menupops[6]="_mprog"
+	a_menupops[7]="_mfave"
+	a_menupops[8]="_mwindow"
+	a_menupops[9]="_msystem"
+ENDIF
+
+
+*       *********************************************************
+*       *                                                         
+*       *                    Code d'installation                  
+*       *                                                         
+*       *********************************************************
+*
+
+* This file is a generated, framework-enabling component
+* created by APPBUILDER
+* (c) Microsoft Corporation
+
+
+#INCLUDE [..\P1_APP.H]
+
+*       *********************************************************
+*       *                                                         
+*       *                    Définition du menu                   
+*       *                                                         
+*       *********************************************************
+*
+
+DEFINE MENU (m.cMenuName) IN (m.oFormRef.Name) BAR
+
+DEFINE PAD _msm_file OF (m.cMenuName) PROMPT "\<Fichier" COLOR SCHEME 3 ;
+	NEGOTIATE  LEFT, NONE ;
+	KEY ALT+F, ""
+DEFINE PAD _msm_edit OF (m.cMenuName) PROMPT "\<Modifier" COLOR SCHEME 3 ;
+	KEY ALT+E, ""
+DEFINE PAD _msm_tools OF (m.cMenuName) PROMPT "\<Outils" COLOR SCHEME 3 ;
+	KEY ALT+T, ""
+DEFINE PAD _msm_prog OF (m.cMenuName) PROMPT "\<Programme" COLOR SCHEME 3 ;
+	NEGOTIATE  MIDDLE, NONE ;
+	KEY ALT+P, ""
+DEFINE PAD _msm_fave OF (m.cMenuName) PROMPT "\<Favoris" COLOR SCHEME 3 ;
+	KEY ALT+A, "ALT+A"
+DEFINE PAD _msm_windo OF (m.cMenuName) PROMPT "\<Fenêtre" COLOR SCHEME 3 ;
+	NEGOTIATE  RIGHT, NONE ;
+	KEY ALT+W, ""
+DEFINE PAD _msm_systm OF (m.cMenuName) PROMPT "\<Aide" COLOR SCHEME 3 ;
+	KEY ALT+H, ""
+ON PAD _msm_file OF (m.cMenuName) ACTIVATE POPUP (a_menupops[1])
+ON PAD _msm_edit OF (m.cMenuName) ACTIVATE POPUP (a_menupops[2])
+ON PAD _msm_tools OF (m.cMenuName) ACTIVATE POPUP (a_menupops[3])
+ON PAD _msm_prog OF (m.cMenuName) ACTIVATE POPUP (a_menupops[6])
+ON PAD _msm_fave OF (m.cMenuName) ACTIVATE POPUP (a_menupops[7])
+ON PAD _msm_windo OF (m.cMenuName) ACTIVATE POPUP (a_menupops[8])
+ON PAD _msm_systm OF (m.cMenuName) ACTIVATE POPUP (a_menupops[9])
+
+DEFINE POPUP (a_menupops[1]) MARGIN RELATIVE SHADOW COLOR SCHEME 4
+DEFINE BAR 1 OF (a_menupops[1]) PROMPT "\<Nouveau..."
+DEFINE BAR 2 OF (a_menupops[1]) PROMPT "\<Ouvrir..."
+DEFINE BAR 3 OF (a_menupops[1]) PROMPT "\<Fermer" ;
+	SKIP FOR TYPE("_SCREEN.Activeform") # "O" OR _SCREEN.ActiveForm.ShowWindow = 2
+DEFINE BAR 4 OF (a_menupops[1]) PROMPT "\-"
+DEFINE BAR 5 OF (a_menupops[1]) PROMPT "\<Enregistrer" ;
+	SKIP FOR EMPTY(AUSED(latemp))
+DEFINE BAR 6 OF (a_menupops[1]) PROMPT "\<Annuler" ;
+	SKIP FOR EMPTY(AUSED(latemp))
+DEFINE BAR 7 OF (a_menupops[1]) PROMPT "\-"
+DEFINE BAR 8 OF (a_menupops[1]) PROMPT "\<Imprimer..." ;
+	SKIP FOR EMPTY(AUSED(latemp))
+DEFINE BAR 9 OF (a_menupops[1]) PROMPT "\<Imprimer les états..."
+DEFINE BAR 10 OF (a_menupops[1]) PROMPT "Mise en \<page...."
+DEFINE BAR 11 OF (a_menupops[1]) PROMPT "\-"
+DEFINE BAR 12 OF (a_menupops[1]) PROMPT "\<Démarrage rapide..."
+DEFINE BAR 13 OF (a_menupops[1]) PROMPT "\<Accès utilisateur..."
+DEFINE BAR 14 OF (a_menupops[1]) PROMPT "\-"
+DEFINE BAR 15 OF (a_menupops[1]) PROMPT "\<Quitter"
+ON SELECTION BAR 1 OF (a_menupops[1]) APP_GLOBAL.DoNewOpen(.T.)
+ON SELECTION BAR 2 OF (a_menupops[1]) APP_GLOBAL.DoNewOpen()
+ON SELECTION BAR 3 OF (a_menupops[1]) IIF(APP_GLOBAL.QueryDataSessionUnload(),APP_GLOBAL.ReleaseForm(),.T.)
+ON SELECTION BAR 5 OF (a_menupops[1]) APP_GLOBAL.DataUpdate()
+ON SELECTION BAR 6 OF (a_menupops[1]) APP_GLOBAL.DataRevert()
+ON SELECTION BAR 8 OF (a_menupops[1]) APP_GLOBAL.DoTableOutput()
+ON SELECTION BAR 9 OF (a_menupops[1]) APP_GLOBAL.DoReportDialog()
+ON SELECTION BAR 10 OF (a_menupops[1]) SET PRINTER TO NAME (SYS(1037))
+ON SELECTION BAR 12 OF (a_menupops[1]) APP_GLOBAL.DoStartupForm()
+ON SELECTION BAR 13 OF (a_menupops[1]) IIF(APP_GLOBAL.ReleaseForms(),IIF(APP_GLOBAL.SetCurrentUser(.T.),.T., APP_GLOBAL.Release()),.T.)
+ON SELECTION BAR 15 OF (a_menupops[1]) APP_GLOBAL.Release()
+
+DEFINE POPUP (a_menupops[2]) MARGIN RELATIVE SHADOW COLOR SCHEME 4
+DEFINE BAR _med_undo OF (a_menupops[2]) PROMPT "\<Annuler" ;
+	KEY CTRL+Z, "Ctrl+Z"
+DEFINE BAR _med_redo OF (a_menupops[2]) PROMPT "\<Répéter" ;
+	KEY CTRL+R, "Ctrl+R"
+DEFINE BAR _med_sp100 OF (a_menupops[2]) PROMPT "\-"
+DEFINE BAR _med_cut OF (a_menupops[2]) PROMPT "\<Couper" ;
+	KEY CTRL+X, "Ctrl+X"
+DEFINE BAR _med_copy OF (a_menupops[2]) PROMPT "Co\<pier" ;
+	KEY CTRL+C, "Ctrl+C"
+DEFINE BAR _med_paste OF (a_menupops[2]) PROMPT "C\<oller" ;
+	KEY CTRL+V, "Ctrl+V"
+DEFINE BAR _med_clear OF (a_menupops[2]) PROMPT "E\<ffacer"
+DEFINE BAR _med_sp200 OF (a_menupops[2]) PROMPT "\-"
+DEFINE BAR _med_slcta OF (a_menupops[2]) PROMPT "Sélectio\<nner tout" ;
+	KEY CTRL+A, "Ctrl+A"
+DEFINE BAR _med_sp300 OF (a_menupops[2]) PROMPT "\-"
+DEFINE BAR _med_find OF (a_menupops[2]) PROMPT "\<Rechercher..." ;
+	KEY CTRL+F, "Ctrl+F"
+DEFINE BAR _med_finda OF (a_menupops[2]) PROMPT "Chercher à \<nouveau" ;
+	KEY CTRL+G, "Ctrl+G"
+DEFINE BAR _med_repl OF (a_menupops[2]) PROMPT "R\<emplacer..." ;
+	KEY CTRL+L, "Ctrl+L"
+
+DEFINE POPUP (a_menupops[3]) MARGIN RELATIVE SHADOW COLOR SCHEME 4
+DEFINE BAR 1 OF (a_menupops[3]) PROMPT "M\<acros..."
+DEFINE BAR 2 OF (a_menupops[3]) PROMPT "Journaux des \<erreurs"
+DEFINE BAR 3 OF (a_menupops[3]) PROMPT "\-"
+DEFINE BAR 4 OF (a_menupops[3]) PROMPT "\<Options..."
+DEFINE BAR 5 OF (a_menupops[3]) PROMPT "\<Modifier mot de passe..."
+ON BAR 1 OF (a_menupops[3]) ACTIVATE POPUP (a_menupops[4])
+ON BAR 2 OF (a_menupops[3]) ACTIVATE POPUP (a_menupops[5])
+ON SELECTION BAR 4 OF (a_menupops[3]) APP_GLOBAL.DoOptionsDialog()
+ON SELECTION BAR 5 OF (a_menupops[3]) APP_GLOBAL.DoChangePassword()
+
+DEFINE POPUP (a_menupops[4]) MARGIN RELATIVE SHADOW COLOR SCHEME 4
+DEFINE BAR 1 OF (a_menupops[4]) PROMPT "\<Enregistrer une macro"
+DEFINE BAR 2 OF (a_menupops[4]) PROMPT "\<Effacer macros"
+DEFINE BAR 3 OF (a_menupops[4]) PROMPT "\<Enregistrer macros par défaut"
+DEFINE BAR 4 OF (a_menupops[4]) PROMPT "Restaurer macros par \<défaut"
+ON SELECTION BAR 1 OF (a_menupops[4]) KEYBOARD ("{"+SET("MACKEY")+"}")
+ON SELECTION BAR 2 OF (a_menupops[4]) CLEAR MACROS
+ON SELECTION BAR 3 OF (a_menupops[4]) APP_GLOBAL.SetMacros(.T.)
+ON SELECTION BAR 4 OF (a_menupops[4]) APP_GLOBAL.SetMacros()
+
+DEFINE POPUP (a_menupops[5]) MARGIN RELATIVE SHADOW COLOR SCHEME 4
+DEFINE BAR 1 OF (a_menupops[5]) PROMPT "\<Afficher journal des erreurs"
+DEFINE BAR 2 OF (a_menupops[5]) PROMPT "\<Exporter journal"
+DEFINE BAR 3 OF (a_menupops[5]) PROMPT "\<Vider journal"
+ON SELECTION BAR 1 OF (a_menupops[5]) APP_GLOBAL.DisplayErrorLog()
+ON SELECTION BAR 2 OF (a_menupops[5]) APP_GLOBAL.ExportErrorLog()
+ON SELECTION BAR 3 OF (a_menupops[5]) APP_GLOBAL.PurgeErrorLog()
+
+DEFINE POPUP (a_menupops[6]) MARGIN RELATIVE SHADOW COLOR SCHEME 4
+DEFINE BAR _mpr_do OF (a_menupops[6]) PROMPT "\<Faire..."
+DEFINE BAR _mpr_cancl OF (a_menupops[6]) PROMPT "\<Annuler"
+DEFINE BAR _mpr_resum OF (a_menupops[6]) PROMPT "\<Reprendre"
+DEFINE BAR _mpr_suspend OF (a_menupops[6]) PROMPT "\<Suspendre"
+DEFINE BAR _mpr_compl OF (a_menupops[6]) PROMPT "C\<ompiler..."
+DEFINE BAR 6 OF (a_menupops[6]) PROMPT "\-"
+DEFINE BAR 7 OF (a_menupops[6]) PROMPT "Déb\<ogueur"
+DEFINE BAR 8 OF (a_menupops[6]) PROMPT "Session de \<données"
+DEFINE BAR 9 OF (a_menupops[6]) PROMPT "Fenêtre Co\<mmande"
+DEFINE BAR 10 OF (a_menupops[6]) PROMPT "\-"
+DEFINE BAR _mtl_browser OF (a_menupops[6]) PROMPT "\<Explorateur de classes"
+ON SELECTION BAR 7 OF (a_menupops[6]) DEBUG
+ON SELECTION BAR 8 OF (a_menupops[6]) APP_GLOBAL.ActivateSystemWindow("View")
+ON SELECTION BAR 9 OF (a_menupops[6]) APP_GLOBAL.ActivateSystemWindow("Command")
+
+DEFINE POPUP (a_menupops[7]) MARGIN RELATIVE SHADOW COLOR SCHEME 4
+DEFINE BAR 1 OF (a_menupops[7]) PROMPT "\<Ajouter aux favoris..."
+DEFINE BAR 2 OF (a_menupops[7]) PROMPT "\<Effacer favoris"
+DEFINE BAR 3 OF (a_menupops[7]) PROMPT "\-"
+ON SELECTION BAR 1 OF (a_menupops[7]) APP_GLOBAL.DoStartupForm(.T.)
+ON SELECTION BAR 2 OF (a_menupops[7]) APP_GLOBAL.ClearFavorites()
+
+DEFINE POPUP (a_menupops[8]) MARGIN RELATIVE SHADOW COLOR SCHEME 4
+DEFINE BAR 1 OF (a_menupops[8]) PROMPT "\<Cascade"
+DEFINE BAR _mwi_arran OF (a_menupops[8]) PROMPT "\<Réorganiser"
+DEFINE BAR _mwi_rotat OF (a_menupops[8]) PROMPT "C\<ycle" ;
+	KEY CTRL+F1, "CTRL+F1"
+ON SELECTION BAR 1 OF (a_menupops[8]) APP_GLOBAL.CascadeAll()
+
+DEFINE POPUP (a_menupops[9]) MARGIN RELATIVE SHADOW COLOR SCHEME 4
+DEFINE BAR 1 OF (a_menupops[9]) PROMPT "\<Aide" ;
+	KEY F1, "F1"
+DEFINE BAR 2 OF (a_menupops[9]) PROMPT "\-"
+DEFINE BAR 3 OF (a_menupops[9]) PROMPT "\<À propos de "+APP_GLOBAL.cCaption+"..."
+ON SELECTION BAR 1 OF (a_menupops[9]) APP_GLOBAL.DoHelp()
+ON SELECTION BAR 3 OF (a_menupops[9]) APP_GLOBAL.DoAboutBox()
+
+ON SELECTION POPUP (a_menupops[1]) MESSAGEBOX(APP_FEATURE_NOT_AVAILABLE_LOC,0,APP_GLOBAL.cCaption)
+ON SELECTION POPUP (a_menupops[2]) MESSAGEBOX(APP_FEATURE_NOT_AVAILABLE_LOC,0,APP_GLOBAL.cCaption)
+ON SELECTION POPUP (a_menupops[3]) MESSAGEBOX(APP_FEATURE_NOT_AVAILABLE_LOC,0,APP_GLOBAL.cCaption)
+ON SELECTION POPUP (a_menupops[5]) MESSAGEBOX(APP_FEATURE_NOT_AVAILABLE_LOC,0,APP_GLOBAL.cCaption)
+ON SELECTION POPUP (a_menupops[6]) MESSAGEBOX(APP_FEATURE_NOT_AVAILABLE_LOC,0,APP_GLOBAL.cCaption)
+ON SELECTION POPUP (a_menupops[7]) MESSAGEBOX(APP_FEATURE_NOT_AVAILABLE_LOC,0,APP_GLOBAL.cCaption)
+ON SELECTION POPUP (a_menupops[8]) MESSAGEBOX(APP_FEATURE_NOT_AVAILABLE_LOC,0,APP_GLOBAL.cCaption)
+ON SELECTION POPUP (a_menupops[9]) MESSAGEBOX(APP_FEATURE_NOT_AVAILABLE_LOC,0,APP_GLOBAL.cCaption)
+ACTIVATE MENU (m.cMenuName) NOWAIT
+
+IF m.cTypeParm2 = "C"
+	m.getMenuName = m.cMenuName
+	m.oFormRef.Name = m.cSaveFormName 
+ENDIF
+
+
+*       *********************************************************
+*       *                                                         
+*       *                 Code final et procédures                
+*       *                                                         
+*       *********************************************************
+*
+
+*!*		a_menupops[1]="_mfile"
+*!*		a_menupops[2]="_medit"
+*!*		a_menupops[3]="_mtools"
+*!*		a_menupops[4]="_mmacros"
+*!*		a_menupops[5]="_merrorlog"
+*!*		a_menupops[6]="_mprog"
+*!*		a_menupops[7]="_mfave"
+*!*		a_menupops[8]="_mwindow"
+*!*		a_menupops[9]="_msystem"
+
+IF VERSION(2) = 0
+   RELEASE PAD _msm_prog OF (m.cMenuName)
+   RELEASE POPUP (a_menupops[6]) EXTENDED
+ENDIF
+
+* the program pad items, above, always get
+* get released in runtime, but some items
+* specific to application state may be
+* released or disabled as you choose:
+IF NOT APP_GLOBAL.lReleaseUnusedMenuItems
+
+
+  IF EMPTY(APP_GLOBAL.cHelpFile)
+     SET SKIP OF BAR 1 OF (a_menupops[9]) .T.
+  ENDIF
+
+  IF EMPTY(APP_GLOBAL.cOptionsDialogClass)
+     SET SKIP OF BAR 4 OF (a_menupops[3]) .T.
+  ENDIF
+
+  IF EMPTY(APP_GLOBAL.cAboutBoxClass)
+     SET SKIP OF BAR 3 OF (a_menupops[9]) .T.
+  ENDIF
+
+  IF EMPTY(APP_GLOBAL.cStartupFormClass) ;
+     OR NOT (APP_GLOBAL.lStartupForm)
+     SET SKIP OF BAR 12 OF (a_menupops[1]) .T.
+  ENDIF
+
+  IF NOT APP_GLOBAL.lUserPreferences
+     SET SKIP OF BAR 13 OF (a_menupops[1]) .T.
+     SET SKIP OF BAR 5 OF (a_menupops[3]) .T.
+  ENDIF
+
+
+ELSE
+
+  * if you prefer
+
+  IF EMPTY(APP_GLOBAL.cOptionsDialogClass)
+     RELEASE BAR 4 OF (a_menupops[3])
+  ENDIF
+
+  IF EMPTY(APP_GLOBAL.cAboutBoxClass)
+     RELEASE BAR 3 OF (a_menupops[9])
+  ENDIF
+
+  IF EMPTY(APP_GLOBAL.cHelpFile)
+     RELEASE BAR 1 OF (a_menupops[9])
+     RELEASE BAR 2 OF (a_menupops[9])
+  ENDIF
+
+  IF NOT APP_GLOBAL.lUserPreferences
+     RELEASE BAR 13 OF (a_menupops[1])
+     RELEASE BAR 14 OF (a_menupops[1])
+     RELEASE BAR 5 OF (a_menupops[3])
+  ENDIF
+
+  IF EMPTY(APP_GLOBAL.cStartupFormClass) ;
+     OR NOT (APP_GLOBAL.lStartupForm)
+     RELEASE BAR 12 OF (a_menupops[1])
+  ENDIF
+
+ENDIF
+
+IF (NOT APP_GLOBAL.lReadEvents)
+   * unlikely for a Replace-style menu unless
+   * Top Form, but the following
+   * isn't safe in a non-ReadEvents environment
+   RELEASE BAR 1 OF (a_menupops[3])
+   RELEASE POPUP (a_menupops[4])
+ELSE
+   APP_GLOBAL.cMacroPopupName = (a_menupops[4])
+   APP_GLOBAL.SetMacros() && refresh to appropriately disable bar
+   IF EMPTY(SET("MACKEY"))
+      RELEASE BAR 1 OF (a_menupops[4])
+   ENDIF
+ENDIF
+
+
+IF (NOT APP_GLOBAL.lFavorites)
+  RELEASE PAD _msm_Fave OF (m.cMenuName)
+  RELEASE POPUP (a_menupops[7]) EXTENDED
+  ACTI MENU (m.cMenuName) NOWAIT
+ELSE
+  APP_GLOBAL.cFavoritePopupName = (a_menupops[7])
+  APP_GLOBAL.RefreshFavoritePopup()
+ENDIF
+

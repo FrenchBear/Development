@@ -1,0 +1,46 @@
+[Disk 1]
+\masters\common\SETUP.EXE
+\masters\common\VSHARE.38_
+\masters\common\STKIT416.DL_
+\masters\common\VB40016.DL_
+\masters\common\OC25.DL_
+\masters\common\OC25FRA.DL_
+\masters\common\OLE2.DL_
+\masters\common\TYPELIB.DL_
+\masters\common\OLE2DISP.DL_
+\masters\common\OLE2PROX.DL_
+\masters\common\OLE2CONV.DL_
+\masters\hacmod\SETUP1.EX_
+
+[Disk 2]
+\masters\common\STORAGE.DL_
+\masters\common\COMPOBJ.DL_
+\masters\common\OLE2.RE_
+\masters\common\OLE2NLS.DL_
+\masters\common\STDOLE.TL_
+\masters\common\SCP.DL_
+\masters\common\VAEN21.OL_
+\masters\common\CTL3DV2.DL_
+\masters\common\VB4FR16.DL_
+\masters\common\SS16x25.OC_
+\masters\common\THREED16.OC_
+\masters\common\COMDLG16.OC_
+\masters\common\TABCTL16.OC_
+\masters\common\DWSTG16.OC_
+\masters\common\VSVIEW16.OC_
+\masters\hacmod\HACMOD.EX_
+\masters\hacmod\HACMOD.HL_
+\masters\hacmod\HACMODUL.IN_
+\masters\hacmod\TEXTES.IN_
+\masters\hacmod\GENMOD.EX_
+\masters\hacmod\GENMOD.HL_
+\masters\hacmod\GENMSET.LS_
+\masters\hacmod\GENMOD.LS_
+
+[Disk 3]
+\masters\instmod\$setup1.ex_
+\masters\common\$setup.exe
+\masters\common\$VSHARE.38_
+\masters\common\$STKIT41.DL_
+\masters\common\hc.ex_
+\masters\common\hc.er_

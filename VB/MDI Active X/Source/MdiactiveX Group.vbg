@@ -1,0 +1,4 @@
+VBGROUP 5.0
+StartupProject=DEMO\MDIActiveXDemo.vbp
+Project=DEMO\TesteMDIActiveX.vbp
+Project=MDIActiveX.vbp

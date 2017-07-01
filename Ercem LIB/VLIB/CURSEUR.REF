@@ -1,0 +1,5 @@
+/* curseur.ref */
+void ve_gotolc(int2,int2);
+void ve_wherelc(int2 *,int2 *);
+void ve_curseur(int2);
+int2 ve_qcurseur(void);

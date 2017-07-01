@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="XMLContainer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="MultiField">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="Field">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute name="Name" type="xs:string" use="required" />
+                      <xs:attribute name="Type" type="XMLTypesEnum" use="required" />
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="v" type="xs:integer" use="required" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="v" type="xs:integer" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="XMLTypesEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="String" />
+      <xs:enumeration value="Boolean" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

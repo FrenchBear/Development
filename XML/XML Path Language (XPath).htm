@@ -1,0 +1,2463 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0026)http://www.w3.org/TR/xpath -->
+<HTML><HEAD><TITLE>XML Path Language (XPath)</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1"><LINK 
+href="XML Path Language (XPath)_fichiers/W3C-REC.css" type=text/css 
+rel=stylesheet>
+<STYLE type=text/css>CODE {
+	FONT-FAMILY: monospace
+}
+</STYLE>
+
+<META content="MSHTML 6.00.2800.1400" name=GENERATOR></HEAD>
+<BODY>
+<DIV class=head><A href="http://www.w3.org/"><IMG height=48 alt=W3C 
+src="XML Path Language (XPath)_fichiers/w3c_home" width=72></A> 
+<H1>XML Path Language (XPath)<BR>Version 1.0</H1>
+<H2>W3C Recommendation 16 November 1999</H2>
+<DL>
+  <DT>This version: 
+  <DD><A 
+  href="http://www.w3.org/TR/1999/REC-xpath-19991116">http://www.w3.org/TR/1999/REC-xpath-19991116</A> 
+  <BR>(available in <A 
+  href="http://www.w3.org/TR/1999/REC-xpath-19991116.xml">XML</A> or <A 
+  href="http://www.w3.org/TR/1999/REC-xpath-19991116.html">HTML</A>) 
+  <DT>Latest version: 
+  <DD><A href="http://www.w3.org/TR/xpath">http://www.w3.org/TR/xpath</A> <BR>
+  <DT>Previous versions: 
+  <DD><A 
+  href="http://www.w3.org/TR/1999/PR-xpath-19991008">http://www.w3.org/TR/1999/PR-xpath-19991008</A> 
+  <BR><A 
+  href="http://www.w3.org/1999/08/WD-xpath-19990813">http://www.w3.org/1999/08/WD-xpath-19990813</A> 
+  <BR><A 
+  href="http://www.w3.org/1999/07/WD-xpath-19990709">http://www.w3.org/1999/07/WD-xpath-19990709</A> 
+  <BR><A 
+  href="http://www.w3.org/TR/1999/WD-xslt-19990421">http://www.w3.org/TR/1999/WD-xslt-19990421</A> 
+  <BR>
+  <DT>Editors: 
+  <DD>James Clark <A href="mailto:jjc@jclark.com">mailto:jjc@jclark.com</A> 
+  <BR>Steve DeRose (Inso Corp. and Brown University) <A 
+  href="mailto:Steven_DeRose@Brown.edu">mailto:Steven_DeRose@Brown.edu</A> 
+  <BR></DD></DL>
+<P class=copyright><A 
+href="http://www.w3.org/Consortium/Legal/ipr-notice.html#Copyright">Copyright</A> 
+&nbsp;©&nbsp; 1999 <A href="http://www.w3.org/">W3C</A><SUP>®</SUP> (<A 
+href="http://www.lcs.mit.edu/">MIT</A>, <A 
+href="http://www.inria.fr/">INRIA</A>, <A 
+href="http://www.keio.ac.jp/">Keio</A>), All Rights Reserved. W3C <A 
+href="http://www.w3.org/Consortium/Legal/ipr-notice.html#Legal_Disclaimer">liability</A>, 
+<A 
+href="http://www.w3.org/Consortium/Legal/ipr-notice.html#W3C_Trademarks">trademark</A>, 
+<A href="http://www.w3.org/Consortium/Legal/copyright-documents.html">document 
+use</A> and <A 
+href="http://www.w3.org/Consortium/Legal/copyright-software.html">software 
+licensing</A> rules apply. </P>
+<HR title="Separator for header">
+</DIV>
+<H2><A name=abstract>Abstract</A> </H2>
+<P>XPath is a language for addressing parts of an XML document, designed to be 
+used by both XSLT and XPointer.</P>
+<H2><A name=status>Status of this document</A> </H2>
+<P>This document has been reviewed by W3C Members and other interested parties 
+and has been endorsed by the Director as a W3C <A 
+href="http://www.w3.org/Consortium/Process/#RecsW3C">Recommendation</A>. It is a 
+stable document and may be used as reference material or cited as a normative 
+reference from other documents. W3C's role in making the Recommendation is to 
+draw attention to the specification and to promote its widespread deployment. 
+This enhances the functionality and interoperability of the Web.</P>
+<P>The list of known errors in this specification is available at <A 
+href="http://www.w3.org/1999/11/REC-xpath-19991116-errata">http://www.w3.org/1999/11/REC-xpath-19991116-errata</A>.</P>
+<P>Comments on this specification may be sent to <A 
+href="mailto:www-xpath-comments@w3.org">www-xpath-comments@w3.org</A>; <A 
+href="http://lists.w3.org/Archives/Public/www-xpath-comments">archives</A> of 
+the comments are available.</P>
+<P>The English version of this specification is the only normative version. 
+However, for translations of this document, see <A 
+href="http://www.w3.org/Style/XSL/translations.html">http://www.w3.org/Style/XSL/translations.html</A>.</P>
+<P>A list of current W3C Recommendations and other technical documents can be 
+found at <A href="http://www.w3.org/TR">http://www.w3.org/TR</A>.</P>
+<P>This specification is joint work of the XSL Working Group and the XML Linking 
+Working Group and so is part of the <A 
+href="http://www.w3.org/Style/Activity">W3C Style activity</A> and of the <A 
+href="http://www.w3.org/XML/Activity">W3C XML activity</A>.</P>
+<H2><A name=contents>Table of contents</A> </H2>1 <A 
+href="http://www.w3.org/TR/xpath#section-Introduction">Introduction</A> <BR>2 <A 
+href="http://www.w3.org/TR/xpath#location-paths">Location Paths</A> 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;2.1 <A 
+href="http://www.w3.org/TR/xpath#section-Location-Steps">Location Steps</A> 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;2.2 <A 
+href="http://www.w3.org/TR/xpath#axes">Axes</A> <BR>&nbsp;&nbsp;&nbsp;&nbsp;2.3 
+<A href="http://www.w3.org/TR/xpath#node-tests">Node Tests</A> 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;2.4 <A 
+href="http://www.w3.org/TR/xpath#predicates">Predicates</A> 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;2.5 <A 
+href="http://www.w3.org/TR/xpath#path-abbrev">Abbreviated Syntax</A> <BR>3 <A 
+href="http://www.w3.org/TR/xpath#section-Expressions">Expressions</A> 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;3.1 <A 
+href="http://www.w3.org/TR/xpath#section-Basics">Basics</A> 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;3.2 <A 
+href="http://www.w3.org/TR/xpath#section-Function-Calls">Function Calls</A> 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;3.3 <A 
+href="http://www.w3.org/TR/xpath#node-sets">Node-sets</A> 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;3.4 <A 
+href="http://www.w3.org/TR/xpath#booleans">Booleans</A> 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;3.5 <A 
+href="http://www.w3.org/TR/xpath#numbers">Numbers</A> 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;3.6 <A 
+href="http://www.w3.org/TR/xpath#strings">Strings</A> 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;3.7 <A 
+href="http://www.w3.org/TR/xpath#exprlex">Lexical Structure</A> <BR>4 <A 
+href="http://www.w3.org/TR/xpath#corelib">Core Function Library</A> 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;4.1 <A 
+href="http://www.w3.org/TR/xpath#section-Node-Set-Functions">Node Set 
+Functions</A> <BR>&nbsp;&nbsp;&nbsp;&nbsp;4.2 <A 
+href="http://www.w3.org/TR/xpath#section-String-Functions">String Functions</A> 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;4.3 <A 
+href="http://www.w3.org/TR/xpath#section-Boolean-Functions">Boolean 
+Functions</A> <BR>&nbsp;&nbsp;&nbsp;&nbsp;4.4 <A 
+href="http://www.w3.org/TR/xpath#section-Number-Functions">Number Functions</A> 
+<BR>5 <A href="http://www.w3.org/TR/xpath#data-model">Data Model</A> 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;5.1 <A 
+href="http://www.w3.org/TR/xpath#root-node">Root Node</A> 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;5.2 <A 
+href="http://www.w3.org/TR/xpath#element-nodes">Element Nodes</A> 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.2.1 <A 
+href="http://www.w3.org/TR/xpath#unique-id">Unique IDs</A> 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;5.3 <A 
+href="http://www.w3.org/TR/xpath#attribute-nodes">Attribute Nodes</A> 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;5.4 <A 
+href="http://www.w3.org/TR/xpath#namespace-nodes">Namespace Nodes</A> 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;5.5 <A 
+href="http://www.w3.org/TR/xpath#section-Processing-Instruction-Nodes">Processing 
+Instruction Nodes</A> <BR>&nbsp;&nbsp;&nbsp;&nbsp;5.6 <A 
+href="http://www.w3.org/TR/xpath#section-Comment-Nodes">Comment Nodes</A> 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;5.7 <A 
+href="http://www.w3.org/TR/xpath#section-Text-Nodes">Text Nodes</A> <BR>6 <A 
+href="http://www.w3.org/TR/xpath#section-Conformance">Conformance</A> <BR>
+<H3>Appendices</H3>A <A 
+href="http://www.w3.org/TR/xpath#section-References">References</A> 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;A.1 <A 
+href="http://www.w3.org/TR/xpath#section-Normative-References">Normative 
+References</A> <BR>&nbsp;&nbsp;&nbsp;&nbsp;A.2 <A 
+href="http://www.w3.org/TR/xpath#section-Other-References">Other References</A> 
+<BR>B <A href="http://www.w3.org/TR/xpath#infoset">XML Information Set 
+Mapping</A> (Non-Normative)<BR>
+<HR>
+
+<H2><A name=section-Introduction></A>1 Introduction</H2>
+<P>XPath is the result of an effort to provide a common syntax and semantics for 
+functionality shared between XSL Transformations <A 
+href="http://www.w3.org/TR/xpath#XSLT">[XSLT]</A> and XPointer <A 
+href="http://www.w3.org/TR/xpath#XPTR">[XPointer]</A>. The primary purpose of 
+XPath is to address parts of an XML <A 
+href="http://www.w3.org/TR/xpath#XML">[XML]</A> document. In support of this 
+primary purpose, it also provides basic facilities for manipulation of strings, 
+numbers and booleans. XPath uses a compact, non-XML syntax to facilitate use of 
+XPath within URIs and XML attribute values. XPath operates on the abstract, 
+logical structure of an XML document, rather than its surface syntax. XPath gets 
+its name from its use of a path notation as in URLs for navigating through the 
+hierarchical structure of an XML document.</P>
+<P>In addition to its use for addressing, XPath is also designed so that it has 
+a natural subset that can be used for matching (testing whether or not a node 
+matches a pattern); this use of XPath is described in <A 
+href="http://www.w3.org/TR/WD-xslt#patterns">XSLT</A>.</P>
+<P>XPath models an XML document as a tree of nodes. There are different types of 
+nodes, including element nodes, attribute nodes and text nodes. XPath defines a 
+way to compute a <A 
+href="http://www.w3.org/TR/xpath#dt-string-value">string-value</A> for each type 
+of node. Some types of nodes also have names. XPath fully supports XML 
+Namespaces <A href="http://www.w3.org/TR/xpath#XMLNAMES">[XML Names]</A>. Thus, 
+the name of a node is modeled as a pair consisting of a local part and a 
+possibly null namespace URI; this is called an <A 
+href="http://www.w3.org/TR/xpath#dt-expanded-name">expanded-name</A>. The data 
+model is described in detail in <A 
+href="http://www.w3.org/TR/xpath#data-model">[<B>5 Data Model</B>]</A>.</P>
+<P>The primary syntactic construct in XPath is the expression. An expression 
+matches the production <A href="http://www.w3.org/TR/xpath#NT-Expr">Expr</A>. An 
+expression is evaluated to yield an object, which has one of the following four 
+basic types:</P>
+<UL>
+  <LI>node-set (an unordered collection of nodes without duplicates) 
+  <LI>boolean (true or false) 
+  <LI>number (a floating-point number) 
+  <LI>string (a sequence of UCS characters) </LI></UL>
+<P>Expression evaluation occurs with respect to a context. XSLT and XPointer 
+specify how the context is determined for XPath expressions used in XSLT and 
+XPointer respectively. The context consists of:</P>
+<UL>
+  <LI>a node (<A name=dt-context-node></A>the <B>context node</B>) 
+  <LI>a pair of non-zero positive integers (<A name=dt-context-position></A>the 
+  <B>context position</B> and <A name=dt-context-size></A>the <B>context 
+  size</B>) 
+  <LI>a set of variable bindings 
+  <LI>a function library 
+  <LI>the set of namespace declarations in scope for the expression </LI></UL>
+<P>The context position is always less than or equal to the context size.</P>
+<P>The variable bindings consist of a mapping from variable names to variable 
+values. The value of a variable is an object, which can be of any of the types 
+that are possible for the value of an expression, and may also be of additional 
+types not specified here.</P>
+<P>The function library consists of a mapping from function names to functions. 
+Each function takes zero or more arguments and returns a single result. This 
+document defines a core function library that all XPath implementations must 
+support (see <A href="http://www.w3.org/TR/xpath#corelib">[<B>4 Core Function 
+Library</B>]</A>). For a function in the core function library, arguments and 
+result are of the four basic types. Both XSLT and XPointer extend XPath by 
+defining additional functions; some of these functions operate on the four basic 
+types; others operate on additional data types defined by XSLT and XPointer.</P>
+<P>The namespace declarations consist of a mapping from prefixes to namespace 
+URIs.</P>
+<P>The variable bindings, function library and namespace declarations used to 
+evaluate a subexpression are always the same as those used to evaluate the 
+containing expression. The context node, context position, and context size used 
+to evaluate a subexpression are sometimes different from those used to evaluate 
+the containing expression. Several kinds of expressions change the context node; 
+only predicates change the context position and context size (see <A 
+href="http://www.w3.org/TR/xpath#predicates">[<B>2.4 Predicates</B>]</A>). When 
+the evaluation of a kind of expression is described, it will always be 
+explicitly stated if the context node, context position, and context size change 
+for the evaluation of subexpressions; if nothing is said about the context node, 
+context position, and context size, they remain unchanged for the evaluation of 
+subexpressions of that kind of expression.</P>
+<P>XPath expressions often occur in XML attributes. The grammar specified in 
+this section applies to the attribute value after XML 1.0 normalization. So, for 
+example, if the grammar uses the character <CODE>&lt;</CODE>, this must not 
+appear in the XML source as <CODE>&lt;</CODE> but must be quoted according to 
+XML 1.0 rules by, for example, entering it as <CODE>&amp;lt;</CODE>. Within 
+expressions, literal strings are delimited by single or double quotation marks, 
+which are also used to delimit XML attributes. To avoid a quotation mark in an 
+expression being interpreted by the XML processor as terminating the attribute 
+value the quotation mark can be entered as a character reference 
+(<CODE>&amp;quot;</CODE> or <CODE>&amp;apos;</CODE>). Alternatively, the 
+expression can use single quotation marks if the XML attribute is delimited with 
+double quotation marks or vice-versa.</P>
+<P>One important kind of expression is a location path. A location path selects 
+a set of nodes relative to the context node. The result of evaluating an 
+expression that is a location path is the node-set containing the nodes selected 
+by the location path. Location paths can recursively contain expressions that 
+are used to filter sets of nodes. A location path matches the production <A 
+href="http://www.w3.org/TR/xpath#NT-LocationPath">LocationPath</A>.</P>
+<P>In the following grammar, the non-terminals <A 
+href="http://www.w3.org/TR/REC-xml-names#NT-QName">QName</A> and <A 
+href="http://www.w3.org/TR/REC-xml-names#NT-NCName">NCName</A> are defined in <A 
+href="http://www.w3.org/TR/xpath#XMLNAMES">[XML Names]</A>, and <A 
+href="http://www.w3.org/TR/REC-xml#NT-S">S</A> is defined in <A 
+href="http://www.w3.org/TR/xpath#XML">[XML]</A>. The grammar uses the same EBNF 
+notation as <A href="http://www.w3.org/TR/xpath#XML">[XML]</A> (except that 
+grammar symbols always have initial capital letters).</P>
+<P>Expressions are parsed by first dividing the character string to be parsed 
+into tokens and then parsing the resulting sequence of tokens. Whitespace can be 
+freely used between tokens. The tokenization process is described in <A 
+href="http://www.w3.org/TR/xpath#exprlex">[<B>3.7 Lexical 
+Structure</B>]</A>.</P>
+<H2><A name=location-paths></A>2 Location Paths</H2>
+<P>Although location paths are not the most general grammatical construct in the 
+language (a <A 
+href="http://www.w3.org/TR/xpath#NT-LocationPath">LocationPath</A> is a special 
+case of an <A href="http://www.w3.org/TR/xpath#NT-Expr">Expr</A>), they are the 
+most important construct and will therefore be described first.</P>
+<P>Every location path can be expressed using a straightforward but rather 
+verbose syntax. There are also a number of syntactic abbreviations that allow 
+common cases to be expressed concisely. This section will explain the semantics 
+of location paths using the unabbreviated syntax. The abbreviated syntax will 
+then be explained by showing how it expands into the unabbreviated syntax (see 
+<A href="http://www.w3.org/TR/xpath#path-abbrev">[<B>2.5 Abbreviated 
+Syntax</B>]</A>).</P>
+<P>Here are some examples of location paths using the unabbreviated syntax:</P>
+<UL>
+  <LI>
+  <P><CODE>child::para</CODE> selects the <CODE>para</CODE> element children of 
+  the context node</P>
+  <LI>
+  <P><CODE>child::*</CODE> selects all element children of the context node</P>
+  <LI>
+  <P><CODE>child::text()</CODE> selects all text node children of the context 
+  node</P>
+  <LI>
+  <P><CODE>child::node()</CODE> selects all the children of the context node, 
+  whatever their node type</P>
+  <LI>
+  <P><CODE>attribute::name</CODE> selects the <CODE>name</CODE> attribute of the 
+  context node</P>
+  <LI>
+  <P><CODE>attribute::*</CODE> selects all the attributes of the context 
+node</P>
+  <LI>
+  <P><CODE>descendant::para</CODE> selects the <CODE>para</CODE> element 
+  descendants of the context node</P>
+  <LI>
+  <P><CODE>ancestor::div</CODE> selects all <CODE>div</CODE> ancestors of the 
+  context node</P>
+  <LI>
+  <P><CODE>ancestor-or-self::div</CODE> selects the <CODE>div</CODE> ancestors 
+  of the context node and, if the context node is a <CODE>div</CODE> element, 
+  the context node as well</P>
+  <LI>
+  <P><CODE>descendant-or-self::para</CODE> selects the <CODE>para</CODE> element 
+  descendants of the context node and, if the context node is a 
+  <CODE>para</CODE> element, the context node as well</P>
+  <LI>
+  <P><CODE>self::para</CODE> selects the context node if it is a 
+  <CODE>para</CODE> element, and otherwise selects nothing</P>
+  <LI>
+  <P><CODE>child::chapter/descendant::para</CODE> selects the <CODE>para</CODE> 
+  element descendants of the <CODE>chapter</CODE> element children of the 
+  context node</P>
+  <LI>
+  <P><CODE>child::*/child::para</CODE> selects all <CODE>para</CODE> 
+  grandchildren of the context node</P>
+  <LI>
+  <P><CODE>/</CODE> selects the document root (which is always the parent of the 
+  document element)</P>
+  <LI>
+  <P><CODE>/descendant::para</CODE> selects all the <CODE>para</CODE> elements 
+  in the same document as the context node</P>
+  <LI>
+  <P><CODE>/descendant::olist/child::item</CODE> selects all the 
+  <CODE>item</CODE> elements that have an <CODE>olist</CODE> parent and that are 
+  in the same document as the context node</P>
+  <LI>
+  <P><CODE>child::para[position()=1]</CODE> selects the first <CODE>para</CODE> 
+  child of the context node</P>
+  <LI>
+  <P><CODE>child::para[position()=last()]</CODE> selects the last 
+  <CODE>para</CODE> child of the context node</P>
+  <LI>
+  <P><CODE>child::para[position()=last()-1]</CODE> selects the last but one 
+  <CODE>para</CODE> child of the context node</P>
+  <LI>
+  <P><CODE>child::para[position()&gt;1]</CODE> selects all the <CODE>para</CODE> 
+  children of the context node other than the first <CODE>para</CODE> child of 
+  the context node</P>
+  <LI>
+  <P><CODE>following-sibling::chapter[position()=1]</CODE> selects the next 
+  <CODE>chapter</CODE> sibling of the context node</P>
+  <LI>
+  <P><CODE>preceding-sibling::chapter[position()=1]</CODE> selects the previous 
+  <CODE>chapter</CODE> sibling of the context node</P>
+  <LI>
+  <P><CODE>/descendant::figure[position()=42]</CODE> selects the forty-second 
+  <CODE>figure</CODE> element in the document</P>
+  <LI>
+  <P><CODE>/child::doc/child::chapter[position()=5]/child::section[position()=2]</CODE> 
+  selects the second <CODE>section</CODE> of the fifth <CODE>chapter</CODE> of 
+  the <CODE>doc</CODE> document element</P>
+  <LI>
+  <P><CODE>child::para[attribute::type="warning"]</CODE> selects all 
+  <CODE>para</CODE> children of the context node that have a <CODE>type</CODE> 
+  attribute with value <CODE>warning</CODE> </P>
+  <LI>
+  <P><CODE>child::para[attribute::type='warning'][position()=5]</CODE> selects 
+  the fifth <CODE>para</CODE> child of the context node that has a 
+  <CODE>type</CODE> attribute with value <CODE>warning</CODE> </P>
+  <LI>
+  <P><CODE>child::para[position()=5][attribute::type="warning"]</CODE> selects 
+  the fifth <CODE>para</CODE> child of the context node if that child has a 
+  <CODE>type</CODE> attribute with value <CODE>warning</CODE> </P>
+  <LI>
+  <P><CODE>child::chapter[child::title='Introduction']</CODE> selects the 
+  <CODE>chapter</CODE> children of the context node that have one or more 
+  <CODE>title</CODE> children with <A 
+  href="http://www.w3.org/TR/xpath#dt-string-value">string-value</A> equal to 
+  <CODE>Introduction</CODE> </P>
+  <LI>
+  <P><CODE>child::chapter[child::title]</CODE> selects the <CODE>chapter</CODE> 
+  children of the context node that have one or more <CODE>title</CODE> 
+  children</P>
+  <LI>
+  <P><CODE>child::*[self::chapter or self::appendix]</CODE> selects the 
+  <CODE>chapter</CODE> and <CODE>appendix</CODE> children of the context 
+node</P>
+  <LI>
+  <P><CODE>child::*[self::chapter or self::appendix][position()=last()]</CODE> 
+  selects the last <CODE>chapter</CODE> or <CODE>appendix</CODE> child of the 
+  context node</P></LI></UL>
+<P>There are two kinds of location path: relative location paths and absolute 
+location paths.</P>
+<P>A relative location path consists of a sequence of one or more location steps 
+separated by <CODE>/</CODE>. The steps in a relative location path are composed 
+together from left to right. Each step in turn selects a set of nodes relative 
+to a context node. An initial sequence of steps is composed together with a 
+following step as follows. The initial sequence of steps selects a set of nodes 
+relative to a context node. Each node in that set is used as a context node for 
+the following step. The sets of nodes identified by that step are unioned 
+together. The set of nodes identified by the composition of the steps is this 
+union. For example, <CODE>child::div/child::para</CODE> selects the 
+<CODE>para</CODE> element children of the <CODE>div</CODE> element children of 
+the context node, or, in other words, the <CODE>para</CODE> element 
+grandchildren that have <CODE>div</CODE> parents.</P>
+<P>An absolute location path consists of <CODE>/</CODE> optionally followed by a 
+relative location path. A <CODE>/</CODE> by itself selects the root node of the 
+document containing the context node. If it is followed by a relative location 
+path, then the location path selects the set of nodes that would be selected by 
+the relative location path relative to the root node of the document containing 
+the context node.</P>
+<H5>Location Paths</H5>
+<TABLE class=scrap>
+  <TBODY>
+  <TR vAlign=baseline>
+    <TD><A name=NT-LocationPath></A>[1]&nbsp;&nbsp;&nbsp;</TD>
+    <TD>LocationPath</TD>
+    <TD>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</TD>
+    <TD><A 
+      href="http://www.w3.org/TR/xpath#NT-RelativeLocationPath">RelativeLocationPath</A></TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>| <A 
+      href="http://www.w3.org/TR/xpath#NT-AbsoluteLocationPath">AbsoluteLocationPath</A></TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD><A name=NT-AbsoluteLocationPath></A>[2]&nbsp;&nbsp;&nbsp;</TD>
+    <TD>AbsoluteLocationPath</TD>
+    <TD>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</TD>
+    <TD>'/' <A 
+      href="http://www.w3.org/TR/xpath#NT-RelativeLocationPath">RelativeLocationPath</A>?</TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>| <A 
+      href="http://www.w3.org/TR/xpath#NT-AbbreviatedAbsoluteLocationPath">AbbreviatedAbsoluteLocationPath</A></TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD><A name=NT-RelativeLocationPath></A>[3]&nbsp;&nbsp;&nbsp;</TD>
+    <TD>RelativeLocationPath</TD>
+    <TD>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</TD>
+    <TD><A href="http://www.w3.org/TR/xpath#NT-Step">Step</A></TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>| <A 
+      href="http://www.w3.org/TR/xpath#NT-RelativeLocationPath">RelativeLocationPath</A> 
+      '/' <A href="http://www.w3.org/TR/xpath#NT-Step">Step</A></TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>| <A 
+      href="http://www.w3.org/TR/xpath#NT-AbbreviatedRelativeLocationPath">AbbreviatedRelativeLocationPath</A></TD>
+    <TD></TD></TR></TBODY></TABLE>
+<H3><A name=section-Location-Steps></A>2.1 Location Steps</H3>
+<P>A location step has three parts:</P>
+<UL>
+  <LI>
+  <P>an axis, which specifies the tree relationship between the nodes selected 
+  by the location step and the context node,</P>
+  <LI>
+  <P>a node test, which specifies the node type and <A 
+  href="http://www.w3.org/TR/xpath#dt-expanded-name">expanded-name</A> of the 
+  nodes selected by the location step, and</P>
+  <LI>
+  <P>zero or more predicates, which use arbitrary expressions to further refine 
+  the set of nodes selected by the location step.</P></LI></UL>
+<P>The syntax for a location step is the axis name and node test separated by a 
+double colon, followed by zero or more expressions each in square brackets. For 
+example, in <CODE>child::para[position()=1]</CODE>, <CODE>child</CODE> is the 
+name of the axis, <CODE>para</CODE> is the node test and 
+<CODE>[position()=1]</CODE> is a predicate.</P>
+<P>The node-set selected by the location step is the node-set that results from 
+generating an initial node-set from the axis and node-test, and then filtering 
+that node-set by each of the predicates in turn.</P>
+<P>The initial node-set consists of the nodes having the relationship to the 
+context node specified by the axis, and having the node type and <A 
+href="http://www.w3.org/TR/xpath#dt-expanded-name">expanded-name</A> specified 
+by the node test. For example, a location step <CODE>descendant::para</CODE> 
+selects the <CODE>para</CODE> element descendants of the context node: 
+<CODE>descendant</CODE> specifies that each node in the initial node-set must be 
+a descendant of the context; <CODE>para</CODE> specifies that each node in the 
+initial node-set must be an element named <CODE>para</CODE>. The available axes 
+are described in <A href="http://www.w3.org/TR/xpath#axes">[<B>2.2 
+Axes</B>]</A>. The available node tests are described in <A 
+href="http://www.w3.org/TR/xpath#node-tests">[<B>2.3 Node Tests</B>]</A>. The 
+meaning of some node tests is dependent on the axis.</P>
+<P>The initial node-set is filtered by the first predicate to generate a new 
+node-set; this new node-set is then filtered using the second predicate, and so 
+on. The final node-set is the node-set selected by the location step. The axis 
+affects how the expression in each predicate is evaluated and so the semantics 
+of a predicate is defined with respect to an axis. See <A 
+href="http://www.w3.org/TR/xpath#predicates">[<B>2.4 Predicates</B>]</A>.</P>
+<H5>Location Steps</H5>
+<TABLE class=scrap>
+  <TBODY>
+  <TR vAlign=baseline>
+    <TD><A name=NT-Step></A>[4]&nbsp;&nbsp;&nbsp;</TD>
+    <TD>Step</TD>
+    <TD>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</TD>
+    <TD><A 
+      href="http://www.w3.org/TR/xpath#NT-AxisSpecifier">AxisSpecifier</A> <A 
+      href="http://www.w3.org/TR/xpath#NT-NodeTest">NodeTest</A> <A 
+      href="http://www.w3.org/TR/xpath#NT-Predicate">Predicate</A>*</TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>| <A 
+      href="http://www.w3.org/TR/xpath#NT-AbbreviatedStep">AbbreviatedStep</A></TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD><A name=NT-AxisSpecifier></A>[5]&nbsp;&nbsp;&nbsp;</TD>
+    <TD>AxisSpecifier</TD>
+    <TD>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</TD>
+    <TD><A href="http://www.w3.org/TR/xpath#NT-AxisName">AxisName</A> '::'</TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>| <A 
+      href="http://www.w3.org/TR/xpath#NT-AbbreviatedAxisSpecifier">AbbreviatedAxisSpecifier</A> 
+    </TD>
+    <TD></TD></TR></TBODY></TABLE>
+<H3><A name=axes></A>2.2 Axes</H3>
+<P>The following axes are available:</P>
+<UL>
+  <LI>
+  <P>the <CODE>child</CODE> axis contains the children of the context node</P>
+  <LI>
+  <P>the <CODE>descendant</CODE> axis contains the descendants of the context 
+  node; a descendant is a child or a child of a child and so on; thus the 
+  descendant axis never contains attribute or namespace nodes</P>
+  <LI>
+  <P>the <CODE>parent</CODE> axis contains the <A 
+  href="http://www.w3.org/TR/xpath#dt-parent">parent</A> of the context node, if 
+  there is one</P>
+  <LI>
+  <P>the <CODE>ancestor</CODE> axis contains the ancestors of the context node; 
+  the ancestors of the context node consist of the <A 
+  href="http://www.w3.org/TR/xpath#dt-parent">parent</A> of context node and the 
+  parent's parent and so on; thus, the ancestor axis will always include the 
+  root node, unless the context node is the root node</P>
+  <LI>
+  <P>the <CODE>following-sibling</CODE> axis contains all the following siblings 
+  of the context node; if the context node is an attribute node or namespace 
+  node, the <CODE>following-sibling</CODE> axis is empty</P>
+  <LI>
+  <P>the <CODE>preceding-sibling</CODE> axis contains all the preceding siblings 
+  of the context node; if the context node is an attribute node or namespace 
+  node, the <CODE>preceding-sibling</CODE> axis is empty</P>
+  <LI>
+  <P>the <CODE>following</CODE> axis contains all nodes in the same document as 
+  the context node that are after the context node in document order, excluding 
+  any descendants and excluding attribute nodes and namespace nodes</P>
+  <LI>
+  <P>the <CODE>preceding</CODE> axis contains all nodes in the same document as 
+  the context node that are before the context node in document order, excluding 
+  any ancestors and excluding attribute nodes and namespace nodes</P>
+  <LI>
+  <P>the <CODE>attribute</CODE> axis contains the attributes of the context 
+  node; the axis will be empty unless the context node is an element</P>
+  <LI>
+  <P>the <CODE>namespace</CODE> axis contains the namespace nodes of the context 
+  node; the axis will be empty unless the context node is an element</P>
+  <LI>
+  <P>the <CODE>self</CODE> axis contains just the context node itself</P>
+  <LI>
+  <P>the <CODE>descendant-or-self</CODE> axis contains the context node and the 
+  descendants of the context node</P>
+  <LI>
+  <P>the <CODE>ancestor-or-self</CODE> axis contains the context node and the 
+  ancestors of the context node; thus, the ancestor axis will always include the 
+  root node</P></LI></UL>
+<BLOCKQUOTE><B>NOTE: </B>The <CODE>ancestor</CODE>, <CODE>descendant</CODE>, 
+  <CODE>following</CODE>, <CODE>preceding</CODE> and <CODE>self</CODE> axes 
+  partition a document (ignoring attribute and namespace nodes): they do not 
+  overlap and together they contain all the nodes in the document.</BLOCKQUOTE>
+<H5>Axes</H5>
+<TABLE class=scrap>
+  <TBODY>
+  <TR vAlign=baseline>
+    <TD><A name=NT-AxisName></A>[6]&nbsp;&nbsp;&nbsp;</TD>
+    <TD>AxisName</TD>
+    <TD>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</TD>
+    <TD>'ancestor'</TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>| 'ancestor-or-self'</TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>| 'attribute'</TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>| 'child'</TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>| 'descendant'</TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>| 'descendant-or-self'</TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>| 'following'</TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>| 'following-sibling'</TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>| 'namespace'</TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>| 'parent'</TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>| 'preceding'</TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>| 'preceding-sibling'</TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>| 'self'</TD>
+    <TD></TD></TR></TBODY></TABLE>
+<H3><A name=node-tests></A>2.3 Node Tests</H3>
+<P><A name=dt-principal-node-type></A>Every axis has a <B>principal node 
+type</B>. If an axis can contain elements, then the principal node type is 
+element; otherwise, it is the type of the nodes that the axis can contain. 
+Thus,</P>
+<UL>
+  <LI>For the attribute axis, the principal node type is attribute. 
+  <LI>For the namespace axis, the principal node type is namespace. 
+  <LI>For other axes, the principal node type is element. </LI></UL>
+<P>A node test that is a <A 
+href="http://www.w3.org/TR/REC-xml-names#NT-QName">QName</A> is true if and only 
+if the type of the node (see <A 
+href="http://www.w3.org/TR/xpath#data-model">[<B>5 Data Model</B>]</A>) is the 
+principal node type and has an <A 
+href="http://www.w3.org/TR/xpath#dt-expanded-name">expanded-name</A> equal to 
+the <A href="http://www.w3.org/TR/xpath#dt-expanded-name">expanded-name</A> 
+specified by the <A 
+href="http://www.w3.org/TR/REC-xml-names#NT-QName">QName</A>. For example, 
+<CODE>child::para</CODE> selects the <CODE>para</CODE> element children of the 
+context node; if the context node has no <CODE>para</CODE> children, it will 
+select an empty set of nodes. <CODE>attribute::href</CODE> selects the 
+<CODE>href</CODE> attribute of the context node; if the context node has no 
+<CODE>href</CODE> attribute, it will select an empty set of nodes.</P>
+<P>A <A href="http://www.w3.org/TR/REC-xml-names#NT-QName">QName</A> in the node 
+test is expanded into an <A 
+href="http://www.w3.org/TR/xpath#dt-expanded-name">expanded-name</A> using the 
+namespace declarations from the expression context. This is the same way 
+expansion is done for element type names in start and end-tags except that the 
+default namespace declared with <CODE>xmlns</CODE> is not used: if the <A 
+href="http://www.w3.org/TR/REC-xml-names#NT-QName">QName</A> does not have a 
+prefix, then the namespace URI is null (this is the same way attribute names are 
+expanded). It is an error if the <A 
+href="http://www.w3.org/TR/REC-xml-names#NT-QName">QName</A> has a prefix for 
+which there is no namespace declaration in the expression context.</P>
+<P>A node test <CODE>*</CODE> is true for any node of the principal node type. 
+For example, <CODE>child::*</CODE> will select all element children of the 
+context node, and <CODE>attribute::*</CODE> will select all attributes of the 
+context node.</P>
+<P>A node test can have the form <A 
+href="http://www.w3.org/TR/REC-xml-names#NT-NCName">NCName</A><CODE>:*</CODE>. 
+In this case, the prefix is expanded in the same way as with a <A 
+href="http://www.w3.org/TR/REC-xml-names#NT-QName">QName</A>, using the context 
+namespace declarations. It is an error if there is no namespace declaration for 
+the prefix in the expression context. The node test will be true for any node of 
+the principal type whose <A 
+href="http://www.w3.org/TR/xpath#dt-expanded-name">expanded-name</A> has the 
+namespace URI to which the prefix expands, regardless of the local part of the 
+name.</P>
+<P>The node test <CODE>text()</CODE> is true for any text node. For example, 
+<CODE>child::text()</CODE> will select the text node children of the context 
+node. Similarly, the node test <CODE>comment()</CODE> is true for any comment 
+node, and the node test <CODE>processing-instruction()</CODE> is true for any 
+processing instruction. The <CODE>processing-instruction()</CODE> test may have 
+an argument that is <A href="http://www.w3.org/TR/xpath#NT-Literal">Literal</A>; 
+in this case, it is true for any processing instruction that has a name equal to 
+the value of the <A 
+href="http://www.w3.org/TR/xpath#NT-Literal">Literal</A>.</P>
+<P>A node test <CODE>node()</CODE> is true for any node of any type 
+whatsoever.</P>
+<TABLE class=scrap>
+  <TBODY>
+  <TR vAlign=baseline>
+    <TD><A name=NT-NodeTest></A>[7]&nbsp;&nbsp;&nbsp;</TD>
+    <TD>NodeTest</TD>
+    <TD>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</TD>
+    <TD><A href="http://www.w3.org/TR/xpath#NT-NameTest">NameTest</A></TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>| <A href="http://www.w3.org/TR/xpath#NT-NodeType">NodeType</A> '(' 
+    ')'</TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>| 'processing-instruction' '(' <A 
+      href="http://www.w3.org/TR/xpath#NT-Literal">Literal</A> ')'</TD>
+    <TD></TD></TR></TBODY></TABLE>
+<H3><A name=predicates></A>2.4 Predicates</H3>
+<P>An axis is either a forward axis or a reverse axis. An axis that only ever 
+contains the context node or nodes that are after the context node in <A 
+href="http://www.w3.org/TR/xpath#dt-document-order">document order</A> is a 
+forward axis. An axis that only ever contains the context node or nodes that are 
+before the context node in <A 
+href="http://www.w3.org/TR/xpath#dt-document-order">document order</A> is a 
+reverse axis. Thus, the ancestor, ancestor-or-self, preceding, and 
+preceding-sibling axes are reverse axes; all other axes are forward axes. Since 
+the self axis always contains at most one node, it makes no difference whether 
+it is a forward or reverse axis. <A name=dt-proximity-position></A>The 
+<B>proximity position</B> of a member of a node-set with respect to an axis is 
+defined to be the position of the node in the node-set ordered in document order 
+if the axis is a forward axis and ordered in reverse document order if the axis 
+is a reverse axis. The first position is 1.</P>
+<P>A predicate filters a node-set with respect to an axis to produce a new 
+node-set. For each node in the node-set to be filtered, the <A 
+href="http://www.w3.org/TR/xpath#NT-PredicateExpr">PredicateExpr</A> is 
+evaluated with that node as the context node, with the number of nodes in the 
+node-set as the context size, and with the <A 
+href="http://www.w3.org/TR/xpath#dt-proximity-position">proximity position</A> 
+of the node in the node-set with respect to the axis as the context position; if 
+<A href="http://www.w3.org/TR/xpath#NT-PredicateExpr">PredicateExpr</A> 
+evaluates to true for that node, the node is included in the new node-set; 
+otherwise, it is not included.</P>
+<P>A <A href="http://www.w3.org/TR/xpath#NT-PredicateExpr">PredicateExpr</A> is 
+evaluated by evaluating the <A 
+href="http://www.w3.org/TR/xpath#NT-Expr">Expr</A> and converting the result to 
+a boolean. If the result is a number, the result will be converted to true if 
+the number is equal to the context position and will be converted to false 
+otherwise; if the result is not a number, then the result will be converted as 
+if by a call to the <B><A 
+href="http://www.w3.org/TR/xpath#function-boolean">boolean</A></B> function. 
+Thus a location path <CODE>para[3]</CODE> is equivalent to 
+<CODE>para[position()=3]</CODE>.</P>
+<H5>Predicates</H5>
+<TABLE class=scrap>
+  <TBODY>
+  <TR vAlign=baseline>
+    <TD><A name=NT-Predicate></A>[8]&nbsp;&nbsp;&nbsp;</TD>
+    <TD>Predicate</TD>
+    <TD>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</TD>
+    <TD>'[' <A 
+      href="http://www.w3.org/TR/xpath#NT-PredicateExpr">PredicateExpr</A> 
+']'</TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD><A name=NT-PredicateExpr></A>[9]&nbsp;&nbsp;&nbsp;</TD>
+    <TD>PredicateExpr</TD>
+    <TD>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</TD>
+    <TD><A href="http://www.w3.org/TR/xpath#NT-Expr">Expr</A></TD>
+    <TD></TD></TR></TBODY></TABLE>
+<H3><A name=path-abbrev></A>2.5 Abbreviated Syntax</H3>
+<P>Here are some examples of location paths using abbreviated syntax:</P>
+<UL>
+  <LI>
+  <P><CODE>para</CODE> selects the <CODE>para</CODE> element children of the 
+  context node</P>
+  <LI>
+  <P><CODE>*</CODE> selects all element children of the context node</P>
+  <LI>
+  <P><CODE>text()</CODE> selects all text node children of the context node</P>
+  <LI>
+  <P><CODE>@name</CODE> selects the <CODE>name</CODE> attribute of the context 
+  node</P>
+  <LI>
+  <P><CODE>@*</CODE> selects all the attributes of the context node</P>
+  <LI>
+  <P><CODE>para[1]</CODE> selects the first <CODE>para</CODE> child of the 
+  context node</P>
+  <LI>
+  <P><CODE>para[last()]</CODE> selects the last <CODE>para</CODE> child of the 
+  context node</P>
+  <LI>
+  <P><CODE>*/para</CODE> selects all <CODE>para</CODE> grandchildren of the 
+  context node</P>
+  <LI>
+  <P><CODE>/doc/chapter[5]/section[2]</CODE> selects the second 
+  <CODE>section</CODE> of the fifth <CODE>chapter</CODE> of the <CODE>doc</CODE> 
+  </P>
+  <LI>
+  <P><CODE>chapter//para</CODE> selects the <CODE>para</CODE> element 
+  descendants of the <CODE>chapter</CODE> element children of the context 
+  node</P>
+  <LI>
+  <P><CODE>//para</CODE> selects all the <CODE>para</CODE> descendants of the 
+  document root and thus selects all <CODE>para</CODE> elements in the same 
+  document as the context node</P>
+  <LI>
+  <P><CODE>//olist/item</CODE> selects all the <CODE>item</CODE> elements in the 
+  same document as the context node that have an <CODE>olist</CODE> parent</P>
+  <LI>
+  <P><CODE>.</CODE> selects the context node</P>
+  <LI>
+  <P><CODE>.//para</CODE> selects the <CODE>para</CODE> element descendants of 
+  the context node</P>
+  <LI>
+  <P><CODE>..</CODE> selects the parent of the context node</P>
+  <LI>
+  <P><CODE>../@lang</CODE> selects the <CODE>lang</CODE> attribute of the parent 
+  of the context node</P>
+  <LI>
+  <P><CODE>para[@type="warning"]</CODE> selects all <CODE>para</CODE> children 
+  of the context node that have a <CODE>type</CODE> attribute with value 
+  <CODE>warning</CODE> </P>
+  <LI>
+  <P><CODE>para[@type="warning"][5]</CODE> selects the fifth <CODE>para</CODE> 
+  child of the context node that has a <CODE>type</CODE> attribute with value 
+  <CODE>warning</CODE> </P>
+  <LI>
+  <P><CODE>para[5][@type="warning"]</CODE> selects the fifth <CODE>para</CODE> 
+  child of the context node if that child has a <CODE>type</CODE> attribute with 
+  value <CODE>warning</CODE> </P>
+  <LI>
+  <P><CODE>chapter[title="Introduction"]</CODE> selects the <CODE>chapter</CODE> 
+  children of the context node that have one or more <CODE>title</CODE> children 
+  with <A href="http://www.w3.org/TR/xpath#dt-string-value">string-value</A> 
+  equal to <CODE>Introduction</CODE> </P>
+  <LI>
+  <P><CODE>chapter[title]</CODE> selects the <CODE>chapter</CODE> children of 
+  the context node that have one or more <CODE>title</CODE> children</P>
+  <LI>
+  <P><CODE>employee[@secretary and @assistant]</CODE> selects all the 
+  <CODE>employee</CODE> children of the context node that have both a 
+  <CODE>secretary</CODE> attribute and an <CODE>assistant</CODE> 
+  attribute</P></LI></UL>
+<P>The most important abbreviation is that <CODE>child::</CODE> can be omitted 
+from a location step. In effect, <CODE>child</CODE> is the default axis. For 
+example, a location path <CODE>div/para</CODE> is short for 
+<CODE>child::div/child::para</CODE>.</P>
+<P>There is also an abbreviation for attributes: <CODE>attribute::</CODE> can be 
+abbreviated to <CODE>@</CODE>. For example, a location path 
+<CODE>para[@type="warning"]</CODE> is short for 
+<CODE>child::para[attribute::type="warning"]</CODE> and so selects 
+<CODE>para</CODE> children with a <CODE>type</CODE> attribute with value equal 
+to <CODE>warning</CODE>.</P>
+<P><CODE>//</CODE> is short for <CODE>/descendant-or-self::node()/</CODE>. For 
+example, <CODE>//para</CODE> is short for 
+<CODE>/descendant-or-self::node()/child::para</CODE> and so will select any 
+<CODE>para</CODE> element in the document (even a <CODE>para</CODE> element that 
+is a document element will be selected by <CODE>//para</CODE> since the document 
+element node is a child of the root node); <CODE>div//para</CODE> is short for 
+<CODE>div/descendant-or-self::node()/child::para</CODE> and so will select all 
+<CODE>para</CODE> descendants of <CODE>div</CODE> children.</P>
+<BLOCKQUOTE><B>NOTE: </B>The location path <CODE>//para[1]</CODE> does 
+  <I>not</I> mean the same as the location path 
+  <CODE>/descendant::para[1]</CODE>. The latter selects the first descendant 
+  <CODE>para</CODE> element; the former selects all descendant <CODE>para</CODE> 
+  elements that are the first <CODE>para</CODE> children of their 
+parents.</BLOCKQUOTE>
+<P>A location step of <CODE>.</CODE> is short for <CODE>self::node()</CODE>. 
+This is particularly useful in conjunction with <CODE>//</CODE>. For example, 
+the location path <CODE>.//para</CODE> is short for</P><PRE>self::node()/descendant-or-self::node()/child::para</PRE>
+<P>and so will select all <CODE>para</CODE> descendant elements of the context 
+node.</P>
+<P>Similarly, a location step of <CODE>..</CODE> is short for 
+<CODE>parent::node()</CODE>. For example, <CODE>../title</CODE> is short for 
+<CODE>parent::node()/child::title</CODE> and so will select the 
+<CODE>title</CODE> children of the parent of the context node.</P>
+<H5>Abbreviations</H5>
+<TABLE class=scrap>
+  <TBODY>
+  <TR vAlign=baseline>
+    <TD><A 
+    name=NT-AbbreviatedAbsoluteLocationPath></A>[10]&nbsp;&nbsp;&nbsp;</TD>
+    <TD>AbbreviatedAbsoluteLocationPath</TD>
+    <TD>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</TD>
+    <TD>'//' <A 
+      href="http://www.w3.org/TR/xpath#NT-RelativeLocationPath">RelativeLocationPath</A></TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD><A 
+    name=NT-AbbreviatedRelativeLocationPath></A>[11]&nbsp;&nbsp;&nbsp;</TD>
+    <TD>AbbreviatedRelativeLocationPath</TD>
+    <TD>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</TD>
+    <TD><A 
+      href="http://www.w3.org/TR/xpath#NT-RelativeLocationPath">RelativeLocationPath</A> 
+      '//' <A href="http://www.w3.org/TR/xpath#NT-Step">Step</A></TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD><A name=NT-AbbreviatedStep></A>[12]&nbsp;&nbsp;&nbsp;</TD>
+    <TD>AbbreviatedStep</TD>
+    <TD>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</TD>
+    <TD>'.'</TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>| '..'</TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD><A name=NT-AbbreviatedAxisSpecifier></A>[13]&nbsp;&nbsp;&nbsp;</TD>
+    <TD>AbbreviatedAxisSpecifier</TD>
+    <TD>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</TD>
+    <TD>'@'?</TD>
+    <TD></TD></TR></TBODY></TABLE>
+<H2><A name=section-Expressions></A>3 Expressions</H2>
+<H3><A name=section-Basics></A>3.1 Basics</H3>
+<P>A <A 
+href="http://www.w3.org/TR/xpath#NT-VariableReference">VariableReference</A> 
+evaluates to the value to which the variable name is bound in the set of 
+variable bindings in the context. It is an error if the variable name is not 
+bound to any value in the set of variable bindings in the expression 
+context.</P>
+<P>Parentheses may be used for grouping.</P>
+<TABLE class=scrap>
+  <TBODY>
+  <TR vAlign=baseline>
+    <TD><A name=NT-Expr></A>[14]&nbsp;&nbsp;&nbsp;</TD>
+    <TD>Expr</TD>
+    <TD>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</TD>
+    <TD><A href="http://www.w3.org/TR/xpath#NT-OrExpr">OrExpr</A></TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD><A name=NT-PrimaryExpr></A>[15]&nbsp;&nbsp;&nbsp;</TD>
+    <TD>PrimaryExpr</TD>
+    <TD>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</TD>
+    <TD><A 
+      href="http://www.w3.org/TR/xpath#NT-VariableReference">VariableReference</A></TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>| '(' <A href="http://www.w3.org/TR/xpath#NT-Expr">Expr</A> ')'</TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>| <A href="http://www.w3.org/TR/xpath#NT-Literal">Literal</A></TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>| <A href="http://www.w3.org/TR/xpath#NT-Number">Number</A></TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>| <A 
+    href="http://www.w3.org/TR/xpath#NT-FunctionCall">FunctionCall</A></TD>
+    <TD></TD></TR></TBODY></TABLE>
+<H3><A name=section-Function-Calls></A>3.2 Function Calls</H3>
+<P>A <A href="http://www.w3.org/TR/xpath#NT-FunctionCall">FunctionCall</A> 
+expression is evaluated by using the <A 
+href="http://www.w3.org/TR/xpath#NT-FunctionName">FunctionName</A> to identify a 
+function in the expression evaluation context function library, evaluating each 
+of the <A href="http://www.w3.org/TR/xpath#NT-Argument">Argument</A>s, 
+converting each argument to the type required by the function, and finally 
+calling the function, passing it the converted arguments. It is an error if the 
+number of arguments is wrong or if an argument cannot be converted to the 
+required type. The result of the <A 
+href="http://www.w3.org/TR/xpath#NT-FunctionCall">FunctionCall</A> expression is 
+the result returned by the function.</P>
+<P>An argument is converted to type string as if by calling the <B><A 
+href="http://www.w3.org/TR/xpath#function-string">string</A></B> function. An 
+argument is converted to type number as if by calling the <B><A 
+href="http://www.w3.org/TR/xpath#function-number">number</A></B> function. An 
+argument is converted to type boolean as if by calling the <B><A 
+href="http://www.w3.org/TR/xpath#function-boolean">boolean</A></B> function. An 
+argument that is not of type node-set cannot be converted to a node-set.</P>
+<TABLE class=scrap>
+  <TBODY>
+  <TR vAlign=baseline>
+    <TD><A name=NT-FunctionCall></A>[16]&nbsp;&nbsp;&nbsp;</TD>
+    <TD>FunctionCall</TD>
+    <TD>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</TD>
+    <TD><A href="http://www.w3.org/TR/xpath#NT-FunctionName">FunctionName</A> 
+      '(' ( <A href="http://www.w3.org/TR/xpath#NT-Argument">Argument</A> ( ',' 
+      <A href="http://www.w3.org/TR/xpath#NT-Argument">Argument</A> )* )? ')'</TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD><A name=NT-Argument></A>[17]&nbsp;&nbsp;&nbsp;</TD>
+    <TD>Argument</TD>
+    <TD>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</TD>
+    <TD><A href="http://www.w3.org/TR/xpath#NT-Expr">Expr</A></TD>
+    <TD></TD></TR></TBODY></TABLE>
+<H3><A name=node-sets></A>3.3 Node-sets</H3>
+<P>A location path can be used as an expression. The expression returns the set 
+of nodes selected by the path.</P>
+<P>The <CODE>|</CODE> operator computes the union of its operands, which must be 
+node-sets.</P>
+<P><A href="http://www.w3.org/TR/xpath#NT-Predicate">Predicate</A>s are used to 
+filter expressions in the same way that they are used in location paths. It is 
+an error if the expression to be filtered does not evaluate to a node-set. The 
+<A href="http://www.w3.org/TR/xpath#NT-Predicate">Predicate</A> filters the 
+node-set with respect to the child axis.</P>
+<BLOCKQUOTE><B>NOTE: </B>The meaning of a <A 
+  href="http://www.w3.org/TR/xpath#NT-Predicate">Predicate</A> depends crucially 
+  on which axis applies. For example, <CODE>preceding::foo[1]</CODE> returns the 
+  first <CODE>foo</CODE> element in <I>reverse document order</I>, because the 
+  axis that applies to the <CODE>[1]</CODE> predicate is the preceding axis; by 
+  contrast, <CODE>(preceding::foo)[1]</CODE> returns the first <CODE>foo</CODE> 
+  element in <I>document order</I>, because the axis that applies to the 
+  <CODE>[1]</CODE> predicate is the child axis.</BLOCKQUOTE>
+<P>The <CODE>/</CODE> and <CODE>//</CODE> operators compose an expression and a 
+relative location path. It is an error if the expression does not evaluate to a 
+node-set. The <CODE>/</CODE> operator does composition in the same way as when 
+<CODE>/</CODE> is used in a location path. As in location paths, <CODE>//</CODE> 
+is short for <CODE>/descendant-or-self::node()/</CODE>.</P>
+<P>There are no types of objects that can be converted to node-sets.</P>
+<TABLE class=scrap>
+  <TBODY>
+  <TR vAlign=baseline>
+    <TD><A name=NT-UnionExpr></A>[18]&nbsp;&nbsp;&nbsp;</TD>
+    <TD>UnionExpr</TD>
+    <TD>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</TD>
+    <TD><A href="http://www.w3.org/TR/xpath#NT-PathExpr">PathExpr</A></TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>| <A href="http://www.w3.org/TR/xpath#NT-UnionExpr">UnionExpr</A> '|' 
+      <A href="http://www.w3.org/TR/xpath#NT-PathExpr">PathExpr</A></TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD><A name=NT-PathExpr></A>[19]&nbsp;&nbsp;&nbsp;</TD>
+    <TD>PathExpr</TD>
+    <TD>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</TD>
+    <TD><A 
+    href="http://www.w3.org/TR/xpath#NT-LocationPath">LocationPath</A></TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>| <A href="http://www.w3.org/TR/xpath#NT-FilterExpr">FilterExpr</A></TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>| <A href="http://www.w3.org/TR/xpath#NT-FilterExpr">FilterExpr</A> 
+      '/' <A 
+      href="http://www.w3.org/TR/xpath#NT-RelativeLocationPath">RelativeLocationPath</A></TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>| <A href="http://www.w3.org/TR/xpath#NT-FilterExpr">FilterExpr</A> 
+      '//' <A 
+      href="http://www.w3.org/TR/xpath#NT-RelativeLocationPath">RelativeLocationPath</A></TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD><A name=NT-FilterExpr></A>[20]&nbsp;&nbsp;&nbsp;</TD>
+    <TD>FilterExpr</TD>
+    <TD>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</TD>
+    <TD><A href="http://www.w3.org/TR/xpath#NT-PrimaryExpr">PrimaryExpr</A></TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>| <A href="http://www.w3.org/TR/xpath#NT-FilterExpr">FilterExpr</A> <A 
+      href="http://www.w3.org/TR/xpath#NT-Predicate">Predicate</A></TD>
+    <TD></TD></TR></TBODY></TABLE>
+<H3><A name=booleans></A>3.4 Booleans</H3>
+<P>An object of type boolean can have one of two values, true and false.</P>
+<P>An <CODE>or</CODE> expression is evaluated by evaluating each operand and 
+converting its value to a boolean as if by a call to the <B><A 
+href="http://www.w3.org/TR/xpath#function-boolean">boolean</A></B> function. The 
+result is true if either value is true and false otherwise. The right operand is 
+not evaluated if the left operand evaluates to true.</P>
+<P>An <CODE>and</CODE> expression is evaluated by evaluating each operand and 
+converting its value to a boolean as if by a call to the <B><A 
+href="http://www.w3.org/TR/xpath#function-boolean">boolean</A></B> function. The 
+result is true if both values are true and false otherwise. The right operand is 
+not evaluated if the left operand evaluates to false.</P>
+<P>An <A href="http://www.w3.org/TR/xpath#NT-EqualityExpr">EqualityExpr</A> 
+(that is not just a <A 
+href="http://www.w3.org/TR/xpath#NT-RelationalExpr">RelationalExpr</A>) or a <A 
+href="http://www.w3.org/TR/xpath#NT-RelationalExpr">RelationalExpr</A> (that is 
+not just an <A 
+href="http://www.w3.org/TR/xpath#NT-AdditiveExpr">AdditiveExpr</A>) is evaluated 
+by comparing the objects that result from evaluating the two operands. 
+Comparison of the resulting objects is defined in the following three 
+paragraphs. First, comparisons that involve node-sets are defined in terms of 
+comparisons that do not involve node-sets; this is defined uniformly for 
+<CODE>=</CODE>, <CODE>!=</CODE>, <CODE>&lt;=</CODE>, <CODE>&lt;</CODE>, 
+<CODE>&gt;=</CODE> and <CODE>&gt;</CODE>. Second, comparisons that do not 
+involve node-sets are defined for <CODE>=</CODE> and <CODE>!=</CODE>. Third, 
+comparisons that do not involve node-sets are defined for <CODE>&lt;=</CODE>, 
+<CODE>&lt;</CODE>, <CODE>&gt;=</CODE> and <CODE>&gt;</CODE>.</P>
+<P>If both objects to be compared are node-sets, then the comparison will be 
+true if and only if there is a node in the first node-set and a node in the 
+second node-set such that the result of performing the comparison on the <A 
+href="http://www.w3.org/TR/xpath#dt-string-value">string-value</A>s of the two 
+nodes is true. If one object to be compared is a node-set and the other is a 
+number, then the comparison will be true if and only if there is a node in the 
+node-set such that the result of performing the comparison on the number to be 
+compared and on the result of converting the <A 
+href="http://www.w3.org/TR/xpath#dt-string-value">string-value</A> of that node 
+to a number using the <B><A 
+href="http://www.w3.org/TR/xpath#function-number">number</A></B> function is 
+true. If one object to be compared is a node-set and the other is a string, then 
+the comparison will be true if and only if there is a node in the node-set such 
+that the result of performing the comparison on the <A 
+href="http://www.w3.org/TR/xpath#dt-string-value">string-value</A> of the node 
+and the other string is true. If one object to be compared is a node-set and the 
+other is a boolean, then the comparison will be true if and only if the result 
+of performing the comparison on the boolean and on the result of converting the 
+node-set to a boolean using the <B><A 
+href="http://www.w3.org/TR/xpath#function-boolean">boolean</A></B> function is 
+true.</P>
+<P>When neither object to be compared is a node-set and the operator is 
+<CODE>=</CODE> or <CODE>!=</CODE>, then the objects are compared by converting 
+them to a common type as follows and then comparing them. If at least one object 
+to be compared is a boolean, then each object to be compared is converted to a 
+boolean as if by applying the <B><A 
+href="http://www.w3.org/TR/xpath#function-boolean">boolean</A></B> function. 
+Otherwise, if at least one object to be compared is a number, then each object 
+to be compared is converted to a number as if by applying the <B><A 
+href="http://www.w3.org/TR/xpath#function-number">number</A></B> function. 
+Otherwise, both objects to be compared are converted to strings as if by 
+applying the <B><A 
+href="http://www.w3.org/TR/xpath#function-string">string</A></B> function. The 
+<CODE>=</CODE> comparison will be true if and only if the objects are equal; the 
+<CODE>!=</CODE> comparison will be true if and only if the objects are not 
+equal. Numbers are compared for equality according to IEEE 754 <A 
+href="http://www.w3.org/TR/xpath#IEEE754">[IEEE 754]</A>. Two booleans are equal 
+if either both are true or both are false. Two strings are equal if and only if 
+they consist of the same sequence of UCS characters.</P>
+<BLOCKQUOTE><B>NOTE: </B>If <CODE>$x</CODE> is bound to a node-set, then 
+  <CODE>$x="foo"</CODE> does not mean the same as <CODE>not($x!="foo")</CODE>: 
+  the former is true if and only if <I>some</I> node in <CODE>$x</CODE> has the 
+  string-value <CODE>foo</CODE>; the latter is true if and only if <I>all</I> 
+  nodes in <CODE>$x</CODE> have the string-value <CODE>foo</CODE>.</BLOCKQUOTE>
+<P>When neither object to be compared is a node-set and the operator is 
+<CODE>&lt;=</CODE>, <CODE>&lt;</CODE>, <CODE>&gt;=</CODE> or <CODE>&gt;</CODE>, 
+then the objects are compared by converting both objects to numbers and 
+comparing the numbers according to IEEE 754. The <CODE>&lt;</CODE> comparison 
+will be true if and only if the first number is less than the second number. The 
+<CODE>&lt;=</CODE> comparison will be true if and only if the first number is 
+less than or equal to the second number. The <CODE>&gt;</CODE> comparison will 
+be true if and only if the first number is greater than the second number. The 
+<CODE>&gt;=</CODE> comparison will be true if and only if the first number is 
+greater than or equal to the second number.</P>
+<BLOCKQUOTE><B>NOTE: </B>When an XPath expression occurs in an XML document, 
+  any <CODE>&lt;</CODE> and <CODE>&lt;=</CODE> operators must be quoted 
+  according to XML 1.0 rules by using, for example, <CODE>&amp;lt;</CODE> and 
+  <CODE>&amp;lt;=</CODE>. In the following example the value of the 
+  <CODE>test</CODE> attribute is an XPath expression: <PRE>&lt;xsl:if test="@value &amp;lt; 10"&gt;...&lt;/xsl:if&gt;</PRE></BLOCKQUOTE>
+<TABLE class=scrap>
+  <TBODY>
+  <TR vAlign=baseline>
+    <TD><A name=NT-OrExpr></A>[21]&nbsp;&nbsp;&nbsp;</TD>
+    <TD>OrExpr</TD>
+    <TD>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</TD>
+    <TD><A href="http://www.w3.org/TR/xpath#NT-AndExpr">AndExpr</A></TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>| <A href="http://www.w3.org/TR/xpath#NT-OrExpr">OrExpr</A> 'or' <A 
+      href="http://www.w3.org/TR/xpath#NT-AndExpr">AndExpr</A></TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD><A name=NT-AndExpr></A>[22]&nbsp;&nbsp;&nbsp;</TD>
+    <TD>AndExpr</TD>
+    <TD>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</TD>
+    <TD><A 
+    href="http://www.w3.org/TR/xpath#NT-EqualityExpr">EqualityExpr</A></TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>| <A href="http://www.w3.org/TR/xpath#NT-AndExpr">AndExpr</A> 'and' <A 
+      href="http://www.w3.org/TR/xpath#NT-EqualityExpr">EqualityExpr</A></TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD><A name=NT-EqualityExpr></A>[23]&nbsp;&nbsp;&nbsp;</TD>
+    <TD>EqualityExpr</TD>
+    <TD>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</TD>
+    <TD><A 
+      href="http://www.w3.org/TR/xpath#NT-RelationalExpr">RelationalExpr</A></TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>| <A 
+      href="http://www.w3.org/TR/xpath#NT-EqualityExpr">EqualityExpr</A> '=' <A 
+      href="http://www.w3.org/TR/xpath#NT-RelationalExpr">RelationalExpr</A></TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>| <A 
+      href="http://www.w3.org/TR/xpath#NT-EqualityExpr">EqualityExpr</A> '!=' <A 
+      href="http://www.w3.org/TR/xpath#NT-RelationalExpr">RelationalExpr</A></TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD><A name=NT-RelationalExpr></A>[24]&nbsp;&nbsp;&nbsp;</TD>
+    <TD>RelationalExpr</TD>
+    <TD>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</TD>
+    <TD><A 
+    href="http://www.w3.org/TR/xpath#NT-AdditiveExpr">AdditiveExpr</A></TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>| <A 
+      href="http://www.w3.org/TR/xpath#NT-RelationalExpr">RelationalExpr</A> 
+      '&lt;' <A 
+      href="http://www.w3.org/TR/xpath#NT-AdditiveExpr">AdditiveExpr</A></TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>| <A 
+      href="http://www.w3.org/TR/xpath#NT-RelationalExpr">RelationalExpr</A> 
+      '&gt;' <A 
+      href="http://www.w3.org/TR/xpath#NT-AdditiveExpr">AdditiveExpr</A></TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>| <A 
+      href="http://www.w3.org/TR/xpath#NT-RelationalExpr">RelationalExpr</A> 
+      '&lt;=' <A 
+      href="http://www.w3.org/TR/xpath#NT-AdditiveExpr">AdditiveExpr</A></TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>| <A 
+      href="http://www.w3.org/TR/xpath#NT-RelationalExpr">RelationalExpr</A> 
+      '&gt;=' <A 
+      href="http://www.w3.org/TR/xpath#NT-AdditiveExpr">AdditiveExpr</A></TD>
+    <TD></TD></TR></TBODY></TABLE>
+<BLOCKQUOTE><B>NOTE: </B>The effect of the above grammar is that the order of 
+  precedence is (lowest precedence first): 
+  <UL>
+    <LI>
+    <P><CODE>or</CODE> </P>
+    <LI>
+    <P><CODE>and</CODE> </P>
+    <LI>
+    <P><CODE>=</CODE>, <CODE>!=</CODE> </P>
+    <LI>
+    <P><CODE>&lt;=</CODE>, <CODE>&lt;</CODE>, <CODE>&gt;=</CODE>, 
+    <CODE>&gt;</CODE> </P></LI></UL>and the operators are all left associative. 
+  For example, <CODE>3 &gt; 2 &gt; 1</CODE> is equivalent to <CODE>(3 &gt; 2) 
+  &gt; 1</CODE>, which evaluates to false. </BLOCKQUOTE>
+<H3><A name=numbers></A>3.5 Numbers</H3>
+<P>A number represents a floating-point number. A number can have any 
+double-precision 64-bit format IEEE 754 value <A 
+href="http://www.w3.org/TR/xpath#IEEE754">[IEEE 754]</A>. These include a 
+special "Not-a-Number" (NaN) value, positive and negative infinity, and positive 
+and negative zero. See <A 
+href="http://java.sun.com/docs/books/jls/html/4.doc.html#9208">Section 4.2.3</A> 
+of <A href="http://www.w3.org/TR/xpath#JLS">[JLS]</A> for a summary of the key 
+rules of the IEEE 754 standard.</P>
+<P>The numeric operators convert their operands to numbers as if by calling the 
+<B><A href="http://www.w3.org/TR/xpath#function-number">number</A></B> 
+function.</P>
+<P>The <CODE>+</CODE> operator performs addition.</P>
+<P>The <CODE>-</CODE> operator performs subtraction.</P>
+<BLOCKQUOTE><B>NOTE: </B>Since XML allows <CODE>-</CODE> in names, the 
+  <CODE>-</CODE> operator typically needs to be preceded by whitespace. For 
+  example, <CODE>foo-bar</CODE> evaluates to a node-set containing the child 
+  elements named <CODE>foo-bar</CODE>; <CODE>foo - bar</CODE> evaluates to the 
+  difference of the result of converting the <A 
+  href="http://www.w3.org/TR/xpath#dt-string-value">string-value</A> of the 
+  first <CODE>foo</CODE> child element to a number and the result of converting 
+  the <A href="http://www.w3.org/TR/xpath#dt-string-value">string-value</A> of 
+  the first <CODE>bar</CODE> child to a number.</BLOCKQUOTE>
+<P>The <CODE>div</CODE> operator performs floating-point division according to 
+IEEE 754.</P>
+<P>The <CODE>mod</CODE> operator returns the remainder from a truncating 
+division. For example,</P>
+<UL>
+  <LI>
+  <P><CODE>5 mod 2</CODE> returns <CODE>1</CODE> </P>
+  <LI>
+  <P><CODE>5 mod -2</CODE> returns <CODE>1</CODE> </P>
+  <LI>
+  <P><CODE>-5 mod 2</CODE> returns <CODE>-1</CODE> </P>
+  <LI>
+  <P><CODE>-5 mod -2</CODE> returns <CODE>-1</CODE> </P></LI></UL>
+<BLOCKQUOTE><B>NOTE: </B>This is the same as the <CODE>%</CODE> operator in 
+  Java and ECMAScript.</BLOCKQUOTE>
+<BLOCKQUOTE><B>NOTE: </B>This is not the same as the IEEE 754 remainder 
+  operation, which returns the remainder from a rounding division.</BLOCKQUOTE>
+<H5>Numeric Expressions</H5>
+<TABLE class=scrap>
+  <TBODY>
+  <TR vAlign=baseline>
+    <TD><A name=NT-AdditiveExpr></A>[25]&nbsp;&nbsp;&nbsp;</TD>
+    <TD>AdditiveExpr</TD>
+    <TD>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</TD>
+    <TD><A 
+      href="http://www.w3.org/TR/xpath#NT-MultiplicativeExpr">MultiplicativeExpr</A></TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>| <A 
+      href="http://www.w3.org/TR/xpath#NT-AdditiveExpr">AdditiveExpr</A> '+' <A 
+      href="http://www.w3.org/TR/xpath#NT-MultiplicativeExpr">MultiplicativeExpr</A></TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>| <A 
+      href="http://www.w3.org/TR/xpath#NT-AdditiveExpr">AdditiveExpr</A> '-' <A 
+      href="http://www.w3.org/TR/xpath#NT-MultiplicativeExpr">MultiplicativeExpr</A></TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD><A name=NT-MultiplicativeExpr></A>[26]&nbsp;&nbsp;&nbsp;</TD>
+    <TD>MultiplicativeExpr</TD>
+    <TD>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</TD>
+    <TD><A href="http://www.w3.org/TR/xpath#NT-UnaryExpr">UnaryExpr</A></TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>| <A 
+      href="http://www.w3.org/TR/xpath#NT-MultiplicativeExpr">MultiplicativeExpr</A> 
+      <A 
+      href="http://www.w3.org/TR/xpath#NT-MultiplyOperator">MultiplyOperator</A> 
+      <A href="http://www.w3.org/TR/xpath#NT-UnaryExpr">UnaryExpr</A></TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>| <A 
+      href="http://www.w3.org/TR/xpath#NT-MultiplicativeExpr">MultiplicativeExpr</A> 
+      'div' <A href="http://www.w3.org/TR/xpath#NT-UnaryExpr">UnaryExpr</A></TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>| <A 
+      href="http://www.w3.org/TR/xpath#NT-MultiplicativeExpr">MultiplicativeExpr</A> 
+      'mod' <A href="http://www.w3.org/TR/xpath#NT-UnaryExpr">UnaryExpr</A></TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD><A name=NT-UnaryExpr></A>[27]&nbsp;&nbsp;&nbsp;</TD>
+    <TD>UnaryExpr</TD>
+    <TD>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</TD>
+    <TD><A href="http://www.w3.org/TR/xpath#NT-UnionExpr">UnionExpr</A></TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>| '-' <A 
+    href="http://www.w3.org/TR/xpath#NT-UnaryExpr">UnaryExpr</A></TD>
+    <TD></TD></TR></TBODY></TABLE>
+<H3><A name=strings></A>3.6 Strings</H3>
+<P>Strings consist of a sequence of zero or more characters, where a character 
+is defined as in the XML Recommendation <A 
+href="http://www.w3.org/TR/xpath#XML">[XML]</A>. A single character in XPath 
+thus corresponds to a single Unicode abstract character with a single 
+corresponding Unicode scalar value (see <A 
+href="http://www.w3.org/TR/xpath#UNICODE">[Unicode]</A>); this is not the same 
+thing as a 16-bit Unicode code value: the Unicode coded character representation 
+for an abstract character with Unicode scalar value greater that U+FFFF is a 
+pair of 16-bit Unicode code values (a surrogate pair). In many programming 
+languages, a string is represented by a sequence of 16-bit Unicode code values; 
+implementations of XPath in such languages must take care to ensure that a 
+surrogate pair is correctly treated as a single XPath character.</P>
+<BLOCKQUOTE><B>NOTE: </B>It is possible in Unicode for there to be two strings 
+  that should be treated as identical even though they consist of the distinct 
+  sequences of Unicode abstract characters. For example, some accented 
+  characters may be represented in either a precomposed or decomposed form. 
+  Therefore, XPath expressions may return unexpected results unless both the 
+  characters in the XPath expression and in the XML document have been 
+  normalized into a canonical form. See <A 
+  href="http://www.w3.org/TR/xpath#CHARMOD">[Character Model]</A>.</BLOCKQUOTE>
+<H3><A name=exprlex></A>3.7 Lexical Structure</H3>
+<P>When tokenizing, the longest possible token is always returned.</P>
+<P>For readability, whitespace may be used in expressions even though not 
+explicitly allowed by the grammar: <A 
+href="http://www.w3.org/TR/xpath#NT-ExprWhitespace">ExprWhitespace</A> may be 
+freely added within patterns before or after any <A 
+href="http://www.w3.org/TR/xpath#NT-ExprToken">ExprToken</A>.</P>
+<P>The following special tokenization rules must be applied in the order 
+specified to disambiguate the <A 
+href="http://www.w3.org/TR/xpath#NT-ExprToken">ExprToken</A> grammar:</P>
+<UL>
+  <LI>
+  <P>If there is a preceding token and the preceding token is not one of 
+  <CODE>@</CODE>, <CODE>::</CODE>, <CODE>(</CODE>, <CODE>[</CODE>, 
+  <CODE>,</CODE> or an <A 
+  href="http://www.w3.org/TR/xpath#NT-Operator">Operator</A>, then a 
+  <CODE>*</CODE> must be recognized as a <A 
+  href="http://www.w3.org/TR/xpath#NT-MultiplyOperator">MultiplyOperator</A> and 
+  an <A href="http://www.w3.org/TR/REC-xml-names#NT-NCName">NCName</A> must be 
+  recognized as an <A 
+  href="http://www.w3.org/TR/xpath#NT-OperatorName">OperatorName</A>.</P>
+  <LI>
+  <P>If the character following an <A 
+  href="http://www.w3.org/TR/REC-xml-names#NT-NCName">NCName</A> (possibly after 
+  intervening <A 
+  href="http://www.w3.org/TR/xpath#NT-ExprWhitespace">ExprWhitespace</A>) is 
+  <CODE>(</CODE>, then the token must be recognized as a <A 
+  href="http://www.w3.org/TR/xpath#NT-NodeType">NodeType</A> or a <A 
+  href="http://www.w3.org/TR/xpath#NT-FunctionName">FunctionName</A>.</P>
+  <LI>
+  <P>If the two characters following an <A 
+  href="http://www.w3.org/TR/REC-xml-names#NT-NCName">NCName</A> (possibly after 
+  intervening <A 
+  href="http://www.w3.org/TR/xpath#NT-ExprWhitespace">ExprWhitespace</A>) are 
+  <CODE>::</CODE>, then the token must be recognized as an <A 
+  href="http://www.w3.org/TR/xpath#NT-AxisName">AxisName</A>.</P>
+  <LI>
+  <P>Otherwise, the token must not be recognized as a <A 
+  href="http://www.w3.org/TR/xpath#NT-MultiplyOperator">MultiplyOperator</A>, an 
+  <A href="http://www.w3.org/TR/xpath#NT-OperatorName">OperatorName</A>, a <A 
+  href="http://www.w3.org/TR/xpath#NT-NodeType">NodeType</A>, a <A 
+  href="http://www.w3.org/TR/xpath#NT-FunctionName">FunctionName</A>, or an <A 
+  href="http://www.w3.org/TR/xpath#NT-AxisName">AxisName</A>.</P></LI></UL>
+<H5>Expression Lexical Structure</H5>
+<TABLE class=scrap>
+  <TBODY>
+  <TR vAlign=baseline>
+    <TD><A name=NT-ExprToken></A>[28]&nbsp;&nbsp;&nbsp;</TD>
+    <TD>ExprToken</TD>
+    <TD>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</TD>
+    <TD>'(' | ')' | '[' | ']' | '.' | '..' | '@' | ',' | '::'</TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>| <A href="http://www.w3.org/TR/xpath#NT-NameTest">NameTest</A></TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>| <A href="http://www.w3.org/TR/xpath#NT-NodeType">NodeType</A></TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>| <A href="http://www.w3.org/TR/xpath#NT-Operator">Operator</A></TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>| <A 
+    href="http://www.w3.org/TR/xpath#NT-FunctionName">FunctionName</A></TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>| <A href="http://www.w3.org/TR/xpath#NT-AxisName">AxisName</A></TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>| <A href="http://www.w3.org/TR/xpath#NT-Literal">Literal</A></TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>| <A href="http://www.w3.org/TR/xpath#NT-Number">Number</A></TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>| <A 
+      href="http://www.w3.org/TR/xpath#NT-VariableReference">VariableReference</A></TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD><A name=NT-Literal></A>[29]&nbsp;&nbsp;&nbsp;</TD>
+    <TD>Literal</TD>
+    <TD>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</TD>
+    <TD>'"' [^"]* '"'</TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>| "'" [^']* "'"</TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD><A name=NT-Number></A>[30]&nbsp;&nbsp;&nbsp;</TD>
+    <TD>Number</TD>
+    <TD>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</TD>
+    <TD><A href="http://www.w3.org/TR/xpath#NT-Digits">Digits</A> ('.' <A 
+      href="http://www.w3.org/TR/xpath#NT-Digits">Digits</A>?)?</TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>| '.' <A href="http://www.w3.org/TR/xpath#NT-Digits">Digits</A></TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD><A name=NT-Digits></A>[31]&nbsp;&nbsp;&nbsp;</TD>
+    <TD>Digits</TD>
+    <TD>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</TD>
+    <TD>[0-9]+</TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD><A name=NT-Operator></A>[32]&nbsp;&nbsp;&nbsp;</TD>
+    <TD>Operator</TD>
+    <TD>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</TD>
+    <TD><A 
+    href="http://www.w3.org/TR/xpath#NT-OperatorName">OperatorName</A></TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>| <A 
+      href="http://www.w3.org/TR/xpath#NT-MultiplyOperator">MultiplyOperator</A></TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>| '/' | '//' | '|' | '+' | '-' | '=' | '!=' | '&lt;' | '&lt;=' | 
+      '&gt;' | '&gt;='</TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD><A name=NT-OperatorName></A>[33]&nbsp;&nbsp;&nbsp;</TD>
+    <TD>OperatorName</TD>
+    <TD>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</TD>
+    <TD>'and' | 'or' | 'mod' | 'div'</TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD><A name=NT-MultiplyOperator></A>[34]&nbsp;&nbsp;&nbsp;</TD>
+    <TD>MultiplyOperator</TD>
+    <TD>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</TD>
+    <TD>'*'</TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD><A name=NT-FunctionName></A>[35]&nbsp;&nbsp;&nbsp;</TD>
+    <TD>FunctionName</TD>
+    <TD>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</TD>
+    <TD><A href="http://www.w3.org/TR/REC-xml-names#NT-QName">QName</A> - <A 
+      href="http://www.w3.org/TR/xpath#NT-NodeType">NodeType</A> </TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD><A name=NT-VariableReference></A>[36]&nbsp;&nbsp;&nbsp;</TD>
+    <TD>VariableReference</TD>
+    <TD>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</TD>
+    <TD>'$' <A href="http://www.w3.org/TR/REC-xml-names#NT-QName">QName</A></TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD><A name=NT-NameTest></A>[37]&nbsp;&nbsp;&nbsp;</TD>
+    <TD>NameTest</TD>
+    <TD>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</TD>
+    <TD>'*'</TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>| <A href="http://www.w3.org/TR/REC-xml-names#NT-NCName">NCName</A> 
+      ':' '*'</TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>| <A href="http://www.w3.org/TR/REC-xml-names#NT-QName">QName</A></TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD><A name=NT-NodeType></A>[38]&nbsp;&nbsp;&nbsp;</TD>
+    <TD>NodeType</TD>
+    <TD>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</TD>
+    <TD>'comment'</TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>| 'text'</TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>| 'processing-instruction'</TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>| 'node'</TD>
+    <TD></TD></TR>
+  <TR vAlign=baseline>
+    <TD><A name=NT-ExprWhitespace></A>[39]&nbsp;&nbsp;&nbsp;</TD>
+    <TD>ExprWhitespace</TD>
+    <TD>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</TD>
+    <TD><A href="http://www.w3.org/TR/REC-xml#NT-S">S</A></TD>
+    <TD></TD></TR></TBODY></TABLE>
+<H2><A name=corelib></A>4 Core Function Library</H2>
+<P>This section describes functions that XPath implementations must always 
+include in the function library that is used to evaluate expressions.</P>
+<P>Each function in the function library is specified using a function 
+prototype, which gives the return type, the name of the function, and the type 
+of the arguments. If an argument type is followed by a question mark, then the 
+argument is optional; otherwise, the argument is required.</P>
+<H3><A name=section-Node-Set-Functions></A>4.1 Node Set Functions</H3>
+<P><A name=function-last><B>Function: </B><I>number</I> <B>last</B>()</A> </P>
+<P>The <B><A href="http://www.w3.org/TR/xpath#function-last">last</A></B> 
+function returns a number equal to the <A 
+href="http://www.w3.org/TR/xpath#dt-context-size">context size</A> from the 
+expression evaluation context.</P>
+<P><A name=function-position><B>Function: </B><I>number</I> 
+<B>position</B>()</A> </P>
+<P>The <B><A 
+href="http://www.w3.org/TR/xpath#function-position">position</A></B> function 
+returns a number equal to the <A 
+href="http://www.w3.org/TR/xpath#dt-context-position">context position</A> from 
+the expression evaluation context.</P>
+<P><A name=function-count><B>Function: </B><I>number</I> 
+<B>count</B>(<I>node-set</I>)</A> </P>
+<P>The <B><A href="http://www.w3.org/TR/xpath#function-count">count</A></B> 
+function returns the number of nodes in the argument node-set.</P>
+<P><A name=function-id><B>Function: </B><I>node-set</I> 
+<B>id</B>(<I>object</I>)</A> </P>
+<P>The <B><A href="http://www.w3.org/TR/xpath#function-id">id</A></B> function 
+selects elements by their unique ID (see <A 
+href="http://www.w3.org/TR/xpath#unique-id">[<B>5.2.1 Unique IDs</B>]</A>). When 
+the argument to <B><A href="http://www.w3.org/TR/xpath#function-id">id</A></B> 
+is of type node-set, then the result is the union of the result of applying 
+<B><A href="http://www.w3.org/TR/xpath#function-id">id</A></B> to the <A 
+href="http://www.w3.org/TR/xpath#dt-string-value">string-value</A> of each of 
+the nodes in the argument node-set. When the argument to <B><A 
+href="http://www.w3.org/TR/xpath#function-id">id</A></B> is of any other type, 
+the argument is converted to a string as if by a call to the <B><A 
+href="http://www.w3.org/TR/xpath#function-string">string</A></B> function; the 
+string is split into a whitespace-separated list of tokens (whitespace is any 
+sequence of characters matching the production <A 
+href="http://www.w3.org/TR/REC-xml#NT-S">S</A>); the result is a node-set 
+containing the elements in the same document as the context node that have a 
+unique ID equal to any of the tokens in the list.</P>
+<UL>
+  <LI>
+  <P><CODE>id("foo")</CODE> selects the element with unique ID <CODE>foo</CODE> 
+  </P>
+  <LI>
+  <P><CODE>id("foo")/child::para[position()=5]</CODE> selects the fifth 
+  <CODE>para</CODE> child of the element with unique ID <CODE>foo</CODE> 
+  </P></LI></UL>
+<P><A name=function-local-name><B>Function: </B><I>string</I> 
+<B>local-name</B>(<I>node-set</I>?)</A> </P>
+<P>The <B><A 
+href="http://www.w3.org/TR/xpath#function-local-name">local-name</A></B> 
+function returns the local part of the <A 
+href="http://www.w3.org/TR/xpath#dt-expanded-name">expanded-name</A> of the node 
+in the argument node-set that is first in <A 
+href="http://www.w3.org/TR/xpath#dt-document-order">document order</A>. If the 
+argument node-set is empty or the first node has no <A 
+href="http://www.w3.org/TR/xpath#dt-expanded-name">expanded-name</A>, an empty 
+string is returned. If the argument is omitted, it defaults to a node-set with 
+the context node as its only member.</P>
+<P><A name=function-namespace-uri><B>Function: </B><I>string</I> 
+<B>namespace-uri</B>(<I>node-set</I>?)</A> </P>
+<P>The <B><A 
+href="http://www.w3.org/TR/xpath#function-namespace-uri">namespace-uri</A></B> 
+function returns the namespace URI of the <A 
+href="http://www.w3.org/TR/xpath#dt-expanded-name">expanded-name</A> of the node 
+in the argument node-set that is first in <A 
+href="http://www.w3.org/TR/xpath#dt-document-order">document order</A>. If the 
+argument node-set is empty, the first node has no <A 
+href="http://www.w3.org/TR/xpath#dt-expanded-name">expanded-name</A>, or the 
+namespace URI of the <A 
+href="http://www.w3.org/TR/xpath#dt-expanded-name">expanded-name</A> is null, an 
+empty string is returned. If the argument is omitted, it defaults to a node-set 
+with the context node as its only member.</P>
+<BLOCKQUOTE><B>NOTE: </B>The string returned by the <B><A 
+  href="http://www.w3.org/TR/xpath#function-namespace-uri">namespace-uri</A></B> 
+  function will be empty except for element nodes and attribute 
+nodes.</BLOCKQUOTE>
+<P><A name=function-name><B>Function: </B><I>string</I> 
+<B>name</B>(<I>node-set</I>?)</A> </P>
+<P>The <B><A href="http://www.w3.org/TR/xpath#function-name">name</A></B> 
+function returns a string containing a <A 
+href="http://www.w3.org/TR/REC-xml-names#NT-QName">QName</A> representing the <A 
+href="http://www.w3.org/TR/xpath#dt-expanded-name">expanded-name</A> of the node 
+in the argument node-set that is first in <A 
+href="http://www.w3.org/TR/xpath#dt-document-order">document order</A>. The <A 
+href="http://www.w3.org/TR/REC-xml-names#NT-QName">QName</A> must represent the 
+<A href="http://www.w3.org/TR/xpath#dt-expanded-name">expanded-name</A> with 
+respect to the namespace declarations in effect on the node whose <A 
+href="http://www.w3.org/TR/xpath#dt-expanded-name">expanded-name</A> is being 
+represented. Typically, this will be the <A 
+href="http://www.w3.org/TR/REC-xml-names#NT-QName">QName</A> that occurred in 
+the XML source. This need not be the case if there are namespace declarations in 
+effect on the node that associate multiple prefixes with the same namespace. 
+However, an implementation may include information about the original prefix in 
+its representation of nodes; in this case, an implementation can ensure that the 
+returned string is always the same as the <A 
+href="http://www.w3.org/TR/REC-xml-names#NT-QName">QName</A> used in the XML 
+source. If the argument node-set is empty or the first node has no <A 
+href="http://www.w3.org/TR/xpath#dt-expanded-name">expanded-name</A>, an empty 
+string is returned. If the argument it omitted, it defaults to a node-set with 
+the context node as its only member.</P>
+<BLOCKQUOTE><B>NOTE: </B>The string returned by the <B><A 
+  href="http://www.w3.org/TR/xpath#function-name">name</A></B> function will be 
+  the same as the string returned by the <B><A 
+  href="http://www.w3.org/TR/xpath#function-local-name">local-name</A></B> 
+  function except for element nodes and attribute nodes.</BLOCKQUOTE>
+<H3><A name=section-String-Functions></A>4.2 String Functions</H3>
+<P><A name=function-string><B>Function: </B><I>string</I> 
+<B>string</B>(<I>object</I>?)</A> </P>
+<P>The <B><A href="http://www.w3.org/TR/xpath#function-string">string</A></B> 
+function converts an object to a string as follows:</P>
+<UL>
+  <LI>
+  <P>A node-set is converted to a string by returning the <A 
+  href="http://www.w3.org/TR/xpath#dt-string-value">string-value</A> of the node 
+  in the node-set that is first in <A 
+  href="http://www.w3.org/TR/xpath#dt-document-order">document order</A>. If the 
+  node-set is empty, an empty string is returned.</P>
+  <LI>
+  <P>A number is converted to a string as follows</P>
+  <UL>
+    <LI>
+    <P>NaN is converted to the string <CODE>NaN</CODE> </P>
+    <LI>
+    <P>positive zero is converted to the string <CODE>0</CODE> </P>
+    <LI>
+    <P>negative zero is converted to the string <CODE>0</CODE> </P>
+    <LI>
+    <P>positive infinity is converted to the string <CODE>Infinity</CODE> </P>
+    <LI>
+    <P>negative infinity is converted to the string <CODE>-Infinity</CODE> </P>
+    <LI>
+    <P>if the number is an integer, the number is represented in decimal form as 
+    a <A href="http://www.w3.org/TR/xpath#NT-Number">Number</A> with no decimal 
+    point and no leading zeros, preceded by a minus sign (<CODE>-</CODE>) if the 
+    number is negative</P>
+    <LI>
+    <P>otherwise, the number is represented in decimal form as a <A 
+    href="http://www.w3.org/TR/xpath#NT-Number">Number</A> including a decimal 
+    point with at least one digit before the decimal point and at least one 
+    digit after the decimal point, preceded by a minus sign (<CODE>-</CODE>) if 
+    the number is negative; there must be no leading zeros before the decimal 
+    point apart possibly from the one required digit immediately before the 
+    decimal point; beyond the one required digit after the decimal point there 
+    must be as many, but only as many, more digits as are needed to uniquely 
+    distinguish the number from all other IEEE 754 numeric values.</P></LI></UL>
+  <LI>
+  <P>The boolean false value is converted to the string <CODE>false</CODE>. The 
+  boolean true value is converted to the string <CODE>true</CODE>.</P>
+  <LI>
+  <P>An object of a type other than the four basic types is converted to a 
+  string in a way that is dependent on that type.</P></LI></UL>
+<P>If the argument is omitted, it defaults to a node-set with the context node 
+as its only member.</P>
+<BLOCKQUOTE><B>NOTE: </B>The <CODE>string</CODE> function is not intended for 
+  converting numbers into strings for presentation to users. The 
+  <CODE>format-number</CODE> function and <CODE>xsl:number</CODE> element in <A 
+  href="http://www.w3.org/TR/xpath#XSLT">[XSLT]</A> provide this 
+functionality.</BLOCKQUOTE>
+<P><A name=function-concat><B>Function: </B><I>string</I> 
+<B>concat</B>(<I>string</I>, <I>string</I>, <I>string</I>*)</A> </P>
+<P>The <B><A href="http://www.w3.org/TR/xpath#function-concat">concat</A></B> 
+function returns the concatenation of its arguments.</P>
+<P><A name=function-starts-with><B>Function: </B><I>boolean</I> 
+<B>starts-with</B>(<I>string</I>, <I>string</I>)</A> </P>
+<P>The <B><A 
+href="http://www.w3.org/TR/xpath#function-starts-with">starts-with</A></B> 
+function returns true if the first argument string starts with the second 
+argument string, and otherwise returns false.</P>
+<P><A name=function-contains><B>Function: </B><I>boolean</I> 
+<B>contains</B>(<I>string</I>, <I>string</I>)</A> </P>
+<P>The <B><A 
+href="http://www.w3.org/TR/xpath#function-contains">contains</A></B> function 
+returns true if the first argument string contains the second argument string, 
+and otherwise returns false.</P>
+<P><A name=function-substring-before><B>Function: </B><I>string</I> 
+<B>substring-before</B>(<I>string</I>, <I>string</I>)</A> </P>
+<P>The <B><A 
+href="http://www.w3.org/TR/xpath#function-substring-before">substring-before</A></B> 
+function returns the substring of the first argument string that precedes the 
+first occurrence of the second argument string in the first argument string, or 
+the empty string if the first argument string does not contain the second 
+argument string. For example, <CODE>substring-before("1999/04/01","/")</CODE> 
+returns <CODE>1999</CODE>.</P>
+<P><A name=function-substring-after><B>Function: </B><I>string</I> 
+<B>substring-after</B>(<I>string</I>, <I>string</I>)</A> </P>
+<P>The <B><A 
+href="http://www.w3.org/TR/xpath#function-substring-after">substring-after</A></B> 
+function returns the substring of the first argument string that follows the 
+first occurrence of the second argument string in the first argument string, or 
+the empty string if the first argument string does not contain the second 
+argument string. For example, <CODE>substring-after("1999/04/01","/")</CODE> 
+returns <CODE>04/01</CODE>, and <CODE>substring-after("1999/04/01","19")</CODE> 
+returns <CODE>99/04/01</CODE>.</P>
+<P><A name=function-substring><B>Function: </B><I>string</I> 
+<B>substring</B>(<I>string</I>, <I>number</I>, <I>number</I>?)</A> </P>
+<P>The <B><A 
+href="http://www.w3.org/TR/xpath#function-substring">substring</A></B> function 
+returns the substring of the first argument starting at the position specified 
+in the second argument with length specified in the third argument. For example, 
+<CODE>substring("12345",2,3)</CODE> returns <CODE>"234"</CODE>. If the third 
+argument is not specified, it returns the substring starting at the position 
+specified in the second argument and continuing to the end of the string. For 
+example, <CODE>substring("12345",2)</CODE> returns <CODE>"2345"</CODE>.</P>
+<P>More precisely, each character in the string (see <A 
+href="http://www.w3.org/TR/xpath#strings">[<B>3.6 Strings</B>]</A>) is 
+considered to have a numeric position: the position of the first character is 1, 
+the position of the second character is 2 and so on.</P>
+<BLOCKQUOTE><B>NOTE: </B>This differs from Java and ECMAScript, in which the 
+  <CODE>String.substring</CODE> method treats the position of the first 
+  character as 0.</BLOCKQUOTE>
+<P>The returned substring contains those characters for which the position of 
+the character is greater than or equal to the rounded value of the second 
+argument and, if the third argument is specified, less than the sum of the 
+rounded value of the second argument and the rounded value of the third 
+argument; the comparisons and addition used for the above follow the standard 
+IEEE 754 rules; rounding is done as if by a call to the <B><A 
+href="http://www.w3.org/TR/xpath#function-round">round</A></B> function. The 
+following examples illustrate various unusual cases:</P>
+<UL>
+  <LI>
+  <P><CODE>substring("12345", 1.5, 2.6)</CODE> returns <CODE>"234"</CODE> </P>
+  <LI>
+  <P><CODE>substring("12345", 0, 3)</CODE> returns <CODE>"12"</CODE> </P>
+  <LI>
+  <P><CODE>substring("12345", 0 div 0, 3)</CODE> returns <CODE>""</CODE> </P>
+  <LI>
+  <P><CODE>substring("12345", 1, 0 div 0)</CODE> returns <CODE>""</CODE> </P>
+  <LI>
+  <P><CODE>substring("12345", -42, 1 div 0)</CODE> returns <CODE>"12345"</CODE> 
+  </P>
+  <LI>
+  <P><CODE>substring("12345", -1 div 0, 1 div 0)</CODE> returns <CODE>""</CODE> 
+  </P></LI></UL>
+<P><A name=function-string-length><B>Function: </B><I>number</I> 
+<B>string-length</B>(<I>string</I>?)</A> </P>
+<P>The <B><A 
+href="http://www.w3.org/TR/xpath#function-string-length">string-length</A></B> 
+returns the number of characters in the string (see <A 
+href="http://www.w3.org/TR/xpath#strings">[<B>3.6 Strings</B>]</A>). If the 
+argument is omitted, it defaults to the context node converted to a string, in 
+other words the <A 
+href="http://www.w3.org/TR/xpath#dt-string-value">string-value</A> of the 
+context node.</P>
+<P><A name=function-normalize-space><B>Function: </B><I>string</I> 
+<B>normalize-space</B>(<I>string</I>?)</A> </P>
+<P>The <B><A 
+href="http://www.w3.org/TR/xpath#function-normalize-space">normalize-space</A></B> 
+function returns the argument string with whitespace normalized by stripping 
+leading and trailing whitespace and replacing sequences of whitespace characters 
+by a single space. Whitespace characters are the same as those allowed by the <A 
+href="http://www.w3.org/TR/REC-xml#NT-S">S</A> production in XML. If the 
+argument is omitted, it defaults to the context node converted to a string, in 
+other words the <A 
+href="http://www.w3.org/TR/xpath#dt-string-value">string-value</A> of the 
+context node.</P>
+<P><A name=function-translate><B>Function: </B><I>string</I> 
+<B>translate</B>(<I>string</I>, <I>string</I>, <I>string</I>)</A> </P>
+<P>The <B><A 
+href="http://www.w3.org/TR/xpath#function-translate">translate</A></B> function 
+returns the first argument string with occurrences of characters in the second 
+argument string replaced by the character at the corresponding position in the 
+third argument string. For example, <CODE>translate("bar","abc","ABC")</CODE> 
+returns the string <CODE>BAr</CODE>. If there is a character in the second 
+argument string with no character at a corresponding position in the third 
+argument string (because the second argument string is longer than the third 
+argument string), then occurrences of that character in the first argument 
+string are removed. For example, <CODE>translate("--aaa--","abc-","ABC")</CODE> 
+returns <CODE>"AAA"</CODE>. If a character occurs more than once in the second 
+argument string, then the first occurrence determines the replacement character. 
+If the third argument string is longer than the second argument string, then 
+excess characters are ignored.</P>
+<BLOCKQUOTE><B>NOTE: </B>The <B><A 
+  href="http://www.w3.org/TR/xpath#function-translate">translate</A></B> 
+  function is not a sufficient solution for case conversion in all languages. A 
+  future version of XPath may provide additional functions for case 
+conversion.</BLOCKQUOTE>
+<H3><A name=section-Boolean-Functions></A>4.3 Boolean Functions</H3>
+<P><A name=function-boolean><B>Function: </B><I>boolean</I> 
+<B>boolean</B>(<I>object</I>)</A> </P>
+<P>The <B><A href="http://www.w3.org/TR/xpath#function-boolean">boolean</A></B> 
+function converts its argument to a boolean as follows:</P>
+<UL>
+  <LI>
+  <P>a number is true if and only if it is neither positive or negative zero nor 
+  NaN</P>
+  <LI>
+  <P>a node-set is true if and only if it is non-empty</P>
+  <LI>
+  <P>a string is true if and only if its length is non-zero</P>
+  <LI>
+  <P>an object of a type other than the four basic types is converted to a 
+  boolean in a way that is dependent on that type</P></LI></UL>
+<P><A name=function-not><B>Function: </B><I>boolean</I> 
+<B>not</B>(<I>boolean</I>)</A> </P>
+<P>The <B><A href="http://www.w3.org/TR/xpath#function-not">not</A></B> function 
+returns true if its argument is false, and false otherwise.</P>
+<P><A name=function-true><B>Function: </B><I>boolean</I> <B>true</B>()</A> </P>
+<P>The <B><A href="http://www.w3.org/TR/xpath#function-true">true</A></B> 
+function returns true.</P>
+<P><A name=function-false><B>Function: </B><I>boolean</I> <B>false</B>()</A> 
+</P>
+<P>The <B><A href="http://www.w3.org/TR/xpath#function-false">false</A></B> 
+function returns false.</P>
+<P><A name=function-lang><B>Function: </B><I>boolean</I> 
+<B>lang</B>(<I>string</I>)</A> </P>
+<P>The <B><A href="http://www.w3.org/TR/xpath#function-lang">lang</A></B> 
+function returns true or false depending on whether the language of the context 
+node as specified by <CODE>xml:lang</CODE> attributes is the same as or is a 
+sublanguage of the language specified by the argument string. The language of 
+the context node is determined by the value of the <CODE>xml:lang</CODE> 
+attribute on the context node, or, if the context node has no 
+<CODE>xml:lang</CODE> attribute, by the value of the <CODE>xml:lang</CODE> 
+attribute on the nearest ancestor of the context node that has an 
+<CODE>xml:lang</CODE> attribute. If there is no such attribute, then <B><A 
+href="http://www.w3.org/TR/xpath#function-lang">lang</A></B> returns false. If 
+there is such an attribute, then <B><A 
+href="http://www.w3.org/TR/xpath#function-lang">lang</A></B> returns true if the 
+attribute value is equal to the argument ignoring case, or if there is some 
+suffix starting with <CODE>-</CODE> such that the attribute value is equal to 
+the argument ignoring that suffix of the attribute value and ignoring case. For 
+example, <CODE>lang("en")</CODE> would return true if the context node is any of 
+these five elements:</P><PRE>&lt;para xml:lang="en"/&gt;
+&lt;div xml:lang="en"&gt;&lt;para/&gt;&lt;/div&gt;
+&lt;para xml:lang="EN"/&gt;
+&lt;para xml:lang="en-us"/&gt;</PRE>
+<H3><A name=section-Number-Functions></A>4.4 Number Functions</H3>
+<P><A name=function-number><B>Function: </B><I>number</I> 
+<B>number</B>(<I>object</I>?)</A> </P>
+<P>The <B><A href="http://www.w3.org/TR/xpath#function-number">number</A></B> 
+function converts its argument to a number as follows:</P>
+<UL>
+  <LI>
+  <P>a string that consists of optional whitespace followed by an optional minus 
+  sign followed by a <A href="http://www.w3.org/TR/xpath#NT-Number">Number</A> 
+  followed by whitespace is converted to the IEEE 754 number that is nearest 
+  (according to the IEEE 754 round-to-nearest rule) to the mathematical value 
+  represented by the string; any other string is converted to NaN</P>
+  <LI>
+  <P>boolean true is converted to 1; boolean false is converted to 0</P>
+  <LI>
+  <P>a node-set is first converted to a string as if by a call to the <B><A 
+  href="http://www.w3.org/TR/xpath#function-string">string</A></B> function and 
+  then converted in the same way as a string argument</P>
+  <LI>
+  <P>an object of a type other than the four basic types is converted to a 
+  number in a way that is dependent on that type</P></LI></UL>
+<P>If the argument is omitted, it defaults to a node-set with the context node 
+as its only member.</P>
+<BLOCKQUOTE><B>NOTE: </B>The <B><A 
+  href="http://www.w3.org/TR/xpath#function-number">number</A></B> function 
+  should not be used for conversion of numeric data occurring in an element in 
+  an XML document unless the element is of a type that represents numeric data 
+  in a language-neutral format (which would typically be transformed into a 
+  language-specific format for presentation to a user). In addition, the <B><A 
+  href="http://www.w3.org/TR/xpath#function-number">number</A></B> function 
+  cannot be used unless the language-neutral format used by the element is 
+  consistent with the XPath syntax for a <A 
+  href="http://www.w3.org/TR/xpath#NT-Number">Number</A>.</BLOCKQUOTE>
+<P><A name=function-sum><B>Function: </B><I>number</I> 
+<B>sum</B>(<I>node-set</I>)</A> </P>
+<P>The <B><A href="http://www.w3.org/TR/xpath#function-sum">sum</A></B> function 
+returns the sum, for each node in the argument node-set, of the result of 
+converting the <A 
+href="http://www.w3.org/TR/xpath#dt-string-value">string-value</A>s of the node 
+to a number.</P>
+<P><A name=function-floor><B>Function: </B><I>number</I> 
+<B>floor</B>(<I>number</I>)</A> </P>
+<P>The <B><A href="http://www.w3.org/TR/xpath#function-floor">floor</A></B> 
+function returns the largest (closest to positive infinity) number that is not 
+greater than the argument and that is an integer.</P>
+<P><A name=function-ceiling><B>Function: </B><I>number</I> 
+<B>ceiling</B>(<I>number</I>)</A> </P>
+<P>The <B><A href="http://www.w3.org/TR/xpath#function-ceiling">ceiling</A></B> 
+function returns the smallest (closest to negative infinity) number that is not 
+less than the argument and that is an integer.</P>
+<P><A name=function-round><B>Function: </B><I>number</I> 
+<B>round</B>(<I>number</I>)</A> </P>
+<P>The <B><A href="http://www.w3.org/TR/xpath#function-round">round</A></B> 
+function returns the number that is closest to the argument and that is an 
+integer. If there are two such numbers, then the one that is closest to positive 
+infinity is returned. If the argument is NaN, then NaN is returned. If the 
+argument is positive infinity, then positive infinity is returned. If the 
+argument is negative infinity, then negative infinity is returned. If the 
+argument is positive zero, then positive zero is returned. If the argument is 
+negative zero, then negative zero is returned. If the argument is less than 
+zero, but greater than or equal to -0.5, then negative zero is returned.</P>
+<BLOCKQUOTE><B>NOTE: </B>For these last two cases, the result of calling the 
+  <B><A href="http://www.w3.org/TR/xpath#function-round">round</A></B> function 
+  is not the same as the result of adding 0.5 and then calling the <B><A 
+  href="http://www.w3.org/TR/xpath#function-floor">floor</A></B> 
+function.</BLOCKQUOTE>
+<H2><A name=data-model></A>5 Data Model</H2>
+<P>XPath operates on an XML document as a tree. This section describes how XPath 
+models an XML document as a tree. This model is conceptual only and does not 
+mandate any particular implementation. The relationship of this model to the XML 
+Information Set <A href="http://www.w3.org/TR/xpath#XINFO">[XML Infoset]</A> is 
+described in <A href="http://www.w3.org/TR/xpath#infoset">[<B>B XML Information 
+Set Mapping</B>]</A>.</P>
+<P>XML documents operated on by XPath must conform to the XML Namespaces 
+Recommendation <A href="http://www.w3.org/TR/xpath#XMLNAMES">[XML 
+Names]</A>.</P>
+<P>The tree contains nodes. There are seven types of node:</P>
+<UL>
+  <LI>
+  <P>root nodes</P>
+  <LI>
+  <P>element nodes</P>
+  <LI>
+  <P>text nodes</P>
+  <LI>
+  <P>attribute nodes</P>
+  <LI>
+  <P>namespace nodes</P>
+  <LI>
+  <P>processing instruction nodes</P>
+  <LI>
+  <P>comment nodes</P></LI></UL>
+<P><A name=dt-string-value></A>For every type of node, there is a way of 
+determining a <B>string-value</B> for a node of that type. For some types of 
+node, the string-value is part of the node; for other types of node, the 
+string-value is computed from the string-value of descendant nodes.</P>
+<BLOCKQUOTE><B>NOTE: </B>For element nodes and root nodes, the string-value of 
+  a node is not the same as the string returned by the DOM 
+  <CODE>nodeValue</CODE> method (see <A 
+  href="http://www.w3.org/TR/xpath#DOM">[DOM]</A>).</BLOCKQUOTE>
+<P><A name=dt-expanded-name></A>Some types of node also have an 
+<B>expanded-name</B>, which is a pair consisting of a local part and a namespace 
+URI. The local part is a string. The namespace URI is either null or a string. 
+The namespace URI specified in the XML document can be a URI reference as 
+defined in <A href="http://www.w3.org/TR/xpath#RFC2396">[RFC2396]</A>; this 
+means it can have a fragment identifier and can be relative. A relative URI 
+should be resolved into an absolute URI during namespace processing: the 
+namespace URIs of <A 
+href="http://www.w3.org/TR/xpath#dt-expanded-name">expanded-name</A>s of nodes 
+in the data model should be absolute. Two <A 
+href="http://www.w3.org/TR/xpath#dt-expanded-name">expanded-name</A>s are equal 
+if they have the same local part, and either both have a null namespace URI or 
+both have non-null namespace URIs that are equal.</P>
+<P><A name=dt-document-order></A>There is an ordering, <B>document order</B>, 
+defined on all the nodes in the document corresponding to the order in which the 
+first character of the XML representation of each node occurs in the XML 
+representation of the document after expansion of general entities. Thus, the 
+root node will be the first node. Element nodes occur before their children. 
+Thus, document order orders element nodes in order of the occurrence of their 
+start-tag in the XML (after expansion of entities). The attribute nodes and 
+namespace nodes of an element occur before the children of the element. The 
+namespace nodes are defined to occur before the attribute nodes. The relative 
+order of namespace nodes is implementation-dependent. The relative order of 
+attribute nodes is implementation-dependent. <A 
+name=dt-reverse-document-order></A><B>Reverse document order</B> is the reverse 
+of <A href="http://www.w3.org/TR/xpath#dt-document-order">document 
+order</A>.</P>
+<P>Root nodes and element nodes have an ordered list of child nodes. Nodes never 
+share children: if one node is not the same node as another node, then none of 
+the children of the one node will be the same node as any of the children of 
+another node. <A name=dt-parent></A>Every node other than the root node has 
+exactly one <B>parent</B>, which is either an element node or the root node. A 
+root node or an element node is the parent of each of its child nodes. <A 
+name=dt-descendants></A>The <B>descendants</B> of a node are the children of the 
+node and the descendants of the children of the node.</P>
+<H3><A name=root-node></A>5.1 Root Node</H3>
+<P>The root node is the root of the tree. A root node does not occur except as 
+the root of the tree. The element node for the document element is a child of 
+the root node. The root node also has as children processing instruction and 
+comment nodes for processing instructions and comments that occur in the prolog 
+and after the end of the document element.</P>
+<P>The <A href="http://www.w3.org/TR/xpath#dt-string-value">string-value</A> of 
+the root node is the concatenation of the <A 
+href="http://www.w3.org/TR/xpath#dt-string-value">string-value</A>s of all text 
+node <A href="http://www.w3.org/TR/xpath#dt-descendants">descendants</A> of the 
+root node in document order.</P>
+<P>The root node does not have an <A 
+href="http://www.w3.org/TR/xpath#dt-expanded-name">expanded-name</A>.</P>
+<H3><A name=element-nodes></A>5.2 Element Nodes</H3>
+<P>There is an element node for every element in the document. An element node 
+has an <A href="http://www.w3.org/TR/xpath#dt-expanded-name">expanded-name</A> 
+computed by expanding the <A 
+href="http://www.w3.org/TR/REC-xml-names#NT-QName">QName</A> of the element 
+specified in the tag in accordance with the XML Namespaces Recommendation <A 
+href="http://www.w3.org/TR/xpath#XMLNAMES">[XML Names]</A>. The namespace URI of 
+the element's <A 
+href="http://www.w3.org/TR/xpath#dt-expanded-name">expanded-name</A> will be 
+null if the <A href="http://www.w3.org/TR/REC-xml-names#NT-QName">QName</A> has 
+no prefix and there is no applicable default namespace.</P>
+<BLOCKQUOTE><B>NOTE: </B>In the notation of Appendix A.3 of <A 
+  href="http://www.w3.org/TR/xpath#XMLNAMES">[XML Names]</A>, the local part of 
+  the expanded-name corresponds to the <CODE>type</CODE> attribute of the 
+  <CODE>ExpEType</CODE> element; the namespace URI of the expanded-name 
+  corresponds to the <CODE>ns</CODE> attribute of the <CODE>ExpEType</CODE> 
+  element, and is null if the <CODE>ns</CODE> attribute of the 
+  <CODE>ExpEType</CODE> element is omitted.</BLOCKQUOTE>
+<P>The children of an element node are the element nodes, comment nodes, 
+processing instruction nodes and text nodes for its content. Entity references 
+to both internal and external entities are expanded. Character references are 
+resolved.</P>
+<P>The <A href="http://www.w3.org/TR/xpath#dt-string-value">string-value</A> of 
+an element node is the concatenation of the <A 
+href="http://www.w3.org/TR/xpath#dt-string-value">string-value</A>s of all text 
+node <A href="http://www.w3.org/TR/xpath#dt-descendants">descendants</A> of the 
+element node in document order.</P>
+<H4><A name=unique-id></A>5.2.1 Unique IDs</H4>
+<P>An element node may have a unique identifier (ID). This is the value of the 
+attribute that is declared in the DTD as type <CODE>ID</CODE>. No two elements 
+in a document may have the same unique ID. If an XML processor reports two 
+elements in a document as having the same unique ID (which is possible only if 
+the document is invalid) then the second element in document order must be 
+treated as not having a unique ID.</P>
+<BLOCKQUOTE><B>NOTE: </B>If a document does not have a DTD, then no element in 
+  the document will have a unique ID.</BLOCKQUOTE>
+<H3><A name=attribute-nodes></A>5.3 Attribute Nodes</H3>
+<P>Each element node has an associated set of attribute nodes; the element is 
+the <A href="http://www.w3.org/TR/xpath#dt-parent">parent</A> of each of these 
+attribute nodes; however, an attribute node is not a child of its parent 
+element.</P>
+<BLOCKQUOTE><B>NOTE: </B>This is different from the DOM, which does not treat 
+  the element bearing an attribute as the parent of the attribute (see <A 
+  href="http://www.w3.org/TR/xpath#DOM">[DOM]</A>).</BLOCKQUOTE>
+<P>Elements never share attribute nodes: if one element node is not the same 
+node as another element node, then none of the attribute nodes of the one 
+element node will be the same node as the attribute nodes of another element 
+node.</P>
+<BLOCKQUOTE><B>NOTE: </B>The <CODE>=</CODE> operator tests whether two nodes 
+  have the same value, <I>not</I> whether they are the same node. Thus 
+  attributes of two different elements may compare as equal using 
+  <CODE>=</CODE>, even though they are not the same node.</BLOCKQUOTE>
+<P>A defaulted attribute is treated the same as a specified attribute. If an 
+attribute was declared for the element type in the DTD, but the default was 
+declared as <CODE>#IMPLIED</CODE>, and the attribute was not specified on the 
+element, then the element's attribute set does not contain a node for the 
+attribute.</P>
+<P>Some attributes, such as <CODE>xml:lang</CODE> and <CODE>xml:space</CODE>, 
+have the semantics that they apply to all elements that are descendants of the 
+element bearing the attribute, unless overridden with an instance of the same 
+attribute on another descendant element. However, this does not affect where 
+attribute nodes appear in the tree: an element has attribute nodes only for 
+attributes that were explicitly specified in the start-tag or empty-element tag 
+of that element or that were explicitly declared in the DTD with a default 
+value.</P>
+<P>An attribute node has an <A 
+href="http://www.w3.org/TR/xpath#dt-expanded-name">expanded-name</A> and a <A 
+href="http://www.w3.org/TR/xpath#dt-string-value">string-value</A>. The <A 
+href="http://www.w3.org/TR/xpath#dt-expanded-name">expanded-name</A> is computed 
+by expanding the <A href="http://www.w3.org/TR/REC-xml-names#NT-QName">QName</A> 
+specified in the tag in the XML document in accordance with the XML Namespaces 
+Recommendation <A href="http://www.w3.org/TR/xpath#XMLNAMES">[XML Names]</A>. 
+The namespace URI of the attribute's name will be null if the <A 
+href="http://www.w3.org/TR/REC-xml-names#NT-QName">QName</A> of the attribute 
+does not have a prefix.</P>
+<BLOCKQUOTE><B>NOTE: </B>In the notation of Appendix A.3 of <A 
+  href="http://www.w3.org/TR/xpath#XMLNAMES">[XML Names]</A>, the local part of 
+  the expanded-name corresponds to the <CODE>name</CODE> attribute of the 
+  <CODE>ExpAName</CODE> element; the namespace URI of the expanded-name 
+  corresponds to the <CODE>ns</CODE> attribute of the <CODE>ExpAName</CODE> 
+  element, and is null if the <CODE>ns</CODE> attribute of the 
+  <CODE>ExpAName</CODE> element is omitted.</BLOCKQUOTE>
+<P>An attribute node has a <A 
+href="http://www.w3.org/TR/xpath#dt-string-value">string-value</A>. The <A 
+href="http://www.w3.org/TR/xpath#dt-string-value">string-value</A> is the 
+normalized value as specified by the XML Recommendation <A 
+href="http://www.w3.org/TR/xpath#XML">[XML]</A>. An attribute whose normalized 
+value is a zero-length string is not treated specially: it results in an 
+attribute node whose <A 
+href="http://www.w3.org/TR/xpath#dt-string-value">string-value</A> is a 
+zero-length string.</P>
+<BLOCKQUOTE><B>NOTE: </B>It is possible for default attributes to be declared 
+  in an external DTD or an external parameter entity. The XML Recommendation 
+  does not require an XML processor to read an external DTD or an external 
+  parameter unless it is validating. A stylesheet or other facility that assumes 
+  that the XPath tree contains default attribute values declared in an external 
+  DTD or parameter entity may not work with some non-validating XML 
+processors.</BLOCKQUOTE>
+<P>There are no attribute nodes corresponding to attributes that declare 
+namespaces (see <A href="http://www.w3.org/TR/xpath#XMLNAMES">[XML 
+Names]</A>).</P>
+<H3><A name=namespace-nodes></A>5.4 Namespace Nodes</H3>
+<P>Each element has an associated set of namespace nodes, one for each distinct 
+namespace prefix that is in scope for the element (including the 
+<CODE>xml</CODE> prefix, which is implicitly declared by the XML Namespaces 
+Recommendation <A href="http://www.w3.org/TR/xpath#XMLNAMES">[XML Names]</A>) 
+and one for the default namespace if one is in scope for the element. The 
+element is the <A href="http://www.w3.org/TR/xpath#dt-parent">parent</A> of each 
+of these namespace nodes; however, a namespace node is not a child of its parent 
+element. Elements never share namespace nodes: if one element node is not the 
+same node as another element node, then none of the namespace nodes of the one 
+element node will be the same node as the namespace nodes of another element 
+node. This means that an element will have a namespace node:</P>
+<UL>
+  <LI>
+  <P>for every attribute on the element whose name starts with 
+  <CODE>xmlns:</CODE>;</P>
+  <LI>
+  <P>for every attribute on an ancestor element whose name starts 
+  <CODE>xmlns:</CODE> unless the element itself or a nearer ancestor redeclares 
+  the prefix;</P>
+  <LI>
+  <P>for an <CODE>xmlns</CODE> attribute, if the element or some ancestor has an 
+  <CODE>xmlns</CODE> attribute, and the value of the <CODE>xmlns</CODE> 
+  attribute for the nearest such element is non-empty</P>
+  <BLOCKQUOTE><B>NOTE: </B>An attribute <CODE>xmlns=""</CODE> "undeclares" the 
+    default namespace (see <A href="http://www.w3.org/TR/xpath#XMLNAMES">[XML 
+    Names]</A>).</BLOCKQUOTE></LI></UL>
+<P>A namespace node has an <A 
+href="http://www.w3.org/TR/xpath#dt-expanded-name">expanded-name</A>: the local 
+part is the namespace prefix (this is empty if the namespace node is for the 
+default namespace); the namespace URI is always null.</P>
+<P>The <A href="http://www.w3.org/TR/xpath#dt-string-value">string-value</A> of 
+a namespace node is the namespace URI that is being bound to the namespace 
+prefix; if it is relative, it must be resolved just like a namespace URI in an 
+<A href="http://www.w3.org/TR/xpath#dt-expanded-name">expanded-name</A>.</P>
+<H3><A name=section-Processing-Instruction-Nodes></A>5.5 Processing Instruction 
+Nodes</H3>
+<P>There is a processing instruction node for every processing instruction, 
+except for any processing instruction that occurs within the document type 
+declaration.</P>
+<P>A processing instruction has an <A 
+href="http://www.w3.org/TR/xpath#dt-expanded-name">expanded-name</A>: the local 
+part is the processing instruction's target; the namespace URI is null. The <A 
+href="http://www.w3.org/TR/xpath#dt-string-value">string-value</A> of a 
+processing instruction node is the part of the processing instruction following 
+the target and any whitespace. It does not include the terminating 
+<CODE>?&gt;</CODE>.</P>
+<BLOCKQUOTE><B>NOTE: </B>The XML declaration is not a processing instruction. 
+  Therefore, there is no processing instruction node corresponding to the XML 
+  declaration.</BLOCKQUOTE>
+<H3><A name=section-Comment-Nodes></A>5.6 Comment Nodes</H3>
+<P>There is a comment node for every comment, except for any comment that occurs 
+within the document type declaration.</P>
+<P>The <A href="http://www.w3.org/TR/xpath#dt-string-value">string-value</A> of 
+comment is the content of the comment not including the opening 
+<CODE>&lt;!--</CODE> or the closing <CODE>--&gt;</CODE>.</P>
+<P>A comment node does not have an <A 
+href="http://www.w3.org/TR/xpath#dt-expanded-name">expanded-name</A>.</P>
+<H3><A name=section-Text-Nodes></A>5.7 Text Nodes</H3>
+<P>Character data is grouped into text nodes. As much character data as possible 
+is grouped into each text node: a text node never has an immediately following 
+or preceding sibling that is a text node. The <A 
+href="http://www.w3.org/TR/xpath#dt-string-value">string-value</A> of a text 
+node is the character data. A text node always has at least one character of 
+data.</P>
+<P>Each character within a CDATA section is treated as character data. Thus, 
+<CODE>&lt;![CDATA[&lt;]]&gt;</CODE> in the source document will treated the same 
+as <CODE>&amp;lt;</CODE>. Both will result in a single <CODE>&lt;</CODE> 
+character in a text node in the tree. Thus, a CDATA section is treated as if the 
+<CODE>&lt;![CDATA[</CODE> and <CODE>]]&gt;</CODE> were removed and every 
+occurrence of <CODE>&lt;</CODE> and <CODE>&amp;</CODE> were replaced by 
+<CODE>&amp;lt;</CODE> and <CODE>&amp;amp;</CODE> respectively.</P>
+<BLOCKQUOTE><B>NOTE: </B>When a text node that contains a <CODE>&lt;</CODE> 
+  character is written out as XML, the <CODE>&lt;</CODE> character must be 
+  escaped by, for example, using <CODE>&amp;lt;</CODE>, or including it in a 
+  CDATA section.</BLOCKQUOTE>
+<P>Characters inside comments, processing instructions and attribute values do 
+not produce text nodes. Line-endings in external entities are normalized to #xA 
+as specified in the XML Recommendation <A 
+href="http://www.w3.org/TR/xpath#XML">[XML]</A>.</P>
+<P>A text node does not have an <A 
+href="http://www.w3.org/TR/xpath#dt-expanded-name">expanded-name</A>.</P>
+<H2><A name=section-Conformance></A>6 Conformance</H2>
+<P>XPath is intended primarily as a component that can be used by other 
+specifications. Therefore, XPath relies on specifications that use XPath (such 
+as <A href="http://www.w3.org/TR/xpath#XPTR">[XPointer]</A> and <A 
+href="http://www.w3.org/TR/xpath#XSLT">[XSLT]</A>) to specify criteria for 
+conformance of implementations of XPath and does not define any conformance 
+criteria for independent implementations of XPath.</P>
+<HR title="Separator from footer">
+
+<H2><A name=section-References></A>A References</H2>
+<H3><A name=section-Normative-References></A>A.1 Normative References</H3>
+<DL>
+  <DT><A name=IEEE754>IEEE 754</A> 
+  <DD>Institute of Electrical and Electronics Engineers. <I>IEEE Standard for 
+  Binary Floating-Point Arithmetic</I>. ANSI/IEEE Std 754-1985. 
+  <DT><A name=RFC2396>RFC2396</A> 
+  <DD>T. Berners-Lee, R. Fielding, and L. Masinter. <I>Uniform Resource 
+  Identifiers (URI): Generic Syntax</I>. IETF RFC 2396. See <A 
+  href="http://www.ietf.org/rfc/rfc2396.txt">http://www.ietf.org/rfc/rfc2396.txt</A>. 
+
+  <DT><A name=XML>XML</A> 
+  <DD>World Wide Web Consortium. <I>Extensible Markup Language (XML) 1.0.</I> 
+  W3C Recommendation. See <A 
+  href="http://www.w3.org/TR/1998/REC-xml-19980210">http://www.w3.org/TR/1998/REC-xml-19980210</A> 
+
+  <DT><A name=XMLNAMES>XML Names</A> 
+  <DD>World Wide Web Consortium. <I>Namespaces in XML.</I> W3C Recommendation. 
+  See <A 
+  href="http://www.w3.org/TR/REC-xml-names">http://www.w3.org/TR/REC-xml-names</A> 
+  </DD></DL>
+<H3><A name=section-Other-References></A>A.2 Other References</H3>
+<DL>
+  <DT><A name=CHARMOD>Character Model</A> 
+  <DD>World Wide Web Consortium. <I>Character Model for the World Wide Web.</I> 
+  W3C Working Draft. See <A 
+  href="http://www.w3.org/TR/WD-charmod">http://www.w3.org/TR/WD-charmod</A> 
+  <DT><A name=DOM>DOM</A> 
+  <DD>World Wide Web Consortium. <I>Document Object Model (DOM) Level 1 
+  Specification.</I> W3C Recommendation. See <A 
+  href="http://www.w3.org/TR/REC-DOM-Level-1">http://www.w3.org/TR/REC-DOM-Level-1</A> 
+
+  <DT><A name=JLS>JLS</A> 
+  <DD>J. Gosling, B. Joy, and G. Steele. <I>The Java Language Specification</I>. 
+  See <A 
+  href="http://java.sun.com/docs/books/jls/index.html">http://java.sun.com/docs/books/jls/index.html</A>. 
+
+  <DT><A name=ISO10646>ISO/IEC 10646</A> 
+  <DD>ISO (International Organization for Standardization). <I>ISO/IEC 
+  10646-1:1993, Information technology -- Universal Multiple-Octet Coded 
+  Character Set (UCS) -- Part 1: Architecture and Basic Multilingual Plane</I>. 
+  International Standard. See <A 
+  href="http://www.iso.ch/cate/d18741.html">http://www.iso.ch/cate/d18741.html</A>. 
+
+  <DT><A name=TEI>TEI</A> 
+  <DD>C.M. Sperberg-McQueen, L. Burnard <I>Guidelines for Electronic Text 
+  Encoding and Interchange</I>. See <A 
+  href="http://etext.virginia.edu/TEI.html">http://etext.virginia.edu/TEI.html</A>. 
+
+  <DT><A name=UNICODE>Unicode</A> 
+  <DD>Unicode Consortium. <I>The Unicode Standard</I>. See <A 
+  href="http://www.unicode.org/unicode/standard/standard.html">http://www.unicode.org/unicode/standard/standard.html</A>. 
+
+  <DT><A name=XINFO>XML Infoset</A> 
+  <DD>World Wide Web Consortium. <I>XML Information Set.</I> W3C Working Draft. 
+  See <A 
+  href="http://www.w3.org/TR/xml-infoset">http://www.w3.org/TR/xml-infoset</A> 
+  <DT><A name=XPTR>XPointer</A> 
+  <DD>World Wide Web Consortium. <I>XML Pointer Language (XPointer).</I> W3C 
+  Working Draft. See <A 
+  href="http://www.w3.org/TR/WD-xptr">http://www.w3.org/TR/WD-xptr</A> 
+  <DT><A name=XQL>XQL</A> 
+  <DD>J. Robie, J. Lapp, D. Schach. <I>XML Query Language (XQL)</I>. See <A 
+  href="http://www.w3.org/TandS/QL/QL98/pp/xql.html">http://www.w3.org/TandS/QL/QL98/pp/xql.html</A> 
+
+  <DT><A name=XSLT>XSLT</A> 
+  <DD>World Wide Web Consortium. <I>XSL Transformations (XSLT).</I> W3C 
+  Recommendation. See <A 
+  href="http://www.w3.org/TR/xslt">http://www.w3.org/TR/xslt</A> </DD></DL>
+<H2><A name=infoset></A>B XML Information Set Mapping (Non-Normative)</H2>
+<P>The nodes in the XPath data model can be derived from the information items 
+provided by the XML Information Set <A 
+href="http://www.w3.org/TR/xpath#XINFO">[XML Infoset]</A> as follows:</P>
+<BLOCKQUOTE><B>NOTE: </B>A new version of the XML Information Set Working 
+  Draft, which will replace the May 17 version, was close to completion at the 
+  time when the preparation of this version of XPath was completed and was 
+  expected to be released at the same time or shortly after the release of this 
+  version of XPath. The mapping is given for this new version of the XML 
+  Information Set Working Draft. If the new version of the XML Information Set 
+  Working has not yet been released, W3C members may consult the internal 
+  Working Group version <A 
+  href="http://www.w3.org/XML/Group/1999/09/WD-xml-infoset-19990915.html">http://www.w3.org/XML/Group/1999/09/WD-xml-infoset-19990915.html</A> 
+  (<A href="http://cgi.w3.org/MemberAccess/">members only</A>).</BLOCKQUOTE>
+<UL>
+  <LI>
+  <P>The root node comes from the document information item. The children of the 
+  root node come from the <I>children</I> and <I>children - comments</I> 
+  properties.</P>
+  <LI>
+  <P>An element node comes from an element information item. The children of an 
+  element node come from the <I>children</I> and <I>children - comments</I> 
+  properties. The attributes of an element node come from the <I>attributes</I> 
+  property. The namespaces of an element node come from the <I>in-scope 
+  namespaces</I> property. The local part of the <A 
+  href="http://www.w3.org/TR/xpath#dt-expanded-name">expanded-name</A> of the 
+  element node comes from the <I>local name</I> property. The namespace URI of 
+  the <A href="http://www.w3.org/TR/xpath#dt-expanded-name">expanded-name</A> of 
+  the element node comes from the <I>namespace URI</I> property. The unique ID 
+  of the element node comes from the <I>children</I> property of the attribute 
+  information item in the <I>attributes</I> property that has an <I>attribute 
+  type</I> property equal to <CODE>ID</CODE>.</P>
+  <LI>
+  <P>An attribute node comes from an attribute information item. The local part 
+  of the <A href="http://www.w3.org/TR/xpath#dt-expanded-name">expanded-name</A> 
+  of the attribute node comes from the <I>local name</I> property. The namespace 
+  URI of the <A 
+  href="http://www.w3.org/TR/xpath#dt-expanded-name">expanded-name</A> of the 
+  attribute node comes from the <I>namespace URI</I> property. The <A 
+  href="http://www.w3.org/TR/xpath#dt-string-value">string-value</A> of the node 
+  comes from concatenating the <I>character code</I> property of each member of 
+  the <I>children</I> property.</P>
+  <LI>
+  <P>A text node comes from a sequence of one or more consecutive character 
+  information items. The <A 
+  href="http://www.w3.org/TR/xpath#dt-string-value">string-value</A> of the node 
+  comes from concatenating the <I>character code</I> property of each of the 
+  character information items.</P>
+  <LI>
+  <P>A processing instruction node comes from a processing instruction 
+  information item. The local part of the <A 
+  href="http://www.w3.org/TR/xpath#dt-expanded-name">expanded-name</A> of the 
+  node comes from the <I>target</I> property. (The namespace URI part of the <A 
+  href="http://www.w3.org/TR/xpath#dt-expanded-name">expanded-name</A> of the 
+  node is null.) The <A 
+  href="http://www.w3.org/TR/xpath#dt-string-value">string-value</A> of the node 
+  comes from the <I>content</I> property. There are no processing instruction 
+  nodes for processing instruction items that are children of document type 
+  declaration information item.</P>
+  <LI>
+  <P>A comment node comes from a comment information item. The <A 
+  href="http://www.w3.org/TR/xpath#dt-string-value">string-value</A> of the node 
+  comes from the <I>content</I> property. There are no comment nodes for comment 
+  information items that are children of document type declaration information 
+  item.</P>
+  <LI>
+  <P>A namespace node comes from a namespace declaration information item. The 
+  local part of the <A 
+  href="http://www.w3.org/TR/xpath#dt-expanded-name">expanded-name</A> of the 
+  node comes from the <I>prefix</I> property. (The namespace URI part of the <A 
+  href="http://www.w3.org/TR/xpath#dt-expanded-name">expanded-name</A> of the 
+  node is null.) The <A 
+  href="http://www.w3.org/TR/xpath#dt-string-value">string-value</A> of the node 
+  comes from the <I>namespace URI</I> property.</P></LI></UL></BODY></HTML>

@@ -1,0 +1,26 @@
+[OPTIONS]
+Contents=Sommaire
+Title=Aide GENMUL
+Compress=1
+
+[FILES]
+f:\real\haccp\help\genmul\genmul.rtf
+[BITMAPS]
+F:\real\haccp\help\rondn.bmp
+
+[MAP]
+Menus	1
+MenuFichier	2
+MenuAide	3
+Fenetres	4
+FenAPropos	5
+FenPrincipale	6
+
+[CONFIG]
+
+[BUILDTAGS]
+
+[WINDOWS]
+main=,,0,,(192,192,192)
+
+

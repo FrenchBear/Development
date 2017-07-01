@@ -1,0 +1,1 @@
+This sample dumps everything from a recordset to an XArrayDB.  The difference between this sample and the RDOToXarray is only the redimensioning of the XArrayDB.  With the recordset we always know how many records we have so we can ReDim the XArrayDB up front.

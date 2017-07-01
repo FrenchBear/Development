@@ -1,0 +1,184 @@
+<HTML>
+<HEAD>
+<TITLE>Inventory</TITLE>
+</HEAD>
+<BODY>
+
+<BUTTON ID=btnQuery>Select Product Lines</BUTTON>
+<BUTTON ID=btnOrder>Select Items To Order</BUTTON>
+<BUTTON ID=btnReset>Unselect All</BUTTON>
+
+<OBJECT id=tDBGrid CLASSID="clsid:0D6234D0-DBA2-11D1-B5DF-0060976089D0" WIDTH=760 HEIGHT=400>
+	<PARAM NAME="DataSource" DATASRC="#adcInven">
+</OBJECT>
+<BUTTON ID="btnSubmit">Submit Changes</BUTTON>
+<p>
+<OBJECT CLASSID="clsid:0D6234E9-DBA2-11D1-B5DF-0060976089D0" ID="tDBDropDown" HEIGHT=90 WIDTH=113>
+	<PARAM NAME="DataSource" DATASRC="#adcDropDown">
+</OBJECT>
+<OBJECT CLASSID="CLSID:BD96C556-65A3-11D0-983A-00C04FC29E33" ID="adcDropDown" HEIGHT=1 WIDTH=1>
+	<PARAM NAME="Server" VALUE="http://passat">
+	<PARAM NAME="Connect" VALUE="DSN=INVENDB">
+	<PARAM NAME="SQL" VALUE="Select Distinct Product_Line From Inventory">
+</OBJECT>
+<OBJECT CLASSID="CLSID:BD96C556-65A3-11D0-983A-00C04FC29E33" ID="adcInven" HEIGHT=1 WIDTH=1>
+	<PARAM NAME="Server" VALUE="http://passat">
+	<PARAM NAME="Connect" VALUE="DSN=INVENDB">
+	<PARAM NAME="SQL" VALUE="select * from Inventory order by Product_Line">
+</OBJECT>
+
+</BODY>
+</HTML>
+
+<SCRIPT LANGUAGE="VBSCRIPT">
+Dim ProdLine
+Dim ButtonFlag
+
+Dim GridCols(11)
+
+Sub window_OnLoad()
+' The initialization code for the grid. Since design time property
+' pages of the grid are unavailable, all initialization has to be
+' done manually.
+
+	Dim C, I
+	Dim NoItem
+	Dim TempCol, TempStyle
+
+	' Fill the columns array
+	for I = 0 to tDBGrid.Columns.Count - 1
+		Set GridCols(I) = tDBGrid.Columns.Item(I)
+	next
+
+	' Set some ambient properties for the grid
+	for each C in tDBGrid.Columns
+		C.HeadAlignment = 2   'dbgCenter
+	next
+
+	tDBGrid.HeadLines = 2
+	tDBGrid.MarqueeStyle = dbgDottedCellBorder
+	tDBGrid.HighlightRowStyle.BackColor = vbBlue
+	tDBGrid.FetchRowStyle = True
+	tDBGrid.Styles.Item("Normal").Font.Name = "Tahoma"
+	tDBGrid.Styles.Item("Normal").Font.Size = 9
+
+	' Define the Style that will be used for items that are 0
+	set NoItem = CreateObject("TrueOleDBGrid60.Style")
+	NoItem.BackColor = vbRed
+	GridCols(4).AddRegexCellStyle -1, NoItem, "^0"
+	GridCols(4).AddRegexCellStyle 0 + 1, NoItem, "^0"
+
+	' Add the columns to the TDBDropDown and set its properties
+	Set TempCol = tDBDropDown.Columns.Add(0)
+	TempCol.Caption = "Line desc."
+	TempCol.DataField = ""
+	TempCol.DataWidth = 0
+	TempCol.Width = 150
+	TempCol.Visible = True
+	Set TempCol = tDBDropDown.Columns.Add(1)
+	TempCol.Caption = "Product Line"
+	TempCol.DataField = "Product_Line"
+	TempCol.DataWidth = 10
+	TempCol.Visible = False
+
+	Set TempStyle = tDBDropDown.Styles.Item("HighlightRow")
+	TempStyle.BackColor = vbBlue
+	tDBDropDown.Styles.Item("Normal").Font.Name = "Tahoma"
+	tDBDropDown.Styles.Item("Normal").Font.Size = 8
+
+	tDBDropDown.ColumnHeaders = False	
+	tDBDropDown.ListField = "Product_Line"
+	tDBDropDown.RowDividerStyle = 0
+	tDBDropDown.ScrollBars = 0   'dbgNone
+	tDBDropDown.BackColor = &hc0c0c0	'Grey
+
+	' Update the TDBDropDown
+	tDBDropDown.HoldFields
+	tDBDropDown.ReBind
+
+	' Connect the TDBDropDown to its column
+	GridCols(0).DropDown = tDBDropDown
+
+	ButtonFlag = 3
+End Sub
+
+Sub btnOrder_OnClick()
+	' Set ButtonFlag to 1 for the FetchRowStyle routine
+	ButtonFlag = 1
+	tDBGrid.Refresh
+End Sub
+
+Sub btnReset_OnClick()
+	' Set ButtonFlag to 3 for the FetchRowStyle routine
+	ButtonFlag = 3
+	tDBGrid.Refresh
+End Sub
+
+Sub btnQuery_OnClick()
+	' Set ButtonFlag to 2 for the FetchRowStyle routine
+	ButtonFlag = 2
+
+	' Get the information about which Product Line the user wants
+	' to highlight
+	ProdLine = InputBox("Enter the Product Line to Highlight. " & _
+		NL & "Enter 000 to Highlight the Product Line for the Current Item. " & NL & _
+		"Click Cancel to abort. ", "SELECT PRODUCT LINE")
+	If ProdLine = "" Then
+		Exit Sub
+	Else
+		If ProdLine = "000" Then
+			ProdLine = tDBGrid.Columns.Item(0).CellText(tDBGrid.Bookmark)
+		End If
+	End If
+
+	tDBGrid.Refresh
+End Sub
+
+Sub tDBGrid_FetchRowStyle(Split, Bookmark, RowStyle)
+	' Check ButtonFlag, process as necessary
+	' If the ButtonFlag is 1 then highlight the Rows where the Quantity
+	' On Hand is less than or equal to the Reorder Level.
+	Select Case ButtonFlag
+		Case 1
+			If CInt(GridCols(4).CellText(Bookmark)) <= CInt(GridCols(6).CellText(Bookmark)) Then
+				RowStyle.BackColor = vbBlue
+				RowStyle.ForeColor = vbWhite
+			End If
+		Case 2
+			' If the ButtonFlag is 2 then highlight the cells in the rows where the Product
+			' Line of the Row is equal to the value passed in ProdLine (ProdLine is a variable
+			' that is passed from the btnQuery_OnClick event's InputBox)
+			If GridCols(0).CellText(Bookmark) = ProdLine Then
+				RowStyle.BackColor = vbBlue
+				RowStyle.ForeColor = vbWhite
+			End If
+		Case 3
+			' If the ButtonFlag is 3 then reset the grid's background to the initial colors
+			' that were displayed
+			RowStyle = tDBGrid.Styles.Item("Normal")
+	End Select
+End Sub
+
+Sub tDBDropDown_UnboundColumnFetch(Bookmark, Col, Value)
+	Select Case tDBDropDown.Columns.Item("Product_Line").CellText(Bookmark)
+		Case "020"
+			Value = "Home/Office"
+		Case "050"
+			Value = "Office"
+		Case "020"
+			Value = "Home/Office"
+		Case "200"
+			Value = "Dining Room"
+		Case "250"
+			Value = "Family/Living Room"
+		Case "300"
+			Value = "Bar/Grill"
+		Case "400"
+			Value = "Audio/Video"
+	End Select
+End Sub
+
+Sub btnSubmit_OnClick()
+	adcInven.SubmitChanges
+End Sub
+</SCRIPT>

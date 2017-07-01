@@ -1,0 +1,19 @@
+
+a086.exe:  align.c
+	   cc -G0 align.c -o a086
+
+a086.exe:  align.c
+	   cc -G0 align.c -o a086
+
+a086zp.exe:  align.c
+	   cc -G0 -Zp align.c -o a086zp
+
+a086zp4.exe:  align.c
+	   cc -G0 -Zp4 align.c -o a086zp4
+
+a086zp2.exe:  align.c
+	   cc -G0 -Zp2 align.c -o a086zp2
+
+a086zp1.exe:  align.c
+	   cc -G0 -Zp1 align.c -o a086zp1
+

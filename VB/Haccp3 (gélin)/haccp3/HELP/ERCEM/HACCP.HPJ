@@ -1,0 +1,39 @@
+; This file is maintained by HCW. Do not modify this file directly.
+
+[OPTIONS]
+HCW=0
+COMPRESS=12 Hall Zeck
+ERRORLOG=haccp.err
+LCID=0x40c 0x0 0x0 ;Français (standard)
+REPORT=Yes
+CONTENTS=K00
+TITLE=Aide HACCP
+COPYRIGHT=ERCEM, CITPPM 1994-1996
+HLP=.\Haccp.hlp
+
+[FILES]
+Haccp.rtf
+
+[MAP]
+K01=1
+K10=10
+K11=11
+K12=12
+K13=13
+K14=14
+K15=15
+K16=16
+K31=31
+K32=32
+K33=33
+K34=34
+K35=35
+K36=36
+K37=37
+K38=38
+
+[WINDOWS]
+main="Aide HACCP 3",(0,0,1023,1023),27648,,(r16776960)
+
+[CONFIG]
+BrowseButtons()

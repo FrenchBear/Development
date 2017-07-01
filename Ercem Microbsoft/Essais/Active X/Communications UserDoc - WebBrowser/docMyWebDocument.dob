@@ -1,0 +1,162 @@
+VERSION 5.00
+Begin VB.UserDocument docMyWebDocument 
+   BackColor       =   &H00FFC0C0&
+   ClientHeight    =   3615
+   ClientLeft      =   0
+   ClientTop       =   0
+   ClientWidth     =   4125
+   BeginProperty Font 
+      Name            =   "Verdana"
+      Size            =   9
+      Charset         =   0
+      Weight          =   400
+      Underline       =   0   'False
+      Italic          =   0   'False
+      Strikethrough   =   0   'False
+   EndProperty
+   HScrollSmallChange=   225
+   ScaleHeight     =   3615
+   ScaleWidth      =   4125
+   VScrollSmallChange=   225
+   Begin VB.ListBox lstEvents 
+      Height          =   1950
+      Left            =   180
+      TabIndex        =   4
+      Top             =   1500
+      Width           =   2565
+   End
+   Begin VB.CommandButton btnTest 
+      Caption         =   "&Test"
+      Height          =   375
+      Left            =   180
+      TabIndex        =   3
+      Top             =   1020
+      Width           =   1215
+   End
+   Begin VB.TextBox txtNom 
+      Height          =   315
+      Left            =   1020
+      TabIndex        =   1
+      Top             =   480
+      Width           =   2775
+   End
+   Begin VB.Label Label2 
+      BackStyle       =   0  'Transparent
+      Caption         =   "UserDocument"
+      BeginProperty Font 
+         Name            =   "Verdana"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   375
+      Left            =   180
+      TabIndex        =   2
+      Top             =   60
+      Width           =   2595
+   End
+   Begin VB.Label Label1 
+      BackStyle       =   0  'Transparent
+      Caption         =   "&Nom :"
+      Height          =   255
+      Left            =   180
+      TabIndex        =   0
+      Top             =   540
+      Width           =   675
+   End
+End
+Attribute VB_Name = "docMyWebDocument"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = True
+Option Explicit
+
+Public Property Let CustomerID(ByVal sCustID As String)
+  txtNom = sCustID
+End Property
+
+Private Sub btnTest_Click()
+  Dim d As Object, f As Object
+  Set d = Parent.Parent
+  Dim i
+  For i = 0 To d.frames.length - 1
+    Dim sNom As String
+    If d.frames(i).Name = "Donnees" Then Exit For
+  Next
+  If i = d.frames.length Then
+    MsgBox "Problème, pas trouvé le frame Donnees !"
+    Exit Sub
+  End If
+  Set f = d.frames(i)
+  
+  On Error Resume Next
+  MsgBox "txtAutre.Value: " & f.txtAutre.Value
+  MsgBox "sValeur: " & f.sValeur
+  On Error GoTo 0
+End Sub
+
+
+Private Sub UserDocument_Initialize()
+  lstEvents.AddItem "Initialize"
+End Sub
+
+Private Sub UserDocument_InitProperties()
+  lstEvents.AddItem "InitProperties"
+End Sub
+
+Private Sub UserDocument_AsyncReadComplete(AsyncProp As AsyncProperty)
+  lstEvents.AddItem "AsyncReadComplete"
+End Sub
+
+Private Sub UserDocument_EnterFocus()
+  lstEvents.AddItem "EnterFocus"
+End Sub
+
+Private Sub UserDocument_ExitFocus()
+  lstEvents.AddItem "ExitFocus"
+End Sub
+
+Private Sub UserDocument_GotFocus()
+  lstEvents.AddItem "GotFocus"
+End Sub
+
+Private Sub UserDocument_LostFocus()
+  lstEvents.AddItem "LostFocus"
+End Sub
+
+Private Sub UserDocument_Paint()
+  lstEvents.AddItem "Paint"
+End Sub
+
+Private Sub UserDocument_ReadProperties(PropBag As PropertyBag)
+  lstEvents.AddItem "ReadProperties"
+End Sub
+
+Private Sub UserDocument_Resize()
+  lstEvents.AddItem "Resize"
+End Sub
+
+Private Sub UserDocument_Scroll()
+  lstEvents.AddItem "Scroll"
+End Sub
+
+Private Sub UserDocument_Show()
+  lstEvents.AddItem "Show"
+End Sub
+
+Private Sub UserDocument_Hide()
+  lstEvents.AddItem "Hide"
+End Sub
+
+Private Sub UserDocument_Terminate()
+  lstEvents.AddItem "Terminate"
+End Sub
+
+Private Sub UserDocument_WriteProperties(PropBag As PropertyBag)
+  lstEvents.AddItem "WriteProperties"
+End Sub
+

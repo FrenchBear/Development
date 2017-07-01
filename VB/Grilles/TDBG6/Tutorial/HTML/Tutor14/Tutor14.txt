@@ -1,0 +1,3 @@
+Since Tutorial 14 demonstrates drag and drop in the grid, and there is
+no drag and drop in the browsers today, this tutorial has not been
+implemented here.

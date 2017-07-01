@@ -1,0 +1,18 @@
+[OPTIONS]
+ERRORLOG=F:\REAL\HACCP\HACCP.LOG
+Contents=Sommaire
+Copyright=R‚alis‚ avec la version d'‚valuation d'AidEdit Pro
+Title=Aide HACCP3 Gelin Conseil
+
+[FILES]
+texte1.rtf
+
+[CONFIG]
+About()
+
+[MAP]
+QuefaireavecHACCP3	1
+
+[WINDOWS]
+main=,(500,250,500,750),0,,(192,192,192),0
+

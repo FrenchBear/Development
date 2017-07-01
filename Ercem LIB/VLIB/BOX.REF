@@ -1,0 +1,3 @@
+/* box.ref */
+void drawbox(int2,int2,int2,int2,const char *,booleen);
+void drawboxa(int2,int2,int2,int2,const char *,booleen,uint1);

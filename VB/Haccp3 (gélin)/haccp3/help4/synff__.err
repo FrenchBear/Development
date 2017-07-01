@@ -1,0 +1,43 @@
+Microsoft (R) Help Compiler Version 3.10.505 (extended)
+Copyright (c) Microsoft Corp 1990 - 1992. All rights reserved.
+synafap.hpj
+
+Warning 2511: line...7 of synafap.hpj : Unrecognized option 'LCID' in [OPTIONS] section.
+Warning 2511: line...9 of synafap.hpj : Unrecognized option 'FTS' in [OPTIONS] section.
+Warning 2511: line...13 of synafap.hpj : Unrecognized option 'HLP' in [OPTIONS] section.
+Error 1230: line...30 of synafap.hpj : File '.\Pertinence.rtf' not found.
+Warning 2151: line...33 of synafap.hpj : Incomplete line in [MAP] section.
+Warning 2151: line...34 of synafap.hpj : Incomplete line in [MAP] section.
+Warning 2151: line...35 of synafap.hpj : Incomplete line in [MAP] section.
+Warning 2151: line...36 of synafap.hpj : Incomplete line in [MAP] section.
+Warning 2151: line...37 of synafap.hpj : Incomplete line in [MAP] section.
+Warning 2151: line...38 of synafap.hpj : Incomplete line in [MAP] section.
+Warning 2151: line...39 of synafap.hpj : Incomplete line in [MAP] section.
+Warning 2471: line...42 of synafap.hpj : Invalid syntax in [WINDOWS] section.
+Warning 4393: topic...14 of .\Reglt2.rtf : Title exceeds limit of 128 characters.
+Warning 4393: topic...16 of .\Reglt2.rtf : Title exceeds limit of 128 characters.
+Warning 4393: topic...17 of .\Reglt2.rtf : Title exceeds limit of 128 characters.
+Warning 4393: topic...19 of .\Reglt2.rtf : Title exceeds limit of 128 characters.
+Warning 4393: topic...20 of .\Reglt2.rtf : Title exceeds limit of 128 characters.
+Warning 4393: topic...21 of .\Reglt2.rtf : Title exceeds limit of 128 characters.
+Warning 4393: topic...30 of .\Reglt2.rtf : Title exceeds limit of 128 characters.
+Warning 4393: topic...38 of .\Reglt2.rtf : Title exceeds limit of 128 characters.
+Warning 4393: topic...39 of .\Reglt2.rtf : Title exceeds limit of 128 characters.
+Warning 4393: topic...40 of .\Reglt2.rtf : Title exceeds limit of 128 characters.
+Warning 4393: topic...41 of .\Reglt2.rtf : Title exceeds limit of 128 characters.
+Warning 4393: topic...42 of .\Reglt2.rtf : Title exceeds limit of 128 characters.
+Warning 4393: topic...43 of .\Reglt2.rtf : Title exceeds limit of 128 characters.
+Warning 4393: topic...44 of .\Reglt2.rtf : Title exceeds limit of 128 characters.
+Warning 4393: topic...45 of .\Reglt2.rtf : Title exceeds limit of 128 characters.
+Warning 4393: topic...46 of .\Reglt2.rtf : Title exceeds limit of 128 characters.
+Warning 4393: topic...48 of .\Reglt2.rtf : Title exceeds limit of 128 characters.
+Warning 4393: topic...49 of .\Reglt2.rtf : Title exceeds limit of 128 characters.
+Warning 4393: topic...50 of .\Reglt2.rtf : Title exceeds limit of 128 characters.
+Warning 4393: topic...51 of .\Reglt2.rtf : Title exceeds limit of 128 characters.
+Warning 4393: topic...52 of .\Reglt2.rtf : Title exceeds limit of 128 characters.
+Warning 4393: topic...53 of .\Reglt2.rtf : Title exceeds limit of 128 characters.
+Warning 4393: topic...59 of .\Reglt2.rtf : Title exceeds limit of 128 characters.
+Warning 4393: topic...60 of .\Reglt2.rtf : Title exceeds limit of 128 characters.
+Warning 4393: topic...61 of .\Reglt2.rtf : Title exceeds limit of 128 characters.
+Warning 4393: topic...62 of .\Reglt2.rtf : Title exceeds limit of 128 characters.
+Warning 4393: topic...78 of .\Reglt2.rtf : Title exceeds limit of 128 characters.

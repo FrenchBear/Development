@@ -1,0 +1,62 @@
+Using ZAP.EXE to Find Duplicate DLLs and VBXs            [B_VBasic]
+
+
+Visual Basic support engineers regularly encounter problems caused by users
+with more than one copy of a particular DLL or VBX. The ZAP.EXE utility
+makes what used to be a tedious and time-consuming problem a great deal
+easier and quicker to solve. The main features of ZAP.EXE are as follows:
+
+ - It can search any combination of the MS-DOS search path, the Windows
+   search path (that is, \WINDOWS and \WINDOWS\SYSTEM), and a recursive
+   search path through the hard disk starting at any directory.
+
+ - It can find DLLs, VBXs, and/or any other file specification.
+
+ - The size, date and time of creation, and (where possible) version number
+   of each file is returned, making analysis simple.
+
+ - You can delete files from within the ZAP.EXE utility by selecting the
+   file in the list box display and pressing the DELETE key or by dragging
+   and dropping the file from the list box into the trash can icon.
+
+ - You can copy or move files by dragging and dropping the file into the
+   diskette icon and then selecting a destination for the file.
+
+The included source code is fully commented. The special features of the
+code are as follows:
+
+ - Tabbed list box and tabbed text box that use a font other than the
+   system font
+
+ - List box with bound horizontal scroll bar
+
+ - Data structure designed to make sorting of data much quicker
+
+ - Drag-and-drop feature
+
+ - Feature that checks to see whether a DLL or VBX is in use before
+   deleting it.
+
+ - Increased-speed method of getting a directory listing
+
+ - Use of the Windows API to get file version numbers
+
+File descriptions:
+------------------
+
+Filename  Extension  Description
+--------  ---------  ---------------------------------------------
+ZAP       EXE        The application itself
+ZAP       MAK        The project file
+MAIN      FRM        The main form
+MAIN      FRX        Binary file associated with MAIN.FRM
+ABOUT     FRM        The about box
+WAIT      FRM        Form displayed during processing
+COPYDEST  FRM        Form for selecting copy/move destination
+ADT       BAS        Code module containing the main data structure
+                     and the procedure to manipulate it
+GLOBAL    BAS        Code module containing global variables, API
+                     declarations, and type definitions.
+USE       TXT        Instruction on how to use this tool
+KB        TXT        This document
+

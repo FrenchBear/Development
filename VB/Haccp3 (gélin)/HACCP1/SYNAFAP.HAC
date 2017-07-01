@@ -1,0 +1,592 @@
+"Guide des bonnes pratiques de sécurité alimentaire
+des plats préparés réfrigérés - SYNAFAP"
+23
+"Approvisionnements"
+"Définition des approvisionnements"
+0
+1
+"Contamination initiale"
+"Microbiologique
+Chimique
+Physique"
+1
+1
+"Matières premières"
+"Caractéristiques des matières premières
+Conditionnement
+Transport"
+0
+1
+"Spécifs cahier des charges"
+"(BP §2.1 + Ann. 15 + Notes Mlle CORRE)
+(AQ §4.4 + p.46-47 + §4.6.3)
+incluant la définition des contrôles à réception"
+0
+1
+"Evaluation des sous-traitants"
+"(AQ §6.4.2 + p.45)
+- Etudes d'échantillons
+- Audits fournisseurs
+- ..."
+0
+"Réception"
+"Matières premières:
+- conditionnées et emballées
+- conditionnées
+- en vrac (mat. alimentaires: farine, huile, pièces de viande, ...) (mat non alimentaires: granulés pour plastiques, fluides cryogéniques, gaz de conservation, ...)"
+0
+3
+"Contamination initiale"
+"état à la réception :
+- microbiologique
+- chimique
+- physique"
+0
+1
+"-> déf appros"
+"Voir définition des approvisionnements"
+0
+1
+"-> déf appros"
+"Personnel qualifié pour les prélèvements et analyses
+Procédures et instructions des contrôles à réception et traitement des non conformités et actions correctives"
+0
+4
+"Contrôles à réception"
+"Prélèvements, statistiques si nécessaire, et analyses prévues au plan de contrôle
+(AQ p. 60)"
+0
+"Enregistrement des contrôles"
+"(AQ § 4.7.5)"
+0
+"Traitement des non conformités"
+"fiches
+(AQ § 4.9.3)"
+0
+"Documents de livraison"
+"(AQ p. 65)"
+0
+"Recontamination"
+"Altération du contitionnement
+Produits en vrac"
+0
+2
+"Manutentions"
+"Vrac
+Déterioration du conditionnement"
+0
+"Locaux et équipements"
+"Etat de propreté"
+0
+7
+"Procédures et instructions de travail"
+""
+0
+"Personnel spécialisé"
+"Non accès du chauffeur"
+0
+"Propreté"
+"Locaux
+Equipements, 
+Matériels"
+0
+"Insectes et rongeurs"
+""
+0
+"Stockage des déchets"
+"Possibilités de stockage ou d'élimination des déchets"
+0
+"Réception"
+"Aires de réception spécialisées"
+0
+"Procédures et instructions de travail"
+""
+0
+2
+"Examen visuel"
+"Des conditionnements et des emballages"
+0
+"Enregistrement des non conformités"
+"Fiches"
+0
+"Prolifération microbienne"
+""
+0
+2
+"Temps"
+"Durée des opérations
+Délais d'attentes"
+0
+"Température"
+"Sas de réception"
+0
+2
+"Procédures et instructions de travail"
+""
+0
+"Locaux"
+"Sas réfrigéré < 10°C"
+0
+3
+"Rôle de l'encadrement"
+""
+0
+"Contrôles visuels"
+"Taches de décongélation sur le carton"
+0
+"Ctrl + enregistrement des T°"
+""
+0
+"Déballage"
+"Le matériau est au contact direct de la denrée alimentaire; l'emballage est la '2ème peau'.
+L'opération étudiée ici ne concerne que l'emballage, quel que soit le matériau de conditionnement."
+0
+4
+"Prolifération microbienne"
+""
+0
+1
+"Température des produits"
+"Couple temps / température"
+0
+0
+0
+"Recontamination produit"
+"- Microbienne
+- Chimique
+- Physique"
+0
+2
+"Manutention, manipulation"
+"Altération du conditionnement"
+0
+"Locaux et équipements"
+"État de propreté"
+0
+0
+0
+"Contamin. d'autres produits"
+"- Microbienne
+- Chimique
+- Physique"
+0
+0
+0
+0
+"Recontamin. conditionnement"
+"- Microbienne"
+0
+2
+"Manutention, manipulation"
+""
+0
+"Locaux et équipements"
+"Etat de propreté"
+0
+2
+"Evacuation des emballages"
+""
+0
+"Propreté"
+"Locaux et moyens de transfert"
+0
+0
+"Déconditionnement"
+""
+0
+2
+"Prolifération microbienne"
+""
+0
+1
+"Température des produits"
+"(couple temps/température)"
+0
+1
+"Instructions de travail"
+"Formation du personnel
+Locaux à température dirigée.
+Moyens de transfert (bacs, cagettes,...) adaptés."
+0
+1
+"Rôle de l'encadrement"
+""
+0
+"Recontamination produit"
+"- Microbienne,
+- Chimique,
+- Physique"
+0
+2
+"Manipulation, manutention"
+""
+0
+"Locaux et équipements"
+"Etat de propreté"
+0
+1
+"Instructions de travail"
+"Formation et hygiène du personnel
+Locaux respectant le principe de la marche en avant.
+Séparation des circuits sains et souillés.
+Propreté des locaux (nettoyage désinfection)
+Propreté des moyens de manutention.
+Evacuation des déchets."
+0
+2
+"Vérification"
+"de l'absence de 'résidus' de conditionnement"
+0
+"Contrôles de propreté"
+"Matériels, locaux."
+0
+"Décongélation"
+""
+0
+2
+"Prolifération"
+""
+0
+1
+"Couple temps/température"
+"du produit"
+0
+1
+"Barème temps/t°"
+"Temps d'attente après décongélation.
+Instructions de travail."
+0
+0
+"Recontamination prdt"
+"(produit déconditionné)
+- Microbienne,
+- Chimique,
+- Physique."
+0
+1
+"Locaux et équipements"
+"Etat de propreté"
+0
+1
+"Formation du personnel"
+"Hygiène du personnel
+Conception des locaux
+(risque d'égouttage lors du dégivrage).
+(évacuation des exsudats)
+(séparation des prdts pour éviter les contaminations croisées)
+Propreté des locaux
+Système de régulation (temps/t°)
+Propreté des équipts."
+0
+1
+"Contrôles de propreté"
+""
+0
+"Stockage des mat. 1ères"
+"T° dirigée ou t°ambiante selon les produits conditionnés ou non
+Stockage de produits intermédiaires"
+0
+1
+"Prolifération microbienne"
+""
+0
+3
+"Température"
+""
+0
+"Humidité"
+"Produits secs"
+0
+"Temps"
+""
+0
+4
+"Locaux à t°dirigée"
+""
+0
+"Hygrométrie"
+""
+0
+"Instructions de travail"
+"Gestion des stocks"
+0
+"Aménagement locaux"
+"Circulation des pdts"
+0
+0
+"Stockage de pdts finis"
+"Conditionnés, conditionnement hermétique ou non"
+0
+1
+"Recontamination"
+"Pdts non conditionnés ou altération du conditionnement, conditionnements non hermétiques
+- microbienne
+- chimique
+- physique"
+0
+3
+"Locaux et équipements"
+"Etat de propreté"
+0
+"Humidité"
+"Produits secs"
+0
+"Manipulation, manutention"
+""
+0
+5
+"Locaux/zone spécif."
+""
+0
+"Insectes et rongeurs"
+""
+0
+"Qualité de l'air"
+"HCA, HRA, GMP"
+0
+"Instructions de travail"
+"Maintenance, nettoyage"
+0
+"Plan de charge"
+""
+0
+0
+"Prétraitements"
+"A froid
+Parage, barattage, découpe, ..."
+0
+2
+"Prolifération"
+""
+0
+1
+"Température du produit"
+""
+0
+3
+"Locaux à t°dirigée"
+""
+0
+"Equipements"
+"Barattage à froid par exemple."
+0
+"Instructions de travail"
+""
+0
+1
+"Enregistrement des t°"
+""
+0
+"Recontamination"
+"- Microbienne,
+- Chimique,
+- Physique."
+0
+3
+"Temps"
+"(délai d'attente)"
+0
+"Locaux et équipements"
+"Etat de propreté"
+0
+"Manipulations/manutentions"
+""
+0
+6
+"Instructions de travail"
+""
+0
+"Plan de nettoyage"
+""
+0
+"Aménagement locaux"
+"et disposition (marche en avant)."
+0
+"Qualité de l'air"
+"HRA, HCA, GMP"
+0
+"Evacuation déchets"
+"Instructions et équipements"
+0
+"Hygiene/formation"
+"du personnel"
+0
+3
+"Contrôles propreté matériel"
+""
+0
+"Contrôles hygiène personnel"
+"Vêtements, propreté des mains, ..."
+0
+"Contrôles pdts intermédiaires"
+""
+0
+"Prétraitements thermiques"
+"Blanchiment,...
+A air pulsé, vapeur, rayonnement, ..."
+0
+3
+"Prolifération"
+""
+0
+1
+"Temps et température"
+"Lors des attentes"
+0
+1
+"Instructions de travail"
+"barème/ conduite temps d'attente"
+0
+0
+"Recontamination"
+"- Microbienne
+- Chimique
+- Physique"
+0
+1
+"Fluides"
+""
+0
+1
+"Qualité des fluides"
+"Vapeur, eau, huile"
+0
+0
+"Non décontamination"
+"(éventuelle)"
+0
+1
+"Barème temps/t°"
+""
+0
+2
+"Equipements et locaux"
+"- propreté des moyens de transformation et des locaux,
+- aptitude au nettoyage du four,
+- moyens de pilotage adapté, système de régulation,
+- évacuation des vapeurs (condensation,
+gouttage,...)
+- marche en avant."
+0
+"Hygiène du personnel"
+""
+0
+1
+"Etalonnage des appareils"
+""
+0
+"Refroidissement"
+"Blanchiment : pré-refroidissement à l'eau froide
+Viande :
+refroidissement en cellule"
+0
+2
+"Prolifération"
+""
+0
+3
+"Barème temps/t°"
+"Durée de l'étape 60°C-10°C"
+0
+"Fluides"
+""
+0
+"Locaux et équipements"
+"- état de propreté,
+- adaptation aux volumes traités
+- maîtrise de l'air (teneur en vapeur d'eau, ...)"
+0
+4
+"Instructions de travail"
+"relatives aux conditions de refroidissement"
+0
+"Equipements et locaux"
+"voir ci-dessus"
+0
+"Hygiène du personnel"
+""
+0
+"Capacité frigorifique adaptée"
+""
+0
+3
+"Contrôle t° du produit"
+""
+0
+"Vérification du nettoyage"
+""
+0
+"Etalonnage des appareils"
+"Appareils de pilotage"
+0
+"Recontamination"
+"- Microbienne,
+- Chimique,
+- Physique."
+0
+0
+0
+0
+"Conditionnement"
+"Y compris pesage
+Avant cuisson
+Apres cuisson (à chaud ou à froid)
+(Procédé spécial AQ)"
+0
+0
+"Tr.thermique dans conditionnement"
+"Cuisson / refroidissement dans le conditionnement
+(procédé spécial AQ)"
+0
+0
+"Tr.thermique hors condit"
+"Cuisson / refroidissement hors conditionnement
+(procédé spécial AQ)"
+0
+0
+"Emballage / Etiquetage"
+"Mise sous une 2ème enveloppe et autres suremballages d'expédition.
+Mise sous étui et suremballages d'expédition"
+0
+0
+"Expédition / Transport"
+"Epédition
+Transport
+Livraison"
+0
+0
+"Nettoyage / Désinfection"
+""
+0
+0
+"Maint.prod. froid"
+"Installations frigorifiques, équipements de refroidissement"
+0
+0
+"Maint.prod. trait.th"
+"Chaudiere, appareils de cuisson, etc..."
+0
+0
+"Maint.prod. conditionnement"
+"Avec ou sans atmosphere modifiée"
+0
+0
+"Maint.prod. trait.air/eau"
+"Equipements de traitement de l'air, de l'eau"
+0
+0
+"Maint.prod autre"
+""
+0
+0
+"Maintenance atelier"
+"Maintenance interventions en atelier
+Personnel, matériel et équipements de manutention
+"
+0
+0
+"Maintenance équipements"
+"Equipements de contrôle, mesurage et essai
+(maintenance et étalonnage)"
+0
+0

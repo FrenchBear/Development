@@ -1,0 +1,2 @@
+/* menu.ref */
+int2 menu(int2,const char *,couleur,couleur,couleur,couleur,const char * *,const touche *,int2);

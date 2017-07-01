@@ -1,0 +1,11 @@
+frmTest = 66, 66, 572, 482, Z, 22, 22, 528, 438, C
+BDCurseur = 154, 154, 660, 570, C
+BDMain = 0, 0, 506, 416, C
+BDColonne = 0, 0, 0, 0, C
+BDForm = 176, 176, 682, 592, C
+BDQuery = 132, 132, 638, 548, C
+BDCombo = 0, 0, 0, 0, C, 0, 0, 0, 0, C
+modRegistry = 0, 0, 0, 0, C
+modGlobal = 44, 44, 550, 460, C
+BDSélecteur = 0, 0, 0, 0, C, 0, 0, 0, 0, C
+VBLib = 44, 44, 550, 460, C

@@ -1,0 +1,28 @@
+.AUTODEPEND
+CC = bcc +TASKWIND.CFG
+TLINK = tlink
+LIBPATH = C:\BORLANDC\LIB
+INCLUDEPATH = C:\BORLANDC\INCLUDE
+
+.c.obj:
+  $(CC) -c {$< }
+
+taskwind.exe: taskwind.cfg taskwind.obj taskwind.def taskwind.res
+  $(TLINK) /x/c/Twe/L$(LIBPATH) @&&|
+c0ws.obj+
+taskwind.obj
+taskwind
+		# no map file
+import.lib+
+cws.lib
+taskwind.def
+|
+  RC  taskwind.res taskwind.exe
+
+taskwind.res: taskwind.cfg taskwind.rc 
+	RC -R -I$(INCLUDEPATH) -FO taskwind.res TASKWIND.RC
+
+taskwind.cfg: makefile.bor
+  copy &&|
+-w -v -WSE -I$(INCLUDEPATH) -L$(LIBPATH)
+| taskwind.cfg

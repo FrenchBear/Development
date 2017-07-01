@@ -1,0 +1,3 @@
+/* alert.ref*/
+int2 alert(int2,const char *,couleur,couleur,couleur,couleur,const char *,int2 ,int2 ,const char *);
+void alert_ok(const char *,couleur,couleur,couleur,couleur,const char *);

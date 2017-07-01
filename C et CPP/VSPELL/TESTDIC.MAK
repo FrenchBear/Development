@@ -1,0 +1,98 @@
+# Microsoft Visual C++ generated build script - Do not modify
+
+PROJ = TESTDIC
+DEBUG = 1
+PROGTYPE = 3
+CALLER = 
+ARGS = 
+DLLS = 
+D_RCDEFINES = -d_DEBUG
+R_RCDEFINES = -dNDEBUG
+ORIGIN = MSVC
+ORIGIN_VER = 1.00
+PROJPATH = D:\C\VSPELL\
+USEMFC = 0
+CC = cl
+CPP = cl
+CXX = cl
+CCREATEPCHFLAG = 
+CPPCREATEPCHFLAG = 
+CUSEPCHFLAG = 
+CPPUSEPCHFLAG = 
+FIRSTC = VSPELL.C    
+FIRSTCPP =             
+RC = rc
+CFLAGS_D_WTTY = /nologo /G2 /Mq /W3 /Zi /AL /Od /D "_DEBUG" /FR /Fd"TESTDIC.PDB"  /J
+CFLAGS_R_WTTY = /nologo /Gs /G2 /Mq /W3 /AL /Ox /D "NDEBUG" /FR /J
+LFLAGS_D_WTTY = /NOLOGO /ONERROR:NOEXE /NOD /PACKC:57344 /CO /ALIGN:16
+LFLAGS_R_WTTY = /NOLOGO /ONERROR:NOEXE /NOD /PACKC:57344 /ALIGN:16
+LIBS_D_WTTY = oldnames libw llibcewq
+LIBS_R_WTTY = oldnames libw llibcewq
+RCFLAGS = /nologo
+RESFLAGS = /nologo
+RUNFLAGS = 
+OBJS_EXT = 
+LIBS_EXT = 
+!if "$(DEBUG)" == "1"
+CFLAGS = $(CFLAGS_D_WTTY)
+LFLAGS = $(LFLAGS_D_WTTY)
+LIBS = $(LIBS_D_WTTY)
+MAPFILE = nul
+RCDEFINES = $(D_RCDEFINES)
+DEFFILE=E:\MSVC\BIN\CL.DEF
+!else
+CFLAGS = $(CFLAGS_R_WTTY)
+LFLAGS = $(LFLAGS_R_WTTY)
+LIBS = $(LIBS_R_WTTY)
+MAPFILE = nul
+RCDEFINES = $(R_RCDEFINES)
+DEFFILE=E:\MSVC\BIN\CL.DEF
+!endif
+!if [if exist MSVC.BND del MSVC.BND]
+!endif
+SBRS = VSPELL.SBR \
+		TESTDIC.SBR
+
+
+VSPELL_DEP = d:\c\vspell\vspell.h \
+	d:\c\vspell\paires.h \
+	d:\c\vspell\casse.h
+
+
+TESTDIC_DEP = d:\c\vspell\vspell.h
+
+
+all:	$(PROJ).EXE $(PROJ).BSC
+
+VSPELL.OBJ:	VSPELL.C $(VSPELL_DEP)
+	$(CC) $(CFLAGS) $(CCREATEPCHFLAG) /c VSPELL.C
+
+TESTDIC.OBJ:	TESTDIC.C $(TESTDIC_DEP)
+	$(CC) $(CFLAGS) $(CUSEPCHFLAG) /c TESTDIC.C
+
+
+$(PROJ).EXE::	VSPELL.OBJ TESTDIC.OBJ $(OBJS_EXT) $(DEFFILE)
+	echo >NUL @<<$(PROJ).CRF
+VSPELL.OBJ +
+TESTDIC.OBJ +
+$(OBJS_EXT)
+$(PROJ).EXE
+$(MAPFILE)
+e:\msvc\lib\+
+e:\msvc\mfc\lib\+
+e:\msvc\lib\+
+$(LIBS)
+$(DEFFILE);
+<<
+	link $(LFLAGS) @$(PROJ).CRF
+	$(RC) $(RESFLAGS) $@
+
+
+run: $(PROJ).EXE
+	$(PROJ) $(RUNFLAGS)
+
+
+$(PROJ).BSC: $(SBRS)
+	bscmake @<<
+/o$@ $(SBRS)
+<<

@@ -1,0 +1,65 @@
+<HTML>
+<HEAD>
+<TITLE>True DBGrid Pro 6.0 (OLEDB)</TITLE>
+</HEAD>
+<BODY>
+Tutorial 3 - Linking Multiple True DBGrid Controls<P>
+
+<OBJECT CLASSID="CLSID:BD96C556-65A3-11D0-983A-00C04FC29E33" ID="adcComposers" HEIGHT=1 WIDTH=1>
+	<PARAM NAME="Server" VALUE="http://passat">
+	<PARAM NAME="Connect" VALUE="DSN=TDBGDemo">
+	<PARAM NAME="SQL" VALUE="Select * From Composer">
+</OBJECT>
+<OBJECT CLASSID="CLSID:BD96C556-65A3-11D0-983A-00C04FC29E33" ID="adcCompositions" HEIGHT=1 WIDTH=1>
+	<PARAM NAME="Server" VALUE="http://passat">
+	<PARAM NAME="Connect" VALUE="DSN=TDBGDemo">
+	<PARAM NAME="SQL" VALUE="Select * From Opus">
+	<PARAM NAME="ExecuteOptions" VALUE="1">
+</OBJECT>
+<OBJECT id=tDBGridComposers CLASSID="clsid:0D6234D0-DBA2-11D1-B5DF-0060976089D0" WIDTH=400 HEIGHT=200>
+	<PARAM NAME="DataSource" DATASRC="#adcComposers">
+</OBJECT>
+<P>
+<OBJECT id=tDBGridCompositions CLASSID="clsid:0D6234D0-DBA2-11D1-B5DF-0060976089D0" WIDTH=400 HEIGHT=200>
+	<PARAM NAME="DataSource" DATASRC="#adcCompositions">
+</OBJECT>
+</BODY>
+</HTML>
+<SCRIPT LANGUAGE=VBSCRIPT>
+
+Sub Window_OnLoad()
+	tDBGridCompositions.ExtendRightColumn = True
+End Sub
+
+Sub tDBGridComposers_RowColChange(LastRow, LastCol)
+' A query is performed by taking the "LAST" name field from
+' the adcComposers control and building an SQL query on the LAST
+' name field in the adcCompositions control.
+
+' The Second grid will respond automatically when the data
+' control causes the change.
+
+	Dim lastname
+	Dim bk1, bk2
+    
+	' You will need to test for Null Bookmarks being passed by
+	' LastRow.  This will occur on the initial display of the
+	' grid and if the user places the cursor on the AddNewRow
+	' and then moves off.
+ 	If IsNull(LastRow) Then
+		bk1 = ""
+	Else
+		bk1 = LastRow
+	End If
+
+	bk2 = tDBGridComposers.Bookmark
+
+	If bk1 <> bk2 Then
+		lastname = adcComposers.Recordset.Fields.Item("Last")
+		adcCompositions.SQL = "SELECT * FROM OPUS WHERE LAST = '" & lastname & "'"
+		adcCompositions.Refresh
+		tDBGridCompositions.Refresh
+	End If
+End Sub
+
+</SCRIPT>

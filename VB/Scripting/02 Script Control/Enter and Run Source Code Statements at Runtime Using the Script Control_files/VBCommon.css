@@ -1,0 +1,54 @@
+.body {
+	MARGIN-TOP: 0px; BACKGROUND-COLOR: white
+}
+.heading {
+	FONT-WEIGHT: bold; FONT-SIZE: 18pt; TEXT-TRANSFORM: none; COLOR: blue; FONT-STYLE: normal; FONT-FAMILY: Times New Roman; BACKGROUND-COLOR: transparent; TEXT-ALIGN: center; FONT-VARIANT: normal; TEXT-DECORATION: none
+}
+.headingleft {
+	FONT-WEIGHT: bold; FONT-SIZE: 18pt; TEXT-TRANSFORM: none; COLOR: blue; FONT-STYLE: normal; FONT-FAMILY: Times New Roman; BACKGROUND-COLOR: transparent; TEXT-ALIGN: left; FONT-VARIANT: normal; TEXT-DECORATION: none
+}
+OL {
+	FONT-WEIGHT: normal; FONT-SIZE: 10pt; COLOR: black; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Tahoma
+}
+UL {
+	FONT-WEIGHT: normal; FONT-SIZE: 10pt; COLOR: black; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Tahoma
+}
+P {
+	FONT-WEIGHT: normal; FONT-SIZE: 10pt; COLOR: black; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Tahoma
+}
+.BoldWord {
+	FONT-WEIGHT: bold
+}
+.KeyWord {
+	COLOR: blue
+}
+.VBKeyWord {
+	COLOR: blue
+}
+.BlueWord {
+	COLOR: blue
+}
+.WhiteWord {
+	COLOR: white
+}
+.VBComment {
+	COLOR: green
+}
+.LastChg {
+	FONT-SIZE: 8pt
+}
+.Footer {
+	FONT-SIZE: 10pt; COLOR: red
+}
+.OuterTable {
+	BACKGROUND-COLOR: cornflowerblue
+}
+.InnerTable {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 20px; FONT-WEIGHT: bold; FONT-SIZE: 10pt; PADDING-BOTTOM: 0px; COLOR: white; PADDING-TOP: 0px; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Tahoma
+}
+.menus {
+	FONT-SIZE: 8pt; COLOR: white; FONT-FAMILY: verdana, helvetica, arial; TEXT-DECORATION: none
+}
+.MenuLink {
+	FONT-SIZE: 8pt; COLOR: blue; FONT-FAMILY: Verdana; TEXT-DECORATION: none
+}

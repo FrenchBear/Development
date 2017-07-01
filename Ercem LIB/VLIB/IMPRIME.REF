@@ -1,0 +1,3 @@
+/* imprime.ref */
+char okprinter(void);
+char *conv_impr(char);

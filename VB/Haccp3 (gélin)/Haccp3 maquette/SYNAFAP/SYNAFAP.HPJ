@@ -1,0 +1,39 @@
+[OPTIONS]
+errorlog = synafap.err
+title = Guide des bonnes pratiques du SYNAFAP
+COPYRIGHT = SYNAFAP 1995
+contents = 000SOMMAIRE
+compress = false
+oldkeyphrase = false
+warning = 3
+
+[FILES]
+synafap.rtf
+
+[MAP]
+000SOMMAIRE 1
+010TABLEMAT 2
+020PREFACE 3
+030REMERCIEMENTS 4
+099CHAPI 99
+100CHAP 100
+200CHAP 200
+300CHAP 300
+310CHAP 310
+320CHAP 320
+321CHAP 321
+322CHAP 322
+323CHAP 323
+330CHAP 330
+400CHAP 400
+410CHAP 410
+420CHAP 420
+500CHAP 500
+600CHAP 600
+
+[WINDOWS]
+main = "Guide des bonnes pratiques", (0,0,1023,1023 ),,, (192,192,192 )
+
+[CONFIG]
+BrowseButtons()
+

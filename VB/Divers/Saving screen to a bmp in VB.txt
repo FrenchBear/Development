@@ -1,0 +1,22 @@
+You can send it to any device, a picturebox, a printer, a form, etc with
+this:
+
+    screendc = CreateDC("DISPLAY", "", "", 0&)
+    tempLong = StretchBlt(canvas.hDC, 0, 0, canvas.Width, canvas.Height,
+screendc, 0, 0, Screen.Width, Screen.Height, SRCCOPY)
+    tempLong = DeleteDC(screendc)
+
+
+Brad Stone <salinon1@airmail.net> wrote in article
+<334BCC34.67F9@airmail.net>...
+> Hi all-
+>   I'm using VB4/16 Pro.
+>   In my app I want the user to be able to simply click a button to
+> create a .BMP or .JPG file of the screen image (i.e. all the forms, list
+> boxes, etc.).  It would also be nice for my user to be able to click a
+> button and instantly dump the entire screen to the printer.
+> Any suggestions?
+>                                 Thanks!!
+>                                 Brad Stone
+> 
+

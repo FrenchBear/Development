@@ -1,0 +1,15 @@
+frmServeur6000 = 24, 15, 674, 627, C, 22, 22, 522, 391, C
+modShellExecute = 88, 88, 581, 530, Z
+mSysTray = 154, 154, 717, 527, 
+cSysTray = 174, 58, 667, 503, , 154, 154, 691, 537, C
+mod6000 = 66, 66, 603, 449, 
+modCommande6000 = 176, 176, 669, 618, 
+modShellFileOperation = 154, 15, 770, 596, 
+modRegistry = 66, 66, 559, 508, 
+modArguments = 132, 132, 625, 577, C
+modVersion = 110, 110, 597, 551, C
+modMiseAJourErcemToSilliker = 226, 163, 702, 636, 
+modMiseAJourRaccourcis = 154, 154, 704, 648, C
+MenuMicrobSoft = 60, 58, 610, 552, C
+GestionRaccourcis = 198, 198, 748, 692, 
+modLangueSystème = 88, 88, 651, 461, C

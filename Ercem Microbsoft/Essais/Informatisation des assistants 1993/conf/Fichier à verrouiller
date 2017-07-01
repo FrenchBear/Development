@@ -1,0 +1,963 @@
+zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzignes blanches après)
+
+
+[wine]
+SystemResources=/ercem/ynclude/t_etablissement.h
+; Commentaire
+
+[machin]
+bidule=chose
+
+[WS_PING]
+HOSTNAME=serveur.ercem.com; remarques
+
+[windows]
+spooler=yes
+NetWarn=No
+NetMessage=Yes
+;load=C:\WIN3\NUMBER9\HAWKEYE.EXE
+;load=c:\mouse\pointer.exe e:\afterdrk\adw30.exe
+load=C:\MOUSE\POINTER.EXE
+run=
+Beep=Yes
+NullPort=None
+BorderWidth=3
+CursorBlinkRate=500
+DoubleClickSpeed=330
+Programs=com exe bat pif
+Documents=
+DeviceNotSelectedTimeout=15
+TransmissionRetryTimeout=45
+KeyboardDelay=1
+KeyboardSpeed=31
+ScreenSaveActive=0
+ScreenSaveTimeOut=240
+CoolSwitch=1
+DosPrint=no
+MouseThreshold1=0
+MouseThreshold2=0
+MouseSpeed=0
+DoubleClickWidth=10
+DoubleClickHeight=10
+SwapMouseButtons=0
+ScreenTurnOffTimeOut=300
+MenuDropAlignment=0
+MenuShowDelay=0
+defaultqueuesize=16
+device=Kyocera F-1000,KYOCERA,LPT1:
+
+[Desktop]
+Pattern=(Aucun)
+GridGranularity=0
+IconSpacing=69
+TileWallPaper=1
+IconVerticalSpacing=65
+IconTitleFaceName=MS Sans Serif
+IconTitleSize=8
+IconTitleStyle=0
+wallpaper=(Aucun)
+
+[Extensions]
+cal=calendar.exe ^.cal
+crd=cardfile.exe ^.crd
+trm=terminal.exe ^.trm
+txt=notepad.exe ^.txt
+ini=notepad.exe ^.ini
+pcx=E:\COREL50\PROGRAMS\corelpnt.exe ^.pcx
+bmp=E:\COREL50\PROGRAMS\corelpnt.exe ^.bmp
+wri=write.exe ^.WRI
+rec=recorder.exe ^.rec
+hlp=WINHELP.EXE ^.hlp
+xla=E:\EXCEL\EXCEL16.EXE ^.xla
+xlc=E:\EXCEL\EXCEL16.EXE ^.xlc
+xll=E:\EXCEL\EXCEL16.EXE ^.xll
+xlm=E:\EXCEL\EXCEL16.EXE ^.xlm
+xls=E:\EXCEL\EXCEL16.EXE ^.xls
+xlt=E:\EXCEL\EXCEL16.EXE ^.xlt
+xlw=E:\EXCEL\EXCEL16.EXE ^.xlw
+qry=C:\WIN3\MSAPPS\MSQUERY\msquery.exe ^.qry
+xlb=E:\EXCEL\EXCEL16.EXE ^.xlb
+PM5=E:\PM5\pm5.exe ^.pm5
+PT5=E:\PM5\pm5.exe ^.pt5
+MDB=E:\ACCESS2\MSACCESS.EXE ^.MDB
+drw=E:\DESIGN31\DESIGNER.EXE ^.drw
+wdb=E:\MSWORKS\msworks.exe ^.wdb
+wps=E:\MSWORKS\msworks.exe ^.wps
+wks=E:\MSWORKS\msworks.exe ^.wks
+ZIP=E:\WINZIP32\winzipnt.exe ^.ZIP
+LZH=E:\WINZIP32\winzipnt.exe ^.LZH
+ARC=E:\WINZIP32\winzipnt.exe ^.ARC
+C=E:\MSVC\BIN\msvc.exe ^.C
+H=E:\MSVC\BIN\msvc.exe ^.H
+CPP=E:\MSVC\BIN\msvc.exe ^.CPP
+MVB=mviewer2.exe ^.mvb
+PPT=E:\POWERPNT\POWERPNT.EXE ^.ppt
+LST=E:\MSDNCD\PPTVIEW ^.LST
+frm=E:\VB3P\vb.exe ^.frm
+mak=E:\VB3P\vb.exe ^.mak
+bas=E:\VB3P\vb.exe ^.bas
+doc=E:\WW6\WINWORD.EXE ^.doc
+dot=E:\WW6\WINWORD.EXE ^.dot
+rtf=E:\WW6\WINWORD.EXE ^.rtf
+CDR=E:\COREL50\PROGRAMS\coreldrw.exe ^.cdr
+wta=TextArt.EXE ^.wta
+ctl=aldsetup.exe ^.ctl
+tbl=E:\PM5\te.exe ^.tbl
+gui=Reader.exe ^.gui
+GIF=E:\COREL50\PROGRAMS\corelpnt.exe ^.gif
+tif=E:\COREL50\PROGRAMS\corelpnt.exe ^.tif
+dwg=E:\ACADWIN\acad.exe ^.dwg
+MDA=E:\ACCESS2\MSACCESS.EXE ^.MDA
+gra=C:\WIN3\MSAPPS\MSGRAPH5\GRAPH5.EXE ^.gra
+zft=zifftel.exe ^.zft
+CAP=notepad.exe ^.CAP
+ARJ=E:\WINZIP32\winzipnt.exe ^.ARJ
+WAV=C:\WIN3\SOUNDREC.EXE ^.WAV
+HTM=F:\INTERNET\NETSCAPE\NETSCAPE.EXE ^.HTM
+PS=E:\GHSCRIPT\GSWIN.EXE ^.PS
+set=e:\cps\wnbackup.exe ^.set
+run=e:\cps\wnsrun.exe ^.run
+sct=e:\cps\wnscript.exe ^.sct
+ofc=e:\cps\wndtlib.exe ^.ofc
+evt=e:\cps\wnsd.exe ^.evt
+icl=e:\cps\wnie.exe ^.icl
+ico=e:\cps\wnie.exe ^.ico
+cpt=E:\COREL50\PROGRAMS\corelpnt.exe ^.cpt
+af3=E:\ABC\ABC.EXE ^.af3
+af2=E:\ABC\ABC.EXE ^.af2
+abc=E:\ABC\ABC.EXE ^.abc
+aft=E:\ABC\ABC.EXE ^.aft
+afw=E:\ABC\ABC.EXE ^.afw
+TAR=E:\WINZIP32\winzipnt.exe ^.TAR
+TAZ=E:\WINZIP32\winzipnt.exe ^.TAZ
+TGZ=E:\WINZIP32\winzipnt.exe ^.TGZ
+GZ=E:\WINZIP32\winzipnt.exe ^.GZ
+Z=E:\WINZIP32\winzipnt.exe ^.Z
+pub=E:\MSPUB\MSPUB.EXE ^.pub
+AA=E:\AA\AAWIN.EXE ^.AA
+AU=E:\WHAM\WHAM.EXE ^.AU
+AIF=E:\WHAM\WHAM.EXE ^.AIF
+
+[intl]
+sLanguage=fra
+sCountry=France
+iCountry=33
+iDate=1
+iTime=1
+iTLZero=1
+iCurrency=3
+iCurrDigits=2
+iNegCurr=8
+iLzero=1
+iDigits=2
+iMeasure=0
+s1159=
+s2359=
+sCurrency=F
+sThousand=" "
+sDecimal=,
+sDate=/
+sTime=:
+sList=;
+sShortDate=dd/MM/yyyy
+sLongDate=dddd d MMMM yyyy
+
+[ports]
+; A line with [filename].PRN followed by an equal sign causes
+; [filename] to appear in the Control Panel's Printer Configuration dialog
+; box. A printer connected to [filename] directs its output into this file.
+LPT1:=
+LPT2:=
+LPT3:=
+COM1:=9600,n,8,1,x
+COM2:=9600,n,8,1,x
+COM3:=9600,n,8,1,x
+COM4:=9600,n,8,1,x
+EPT:=
+FILE:=
+LPT1.DOS=
+LPT2.DOS=
+FAX:=
+
+[FontSubstitutes]
+Helv=MS Sans Serif
+Tms Rmn=MS Serif
+Times=Times New Roman
+Helvetica=Arial
+MT Symbol=Symbol
+
+[TrueType]
+TTEnable=1
+TTOnly=0
+
+[mci extensions]
+wav=waveaudio
+mid=sequencer
+rmi=sequencer
+cmv=CorelMOVE
+mwf=CorelMOVE
+avi=AVIVideo
+mmm=MMMovie
+mov=QTWVideo
+pic=QTWVideo
+jpg=QTWVideo
+
+[Compatibility]
+TURBOTAX=0x00080000
+W4GLR=0x4000
+W4GL=0x4000
+NETSET2=0x0100
+GUIDE=0x1000
+EXCEL=0x1000
+APORIA=0x0100
+ED=0x00010000
+PLUS=0x1000
+PR2=0x2000
+CHARISMA=0x2000
+WINSIM=0x2000
+DRAW=0x2000
+PLANNER=0x2000
+DESIGNER=0x2000
+PM4=0x2000
+MILESV3=0x1000
+_BNOTES=0x24000
+MCOURIER=0x0800
+VISION=0x0040
+PACKRAT=0x0800
+WIN2WRS=0x1210
+VB=0x0200
+TME=0x0100
+JW=0x42080
+CP=0x0040
+PIXIE=0x0040
+REM=0x8022
+AMIPRO=0x0010
+CCMAIL=0x0008
+WPWINFIL=0x0006
+NOTSHELL=0x0001
+
+[Microsoft Word 2.0]
+AUTOSAVE-path=E:\WW2
+INI-path=E:\WW2
+programdir=E:\WW2
+HPDSKJET=+1
+DOT-PATH=E:\WW2
+LoadToolbarBitmaps=Yes
+UpdateDictionaryNumber=1
+
+[embedding]
+SoundRec=Son,Son,SoundRec.exe,picture
+Package=Elément du Gestionnaire de liaisons,Package,packager.exe,picture
+PBrush=Image Paintbrush,Paintbrush,pbrush.exe,picture
+Designer=Dessin Designer 3.1,Dessin Designer 3.1,E:\DESIGN31\DESIGNER.EXE,picture
+MMJBox=MIDI,MIDI,C:\SB16\WINAPPL\MMJBOX.EXE,picture
+Note-It=MS Note-It,Microsoft Note-It,C:\WIN3\MSAPPS\NOTE-IT\Note-It.exe,picture
+MSDraw=Microsoft Draw,Microsoft Draw,C:\WIN3\MSAPPS\MSDRAW\msdraw.exe,picture
+MSWorksChart=Graphique MS Works,Microsoft Works Chart,E:\MSWORKS\msworks.exe,picture
+MSWorksSpreadsheet=Tableur MS Works,Microsoft Works Spreadsheet,E:\MSWORKS\msworks.exe,picture
+WordArt=MS WordArt,Microsoft WordArt 1.0,C:\WIN3\MSAPPS\WORDART\wordart.exe,picture
+MgxDesigner=Designer 4.0 Drawing,Designer 4.0 Drawing,E:\DESIGN40\DS40.EXE,picture
+BitmapImage=Image PhotoMagic,Image PhotoMagic,e:\magic\magic.exe,picture
+MPlayer=Media Clip,Clip Média,mplayer.exe,picture
+MSGraph=Microsoft Graph,Graph,C:\WIN3\MSAPPS\MSGRAPH5\GRAPH5.EXE, image
+Soundo'LE=Soundo'LE,Soundo'LE,C:\SB16\WINAPPL\SOUNDOLE.EXE,picture
+ViewerFrameClass=QuickTime Picture,QuickTime Picture,e:\svm10\viewer.exe,picture
+PlayerFrameClass=QuickTime Movie,QuickTime Movie,e:\svm10\player.exe,picture
+Excel.Sheet.5=Feuille Microsoft Excel 5.0,Feuille Microsoft Excel 5.0,EXCEL.EXE,picture
+Excel.Chart.5=Graphique Microsoft Excel 5.0,Graphique Microsoft Excel 5.0,EXCEL.EXE,picture
+Word.Document.6=Document Microsoft Word 6.0,Document Microsoft Word 6.0,E:\WW6\WINWORD.EXE,picture
+Word.Picture.6=Image Microsoft Word 6.0,Image Microsoft Word 6.0,E:\WW6\WINWORD.EXE,picture
+WordDocument=Document Microsoft Word 2.0,Microsoft Word Document,E:\WW6\WINWORD.EXE,picture
+Equation.2=Microsoft Editeur d’équations 2.0,Microsoft Equation 2.0,C:\WIN3\MSAPPS\EQUATION\EQNEDIT.EXE,picture
+MSWordArt.2=Microsoft WordArt 2.0,Microsoft WordArt 2.0,C:\WIN3\MSAPPS\WORDART\WordArt2.exe,picture
+Mfc25.Document=Mfc25 Document,Mfc25 Document,D:\TMP\ESSAIS\MFC25.EXE,picture
+HierSvr.Document.2=MFC 2.5 Hierarchy List,MFC 2.5 Hierarchy List,I:\MSVC\MFC\SAMPLES\BIN\HIERSVR.EXE,picture
+ScribFileType=SCRIB File Type,SCRIB File Type,I:\MSVC\MFC\SAMPLES\BIN\SCRIBBLE.EXE,picture
+SuperPad.Document.2=MFC 2.5 Text Document,MFC 2.5 Text Document,I:\MSVC\MFC\SAMPLES\BIN\SUPERPAD.EXE,picture
+PixFolio=PixFolio Image,PixFolio Image,I:\GRAPH\PIXFOLIO\PIXFOLIO.EXE,picture
+MSGraph.Chart.5=Microsoft Graph 5.0,Microsoft Graph 5.0,C:\WIN3\MSAPPS\MSGRAPH5\GRAPH5.EXE,picture
+AutoCAD=AutoCAD Drawing,AutoCAD Drawing,E:\ACADWIN\ACAD.EXE,picture
+MS_ClipArt_Gallery=Microsoft ClipArt Gallery,Microsoft ClipArt Gallery,C:\WIN3\MSAPPS\ARTGALRY\artgalry.exe,picture
+MSOrgChart.1=Microsoft Organigramme hiérarchique 1.0,Microsoft Organigramme hiérarchique 1.0,C:\WIN3\MSAPPS\ORGCHART\ORGCHART.EXE,picture
+PowerPoint.Show.4=Présentation MS PowerPoint 4.0,Présentation MS PowerPoint 4.0,E:\POWERPNT\POWERPNT.EXE,picture
+PowerPoint.Slide.4=Diapositive MS PowerPoint 4.0,Diapositive MS PowerPoint 4.0,E:\POWERPNT\POWERPNT.EXE,picture
+CDraw=CorelDRAW! Graphique,CorelDRAW! Graphique,E:\COREL50\PROGRAMS\CORELDRW.EXE,picture
+PhotoPaint=CorelPHOTO-PAINT! Picture,CorelPHOTO-PAINT! Picture,E:\COREL50\PROGRAMS\CORELPNT.EXE,picture
+CPaint5=Corel PHOTO-PAINT 5.0 Image,Corel PHOTO-PAINT 5.0 Image,E:\COREL50\PROGRAMS\CORELPNT.EXE,picture
+CQuickDraw5=CorelDRAW! 5.0 Presentation Exchange Graphique,CorelDRAW! 5.0 Presentation Exchange Graphique,E:\COREL50\PROGRAMS\CORELDRW.EXE,
+CDraw5=CorelDRAW! 5.0 Graphique,CorelDRAW! 5.0 Graphique,E:\COREL50\PROGRAMS\CORELDRW.EXE,picture
+Equation=Microsoft Equation 1.0,Equation,C:\WIN3\MSAPPS\EQUATION\EQNEDIT.EXE,picture
+DAT=Sound(VOY),Sound(VOY),C:\CORELDRV\WINDAT.EXE,picture
+ScriptTools=Central Point ScriptTools,Central Point ScriptTools,e:\cps\wnscript.exe,picture
+ABCFlow=ABC FlowCharter,ABC FlowCharter,E:\ABC\ABC.EXE,picture
+ExcelMacrosheet=Feuille macro Microsoft Excel,Microsoft Excel Macrosheet,E:\EXCEL4\EXCEL4.EXE,picture
+ExcelChart=Graphique Microsoft Excel,Microsoft Excel Chart,E:\EXCEL4\EXCEL4.EXE,picture
+ExcelWorksheet=Feuille de calcul Microsoft Excel,Microsoft Excel Worksheet,E:\EXCEL4\EXCEL4.EXE,picture
+
+[Windows Help]
+H_WindowPosition=[266,200,429,200,0]
+C_WindowPosition=[359,67,470,225,0]
+M_WindowPosition=[4,4,1032,776,0]
+A_WindowPosition=[154,52,337,237,0]
+SeqTopicKeys=1
+flags=3 0 0 0 1
+JumpColor=255 000 000
+PopupColor=000 000 255
+MacroColor=128 000 255
+IFJumpColor=255 128 192
+IFPopupColor=255 128 000
+
+[MS User Info]
+DefName=DÉVELOPPEMENT
+DefCompany=DÉVELOPPEMENT
+
+[MSAPPS]
+MSGRAPH=C:\WIN3\MSAPPS\MSGRAPH
+EQUATION=C:\WIN3\MSAPPS\EQUATION
+MSQUERY=C:\WIN3\MSAPPS\MSQUERY
+MSGRAPH5=C:\WIN3\MSAPPS\MSGRAPH5
+ORGCHART=C:\WIN3\MSAPPS\ORGCHART
+MSAPPS=C:\WIN3\MSAPPS
+MSINFO=C:\WIN3\MSAPPS\MSINFO
+WORDART=C:\WIN3\MSAPPS\WORDART
+NOTE-IT=C:\WIN3\MSAPPS\NOTE-IT
+MSDRAW=C:\WIN3\MSAPPS\MSDRAW
+ARTGALRY=C:\WIN3\MSAPPS\ARTGALRY
+PROOF=C:\WIN3\MSAPPS\PROOF
+TEXTCONV=C:\WIN3\MSAPPS\TEXTCONV
+GRPHFLT=C:\WIN3\MSAPPS\GRPHFLT
+
+[MS Proofing Tools]
+Spelling 2057,0=C:\WIN3\MSAPPS\PROOF\MSSPEL2.DLL,C:\WIN3\MSAPPS\PROOF\MSSP2_EN.LEX
+Spelling 3084,0=C:\WIN3\MSAPPS\PROOF\MSSPEL2.DLL,C:\WIN3\MSAPPS\PROOF\MSSP2_FR.LEX
+Spelling 1033,0=C:\WIN3\MSAPPS\PROOF\MSSPEL2.DLL,C:\WIN3\MSAPPS\PROOF\MSSP2_EN.LEX
+Thesaurus 1036,0=C:\WIN3\MSAPPS\PROOF\MSTHES.DLL,C:\WIN3\MSAPPS\PROOF\MSTH_FR.LEX
+Thesaurus 2057,0=C:\WIN3\MSAPPS\PROOF\MSTHES.DLL,C:\WIN3\MSAPPS\PROOF\MSTH_BR.LEX
+Spelling 1036,0=C:\WIN3\MSAPPS\PROOF\msspell.dll,C:\WIN3\MSAPPS\PROOF\mssp_fr.lex
+Custom Dict 1=C:\WIN3\MSAPPS\PROOF\DICOPER.DIC
+
+[MS Text Converters]
+MSBiff=Feuille de calcul Microsoft Excel, C:\WIN3\MSAPPS\TEXTCONV\XLBIFF.CNV, xls xlw
+MSWord6Mac=Word 6.0 pour Macintosh, C:\WIN3\MSAPPS\TEXTCONV\MSWORD6.CNV, doc
+MSWorksDos=Microsoft Works pour MS-DOS 2.0-3.0,C:\WIN3\MSAPPS\TEXTCONV\wrksdos.cnv,wps
+MSWordMac4=Word 4.0 pour Macintosh, C:\WIN3\MSAPPS\TEXTCONV\WORDMAC.CNV, mcw
+MSWordMac5=Word 5.0 pour Macintosh, C:\WIN3\MSAPPS\TEXTCONV\WORDMAC.CNV, mcw
+MSWordMac=Word 5.1 pour Macintosh, C:\WIN3\MSAPPS\TEXTCONV\WORDMAC.CNV, mcw
+RFTDCA=RFT-DCA, C:\WIN3\MSAPPS\TEXTCONV\RFTDCA.CNV, rft
+MSWorks3Win=Microsoft Works 3.0 pour Windows,C:\WIN3\MSAPPS\TEXTCONV\wks3win.cnv,wps
+MSPub2=Microsoft Publisher 2.0,C:\WIN3\MSAPPS\TEXTCONV\MSWPUB2.CNV,pub
+MSWordWin2=Word pour Windows 2.0,C:\WIN3\MSAPPS\TEXTCONV\wordwin2.cnv,doc
+MSWordWin1=Word pour Windows 1.x,C:\WIN3\MSAPPS\TEXTCONV\wordwin1.cnv,doc
+MSWordDos=Word pour MS-DOS 3.x - 5.x,C:\WIN3\MSAPPS\TEXTCONV\worddos.cnv,doc
+MSWordDos6=Word pour MS-DOS 6.0,C:\WIN3\MSAPPS\TEXTCONV\worddos.cnv,doc
+WrdPrfctDOS=WordPerfect 5.1 pour MS-DOS,C:\WIN3\MSAPPS\TEXTCONV\wpft5.cnv,doc
+WrdPrfctDOS50=WordPerfect 5.0,C:\WIN3\MSAPPS\TEXTCONV\wpft5.cnv,doc
+WrdPrfctWin=WordPerfect 5.x pour Windows,C:\WIN3\MSAPPS\TEXTCONV\wpft5.cnv,doc
+WrdPrfctDat=Fichier secondaire WordPerfect 5.1 ou 5.2,C:\WIN3\MSAPPS\TEXTCONV\wpft5.cnv,doc
+WrdPrfctDat50=Fichier secondaire WordPerfect 5.0,C:\WIN3\MSAPPS\TEXTCONV\wpft5.cnv,doc
+MSWorksWin=Works pour Windows 2.0,C:\WIN3\MSAPPS\TEXTCONV\wrkswin.cnv,wps
+Works for DOS 2.0=Works pour DOS 2.0,C:\WIN3\MSAPPS\TEXTCONV\wrksdos.cnv,wps
+MSWinWrite=Windows Write 3.1,C:\WIN3\MSAPPS\TEXTCONV\writwin.cnv,wri
+Windows Write 3.0=Windows Write 3.0,C:\WIN3\MSAPPS\TEXTCONV\writwin.cnv,wri
+MSWord6=Word pour Windows/Macintosh 6.0,C:\WIN3\MSAPPS\TEXTCONV\msword6.cnv,doc
+
+[MSWord Text Converters]
+MSWord6=Word 6.0 pour Windows, C:\WIN3\MSAPPS\TEXTCONV\MSWORD6.CNV, doc
+MSWord6Mac=Word 6.0 pour Macintosh, C:\WIN3\MSAPPS\TEXTCONV\MSWORD6.CNV, doc
+
+[MS Shareres]
+PATH=E:\WW6,E:\WW6
+
+[MS Graphic Import Filters]
+Métafichiers Windows(.WMF)=C:\WIN3\MSAPPS\GRPHFLT\WMFIMP.FLT,WMF
+CompuServe GIF(.GIF)=C:\WIN3\MSAPPS\GRPHFLT\GIFIMP.FLT,GIF
+Corel Draw(.CDR)=C:\WIN3\MSAPPS\GRPHFLT\CDRIMP.FLT,CDR
+Fichier de dessin AutoCAD(.ADI)=C:\WIN3\MSAPPS\GRPHFLT\ADIMPORT.FLT,ADI
+Format 2D AutoCAD(.DXF)=C:\WIN3\MSAPPS\GRPHFLT\DXFIMP.FLT,DXF
+Métafichiers graphiques pour ordinateur(.CGM)=C:\WIN3\MSAPPS\GRPHFLT\CGMIMP.FLT,CGM
+Encapsulé PostScript(.EPS)=C:\WIN3\MSAPPS\GRPHFLT\EPSIMP.FLT,EPS
+Langage graphique HP(.HGL)=C:\WIN3\MSAPPS\GRPHFLT\HPGLIMP.FLT,HGL
+Fichier d'impression de dessin HP(.PLT)=C:\WIN3\MSAPPS\GRPHFLT\HPGLIMP.FLT,PLT
+Graphique Lotus 1-2-3(.PIC)=C:\WIN3\MSAPPS\GRPHFLT\LOTUSIMP.FLT,PIC
+Macintosh PICT(.PCT)=C:\WIN3\MSAPPS\GRPHFLT\PICTIMP.FLT,PCT
+Conception et dessin Micrografx(.DRW)=C:\WIN3\MSAPPS\GRPHFLT\DRWIMP.FLT,DRW
+Targa(.TGA)=C:\WIN3\MSAPPS\GRPHFLT\TGAIMP.FLT,TGA
+Windows DIB(.DIB)=C:\WIN3\MSAPPS\GRPHFLT\BMPIMP.FLT,DIB
+Computer Graphics MetaFile(.CGM)=C:\WIN3\MSAPPS\GRPHFLT\cgmimp.flt,CGM
+Windows Metafile(.WMF)=C:\WIN3\MSAPPS\GRPHFLT\wmfimp.flt,WMF
+Tagged Image Format(.TIF)=C:\WIN3\MSAPPS\GRPHFLT\tiffimp.flt,TIF
+Micrografx Designer/Draw(.DRW)=C:\WIN3\MSAPPS\GRPHFLT\drwimp.flt,DRW
+Encapsulated PostScript(.EPS)=C:\WIN3\MSAPPS\GRPHFLT\epsimp.flt,EPS
+PC Paintbrush(.PCX)=C:\WIN3\MSAPPS\GRPHFLT\pcximp.flt,PCX
+DrawPerfect(.WPG)=C:\WIN3\MSAPPS\GRPHFLT\wpgimp.flt,WPG
+Kodak Photo CD(.PCD)=C:\WIN3\MSAPPS\GRPHFLT\pcdimp.flt,PCD
+
+[Microsoft System Info]
+MSINFO=C:\WIN3\MSAPPS\MSINFO\MSINFO.EXE
+
+[MS Setup (ACME) Table Files]
+WINWORD.EXE@v6.0.0.2305(1036)=E:\WW6\INSTALLE\INSTALL.STF
+WHAT6.EXE@v1.0.0.1007=E:\WHAT6\wt6setup.stf
+MSACCESS.EXE@v2.0.0.09.FRN=E:\ACCESS2\installe\install.stf
+EXCEL.EXE@v5.0.0.2414(1036)=E:\EXCEL\installe\install.stf
+POWERPNT.EXE@v4.0.0.253(FRN)=E:\POWERPNT\INSTALL\INSTALL.STF
+MSOFFICE.EXE@v4.2.0.0700(1036)=E:\MSOFFICE\installe\install.stf
+ENCART95.EXE@v3.17.0.53=E:\ENCARTA\encart95.stf
+
+[Microsoft Query]
+MSQUERY=C:\WIN3\MSAPPS\MSQUERY
+
+[colors]
+Background=192 192 192
+AppWorkspace=224 245 254
+Window=232 248 248
+WindowText=0 0 0
+Menu=160 240 240
+MenuText=0 0 248
+ActiveTitle=83 104 253
+InactiveTitle=255 255 255
+TitleText=248 252 248
+ActiveBorder=155 175 234
+InactiveBorder=192 192 192
+WindowFrame=0 0 0
+Scrollbar=192 192 192
+ButtonFace=192 192 192
+ButtonShadow=128 128 128
+ButtonText=0 0 0
+GrayText=192 192 192
+Hilight=0 0 160
+HilightText=248 252 248
+InactiveTitleText=0 0 0
+ButtonHilight=255 255 255
+
+[Aldus]
+AldusDirectory=E:\ALDUS
+NetAldusDirectory=NONE
+PPD4=E:\ALDUS\FRANCAIS\PPD4
+PM5LangDir=FRANCAIS
+PM5AppDir=E:\PM5
+
+[Micrografx]
+Designer 3.1=E:\DESIGN31
+Libraries 4.0=E:\DESIGN31
+ClipArt=D:\PIC\CLIPART.DRW
+ABC FlowCharter 3.0=E:\ABC
+
+[Designer 3.1]
+Warning=1
+Drawings=D:\PIC
+
+[Clipboard Formats]
+MGX_DRAW=0,'Micrografx Picture'
+MGX_PICT=0,'In*a*Vision or Windows Draw Picture'
+
+[CorelGraphics4]
+Dir=E:\COREL40\CONFIG
+
+[CorelSCSI]
+CD-Audio=C:\CORELDRV
+installed=C:\CORELDRV
+
+[spooler]
+window=1600000001009F001002FFFFFFFF1D001B001D020801
+msctls_headerbar=440164007D009CFF
+state=0300
+windowstate=160000000100FFFFFFFFFFFFFFFF09007A0036023A02
+priority=high
+inactivealert=flash
+netspool=no
+
+[drawdib]
+display.drv=#9GXETC.DRV 1024x768x16
+Result8=5
+Result16=0
+Result24=5
+#9GXETC.DRV 1024x768x16(565 5)=1,1,5,1
+#9GXE.DRV 1024x768x8(5)=1,0,0,0
+
+[AAPLAY Animation]
+DualScreen=no
+FullScreen=AAVGA.DLL
+FullInstalled=1
+WaveAudio=c,522
+Sequencer=x,523
+AVIVideo=x,0
+Animation1=x,0
+
+[MCIAVI]
+DefaultVideo=Window
+AccurateSeek=1
+ZoomBy2=0
+DisallowSilentPlay=0
+DontBufferOffscreen=0
+SkipFrames=1
+UseAVIFile=0
+
+[Multimedia Viewer]
+ViewerPath=E:\VIEWER
+M_WindowPosition=[0,0,727,700,0]
+H_WindowPosition=[266,200,266,230,0]
+C_WindowPosition=[102,99,470,418,0]
+
+[Beeline]
+Language=2
+datapath=I:\beeline\
+
+[Source Viewer]
+none=Notepad
+.bat=Notepad
+.txt=Notepad
+.cpp=Notepad
+.c=Notepad
+.mak=Notepad
+.rc=Notepad
+.def=Notepad
+.dlg=Notepad
+.h=Notepad
+.asm=Notepad
+.inc=Notepad
+.map=Notepad
+.ico=imagedit
+.cur=imagedit
+.dib=imagedit
+.bmp=imagedit
+.hlp=winhelp
+.wav=soundrec
+.ppt=pptview
+.res=dlgedit
+.fnt=fontedit
+.xls=excel
+.mdb=access
+
+[ABC Flowcharter]
+File1=C:\TMP\ABC\SYMBOLES.ABC
+File2=C:\TMP\ABC\DIDACDEB.ABC
+File3=C:\TMP\ABC\ORG.ABC
+File4=
+PaletteOn=1
+
+[nsreqDPMI]
+datalength=4096
+views=8
+tasks=2
+
+[btrieve]
+options=/m:32 /f:20 /p:1024
+access_options=/m:64 /p:4096 /b:16 /f:20 /l:40 /n:12 /t:E:\ACCESS2\BTRIEVE.TRN
+
+[brequest]
+options=/r:20 /s:20 /d:532 /w:2
+
+[Encarta]
+FILE_usa.dct=
+FILE_usa.ths=
+ThsFile=E:\ENCARTA\usa.ths
+DctFile=I:\encarta\usa.dct
+
+[Fax local Microsoft Mail,FAX]
+Orientation=1
+Print Quality=200
+Y Resolution=100
+Brush=3
+Intensity=120
+
+[BCW4.0 INSTALL]
+Reserved1=F:\BC4
+
+[Mail]
+MAPI=1
+
+[MSCharMap]
+Font=Marlett
+
+[Calibrateur d'écran 1.O HP]
+Calibration_ID=1
+PurpleIndex=4
+Rouge x=0.61
+Rouge y=0.31
+Vert x=0.280
+Vert y=0.595
+Bleu x=0.155
+Bleu y=0.070
+Source x=0.2800
+Source y=0.2934
+Dest x=0.3127
+Dest y=0.3290
+Gamma rouge=1.8
+K1 rouge=1.0
+Gamma vert=1.8
+K1 vert=1.0
+Gamma bleu=1.8
+K1 bleu=1.0
+
+[HPPCL5C,LPT1]
+FontSummary=C:\WIN3\FS5CLPT1.PCL
+
+[Hearts]
+fast=0
+gamemeister=1
+name=Pierre
+sound=1
+
+[Bookshelf]
+SendToDlg=1
+HelpFile=I:\books\bs92word.hlp
+Integration=1
+LastQuote=767809437
+ViewerPath=E:\VIEWER\VIEWER.EXE
+BooksPath=I:\books
+
+[sounds]
+SystemHand=ding.wav,Arrêt critique
+SystemAsterisk=ding.wav,Ast‚risque
+SystemStart=carillon.wav,Démarrage de Windows
+SystemExclamation=ding.wav,Exclamation
+SystemExit=carillon.wav,Fin de Windows
+MSInstrOpen=,Musical Instr. Open
+NavigatorCantJump=,NavigatorCantJump
+NavigatorCantOpen=,NavigatorCantOpen
+NavigatorExit=,NavigatorExit
+NavigatorJump=,NavigatorJump
+NavigatorRange=,NavigatorRange
+NavigatorSearch=,NavigatorSearch
+NavigatorStart=,NavigatorStart
+SystemQuestion=ding.wav,Question
+SystemDefault=ding.wav,Signal sonore
+RingIn=sonnerie.wav,Sonnerie
+RingOut=tonalite.wav,Tonalité
+
+[Spy]
+Options=8191
+Sync=0
+Lines=100
+File=
+
+[Microsoft Word]
+Conversion=No
+
+[WinMem]
+DispFlags=1020
+X=825
+Y=714
+Width=200
+Height=57
+
+[DBWin]
+State=12 0 1 -1 -1 -1 -1 400 0 800 528 1 0
+
+[READERFILTERS]
+Guide BMP Filter=GUIDEBMP.DLL,BMP
+Guide PCX Filter=GUIDEPCX.DLL,BMP
+
+[DeskTop Set Jr]
+Apps=i:\bureau\desktop
+
+[PixFolio]
+extensions=*.BMP; *.DIB; *.RLE; *.GIF; *.PCX; *.TIF; *.LBM; *.CE; *.TGA; *.IFF; *.EPS; *.MAC; *.IMG; *.ICO; *.CLP; *.WMF; *.FLI; *.FLC; *.CEL; *.WPG; *.JPG; *.CGM
+Catalogs=1
+Default Catalog=Catalog1
+Catalog1=Default,I:\GRAPH\PIXFOLIO\PixFolio.cat,*.BMP; *.DIB; *.RLE; *.GIF; *.PCX; *.TIF; *.LBM; *.CE; *.TGA; *.IFF; *.EPS; *.MAC; *.IMG; *.ICO; *.CLP; *.WMF; *.FLI; *.FLC; *.CEL; *.WPG; *.JPG; *.CGM,
+Auto Dither=YES
+Screen=198,198,822,498,1
+
+[Microsoft Graph 3.0]
+DefaultDir=NO ENTRY
+
+[USANP]
+Dir=I:\
+
+[Paintbrush]
+width=800
+height=600
+clear=COLOR
+
+[MSDN.Settings]
+license_last_read=08/11/94
+
+[Rasmon]
+State=0 0 0 0 1 1 250
+Position=40 42
+Dimension=239 32
+Size=0
+Port=-1
+
+[WinZip]
+version=5.0b
+win32_version=5.5a beta nt 1.0
+
+[WINLRE]
+Dictionnaire Choisi=Dictionnaire des Citations
+
+[einet]
+inifile=f:\internet\ewais\einet.ini
+configfile=eiconfig.ini
+
+[TCPIP]
+ID=Z3mfwZh9tvjVFRtXCnc
+SLIP=F:\NETMANAG\SLIP.INI
+FILE=F:\NETMANAG\TCPIP.CFG
+Ping=F:\NETMANAG\PING.CFG
+
+[cps]
+cps2=e:\cps\data\wnuser.ini
+
+[CorelGraphics5]
+Dir=E:\COREL50\CONFIG
+
+[MS Graphic Export Filters]
+DrawPerfect(.WPG)=C:\WIN3\MSAPPS\GRPHFLT\WPGEXP.FLT,WPG
+
+[Kyocera F-1000,LPT1]
+Brush=3
+Intensity=141
+Memory=2995
+Default Source=4
+
+[CompLex]
+Pathname=E:\COMPLEX
+ExeName=HARRAPSF.EXE
+ServiceName=CompLex
+
+[ESP_II]
+COM3=100,5,E,16
+
+[Berkeley Systems]
+After Dark=E:\AFTERDRK
+AD INI Files=E:\AFTERDRK
+AD Data Files=E:\AFTERDRK
+
+[RegEdit]
+width=653
+height=611
+
+[winsetup]
+source_disk_path=F:\WIN311
+
+[Netscape]
+ini=F:\INTERNET\NETSCAPE\NETSCAPE.INI
+
+[fonts]
+Modern (Plotter)=MODERN.FON
+Script (Plotter)=SCRIPT.FON
+Roman (Plotter)=ROMAN.FON
+petites polices (VGA rés)=SMALLE.FON
+Symbol 8,10,12,14,18,24 (VGA rés)=SYMBOLE.FON
+MS Serif 8,10,12,14,18,24 (VGA rés)=SERIFE.FON
+Courier 10,12,15 (VGA rés)=COURE.FON
+MS Sans Serif 8,10,12,14,18,24 (VGA rés)=SSERIFE.FON
+MS LineDraw (All res)=WINLD.FON
+V1 Lucida Sans=v1sp.fon
+V2 Lucida Sans=v2sp.fon
+V3 Lucida Sans=v3sp.fon
+V4 Lucida Sans=v4sp.fon
+V5 Lucida Sans=v5sp.fon
+V6 Lucida Sans=v6sp.fon
+V7 Lucida Sans=v7sp.fon
+Lucida Sans B 10,12,14=VGALSB.FON
+Lucida Sans B1 10,12,14=VGALSB1.FON
+Lucida Sans B2 10,12,14=VGALSB2.FON
+Symbol B=VGASB.FON
+PROCOMM PLUS for Windows=PWTRMNL.FON
+MS Serif 8,10,12,14,18,24 (VGA res)=SERIFE.fon
+MS Sans Serif 8,10,12,14,18,24 (VGA res)=SSERIFE.fon
+Courier 10,12,15 (VGA res)=COURE.fon
+Small Fonts (VGA res)=SMALLE.fon
+Symbol 8,10,12,14,18,24 (VGA res)=SYMBOLE.fon
+CorelBook View=cbkview.fon
+Albertus Extra Bold (TrueType)=C:\WIN3\SYSTEM\ALBERTEB.FOT
+Albertus Medium (TrueType)=C:\WIN3\SYSTEM\ALBERTME.FOT
+Antique Olive (TrueType)=C:\WIN3\SYSTEM\AOLIVE.FOT
+Antique Olive Bold (TrueType)=C:\WIN3\SYSTEM\AOLIVEB.FOT
+Antique Olive Italic (TrueType)=C:\WIN3\SYSTEM\AOLIVEI.FOT
+Arial Gras (TrueType)=ARIALBD.FOT
+Arial Gras Italique (TrueType)=ARIALBI.FOT
+Arial Italique (TrueType)=ARIALI.FOT
+Arial Narrow Gras (TrueType)=C:\WIN3\SYSTEM\ARIALNB.FOT
+Arial Narrow Gras Italique (TrueType)=C:\WIN3\SYSTEM\ARIALNBI.FOT
+Arial Narrow Italique (TrueType)=C:\WIN3\SYSTEM\ARIALNI.FOT
+Arial Narrow Normal (TrueType)=C:\WIN3\SYSTEM\ARIALN.FOT
+Arial Normal (TrueType)=C:\WIN3\SYSTEM\ARIAL.FOT
+Arial Super (TrueType)=C:\WIN3\SYSTEM\ARIALS.FOT
+Avant Garde Book BT (TrueType)=C:\WIN3\SYSTEM\TT0154M_.FOT
+Avant Garde Book Oblique BT (TrueType)=C:\WIN3\SYSTEM\TT0155M_.FOT
+Avant Garde Medium BT (TrueType)=C:\WIN3\SYSTEM\TT0156M_.FOT
+Avant Garde Medium Oblique BT (TrueType)=C:\WIN3\SYSTEM\TT0157M_.FOT
+Bernhard Modern Bold BT (TrueType)=C:\WIN3\SYSTEM\TT0838M_.FOT
+Bernhard Modern Bold Italic BT (TrueType)=C:\WIN3\SYSTEM\TT0839M_.FOT
+Bernhard Modern BT (TrueType)=C:\WIN3\SYSTEM\TT0607M_.FOT
+Bernhard Modern Italic BT (TrueType)=C:\WIN3\SYSTEM\TT0837M_.FOT
+Bodoni Bold (TrueType)=C:\WIN3\SYSTEM\BDB_____.FOT
+Bodoni Roman (TrueType)=C:\WIN3\SYSTEM\BD______.FOT
+Bodoni Roman Italic (TrueType)=C:\WIN3\SYSTEM\BDRI____.FOT
+Book Antiqua Gras (TrueType)=C:\WIN3\SYSTEM\ANTQUAB.FOT
+Book Antiqua Gras Italique (TrueType)=C:\WIN3\SYSTEM\ANTQUABI.FOT
+Book Antiqua Italique (TrueType)=C:\WIN3\SYSTEM\ANTQUAI.FOT
+Book Antiqua Normal (TrueType)=C:\WIN3\SYSTEM\ANTQUA.FOT
+Bookman Old Style Gras Italique (TrueType)=C:\WIN3\SYSTEM\BOOKOSBI.FOT
+Bookman Old Style Italique (TrueType)=C:\WIN3\SYSTEM\BOOKOSI.FOT
+Bookman Old Style Normal (TrueType)=C:\WIN3\SYSTEM\BOOKOS.FOT
+Century Gothic Gras (TrueType)=C:\WIN3\SYSTEM\GOTHICB.FOT
+Century Gothic Gras Italique (TrueType)=C:\WIN3\SYSTEM\GOTHICBI.FOT
+Century Gothic Italique (TrueType)=C:\WIN3\SYSTEM\GOTHICI.FOT
+Century Schoolbook Gras (TrueType)=C:\WIN3\SYSTEM\SCHLBKB.FOT
+Century Schoolbook Gras Italique (TrueType)=C:\WIN3\SYSTEM\SCHLBKBI.FOT
+Century Schoolbook Italique (TrueType)=C:\WIN3\SYSTEM\SCHLBKI.FOT
+Century Schoolbook Normal (TrueType)=C:\WIN3\SYSTEM\SCHLBK.FOT
+CG Omega (TrueType)=C:\WIN3\SYSTEM\CGOMEG.FOT
+CG Omega Bold (TrueType)=C:\WIN3\SYSTEM\CGOMEGB.FOT
+CG Omega Bold Italic (TrueType)=C:\WIN3\SYSTEM\CGOMEGBI.FOT
+CG Omega Italic (TrueType)=C:\WIN3\SYSTEM\CGOMEGI.FOT
+Coronet Italic (TrueType)=C:\WIN3\SYSTEM\CORONET.FOT
+Courier New Gras (TrueType)=COURBD.FOT
+Courier New Gras Italique (TrueType)=COURBI.FOT
+Courier New Italique (TrueType)=COURI.FOT
+Courier New Normal (TrueType)=C:\WIN3\SYSTEM\COUR.FOT
+Dom Casual (TrueType)=C:\WIN3\SYSTEM\DC______.FOT
+Eurostile-Black-DTC (TrueType)=C:\WIN3\SYSTEM\EUROSTIL.FOT
+Eurostile-Roman-DTC (TrueType)=C:\WIN3\SYSTEM\EUROSTI1.FOT
+EurostileExtended-Roman-DTC (TrueType)=C:\WIN3\SYSTEM\EUROSTI3.FOT
+Exotic 350 Bold BT (TrueType)=C:\WIN3\SYSTEM\TT0628M_.FOT
+Exotic 350 Demi-Bold BT (TrueType)=C:\WIN3\SYSTEM\TT0627M_.FOT
+Exotic 350 Light BT (TrueType)=C:\WIN3\SYSTEM\TT0626M_.FOT
+Fences Regular (TrueType)=C:\WIN3\SYSTEM\FENCES.FOT
+Fette Engschrift (TrueType)=C:\WIN3\SYSTEM\DINEN___.FOT
+FIBox (TrueType)=C:\WIN3\SYSTEM\FIBOX.FOT
+FIBoxBB (TrueType)=C:\WIN3\SYSTEM\FIBOXBB.FOT
+Franklin Extra Cond. Gothic (TrueType)=C:\WIN3\SYSTEM\FGEC____.FOT
+Franklin Gothic (TrueType)=C:\WIN3\SYSTEM\FGR_____.FOT
+Franklin Gothic Condensed (TrueType)=C:\WIN3\SYSTEM\FGC_____.FOT
+Freehand 591 BT (TrueType)=C:\WIN3\SYSTEM\TT1043M_.FOT
+Garamond Antiqua (TrueType)=C:\WIN3\SYSTEM\GARAMD.FOT
+Garamond Halbfett (TrueType)=C:\WIN3\SYSTEM\GARAMDB.FOT
+Garamond Kursiv (TrueType)=C:\WIN3\SYSTEM\GARAMDI.FOT
+Garamond Kursiv Halbfett (TrueType)=C:\WIN3\SYSTEM\GARAMDBI.FOT
+Garrison Cond. Sans (TrueType)=C:\WIN3\SYSTEM\GNC_____.FOT
+Garrison ExtraBold Sans BOLD (TrueType)=C:\WIN3\SYSTEM\GNEB____.FOT
+Garrison ExtraCond. Sans (TrueType)=C:\WIN3\SYSTEM\GNEC____.FOT
+Garrison Light Sans (TrueType)=C:\WIN3\SYSTEM\GNL_____.FOT
+Garrison Sans (TrueType)=C:\WIN3\SYSTEM\GN______.FOT
+Garrison Sans BOLD (TrueType)=C:\WIN3\SYSTEM\GNB_____.FOT
+Garrison Sans ITALIC (TrueType)=C:\WIN3\SYSTEM\GNI_____.FOT
+Hobo BT (TrueType)=C:\WIN3\SYSTEM\TT0057M_.FOT
+IPA Chambers Normal (TrueType)=C:\WIN3\SYSTEM\CHAMBERS.FOT
+Kauflinn BOLDITALIC (TrueType)=C:\WIN3\SYSTEM\KF______.FOT
+KEYCAPS (TrueType)=C:\WIN3\SYSTEM\KEYCAPS.FOT
+Letter Gothic (TrueType)=C:\WIN3\SYSTEM\LETGOT.FOT
+Letter Gothic Bold (TrueType)=C:\WIN3\SYSTEM\LETGOTB.FOT
+Letter Gothic Italic (TrueType)=C:\WIN3\SYSTEM\LETGOTI.FOT
+Lucida Blackletter (TrueType)=C:\WIN3\SYSTEM\LBLACK.FOT
+Lucida Calligraphy Italique (TrueType)=C:\WIN3\SYSTEM\LCALLIG.FOT
+Lucida Fax (TrueType)=C:\WIN3\SYSTEM\LFAX.FOT
+Lucida Fax Demi-gras (TrueType)=C:\WIN3\SYSTEM\LFAXD.FOT
+Lucida Fax Demi-gras Italique (TrueType)=C:\WIN3\SYSTEM\LFAXDI.FOT
+Lucida Fax Italique (TrueType)=C:\WIN3\SYSTEM\LFAXI.FOT
+Lucida Handwriting Italique (TrueType)=C:\WIN3\SYSTEM\LHANDW.FOT
+Lucida Sans (TrueType)=C:\WIN3\SYSTEM\LSANS.FOT
+Lucida Sans Demi-gras (TrueType)=C:\WIN3\SYSTEM\LSANSD.FOT
+Lucida Sans Demi-gras Italique (TrueType)=C:\WIN3\SYSTEM\LSANSDI.FOT
+Lucida Sans Italique (TrueType)=C:\WIN3\SYSTEM\LSANSI.FOT
+Lucida Sans Typewriter (TrueType)=C:\WIN3\SYSTEM\LTYPE.FOT
+Lucida Sans Typewriter Gras (TrueType)=C:\WIN3\SYSTEM\LTYPEB.FOT
+Lucida Sans Typewriter Gras Oblique (TrueType)=C:\WIN3\SYSTEM\LTYPEBO.FOT
+Lucida Sans Typewriter Oblique (TrueType)=C:\WIN3\SYSTEM\LTYPEO.FOT
+Monotype Corsiva Normal (TrueType)=C:\WIN3\SYSTEM\MTCORSVA.FOT
+Monotype Sorts (TrueType)=C:\WIN3\SYSTEM\MTSORTS.FOT
+MS LineDraw Normal (TrueType)=C:\WIN3\SYSTEM\LINEDRAW.FOT
+MT Extra (TrueType)=C:\WIN3\SYSTEM\MTEXTRA.FOT
+Murray Hill Bold BT (TrueType)=C:\WIN3\SYSTEM\TT0886M_.FOT
+Optimum Bold (TrueType)=C:\WIN3\SYSTEM\OPB_____.FOT
+Optimum Roman (TrueType)=C:\WIN3\SYSTEM\OP______.FOT
+Penguin (TrueType)=C:\WIN3\SYSTEM\PENGUINN.FOT
+Penguin Bold (TrueType)=C:\WIN3\SYSTEM\PENGUINB.FOT
+PenguinLight (TrueType)=C:\WIN3\SYSTEM\PENGLTN.FOT
+Square 721 Blk-Italic (TrueType)=C:\WIN3\SYSTEM\SQR721BI.FOT
+Square 721 Blk-Normal (TrueType)=C:\WIN3\SYSTEM\SQR721BN.FOT
+Square 721 Bold BT (TrueType)=C:\WIN3\SYSTEM\TT0247M_.FOT
+Square 721 Bold Condensed BT (TrueType)=C:\WIN3\SYSTEM\TT0249M_.FOT
+Square 721 Bold Extended BT (TrueType)=C:\WIN3\SYSTEM\TT0251M_.FOT
+Square 721 BT (TrueType)=C:\WIN3\SYSTEM\TT0246M_.FOT
+Square 721 Condensed BT (TrueType)=C:\WIN3\SYSTEM\TT0248M_.FOT
+Square 721 Extended BT (TrueType)=C:\WIN3\SYSTEM\TT0250M_.FOT
+Square 721-BoldItalic (TrueType)=C:\WIN3\SYSTEM\SQR721T.FOT
+Symbol Normal (TrueType)=C:\WIN3\SYSTEM\SYMBOL.FOT
+Technical Italic (TrueType)=C:\WIN3\SYSTEM\TECHNCLI.FOT
+Technical Regular (TrueType)=C:\WIN3\SYSTEM\TECHNCL.FOT
+Times New Roman Gras (TrueType)=TIMESBD.FOT
+Times New Roman Gras Italique (TrueType)=TIMESBI.FOT
+Times New Roman Italique (TrueType)=TIMESI.FOT
+Times New Roman Normal (TrueType)=C:\WIN3\SYSTEM\TIMES.FOT
+Univers (TrueType)=C:\WIN3\SYSTEM\UNIVER.FOT
+Univers Bold (TrueType)=C:\WIN3\SYSTEM\UNIVERB.FOT
+Univers Bold Italic (TrueType)=C:\WIN3\SYSTEM\UNIVERBI.FOT
+Univers Condensed (TrueType)=C:\WIN3\SYSTEM\UNIVCD.FOT
+Univers Condensed Bold (TrueType)=C:\WIN3\SYSTEM\UNIVCDB.FOT
+Univers Condensed Bold Italic (TrueType)=C:\WIN3\SYSTEM\UNIVCDBI.FOT
+Univers Condensed Italic (TrueType)=C:\WIN3\SYSTEM\UNIVCDI.FOT
+Univers Italic (TrueType)=C:\WIN3\SYSTEM\UNIVERI.FOT
+VAG Round (TrueType)=C:\WIN3\SYSTEM\VRB_____.FOT
+Village Square (TrueType)=C:\WIN3\SYSTEM\VS______.FOT
+Windsor (TrueType)=C:\WIN3\SYSTEM\WN______.FOT
+Windsor Condensed (TrueType)=C:\WIN3\SYSTEM\WNLC____.FOT
+Wingdings Normal (TrueType)=C:\WIN3\SYSTEM\WINGDING.FOT
+Arial (TrueType)=ARIAL.FOT
+Courier New (TrueType)=COUR.FOT
+Times New Roman (TrueType)=TIMES.FOT
+WingDings (TrueType)=WINGDING.FOT
+MS-DOS CP 437=DOSAPP_2.FON
+Symbol (TrueType)=SYMBOL.FOT
+MS Reference 1 (TrueType)=MSREF1.FOT
+MS Reference 2 (TrueType)=MSREF2.FOT
+HM Phonetic 12,13.5 (VGA res)=PHONETIC.FON
+Mistral (TrueType)=mistral.FOT
+Footlight MT Light (TrueType)=ftltlt.FOT
+Bookman Old Style Gras (TrueType)=bookosb.FOT
+Algerian (TrueType)=alger.FOT
+Century Gothic (TrueType)=gothic.FOT
+Vivaldi Italique (TrueType)=vivaldii.FOT
+Impact (TrueType)=impact.FOT
+Colonna MT (TrueType)=colonna.FOT
+Matura MT Script Capitals (TrueType)=maturasc.FOT
+Brush Script MT Italique (TrueType)=brushsci.FOT
+Desdemona (TrueType)=desdemon.FOT
+Gradl (TrueType)=gradl.FOT
+Stencil (TrueType)=stencil.FOT
+Arial Rounded MT Bold Gras (TrueType)=arlrdbd.FOT
+Playbill (TrueType)=playbill.FOT
+Braggadocio (TrueType)=bragga.FOT
+Wide Latin (TrueType)=latinwd.FOT
+Bauhaus 93 (TrueType)=bauhs93.FOT
+Britannic Bold Gras (TrueType)=britanic.FOT
+Kino MT (TrueType)=kino.FOT
+Marlett (TrueType)=MARLETT.FOT
+
+[PrinterPorts]
+Générique/Texte seulement=TTY,FILE:,15,45
+HP DeskJet 1200C=HPPCL5C,LPT1:,15,900
+HP LaserJet III=HPPCL5MS,FILE:,15,45
+Kyocera F-1000=KYOCERA,LPT1:,15,45
+Microsoft At Work Fax=EFAXDRV,FAX:,15,45
+FaxPlus Printer Driver=FAXPLPR,FAXSRVR,15,45
+
+[devices]
+Générique/Texte seulement=TTY,FILE:
+HP DeskJet 1200C=HPPCL5C,LPT1:
+HP LaserJet III=HPPCL5MS,FILE:
+Kyocera F-1000=KYOCERA,LPT1:
+Microsoft At Work Fax=EFAXDRV,FAX:
+
+[Microsoft Multimedia Catalog]
+CatalogNum=1
+Path=I:\mmcat\
+ParentCD=Microsoft Encarta '95
+
+[MRU_Files]
+Order=ba
+a=\\DI\PV
+b=\\KIM\C
+
+[SmoothTalker]
+Pitch=5
+Speed=4
+Volume=5
+Mode=113
+

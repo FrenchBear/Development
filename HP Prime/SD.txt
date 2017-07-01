@@ -1,0 +1,6 @@
+EXPORT SD(N)
+BEGIN
+  LOCAL S;
+  S= CAS.count(1,idivis(N));
+  RETURN S==2*N;
+END;

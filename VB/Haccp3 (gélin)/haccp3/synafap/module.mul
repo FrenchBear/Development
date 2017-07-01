@@ -1,0 +1,61 @@
+[Divers]
+Titre=Produits traiteurs frais et réfrigérés
+logo=synafap.bmp
+Aide=synafap.hlp
+
+[Niveaux]
+Niveau1=Etape
+Niveau2=Sujet
+Niveau3=Danger
+Niveau4=Objet de la maîtrise
+Niveau5=Mesure préventive
+Niveau6=Valeur cible
+Niveau7=Elément de surveillance
+Niveau8=Corrections et actions correctives
+Niveau9=Vérifica- tion
+Niveau10=Enregis- trement
+
+[Affichages]
+Titre1=Paramètres
+Commentaire1=Informations administratives générales sur le projet.
+Titre2=Equipe
+Commentaire2=La première étape d'une analyse HACCP consiste à définir l'équipe HACCP.
+Titre3=Documentation
+Commentaire3=La documentation HACCP inclut généralement le diagramme de fabrication, la déclaration d'intention ...
+Titre4=Etapes et sujets
+Commentaire4=Définissez les étapes et sujets du processus de fabrication du produit.
+Titre5=Dispositions en place
+Commentaire5=Ce schéma représente les dispositions existant actuellement dans l'entreprise : procédures et instructions, valeurs cibles, enregistements effectués, ...
+Titre6=Identification des dangers
+Commentaire6=Cette étape dresse l'inventaire des dangers pouvant apparaître au cours de la fabrication, évalue leur pertinence, définit les étapes au niveau desquelles le danger peut intervenir et évalue la criticité du danger aux étapes concernées.
+Titre7=Analyse HACCP
+Commentaire7=Ce shéma représente le tableau d'analyse HACCP.
+
+[Menu Documentation Bas]
+NbSujets=7
+Sujet1=Guide des bonnes pratiques du SYNAFAP
+Topic1=0
+Sujet2=Glossaire
+Topic2=1
+Sujet3=Les principaux germes
+Topic3=2
+Sujet4=La réglementation
+Topic4=3
+Sujet5=Eléments de maîtrise
+Topic5=4
+Sujet6=Eléments de surveillance et de preuve
+Topic6=5
+Sujet7=Pertinence des dangers
+Topic7=6
+
+
+[Menu Documentation Haut]
+NbSujets=4
+Sujet1=1 Documentation générale : Sommaire
+Topic1=0
+Sujet2=2 Précisions sur la démarche HACCP
+Topic2=101
+Sujet3=3 Arbre de décision HACCP
+Topic3=30
+Sujet4=4 Définitions HACCP
+Topic4=102

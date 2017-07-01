@@ -1,0 +1,54 @@
+<HTML>
+<HEAD>
+<TITLE>True DBGrid Pro 6.0 (OLEDB)</TITLE>
+</HEAD>
+<BODY>
+Displaying Array Data in Unbound Storage Mode<P>
+
+<OBJECT id=tDBGrid CLASSID="clsid:0D6234D0-DBA2-11D1-B5DF-0060976089D0" WIDTH=500 HEIGHT=300>
+</OBJECT>
+
+<OBJECT id=x CLASSID="clsid:0D62353B-DBA2-11D1-B5DF-0060976089D0">
+</OBJECT>
+
+<SCRIPT LANGUAGE=VBSCRIPT>
+
+Sub window_OnLoad()
+	Dim i, Row, Col, co, cs
+
+	Set cs = tDBGrid.Columns
+
+	While cs.Count
+		cs.Remove(0)
+	Wend
+
+	' Fill the grid with columns and set their properties
+	For i = 0 To 3
+		Set co = cs.Add(i)
+		co.Visible = True
+		co.Caption = "Column " & Cstr(i)
+	Next
+
+	' Allocate space for 100 rows, 4 columns
+	x.ReDim 0, 99, 0, 3
+
+	' Hard-coded dimensions can be used instead, if known.
+	For row = x.LowerBound(1) To x.UpperBound(1)
+		For col = x.LowerBound(2) To x.UpperBound(2)
+			x.Value(row, col) = "Row " & row & ", Col " & col
+		Next
+	Next
+
+	' Bind True DBGrid Control to this XArray instance
+	Set tDBGrid.Array = x
+
+	tDBGrid.DataMode = 4 'dbgUnboundSt
+	tDBGrid.AllowAddNew = True
+	tDBGrid.AllowDelete = True
+
+	' Force the grid to fetch data
+	tDBGrid.ReBind
+End Sub
+</SCRIPT>
+</BODY>
+</HTML>

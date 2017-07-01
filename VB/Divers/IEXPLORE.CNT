@@ -1,0 +1,74 @@
+:base iexplore.hlp
+:title The Web Browser Control and the Internet Explorer Object
+:link iexplore.hlp
+:link selfsame
+1 The Web Browser Control and the Internet Explorer Object
+1 Introduction=iexplore_0000000101000000
+2 Using the WebBrowser Control
+2 Using the WebBrowser Control=iexplore_0000000102000000
+2 Possible Uses=iexplore_0000000102010000
+2 Navigate to a New Location with the Navigate Method=iexplore_0000000102020000
+2 Update Cached Pages with the Refresh or Refresh2 Method=iexplore_0000000102030000
+2 Navigate the History List with the GoBack and GoForward Methods=iexplore_0000000102040000
+2 Control Browsing Operations with the Busy Property and Stop Method=iexplore_0000000102050000
+2 Hide or Show the WebBrowser Control with the Visible Property=iexplore_0000000102060000
+2 WebBrowser Events=iexplore_0000000102070000
+2 Using the InternetExplorer Object
+2 Using the InternetExplorer Object=iexplore_0000000103000000
+2 Show and Hide User Interface Elements=iexplore_0000000103010000
+2 Retrieve Information About Internet Explorer=iexplore_0000000103020000
+2 Objects
+2 WebBrowser Object=iexplore_0000000104000100
+2 InternetExplorer Object=iexplore_0000000104000200
+2 Properties
+2 Application Property=iexplore_0000000105000100
+2 Busy Property=iexplore_0000000105000200
+2 Container Property=iexplore_0000000105000300
+2 Document Property=iexplore_0000000105000400
+2 FullName Property=iexplore_0000000105000500
+2 FullScreen Property=iexplore_0000000105000600
+2 Height Property=iexplore_0000000105000700
+2 HWND Property=iexplore_0000000105000800
+2 Left Property=iexplore_0000000105000900
+2 LocationName Property=iexplore_0000000105000a00
+2 LocationURL Property=iexplore_0000000105000b00
+2 MenuBar Property=iexplore_0000000105000c00
+2 Name Property=iexplore_0000000105000d00
+2 Parent Property=iexplore_0000000105000e00
+2 Path Property=iexplore_0000000105000f00
+2 StatusBar Property=iexplore_0000000105001000
+2 StatusText Property=iexplore_0000000105001100
+2 ToolBar Property=iexplore_0000000105001200
+2 Top Property=iexplore_0000000105001300
+2 TopLevelContainer Property=iexplore_0000000105001400
+2 Type Property=iexplore_0000000105001500
+2 Visible Property=iexplore_0000000105001600
+2 Width Property=iexplore_0000000105001700
+2 Methods
+2 ClientToWindow Method=iexplore_0000000106000100
+2 GetProperty Method=iexplore_0000000106000200
+2 GoBack Method=iexplore_0000000106000300
+2 GoForward Method=iexplore_0000000106000400
+2 GoHome Method=iexplore_0000000106000500
+2 GoSearch Method=iexplore_0000000106000600
+2 Navigate Method=iexplore_0000000106000700
+2 PutProperty Method=iexplore_0000000106000800
+2 Quit Method=iexplore_0000000106000900
+2 Refresh Method=iexplore_0000000106000a00
+2 Refresh2 Method=iexplore_0000000106000b00
+2 Stop Method=iexplore_0000000106000c00
+2 Events
+2 BeforeNavigate Event=iexplore_0000000107000100
+2 CommandStateChange Event=iexplore_0000000107000200
+2 DownloadBegin Event=iexplore_0000000107000300
+2 DownloadComplete Event=iexplore_0000000107000400
+2 FrameBeforeNavigate Event=iexplore_0000000107000500
+2 FrameNavigateComplete Event=iexplore_0000000107000600
+2 FrameNewWindow Event=iexplore_0000000107000700
+2 NavigateComplete Event=iexplore_0000000107000800
+2 NewWindow Event=iexplore_0000000107000900
+2 ProgressChange Event=iexplore_0000000107000a00
+2 PropertyChange Event=iexplore_0000000107000b00
+2 Quit Event=iexplore_0000000107000c00
+2 StatusTextChange Event=iexplore_0000000107000d00
+2 TitleChange Event=iexplore_0000000107000e00

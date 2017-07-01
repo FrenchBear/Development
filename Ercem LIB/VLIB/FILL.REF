@@ -1,0 +1,3 @@
+/* fill.ref */
+void ve_fillc(int2,int2,int2,int2,unsigned char);
+void ve_fillca(int2,int2,int2,int2,unsigned char,uint1);

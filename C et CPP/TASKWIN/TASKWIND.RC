@@ -1,0 +1,105 @@
+//Microsoft App Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+#include "taskwind.h"
+
+/////////////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+TASKWIND DIALOG DISCARDABLE  12, 43, 265, 128
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Fenêtres et taches"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LISTBOX         IDL_WINDOWS,4,14,176,80,LBS_USETABSTOPS | WS_VSCROLL | 
+                    WS_TABSTOP
+    DEFPUSHBUTTON   "&Basculer vers",IDB_SWITCHTO,4,97,56,14
+    PUSHBUTTON      "&WM_CLOSE",IDB_WM_CLOSE,64,97,56,14
+    PUSHBUTTON      "Annuler",IDB_CANCEL,124,97,56,14
+    PUSHBUTTON      "&Cascade",IDB_CASCADE,4,112,56,14
+    PUSHBUTTON      "M&osa\357que",IDB_TILE,64,112,56,14
+    PUSHBUTTON      "&Ranger ic\364nes",IDB_ARRANGEICONS,124,112,56,14
+    LISTBOX         IDL_TASKS,187,14,74,80,WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "&Info...",IDB_TASKINFO,187,97,30,14
+    PUSHBUTTON      "&Terminer",IDB_TASK_TERMINATE,219,97,42,14
+    LTEXT           "Taches:",-1,187,4,25,8
+    LTEXT           "Fen\352tres:",-1,4,4,41,8
+    CONTROL         "",-1,"Static",SS_BLACKRECT,183,0,1,128
+END
+
+TASKINFO DIALOG DISCARDABLE  9, 58, 210, 66
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Informations sur une tache"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Parent",-1,4,24,40,8
+    LTEXT           "HINSTANCE",-1,4,14,40,8
+    LTEXT           "HMODULE",-1,4,34,40,8
+    LTEXT           "",IDT_TASKINFO_HMODULE,46,34,160,8
+    LTEXT           "",IDT_TASKINFO_DIRECTORY,46,44,160,8
+    LTEXT           "",IDT_TASKINFO_DIRECTORY,46,52,160,8
+    LTEXT           "",IDT_TASKINFO_HINSTANCE,46,14,80,8
+    LTEXT           "HTASK",-1,4,4,40,8
+    LTEXT           "",IDT_TASKINFO_HTASK,46,4,80,8
+    LTEXT           "Directory",-1,4,44,40,8
+    LTEXT           "Cmd Line",-1,4,54,40,8
+    LTEXT           "",IDT_TASKINFO_CMDLINE,46,54,160,8
+    LTEXT           "",IDT_TASKINFO_PARENT,46,24,80,8
+    DEFPUSHBUTTON   "OK",IDOK,170,5,35,14
+END
+
+#ifdef APSTUDIO_INVOKED
+//////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""taskwind.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+/////////////////////////////////////////////////////////////////////////////////////
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef APSTUDIO_INVOKED
+////////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

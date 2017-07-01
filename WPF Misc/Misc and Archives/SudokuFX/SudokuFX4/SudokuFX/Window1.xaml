@@ -1,0 +1,168 @@
+﻿<Window x:Class="SudokuFX.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:clr="clr-namespace:SudokuFX"
+	Loaded="WindowLoaded" 
+    Title="SudokuFX" Width="800" Height="600" 
+    >
+  <Window.Resources>
+    <Storyboard x:Key ="TimerAnimation" Completed ="TimerDone">
+      <DoubleAnimation From ="0" To ="1" Storyboard.TargetName ="StopwatchControl"  Duration="0:2:0" Storyboard.TargetProperty ="CurrentTime"/>
+      <Int32Animation From ="1" To ="0"  Storyboard.TargetName ="MinNumber" Storyboard.TargetProperty ="Tag" Duration ="0:2:0"/>
+      <Int32Animation From ="59" To ="0" RepeatBehavior="Forever" Storyboard.TargetName ="SecNumber" Storyboard.TargetProperty ="Tag" Duration ="0:1:0"/>
+      <Int32Animation From ="59" To ="0" RepeatBehavior="Forever" Storyboard.TargetName ="SubSecNumber" Storyboard.TargetProperty ="Tag" Duration ="0:0:1"/>
+    </Storyboard>
+  </Window.Resources>
+  <DockPanel Style ="{StaticResource GradientPanel}">
+    <Grid DockPanel.Dock ="Top" Margin="10,0,0,25">
+      <Grid.RenderTransform>
+        <TranslateTransform X="800"/>
+      </Grid.RenderTransform>
+      <Grid.Triggers>
+        <EventTrigger RoutedEvent ="Control.Loaded">
+          <EventTrigger.Actions>
+            <BeginStoryboard>
+              <Storyboard>
+                <DoubleAnimationUsingKeyFrames  BeginTime ="0:0:0.25" Storyboard.TargetProperty="RenderTransform.X"  AccelerationRatio="0.25">
+                  <LinearDoubleKeyFrame Value="800" KeyTime="0:0:0"/>
+                  <LinearDoubleKeyFrame Value="-30" KeyTime="0:0:0.3"/>
+                  <LinearDoubleKeyFrame Value="20" KeyTime="0:0:0.5"/>
+                  <LinearDoubleKeyFrame Value="0" KeyTime="0:0:0.6"/>
+                </DoubleAnimationUsingKeyFrames>
+              </Storyboard>
+            </BeginStoryboard>
+          </EventTrigger.Actions>
+        </EventTrigger>
+      </Grid.Triggers>
+      <TextBlock Background ="#00112233" x:Name ="TitleText" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground ="White" FontSize ="36" Text ="SudokuFX">
+      </TextBlock>
+      <Rectangle VerticalAlignment ="Top" HorizontalAlignment ="Left" x:Name ="TitleReflect"  Width ="{Binding ElementName=TitleText,Path=ActualWidth}" Height ="{Binding ElementName=TitleText,Path=ActualHeight}">
+        <Rectangle.RenderTransform>
+          <TransformGroup>
+            <ScaleTransform CenterY="{Binding ElementName=TitleText,Path=ActualHeight}" ScaleY ="-1"/>
+            <TranslateTransform Y ="-10"/>
+          </TransformGroup>
+        </Rectangle.RenderTransform>
+        <Rectangle.OpacityMask>
+          <LinearGradientBrush StartPoint ="0,0" EndPoint ="0,1">
+            <GradientStop Color ="#00112233" Offset ="0.3"/>
+            <GradientStop Color ="#a0112233" Offset ="1"/>
+          </LinearGradientBrush>
+        </Rectangle.OpacityMask>
+      </Rectangle>
+    </Grid>
+    <StackPanel x:Name ="DockLeft" DockPanel.Dock ="Left">
+      <Expander x:Name="MyControl" IsExpanded ="True"  Header="Main Menu">
+        <StackPanel>
+          <Button Click="NewGameClicked">New Game</Button>
+          <Button Click="LoadGameClicked">Load Game</Button>
+          <Button Click="SaveGameClicked">Save Game</Button>
+          <Button Click="QuitClicked">Quit</Button>
+        </StackPanel>
+      </Expander>
+      <Expander IsExpanded ="True" Header ="New Game Settings">
+        <StackPanel>
+          <StackPanel.Resources>
+            <DataTemplate x:Key ="BoardSizeTemplate">
+              <StackPanel Orientation ="Horizontal" FlowDirection ="LeftToRight">
+                <TextBlock Text ="{Binding}"/>
+                <TextBlock Text ="x"/>
+                <TextBlock Text ="{Binding}"/>
+              </StackPanel>
+            </DataTemplate>
+          </StackPanel.Resources>
+          <TextBlock Foreground="Black">Generation Method:</TextBlock>
+          <StackPanel Margin ="10,5,5,5">
+            <RadioButton IsChecked ="True" x:Name ="FastGenRadio">Fast But Incorrect</RadioButton>
+            <RadioButton >Using Solver</RadioButton>
+          </StackPanel>
+          <TextBlock Foreground="Black">Timer Dificulty:</TextBlock>
+          <StackPanel Margin ="10,5,5,5">
+            <RadioButton x:Name="NoTimerRadio">No Timer</RadioButton>
+            <RadioButton x:Name="EasyTimerRadio" IsChecked ="True">Easy</RadioButton>
+            <RadioButton x:Name="MediumTimerRadio">Medium</RadioButton>
+            <RadioButton x:Name="HardTimerRadio">Hard</RadioButton>
+          </StackPanel>
+          <TextBlock Foreground="Black">Board Size:</TextBlock>
+          <ComboBox x:Name ="BoardSize" xmlns:s="clr-namespace:System;assembly=mscorlib" ItemTemplate ="{StaticResource BoardSizeTemplate}" IsEditable ="False">
+            <ComboBox.SelectedItem>
+              <s:Int32>9</s:Int32>
+            </ComboBox.SelectedItem>
+            <s:Int32>9</s:Int32>
+            <s:Int32>16</s:Int32>
+            <s:Int32>25</s:Int32>
+            <s:Int32>36</s:Int32>
+          </ComboBox>
+        </StackPanel>
+      </Expander>
+    </StackPanel>
+    <StackPanel x:Name ="DockRight" Width ="{Binding ElementName=DockLeft, Path=ActualWidth}" DockPanel.Dock ="Right">
+      <Expander IsExpanded ="True" Header ="Current Game">
+        <StackPanel xmlns:s="clr-namespace:System;assembly=mscorlib">
+          <StackPanel x:Name="TimerControls">
+            <StackPanel Orientation ="Horizontal" FlowDirection ="LeftToRight">
+              <TextBlock  x:Name ="MinNumber" FontSize ="36" FontWeight ="Bold" Text ="{Binding RelativeSource={RelativeSource Self},Path=Tag}">
+                <TextBlock.Tag>
+                  <s:Int32>59</s:Int32>
+                </TextBlock.Tag>
+              </TextBlock>
+              <TextBlock  FontSize="36" FontWeight="Bold" Text =":"/>
+              <TextBlock  x:Name ="SecNumber" FontSize ="36" FontWeight="Bold" Text ="{Binding RelativeSource={RelativeSource Self},Path=Tag}">
+                <TextBlock.Tag>
+                  <s:Int32>59</s:Int32>
+                </TextBlock.Tag>
+              </TextBlock>
+              <TextBlock Margin="0,5,0,0" VerticalAlignment="Center"  FontSize="24" FontWeight="Bold" Text =":"/>
+              <TextBlock Margin="0,5,0,0" VerticalAlignment="Center" x:Name ="SubSecNumber" FontSize ="24" Text ="{Binding RelativeSource={RelativeSource Self},Path=Tag}">
+                <TextBlock.Tag>
+                  <s:Int32>59</s:Int32>
+                </TextBlock.Tag>
+              </TextBlock>
+            </StackPanel>
+            <clr:Stopwatch Checked="ResumeTimer" Unchecked="PauseTimer"   Margin="0,5,0,0"  x:Name="StopwatchControl"  HorizontalAlignment="Stretch"/>
+          </StackPanel>
+          <Button Click="SolveClicked">I Give Up</Button>
+        </StackPanel>
+      </Expander>
+    </StackPanel>
+    <Border Style ="{StaticResource ControlBorder}" DockPanel.Dock="Bottom">
+      <ListBox Style ="{StaticResource ControlInterior}" Height ="100" >
+        <ListBoxItem>
+          Placed 5 at (3,9)
+        </ListBoxItem>
+        <ListBoxItem>
+          Placed 1 at (2,1)
+        </ListBoxItem>
+        <ListBoxItem>
+          Placed 8 at (7,4)
+        </ListBoxItem>
+        <ListBoxItem>
+          Placed 5 at (3,9)
+        </ListBoxItem>
+        <ListBoxItem>
+          Placed 1 at (2,1)
+        </ListBoxItem>
+        <ListBoxItem>
+          Placed 8 at (7,4)
+        </ListBoxItem>
+        <ListBoxItem>
+          Placed 5 at (3,9)
+        </ListBoxItem>
+        <ListBoxItem>
+          Placed 1 at (2,1)
+        </ListBoxItem>
+        <ListBoxItem>
+          Placed 8 at (7,4)
+        </ListBoxItem>
+      </ListBox>
+    </Border>
+    <Grid>
+      <Rectangle Width="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}" Margin="6" Fill ="White">
+        <Rectangle.BitmapEffect>
+          <DropShadowBitmapEffect Opacity ="0.5"/>
+        </Rectangle.BitmapEffect>
+      </Rectangle>
+      <clr:SudokuBoard x:Name="Board"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"   Margin="5"/>
+    </Grid>
+  </DockPanel>
+</Window>

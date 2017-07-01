@@ -1,0 +1,382 @@
+Version 1.00
+BEGIN Form Essai
+	AutoRedraw   = 0
+	BackColor    = QBColor(7)
+	BorderStyle  = 2
+	Caption      = "Feuille cr‚‚e sous VB Dos"
+	ControlBox   = -1
+	Enabled      = -1
+	ForeColor    = QBColor(0)
+	Height       = Char(17)
+	Left         = Char(20)
+	MaxButton    = -1
+	MinButton    = -1
+	MousePointer = 0
+	Tag          = ""
+	Top          = Char(3)
+	Visible      = -1
+	Width        = Char(57)
+	WindowState  = 0
+	BEGIN Label lblPolice
+		Alignment    = 0
+		AutoSize     = 0
+		BackColor    = QBColor(7)
+		BorderStyle  = 0
+		Caption      = "&Police"
+		DragMode     = 0
+		Enabled      = -1
+		ForeColor    = QBColor(0)
+		Height       = Char(1)
+		Left         = Char(1)
+		MousePointer = 0
+		TabIndex     = 0
+		Tag          = ""
+		Top          = Char(1)
+		Visible      = -1
+		Width        = Char(12)
+	END
+	BEGIN TextBox txtPolice
+		BackColor    = QBColor(7)
+		BorderStyle  = 1
+		DragMode     = 0
+		Enabled      = -1
+		ForeColor    = QBColor(0)
+		Height       = Char(1)
+		Left         = Char(1)
+		MousePointer = 0
+		MultiLine    = 0
+		ScrollBars   = 0
+		TabIndex     = 1
+		TabStop      = -1
+		Tag          = ""
+		Text         = "Arial"
+		Top          = Char(2)
+		Visible      = -1
+		Width        = Char(18)
+	END
+	BEGIN ListBox lstPolice
+		BackColor    = QBColor(7)
+		DragMode     = 0
+		Enabled      = -1
+		ForeColor    = QBColor(0)
+		Height       = Char(5)
+		Left         = Char(1)
+		MousePointer = 0
+		Sorted       = 0
+		TabIndex     = 2
+		TabStop      = -1
+		Tag          = ""
+		Top          = Char(3)
+		Visible      = -1
+		Width        = Char(18)
+	END
+	BEGIN Label lblStyle
+		Alignment    = 0
+		AutoSize     = 0
+		BackColor    = QBColor(7)
+		BorderStyle  = 0
+		Caption      = "&Style"
+		DragMode     = 0
+		Enabled      = -1
+		ForeColor    = QBColor(0)
+		Height       = Char(1)
+		Left         = Char(21)
+		MousePointer = 0
+		TabIndex     = 3
+		Tag          = ""
+		Top          = Char(1)
+		Visible      = -1
+		Width        = Char(12)
+	END
+	BEGIN Frame frmStyle
+		BackColor    = QBColor(7)
+		Caption      = ""
+		DragMode     = 0
+		Enabled      = -1
+		ForeColor    = QBColor(0)
+		Height       = Char(6)
+		Left         = Char(21)
+		MousePointer = 0
+		TabIndex     = 4
+		Tag          = ""
+		Top          = Char(2)
+		Visible      = -1
+		Width        = Char(19)
+		BEGIN OptionButton optNormal
+			BackColor    = QBColor(7)
+			Caption      = "&Normal"
+			DragMode     = 0
+			Enabled      = -1
+			ForeColor    = QBColor(0)
+			Height       = Char(1)
+			Left         = Char(0)
+			MousePointer = 0
+			TabIndex     = 5
+			TabStop      = 0
+			Tag          = ""
+			Top          = Char(0)
+			Value        = 0
+			Visible      = -1
+			Width        = Char(13)
+		END
+		BEGIN OptionButton optGras
+			BackColor    = QBColor(7)
+			Caption      = "&Gras"
+			DragMode     = 0
+			Enabled      = -1
+			ForeColor    = QBColor(0)
+			Height       = Char(1)
+			Left         = Char(0)
+			MousePointer = 0
+			TabIndex     = 6
+			TabStop      = 0
+			Tag          = ""
+			Top          = Char(1)
+			Value        = 0
+			Visible      = -1
+			Width        = Char(13)
+		END
+		BEGIN OptionButton optItalique
+			BackColor    = QBColor(7)
+			Caption      = "&Italique"
+			DragMode     = 0
+			Enabled      = -1
+			ForeColor    = QBColor(0)
+			Height       = Char(1)
+			Left         = Char(0)
+			MousePointer = 0
+			TabIndex     = 7
+			TabStop      = 0
+			Tag          = ""
+			Top          = Char(2)
+			Value        = 0
+			Visible      = -1
+			Width        = Char(13)
+		END
+		BEGIN OptionButton optGrasIt
+			BackColor    = QBColor(7)
+			Caption      = "G&ras Italique"
+			DragMode     = 0
+			Enabled      = -1
+			ForeColor    = QBColor(0)
+			Height       = Char(1)
+			Left         = Char(0)
+			MousePointer = 0
+			TabIndex     = 8
+			TabStop      = -1
+			Tag          = ""
+			Top          = Char(3)
+			Value        = -1
+			Visible      = -1
+			Width        = Char(17)
+		END
+	END
+	BEGIN Label lblTaille
+		Alignment    = 0
+		AutoSize     = 0
+		BackColor    = QBColor(7)
+		BorderStyle  = 0
+		Caption      = "&Taille"
+		DragMode     = 0
+		Enabled      = -1
+		ForeColor    = QBColor(0)
+		Height       = Char(1)
+		Left         = Char(42)
+		MousePointer = 0
+		TabIndex     = 9
+		Tag          = ""
+		Top          = Char(1)
+		Visible      = -1
+		Width        = Char(12)
+	END
+	BEGIN ComboBox cbxTaille
+		BackColor    = QBColor(7)
+		DragMode     = 0
+		Enabled      = -1
+		ForeColor    = QBColor(0)
+		Height       = Char(6)
+		Left         = Char(42)
+		MousePointer = 0
+		Sorted       = 0
+		Style        = 1
+		TabIndex     = 10
+		TabStop      = -1
+		Tag          = ""
+		Text         = "Listemodifiable1"
+		Top          = Char(2)
+		Visible      = -1
+		Width        = Char(10)
+	END
+	BEGIN Frame fraEffets
+		BackColor    = QBColor(7)
+		Caption      = "Effets"
+		DragMode     = 0
+		Enabled      = -1
+		ForeColor    = QBColor(0)
+		Height       = Char(4)
+		Left         = Char(1)
+		MousePointer = 0
+		TabIndex     = 11
+		Tag          = ""
+		Top          = Char(8)
+		Visible      = -1
+		Width        = Char(18)
+		BEGIN CheckBox chbSouligne
+			BackColor    = QBColor(7)
+			Caption      = "&Soulign‚"
+			DragMode     = 0
+			Enabled      = -1
+			ForeColor    = QBColor(0)
+			Height       = Char(1)
+			Left         = Char(0)
+			MousePointer = 0
+			TabIndex     = 12
+			TabStop      = -1
+			Tag          = ""
+			Top          = Char(0)
+			Value        = 0
+			Visible      = -1
+			Width        = Char(14)
+		END
+		BEGIN CheckBox chbBarre
+			BackColor    = QBColor(7)
+			Caption      = "&Barr‚"
+			DragMode     = 0
+			Enabled      = -1
+			ForeColor    = QBColor(0)
+			Height       = Char(1)
+			Left         = Char(0)
+			MousePointer = 0
+			TabIndex     = 13
+			TabStop      = -1
+			Tag          = ""
+			Top          = Char(1)
+			Value        = 0
+			Visible      = -1
+			Width        = Char(15)
+		END
+	END
+	BEGIN Label lblCouleur
+		Alignment    = 2
+		AutoSize     = 0
+		BackColor    = QBColor(7)
+		BorderStyle  = 0
+		Caption      = "&Couleur"
+		DragMode     = 0
+		Enabled      = -1
+		ForeColor    = QBColor(0)
+		Height       = Char(1)
+		Left         = Char(1)
+		MousePointer = 0
+		TabIndex     = 14
+		Tag          = ""
+		Top          = Char(12)
+		Visible      = -1
+		Width        = Char(18)
+	END
+	BEGIN ComboBox cbxCouleur
+		BackColor    = QBColor(7)
+		DragMode     = 0
+		Enabled      = -1
+		ForeColor    = QBColor(0)
+		Height       = Char(1)
+		Left         = Char(1)
+		MousePointer = 0
+		Sorted       = 0
+		Style        = 0
+		TabIndex     = 15
+		TabStop      = -1
+		Tag          = ""
+		Text         = "Listemodifiable1"
+		Top          = Char(13)
+		Visible      = -1
+		Width        = Char(18)
+	END
+	BEGIN CommandButton btnOk
+		BackColor    = QBColor(7)
+		Cancel       = 0
+		Caption      = "&Ok"
+		Default      = -1
+		DragMode     = 0
+		Enabled      = -1
+		Height       = Char(3)
+		Left         = Char(26)
+		MousePointer = 0
+		TabIndex     = 16
+		TabStop      = -1
+		Tag          = ""
+		Top          = Char(11)
+		Visible      = -1
+		Width        = Char(12)
+	END
+	BEGIN CommandButton btnAnnuler
+		BackColor    = QBColor(7)
+		Cancel       = -1
+		Caption      = "&Annuler"
+		Default      = 0
+		DragMode     = 0
+		Enabled      = -1
+		Height       = Char(3)
+		Left         = Char(40)
+		MousePointer = 0
+		TabIndex     = 17
+		TabStop      = -1
+		Tag          = ""
+		Top          = Char(11)
+		Visible      = -1
+		Width        = Char(12)
+	END
+	BEGIN HScrollBar HSB
+		Attached     = 0
+		DragMode     = 0
+		Enabled      = -1
+		Height       = Char(1)
+		LargeChange  = 5
+		Left         = Char(0)
+		Max          = 20
+		Min          = 0
+		MousePointer = 0
+		SmallChange  = 1
+		TabIndex     = 18
+		TabStop      = -1
+		Tag          = ""
+		Top          = Char(14)
+		Value        = 0
+		Visible      = -1
+		Width        = Char(54)
+	END
+	BEGIN VScrollBar VSB
+		Attached     = 0
+		DragMode     = 0
+		Enabled      = -1
+		Height       = Char(14)
+		LargeChange  = 10
+		Left         = Char(53)
+		Max          = 100
+		Min          = 10
+		MousePointer = 0
+		SmallChange  = 1
+		TabIndex     = 19
+		TabStop      = -1
+		Tag          = ""
+		Top          = Char(0)
+		Value        = 10
+		Visible      = -1
+		Width        = Char(2)
+	END
+END
+
+SUB btnAnnuler_Click ()
+  END
+END SUB
+
+SUB btnOk_Click ()
+  END
+END SUB
+
+SUB Form_Load ()
+  cbxCouleur.ADDITEM "Bleu"
+  cbxCouleur.ADDITEM "Blanc"
+  cbxCouleur.ADDITEM "Rouge"
+END SUB
+

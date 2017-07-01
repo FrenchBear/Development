@@ -1,0 +1,8 @@
+[DEFAULT]
+BASEURL=http://www.wallner-software.com/
+[DOC#9#10#7#9#11]
+BASEURL=http://www6.brinkster.com/wallner/ocx.html
+ORIGURL=main_dhtml.html
+[InternetShortcut]
+URL=http://www.wallner-software.com/
+Modified=D0FEAAFFA795C40178

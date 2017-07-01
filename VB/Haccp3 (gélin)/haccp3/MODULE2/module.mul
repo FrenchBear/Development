@@ -1,0 +1,35 @@
+[Divers]
+Titre=nouveau
+logo=
+Aide=
+
+[Niveaux]
+Niveau1=Etape
+Niveau2=Sujet
+Niveau3=Danger
+Niveau4=Point à maitriser
+Niveau5=Mesure préventive
+Niveau6=Valeur cible
+Niveau7=Eléments de surveillance
+Niveau8=Correction et action corrective
+Niveau9=Vérification
+Niveau10=Enregistrement
+
+[Affichages]
+Titre1=Paramètres
+Commentaire1=Saisissez d'abord les valeurs de cet onglet
+Titre2=Equipe
+Commentaire2=La première étape d'une analyse HACCP consiste à définir l'équipe qui va travailler sur le projet
+Titre3=Documentation
+Commentaire3=La documentation HACCP inclus généralement le diagramme de flux des matières dans l'usine
+Titre4=Etapes et sujets
+Commentaire4=Définissez les étapes et sujets concernés par l'existant et activés en fin d'opération
+Titre5=Dispositions en place
+Commentaire5=Ce shéma représente la structure existant actuellement dans l'usine
+Titre6=Identification des dangers
+Commentaire6=Cette étape dresse l'inventaire des dangers liés au processus de fabrication
+Titre7=Arbre HACCP
+Commentaire7=Ce shéma représente le tableau d'analyse HACCP avec toute l'arborescence engendrée
+
+[Menu Documentation Bas]
+NbSujets=0

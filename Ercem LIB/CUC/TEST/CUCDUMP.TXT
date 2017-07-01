@@ -1,0 +1,49 @@
+Dump form @:A818
+Type:FRM
+pWin:A8B2
+plcControles:A8F0
+plcLastCtl:B26E
+plcActif:A8F0
+iId:100
+iNbCtl:20
+peBackEvent:0000
+iExit:0
+tEvts:A838
+Ctl  0: @=A8F0 Ty= 1 Id=101  pCTL:ABEC (HSB)
+Ctl  1: @=AC1A Ty= 2 Id=102  pCTL:AC2C (VSB)
+Ctl  2: @=AC5A Ty= 6 Id=103  pCTL:AC6C (LBL)
+Ctl  3: @=ACAE Ty= 7 Id=104  pCTL:ACC0 (TXT)
+Ctl  4: @=AD1A Ty= 8 Id=105  pCTL:AD2C (FRA)
+Ctl  5: @=AD62 Ty= 5 Id=106  pCTL:AD74 (OPT)
+Ctl  6: @=ADAA Ty= 5 Id=107  pCTL:ADBC (OPT)
+Ctl  7: @=ADF2 Ty= 5 Id=108  pCTL:AE04 (OPT)
+Ctl  8: @=AE3A Ty= 8 Id=109  pCTL:AE4C (FRA)
+Ctl  9: @=AE7E Ty= 4 Id=110  pCTL:AE90 (CHB)
+Ctl 10: @=AEC4 Ty= 4 Id=111  pCTL:AED6 (CHB)
+Ctl 11: @=AF0E Ty= 4 Id=112  pCTL:AF20 (CHB)
+Ctl 12: @=AF58 Ty= 3 Id=113  pCTL:AF6A (LST)
+Ctl 13: @=AFD4 Ty= 6 Id=114  pCTL:AFE6 (LBL)
+Ctl 14: @=B01E Ty=10 Id=115  pCTL:B030 (COB)
+Ctl 15: @=B11C Ty= 6 Id=120  pCTL:B12E (LBL)
+Ctl 16: @=B164 Ty= 7 Id=119  pCTL:B176 (TXT)
+Ctl 17: @=B1D0 Ty= 9 Id=116  pCTL:B1E2 (BTN)
+Ctl 18: @=B21C Ty= 9 Id=117  pCTL:B22E (BTN)
+Ctl 19: @=B26E Ty= 9 Id=118  pCTL:B280 (BTN)
+
+
+Dump form @:4D9F:BCC8
+Type:FRM
+pWin:4D9F:BDA4
+plcControles:4D9F:BDEC
+plcLastCtl:4D9F:BEE4
+plcActif:4D9F:BE84
+iId:100
+iNbCtl:3
+peBackEvent:0000:0000
+iExit:0
+tEvts:4D9F:BCFA
+Ctl  0: @=4D9F:BDEC Ty= 3 Id=113  pCTL:4D9F:BE06 (LST)
+Ctl  1: @=4D9F:BE84 Ty= 9 Id=116  pCTL:4D9F:BE9E (BTN)
+Ctl  2: @=4D9F:BEE4 Ty= 9 Id=117  pCTL:4D9F:BEFE (BTN)
+
+

@@ -1,0 +1,18 @@
+﻿<Window
+	x:Class="WpfApplication1.MainWindow"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:local="clr-namespace:WpfApplication1"
+	x:Name="Window"
+	Title="MainWindow"
+	Width="824" Height="480">
+
+	<Canvas>
+        
+		<local:TextBlock2 Text="Hello, world!" Canvas.Left="18" Canvas.Top="65" FontSize="16" Tracking="-2"/>
+		<local:MyTextBox/>
+        <Path Stroke="RosyBrown" StrokeThickness="10" Data="M100,100 L200,200"/>
+
+        <TextBlock Text="An example of text" Name="myText" Canvas.Left="410" Canvas.Top="135" />
+    </Canvas>
+</Window>

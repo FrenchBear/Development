@@ -1,0 +1,6 @@
+/* couleurs.ref */
+void ve_ccar(couleur);
+void ve_cfond(couleur);
+void ve_ccarfond(couleur,couleur);
+couleur ve_qccar(void);
+couleur ve_qcfond(void);

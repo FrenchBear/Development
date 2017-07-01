@@ -1,0 +1,46 @@
+<!-- saved from url=(0022)http://internet.e-mail -->
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<META NAME="Generator" CONTENT="Microsoft Word 97">
+<TITLE>SendKeys</TITLE>
+<META NAME="Template" CONTENT="C:\PROGRAM FILES\MICROSOFT OFFICE\OFFICE\html.dot">
+</HEAD>
+<BODY LINK="#0000ff" VLINK="#800080">
+
+<B><FONT FACE="Verdana" SIZE=5><P>SendKeys</P>
+</B></FONT><I><FONT FACE="Verdana" SIZE=2><P>Retour &agrave; l'aide </I></FONT><A HREF="Automate.htm"><FONT FACE="Verdana" SIZE=2>g&eacute;n&eacute;rale </FONT></A></P>
+<FONT FACE="Verdana" SIZE=2><P>La commande <B>SendKeys</B> envoie une ou plusieurs touches &agrave; la fen&ecirc;tre active comme s'il s'agissait d'une saisie directe au clavier</P>
+</FONT><P><HR></P>
+<B><U><FONT FACE="Verdana" SIZE=2><P>Syntaxe</P>
+</U><P>SendKeys</B> <I>Touches</I>[, <I>Attente</I>]</P>
+<P>La commande <B>SendKeys </B>accepte les arguments suivants&nbsp;:</P></FONT>
+<TABLE CELLSPACING=0 BORDER=0 CELLPADDING=4 WIDTH=671>
+<TR><TD WIDTH="13%" VALIGN="TOP">
+<P><B><FONT FACE="Verdana" SIZE=2>Argument</B> </FONT></TD>
+<TD WIDTH="87%" VALIGN="TOP">
+<B><FONT FACE="Verdana" SIZE=2><P>Description</B></FONT></TD>
+</TR>
+<TR><TD WIDTH="13%" VALIGN="TOP">
+<I><FONT FACE="Verdana" SIZE=2><P>Touches</I></FONT></TD>
+<TD WIDTH="87%" VALIGN="TOP">
+<FONT FACE="Verdana" SIZE=2><P>Expression de type cha&icirc;ne indiquant la touche ou la s&eacute;quence de touches &agrave; envoyer &agrave; l'application active.<BR>
+Voir la codification des </FONT><A HREF="Touches.htm"><FONT FACE="Verdana" SIZE=2>touches</FONT></A></TD>
+</TR>
+<TR><TD WIDTH="13%" VALIGN="TOP">
+<I><FONT FACE="Verdana" SIZE=2><P>Attente</I></FONT></TD>
+<TD WIDTH="87%" VALIGN="TOP">
+<FONT FACE="Verdana" SIZE=2><P>Valeur de type bool&eacute;en indiquant le mode d'attente</FONT></TD>
+</TR>
+</TABLE>
+
+<B><U><FONT FACE="Verdana" SIZE=2><P>&nbsp;Exemples</P>
+</B></U><I><P>SendKeys "ABC"<BR>
+</I>Simule la frappe des touches A, B et C successivement</P>
+<I><P>SendKeys "%(+1)" <BR>
+</I>Simule la frappe de la touches 1 du pav&eacute; alphanum&eacute;rique en tenant la touche {Alt} enfonc&eacute;e ({Alt}{Maj}{&amp;})</P>
+</FONT><P><HR></P>
+<B><U><FONT FACE="Verdana" SIZE=2><P>Remarques</P>
+</B></U><P>La commande <B>SendKeys</B> peut envoyer une s&eacute;quence de plusieurs touches. Toutefois, si l'application qui re&ccedil;oit ces touches n&eacute;cessite un d&eacute;lai pour ex&eacute;cuter les fonctions associ&eacute;es, il sera judicieux de scinder la s&eacute;quence en plusieurs commandes <B>SendKeys</B> envoyant chacune moins de touches et s&eacute;par&eacute;es par une pause &eacute;quivalente au temps d'ex&eacute;cution.</P>
+<P>&nbsp;</P></FONT></BODY>
+</HTML>

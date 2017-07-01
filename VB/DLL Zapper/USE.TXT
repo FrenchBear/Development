@@ -1,0 +1,31 @@
+ZAP.EXE - Duplicate DLL and VBX locator
+
+Purpose
+-------
+
+The purpose of ZAP is to allow one to locate duplicated DLLs and VBXs (or any other type of file), to determine which file is most recent, and remove those which are no longer required.
+
+How to use ZAP
+--------------
+
+ZAP has two sets of options:
+
+* File Options
+
+The file options determine what type(s) of files are to be located.  The program can search for DLLs and/or VBXs simultaneously, or any legal file specification.  If the "Others" check box is is selected, the "VBXs" and "DLLs" checkboxes are disabled.
+
+* Other options
+
+The options in this group control various searching and processing options
+
+ - The "Duplicates only" option determines whether all files which match the search specification are listed, or only those with duplicate file names
+
+- The "Scan search path" option determines whether or not the program will search the DOS search path (the directories specified in your PATH= statement in DOS)
+
+- Recursive search.  If this option is checked, the program will search the directory specified in the directory box to the right of the "Other options" group, and all of the subdirectories below it.
+
+- The "Windows/System" option enables searching of \WINDOWS and \WINDOWS\SYSTEM (or whatever is appropriate for your system)
+
+
+Once the options required have been selected, click on the Start button will start the search.  A Window giving updates on what the program is doing will appear.  Once the search and subsequent processing are complete, the files which match the user's selected options appear.  To delete a file, select it in the listbox, and press the DEL key, or drag it onto the trash can icon.  To copy or move a file, drag it onto the diskette icon, select a destination for it, and select whether to copy or move the file.
+

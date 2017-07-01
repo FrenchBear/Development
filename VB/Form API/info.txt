@@ -1,0 +1,11 @@
+---------------------------------------
+Name:        API Form
+Date:        January 3, 2000
+Author:      Joseph Huntley
+Level:       Advanced
+VB Version:  6.0
+IRC:         Joseph (irc.xnet.org)
+ICQ:         55449964
+E-mail:      joseph_huntley@email.com
+Webpage:     http://joseph.vr9.com
+---------------------------------------

@@ -1,0 +1,26 @@
+
+; Dependency file for setup wizards.
+
+[Version]
+Version=6.0.0.220
+
+[TDBG6.OCX]
+Dest=$(WinSysPath)
+Register=$(DLLSelfRegister)
+Version=6.0.0.220
+Uses1=ComCat.DLL
+Uses2=Tdbgpp.DLL
+CABFileName=
+CABDefaultURL=
+CABINFFile=
+
+[Tdbgpp.DLL]
+Dest=$(WinSysPathSysFile)
+Version=1.0.4.2
+Uses1=
+
+[ComCat.DLL]
+Dest=$(WinSysPathSysFile)
+Register=$(DLLSelfRegister)
+Uses1=
+

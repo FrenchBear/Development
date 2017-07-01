@@ -1,0 +1,18 @@
+MsgHook Freeware Distribution
+=============================
+
+You may freely distribute the VBX and OCX controls contained in this package with your applications.  You may also freely distribute the package in its entirety provided that you do not add, delete, or modify any of the files contained in the distribution package.  You may, of course, choose to distribute your own sample programs along with the package as long as you do not modify the original package in any way.
+
+Acknowledgments
+===============
+
+A number of people and companies have cooperated to bring you this freeware version of MsgHook.
+
+Waite Group Press permitted distribution of this control without purchasing the Visual Basic 4.0 How-To, which you are strongly encouraged to buy anyway since it's chock full of hot VB4 tips and techniques.
+
+Mabry Software created the setup program.  Check out the cool controls we sell by visiting http://www.halycon.com/mabry.  Demo versions of all our controls are available for download from that site.  Sometime in the future Mabry's web site will become http://www.mabry.com, so if halcyon isn't working for you try mabry.com instead.
+
+And me, I'm my kids's dad,
+
+Zane Thomas --- zthomas@activexpert.com, http://activexpert.com
+May 3, 1996

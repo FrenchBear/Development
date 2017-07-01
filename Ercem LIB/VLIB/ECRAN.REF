@@ -1,0 +1,8 @@
+/* ecran.ref */
+void ve_puts2(const char *);
+void ve_putslc(int2,int2,const char *);
+void ve_putslca(int2,int2,const char *,uint1);
+void ve_sorcar(unsigned char );
+void ve_sorcarlc(int2,int2,unsigned char );
+void ve_puts(const char *);
+void ve_printf(const char *, ...);

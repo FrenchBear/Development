@@ -1,0 +1,1033 @@
+<html>
+<head>
+<title>Microsoft  Hardware IntelliMouse</title>
+</head>
+
+<body bgcolor="#FFFFFF" topmargin="0" leftmargin=0>
+<basefont face="verdana, arial, helvetica" size=2>
+<!--TOOLBAR_START-->
+
+<TABLE WIDTH=100% CELLPADDING=0 CELLSPACING=0 BORDER=0>
+	<TR>
+		<TD WIDTH=500 ROWSPAN=2 VALIGN=TOP>
+		<NOBR>
+		<FONT FACE="Arial, Helvetica" SIZE=1>
+		<A HREF="/" TARGET="_top"><IMG SRC="/library/images/gifs/toolbar/home.gif" WIDTH=103 HEIGHT=21 ALT="Microsoft Home" BORDER=0></A><A HREF="/products/default.asp" TARGET="_top"><IMG SRC="/library/images/gifs/toolbar/prod.gif" WIDTH=81 HEIGHT=21 ALT="Products" BORDER=0></A><A HREF="/search/default.asp" target="_top"><IMG SRC="/library/images/gifs/toolbar/search.gif" WIDTH=68 HEIGHT=21 ALT="Search" BORDER=0></A><A HREF="/support/" TARGET="_top"><IMG SRC="/library/images/gifs/toolbar/support.gif" WIDTH=74 HEIGHT=21 ALT="Support" BORDER=0></A><A HREF="/referral/default.asp" TARGET="_top"><IMG SRC="/library/images/gifs/toolbar/shop.gif" WIDTH=55 HEIGHT=21 ALT="Shop" BORDER=0></A><A HREF="/regwiz/regwiz.asp" TARGET="_top"><IMG SRC="/library/images/gifs/toolbar/write.gif" WIDTH=78 HEIGHT=21 ALT="Write Us" BORDER=0></A><IMG SRC="/library/images/gifs/toolbar/spacer.gif" WIDTH=49 HEIGHT=21 ALT="" BORDER=0>
+		</FONT>
+		</NOBR>
+		</TD>
+
+		<TD BGCOLOR="#000000" WIDTH=100% HEIGHT=20>
+		</TD>
+
+		<TD WIDTH=91 ROWSPAN=2 ALIGN=RIGHT VALIGN=TOP>
+		<FONT FACE="Arial, Helvetica" SIZE=1>
+		<A HREF="/" TARGET="_top"><IMG SRC="/library/images/gifs/toolbar/msft.gif" WIDTH=91 HEIGHT=21 ALT="Microsoft Home" BORDER=0></A>
+		</FONT>
+		</TD>
+	</TR>
+	<TR>
+		<TD BGCOLOR="#FFFFFF" WIDTH=100% HEIGHT=1>
+		</TD>
+	</TR>
+</TABLE>
+<!--TOOLBAR_END-->
+
+<table border=0 width=100% bgcolor="ffcc00">
+<tr><td bgcolor="ffcc00" nowrap>
+<IMG SRC="/products/hardware/library/images/gifs/imousesdk.gif" ALT="Microsoft IntelliMouse SDK" ALIGN=left WIDTH="325" HEIGHT="30" BORDER="0"><a href="/products/hardware/default.htm"><IMG SRC="/products/hardware/images/back_bn.gif" ALT="back" ALIGN=right WIDTH="160" HEIGHT="25" BORDER="0"></a>
+		</TD>
+	</TR>
+</TABLE>
+
+		
+		
+<TABLE WIDTH=100% CELLPADDING=0 CELLSPACING=0 BORDER=0>
+	
+
+	
+	<TR>
+		<TD WIDTH="20"> </TD>
+		<TD> <br>
+		<FONT SIZE=5 FACE=ARIAL COLOR="#0099FF"><i><B>Wheel and Wheel Button Messages for the IntelliMouse&#153;
+		Pointing Device</i></B></FONT>
+
+<br>
+This document contains technical information for application developers
+who want to add support for the new Microsoft IntelliMouse&#153;
+pointing device to their software.
+<P>
+<IMG src="/products/hardware/Intellimouse/SQUARE.JPG" alt="Bullet" HEIGHT="15" WIDTH="15" BORDER=2 ALIGN=CENTER><A HREF="#sdkIntro">Introduction</A>
+<BR>
+<IMG src="/products/hardware/Intellimouse/SQUARE.JPG" alt="Bullet" HEIGHT="15" WIDTH="15" BORDER=2 ALIGN=CENTER><A HREF="#sdkUpdate">Software and Driver Updates</A>
+<BR>
+<IMG src="/products/hardware/Intellimouse/SQUARE.JPG" alt="Bullet" HEIGHT="15" WIDTH="15" BORDER=2 ALIGN=CENTER><A HREF="#sdkAPI">Mouse Messaging Requirements</A>
+<BR>
+<IMG src="/products/hardware/Intellimouse/SQUARE.JPG" alt="Bullet" HEIGHT="15" WIDTH="15" BORDER=2 ALIGN=CENTER><A HREF="#sdkMSH">MSH_MOUSEWHEEL</A>
+<BR>
+<IMG src="/products/hardware/Intellimouse/SQUARE.JPG" alt="Bullet" HEIGHT="15" WIDTH="15" BORDER=2 ALIGN=CENTER><A HREF="#sdkWM">WM_MOUSEWHEEL</A>
+<BR>
+<IMG src="/products/hardware/Intellimouse/SQUARE.JPG" alt="Bullet" HEIGHT="15" WIDTH="15" BORDER=2 ALIGN=CENTER><A HREF="#sdkExample">Message Processing Examples</A>
+<BR>
+<IMG src="/products/hardware/Intellimouse/SQUARE.JPG" alt="Bullet" HEIGHT="15" WIDTH="15" BORDER=2 ALIGN=CENTER><A HREF="#sdkCode">Sample Code for Handling Both Wheel Messages</A>
+<BR>
+<IMG src="/products/hardware/Intellimouse/SQUARE.JPG" alt="Bullet" HEIGHT="15" WIDTH="15" BORDER=2 ALIGN=CENTER><A HREF="#sdkScrollLinesCode">Sample Code for Retrieving the Number of Scroll Lines</A>
+<BR>
+<IMG src="/products/hardware/Intellimouse/SQUARE.JPG" alt="Bullet" HEIGHT="15" WIDTH="15" BORDER=2 ALIGN=CENTER><A HREF="#sdkButton">Wheel Button Messages</A>
+<BR>
+<BR>
+<P>
+
+<H2><A NAME="sdkIntro"></A><A HREF="#Top"><IMG src="/products/hardware/Intellimouse/upbutton.gif" alt="UpButton" HEIGHT="25" WIDTH="25" BORDER=0 ALIGN=CENTER></A>Introduction
+</H2>
+<P>
+The new Microsoft IntelliMouse pointing device includes a wheel
+control that is both a wheel and a button: <IMG src="/products/hardware/Intellimouse/ROLLCLCK.GIF" alt="IntelliMouse" HEIGHT="130" WIDTH="266" BORDER=0 ALIGN=RIGHT>
+<UL>
+<LI><!--BULLET--> The wheel features discrete, evenly-spaced notches.
+As you rotate the wheel, a wheel message is sent to your application
+as each notch is encountered.
+<LI><!--BULLET--> The wheel button operates as a normal Windows&reg;
+middle (third) button. When you press the wheel button, a Windows
+middle button message is sent to your application.
+</UL>
+<P>
+Note that the wheel is unbounded; it can be rotated continuously
+in either direction. That means input received from it is relative.
+Accordingly, the message generated by rotating the wheel provides
+a plus or minus value that corresponds to the amount of rotation.
+<P>
+<B>Note</B> Under the Windows 3.1x and MS-DOS operating systems,
+the IntelliMouse pointing device operates as a two-button Microsoft
+Mouse. Neither the wheel nor the wheel button are supported by
+these 16-bit operating systems.<BR>
+<P>
+
+<H2><A NAME="sdkUpdate"></A><A HREF="#Top"><IMG src="/products/hardware/Intellimouse/upbutton.gif" alt="UpButton" HEIGHT="25" WIDTH="25" BORDER=0 ALIGN=CENTER></A>Software
+and Driver Updates</H2>
+<P>
+
+<P>
+<B>Note</B> For Windows NT 4.0, the mouse drivers include support
+for Microsoft-compatible mouse devices with wheels.<BR>
+<BR>
+
+<H2><A NAME="sdkAPI"></A><A HREF="#Top"><IMG src="/products/hardware/Intellimouse/upbutton.gif" alt="UpButton" HEIGHT="25" WIDTH="25" BORDER=0 ALIGN=CENTER></A>Mouse
+Messaging Requirements</H2>
+<H3>Wheel Rotation Messages</H3>
+<P>
+Depending on the operating system, one of two messages is used
+to communicate IntelliMouse wheel rotation. The messages are:
+<UL>
+<LI><!--BULLET--> MSH_MOUSEWHEEL. This is a new message for use
+with currently shipping operating systems- Windows 95 and Windows
+NT 3.51. In these versions, support for the wheel is not built
+into the operating system, so a separately-running module, MSWheel,
+generates the message. The MSWheel module (MSWheel.exe and MSWheel.dll)
+is installed with the IntelliPoint software that is shipped with
+the IntelliMouse pointing device.
+<LI><!--BULLET--> WM_MOUSEWHEEL. This is a new message that will
+be built into future versions of the operating systems. Current
+plans are to include support for the wheel with this message in
+Windows NT 4.0 and the next version of Windows 95 that includes
+updates to USER and the mouse drivers. 
+</UL>
+<P>
+MSH_MOUSEWHEEL and WM_MOUSEWHEEL are handled differently by applications,
+but the process is fairly transparent to most applications. Consult
+their respective sections below for information about how each
+is handled.
+<H3>Wheel Button Messages</H3>
+<P>
+The wheel button up and down messages, WM_MBUTTONUP and WM_MBUTTONDOWN,
+are the standard Windows third (middle) button messages. Optionally,
+the application can recognize the third button double-click message,
+WM_MBUTTONDBLCLK. These messages are covered in the Microsoft
+Developers Network Library and are reprinted in <A HREF="#sdkButton">Wheel Button Messages</A>.
+<BR>
+<BR>
+<P>
+
+<H2><A NAME="sdkMSH"></A><A HREF="#Top"><IMG src="/products/hardware/Intellimouse/upbutton.gif" alt="UpButton" HEIGHT="25" WIDTH="25" BORDER=0 ALIGN=CENTER></A>MSH_MOUSEWHEEL
+</H2>
+<P>
+MSH_MOUSEWHEEL is the IntelliMouse wheel rotation message provided
+by IntelliPoint 2.0 for the Windows 95 and Windows NT 3.51 operating
+systems. Support is included within the MSWheel module, which
+is installed with the IntelliPoint software. This software is
+included with IntelliMouse, and its installation is required to
+support the wheel rotation messages.
+<P>
+MSH_MOUSEWHEEL is defined as a string in the include file (ZMouse.h), that an application must
+use to implement support for the wheel via the MSWheel module.
+The application and MSWheel both use <B>RegisterWindowMessage</B>
+to generate the message ID. A message with this ID is posted by
+MSWheel to the current foreground window when a wheel rotation
+occurs.
+<P>
+MSH_MOUSEWHEEL is sent to the main window of the foreground application.
+It is up to the application to forward it to any embedded objects
+or controls. The application is required to send the message to
+an active embedded OLE application. It is optional that the application
+sends it to a wheel-enabled control with focus. If the application
+does send the message to a control, it can check the return value
+to see if the message was processed. Controls are required to
+return a value of TRUE if they process the message.
+<P>
+The rest of this document will use MSH_MOUSEWHEEL when referring
+to the registered message.
+<H3>Syntax</H3>
+<P>
+MSH_MOUSEWHEEL<BR>
+<I>zDelta</I> <B>=</B> (int)<I>wParam</I><B>;</B> /* wheel rotation
+*/<BR>
+<I>xPos</I> <B>=</B> LOWORD(<I>lParam</I>)<B>;</B> /* horizontal
+position of pointer */<BR>
+<I>yPos</I> <B>=</B> HIWORD(<I>lParam</I>)<B>;</B> /* vertical
+position of pointer */
+<H3>Parameters</H3>
+<P>
+	<TABLE BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<TR><TD><B><FONT SIZE=2 FACE="Arial">Parameter</FONT></B></TD>
+	<TD><B><FONT SIZE=2 FACE="Arial">Description</FONT></B></TD></TR>
+	<TR><TD>
+	<BR>
+ 	<I><FONT SIZE=2 FACE="Arial">zDelta</FONT></I>
+	</TD><TD><FONT SIZE=2 FACE="Arial">The value of <I>wParam</I>. Indicates distance rotated. Expressed in multiples or divisions of WHEEL_DELTA, which is 120. A value less than zero indicates rotating back (toward the user) while a value greater than zero indicates rotating forward (toward the monitor).
+	<BR>
+	<B>Note:</B> The user can reverse this response by changing the <B>Wheel</B> setting in the IntelliPoint software.<BR>
+	</FONT>
+	</TD></TR>
+	<TR><TD> <I><FONT SIZE=2 FACE="Arial">Xpos</FONT></I></TD><TD><FONT SIZE=2 FACE="Arial">Value of the low-order word of <I>lParam</I>. Specifies the x-coordinate of the pointer. The coordinate is relative to the upper-left corner of the screen.</FONT>
+	</TD></TR>
+	<TR><TD>
+	<BR>
+	 <I><FONT SIZE=2 FACE="Arial">Ypos</FONT></I>
+	</TD><TD><FONT SIZE=2 FACE="Arial">Value of the high-order word of <I>lParam</I>. Specifies the y-coordinate of the pointer. The coordinate is relative to the upper-left corner of the screen.</FONT>
+	</TD></TR>
+	</TABLE>
+<H3>Remarks</H3>
+<P>
+In the first release of IntelliMouse, the <I>zDelta</I> will be
+a multiple of WHEEL_DELTA (which is set at 120). This is the threshold
+for action to be taken, and one such action (for example, scrolling
+one increment) should occur for each delta.
+<P>
+The delta was set to 120 to allow Microsoft or other vendors to
+build finer-resolution wheels in the future, including perhaps
+a freely-rotating wheel (no notches). The expectation is that
+such a device would send more messages per rotation, but with
+a smaller value in each message. To support this possibility,
+an application should either: (1) aggregate the incoming delta
+values until WHEEL_DELTA is reached (so for a given delta-rotation
+you get the same response), or (2) scroll partial lines in response
+to the more frequent messages. An application could choose its
+scroll granularity and accumulate deltas until it's reached.
+<H4><FONT FACE="Arial">Getting the Wheel Message Number<BR>
+</FONT></H4>
+<P>
+In order to get the wheel message number, your application needs
+to call <B>RegisterWindowMessage</B> at run time.
+<P>
+The <B>RegisterWindowMessage</B> function defines a new window
+message number that is guaranteed to be unique throughout the
+system. The returned message value can be used when calling the
+<B>SendMessage</B> or <B>PostMessage</B> function.
+<P>
+The header file (ZMouse.h) contains the string to pass <B>RegisterWindowMessage</B>.
+<P>
+<B>Note</B> The case clause of a Switch statement requires a constant,
+and the wheel message will be a variable. However, you can check
+for MSH_MOUSEWHEEL in an If statement. See <A HREF="#sdkCode">Sample Code for Handling Both Wheel Messages</A>
+for an example of this.
+<H4><FONT FACE="Arial">Processing the Wheel Message<BR>
+</FONT></H4>
+<P>
+The MSWheel module posts the wheel message to the foreground window
+(using the window handle returned from <B>GetForegroundWindow</B>).
+The foreground window must decide whether to respond to the message
+or to propagate it to any wheel-enabled controls or active embedded
+OLE objects.
+<P>
+If the foreground window needs to propagate the wheel message,
+you can use either <B>PostMessage</B> or <B>SendMessage</B>. For
+wheel-embedded controls, it is up to the application whether it
+wants to use the <B>SendMessage</B> function and check the return
+value.
+<P>
+Use <B>PostMessage</B> for embedded OLE applications. There's
+no need to check a return value here. The model for an embedded
+OLE application is that the container sends the message to the
+server and then forgets about it; it's up to the server application
+to take action or not.
+<P>
+<B>Note</B>: For OLE servers (including servers with document
+objects), be careful that the code that handles the wheel message
+is in the window procedure for the window that gets embedded.
+When passing the message to embedded OLE apps, the recommended
+call to get the appropriate window handle is <B>IOleInPlaceObject:GetWindow</B>.
+<P>
+It is up to the embedded application to make sure that the code
+for handling the MSH_MOUSEWHEEL message is present in the window
+procedure for the window that it returns for the <B>IOleInPlaceObject:GetWindow</B>
+call. Specifically, note that the frame window is not present
+when an application is embedded, so if the code for handling the
+message is in the frame window's window procedure, the message
+won't be handled. For example, with Microsoft Word and Microsoft
+Excel, the document window is the highest level embedded window,
+so that is where the message handling code is required.
+<H4><FONT FACE="Arial">Determining the Number of Scroll Lines
+<BR>
+</FONT></H4>
+<P>
+Users can define the number of lines that are scrolled for each
+wheel rotation (notch) using a setting in the <B>Wheel</B> tab
+of the IntelliPoint software (or the Mouse Properties Sheet in
+the Control Panel).
+<P>
+To get the number of lines that are currently set, an application
+can use the following code segment to query the MSWheel module:
+<PRE>
+<FONT SIZE=2 FACE=COURIER>#include &quot;zmouse.h&quot;
+
+HWND hdlMSHWheel=NULL;
+UINT msgMSHWheelGetScrollLines=NULL;
+UINT uiMsh_WheelScrollLines;
+
+msgMSHWheelGetScrollLines = RegisterWindowMessage(MSH_SCROLL_LINES);
+hdlMSHWheel = FindWindow(MSH_WHEELMODULE_CLASS, MSH_WHEELMODULE_TITLE);
+if (hdlMSHWheel &amp;&amp; msgMSHWheelGetScrollLines)
+{
+        uiMsh_WheelScrollLines = 
+          (UINT)SendMessage(hdlMSHWheel,msgMSHWheelGetScrollLines,0, 0);
+}</FONT>
+</PRE>
+<P>
+As an alternative, an application can use the inline function
+<B>HwndMsWheel</B>, which is found in ZMouse.h. The inline function returns not
+only the number of scroll lines, but also the registered messages,
+a handle to the MSWheel window, and a flag that the wheel mouse
+is supported.
+<P>
+If a user changes the number of scroll lines, MSWheel broadcasts
+a message to all windows using <B>SendMessage</B>(HWND_BROADCAST,
+WM_SETTINGCHANGE, SPI_SETWHEELSCROLLLINES, NULL). When an application
+receives this message, it can then send a message to the MSWheel
+module to get the number of scroll lines, using <B>SendMessage</B>(hdlMSHWheel,
+msgMSHWheelGetScrollLines, 0, 0).
+<P>
+<B>Note</B> WM_SETTINGCHANGE is equivalent to WM_WININICHANGE.
+The Microsoft Developer Network Library indicates that WM_SETTINGCHANGE
+is not supported in Windows NT 3.51, but MSWheel will use the
+syntax described above for all operating systems.
+<P>
+When setting the number of scroll lines, the user can choose to
+scroll a page at a time instead of a specific number of lines.
+In that case, the defined value WHEEL_PAGESCROLL is used. If this
+is the value returned, the operation performed should be the equivalent
+of the user clicking on the scroll bar to do page at a time.
+<P>
+The scroll line functions will be fully available in release 019
+of MSWheel.
+<H4><FONT FACE="Arial">Detecting a Mouse with a Wheel<BR>
+</FONT></H4>
+<P>
+If an application needs to determine whether the IntelliMouse
+pointing device or other mouse with a wheel is connected, it can
+either use the <B>HwndMsWheel</B> inline function mentioned in
+the previous section, or it can send a query to the MSWheel module.
+If it sends a query, a reply of TRUE indicates that the mouse
+is connected. Applications can add the following code segment
+to send the query:
+<PRE>
+<FONT SIZE=2 FACE=COURIER>#include zmouse.h
+
+HWND hdlMSHWheel=NULL;
+UINT msgMSHWheelSupportActive=NULL;
+BOOL fWheelSupport=FALSE;
+
+msgMSHWheelSupportActive = RegisterWindowMessage(MSH_WHEELSUPPORT);
+hdlMSHWheel = FindWindow(MSH_WHEELMODULE_CLASS, MSH_WHEELMODULE_TITLE);
+if (hdlMSHWheel &amp;&amp; msgMSHWheelSupportActive)
+{
+         fWheelSupport = 
+           (BOOL)SendMessage(hdlMSHWheel, msgMSHWheelSupportActive, 0, 0);
+}<BR>
+</FONT>
+</PRE>
+<P>
+
+<H2><A NAME="sdkWM"></A><A HREF="#Top"><IMG src="/products/hardware/Intellimouse/upbutton.gif" alt="UpButton" HEIGHT="25" WIDTH="25" BORDER=0 ALIGN=CENTER></A>WM_MOUSEWHEEL
+</H2>
+<P>
+WM_MOUSEWHEEL is a new wheel rotation message that will have built-in
+support in future operating systems. Current plans are to provide
+support for this message in Windows NT 4.0 and in the next version
+of Windows 95 that includes updates to USER and the mouse drivers
+(currently scheduled for the project code-named &quot;Memphis&quot;).
+<P>
+The WM_MOUSEWHEEL message is sent to the focus window when the
+IntelliMouse wheel is rotated. The <B>DefWindowProc</B> function
+propagates the message to the window's parent. There should be
+no internal forwarding of the message, since <B>DefWindowProc</B>
+propagates it up the parent chain until a window which processes
+it is found.
+<P>
+<B>Note</B> WM_MOUSEWHEEL and the other defines that are required
+are contained in Winuser.h, which is included in the Windows NT
+4.0 SDK.
+<H3>Syntax</H3>
+<P>
+WM_MOUSEWHEEL<BR>
+<I>fwKeys</I><B> =</B><I> LOWORD(wParam)</I>; /* key flags */
+<BR>
+<I>zDelta</I> <B>=</B> (short) HIWORD(<I>wParam)</I>; /* wheel
+rotation */<BR>
+<I>xPos</I> <B>=</B> (short) LOWORD(<I>lParam</I>); /* horizontal
+position of pointer */<BR>
+<I>yPos</I> <B>=</B> (short) HIWORD(<I>lParam</I>); /* vertical
+position of pointer */
+<H3>Parameters</H3>
+<P>
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR><TD><B><FONT SIZE=2 FACE="Arial">Parameter</FONT></B></TD>
+<TD><B><FONT SIZE=2 FACE="Arial">Description</FONT></B></TD></TR>
+<TR><TD>
+<BR>
+ <I><FONT SIZE=2 FACE="Arial">fwKeys</FONT></I>
+</TD><TD><FONT SIZE=2 FACE="Arial">Value of <I>wParam</I>. Indicates whether various virtual keys are down. This parameter can be any combination of the following values:
+<BR>
+MK_CONTROL -- Set if the CTRL key is down.<BR>
+MK_LBUTTON -- Set if the left mouse button is down.<BR>
+MK_MBUTTON -- Set if the middle mouse button is down.<BR>
+MK_RBUTTON -- Set if the right mouse button is down.<BR>
+MK_SHIFT -- Set if the SHIFT key is down.<BR>
+</FONT>
+</TD></TR>
+<TR><TD> <I><FONT SIZE=2 FACE="Arial">zDelta</FONT></I></TD><TD><FONT SIZE=2 FACE="Arial">The value of <I>wParam</I>. Indicates distance rotated. Expressed in multiples or divisions of WHEEL_DELTA which is 120. A value less than zero indicates rotating back (toward the user) while a value greater than zero is rotating forward (toward the monitor).
+<BR>
+<B>Note:</B> The user can reverse this response by changing the <B>Wheel</B> setting in the IntelliPoint software.<BR>
+</FONT>
+</TD></TR>
+<TR><TD> <I><FONT SIZE=2 FACE="Arial">xPos</FONT></I></TD><TD><FONT SIZE=2 FACE="Arial">Value of the low-order word of <I>lParam</I>. Specifies the x-coordinate of the pointer. The coordinate is relative to the upper-left corner of the screen.</FONT>
+</TD></TR>
+<TR><TD>
+<BR>
+ <I><FONT SIZE=2 FACE="Arial">yPos</FONT></I>
+</TD><TD><FONT SIZE=2 FACE="Arial">Value of the high-order word of <I>lParam</I>. Specifies the y-coordinate of the pointer. The coordinate is relative to the upper-left corner of the screen.</FONT>
+</TD></TR>
+</TABLE>
+<H3>Remarks</H3>
+<P>
+In the first release of IntelliMouse, the <I>zDelta</I> will be
+a multiple of WHEEL_DELTA (which is set at 120). This is the threshold
+for action to be taken, and one such action (for example, scrolling
+one increment) should occur for each delta.
+<P>
+The delta was set to 120 to allow Microsoft or other vendors to
+build finer-resolution wheels in the future, including perhaps
+a freely-rotating wheel (no notches). The expectation is that
+such a device would send more messages per rotation, but with
+a smaller value in each message. To support this possibility,
+an application should either: (1) aggregate the incoming delta
+values until WHEEL_DELTA is reached (so for a given delta-rotation
+you get the same response), or (2) scroll partial lines in response
+to the more frequent messages. An application could choose its
+scroll granularity and accumulate deltas until it's reached.
+<H4><FONT FACE="Arial">Determining the Number of Scroll Lines
+<BR>
+</FONT></H4>
+<P>
+Applications should use the <B>SystemParametersInfo</B> function
+to retrieve the number of lines a document scrolls for each scroll
+operation (wheel notch). To retrieve the number of lines, an application
+calls <B>SystemParametersInfo</B>(SPI_GETWHEELSCROLLLINES, 0,
+pulScrollLines, 0).
+<P>
+The variable &quot;pulScrollLines&quot; is the parameter which
+points to an unsigned integer value that receives the suggested
+number of lines to scroll when the mouse wheel is rotated without
+modifier keys. If this number is 0, no scrolling should occur.
+If this number is WHEEL_PAGESCROLL, a wheel roll should be interpreted
+as clicking once in the page down or page up regions of the scroll
+bar. In any case, if the number of lines to scroll is greater
+than the number of lines viewable, the scroll operation should
+also be interpreted as a page down or page up operation.
+<P>
+If a user changes the number of scroll lines (using the IntelliPoint
+software or the Mouse Properties sheet in the Control Panel),
+the operating system broadcasts a WM_SETTINGCHANGE message to
+all top level windows with SPI_SETWHEELSCROLLLINES specified.
+When an application receives the WM_SETTINGCHANGE message, it
+can then call <B>SystemParametersInfo</B>(SPI_GETWHEELSCROLLLINES,
+0, pulScrollLines, 0) to get the new number of scroll lines.
+<P>
+The default value for the number of scroll lines will be 3.
+<P>
+<B>Note</B> See the Microsoft Developer Network Library for more
+information about <B>SystemParametersInfo</B> and WM_SETTINGCHANGE.
+<H4><FONT FACE="Arial">Controls that Scroll<BR>
+</FONT></H4>
+<P>
+The table below lists the controls with scrolling functionality
+(including user-settable scroll lines) in Windows NT 4.0.
+<P>
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR><TD><B><FONT SIZE=2 FACE="Arial">Control</FONT></B></TD><TD><B><FONT SIZE=2 FACE="Arial">Comments</FONT></B>
+</TD></TR>
+<TR><TD>
+<BR>
+ <FONT SIZE=2 FACE="Arial">Edit Control</FONT>
+</TD><TD><FONT SIZE=2 FACE="Arial">Vertical &amp; horizontal</FONT>
+</TD></TR>
+<TR><TD>
+<BR>
+ <FONT SIZE=2 FACE="Arial">List Box</FONT></TD>
+<TD><FONT SIZE=2 FACE="Arial">Vertical &amp; horizontal</FONT>
+</TD></TR>
+<TR><TD>
+<BR>
+ <FONT SIZE=2 FACE="Arial">Combo Box</FONT></TD>
+<TD><FONT SIZE=2 FACE="Arial">When not dropped down, each scroll retrieves the next or previous item. When dropped down, forwards the message to the list box, which scrolls accordingly</FONT>
+</TD></TR>
+<TR><TD>
+<BR>
+ <FONT SIZE=2 FACE="Arial">CMD (Command line)</FONT>
+</TD><TD><FONT SIZE=2 FACE="Arial">Vertical</FONT></TD></TR>
+<TR><TD>
+<BR>
+ <FONT SIZE=2 FACE="Arial">Tree View</FONT></TD>
+<TD><FONT SIZE=2 FACE="Arial">Vertical &amp; horizontal</FONT>
+</TD></TR>
+<TR><TD>
+<BR>
+ <FONT SIZE=2 FACE="Arial">List View</FONT></TD>
+<TD><FONT SIZE=2 FACE="Arial">Vertical &amp; horizontal</FONT>
+</TD></TR>
+<TR><TD>
+<BR>
+ <FONT SIZE=2 FACE="Arial">Updown</FONT></TD>
+<TD><FONT SIZE=2 FACE="Arial">Scrolls one item at a time</FONT>
+</TD></TR>
+<TR><TD>
+<BR>
+ <FONT SIZE=2 FACE="Arial">Trackbar</FONT></TD>
+<TD><FONT SIZE=2 FACE="Arial">Scrolls one item at a time</FONT>
+</TD></TR>
+<TR><TD>
+<BR>
+ <FONT SIZE=2 FACE="Arial">Richedit 1.0</FONT>
+</TD><TD><FONT SIZE=2 FACE="Arial">Vertical. Note that the Exchange client has their own versions of the list view and tree view controls, which don't have wheel support.</FONT>
+</TD></TR>
+<TR><TD>
+<BR>
+ <FONT SIZE=2 FACE="Arial">Richedit 2.0</FONT>
+</TD><TD><FONT SIZE=2 FACE="Arial">From Office 97.</FONT></TD>
+</TR>
+</TABLE>
+<H4><FONT FACE="Arial">Detecting a Mouse with a Wheel<BR>
+</FONT></H4>
+<P>
+If an application needs to determine whether the IntelliMouse
+pointing device or other mouse with a wheel is connected, it should
+use the function <B>GetSystemMetrics</B>(SM_MOUSEWHEELPRESENT).
+A return value of TRUE indicates that the mouse is connected.
+<H3>Example</H3>
+<P>
+The following example is from the window procedure for a multiline
+edit control:
+<PRE>
+<FONT SIZE=2 FACE=COURIER>.
+.
+.
+BOOL ScrollLines(PWNDDATA pwndData,int cLinesToScroll); //scrolls the window indicated
+                                      //  number of times
+
+short gcWheelDelta; //wheel delta from roll
+PWNDDATA pWndData; //pointer to structure containing info
+                   //  about the window
+UINT gucWheelScrollLines=0; //number of lines to scroll on a
+                           //  wheel rotation
+
+gucWheelScrollLines=SystemParametersInfo(SPI_GETWHEELSCROLLLINES, 0, pulScrollLines, 0)
+.
+.
+.
+
+case WM_MOUSEWHEEL:
+    /*
+     * Don't handle zoom and datazoom.
+     */
+    if (wParam &amp; (MK_SHIFT | MK_CONTROL)) {
+        goto PassToDefaultWindowProc;
+    }
+
+    gcWheelDelta -= (short) HIWORD(wParam);
+    if (abs(gcWheelDelta) &gt;= WHEEL_DELTA &amp;&amp; gucWheelScrollLines &gt; 0) {
+        int cLineScroll;
+
+        /*
+         * Limit a roll of one (1) WHEEL_DELTA to scroll one (1) page.
+         */
+        cLineScroll = (int) min(
+                (UINT) pWndData-&gt;ichLinesOnScreen - 1,
+                gucWheelScrollLines);
+
+        if (cLineScroll == 0) {
+            cLineScroll++;
+        }
+
+        cLineScroll *= (gcWheelDelta / WHEEL_DELTA);
+        assert(cLineScroll != 0);
+
+        gcWheelDelta = gcWheelDelta % WHEEL_DELTA;
+        return ScrollLines(pWndData, cLineScroll);
+    }
+
+    break;<BR>
+</FONT>
+</PRE>
+<P>
+
+<H2><A NAME="sdkExample"></A><A HREF="#Top"><IMG src="/products/hardware/Intellimouse/upbutton.gif" alt="UpButton" HEIGHT="25" WIDTH="25" BORDER=0 ALIGN=CENTER></A>Message
+Processing Examples</H2>
+<P>
+This section provides an illustration of how the MSH_MOUSEWHEEL
+and WM_MOUSEWHEEL messages are processed in various situations.
+<H4><FONT FACE="Arial">SCENARIO<BR>
+</FONT></H4>
+<P>
+A Microsoft Word document has various embeddings, including an
+embedded Microsoft Excel spreadsheet, an embedded list box control
+which scrolls in response to the wheel, and an embedded text box
+control which doesn't respond to the wheel.
+<H4><FONT FACE="Arial">MSH_MOUSEWHEEL<BR>
+</FONT></H4>
+<P>
+The MSH_MOUSEWHEEL message is always sent to Microsoft Word's
+main window. This is true even if the embedded spreadsheet is
+active.
+<P>
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR><TD><B><FONT SIZE=2 FACE="Arial">Focus is on:</FONT></B></TD>
+<TD><B><FONT SIZE=2 FACE="Arial">Handling is as follows:</FONT></B>
+</TD></TR>
+<TR><TD>
+<BR>
+ <FONT SIZE=2 FACE="Arial">Microsoft Word document</FONT>
+</TD><TD><FONT SIZE=2 FACE="Arial">Microsoft Word scrolls the document window.</FONT>
+</TD></TR>
+<TR><TD>
+<BR>
+ <FONT SIZE=2 FACE="Arial">Embedded Microsoft Excel spreadsheet</FONT>
+</TD><TD><FONT SIZE=2 FACE="Arial">Microsoft Word posts the message to Microsoft Excel. It does not worry about the return code, leaving the embedded application responsible for responding to the message or not.</FONT>
+</TD></TR>
+<TR><TD>
+<BR>
+ <FONT SIZE=2 FACE="Arial">Embedded control</FONT>
+</TD><TD><FONT SIZE=2 FACE="Arial">It is up to the application to send the message to an embedded control that has the focus. In fact, Microsoft Word 97 won't. But if it did, it would send the message to the control and check the return code to see if the control handled it. If the control did not handle it, then Microsoft Word would scroll the document window. For example, if the user clicked a list box and then rolled the wheel, that control would scroll in response to a wheel rotation. If the user clicked a text box and then rotated the wheel, the whole document would scroll.</FONT>
+</TD></TR>
+</TABLE>
+<H4><FONT FACE="Arial">WM_MOUSEWHEEL<BR>
+</FONT></H4>
+<P>
+The WM_MOUSEWHEEL message is always sent to the window with focus.
+<P>
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR><TD><B><FONT SIZE=2 FACE="Arial">Focus is on:</FONT></B></TD>
+<TD><B><FONT SIZE=2 FACE="Arial">Handling is as follows:</FONT></B>
+</TD></TR>
+<TR><TD>
+<BR>
+ <FONT SIZE=2 FACE="Arial">Microsoft Word document</FONT>
+</TD><TD><FONT SIZE=2 FACE="Arial">The window in Microsoft Word which has focus and displays the text is a child window of the document window. This child window gets the message. Since the message handling is in the document window, the child window is ignorant of the message and passes it to the <B>DefWindowProc</B> function. <B>DefWindowProc</B> forwards it to the parent window, which scrolls the window. Microsoft Word's internal message handling is unchanged from the registered message and the result is the same, although the path the message took is different.</FONT>
+</TD></TR>
+<TR><TD>
+<BR>
+ <FONT SIZE=2 FACE="Arial">Embedded Microsoft Excel spreadsheet</FONT>
+</TD><TD><FONT SIZE=2 FACE="Arial">The message gets posted directly to the focus window within Microsoft Excel, where it gets processed. Microsoft Word never sees the message, although if it were a different embedded application which passed the msg to <B>DefWindowProc</B>, then Microsoft Word would receive it.</FONT>
+</TD></TR>
+<TR><TD>
+<BR>
+ <FONT SIZE=2 FACE="Arial">Embedded control</FONT>
+</TD><TD><FONT SIZE=2 FACE="Arial">A list box or other scrolling control processes the message and scrolls. The message won't be passed on and Microsoft Word never sees it.<BR>
+A text box or other non-scrolling control passes the message to <B>DefWindowProc</B>, which passes it to the window in Microsoft Word containing the control. Processing continues in Microsoft Word as if the message was originally sent there, and the document scrolls.<BR>
+</FONT>
+</TD></TR>
+</TABLE>
+<P>
+
+<H2><A NAME="sdkCode"></A><A HREF="#Top"><IMG src="/products/hardware/Intellimouse/upbutton.gif" alt="UpButton" HEIGHT="25" WIDTH="25" BORDER=0 ALIGN=CENTER></A>Sample
+Code for Handling Both Wheel Messages</H2>
+<P>
+This following example shows how an application might handle the
+two wheel messages.
+<PRE>
+<FONT SIZE=2 FACE=COURIER>#include &quot;zmouse.h&quot;
+
+//
+// Mouse Wheel rotation stuff, only define if we are on a version
+// of the OS that does not support WM_MOUSEWHEEL messages.
+//
+#ifndef WM_MOUSEWHEEL
+
+#define WM_MOUSEWHEEL WM_MOUSELAST+1 // Message ID for IntelliMouse wheel
+UINT uMSH_MOUSEWHEEL = 0;              // Value returned from
+                                        //  RegisterWindowMessage()
+
+#endif
+
+/************************************************************************
+* WinMain
+*
+* Main entry point for the application.
+*
+* Arguments:
+*
+* History:
+*
+************************************************************************/
+
+INT WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR lpCmdLine, INT nCmdShow)
+{
+    MSG msg;
+
+    if (!InitInstance(hInst, nCmdShow))
+        return FALSE;
+
+    //
+    // The new IntelliMouse uses a Registered message to transmit
+    //  wheel rotation info. So register for it!
+ 
+    if( !uMSH_MOUSEWHEEL = RegisterWindowMessage(MSH_MOUSEWHEEL) )
+    {
+        MessageBox(NULL,&quot;RegisterWindowMessag Failed!&quot;,&quot;Error&quot;,MB_OK);
+        return msg.wParam;
+    }
+    
+    
+    while (GetMessage(&amp;msg, NULL, 0, 0)) 
+    {
+        if (!TranslateAccelerator(ghwndApp, ghaccelTable, &amp;msg))
+        {
+            TranslateMessage(&amp;msg);
+            DispatchMessage(&amp;msg);
+        }
+    }
+
+    return msg.wParam;
+}
+
+  
+
+/************************************************************************
+* MainWndProc()
+*
+* Main window proc for the zoomin utility.
+*
+* Arguments:
+*   Standard window proc args.
+*
+* History:
+*
+************************************************************************/
+LONG APIENTRY MainWndProc(
+    HWND hwnd,
+    UINT msg,
+    WPARAM wParam,
+    LPARAM lParam)
+{
+    static int nZoom = 0;
+    
+
+    switch (msg)
+    {
+        //
+        // Handle Mouse Wheel messages generated by the operating systems
+        //that have built-in support for the WM_MOUSEWHEEL message.
+        //
+
+        case WM_MOUSEWHEEL:
+            ((short) HIWORD(wParam)&lt; 0) ? nZoom-- : nZoom++;
+
+            //
+            // Do other wheel stuff...
+            //
+
+            break;
+
+        default:
+            //
+            // uMSH_MOUSEWHEEL is a message registered by the mswheel dll
+            // on versions of Windows that do not support the new message in
+            // the OS.
+            if( msg == uMSH_MOUSEWHEEL )
+            {
+                ((int)wParam &lt; 0) ? nZoom-- : nZoom++;
+
+                 //
+                 // Do other wheel stuff...
+                 //
+                 break;
+            }
+
+            return DefWindowProc(hwnd, msg, wParam, lParam);
+    }
+
+    return 0L;
+}<BR>
+<BR>
+</FONT>
+</PRE>
+<P>
+
+<H2><A NAME="sdkScrollLinesCode"></A><A HREF="#Top"><IMG src="/products/hardware/Intellimouse/upbutton.gif" alt="UpButton" HEIGHT="25" WIDTH="25" BORDER=0 ALIGN=CENTER></A>Sample
+Code for Retrieving the Number of Scroll Lines</H2>
+<P>
+If your code is designed for both Windows 95 and Windows NT4.0,
+including this code in your application enables you to retrieve
+the number of scroll lines in any 32-bit Windows operating system.
+For operating systems that support the wheel natively such as
+Windows NT4.0, it is recommended that you use <B>SystemParametersInfo</B>.
+<PRE>
+<FONT SIZE=2 FACE=COURIER>/* SPI_GETWHEELSCROLLLINES is also defined in the new winuser.h included 
+   in the NT4.0 SDK.  The API SystemParametersInfo in the NT4.0 SDK has been
+   updated for the scrolllines functionality.
+*/
+
+#ifndef SPI_GETWHEELSCROLLLINES
+#define SPI_GETWHEELSCROLLLINES   104
+#endif
+
+#include &quot;zmouse.h&quot;
+
+/*********************************************************************
+* FUNCTION: GetNumScrollLines
+* Purpose : An OS independant method to retrieve the number of wheel
+*           scroll lines
+* Params  : none
+* Returns : UINT:  Number of scroll lines where
+            WHEEL_PAGESCROLL indicates to scroll a page at a time.
+*********************************************************************/
+UINT GetNumScrollLines(void)
+{
+   HWND hdlMsWheel;
+   UINT ucNumLines=3;  // 3 is the default
+   OSVERSIONINFO osversion;
+   UINT uiMsh_MsgScrollLines;
+   
+
+   memset(&amp;osversion, 0, sizeof(OSVERSIONINFO));
+   osversion.dwOSVersionInfoSize =sizeof(OSVERSIONINFO);
+   GetVersionEx(&amp;osversion);
+
+   // In Windows 9x &amp; WinNT3.51 query Mswheel for the number of scroll lines
+   // and in WinNT 4.0 and later, use SystemParametersInfo API
+
+   if ((osversion.dwPlatformId == VER_PLATFORM_WIN32_WINDOWS) ||
+       ( (osversion.dwPlatformId == VER_PLATFORM_WIN32_NT) &amp;&amp; 
+         (osversion.dwMajorVersion &lt; 4)                       )   )
+   {
+        hdlMsWheel = FindWindow(MSH_WHEELMODULE_CLASS, MSH_WHEELMODULE_TITLE);
+        if (hdlMsWheel)
+        {
+           uiMsh_MsgScrollLines = RegisterWindowMessage(MSH_SCROLL_LINES);
+           if (uiMsh_MsgScrollLines)
+                ucNumLines = (int)SendMessage(hdlMsWheel, uiMsh_MsgScrollLines, 0, 0);
+        }
+   }
+   else if ( (osversion.dwPlatformId == VER_PLATFORM_WIN32_NT) &amp;&amp;
+             (osversion.dwMajorVersion &gt;= 4) )
+   {
+      SystemParametersInfo(SPI_GETWHEELSCROLLLINES, 0, &amp;ucNumLines, 0);
+   }
+   return(ucNumLines);
+}<BR>
+<BR>
+</FONT>
+</PRE>
+<P>
+
+<H2><A NAME="sdkButton"></A><A HREF="#Top"><IMG src="/products/hardware/Intellimouse/upbutton.gif" alt="UpButton" HEIGHT="25" WIDTH="25" BORDER=0 ALIGN=CENTER></A>Wheel
+Button Messages</H2>
+<P>
+<B>Note</B> The IntelliMouse wheel button sends standard Windows
+middle button messages and therefore is supported natively in
+all 32-bit versions of Windows. The information in this section
+was taken from the &quot;Microsoft Developer Network Library.&quot;
+<H3>Wheel Button Down Message</H3>
+<P>
+The WM_MBUTTONDOWN message is posted when the user presses the
+middle mouse button while the pointer is in the client area of
+a window. If the mouse is not captured, the message is posted
+to the window beneath the pointer. Otherwise, the message is posted
+to the window that has captured the mouse. The wheel button down
+message is the same as the standard Windows middle button down
+message.
+<H4><FONT FACE="Arial">Syntax<BR>
+</FONT></H4>
+<P>
+WM_MBUTTONDOWN <BR>
+<I>fwKeys</I><B> =</B><I> wParam</I>; /* key flags */<BR>
+<I>xPos</I><B> =</B> LOWORD(<I>lParam</I>); /* horizontal position
+of pointer */<BR>
+<I>yPos</I><B> =</B> HIWORD(<I>lParam</I>); /* vertical position
+of pointer */
+<H4><FONT FACE="Arial">Parameters<BR>
+</FONT></H4>
+<P>
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR><TD><B><FONT SIZE=2 FACE="Arial">Parameter</FONT></B></TD>
+<TD><B><FONT SIZE=2 FACE="Arial">Description</FONT></B></TD></TR>
+<TR><TD>
+<BR>
+ <I><FONT SIZE=2 FACE="Arial">fwKeys</FONT></I>
+</TD><TD><FONT SIZE=2 FACE="Arial">Value of <I>wParam</I>. Indicates whether various virtual keys are down. This parameter can be any combination of the following values:
+<BR>
+MK_CONTROL -- Set if the CTRL key is down.<BR>
+MK_LBUTTON -- Set if the left mouse button is down.<BR>
+MK_MBUTTON -- Set if the middle mouse button is down.<BR>
+MK_RBUTTON -- Set if the right mouse button is down.<BR>
+MK_SHIFT -- Set if the SHIFT key is down.<BR>
+</FONT>
+</TD></TR>
+<TR><TD> <I><FONT SIZE=2 FACE="Arial">xPos</FONT></I></TD><TD><FONT SIZE=2 FACE="Arial">Value of the low-order word of <I>lParam</I>. Specifies the x-coordinate of the pointer. The coordinate is relative to the upper-left corner of the client area.</FONT>
+</TD></TR>
+<TR><TD>
+<BR>
+ <I><FONT SIZE=2 FACE="Arial">yPos</FONT></I>
+</TD><TD><FONT SIZE=2 FACE="Arial">Value of the high-order word of <I>lParam</I>. Specifies the y-coordinate of the pointer. The coordinate is relative to the upper-left corner of the client area.</FONT>
+</TD></TR>
+</TABLE>
+<H4><FONT FACE="Arial">Return Value<BR>
+</FONT></H4>
+<P>
+If an application processes this message, it should return zero.
+<H4><FONT FACE="Arial">Remarks<BR>
+</FONT></H4>
+<P>
+An application can use the <B>MAKEPOINTS</B> macro to convert
+the <I>lParam</I> parameter to a <B>POINTS</B> structure.<BR>
+<P>
+
+<H3>Wheel Button Up Message</H3>
+<P>
+The WM_MBUTTONUP message is posted when the user releases the
+middle mouse button while the pointer is in the client area of
+a window. If the mouse is not captured, the message is posted
+to the window beneath the pointer. Otherwise, the message is posted
+to the window that has captured the mouse. The wheel button up
+message is the same as the standard Windows middle button up message.
+<H4><FONT FACE="Arial">Syntax<BR>
+</FONT></H4>
+<P>
+WM_MBUTTONUP <BR>
+<I>fwKeys</I> <B>=</B> <I>wParam</I>; /* key flags */<BR>
+<I>xPos</I><B> =</B> LOWORD(<I>lParam</I>); /* horizontal position
+of pointer */<BR>
+<I>yPos</I><B> =</B> HIWORD(<I>lParam</I>); /* vertical position
+of pointer */
+<H4><FONT FACE="Arial">Parameters<BR>
+</FONT></H4>
+<P>
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR><TD><B><FONT SIZE=2 FACE="Arial">Parameter</FONT></B></TD>
+<TD><B><FONT SIZE=2 FACE="Arial">Description</FONT></B></TD></TR>
+<TR><TD>
+<BR>
+ <I><FONT SIZE=2 FACE="Arial">fwKeys</FONT></I>
+</TD><TD><FONT SIZE=2 FACE="Arial">Value of <I>wParam</I>. Indicates whether various virtual keys are down. This parameter can be any combination of the following values:
+<BR>
+MK_CONTROL -- Set if the CTRL key is down.<BR>
+MK_LBUTTON -- Set if the left mouse button is down.<BR>
+MK_RBUTTON -- Set if the right mouse button is down.<BR>
+MK_SHIFT -- Set if the SHIFT key is down.<BR>
+</FONT>
+</TD></TR>
+<TR><TD> <I><FONT SIZE=2 FACE="Arial">xPos</FONT></I></TD><TD><FONT SIZE=2 FACE="Arial">Value of the low-order word of <I>lParam</I>. Specifies the x-coordinate of the pointer. The coordinate is relative to the upper-left corner of the client area.</FONT>
+</TD></TR>
+<TR><TD>
+<BR>
+ <I><FONT SIZE=2 FACE="Arial">yPos</FONT></I>
+</TD><TD><FONT SIZE=2 FACE="Arial">Value of the high-order word of <I>lParam</I>. Specifies the y-coordinate of the pointer. The coordinate is relative to the upper-left corner of the client area.</FONT>
+</TD></TR>
+</TABLE>
+<H4><FONT FACE="Arial">Remarks<BR>
+</FONT></H4>
+<P>
+An application can use the <B>MAKEPOINTS</B> macro to convert
+the <I>lParam</I> parameter to a <B>POINTS</B> structure.<BR>
+<P>
+
+<H3>Wheel Button Double-Click Message</H3>
+<P>
+The WM_MBUTTONDBLCLK message is posted when the user double-clicks
+the middle mouse button while the pointer is in the client area
+of a window. If the mouse is not captured, the message is posted
+to the window beneath the pointer. Otherwise, the message is posted
+to the window that has captured the mouse. The wheel button double-click
+message is the same as the standard Windows middle button double-click
+message.
+<H4><FONT FACE="Arial">Syntax<BR>
+</FONT></H4>
+<P>
+WM_MBUTTONDBLCLK <BR>
+<I>fwKeys</I> <B>=</B> <I>wParam</I>; /* key flags */<BR>
+<I>xPos</I> <B>=</B> LOWORD(lParam); /* horizontal position of
+pointer */<BR>
+<I>yPos</I> <B>=</B> HIWORD(lParam); /* vertical position of pointer
+*/
+<H4><FONT FACE="Arial">Parameters<BR>
+</FONT></H4>
+<P>
+<TABLE WIDTH=87% BORDER=1 CELLPADDING=5 CELLSPACING=0>
+<TR><TD><B><FONT SIZE=2 FACE="Arial">Parameter</FONT></B></TD>
+<TD><B><FONT SIZE=2 FACE="Arial">Description</FONT></B></TD></TR>
+<TR><TD>
+<BR>
+ <I><FONT SIZE=2 FACE="Arial">fwKeys</FONT></I>
+</TD><TD><FONT SIZE=2 FACE="Arial">Value of <I>wParam</I>. Indicates whether various virtual keys are down. This parameter can be any combination of the following values:
+<BR>
+MK_CONTROL -- Set if the CTRL key is down.<BR>
+MK_LBUTTON -- Set if the left mouse button is down.<BR>
+MK_MBUTTON -- Set if the middle mouse button is down.<BR>
+MK_RBUTTON -- Set if the right mouse button is down.<BR>
+MK_SHIFT -- Set if the SHIFT key is down.<BR>
+</FONT>
+</TD></TR>
+<TR><TD> <I><FONT SIZE=2 FACE="Arial">xPos</FONT></I></TD><TD><FONT SIZE=2 FACE="Arial">Value of the low-order word of <I>lParam</I>. Specifies the x-coordinate of the pointer. The coordinate is relative to the upper-left corner of the client area.</FONT>
+</TD></TR>
+<TR><TD>
+<BR>
+ <I><FONT SIZE=2 FACE="Arial">yPos</FONT></I>
+</TD><TD><FONT SIZE=2 FACE="Arial">Value of the high-order word of <I>lParam</I>. Specifies the y-coordinate of the pointer. The coordinate is relative to the upper-left corner of the client area.</FONT>
+</TD></TR>
+</TABLE>
+<H4><FONT FACE="Arial">Return Value<BR>
+</FONT></H4>
+<P>
+If an application processes this message, it should return zero.
+<H4><FONT FACE="Arial">Remarks<BR>
+</FONT></H4>
+<P>
+Only windows that have the CS_DBLCLKS style can receive WM_MBUTTONDBLCLK
+messages, which Windows generates whenever the user presses, releases,
+and again presses the middle mouse button within the system's
+double-click time limit. Double-clicking the middle mouse button
+actually generates four messages: WM_MBUTTONDOWN, WM_MBUTTONUP,
+WM_MBUTTONDBLCLK, and WM_MBUTTONUP again.
+<P>
+An application can use the <B>MAKEPOINTS</B> macro to convert
+the <I>lParam</I> parameter to a <B>POINTS</B> structure.
+<P>
+<!--DocFooterStart--><BR>
+<P>
+
+<P>
+<CENTER><I><FONT SIZE=1>&copy;1996 Microsoft Corporation</P> <!--DocFooterEnd--></FONT></I></CENTER>
+		</TD>	
+		<TD WIDTH="20"></TD>
+	</TR>
+</TABLE>
+</BODY>
+</HTML>

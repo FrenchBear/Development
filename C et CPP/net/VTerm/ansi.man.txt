@@ -1,0 +1,1131 @@
+  screen(HW)
+  **********
+
+  ____________________________________________________________________________
+  screen -- tty [01-n], color, monochrome, ega, vga display adapter and video
+  monitor
+
+  Description
+  ===========
+
+  console- console device driver
+
+  mono- monochrome ANSI adapter routines for console device driver
+
+  cga- CGA screen routines for console device driver
+
+  vga- VGA screen routines for console device driver
+
+  ega- EGA screen routines for console device driver
+
+  systty- device on which system error messages are displayed
+
+  syscon- system console device
+
+  The tty [01-n] device files provide a character interface to the video
+  display monitor and keyboard. Each file corresponds to a separate teletype
+  device. Although there is a maximum of 12 screens, the exact number
+  available (n) depends upon the amount of memory in the computer. The
+  screens are modeled after a 25-line, 80-column ASCII terminal, unless
+  specified otherwise.
+
+  The system console device can be either a terminal (a serial adapter device,
+  tty1a) or a system keyboard display adapter monitor (tty01).
+
+  /dev/console is the device used by the system administrator for system
+  maintenance (single-user) operations. It is the tty to which the first
+  default shell is attached.
+
+  System error messages from the kernel are written to /dev/console, which is
+  normally the current multiscreen. If /dev/console is the default output
+  device for system error messages, and the display being used is switched to
+  graphics mode, console messages are not displayed.
+
+  When the video device returns to text mode, a notice message is displayed
+  and the text of the kernel error can be recovered from /usr/adm/messages.
+
+  Initially, /dev/console is linked to /dev/systty. The actual physical device
+  accessed via /dev/systty is selected during boot, and is typically the
+  device used to control the bootup procedure. The default physical device
+  /dev/systty is determined by boot(HW) when the system is brought up.
+
+  /dev/syscon is the system console device used by init. See init(M) for more
+  information.
+
+  Although all tty[01-n] devices may be open concurrently, only one of the
+  corresponding devices can be active at any given time. The active device
+  displays its own screen and takes sole possession of the keyboard. It is an
+  error to attempt to access the color, monochrome, ega, or vga file when no
+  corresponding adapter exists or no multiscreens are associated with it.
+
+  To get to the next consecutive console screen, enter <Ctrl><PrtSc>. Any
+  active screen may be selected by entering <Alt><Fn> (or <Ctrl><Alt><Fn>
+  when running in a graphical environment), where <Fn> is one of the function
+  keys. For example, <F1> refers to the tty01 device.
+
+  Code examples are included in the section ``Examples'' in screen(HW) to help
+  programmers use the ioctl(S) calls documented here.
+
+  Control modes
+  +++++++++++++
+
+  Multiscreens can be reassigned to different adapters (in multi-adapter
+  systems) with these ioctls :
+
+  SWAPCGA
+          Selects the regular color display as the output device for the
+          multiscreen.
+
+  SWAPEGA
+          Selects the enhanced color display as the output device for the
+          multiscreen.
+
+  SWAPMONO
+          Selects the monochrome display as the output device for the
+          multiscreen.
+
+  SWAPVGA
+          Selects the video graphics array color display as the output device
+          for the multiscreen.
+
+  To find out which display adapter type is currently attached to the
+  multiscreen, you can use ioctl(S) with the following request:
+
+  CONS_CURRENT
+          Returns the display adapter type currently associated with the
+          multiscreen. The return value can be one of: MONO, CGA, EGA, or VGA.
+
+  Changing the VGA color map
+  ++++++++++++++++++++++++++
+
+  These ioctls can be used to examine and change the color map for VGA color
+  displays. The color map is held in the video dac registers as a 192-byte
+  array. The elements of the array are arranged in groups of three
+  representing the red, green, and blue intensities respectively for each of
+  the 64 color map entries (numbered 0 to 63). The intensity of each color is
+  encoded by values in the range 0 (minimum) to 255 (maximum intensity).
+
+  For example, the red, green, and blue intensities for the nth color map
+  entry are represented by the values of the array members n*3, n*3+1, and
+  n*3+2 respectively.
+
+  The argument arg to ioctl should point to an array of 192 unsigned
+  characters. This array may be used to read the existing color map, or to
+  set a new color map.
+
+  VGA_GETPALLET
+          Read the existing color map entries into the array pointed to by arg.
+
+  VGA_SETPALLET
+          Set new color map entries read from the array pointed to by arg.
+
+  Display modes
+  +++++++++++++
+
+  The following ioctls can be used to change the video display mode:
+
+  SW_B80x25
+          Selects 80x25 black and white text display mode. (MONO, CGA, EGA,
+          VGA)
+
+  SW_C80x25
+          Selects 80x25 color text display mode. (CGA, EGA, VGA)
+
+  SW_B40x25
+          Selects 40x25 black and white text display mode. (MONO, CGA, EGA,
+          VGA)
+
+  SW_C40x25
+          Selects 40x25 color text display mode. (CGA, EGA, VGA)
+
+  SW_BG320
+          Selects 320x200 black and white graphics display mode. (CGA, EGA,
+          VGA)
+
+  SW_CG320
+          Selects 320x200 color graphics display mode. (CGA, EGA, VGA)
+
+  SW_BG640
+          Selects 640x200 black and white graphics display mode. (CGA, EGA,
+          VGA)
+
+  SW_EGAMONO80x25
+          Selects EGA (Enhanced Graphics Adapter) mode 7 -- emulates support
+          provided by the monochrome display. (EGA, VGA)
+
+  SW_EGAMONOAPA
+          Selects EGA support for 640x350 graphics display mode EGA (mode F).
+          (EGA with mono monitor)
+
+  SW_ENH_MONOAPA2
+          Selects EGA mode F*. (EGA with mono monitor)
+
+  SW_ENHB40x25
+          Selects enhanced EGA support for 40x25 black and white text display
+          mode. (EGA, VGA)
+
+  SW_ENHC40x25
+          Selects enhanced EGA support for the 40x25 color text display mode.
+          (EGA, VGA)
+
+  SW_ENHB80x25
+          Selects enhanced EGA support for 80x25 black and white text display
+          mode. (EGA, VGA)
+
+  SW_ENHC80x25
+          Selects enhanced EGA support for 80x25 color text display mode.
+          (EGA, VGA)
+
+  SW_ENHB80x43
+          Selects enhanced EGA support for 80x43 black and white text display
+          mode. (EGA, VGA)
+
+  SW_ENHC80x43
+          Selects enhanced EGA support for 80x43 color text display mode.
+          (EGA, VGA)
+
+  SW_CG320_D
+          Selects EGA support for 320x200 graphics display mode. (EGA mode D.)
+          (EGA, VGA)
+
+  SW_CG640_E
+          Selects EGA support for 640x200 graphics display mode EGA (mode E).
+          (EGA, VGA)
+
+  SW_CG640x350
+          Selects EGA support for 640x350 graphics display mode EGA (mode 10).
+          (EGA, VGA)
+
+  SW_ENH_CG640
+          Selects EGA mode 10*. (EGA, VGA)
+
+  SW_MCAMODE
+          Reinitializes the monochrome adapter. (MONO)
+
+  SW_VGA40x25
+          Selects VGA support for the 40x25 color text display mode (VGA mode
+          1+). (VGA)
+
+  SW_VGA80x25
+          Selects VGA support for the 80x25 black and white text display mode
+          (VGA mode 2+). (VGA)
+
+  SW_VGAM80x25
+          Selects VGA mode 7+ -- emulates support provided by the monochrome
+          display. (VGA with mono monitor)
+
+  SW_VGA11
+          Selects VGA support for the 640x480 graphics display mode (VGA mode
+          11). (VGA)
+
+  SW_VGA12
+          Selects VGA support for the 640x480 graphics display mode (VGA mode
+          12). (VGA)
+
+  SW_VGA13
+          Selects VGA support for the 320x200 graphics display mode (VGA mode
+          13). (VGA)
+
+  Switching to an invalid display mode for a display device will result in an
+  error.
+
+  Getting display modes
+  +++++++++++++++++++++
+
+  The following ioctl requests are provided to obtain information about the
+  current display modes:
+
+  CONS_GET
+          Returns the current display mode setting for current display
+          adapter. (All)
+
+  CGA_GET
+          Returns the current display mode setting of the color graphics
+          adapter. (CGA only)
+
+  EGA_GET
+          Returns the current display mode setting of the enhanced graphics
+          adapter. (EGA only)
+
+  MCA_GET
+          Returns the current display mode setting of the monochrome adapter.
+          (MONO only)
+
+  VGA_GET
+          Returns the current display mode of the video graphics adapters.
+          (VGA only)
+
+  CONS_GETINFO
+          Returns structure vid_info (below). Size of structure (first field)
+          must be filled in by user.
+
+          struct vid_info
+          {
+            short  size;           /* must be first field          */
+            short  m_num;          /* multiscreen number, 0 based  */
+            ushort mv_row, mv_col; /* cursor position              */
+            ushort mv_rsz, mv_csz; /* text screen size             */
+            struct colors mv_norm, /* normal attributes            */
+                          mv_rev,  /* reverse video attributes     */
+                          mv_grfc; /* graphic character attributes */
+            uchar_t mv_ovscan;     /* border color                 */
+            uchar_t mk_keylock;    /* caps/num/scroll lock         */
+          };
+
+  CONS_6845INFO
+          Returns structure m6845_info (below). Size of structure (first
+          field) must be filled in by user.
+
+          struct m6845_info
+          {
+            short   size;          /* must be first field        */
+            ushort  screen_top;    /* offset of screen in video  */
+            ushort  cursor_type;   /* cursor shape               */
+          };
+
+  CONSADP
+          Returns the number of the current multiscreen displayed on the
+          adapter specified by the value of the argument arg to ioctl.
+          Possible adapter types are MONO, CGA, PGA, EGA, and VGA (defined in
+          /usr/include/sys/comcrt.h). If no match is found, ioctl returns -1
+          and errno is set to ENXIO.
+
+  GIO_ATTR
+          Return value of ioctl is 6845-style attribute byte in effect.
+
+  GIO_COLOR
+          Return value of ioctl is 0 or 2 depending on whether the device
+          supports color.
+
+  GIO_SCRNMAP
+          Gets the 256-byte screen map table, which is the mapping of ASCII
+          values (0-255) onto the PC video ROM font characters (0-255). Note
+          that control characters (ASCII values less than hex 20) have
+          control functions and do not display ROM characters (for example,
+          ^J is newline).
+
+          This is often used to map the low font values that normally
+          correspond to ASCII control values to higher ASCII values, thus
+          displaying the desired ROM characters.
+
+  PIO_SCRNMAP
+          Puts the 256-byte screen map table (see GIO_SCRNMAP).
+
+  GIO_KEYMAP
+          See keyboard(HW).
+
+  GIO_FONT8Xn
+          Gets font, where n is 8, 14, and 16. Argument is a pointer to a font
+          table. Size of 8X8 font table is 8X256 bytes, 8X14 is 14X256 bytes,
+          etc.
+
+  PIO_FONT8Xn
+          Puts font, where n is 8, 14, and 16. Argument is a pointer to a font
+          table. Size of 8X8 font table is 8X256 bytes, 8X14 is 14X256 bytes,
+          etc.
+
+  Memory mapping modes
+  ++++++++++++++++++++
+
+  The ioctl(S) routine is used to map the display memory of the various
+  devices into the user's data space.
+
+  Note that the MAP* ioctls map the memory associated with the current mode.
+  You must put the adapter into the desired mode before performing mapping,
+  or the pointers returned will not be appropriate. Refer to your hardware
+  manual for details on various displays, adapters, and controllers.
+
+  These ioctl requests can be used to map the display memory:
+
+  MAPCGA  Maps the color adapter's display memory into the user's data space.
+          (CGA only)
+
+  MAPCONS
+          Maps the display memory of the adapter currently being used into the
+          user's data space. (All)
+
+  MAPEGA  Maps the enhanced graphics adapter's display memory into the user's
+          data space. (EGA only)
+
+  MAPMONO
+          Maps the monochrome adapter's display memory into the user's data
+          space. (MONO only)
+
+  MAPVGA  Maps the video graphics adapter's display memory into the user's
+          data space. (VGA only)
+
+  For example, the following code can be used to acquire a pointer to the
+  start of the user data space associated with the color graphics adapter
+  display memory:
+
+     char *dp;
+     int retval;
+     .
+     .
+     .
+     /* fd is a file descriptor for a multiscreen device */
+     retval = ioctl (fd, MAPCONS,0L);
+     dp = (char *) retval;
+     .
+     .
+     .
+
+  Note that when the display memory is mapped into the user space, the
+  adapter's m6845 start address registers are not set. The start address can
+  be reset in two ways, so that the start address of the display memory
+  corresponds to the upper left-hand corner of the screen:
+
+  1. Switch modes with an ioctl. (The ``switch'' can be to the present mode.)
+     See the ``Display modes'' section of this manual page.
+
+  2. Change the start address high and low addresses with the
+     in-on-port/out-on-port ioctl.
+
+  The in-on-port/out-on-port ioctl can also be used to determine the current
+  value in the start address register, and then set up a pointer to the
+  offset in the mapped-in data space.
+
+  MAP_CLASS
+          Package ioctl that gives I/O privileges to an arbitrary list of
+          ports and maps an arbitrary frame buffer into the user's address
+          space identified by a string found in the struct vidclass
+          vidclasslist[]. For example:
+
+          char *
+          ioctl(fd, MAP_CLASS, video_class_name)
+          char *video_class_name;
+
+          This returns a pointer to the frame buffer. See
+          /etc/conf/pack.d/cn/class.h for descriptions of the existing
+          classes. Note that the link kit must be installed in order to find
+          this file. (The class.h file is normally generated by mkdev
+          graphics.)
+
+  EGA_IOPRIVL
+  VGA_IOPRIVL
+          These add the list of I/O ports found on standard EGA and VGA cards
+          into the process' TSS I/O permission bitmap. This allows the
+          process to access the EGA I/O ports directly from user space with
+          386 IN and OUT instructions. (See sample code under ``Examples''.)
+          I/O instructions executed in this manner are slower than I/O
+          instructions executed when the I/O privilege level is raised to 3
+          (see instruction timings in Intel's 80386 Programmer's Reference
+          Manual).
+
+          A process' I/O privilege level can be set, allowing for the faster
+          execution of I/O instructions with the sysi86(S) subfunction
+          V86SC_IOPL:
+
+          sysi86 (SI86V86, V86SC_IOPL, 0x3000)
+
+          This sets the I/O privilege to 3 as described above. Only the
+          superuser can do this.
+
+  KDDISPTYPE
+          This call returns display information to the user. The argument
+          expected is the buffer address of a structure of type kd_disparam
+          into which display information is returned to the user. The
+          kd_disparam structure is defined as follows:
+
+          struct kd_disparam
+                 {
+                    long type;    /* display type */
+                    char *addr;   /* display memory address */
+                 }
+
+          Possible values for the type field include:
+
+          KD_MONO for the IBM monochrome display adapter
+          KD_HERCULES for the Hercules monochrome graphics adapter
+          KD_CGA for the IBM color graphics adapter
+          KD_EGA for the IBM enhanced graphics adapter
+          KD_VGA for the IBM video graphics adapter
+
+  KDDISPINFO
+          Returns struct kd_dispinfo, which contains adapter type and physical
+          address of frame buffer, as follows:
+
+          struct kd_dispinfo{
+                  char *vaddr;          /* memory address */
+                  paddr_t physaddr;     /* memory address */
+                  unsigned long size;   /* memory size */
+          }
+
+  KIOCSOUND
+          Starts sound generation. Turns on sound. The arg is the period of
+          the bell tone in units of 840.3 nanoseconds. A value of 0 turns off
+          the sound. This is useful for generating tones while in graphics
+          mode.
+
+  KDGETLED
+          Gets keyboard LED status. The argument is a pointer to a character.
+          The character will be filled with a Boolean combination of the
+          following values:
+
+          0x10 Caps lock and Scroll lock are on
+          0x11 Scroll lock and Num lock are on
+          0x04 Scroll lock is on
+          0x02 Num lock is on
+          0x01 Caps lock is on
+
+  KDSETLED
+          Sets keyboard LED status. The argument is a character whose value is
+          the Boolean combination of the values listed under ``KDGETLED''.
+
+  KDMKTONE
+          (See KIOCSOUND.) The argument is a 32-bit value, with the lower 16
+          bits set to the frequency and the upper 16 bits set to the duration
+          (in milliseconds).
+
+  KDSETMODE
+          Sets console in text or graphics mode. The argument is of type
+          integer, which should contain one of the following values:
+
+          KD_TEXT (sets console to text mode)
+          KD_GRAPHICS (sets console in graphics mode)
+
+          Note, the user is responsible for programming the color/graphics
+          adapter registers for the appropriate graphical state.
+
+  KDGETMODE
+          Gets current mode of console. Returns integer argument containing
+          either KD_TEXT or KD_GRAPHICS as defined in the KDSETMODE ioctl
+          description.
+
+  KDENABIO
+          Enable in's and out's to video adapter ports. No argument.
+
+  KDDISABIO
+          Disable in's and out's to video adapter ports. No argument.
+
+  KDGKBTYPE
+          Always returns 0.
+
+  KIOCINFO
+          Always returns 0x6B64.
+
+  VT_SETMODE
+          Sets the virtual terminal mode. The argument is a pointer to a
+          vt_mode structure, as defined below.
+
+  VT_GETMODE
+          Determines what mode the active virtual terminal is currently in,
+          either VT_AUTO or VT_PROCESS. The argument to the ioctl is the
+          address of the following type of structure:
+
+          struct vt_mode {
+             char   mode;   /* VT mode */
+             char   waitv;  /* if !=0, vt hangs on writes when
+                               not active */
+             short  relsig; /* signal to use for release request */
+             short  acqsig; /* signal to use for display acquired */
+             short  frsig;  /* signal to use for forced release */
+             }
+
+             #define VT_AUTO     0x00  /* automatic VT switching */
+             #define VT_PROCESS  0x01  /* process controls
+                                          switching */
+
+          The vt_mode structure will be filled in with the current value for
+          each field.
+
+  VT_RELDISP
+          Tells the virtual terminal manager whether the display has been
+          released by the process.
+
+          0 release refused
+          1 release acknowledged
+          2 acquire acknowledged
+
+  VT_ACTIVATE
+          Makes the multiscreen number specified in the argument the active
+          multiscreen. The video driver will cause a switch to occur in the
+          same manner as if a hotkey sequence had been typed at the keyboard.
+          If the specified multiscreen is not open or does not exist, the
+          call will fail and errno will be set to EINVAL.
+
+  Graphics adapter port I/O
+  +++++++++++++++++++++++++
+
+  You can use ioctl(S) to read or write a byte from or to the graphics adapter
+  port. The arg parameter of the ioctl call uses the port_io_arg data
+  structure:
+
+     struct port_io_arg {
+          struct port_io_struct args[4];
+     };
+
+  As shown above, the port_io_arg structure points to an array of four
+  port_io_struct data structures. The port_io_struct structure has the
+  following format:
+
+     struct port_io_struct {
+             char dir;    /* direction flag (in vs. out) */
+             unsigned short port;   /* port address */
+             char data;   /* byte of data */
+     };
+
+  You may specify one, two, three, or four of the port_io_struct structures in
+  the array for one ioctl call. The value of dir can be either IN_ON_PORT to
+  specify a byte being input to the graphics adapter port or OUT_ON_PORT to
+  specify a byte being output to the graphics adapter port. port is an
+  integer specifying the port address of the desired graphics adapter port.
+  data is the byte of data being input or output as specified by the call.
+
+  If you are not using any of the port_io_struct structures, load the port
+  with 0, and leave the unused structures at the end of the array. Refer to
+  hardware manuals for port addresses and functions for the various adapters.
+
+  You can use the following ioctl(S) commands to input or output a byte on the
+  graphics adapter port:
+
+  CONSIO  Inputs or outputs a byte on the current graphics adapter port as
+          specified. (All)
+
+  MCAIO   Inputs or outputs a byte on the monochrome adapter port as
+          specified. (MONO only)
+
+  CGAIO   Inputs or outputs a byte on the color graphics adapter port as
+          specified. (CGA only)
+
+  EGAIO   Inputs or outputs a byte on the enhanced graphics adapter port as
+          specified. (EGA only)
+
+  VGAIO   Inputs or outputs a byte on the video graphics array adapter port as
+          specified. (VGA only)
+
+  To input a byte on any of the graphics adapter ports, load dir with
+  IN_ON_PORT and load port with the port address of the graphics adapter. The
+  byte input from the graphics adapter port will be returned in data.
+
+  To output a byte, load dir with OUT_ON_PORT, load port with the port address
+  of the graphics adapter, and load data with the byte you want output to the
+  graphics adapter port.
+
+  Function keys
+  +++++++++++++
+
+  ioctl(S) can be used to define or obtain the current definition of a
+  function key. The arg parameter of the ioctl call uses the fkeyarg data
+  structure:
+
+     struct fkeyarg {
+        unsigned short keynum;
+        char keydef [MAXFK];
+        char flen;
+     }
+
+  You can use the following ioctl(S) request to assign function key
+  definitions:
+
+  SETLOCKLOCK
+          Toggles the <Caps Lock> and <Num Lock> keys to be either global to
+          all the multiscreens, or local to each individual multiscreen. To
+          make the <Caps Lock> global (its default), set the arg parameter to
+          1. To make the <Caps Lock> local to each screen, set the arg
+          parameter to 0.
+
+  See scancode(HW) for more function key ioctls.
+
+  ANSI screen attribute sequences
+  +++++++++++++++++++++++++++++++
+
+  The following character sequences are defined by ANSI X3.64-1979 and may be
+  used to control and modify the screen display. Each n is replaced by the
+  appropriate ASCII number (decimal) to produce the desired effect. The last
+  column is for termcap(F) codes, where ``n/a'' means not applicable.
+
+  The use of 7 or 8 bit characters in the escape sequence is a valid
+  invocation for each action defined. For example the ANSI ED command can be
+  invoked via the ``ESC[n J'' (0x1b-0x5b-n-0x4a, 7 bit chars) sequence or the
+  ``CSInJ'' (0x9b-n-0x4n, 8 bit chars) sequence.
+
+   ---------------------------------------------------------------------
+   ISO             Sequence   Action                             Termcap
+                                                                 code
+   ---------------------------------------------------------------------
+   CBT             CSInZ      Moves active position back n tab   bt
+   (Cursor                    stops.
+   Backward
+   Tabulation)
+   CNL             CSInE      Moves active position to           n/a
+   (Cursor Next               beginning of line, n lines down.
+   Line)
+   CPL             CSInF      Moves active position to           n/a
+   (Cursor to                 beginning of line, n lines up.
+   Previous
+   Line)
+   CUB             CSInD      Moves active position n spaces     bs (kl)
+   (Cursor                    backward.
+   Backward)
+   CUD             CSInB      Moves active position down n       do (kd)
+   (Cursor Down)              number of lines.
+   CUF             CSInC      Moves active position n spaces     nd (kr)
+   (Cursor                    to the right.
+   Forward)
+
+   CUP             CSIm;nH    Moves active position to           cm
+   (Cursor                    location m (vertical) and n
+   Position)                  (horizontal).
+   CUU             CSInA      Moves active position up n         up (ku)
+   (Cursor Up)                number of lines.
+   DCH             CSInP      Deletes n number of characters.    dc
+   (Delete
+   Character)
+   DL              CSInM      Deletes n lines.                   dl
+   (Delete Line)
+   ECH             CSInX      Erases n characters.               n/a
+   (Erase
+   Character)
+   ED              CSInJ      Erases all or part of a display.   cd
+   (Erase in                  n=0: erases from active position
+   Display)                   to end of display.  n=1: erases
+                              from the beginning of display to
+                              active position.  n=2: erases
+                              entire display.
+   EL              CSInK      Erases all or part of a line.      ce
+   (Erase in                  n=0: erases from active position
+   Line)                      to end of line.  n=1: erases
+                              from beginning of line to active
+                              position.  n=2: erases entire
+                              line.
+
+
+   HPA             CSIn'      Moves active position to column    n/a
+   (Horizontal                given by n.
+   Position
+   Absolute)
+   HPR             CSIna      Moves active position n            n/a
+   (Horizontal                characters to the right.
+   Position
+   Relative)
+   HVP             CSIm;nf    Moves active position to           n/a
+   (Horizontal &              location m (vertical) and n
+   Vertical                   (horizontal).
+   Position)
+   ICH             CSIn@      Inserts n blank places for n       ic
+   (Insert                    characters.
+   Character)
+   IL              CSInL      Inserts n new, blank lines.        al
+   (Insert Line)
+   MC              CSI2i      Sends screen to host.  Current     n/a
+   (Media Copy)               screen contents are sent to the
+                              application.
+
+   RM              CSI2l      Unlocks keyboard.  Re-enables      n/a
+   (Reset Mode)               keyboard input.
+   RMAM            CSI?7l     Turn autowrap off.                 ra
+   (Reset Mode
+   Automatic
+   Margins)
+   SD              CSInT      Scrolls screen down n lines,       sr
+   (Scroll Down)              introducing new blank lines at
+                              top.
+   SGR             CSInm      Character attributes, as           n/a
+   (Select                    summarized in the chart below.
+   Graphic                    Up to three attributes can be
+   Rendition)                 specified in the form:  CSI n1;
+                              n2; n3 m
+                              (See list of parameters below.)
+   SM              CSI2h      Locks keyboard.  Ignores           n/a
+   (Set Mode)                 keyboard input until unlocked.
+                              Characters are not saved.
+
+   SMAM            CSI?7h     Turn autowrap on.                  sa
+   (Set Mode
+   Automatic
+   Margins)
+   SU              CSInS      Scrolls screen up n lines,         sf
+   (Scroll Up)                introducing new blank lines at
+                              bottom.
+   TBC             CSIng      If iBCS2 compliance is selected    n/a
+   (Tabulation                and n=0, clear the horizontal
+   Clear)                     tab stop at the current active
+                              position.  If iBCS2 compliance
+                              is selected and n=3, clear all
+                              horizontal tab stops.
+   VPA             CSInd      Moves active position to line      n/a
+   (Vertical                  given by n.
+   Position
+   Absolute)
+   VPR             CSIne      Moves active position down n       n/a
+   (Vertical                  number of lines.
+   Position
+   Relative)
+
+  Select Graphic Rendition (SGR) chart
+
+   -----------------------------------------------
+   n    Meaning
+   -----------------------------------------------
+   0    all attributes off (normal display)
+   1    bold intensity (or light color)
+   4    underscore on (if hardware supports it)
+   5    blink on (if hardware supports it)
+   7    reverse video
+   8    sets blank (non-display)
+   10   selects the primary font
+   11   selects the first alternate font; lets
+        ASCII characters less than 32 be displayed
+        as ROM characters
+   12   selects a second alternate font; toggles
+        high bit of extended ASCII code before
+        displaying as ROM characters
+   30   black foreground
+   31   red foreground
+   32   green foreground
+   33   brown foreground
+   34   blue foreground
+   35   magenta foreground
+   36   cyan foreground
+   37   white foreground
+   38   enables underline option; white foreground
+        with white underscore
+   39   disables underline option
+   40   black background
+   41   red background
+   42   green background
+   43   brown background
+   44   blue background
+   45   magenta background
+   46   cyan background
+   47   white background
+
+  Additional screen attribute sequences
+  +++++++++++++++++++++++++++++++++++++
+
+  The screen attribute sequences in the following table are not defined by
+  ANSI X3.64-1979; there are no equivalent ISO names or termcap(F) codes.
+
+   --------------------------------------------------------------------
+   Sequence     Action
+   --------------------------------------------------------------------
+   CSI=cA       Sets overscan color to color c.  c is a decimal value
+                taken from Color table above.  (This sequence may not
+                be supported on all hardware.)
+   CSI=p;dB     Sets the bell parameter to the decimal values of p and
+                d.  p is the period of the bell tone in units of 840.3
+                nanoseconds, and d is the duration of the tone in units
+                of 100 milliseconds.
+   CSI=s;eC     Sets the cursor to start on scanline s and end on
+                scanline e.
+   CSI=xD       Turns on or off (x=1 or 0) the intensity of the
+                background color.
+   CSI=xE       Sets or clears (x=1 or 0) the Blink vs. Bold background
+                bit in the 6845 CRT controller.
+   CSI=cF       Sets normal foreground color to c.  (c is a decimal
+                parameter taken from Color table.)
+   CSI=ng       Output character n from the alternate graphics set
+                (this is not the same as ``graphics mode'').  Refer to
+                your hardware manual for decimal/character codes (n)
+                and output characters.
+   CSI=cG       Sets normal background.  (See Color table.)
+   CSI=cH       Sets reverse foreground.  (See Color table.)
+   CSI=cI       Sets reverse background.  (See Color table.)
+   CSI=cJ       Sets graphic foreground.  (See Color table.)
+   CSI=cK       Sets graphic background.  (See Color table.)
+   CSI=nL       Fills new regions with current (n=0) or normal (n=1)
+                color attributes.  Default fill behavior is 0.
+                Deselect (n=2) or select (n=3) iBCS2 compliance.
+                Deselect (n=4) or select (n=5) ANSI compliance.
+   CSI=nM       Returns current foreground color attributes, with n=0
+                for normal, 1 for reverse, and 2 for graphic.  The
+                colors are sent back in the keyboard data input stream
+                as text decimal values separated by a space and
+                terminated with a newline.  For example, if the current
+                foreground color is light red on black, ``12 0\n'' is
+                returned.
+   CSIs         Saves current cursor position.
+   CSIu         Restores saved cursor position.
+   CSInz        Switches to screen n.  If the screen does not exist, no
+                action will take place.
+
+   ESC7               Saves current cursor position.
+   ESC8               Restores saved cursor position.
+   ESCQ Fn 'string'   Defines function key Fn with string.  String delimiters
+                      ' and ' may be any character not in string.  Fn is
+                      defined as the key number starting at zero plus the
+                      ASCII value of zero.  For example, <F1> = 0... <F16> =
+                      `` ? '', and so on.
+                      In this escape sequence, the ``^'' character will cause
+                      the next character to have 32 subtracted from its ASCII
+                      value.  Thus ``^!'' results in a SOH (^A) character.
+
+  Color table
+
+   ------------------------------------------------------
+   Cn      Color             Cn      Color
+   ------------------------------------------------------
+   0       Black              8      Grey
+   1       Blue               9      Lt. Blue
+   2       Green             10      Lt. Green
+   3       Cyan              11      Lt. Cyan
+   4       Red               12      Lt. Red
+   5       Magenta           13      Lt. Magenta
+   6       Brown             14      Yellow
+   7       White             15      Lt. White
+
+  Diagnostics
+  ===========
+
+  The following error messages may be displayed on the console. See messages
+  (M) for general information about kernel error messages, including a list of
+  generic device driver errors.
+
+  CONFIG: console: Cannot allocate SCRNMEM = nk (NSCRN = n too many screens)
+
+  Not enough memory was available for the video driver. Decrease the number of
+  screens as set by the configurable parameter NSCRN.
+
+  WARNING: console: Kernel messages lost on non-text screen
+           Check kernel messages logfile
+
+  Kernel messages were lost while the console was in graphics mode and did not
+  appear. Check the last few lines of /usr/adm/messages to find the messages.
+
+  PANIC: console: Too many keyboard groups (MAXKBGRPS max)
+
+  There are more video devices attached to your system than the kernel is
+  designed to support.
+
+  Examples
+  ========
+
+  The following module includes examples of getting the display mode, screen
+  switching, I/O privilege, and memory mapping.
+
+  Sample code (part 1 of 4)
+  +++++++++++++++++++++++++
+
+  #include <stdio.h>
+
+  #include <sys/types.h>
+  #include <sys/signal.h>
+  #include <sys/vtkd.h>
+
+  #define SIG_REL SIGUSR1
+  #define SIG_ACQ SIGUSR2
+
+  int Isdisplayed;                /* flag: when are we flipped away */
+  char *Screenmem;                /* physical map to the video RAM  */
+  int graf();                     /* Set everything up              */
+  void grafend();                 /* Restore user's text mode       */
+  void grafquit();                /* Clean-up and exit              */
+  void rel_screen(), acq_screen();
+  int Oldmode;                    /* save mode of user shell screen */
+
+  /*
+   * Set up the graphics multiscreen stuff and call another
+   * routine to set up card.
+   */
+  graf()
+  {
+          struct vt_mode smode;
+
+          Isdisplayed = 1;
+  /*
+   *  Set up to catch the screen switch signals.
+   */
+          signal(SIG_REL, rel_screen);
+          signal(SIG_ACQ, acq_screen);
+  /*
+   * Set up the data structure that asks the driver
+   * to send you signals when the screens are switched.
+   * mode == VT_PROCESS means send screen switch signals.
+   * mode == VT_AUTO means turn off screen switch signals (regular mode).
+   * relsig == the signal you want when the user switches away.
+   * acqsig == the signal you want when the user switches back to you.
+   */
+          smode.mode = VT_PROCESS;
+          smode.waitv = 0;        /* not implemented, reserved */
+          smode.relsig = SIG_REL;
+          smode.acqsig = SIG_ACQ;
+          smode.frsig  = SIGINT;  /* not implemented, reserved */
+
+          if(-1 == ioctl(0, VT_SETMODE, &smode))
+          {
+                  perror("screen switch signal ioctl VT_SETMODE");
+                  exit(1);
+          }
+          signal(SIGINT, grafquit);
+          grafmode();
+  }
+
+  Sample code (part 2 of 4)
+  +++++++++++++++++++++++++
+
+  /*
+   * this is the signal handler for when the user screen flips
+   * away from us.
+   */
+  void
+  rel_screen()
+  {
+          signal(SIG_REL, rel_screen);
+          Isdisplayed = 0;
+          ega_save();
+  /*
+   * Tell the video driver that you have saved your state
+   * and it can now have the card to switch to the new screen.
+   * The video driver waits (forever) for this ioctl before
+   * it will complete the screen switch requested by the user.
+   * If you don't make this ioctl the screen switcher will
+   * be wedged until it gets one.  It is best to have a
+   * small one line reldisp.c program to unwedge your screen
+   * switcher when development programs screw up from time
+   * to time.
+   */
+          ioctl(0, VT_RELDISP, VT_TRUE);
+  }
+
+  /*
+   * this is the signal handler for when the user screen flips
+   * back to us.
+   */
+  void
+  acq_screen()
+  {
+          signal(SIG_ACQ, acq_screen);
+          Isdisplayed = 1;
+          ega_restore();
+  /*
+   * Tell the video driver that you have restored your state
+   * and screen switching can now continue.
+   */
+          ioctl(0, VT_RELDISP, VT_ACKACQ);
+  }
+
+  void
+  grafquit()
+  {
+          grafend();
+          exit(0);
+  }
+
+  Sample code (3 of 4)
+  ++++++++++++++++++++
+
+  /*
+   * restore text mode.
+   */
+  void
+  grafend()
+  {
+          ioctl(0, MODESWITCH | Oldmode, (char *)0);
+  }
+
+  grafmode()
+  {
+          int adapter, privlcmd;
+  /*
+   * Confirm that we are on a supported video adapter.
+   */
+          adapter = ioctl(0, CONS_CURRENT, (char *)0);
+          if(EGA != adapter && VGA != adapter)
+          {
+                  puts("Stdin must be an EGA or VGA multiscreen\n");
+                  exit(0);
+          }
+
+  Sample code (4 of 4)
+  ++++++++++++++++++++
+
+  /*
+   * Save the user's current text mode so you
+   * can restore it on exit.
+   */
+          Oldmode = ioctl(0, CONS_GET, (char *)0);
+  /*
+   * Get privilege to do direct INs and OUTs to the video card.
+   */
+          if(EGA == adapter)
+                  privlcmd = EGA_IOPRIVL;
+          else
+                  privlcmd = VGA_IOPRIVL;
+          if(-1 == ioctl(0, privlcmd, 1))
+          {
+                  perror("I/O privilege denied");
+                  exit(1);
+          }
+  /*
+   * Have the video driver reprogram the card for EGA 640x350 16 color mode.
+   */
+          ega_grafmode();
+  /*
+   * Map the video card's frame buffer into your address space.
+   * This must be done after the mode switch command or you get
+   * frame buffer address for the wrong mode mapped in.
+   */
+          Screenmem = (char *)ioctl(0, MAPCONS, (char *)0);
+  }
+
+  Warning
+  =======
+
+  Do not enable(C) or disable(C) /dev/console because this may corrupt the
+  /etc/inittab file; instead, enable or disable the display adapter (tty01),
+  or the serial adapter (tty?a) if the console is configured to be on a
+  particular serial device.
+
+  Limitations
+  ===========
+
+  A serial console cannot be attached to a multiport card or one that uses
+  special drivers; it must be on a standard COM1 card.
+
+  Files
+  =====
+
+  /dev/console
+          tty to which first shell is attached, used for system maintenance
+
+  /dev/systty
+          system error messages display device, linked initially to
+          /dev/console
+
+  /dev/syscon
+          system console device, linked to the tty from which init(M) was last
+          invoked
+
+  /etc/ioctl.syscon
+          default console ioctl(S) settings used by init(M)
+
+  /dev/tty[02-n]
+          provide character I/O between keyboard and monitor
+
+  /dev/color
+
+  /dev/monochrome
+
+  /dev/ega
+
+  /dev/vga
+
+  /etc/conf/pack.d/cn/class.h
+          list of existing video classes, generated by mkdev graphics
+
+  /usr/include/sys/vtkd.h
+
+  /usr/include/sys/comcrt.h
+          adapter types for console multiscreens
+
+  /usr/include/sys/console.h
+
+  /usr/include/sys/keyboard.h
+
+  See also
+  ========
+
+  boot(HW), init(M), ioctl(S), keyboard(HW), mapchan(M), mapkey(M),
+  multiscreen(M), scancode(HW), setcolor(C), stty(C), termcap(F), tty(M) vidi
+  (C),
+
+  ``System console bootstring'' in the SCO OpenServer Handbook
+
+  Chapter 1, ``Configuring video adapters and monitors'' in Configuring Video
+  Adapters
+
+  ``Setting up serial consoles'' in the SCO OpenServer Handbook
+
+  1 May 1995
+

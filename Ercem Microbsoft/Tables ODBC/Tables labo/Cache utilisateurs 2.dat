@@ -1,0 +1,1681 @@
+336
+646
+"! Enregistrement client STFN"
+#NULL#
+"+"
+0
+731
+"! Enregistrement client STFS"
+#NULL#
+"+"
+0
+209
+"!AIX"
+70
+"+"
+0
+650
+"!BERGAMO"
+#NULL#
+"B"
+0
+716
+"!BRUX"
+350
+"X"
+0
+204
+"!CHIMIE"
+601
+"L"
+0
+458
+"!CONTROLE STABILITE"
+600
+"+"
+#NULL#
+698
+"!DOP à CERGY"
+700
+"E"
+0
+455
+"!ERCEM Consultants"
+500
+"+"
+#NULL#
+452
+"!Enregistrement"
+#NULL#
+"+"
+#NULL#
+529
+"!FAC PRESTATIONS"
+702
+"S"
+#NULL#
+528
+"!FACT AVOIRS"
+702
+"S"
+#NULL#
+530
+"!FACT VISITE"
+702
+"S"
+#NULL#
+451
+"!Fournisseur Casino"
+700
+"+"
+#NULL#
+201
+"!GRENOBLE"
+10
+"G"
+0
+500
+"!HAGAR"
+821
+"H"
+0
+450
+"!INGENIEUR CONSEIL"
+#NULL#
+"+"
+0
+498
+"!LBF"
+850
+"R"
+0
+268
+"!LYON"
+30
+"Y"
+0
+207
+"!MASSY1"
+40
+"P"
+0
+205
+"!MICROBE"
+600
+"R"
+0
+453
+"!NANCY"
+90
+"+"
+#NULL#
+211
+"!ORMENE"
+110
+"+"
+0
+203
+"!PICSOU"
+903
+"C"
+0
+454
+"!REGULARISATION"
+#NULL#
+"+"
+#NULL#
+456
+"!RENNES"
+80
+"+"
+#NULL#
+200
+"!SERVEUR"
+902
+"W"
+0
+202
+"!SPIP"
+702
+"S"
+0
+501
+"!TRIPOLI"
+823
+"T"
+0
+127
+"-ACHATS-"
+903
+"C"
+0
+695
+"-Chimico-"
+300
+"B"
+0
+105
+"-DAF-"
+901
+"W"
+0
+228
+"-DD-"
+701
+"P"
+0
+561
+"-DF-"
+907
+"P"
+0
+107
+"-DG-"
+900
+"P"
+0
+108
+"-DI-"
+902
+"W"
+0
+109
+"-DLM-"
+600
+"R"
+0
+110
+"-DLPC-"
+601
+"LR"
+0
+227
+"-DOP-"
+700
+"P"
+0
+192
+"-DQ-"
+905
+"P"
+0
+112
+"-DTS-"
+904
+"P"
+0
+573
+"-EC-"
+500
+"W"
+0
+681
+"-LABO BERGAMO-"
+300
+"B"
+0
+620
+"-LABO FONTAINE-"
+600
+"R"
+0
+523
+"-LABO ROANNE-"
+861
+"H"
+0
+524
+"-LABO SALIES-"
+853
+"T"
+0
+722
+"-OSNY-"
+750
+"+"
+0
+106
+"-SCGA-"
+903
+"CW"
+0
+138
+"-SFC-"
+702
+"W"
+0
+585
+"-SL ROANNE-"
+851
+"H"
+0
+586
+"-SL SALIES-"
+853
+"T"
+0
+577
+"-SL-"
+603
+"RL"
+0
+613
+"-Salle de réunion de Fontaine-"
+#NULL#
+"R"
+0
+216
+"-UOP1- (Grenoble)"
+10
+"GW"
+0
+566
+"-UOP1.1- (Annecy)"
+11
+"GW"
+0
+225
+"-UOP10- (Lille)"
+100
+"+"
+0
+226
+"-UOP11- (Ormène)"
+110
+"W"
+0
+572
+"-UOP11.1- (Toulouse)"
+111
+"GW"
+0
+217
+"-UOP2- (Dijon)"
+20
+"GW"
+0
+740
+"-UOP2.1-  (Chalon)"
+21
+"GW"
+0
+218
+"-UOP3- (Lyon)"
+30
+"YW"
+0
+567
+"-UOP3.1- (Clermont-Fd)"
+31
+"GW"
+0
+219
+"-UOP4- (Cergy)"
+40
+"+"
+0
+220
+"-UOP5- (Torcy)"
+50
+"P"
+0
+221
+"-UOP6- (Massy)"
+60
+"P"
+0
+570
+"-UOP6.1- (Orléans)"
+61
+"P"
+0
+222
+"-UOP7- (Aix)"
+70
+"W"
+0
+568
+"-UOP7.1- (Nice)"
+71
+"GW"
+0
+569
+"-UOP7.2- (Montpellier)"
+72
+"GW"
+0
+223
+"-UOP8- (Rennes)"
+80
+"+"
+0
+571
+"-UOP8.1- (Caen)"
+81
+"P"
+0
+224
+"-UOP9- (Nancy)"
+90
+"+"
+0
+161
+"Agnès BONNER"
+600
+"R"
+47
+741
+"Alain SANSEAU"
+701
+"+"
+0
+16
+"Aldo VERDUNO"
+10
+"G"
+0
+274
+"Amel EL BATTI"
+212
+"GP"
+0
+95
+"Amédée COMERMA"
+903
+"CSW"
+0
+725
+"André RONDAN"
+903
+"C"
+0
+720
+"Anne PUZENAT-BOUTANT"
+750
+"+"
+0
+662
+"Anne-Claire DENEUVILLE"
+600
+"R"
+0
+444
+"Anne-Cécile INCARDONA"
+600
+"R"
+47
+477
+"Annette SAPHORES"
+813
+"TGP"
+16
+229
+"Antoine De CARNÉ"
+80
+"+"
+0
+184
+"Armelle MAZZOLENI"
+600
+"R"
+0
+608
+"Audrey VAUFREDAY"
+600
+"R"
+0
+574
+"Axelle FAURE"
+600
+"LR"
+0
+678
+"Barbara BONVINI"
+300
+"B"
+64
+743
+"Benoît LEGROS"
+701
+"+"
+0
+600
+"Bernard BARLET"
+600
+"RLPG"
+0
+3
+"Bernard JOUMARD"
+907
+"PR"
+0
+80
+"Bernard LIGNON"
+30
+"Y"
+0
+126
+"Bertrand DESCAMPS"
+100
+"+"
+0
+686
+"Björn LAEVENS"
+350
+"X"
+64
+104
+"Brigitte QUESNEL"
+701
+"P"
+0
+336
+"Bruno MASSARD"
+838
+"+"
+0
+626
+"Bénédicte DE PALMA"
+10
+"+"
+0
+135
+"Carole SOPHIE"
+232
+"PG"
+0
+697
+"Caroline KOEPPEL"
+30
+"+"
+0
+467
+"Caroline LEDEZ"
+701
+"P"
+0
+251
+"Caroline POLYCARPE"
+72
+"+"
+0
+145
+"Catherine CROY"
+601
+"LR"
+30
+179
+"Catherine NICOLLON"
+600
+"R"
+0
+183
+"Catherine ROTA"
+600
+"R"
+0
+137
+"Chabane KHEDDAR"
+905
+"LRPGH"
+0
+2
+"Chantal LEVACHÉ"
+901
+"SC"
+0
+723
+"Christelle JOURNET"
+50
+"+"
+0
+579
+"Christelle RICHARD"
+603
+"RL"
+18
+704
+"Christiane HOAREAU"
+750
+"E"
+0
+266
+"Christine BRUNET"
+601
+"LR"
+30
+482
+"Christine COUBLE"
+811
+"HGP"
+63
+317
+"Christine LUGAN"
+832
+"+"
+0
+495
+"Christine PAVELIC"
+212
+"CG"
+0
+721
+"Christophe DUCANDAS"
+750
+"+"
+0
+744
+"Christophe MAZET"
+701
+"+"
+0
+246
+"Christophe MOINDROT"
+20
+"+"
+0
+304
+"Claudine MAZARS"
+830
+"+"
+0
+735
+"Clémence JOLIVET"
+811
+"H"
+0
+284
+"Corinne CABANNE"
+813
+"TGP"
+16
+718
+"Cyril DESCLIDES"
+110
+"+"
+0
+645
+"Cécile MOLLARD"
+601
+"L"
+0
+516
+"Cédric DEFLIN"
+100
+"+"
+0
+635
+"Cédric GATEAUX"
+600
+"R"
+0
+139
+"Céline CRAIGHERO"
+603
+"RL"
+2
+634
+"David CHEVALLIER"
+600
+"R"
+0
+90
+"Delphine BURZYNSKI"
+700
+"PWG"
+64
+710
+"Delphine COMMANDEUR"
+600
+"R"
+0
+654
+"Delphine FERRARI"
+600
+"R"
+0
+307
+"Delphine GEAY"
+70
+"+"
+0
+539
+"Delphine NURIT"
+600
+"R"
+0
+20
+"Didier THOREL"
+905
+"PRG"
+0
+526
+"Dominique PALUCH"
+600
+"RL"
+0
+15
+"Eliane ALLEGRINI"
+212
+"GP"
+0
+242
+"Elisabeth TRAVERS"
+31
+"+"
+0
+688
+"Eléonore FOUARD"
+601
+"L"
+0
+243
+"Emmanuel ARESI"
+90
+"+"
+0
+331
+"Emmanuel DARLEY"
+70
+"+"
+0
+149
+"Emmanuel DUPIN"
+63
+"P"
+0
+324
+"Eric CREMADES"
+83
+"+"
+0
+715
+"Fabien DELETANG"
+50
+"+"
+0
+488
+"Fabien GASSER"
+90
+"+"
+0
+522
+"Fabien MASINI"
+30
+"Y"
+0
+230
+"Fabienne ASHMAN"
+50
+"+"
+0
+511
+"Fabienne PORTEFAIX"
+811
+"H"
+0
+92
+"Fabiola LEBRETON"
+232
+"PG"
+0
+263
+"Fabrice FRANÇOIS"
+701
+"+"
+0
+583
+"Fadila BENKADDOUR"
+603
+"RL"
+18
+233
+"Farida LARIBI"
+212
+"GP"
+0
+532
+"Farida ZARIOH"
+903
+"CW"
+0
+679
+"Federica GRASSENI"
+300
+"B"
+64
+726
+"Flore CLEMENT"
+600
+"R"
+0
+342
+"Florence BILLAUX"
+232
+"PG"
+0
+103
+"Florence FÉDÉ"
+232
+"PG"
+0
+175
+"Florence MONNIER"
+600
+"RL"
+47
+549
+"Florence PAQUET"
+900
+"P"
+0
+727
+"Florence PEIGNAUD"
+600
+"R"
+0
+153
+"Formation"
+0
+"*"
+0
+750
+"Franck HÉRY"
+500
+"+"
+0
+752
+"Franck MOREAU"
+600
+"RL"
+0
+152
+"Frank GRORUD"
+902
+"Y*"
+127
+148
+"François ZAKRZEWSKI"
+100
+"+"
+0
+35
+"Frédéric HERAULT"
+510
+"+"
+0
+700
+"Frédéric NONFOUX"
+750
+"E"
+0
+329
+"Frédérique DENTON"
+838
+"+"
+0
+746
+"Gael LE BOURDONNEC"
+701
+"+"
+0
+490
+"Geneviève BRANA"
+813
+"T"
+7
+32
+"Ghislaine JOURDAN"
+702
+"SW"
+64
+316
+"Gilles HERMAL"
+111
+"+"
+0
+337
+"Gilles PICCA"
+500
+"+"
+0
+13
+"Gilles RINGUENET"
+500
+"+"
+0
+79
+"Gilles SAINTILAN"
+60
+"P"
+0
+649
+"Giuseppe MANISCALCO"
+300
+"B"
+64
+692
+"Gwaenaelle DEPUYDT"
+600
+"R"
+0
+708
+"Hans Van RYMENANT"
+350
+"X"
+64
+36
+"Hubert LECHEVALLIER"
+100
+"+"
+0
+507
+"Huguette BARCET"
+811
+"H"
+0
+315
+"Hélène CHAMPAULT"
+701
+"TGP"
+63
+663
+"Hélène ROUSSELLE"
+600
+"R"
+0
+11
+"Isabelle ALVAREZ"
+702
+"SW"
+64
+519
+"Isabelle APAÇARENA"
+813
+"T"
+7
+350
+"Isabelle EHRLER"
+11
+"G"
+0
+91
+"Isabelle GROSLONG"
+232
+"PG"
+0
+479
+"Isabelle MORELLE"
+70
+"+"
+0
+326
+"Isabelle RIDUET"
+21
+"+"
+0
+101
+"Isabelle VALLIER"
+212
+"GP"
+0
+703
+"Ivan GOLDSTZAJN"
+750
+"E"
+0
+66
+"Jacques DUPRAT"
+900
+"+"
+0
+306
+"Jean-Baptiste NUGUES"
+700
+"PWE"
+0
+10
+"Jean-Claude DESMOULIN"
+500
+"G"
+0
+480
+"Jean-Eric CHAMBRES"
+813
+"TGP"
+7
+487
+"Jean-François COUTIN"
+60
+"P"
+0
+24
+"Jean-François HOCHET"
+500
+"YG"
+0
+56
+"Jean-Luc GRANDIN"
+80
+"+"
+0
+269
+"Jean-Marc MAZET"
+110
+"+"
+0
+736
+"Jean-Michel BIJU"
+750
+"+"
+0
+668
+"Jean-Michel BOUÉ"
+111
+"+"
+0
+512
+"Jean-Michel TARA"
+811
+"H"
+0
+742
+"Jean-Philippe DELAGE"
+701
+"+"
+0
+6
+"Jean-Pierre VILLETON-PACHOT"
+500
+"GW"
+0
+249
+"Jean-Yves BIGNON"
+500
+"P"
+0
+330
+"Jeanine DUDEK"
+838
+"+"
+0
+319
+"Josianne BONNARDEL"
+70
+"+"
+0
+186
+"Joëlle PAILLET"
+50
+"+"
+0
+345
+"Karine BOREL"
+600
+"R"
+0
+659
+"Karine LOISEAU"
+600
+"R"
+0
+278
+"L'ETABLISSEMENT"
+0
+"+"
+0
+706
+"Laetitia BOURG"
+81
+"+"
+0
+298
+"Laurence CANO"
+903
+"C"
+0
+485
+"Laurence DUPEU"
+62
+"+"
+0
+9
+"Laurence GRAZIANA"
+600
+"RLPG"
+47
+62
+"Laurence INEBRIA"
+901
+"SC"
+0
+515
+"Laurent COAT"
+40
+"+"
+0
+235
+"Laurent VILAS"
+60
+"P"
+0
+737
+"Leila CELERIER-PERRIN"
+600
+"R"
+0
+312
+"Lionel REBUFFAT"
+70
+"+"
+0
+244
+"Luc LAURENT"
+90
+"+"
+0
+705
+"Ludivine TERPEN"
+600
+"R"
+0
+489
+"Lydia BERCAITS"
+813
+"T"
+7
+510
+"Lydie LEOTOT"
+811
+"+"
+0
+61
+"Magali BELMONTE"
+702
+"SW"
+64
+146
+"Marc DELAY"
+100
+"+"
+0
+701
+"Marc LIMANTON"
+750
+"E"
+0
+187
+"Maria NORONHA"
+600
+"R"
+0
+354
+"Marie DUBRANA"
+71
+"+"
+0
+87
+"Marie-Line MASTRORILLO"
+903
+"C"
+0
+494
+"Marie-Pierre GARRIGUES"
+110
+"+"
+0
+321
+"Marie-Thérèse CORTADA"
+10
+"+"
+0
+719
+"Marie-Thérèse REINER"
+750
+"+"
+0
+181
+"Marion HARS"
+600
+"R"
+0
+132
+"Martine CONTASTI"
+601
+"L"
+0
+680
+"Massimo CASORATI"
+300
+"B"
+0
+729
+"Maud QUAGLIOTTI"
+600
+"R"
+0
+699
+"Michel DOUCET"
+900
+"E"
+0
+738
+"Monia CALDARA"
+300
+"B"
+64
+440
+"Monique DIATTA"
+212
+"GP"
+0
+513
+"Monique ROYER"
+811
+"H"
+0
+640
+"Mounia JAOUNI"
+600
+"R"
+0
+188
+"Murielle GRATTIER"
+600
+"R"
+0
+689
+"Mylène BALMAND"
+600
+"R"
+0
+166
+"Myriam PEDRIALI"
+600
+"R"
+0
+4
+"Nadine BERT"
+500
+"WGP"
+64
+674
+"Nadège GEROME"
+603
+"RL"
+2
+636
+"Natacha BERTHOIN"
+600
+"R"
+0
+160
+"Nathalie CALVET"
+601
+"L"
+0
+310
+"Nathalie CAYROL"
+701
+"+"
+0
+256
+"Nathalie CHATROUX"
+902
+"*"
+127
+37
+"Nathalie FLORES"
+60
+"P"
+0
+25
+"Nathalie GAURA"
+900
+"P"
+0
+664
+"Nathalie LEHOUX"
+232
+"PG"
+0
+180
+"Nathalie NOBILE"
+600
+"R"
+0
+733
+"Nathalie TERRIER"
+600
+"R"
+0
+713
+"Nathalie Van LOOCKE"
+350
+"X"
+64
+151
+"Nicolas CORLAY"
+84
+"+"
+0
+747
+"Nicolas FREYMANN"
+701
+"+"
+0
+449
+"Nicolas WITASSE"
+30
+"Y"
+0
+472
+"Nicole MAURICE"
+811
+"HGP"
+63
+672
+"Noëlle PEDROCCHI"
+40
+"+"
+0
+53
+"Odile LOCATELLI"
+601
+"LR"
+0
+23
+"Olivia POUILLOT"
+212
+"GP"
+0
+54
+"Olivier BLEUZE"
+10
+"G"
+0
+232
+"Olivier CHAPEAU"
+60
+"P"
+0
+234
+"Olivier GUYARD"
+40
+"+"
+0
+156
+"Pascal BECK"
+20
+"+"
+0
+100
+"Pascal DEROTE"
+50
+"+"
+0
+468
+"Pascale CARRABIN"
+904
+"P"
+0
+213
+"Pascale MICHELLAND"
+600
+"R"
+47
+85
+"Pascale PARIS"
+40
+"+"
+0
+51
+"Patricia LERAY"
+232
+"PG"
+0
+732
+"Patricia NOGUERIA"
+600
+"R"
+0
+99
+"Patrick ALBRECHT"
+11
+"+"
+0
+14
+"Patrick DIEU"
+700
+"PWE"
+0
+21
+"Philippe AIME"
+61
+"+"
+0
+98
+"Philippe ARMAING"
+72
+"+"
+0
+42
+"Philippe COUSSEMACKER"
+71
+"+"
+0
+102
+"Philippe MORARD"
+20
+"+"
+0
+34
+"Philippe SZMRZSIK"
+10
+"G"
+0
+677
+"Pieranna BORIO"
+300
+"B"
+64
+46
+"Pierre VIOLENT"
+902
+"W*"
+127
+287
+"Rhaliba ELKOTBI"
+600
+"R"
+0
+739
+"Roberto CATALETA"
+300
+"B"
+0
+753
+"Roberto MALANCA"
+300
+"B"
+0
+676
+"Rossella CONSONNI"
+300
+"B"
+86
+136
+"Régine BOURY"
+601
+"L"
+0
+178
+"Sabine COTE"
+601
+"RL"
+2
+717
+"Sandrine CHEVILLOT"
+600
+"R"
+0
+476
+"Sandrine DULAUT"
+813
+"TGP"
+47
+155
+"Sandrine MURA"
+600
+"R"
+47
+610
+"Sandrine TERRIER"
+600
+"R"
+0
+730
+"Santiago GONZALES"
+600
+"R"
+0
+682
+"Sara GAMBIRASIO"
+300
+"B"
+64
+265
+"Sarah JOUSSE"
+701
+"P"
+0
+177
+"Seguénia DEBOUZA"
+600
+"RL"
+0
+39
+"Serge DUC"
+70
+"+"
+0
+463
+"Simone SARTORI"
+811
+"HCGP"
+0
+504
+"Solé CARTAL"
+811
+"HGP"
+0
+602
+"Sonia BUTTARD"
+600
+"R"
+0
+748
+"Sophie COLLAS"
+500
+"+"
+0
+749
+"Sophie FRANCOIS"
+500
+"+"
+0
+745
+"Sophie SAINT-MARC"
+701
+"+"
+0
+648
+"Stefano COLOMBO"
+300
+"B"
+94
+247
+"Stéphane BERGERET"
+70
+"+"
+0
+474
+"Stéphane ROBERT"
+750
+"E"
+0
+624
+"Stéphanie FARVACQUE"
+91
+"H"
+0
+696
+"Stéphanie GAD"
+60
+"P"
+0
+30
+"Sylvia POUPET"
+701
+"P"
+0
+684
+"Sylvie BAUMEA"
+500
+"GWPS"
+0
+508
+"Sylvie LANGEVIN"
+811
+"HGP"
+7
+443
+"Sylvie OLIVIERI"
+600
+"R"
+0
+131
+"Sylvie SIGNORINO"
+601
+"L"
+0
+714
+"Séverine BAUSSAND"
+601
+"L"
+3
+253
+"Séverine CAUDRON"
+700
+"WPG"
+64
+122
+"Séverine JOSSERAND"
+212
+"GP"
+0
+169
+"Thi-Anh-Dao HO"
+600
+"R"
+0
+447
+"Thierry FORT"
+500
+"+"
+0
+59
+"Thierry PAQUEREAU"
+500
+"+"
+0
+751
+"Thierry SALMIN"
+500
+"+"
+0
+322
+"Thérèse RAMEL"
+11
+"+"
+0
+724
+"Valeria MERLINI"
+300
+"B"
+64
+478
+"Valérie DAUGA"
+813
+"T"
+7
+157
+"Valérie GAURA"
+232
+"PG"
+0
+707
+"Valérie GESLIN"
+110
+"+"
+0
+88
+"Valérie LE GOFF"
+702
+"SCW"
+64
+509
+"Valérie MERCIER"
+811
+"H"
+0
+621
+"Valérie TIRONZELLI"
+50
+"+"
+0
+728
+"Vanessa CHARBONNEL"
+600
+"R"
+0
+84
+"Vincent PASCAL"
+110
+"+"
+0
+245
+"Virginie DELEHAYE"
+82
+"+"
+0
+639
+"Virginie LAFFAY"
+600
+"R"
+0
+734
+"Virginie MÜLLER"
+600
+"R"
+0
+29
+"Véronique LE MONNIER"
+70
+"+"
+0
+19
+"Véronique MAZZILLI"
+600
+"R"
+0
+546
+"Véronique SIMONE"
+600
+"R"
+0
+673
+"William MILOT"
+111
+"+"
+0
+641
+"Yann BUGNAZET"
+600
+"R"
+0
+76
+"Yann GARCIA"
+701
+"Y"
+0
+300
+"Yannick AUZELOUX"
+70
+"+"
+0
+311
+"Yvonne SAUREY"
+71
+"+"
+0

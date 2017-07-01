@@ -1,0 +1,336 @@
+//Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// From TEXTINCLUDE 2
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+#ifdef APSTUDIO_INVOKED
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+	"resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+	"#include ""afxres.h""\r\n"
+	"\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+	"#include ""res\\tak.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+	"\r\n"
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+	"#include ""l.fra\\afxres.rc""  	// Standard components\r\n"
+	"#include ""l.fra\\afxprint.rc""	// printing/print preview resources\r\n"
+	"\0"
+END
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\tak.ico"
+IDR_TAKTYPE         ICON    DISCARDABLE     "res\\takdoc.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP  MOVEABLE        "res\\toolbar.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+	POPUP "&Fichier"
+	BEGIN
+		MENUITEM "&Nouveau\tCtrl+N",                ID_FILE_NEW
+		MENUITEM "&Ouvrir...\tCtrl+O",            ID_FILE_OPEN
+		MENUITEM SEPARATOR
+		MENUITEM "&Configuration de l'impression...",             ID_FILE_PRINT_SETUP
+		MENUITEM SEPARATOR
+		MENUITEM "Fichier récent",                 ID_FILE_MRU_FILE1,GRAYED
+		MENUITEM SEPARATOR
+		MENUITEM "&Quitter",                       ID_APP_EXIT
+	END
+	POPUP "&Affichage"
+	BEGIN
+		MENUITEM "&Barre d'outils",                    ID_VIEW_TOOLBAR
+		MENUITEM "B&arre d'état",                 ID_VIEW_STATUS_BAR
+	END
+	POPUP "&?"
+	BEGIN
+		MENUITEM "&Index",                      ID_HELP_INDEX
+		MENUITEM "&Utiliser l'Aide",                 ID_HELP_USING
+		MENUITEM SEPARATOR
+		MENUITEM "&A propos de tak...",          ID_APP_ABOUT
+	END
+END
+IDR_TAKTYPE MENU PRELOAD DISCARDABLE 
+BEGIN
+	POPUP "&Fichier"
+	BEGIN
+		MENUITEM "&Nouveau\tCtrl+N",                ID_FILE_NEW
+		MENUITEM "&Ouvrir...\tCtrl+O",            ID_FILE_OPEN
+		MENUITEM "&Fermer",                      ID_FILE_CLOSE
+		MENUITEM "&Enregistrer\tCtrl+S",               ID_FILE_SAVE
+		MENUITEM "En&registrer sous...",                 ID_FILE_SAVE_AS
+		MENUITEM SEPARATOR
+		MENUITEM "&Imprimer...\tCtrl+P",           ID_FILE_PRINT
+		MENUITEM "Aperçu a&vant impression",              ID_FILE_PRINT_PREVIEW
+		MENUITEM "&Configuration de l'impression...",             ID_FILE_PRINT_SETUP
+		MENUITEM SEPARATOR
+		MENUITEM "Fichier récent",                 ID_FILE_MRU_FILE1,GRAYED
+		MENUITEM SEPARATOR
+		MENUITEM "&Quitter",                       ID_APP_EXIT
+	END
+	POPUP "&Edition"
+	BEGIN
+		MENUITEM "&Annuler\tCtrl+Z",               ID_EDIT_UNDO
+		MENUITEM SEPARATOR
+		MENUITEM "&Couper\tCtrl+X",                ID_EDIT_CUT
+		MENUITEM "Co&pier\tCtrl+C",               ID_EDIT_COPY
+		MENUITEM "C&oller\tCtrl+V",              ID_EDIT_PASTE
+	END
+	POPUP "&Affichage"
+	BEGIN
+		MENUITEM "&Barre d'outils",                    ID_VIEW_TOOLBAR
+		MENUITEM "B&arre d'état",                 ID_VIEW_STATUS_BAR
+	END
+	POPUP "Fe&nêtre"
+	BEGIN
+		MENUITEM "&Nouvelle fenêtre",                 ID_WINDOW_NEW
+		MENUITEM "&Cascade",                    ID_WINDOW_CASCADE
+		MENUITEM "&Mosaïque",                       ID_WINDOW_TILE_HORZ
+		MENUITEM "&Réorganiser les icônes",              ID_WINDOW_ARRANGE
+	END
+	POPUP "&?"
+	BEGIN
+		MENUITEM "&Index",                      ID_HELP_INDEX
+		MENUITEM "&Utiliser l'Aide",                 ID_HELP_USING
+		MENUITEM SEPARATOR
+		MENUITEM "&A propos de tak...",          ID_APP_ABOUT
+	END
+END
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE 
+BEGIN
+	"N",            ID_FILE_NEW,            VIRTKEY,CONTROL
+	"O",            ID_FILE_OPEN,           VIRTKEY,CONTROL
+	"S",            ID_FILE_SAVE,           VIRTKEY,CONTROL
+	"P",            ID_FILE_PRINT,          VIRTKEY,CONTROL
+	"Z",            ID_EDIT_UNDO,           VIRTKEY,CONTROL
+	"X",            ID_EDIT_CUT,            VIRTKEY,CONTROL
+	"C",            ID_EDIT_COPY,           VIRTKEY,CONTROL
+	"V",            ID_EDIT_PASTE,          VIRTKEY,CONTROL
+	VK_BACK,        ID_EDIT_UNDO,           VIRTKEY,ALT
+	VK_DELETE,      ID_EDIT_CUT,            VIRTKEY,SHIFT
+	VK_INSERT,      ID_EDIT_COPY,           VIRTKEY,CONTROL
+	VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY,SHIFT
+	VK_F6,          ID_NEXT_PANE,           VIRTKEY 
+	VK_F6,          ID_PREV_PANE,           VIRTKEY,SHIFT
+	VK_F1,          ID_CONTEXT_HELP,        VIRTKEY,SHIFT
+	VK_F1,          ID_HELP,                VIRTKEY
+END
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  34, 22, 217, 55
+CAPTION "A propos de tak"
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Sans Serif"
+BEGIN
+	ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+	LTEXT           "tak Version 1.0",IDC_STATIC,40,10,119,8
+	LTEXT           "Copyright \251 1995",IDC_STATIC,40,25,119,8
+	DEFPUSHBUTTON   "OK",IDOK,176,6,32,14,WS_GROUP
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+	IDR_MAINFRAME           "tak"
+	IDR_TAKTYPE         "\nTak\nTak\n\n\nTak.Document\nTak Document"
+END
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+	AFX_IDS_APP_TITLE       "tak"
+	AFX_IDS_IDLEMESSAGE     "Pour obtenir de l'aide, appuyez sur F1"
+	AFX_IDS_HELPMODEMESSAGE "Sélectionnez un objet sur lequel obtenir de l'aide"
+END
+STRINGTABLE DISCARDABLE 
+BEGIN
+	ID_INDICATOR_EXT        "EXT"
+	ID_INDICATOR_CAPS       "MAJ"
+	ID_INDICATOR_NUM        "NUM"
+	ID_INDICATOR_SCRL       "DEF"
+	ID_INDICATOR_OVR        "RFT"
+	ID_INDICATOR_REC        "ENR"
+END
+STRINGTABLE DISCARDABLE 
+BEGIN
+	ID_FILE_NEW             "Crée un nouveau document\nNouveau"
+	ID_FILE_OPEN            "Ouvre un document existant\nOuvrir"
+	ID_FILE_CLOSE           "Ferme le document actif\nFermer"
+	ID_FILE_SAVE            "Enregistre le document actif\nEnregistrer"
+	ID_FILE_SAVE_AS         "Enregistre le document actif sous un nouveau nom\nEnregistrer sous"
+	ID_FILE_PAGE_SETUP      "Change d'options d'impression\nOptions d'impression"
+	ID_FILE_PRINT_SETUP     "Change d'imprimante et d'options d'impression\nChangement d'imprimante"
+	ID_FILE_PRINT           "Imprime le document actif\nImprime"
+	ID_FILE_PRINT_PREVIEW   "Affiche les pages entières\nAperçu avant impression"
+	ID_APP_ABOUT            "Affiche des informations sur le programme, la version et les droits de copyright\nA propos de"
+	ID_APP_EXIT             "Quitte l'application en invitant l'utilisateur à enregistrer les documents\nQuitte"
+	ID_CONTEXT_HELP         "Affiche l'aide sur les boutons, fenêtres et menus actifs\nAide"
+	ID_HELP_INDEX           "Affiche les rubriques d'aide\nSommaire de l'aide"
+	ID_HELP_USING           "Affiche des instructions sur l'utilisation de l'aide\nAide"
+	ID_HELP                 "Affiche l'aide sur la tâche ou commande en cours\nAide"
+	ID_FILE_MRU_FILE1       "Ouvre ce document"
+	ID_FILE_MRU_FILE2       "Ouvre ce document"
+	ID_FILE_MRU_FILE3       "Ouvre ce document"
+	ID_FILE_MRU_FILE4       "Ouvre ce document"
+	ID_NEXT_PANE            "Passe au volet suivant de la fenêtre\nVolet suivant"
+	ID_PREV_PANE            "Revient au volet précédent de la fenêtre\nVolet précédent"
+	ID_WINDOW_NEW           "Ouvre une autre fenêtre pour le document actif\nNouvelle fenêtre"
+	ID_WINDOW_ARRANGE       "Réorganise les icônes au bas de la fenêtre\nRéorganise les icônes"
+	ID_WINDOW_CASCADE       "Réorganise les fenêtres de sorte qu'elles se superposent\nCascade"
+	ID_WINDOW_TILE_HORZ     "Réorganise les fenêtres en mosaïque de sorte qu'elles ne se superposent pas\nMosaïque"
+	ID_WINDOW_TILE_VERT     "Réorganise les fenêtres en mosaïque de sorte qu'elles ne se superposent pas\nMosaïque"
+	ID_WINDOW_SPLIT         "Partage la fenêtre active en volets\nPartage"
+	ID_EDIT_CLEAR           "Efface la sélection\nEfface"
+	ID_EDIT_CLEAR_ALL       "Efface tout\nEfface tout"
+	ID_EDIT_COPY            "Copie la sélection et la place dans le Presse-papiers\nCopie"
+	ID_EDIT_CUT             "Coupe la sélection et la place dans le Presse-papiers\nCoupe"
+	ID_EDIT_FIND            "Recherche le texte spécifié\nRecherche"
+	ID_EDIT_PASTE           "Insère le contenu du Presse-papiers\nColle"
+	ID_EDIT_REPEAT          "Répète la dernière action\nRépète"
+	ID_EDIT_REPLACE         "Remplace le texte spécifié par un autre texte\nRemplace"
+	ID_EDIT_SELECT_ALL      "Sélectionne le document entier\nSélectionne tout"
+	ID_EDIT_UNDO            "Annule la dernière action\nAnnule"
+	ID_EDIT_REDO            "Répète l'action précédemment annulée\nRépète"
+	ID_VIEW_TOOLBAR         "Affiche ou masque la barre d'outils\nBarre d'outils"
+	ID_VIEW_STATUS_BAR      "Affiche ou masque la barre d'état\nBarre d'état"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+	AFX_IDS_SCSIZE          "Change la taille de la fenêtre"
+	AFX_IDS_SCMOVE          "Change la position de la fenêtre"
+	AFX_IDS_SCMINIMIZE      "Réduit la fenêtre en icône"
+	AFX_IDS_SCMAXIMIZE      "Agrandit la fenêtre au maximum"
+	AFX_IDS_SCNEXTWINDOW    "Passe à la fenêtre de document suivante"
+	AFX_IDS_SCPREVWINDOW    "Passe à la fenêtre de document précédente"
+	AFX_IDS_SCCLOSE         "Ferme la fenêtre active et invite l'utilisateur à enregistrer les documents"
+	AFX_IDS_SCRESTORE       "Rend à la fenêtre sa taille normale"
+	AFX_IDS_SCTASKLIST      "Active la Liste des tâches"
+	AFX_IDS_MDICHILD        "Active cette fenêtre"
+	AFX_IDS_PREVIEW_CLOSE   "Ferme le mode Aperçu avant impression\nFerme l'aperçu"
+END
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+#include "winver.h"
+
+VS_VERSION_INFO     VERSIONINFO
+  FILEVERSION       1,0,0,1
+  PRODUCTVERSION    1,0,0,1
+  FILEFLAGSMASK     VS_FFI_FILEFLAGSMASK
+#ifdef _DEBUG
+  FILEFLAGS         VS_FF_DEBUG
+#else
+  FILEFLAGS         0 // final version
+#endif
+  FILEOS            VOS__WINDOWS32
+  FILETYPE          VFT_APP
+  FILESUBTYPE       0   // not used
+BEGIN
+	BLOCK "StringFileInfo"
+	BEGIN
+		BLOCK "040904B0" // Lang=US English, CharSet=Unicode
+		BEGIN 
+			VALUE "CompanyName",     "\0"
+			VALUE "FileDescription", "Application MFC TAK\0"
+			VALUE "FileVersion",     "1, 0, 0, 1\0"
+			VALUE "InternalName",    "TAK\0"
+			VALUE "LegalCopyright",  "Copyright \251 1995\0"
+			VALUE "LegalTrademarks", "\0"
+			VALUE "OriginalFilename","TAK.EXE\0"
+			VALUE "ProductName",     "Application TAK\0"
+			VALUE "ProductVersion",  "1, 0, 0, 1\0"
+		END
+	END
+	BLOCK "VarFileInfo" 
+	BEGIN 
+		VALUE "Translation", 0x409, 1200
+			// English language (0x409) and the Unicode codepage (1200)
+	END
+END
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// From TEXTINCLUDE 3
+//
+
+#include "res\tak.rc2"  // non-Microsoft Visual C++ edited resources
+
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+#include "l.fra\afxres.rc"  	// Standard components
+#include "l.fra\afxprint.rc"  // printing/print preview resources
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED

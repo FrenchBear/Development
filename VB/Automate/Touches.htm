@@ -1,0 +1,235 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<META NAME="Generator" CONTENT="Microsoft Word 97">
+<TITLE>Touches</TITLE>
+<META NAME="Version" CONTENT="8.0.3429">
+<META NAME="Date" CONTENT="11/28/96">
+<META NAME="Template" CONTENT="E:\OFFICE 97\OFFICE\HTML.DOT">
+</HEAD>
+<BODY LINK="#0000ff" VLINK="#800080" BGCOLOR="#ffffff">
+
+<P><!-- saved from url=(0022)http://internet.e-mail --></P>
+<B><FONT FACE="Verdana" SIZE=4><P>Codification des touches pour la commande SendKeys</P>
+</B></FONT><I><FONT FACE="Verdana" SIZE=2><P>Retour &agrave; la commande </I></FONT><A HREF="SendKeys.htm"><FONT FACE="Verdana" SIZE=2>SendKeys </FONT></A><I><FONT FACE="Verdana" SIZE=2><BR>
+Retour &agrave; l'aide </I></FONT><A HREF="Automate.htm"><FONT FACE="Verdana" SIZE=2>g&eacute;n&eacute;rale </FONT></A></P>
+<FONT FACE="Verdana" SIZE=2><P>Chaque touche est repr&eacute;sent&eacute;e par un ou plusieurs caract&egrave;res. Pour indiquer un seul caract&egrave;re du clavier, utilisez le caract&egrave;re proprement dit. Par exemple, pour repr&eacute;senter la lettre A, affectez &agrave; l'argument <B><I>Touche</B></I> la valeur </FONT><CODE>"A"</CODE><FONT FACE="Verdana" SIZE=2>. Si vous souhaitez repr&eacute;senter plusieurs caract&egrave;res, il vous suffit d'ajouter les caract&egrave;res les uns &agrave; la suite des autres. Par exemple, pour repr&eacute;senter les lettres A, B et C, affectez la valeur </FONT><CODE>"ABC"</CODE><FONT FACE="Verdana" SIZE=2> &agrave; l'argument <B><I>Touche</B></I>.</P>
+<P>La commande <B>SendKeys</B> attribue une signification sp&eacute;ciale au signe plus (<B>+</B>), au signe insertion (<B>^</B>), au signe pourcentage (<B>%</B>), au tilde (<B>~</B>) et aux parenth&egrave;ses <B>( )</B>. Pour indiquer l'un de ces caract&egrave;res, placez-le entre accolades (</FONT><CODE>{}</CODE><FONT FACE="Verdana" SIZE=2>). Par exemple, pour indiquer le signe plus, tapez </FONT><CODE>{+}</CODE><FONT FACE="Verdana" SIZE=2>. Bien que les crochets droits ([ ]) n'aient aucune signification particuli&egrave;re dans la commande <B>SendKeys</B>, vous devez les placer eux aussi entre accolades. En effet, dans d'autres applications, ils ont une signification sp&eacute;ciale &agrave; prendre en compte en cas d'&eacute;change de donn&eacute;es dynamique (DDE). Pour indiquer des accolades, utilisez les caract&egrave;res </FONT><CODE>{{}</CODE><FONT FACE="Verdana" SIZE=2> et </FONT><CODE>{}}</CODE><FONT FACE="Verdana" SIZE=2>.</P>
+<P>Pour indiquer des caract&egrave;res qui n'apparaissent pas &agrave; l'&eacute;cran lorsque vous appuyez sur une touche (comme la touche ENTR&Eacute;E ou TAB) et des touches qui repr&eacute;sentent des actions plut&ocirc;t que des caract&egrave;res, employez les codes suivants :</P></FONT>
+<TABLE BORDER CELLSPACING=1 CELLPADDING=5 WIDTH=624>
+<TR><TD WIDTH="25%" VALIGN="MIDDLE">
+<P><B><FONT FACE="Verdana" SIZE=2>Key</B></FONT></TD>
+<TD WIDTH="75%" VALIGN="MIDDLE">
+<B><FONT FACE="Verdana" SIZE=2><P>Code</B></FONT></TD>
+</TR>
+<TR><TD WIDTH="25%" VALIGN="MIDDLE">
+<FONT FACE="Verdana" SIZE=2><P>RET.ARR</FONT></TD>
+<TD WIDTH="75%" VALIGN="MIDDLE">
+<CODE><P>{BACKSPACE}</CODE><FONT FACE="Verdana" SIZE=2>, </FONT><CODE>{BS}</CODE><FONT FACE="Verdana" SIZE=2> ou </FONT><CODE>{BKSP}</CODE></TD>
+</TR>
+<TR><TD WIDTH="25%" VALIGN="MIDDLE">
+<FONT FACE="Verdana" SIZE=2><P>ATTN</FONT></TD>
+<TD WIDTH="75%" VALIGN="MIDDLE">
+<CODE><P>{BREAK}</CODE></TD>
+</TR>
+<TR><TD WIDTH="25%" VALIGN="MIDDLE">
+<FONT FACE="Verdana" SIZE=2><P>VERR.MAJ</FONT></TD>
+<TD WIDTH="75%" VALIGN="MIDDLE">
+<CODE><P>{CAPSLOCK}</CODE></TD>
+</TR>
+<TR><TD WIDTH="25%" VALIGN="MIDDLE">
+<FONT FACE="Verdana" SIZE=2><P>SUPPR</FONT></TD>
+<TD WIDTH="75%" VALIGN="MIDDLE">
+<CODE><P>{DELETE}</CODE><FONT FACE="Verdana" SIZE=2> ou </FONT><CODE>{DEL}</CODE></TD>
+</TR>
+<TR><TD WIDTH="25%" VALIGN="MIDDLE">
+<FONT FACE="Verdana" SIZE=2><P>BAS</FONT></TD>
+<TD WIDTH="75%" VALIGN="MIDDLE">
+<CODE><P>{DOWN}</CODE></TD>
+</TR>
+<TR><TD WIDTH="25%" VALIGN="MIDDLE">
+<FONT FACE="Verdana" SIZE=2><P>FIN</FONT></TD>
+<TD WIDTH="75%" VALIGN="MIDDLE">
+<CODE><P>{END}</CODE></TD>
+</TR>
+<TR><TD WIDTH="25%" VALIGN="MIDDLE">
+<FONT FACE="Verdana" SIZE=2><P>ENTR&Eacute;E </FONT></TD>
+<TD WIDTH="75%" VALIGN="MIDDLE">
+<CODE><P>{ENTER}</CODE><FONT FACE="Verdana" SIZE=2>ou </FONT><CODE>~</CODE></TD>
+</TR>
+<TR><TD WIDTH="25%" VALIGN="MIDDLE">
+<FONT FACE="Verdana" SIZE=2><P>&Eacute;CHAP</FONT></TD>
+<TD WIDTH="75%" VALIGN="MIDDLE">
+<CODE><P>{ESC}</CODE></TD>
+</TR>
+<TR><TD WIDTH="25%" VALIGN="MIDDLE">
+<FONT FACE="Verdana" SIZE=2><P>AIDE</FONT></TD>
+<TD WIDTH="75%" VALIGN="MIDDLE">
+<CODE><P>{HELP}</CODE></TD>
+</TR>
+<TR><TD WIDTH="25%" VALIGN="MIDDLE">
+<FONT FACE="Verdana" SIZE=2><P>ORIGINE</FONT></TD>
+<TD WIDTH="75%" VALIGN="MIDDLE">
+<CODE><P>{HOME}</CODE></TD>
+</TR>
+<TR><TD WIDTH="25%" VALIGN="MIDDLE">
+<FONT FACE="Verdana" SIZE=2><P>INSERTION</FONT></TD>
+<TD WIDTH="75%" VALIGN="MIDDLE">
+<CODE><P>{INSERT}</CODE><FONT FACE="Verdana" SIZE=2> ou </FONT><CODE>{INS}</CODE></TD>
+</TR>
+<TR><TD WIDTH="25%" VALIGN="MIDDLE">
+<FONT FACE="Verdana" SIZE=2><P>GAUCHE</FONT></TD>
+<TD WIDTH="75%" VALIGN="MIDDLE">
+<CODE><P>{LEFT}</CODE></TD>
+</TR>
+<TR><TD WIDTH="25%" VALIGN="MIDDLE">
+<FONT FACE="Verdana" SIZE=2><P>VERR.NUM</FONT></TD>
+<TD WIDTH="75%" VALIGN="MIDDLE">
+<CODE><P>{NUMLOCK}</CODE></TD>
+</TR>
+<TR><TD WIDTH="25%" VALIGN="MIDDLE">
+<FONT FACE="Verdana" SIZE=2><P>PG.SUIV</FONT></TD>
+<TD WIDTH="75%" VALIGN="MIDDLE">
+<CODE><P>{PGDN}</CODE></TD>
+</TR>
+<TR><TD WIDTH="25%" VALIGN="MIDDLE">
+<FONT FACE="Verdana" SIZE=2><P>PG.PR&Eacute;C</FONT></TD>
+<TD WIDTH="75%" VALIGN="MIDDLE">
+<CODE><P>{PGUP}</CODE></TD>
+</TR>
+<TR><TD WIDTH="25%" VALIGN="MIDDLE">
+<FONT FACE="Verdana" SIZE=2><P>IMPR. &Eacute;CRAN</FONT></TD>
+<TD WIDTH="75%" VALIGN="MIDDLE">
+<CODE><P>{PRTSC}</CODE></TD>
+</TR>
+<TR><TD WIDTH="25%" VALIGN="MIDDLE">
+<FONT FACE="Verdana" SIZE=2><P>DROITE</FONT></TD>
+<TD WIDTH="75%" VALIGN="MIDDLE">
+<CODE><P>{RIGHT}</CODE></TD>
+</TR>
+<TR><TD WIDTH="25%" VALIGN="MIDDLE">
+<FONT FACE="Verdana" SIZE=2><P>ARR&Ecirc;T.D&Eacute;FIL</FONT></TD>
+<TD WIDTH="75%" VALIGN="MIDDLE">
+<CODE><P>{SCROLLLOCK}</CODE></TD>
+</TR>
+<TR><TD WIDTH="25%" VALIGN="MIDDLE">
+<FONT FACE="Verdana" SIZE=2><P>TAB</FONT></TD>
+<TD WIDTH="75%" VALIGN="MIDDLE">
+<CODE><P>{TAB}</CODE></TD>
+</TR>
+<TR><TD WIDTH="25%" VALIGN="MIDDLE">
+<FONT FACE="Verdana" SIZE=2><P>HAUT</FONT></TD>
+<TD WIDTH="75%" VALIGN="MIDDLE">
+<CODE><P>{UP}</CODE></TD>
+</TR>
+<TR><TD WIDTH="25%" VALIGN="MIDDLE">
+<FONT FACE="Verdana" SIZE=2><P>F1</FONT></TD>
+<TD WIDTH="75%" VALIGN="MIDDLE">
+<CODE><P>{F1}</CODE></TD>
+</TR>
+<TR><TD WIDTH="25%" VALIGN="MIDDLE">
+<FONT FACE="Verdana" SIZE=2><P>F2</FONT></TD>
+<TD WIDTH="75%" VALIGN="MIDDLE">
+<CODE><P>{F2}</CODE></TD>
+</TR>
+<TR><TD WIDTH="25%" VALIGN="MIDDLE">
+<FONT FACE="Verdana" SIZE=2><P>F3</FONT></TD>
+<TD WIDTH="75%" VALIGN="MIDDLE">
+<CODE><P>{F3}</CODE></TD>
+</TR>
+<TR><TD WIDTH="25%" VALIGN="MIDDLE">
+<FONT FACE="Verdana" SIZE=2><P>F4</FONT></TD>
+<TD WIDTH="75%" VALIGN="MIDDLE">
+<CODE><P>{F4}</CODE></TD>
+</TR>
+<TR><TD WIDTH="25%" VALIGN="MIDDLE">
+<FONT FACE="Verdana" SIZE=2><P>F5</FONT></TD>
+<TD WIDTH="75%" VALIGN="MIDDLE">
+<CODE><P>{F5}</CODE></TD>
+</TR>
+<TR><TD WIDTH="25%" VALIGN="MIDDLE">
+<FONT FACE="Verdana" SIZE=2><P>F6</FONT></TD>
+<TD WIDTH="75%" VALIGN="MIDDLE">
+<CODE><P>{F6}</CODE></TD>
+</TR>
+<TR><TD WIDTH="25%" VALIGN="MIDDLE">
+<FONT FACE="Verdana" SIZE=2><P>F7</FONT></TD>
+<TD WIDTH="75%" VALIGN="MIDDLE">
+<CODE><P>{F7}</CODE></TD>
+</TR>
+<TR><TD WIDTH="25%" VALIGN="MIDDLE">
+<FONT FACE="Verdana" SIZE=2><P>F8</FONT></TD>
+<TD WIDTH="75%" VALIGN="MIDDLE">
+<CODE><P>{F8}</CODE></TD>
+</TR>
+<TR><TD WIDTH="25%" VALIGN="MIDDLE">
+<FONT FACE="Verdana" SIZE=2><P>F9</FONT></TD>
+<TD WIDTH="75%" VALIGN="MIDDLE">
+<CODE><P>{F9}</CODE></TD>
+</TR>
+<TR><TD WIDTH="25%" VALIGN="MIDDLE">
+<FONT FACE="Verdana" SIZE=2><P>F10</FONT></TD>
+<TD WIDTH="75%" VALIGN="MIDDLE">
+<CODE><P>{F10}</CODE></TD>
+</TR>
+<TR><TD WIDTH="25%" VALIGN="MIDDLE">
+<FONT FACE="Verdana" SIZE=2><P>F11</FONT></TD>
+<TD WIDTH="75%" VALIGN="MIDDLE">
+<CODE><P>{F11}</CODE></TD>
+</TR>
+<TR><TD WIDTH="25%" VALIGN="MIDDLE">
+<FONT FACE="Verdana" SIZE=2><P>F12</FONT></TD>
+<TD WIDTH="75%" VALIGN="MIDDLE">
+<CODE><P>{F12}</CODE></TD>
+</TR>
+<TR><TD WIDTH="25%" VALIGN="MIDDLE">
+<FONT FACE="Verdana" SIZE=2><P>F13</FONT></TD>
+<TD WIDTH="75%" VALIGN="MIDDLE">
+<CODE><P>{F13}</CODE></TD>
+</TR>
+<TR><TD WIDTH="25%" VALIGN="MIDDLE">
+<FONT FACE="Verdana" SIZE=2><P>F14</FONT></TD>
+<TD WIDTH="75%" VALIGN="MIDDLE">
+<CODE><P>{F14}</CODE></TD>
+</TR>
+<TR><TD WIDTH="25%" VALIGN="MIDDLE">
+<FONT FACE="Verdana" SIZE=2><P>F15</FONT></TD>
+<TD WIDTH="75%" VALIGN="MIDDLE">
+<CODE><P>{F15}</CODE></TD>
+</TR>
+<TR><TD WIDTH="25%" VALIGN="MIDDLE">
+<FONT FACE="Verdana" SIZE=2><P>F16</FONT></TD>
+<TD WIDTH="75%" VALIGN="MIDDLE">
+<CODE><P>{F16}</CODE></TD>
+</TR>
+</TABLE>
+
+<FONT FACE="Verdana" SIZE=2><P>Pour indiquer une combinaison de touches avec MAJ, CTRL et ALT, faites pr&eacute;c&eacute;der le code normal de la touche d'un ou plusieurs codes parmi les suivants :</P></FONT>
+<TABLE BORDER CELLSPACING=1 CELLPADDING=5 WIDTH=624>
+<TR><TD WIDTH="15%" VALIGN="MIDDLE">
+<P><B><FONT FACE="Verdana" SIZE=2>Touche</B></FONT></TD>
+<TD WIDTH="85%" VALIGN="MIDDLE">
+<B><FONT FACE="Verdana" SIZE=2><P>Code</B></FONT></TD>
+</TR>
+<TR><TD WIDTH="15%" VALIGN="MIDDLE">
+<FONT FACE="Verdana" SIZE=2><P>MAJ</FONT></TD>
+<TD WIDTH="85%" VALIGN="MIDDLE">
+<CODE><P>+</CODE></TD>
+</TR>
+<TR><TD WIDTH="15%" VALIGN="MIDDLE">
+<FONT FACE="Verdana" SIZE=2><P>CTRL </FONT></TD>
+<TD WIDTH="85%" VALIGN="MIDDLE">
+<CODE><P>^</CODE></TD>
+</TR>
+<TR><TD WIDTH="15%" VALIGN="MIDDLE">
+<FONT FACE="Verdana" SIZE=2><P>ALT</FONT></TD>
+<TD WIDTH="85%" VALIGN="MIDDLE">
+<CODE><P>%</CODE></TD>
+</TR>
+</TABLE>
+
+<FONT FACE="Verdana" SIZE=2><P>Pour indiquer que les touches MAJ, CTRL et ALT doivent &ecirc;tre maintenues enfonc&eacute;es pendant que d'autres touches sont utilis&eacute;es, mettez le code des touches entre parenth&egrave;ses. Par exemple, pour que la touche MAJ soit maintenue enfonc&eacute;e pendant que les touches E et C sont utilis&eacute;es, indiquez "</FONT><CODE>+(EC)</CODE><FONT FACE="Verdana" SIZE=2>". Pour que la touche MAJ soit maintenue enfonc&eacute;e en m&ecirc;me temps que la touche E et que l'utilisateur appuie ensuite sur la touche C sans enfoncer la touche MAJ, utilisez "</FONT><CODE>+EC</CODE><FONT FACE="Verdana" SIZE=2>".</P>
+<P>Pour indiquer qu'une touche doit &ecirc;tre r&eacute;p&eacute;t&eacute;e, employez la forme </FONT><CODE>{touche nombre}</CODE><FONT FACE="Verdana" SIZE=2>, sans oublier d'ins&eacute;rer un espace entre </FONT><CODE>touche</CODE><FONT FACE="Verdana" SIZE=2> et </FONT><CODE>nombre.</CODE><FONT FACE="Verdana" SIZE=2> Par exemple, </FONT><CODE>{LEFT 42}</CODE><FONT FACE="Verdana" SIZE=2> signifie que la touche GAUCHE doit &ecirc;tre enfonc&eacute;e 42 fois et </FONT><CODE>{h 10}</CODE><FONT FACE="Verdana" SIZE=2> qu'il faut appuyer 10 fois sur la touche H.</P>
+<B><P>Note</B> L'instruction<B> SendKeys</B> ne peut envoyer de touches &agrave; une application qui n'est pas con&ccedil;ue pour &ecirc;tre ex&eacute;cut&eacute;e dans l'environnement Microsoft Windows. L'instruction <B>Sendkeys</B> ne peut pas non plus envoyer la touche IMP. &Eacute;CRAN {</FONT><CODE>PRTSC</CODE><FONT FACE="Verdana" SIZE=2>} aux applications.</P>
+<P>&nbsp;</P></FONT></BODY>
+</HTML>

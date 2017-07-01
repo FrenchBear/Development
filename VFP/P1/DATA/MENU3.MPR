@@ -1,0 +1,31 @@
+*       *********************************************************
+*       *                                                         
+*       * 12/08/2004             MENU3.MPR              23:56:03  
+*       *                                                         
+*       *********************************************************
+*       *                                                         
+*       * Pierre VIOLENT                                          
+*       *                                                         
+*       * Copyright (C) 2004 ES                                   
+*       * Adresse                                                 
+*       * Ville,     Code posta                                   
+*       * Pays                                              
+*       *                                                         
+*       * Description:                                            
+*       * Ce programme a été généré automatiquement par GENMENU.     
+*       *                                                         
+*       *********************************************************
+
+
+*       *********************************************************
+*       *                                                         
+*       *                    Définition du menu                   
+*       *                                                         
+*       *********************************************************
+*
+
+DEFINE POPUP raccourci SHORTCUT RELATIVE FROM MROW(),MCOL()
+DEFINE BAR 1 OF raccourci PROMPT "Couper"
+ON SELECTION BAR 1 OF raccourci messagebox("Couper")
+
+ACTIVATE POPUP raccourci

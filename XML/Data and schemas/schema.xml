@@ -1,0 +1,39 @@
+<XMLContainer xmlns="FD" v="1">
+  
+  <XMLFields xmlns="" v="1">
+    <XMLField Name="comment" Type="String" Comment="An internal comment for the analyte (displayed as a tooltip)" />
+    <XMLField Name="QCChartFormula" Type="String" ContentHint="VBScript" Comment="A VBScript formula that should return a ControlChart Code if the analyte value should be exported as a ControlChart Point" />
+    <XMLField Name="QCChartDependencyList" Type="String" Length="500" ContentHint="CSV" Comment="Dependencies for QCChartFormula: a comma-separated list of analytes codes.  QCChartFormula script has a direct access to theses dependencies by name" />
+	<XMLField Name="isNoGlobalRecalculateOnLoad" Type="Boolean" Comment="If True, prevent BookMaster to execute a GlobalRecalculate just after loading a Page" />
+  </XMLFields>
+
+  <ValidationSchema v="1" xmlns="">
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="XMLContainer">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="MultiField">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element maxOccurs="unbounded" name="Field">
+                    <xs:complexType>
+                      <xs:simpleContent>
+                        <xs:extension base="xs:string">
+                          <xs:attribute name="Name" type="xs:string" use="required" />
+                          <xs:attribute name="Type" type="xs:string" use="required" />
+                        </xs:extension>
+                      </xs:simpleContent>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+                <xs:attribute name="v" type="xs:integer" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+          <xs:attribute name="v" type="xs:integer" use="required" />
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </ValidationSchema>
+  
+</XMLContainer>

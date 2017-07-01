@@ -1,0 +1,579 @@
+majreg
+HKEY_CLASSES_ROOT\SoundRec\protocol\StdFileEditing\Server\
+                                REG_SZ:               C:\WIN4\sndrec32.exe
+HKEY_CLASSES_ROOT\mplayer\protocol\StdFileEditing\Server\
+                                REG_SZ:               C:\WIN4\mplayer.exe
+HKEY_CURRENT_USER\Control Panel\Cursors\
+  Arrow                         REG_SZ:               C:\WIN4\CURSORS\3dwarro.cur
+HKEY_CURRENT_USER\Control Panel\Cursors\
+  Help                          REG_SZ:               C:\WIN4\CURSORS\Yquest.ani
+HKEY_CURRENT_USER\Control Panel\Cursors\
+  AppStarting                   REG_SZ:               C:\WIN4\CURSORS\Dinosaur.ani
+HKEY_CURRENT_USER\Control Panel\Cursors\
+  Wait                          REG_SZ:               C:\WIN4\CURSORS\Dinosau2.ani
+HKEY_CURRENT_USER\Control Panel\Cursors\
+  Crosshair                     REG_SZ:               C:\WIN4\cursors\cross_1.cur
+HKEY_CURRENT_USER\Control Panel\Cursors\
+  IBeam                         REG_SZ:               C:\WIN4\cursors\beam_1.cur
+HKEY_CURRENT_USER\Control Panel\Cursors\
+  NWPen                         REG_SZ:               C:\WIN4\cursors\pen_1.cur
+HKEY_CURRENT_USER\Control Panel\Cursors\
+  No                            REG_SZ:               C:\WIN4\cursors\no_1.cur
+HKEY_CURRENT_USER\Control Panel\Cursors\
+  SizeNS                        REG_SZ:               C:\WIN4\cursors\size4_1.cur
+HKEY_CURRENT_USER\Control Panel\Cursors\
+  SizeWE                        REG_SZ:               C:\WIN4\cursors\size3_1.cur
+HKEY_CURRENT_USER\Control Panel\Cursors\
+  SizeNWSE                      REG_SZ:               C:\WIN4\cursors\size2_1.cur
+HKEY_CURRENT_USER\Control Panel\Cursors\
+  SizeNESW                      REG_SZ:               C:\WIN4\cursors\size1_1.cur
+HKEY_CURRENT_USER\Control Panel\Cursors\
+  SizeAll                       REG_SZ:               C:\WIN4\cursors\move_1.cur
+HKEY_CURRENT_USER\Control Panel\Cursors\
+  UpArrow                       REG_SZ:               C:\WIN4\cursors\up_1.cur
+HKEY_CURRENT_USER\Control Panel\Cursors\Schemes\
+  3D Pointers                   REG_SZ:               C:\WIN4\cursors\arrow_1.cur,C:\WIN4\CURSORS\Yquest.ani,C:\WIN4\CURSORS\Dinosaur.ani,C:\WIN4\CURSORS\Dinosau2.ani,C:\WIN4\cursors\cross_1.cur,C:\WIN4\cursors\beam_1.cur,C:\WIN4\cursors\pen_1.cur,C:\WIN4\cursors\no_1.cur,C:\WIN4\cursors\size4_1.cur,C:\WIN4\cursors\size3_1.cur,C:\WIN4\cursors\size2_1.cur,C:\WIN4\cursors\size1_1.cur,C:\WIN4\cursors\move_1.cur,C:\WIN4\cursors\up_1.cur
+HKEY_CURRENT_USER\Control Panel\Cursors\Schemes\
+  Windows Standard (large)      REG_SZ:               C:\WIN4\cursors\arrow_M.cur,C:\WIN4\cursors\help_M.cur,C:\WIN4\cursors\wait_M.cur,C:\WIN4\cursors\busy_M.cur,C:\WIN4\cursors\cross_M.cur,C:\WIN4\cursors\beam_M.cur,C:\WIN4\cursors\pen_M.cur,C:\WIN4\cursors\no_M.cur,C:\WIN4\cursors\size4_M.cur,C:\WIN4\cursors\size3_M.cur,C:\WIN4\cursors\size2_M.cur,C:\WIN4\cursors\size1_M.cur,C:\WIN4\cursors\move_M.cur,C:\WIN4\cursors\up_M.cur
+HKEY_CURRENT_USER\Control Panel\Cursors\Schemes\
+  Windows Stnadard (extra large)REG_SZ:               C:\WIN4\cursors\arrow_L.cur,C:\WIN4\cursors\help_L.cur,C:\WIN4\cursors\wait_L.cur,C:\WIN4\cursors\busy_L.cur,C:\WIN4\cursors\cross_L.cur,C:\WIN4\cursors\beam_L.cur,C:\WIN4\cursors\pen_L.cur,C:\WIN4\cursors\no_L.cur,C:\WIN4\cursors\size4_L.cur,C:\WIN4\cursors\size3_L.cur,C:\WIN4\cursors\size2_L.cur,C:\WIN4\cursors\size1_L.cur,C:\WIN4\cursors\move_L.cur,C:\WIN4\cursors\up_L.cur
+HKEY_CURRENT_USER\Control Panel\Cursors\Schemes\
+  Vio                           REG_SZ:               C:\WIN4\CURSORS\3dwarro.cur,C:\WIN4\CURSORS\Yquest.ani,C:\WIN4\CURSORS\Dinosaur.ani,C:\WIN4\CURSORS\Dinosau2.ani,C:\WIN4\cursors\cross_1.cur,C:\WIN4\cursors\beam_1.cur,C:\WIN4\cursors\pen_1.cur,C:\WIN4\cursors\no_1.cur,C:\WIN4\cursors\size4_1.cur,C:\WIN4\cursors\size3_1.cur,C:\WIN4\cursors\size2_1.cur,C:\WIN4\cursors\size1_1.cur,C:\WIN4\cursors\move_1.cur,C:\WIN4\cursors\up_1.cur
+HKEY_CURRENT_USER\Software\Microsoft\At Work Fax\Transport Service Provider\
+  Cover Page Editor             REG_SZ:               C:\WIN4\FaxCover.exe /SSESS_ID
+HKEY_CURRENT_USER\Software\Microsoft\At Work Fax\Transport Service Provider\
+  CPE Support DLL               REG_SZ:               C:\WIN4\SYSTEM\AWFAXP32.DLL
+HKEY_CURRENT_USER\Software\Microsoft\Word\6.0\Proofing Tools\Spelling\2057\Normal\
+  Engine                        REG_SZ:               C:\WIN4\msapps\proof\MSSP232.DLL
+HKEY_CURRENT_USER\Software\Microsoft\Word\6.0\Proofing Tools\Spelling\2057\Normal\
+  Dictionary                    REG_SZ:               C:\WIN4\msapps\proof\MSSP2_EN.LEX
+HKEY_CURRENT_USER\Software\Microsoft\Editeur de page de garde\Recent File List\
+  File1                         REG_SZ:               C:\WIN4\GENERAL PURPOSE.CPE
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\Explorer\EmptyRecycleBin\Musica0\
+                                REG_SZ:               C:\WIN4\media\Son Musica corbeille.wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\Explorer\EmptyRecycleBin\Nature0\
+                                REG_SZ:               C:\WIN4\media\Son Nature corbeille .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\Explorer\EmptyRecycleBin\Robotz0\
+                                REG_SZ:               C:\WIN4\media\Son Robotz corbeille .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\Explorer\EmptyRecycleBin\Utopia0\
+                                REG_SZ:               C:\WIN4\media\Son Utopia corbeille.wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\Explorer\EmptyRecycleBin\.current\
+                                REG_SZ:               C:\WIN4\media\Son Musica corbeille.wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemStart\Musica0\
+                                REG_SZ:               C:\WIN4\media\Son Musica démarrage de Windows .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemStart\Nature0\
+                                REG_SZ:               C:\WIN4\media\Son Nature démarrage de Windows  .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemStart\Robotz0\
+                                REG_SZ:               C:\WIN4\media\Son Robotz démarrage de Windows .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemStart\Utopia0\
+                                REG_SZ:               C:\WIN4\media\Son Utopia démarrage de Windows .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemStart\.current\
+                                REG_SZ:               C:\WIN4\media\Son Musica démarrage de Windows .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemExit\Musica0\
+                                REG_SZ:               C:\WIN4\media\Son Musica sortie de Windows .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemExit\Nature0\
+                                REG_SZ:               C:\WIN4\media\Son Nature sortie de Windows .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemExit\Robotz0\
+                                REG_SZ:               C:\WIN4\media\Son Robotz sortie de Windows .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemExit\Utopia0\
+                                REG_SZ:               C:\WIN4\media\Son Utopia sortie de Windows .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemExit\.current\
+                                REG_SZ:               C:\WIN4\media\Son Musica sortie de Windows .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemHand\Musica0\
+                                REG_SZ:               C:\WIN4\media\Son Musica arrêt critique .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemHand\Nature0\
+                                REG_SZ:               C:\WIN4\media\Son Nature arrêt critique .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemHand\Robotz0\
+                                REG_SZ:               C:\WIN4\media\Son Robotz arrêt critique .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemHand\Utopia0\
+                                REG_SZ:               C:\WIN4\media\Son Utopia arrêt critique .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemHand\.current\
+                                REG_SZ:               C:\WIN4\media\Son Musica arrêt critique .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemQuestion\Musica0\
+                                REG_SZ:               C:\WIN4\media\Son Musica question .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemQuestion\Nature0\
+                                REG_SZ:               C:\WIN4\media\Son Nature question .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemQuestion\Robotz0\
+                                REG_SZ:               C:\WIN4\media\Son Robotz question.wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemQuestion\Utopia0\
+                                REG_SZ:               C:\WIN4\media\Son Utopia question .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemQuestion\.current\
+                                REG_SZ:               C:\WIN4\media\Son Musica question .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemExclamation\Musica0\
+                                REG_SZ:               C:\WIN4\media\Son Musica exclamation .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemExclamation\Nature0\
+                                REG_SZ:               C:\WIN4\media\Son Nature exclamation.wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemExclamation\Robotz0\
+                                REG_SZ:               C:\WIN4\media\Son Robotz exclamation.wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemExclamation\Utopia0\
+                                REG_SZ:               C:\WIN4\media\Son Utopia exclamation .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemExclamation\.current\
+                                REG_SZ:               C:\WIN4\media\Son Musica exclamation .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemAsterisk\Musica0\
+                                REG_SZ:               C:\WIN4\media\Son Musica astérisque .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemAsterisk\Nature0\
+                                REG_SZ:               C:\WIN4\media\Son Nature astérisque.wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemAsterisk\Robotz0\
+                                REG_SZ:               C:\WIN4\media\Son Robotz astérisque.wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemAsterisk\Utopia0\
+                                REG_SZ:               C:\WIN4\media\Son Utopia astérisque .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\SystemAsterisk\.current\
+                                REG_SZ:               C:\WIN4\media\Son Musica astérisque .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\Open\Musica0\
+                                REG_SZ:               C:\WIN4\media\Son Musica ouvrir .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\Open\Nature0\
+                                REG_SZ:               C:\WIN4\media\Son Nature ouvrir.wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\Open\Robotz0\
+                                REG_SZ:               C:\WIN4\media\Son Robotz ouvrir.wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\Open\Utopia0\
+                                REG_SZ:               C:\WIN4\media\Son Utopia ouvrir .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\Open\.current\
+                                REG_SZ:               C:\WIN4\media\Son musica ouvrir .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\Close\Musica0\
+                                REG_SZ:               C:\WIN4\media\Son Musica fermer .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\Close\Nature0\
+                                REG_SZ:               C:\WIN4\media\Son Nature fermeture.wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\Close\Robotz0\
+                                REG_SZ:               C:\WIN4\media\Son Robotz fermer.wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\Close\Utopia0\
+                                REG_SZ:               C:\WIN4\media\Son Utopia fermer .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\Close\.current\
+                                REG_SZ:               C:\WIN4\media\Son Musica fermer .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\Maximize\Musica0\
+                                REG_SZ:               C:\WIN4\media\Son Musica maximiser .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\Maximize\Nature0\
+                                REG_SZ:               C:\WIN4\media\Son Nature maximiser.wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\Maximize\Robotz0\
+                                REG_SZ:               C:\WIN4\media\Son Robotz maximiser.wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\Maximize\Utopia0\
+                                REG_SZ:               C:\WIN4\media\Son Utopia maximiser .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\Maximize\.current\
+                                REG_SZ:               C:\WIN4\media\Son Musica maximiser .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\Minimize\Musica0\
+                                REG_SZ:               C:\WIN4\media\Son Musica minimiser .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\Minimize\Nature0\
+                                REG_SZ:               C:\WIN4\media\Son Nature minimiser .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\Minimize\Robotz0\
+                                REG_SZ:               C:\WIN4\media\Son Robotz minimiser.wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\Minimize\Utopia0\
+                                REG_SZ:               C:\WIN4\media\Son Utopia minimiser .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\Minimize\.current\
+                                REG_SZ:               C:\WIN4\media\Son Musica minimiser .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\RestoreDown\Musica0\
+                                REG_SZ:               C:\WIN4\media\Son Musica niveau inférieur.wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\RestoreDown\Nature0\
+                                REG_SZ:               C:\WIN4\media\Son Nature niveau inférieur .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\RestoreDown\Robotz0\
+                                REG_SZ:               C:\WIN4\media\Son Robotz niveau inférieur.wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\RestoreDown\Utopia0\
+                                REG_SZ:               C:\WIN4\media\Son Utopia niveau inférieur .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\RestoreDown\.current\
+                                REG_SZ:               C:\WIN4\media\Son Musica niveau inférieur.wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\RestoreUp\Musica0\
+                                REG_SZ:               C:\WIN4\media\Son Musica niveau supérieur .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\RestoreUp\Nature0\
+                                REG_SZ:               C:\WIN4\media\Son Nature niveau inférieur .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\RestoreUp\Robotz0\
+                                REG_SZ:               C:\WIN4\media\Son Robotz niveau supérieur .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\RestoreUp\Utopia0\
+                                REG_SZ:               C:\WIN4\media\Son Utopia niveau supérieur .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\RestoreUp\.current\
+                                REG_SZ:               C:\WIN4\media\Son Musica niveau supérieur .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\MenuCommand\Musica0\
+                                REG_SZ:               C:\WIN4\media\Son Musica commande menu .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\MenuCommand\Nature0\
+                                REG_SZ:               C:\WIN4\media\Son Nature commande menu .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\MenuCommand\Robotz0\
+                                REG_SZ:               C:\WIN4\media\Son Robotz commande menu .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\MenuCommand\Utopia0\
+                                REG_SZ:               C:\WIN4\media\Son Utopia commande menu .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\MenuCommand\.current\
+                                REG_SZ:               C:\WIN4\media\Son nature astérisque.wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\MenuPopup\Musica0\
+                                REG_SZ:               C:\WIN4\media\Son Musica menu automatique .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\MenuPopup\Nature0\
+                                REG_SZ:               C:\WIN4\media\Son Nature menu automatique .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\MenuPopup\Robotz0\
+                                REG_SZ:               C:\WIN4\media\Son Robotz menu automatique .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\MenuPopup\Utopia0\
+                                REG_SZ:               C:\WIN4\media\Son Utopia menu automatique .wav
+HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\MenuPopup\.current\
+                                REG_SZ:               C:\WIN4\media\Son Musica menu automatique .wav
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\ICM\mntr\none\
+  profile00                     REG_SZ:               C:\WIN4\SYSTEM\COLOR\MNB22G15.ICM
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\ICM\mntr\none\
+  profile01                     REG_SZ:               C:\WIN4\SYSTEM\COLOR\MNB22G18.ICM
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\ICM\mntr\none\
+  profile02                     REG_SZ:               C:\WIN4\SYSTEM\COLOR\MNB22G21.ICM
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\ICM\mntr\none\
+  profile03                     REG_SZ:               C:\WIN4\SYSTEM\COLOR\MNEBUG15.ICM
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\ICM\mntr\none\
+  profile04                     REG_SZ:               C:\WIN4\SYSTEM\COLOR\MNEBUG18.ICM
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\ICM\mntr\none\
+  profile05                     REG_SZ:               C:\WIN4\SYSTEM\COLOR\MNEBUG21.ICM
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\ICM\mntr\none\
+  profile06                     REG_SZ:               C:\WIN4\SYSTEM\COLOR\MNP22G15.ICM
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\ICM\mntr\none\
+  profile07                     REG_SZ:               C:\WIN4\SYSTEM\COLOR\MNP22G18.ICM
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\ICM\mntr\none\
+  profile08                     REG_SZ:               C:\WIN4\SYSTEM\COLOR\MNP22G21.ICM
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\MS-DOSOptions\Mouse\
+  Config.Sys                    REG_SZ:               DeviceHigh=C:\WIN4\MOUSE.SYS
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Albertus Medium (TrueType)    REG_SZ:               C:\WIN4\fonts\ALBERTM0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Algerian Normal (TrueType)    REG_SZ:               C:\WIN4\fonts\ALGER__0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Antique Olive (TrueType)      REG_SZ:               C:\WIN4\fonts\AOLIVE_0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Antique Olive Bold (TrueType) REG_SZ:               C:\WIN4\fonts\AOLIVEB0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Antique Olive Italic (TrueTypeREG_SZ:               C:\WIN4\fonts\AOLIVEI0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Arial Narrow Gras (TrueType)  REG_SZ:               C:\WIN4\fonts\ARIALNB0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Arial Narrow Gras Italique (TrREG_SZ:               C:\WIN4\fonts\ARIALNB2.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Arial Narrow Italique (TrueTypREG_SZ:               C:\WIN4\fonts\ARIALNI0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Arial Narrow Normal (TrueType)REG_SZ:               C:\WIN4\fonts\ARIALN_0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Arial Rounded MT Bold Gras (TrREG_SZ:               C:\WIN4\fonts\ARLRDBD0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Arial Super (TrueType)        REG_SZ:               C:\WIN4\fonts\ARIALS_0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Avant Garde Book BT (TrueType)REG_SZ:               C:\WIN4\fonts\TT0154M0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Avant Garde Book Oblique BT (TREG_SZ:               C:\WIN4\fonts\TT0155M0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Avant Garde Medium BT (TrueTypREG_SZ:               C:\WIN4\fonts\TT0156M0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Avant Garde Medium Oblique BT REG_SZ:               C:\WIN4\fonts\TT0157M0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Bernhard Modern Bold BT (TrueTREG_SZ:               C:\WIN4\fonts\TT0838M0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Bernhard Modern Bold Italic BTREG_SZ:               C:\WIN4\fonts\TT0839M0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Bernhard Modern BT (TrueType) REG_SZ:               C:\WIN4\fonts\TT0607M0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Bernhard Modern Italic BT (TruREG_SZ:               C:\WIN4\fonts\TT0837M0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Bodoni Bold (TrueType)        REG_SZ:               C:\WIN4\fonts\BDB____0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Bodoni Roman (TrueType)       REG_SZ:               C:\WIN4\fonts\BD_____0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Bodoni Roman Italic (TrueType)REG_SZ:               C:\WIN4\fonts\BDRI___0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Book Antiqua Gras (TrueType)  REG_SZ:               C:\WIN4\fonts\ANTQUAB0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Book Antiqua Gras Italique (TrREG_SZ:               C:\WIN4\fonts\ANTQUAB2.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Book Antiqua Italique (TrueTypREG_SZ:               C:\WIN4\fonts\ANTQUAI0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Book Antiqua Normal (TrueType)REG_SZ:               C:\WIN4\fonts\ANTQUA_0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Bookman Old Style Gras (TrueTyREG_SZ:               C:\WIN4\fonts\BOOKOSB0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Bookman Old Style Gras ItaliquREG_SZ:               C:\WIN4\fonts\BOOKOSB2.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Bookman Old Style Italique (TrREG_SZ:               C:\WIN4\fonts\BOOKOSI0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Bookman Old Style Normal (TrueREG_SZ:               C:\WIN4\fonts\BOOKOS_0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Braggadocio Normal (TrueType) REG_SZ:               C:\WIN4\fonts\BRAGGA_0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Britannic Bold Gras (TrueType)REG_SZ:               C:\WIN4\fonts\BRITANI0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Brush Script MT Italique (TrueREG_SZ:               C:\WIN4\fonts\BRUSHSC0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Century Gothic Gras (TrueType)REG_SZ:               C:\WIN4\fonts\GOTHICB0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Century Gothic Gras Italique (REG_SZ:               C:\WIN4\fonts\GOTHICB2.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Century Gothic Italique (TrueTREG_SZ:               C:\WIN4\fonts\GOTHICI0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Century Gothic Normal (TrueTypREG_SZ:               C:\WIN4\fonts\GOTHIC_0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Century Schoolbook Gras (TrueTREG_SZ:               C:\WIN4\fonts\SCHLBKB0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Century Schoolbook Gras ItaliqREG_SZ:               C:\WIN4\fonts\SCHLBKB2.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Century Schoolbook Italique (TREG_SZ:               C:\WIN4\fonts\SCHLBKI0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Century Schoolbook Normal (TruREG_SZ:               C:\WIN4\fonts\SCHLBK_0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  CG Omega (TrueType)           REG_SZ:               C:\WIN4\fonts\CGOMEG_0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  CG Omega Bold (TrueType)      REG_SZ:               C:\WIN4\fonts\CGOMEGB0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  CG Omega Bold Italic (TrueTypeREG_SZ:               C:\WIN4\fonts\CGOMEGB2.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  CG Omega Italic (TrueType)    REG_SZ:               C:\WIN4\fonts\CGOMEGI0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Colonna MT Normal (TrueType)  REG_SZ:               C:\WIN4\fonts\COLONNA0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Coronet Italic (TrueType)     REG_SZ:               C:\WIN4\fonts\CORONET0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Desdemona Normal (TrueType)   REG_SZ:               C:\WIN4\fonts\DESDEMO0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Dom Casual (TrueType)         REG_SZ:               C:\WIN4\fonts\DC_____0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Eurostile-Black-DTC (TrueType)REG_SZ:               C:\WIN4\fonts\EUROSTI0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  EurostileExtended-Roman-DTC (TREG_SZ:               C:\WIN4\fonts\EUROSTI2.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Eurostile-Roman-DTC (TrueType)REG_SZ:               C:\WIN4\fonts\EUROSTI4.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Exotic 350 Bold BT (TrueType) REG_SZ:               C:\WIN4\fonts\TT0628M0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Exotic 350 Demi-Bold BT (TrueTREG_SZ:               C:\WIN4\fonts\TT0627M0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Exotic 350 Light BT (TrueType)REG_SZ:               C:\WIN4\fonts\TT0626M0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Fences Regular (TrueType)     REG_SZ:               C:\WIN4\fonts\FENCES_0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Fette Engschrift (TrueType)   REG_SZ:               C:\WIN4\fonts\DINEN__0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  FIBox (TrueType)              REG_SZ:               C:\WIN4\fonts\FIBOX__0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  FIBoxBB (TrueType)            REG_SZ:               C:\WIN4\fonts\FIBOXBB0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Fixedsys (Set #6)             REG_SZ:               C:\WIN4\fonts\VGAFIX_0.FON
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Footlight MT Light Normal (TruREG_SZ:               C:\WIN4\fonts\FTLTLT_0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Franklin Extra Cond. Gothic (TREG_SZ:               C:\WIN4\fonts\FGEC___0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Franklin Gothic (TrueType)    REG_SZ:               C:\WIN4\fonts\FGR____0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Franklin Gothic Condensed (TruREG_SZ:               C:\WIN4\fonts\FGC____0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Freehand 591 BT (TrueType)    REG_SZ:               C:\WIN4\fonts\TT1043M0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Garamond Antiqua (TrueType)   REG_SZ:               C:\WIN4\fonts\GARAMD_0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Garamond Halbfett (TrueType)  REG_SZ:               C:\WIN4\fonts\GARAMDB0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Garamond Kursiv (TrueType)    REG_SZ:               C:\WIN4\fonts\GARAMDI0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Garamond Kursiv Halbfett (TrueREG_SZ:               C:\WIN4\fonts\GARAMDB2.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Garrison Cond. Sans (TrueType)REG_SZ:               C:\WIN4\fonts\GNC____0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Garrison ExtraBold Sans BOLD (REG_SZ:               C:\WIN4\fonts\GNEB___0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Garrison ExtraCond. Sans (TrueREG_SZ:               C:\WIN4\fonts\GNEC___0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Garrison Light Sans (TrueType)REG_SZ:               C:\WIN4\fonts\GNL____0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Garrison Sans (TrueType)      REG_SZ:               C:\WIN4\fonts\GN_____0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Garrison Sans BOLD (TrueType) REG_SZ:               C:\WIN4\fonts\GNB____0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Garrison Sans ITALIC (TrueTypeREG_SZ:               C:\WIN4\fonts\GNI____0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  HandHeld Fonts (Small)        REG_SZ:               C:\WIN4\fonts\HHFONTS0.FON
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Hobo BT (TrueType)            REG_SZ:               C:\WIN4\fonts\TT0057M0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Impact Normal (TrueType)      REG_SZ:               C:\WIN4\fonts\IMPACT_0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  IPA Chambers Normal (TrueType)REG_SZ:               C:\WIN4\fonts\CHAMBER0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Kauflinn BOLDITALIC (TrueType)REG_SZ:               C:\WIN4\fonts\KF_____0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  KEYCAPS (TrueType)            REG_SZ:               C:\WIN4\fonts\KEYCAPS0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Kino MT Normal (TrueType)     REG_SZ:               C:\WIN4\fonts\KINO___0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Letter Gothic (TrueType)      REG_SZ:               C:\WIN4\fonts\LETGOT_0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Letter Gothic Bold (TrueType) REG_SZ:               C:\WIN4\fonts\LETGOTB0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Letter Gothic Italic (TrueTypeREG_SZ:               C:\WIN4\fonts\LETGOTI0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Lucida Blackletter Normal (TruREG_SZ:               C:\WIN4\fonts\LBLACK_0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Lucida Calligraphy Italique (TREG_SZ:               C:\WIN4\fonts\LCALLIG0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Lucida Console Normal (TrueTypREG_SZ:               C:\WIN4\fonts\LUCON__0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Lucida Fax Demi-gras (TrueTypeREG_SZ:               C:\WIN4\fonts\LFAXD__0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Lucida Fax Demi-gras Italique REG_SZ:               C:\WIN4\fonts\LFAXDI_0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Lucida Fax Italique (TrueType)REG_SZ:               C:\WIN4\fonts\LFAXI__0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Lucida Fax Normal (TrueType)  REG_SZ:               C:\WIN4\fonts\LFAX___0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Lucida Handwriting Italique (TREG_SZ:               C:\WIN4\fonts\LHANDW_0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Lucida Sans Demi-gras (TrueTypREG_SZ:               C:\WIN4\fonts\LSANSD_0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Lucida Sans Demi-gras ItaliqueREG_SZ:               C:\WIN4\fonts\LSANSDI0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Lucida Sans Italique (TrueTypeREG_SZ:               C:\WIN4\fonts\LSANSI_0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Lucida Sans Normal (TrueType) REG_SZ:               C:\WIN4\fonts\LSANS__0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Lucida Sans Typewriter Gras (TREG_SZ:               C:\WIN4\fonts\LTYPEB_0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Lucida Sans Typewriter Gras ObREG_SZ:               C:\WIN4\fonts\LTYPEBO0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Lucida Sans Typewriter Normal REG_SZ:               C:\WIN4\fonts\LTYPE__0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Lucida Sans Typewriter ObliqueREG_SZ:               C:\WIN4\fonts\LTYPEO_0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Marlett (TrueType)            REG_SZ:               C:\WIN4\fonts\MARLETT0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Matura MT Script Capitals NormREG_SZ:               C:\WIN4\fonts\MATURAS0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Monotype Corsiva Normal (TrueTREG_SZ:               C:\WIN4\fonts\MTCORSV0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Monotype Sorts Normal (TrueTypREG_SZ:               C:\WIN4\fonts\MTSORTS0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  MS LineDraw Normal (TrueType) REG_SZ:               C:\WIN4\fonts\LINEDRA0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  MS Reference 1 (TrueType)     REG_SZ:               C:\WIN4\fonts\MSREF1_0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  MS Reference 2 (TrueType)     REG_SZ:               C:\WIN4\fonts\MSREF2_0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  MS-DOS CP 850                 REG_SZ:               C:\WIN4\fonts\APP850_0.FON
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Murray Hill Bold BT (TrueType)REG_SZ:               C:\WIN4\fonts\TT0886M0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Optimum Bold (TrueType)       REG_SZ:               C:\WIN4\fonts\OPB____0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Optimum Roman (TrueType)      REG_SZ:               C:\WIN4\fonts\OP_____0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Penguin (TrueType)            REG_SZ:               C:\WIN4\fonts\PENGUIN0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Penguin Bold (TrueType)       REG_SZ:               C:\WIN4\fonts\PENGUIN2.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  PenguinLight (TrueType)       REG_SZ:               C:\WIN4\fonts\PENGLTN0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Phonetic                      REG_SZ:               C:\WIN4\fonts\PHONETI0.FON
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Playbill Normal (TrueType)    REG_SZ:               C:\WIN4\fonts\PLAYBIL0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Square 721 Blk-Italic (TrueTypREG_SZ:               C:\WIN4\fonts\SQR721B0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Square 721 Blk-Normal (TrueTypREG_SZ:               C:\WIN4\fonts\SQR721B2.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Square 721 Bold BT (TrueType) REG_SZ:               C:\WIN4\fonts\TT0247M0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Square 721 Bold Condensed BT (REG_SZ:               C:\WIN4\fonts\TT0249M0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Square 721 Bold Extended BT (TREG_SZ:               C:\WIN4\fonts\TT0251M0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Square 721 BT (TrueType)      REG_SZ:               C:\WIN4\fonts\TT0246M0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Square 721 Condensed BT (TrueTREG_SZ:               C:\WIN4\fonts\TT0248M0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Square 721 Extended BT (TrueTyREG_SZ:               C:\WIN4\fonts\TT0250M0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Square 721-BoldItalic (TrueTypREG_SZ:               C:\WIN4\fonts\SQR721T0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Symbol Normal (TrueType)      REG_SZ:               C:\WIN4\fonts\SYMBOL_0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  System (Set #6)               REG_SZ:               C:\WIN4\fonts\VGASYS_0.FON
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Technical Italic (TrueType)   REG_SZ:               C:\WIN4\fonts\TECHNCL0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Technical Regular (TrueType)  REG_SZ:               C:\WIN4\fonts\TECHNCL2.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Terminal (850) (Set #6)       REG_SZ:               C:\WIN4\fonts\VGA850_0.FON
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Univers (TrueType)            REG_SZ:               C:\WIN4\fonts\UNIVER_0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Univers Bold (TrueType)       REG_SZ:               C:\WIN4\fonts\UNIVERB0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Univers Bold Italic (TrueType)REG_SZ:               C:\WIN4\fonts\UNIVERB2.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Univers Condensed (TrueType)  REG_SZ:               C:\WIN4\fonts\UNIVCD_0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Univers Condensed Bold (TrueTyREG_SZ:               C:\WIN4\fonts\UNIVCDB0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Univers Condensed Bold Italic REG_SZ:               C:\WIN4\fonts\UNIVCDB2.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Univers Condensed Italic (TrueREG_SZ:               C:\WIN4\fonts\UNIVCDI0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Univers Italic (TrueType)     REG_SZ:               C:\WIN4\fonts\UNIVERI0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  VAG Round (TrueType)          REG_SZ:               C:\WIN4\fonts\VRB____0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Village Square (TrueType)     REG_SZ:               C:\WIN4\fonts\VS_____0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Wide Latin Normal (TrueType)  REG_SZ:               C:\WIN4\fonts\LATINWD0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Windsor (TrueType)            REG_SZ:               C:\WIN4\fonts\WN_____0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  Windsor Condensed (TrueType)  REG_SZ:               C:\WIN4\fonts\WNLC___0.TTF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  V1 Lucida Sans                REG_SZ:               C:\WIN4\fonts\V1SP.FON
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  V2 Lucida Sans                REG_SZ:               C:\WIN4\fonts\V2SP.FON
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  V3 Lucida Sans                REG_SZ:               C:\WIN4\fonts\V3SP.FON
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  V4 Lucida Sans                REG_SZ:               C:\WIN4\fonts\V4SP.FON
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  V5 Lucida Sans 10,12,14,18,24 REG_SZ:               C:\WIN4\fonts\V5SP.FON
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  V6 Lucida Sans 10,12,14,18,24 REG_SZ:               C:\WIN4\fonts\V6SP.FON
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Fonts\
+  V7 Lucida Sans                REG_SZ:               C:\WIN4\fonts\V7SP.FON
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Shared Tools\Proofing Tools\Spelling\1036\NORMAL\
+  Engine                        REG_SZ:               C:\WIN4\MSAPPS\PROOF\MSSP232.DLL
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Shared Tools\Text Converters\Import\WrdPrfctDOS\
+  Path                          REG_SZ:               C:\WIN4\MSAPPS\TEXTCONV\WPFT532.CNV
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Shared Tools\Text Converters\Import\MSWordWin2\
+  Path                          REG_SZ:               C:\WIN4\MSAPPS\TEXTCONV\WNWRD232.CNV
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Shared Tools\Text Converters\Import\MSWordDos\
+  Path                          REG_SZ:               C:\WIN4\MSAPPS\TEXTCONV\DOSWRD32.CNV
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Shared Tools\Text Converters\Import\MSWordDos6\
+  Path                          REG_SZ:               C:\WIN4\MSAPPS\TEXTCONV\DOSWRD32.CNV
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Shared Tools\Text Converters\Import\MSWordMac\
+  Path                          REG_SZ:               C:\WIN4\MSAPPS\TEXTCONV\MACWRD32.CNV
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Shared Tools\Text Converters\Import\RFTDCA\
+  Path                          REG_SZ:               C:\WIN4\MSAPPS\TEXTCONV\RFTDCA32.CNV
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Shared Tools Location\
+  MSAPPS                        REG_SZ:               C:\WIN4\MSAPPS
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Shared Tools Location\
+  PROOF                         REG_SZ:               C:\WIN4\MSAPPS\PROOF
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Shared Tools Location\
+  MSQUERY                       REG_SZ:               C:\WIN4\MSAPPS\MSQUERY
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Shared Tools Location\
+  WORDART                       REG_SZ:               C:\WIN4\MSAPPS\WORDART
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Shared Tools Location\
+  TEXTCONV                      REG_SZ:               C:\WIN4\MSAPPS\TEXTCONV
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Shared Tools Location\
+  GRPHFLT                       REG_SZ:               C:\WIN4\MSAPPS\GRPHFLT
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Shared Tools Location\
+  MSGRAPH5                      REG_SZ:               C:\WIN4\MSAPPS\MSGRAPH5
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Shared Tools Location\
+  EQUATION                      REG_SZ:               C:\WIN4\MSAPPS\EQUATION
+HKEY_LOCAL_MACHINE\SOFTWARE\ODBC\ODBCINST.INI\SQL Server\
+  Driver                        REG_SZ:               C:\WIN4\SYSTEM\SQLSRV32.DLL
+HKEY_LOCAL_MACHINE\SOFTWARE\ODBC\ODBCINST.INI\SQL Server\
+  Setup                         REG_SZ:               C:\WIN4\SYSTEM\SQLSRV32.DLL
+HKEY_LOCAL_MACHINE\SOFTWARE\ODBC\ODBC.INI\ODBC Translators\MS Code Page Translator\
+  Translator                    REG_SZ:               C:\WIN4\SYSTEM\MSCPXL32.DLL
+HKEY_LOCAL_MACHINE\SOFTWARE\ODBC\ODBC.INI\ODBC Translators\MS Code Page Translator\
+  Setup                         REG_SZ:               C:\WIN4\SYSTEM\MSCPXL32.DLL
+HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\VxD\MSTCP\
+  LMHostFile                    REG_SZ:               C:\WIN4\lmhosts
+HKEY_USERS\.Default\Software\Microsoft\Windows\CurrentVersion\Extensions\
+  qry                           REG_SZ:               C:\WIN4\MSAPPS\MSQUERY\msquery.exe ^.qry
+HKEY_USERS\.Default\Software\Microsoft\Windows\CurrentVersion\Extensions\
+  msg                           REG_SZ:               C:\WIN4\msmail32.exe /f ^.msg
+HKEY_USERS\.Default\Software\Microsoft\Windows\CurrentVersion\Extensions\
+  gra                           REG_SZ:               C:\WIN4\MSAPPS\MSGRAPH5\GRAPH5.EXE ^.gra
+HKEY_USERS\pierre\Control Panel\Cursors\Schemes\
+  3D Pointers                   REG_SZ:               C:\WIN95\cursors\arrow_1.cur,C:\WIN4\CURSORS\Yquest.ani,C:\WIN4\CURSORS\Dinosaur.ani,C:\WIN4\CURSORS\Dinosau2.ani,C:\WIN4\cursors\cross_1.cur,C:\WIN4\cursors\beam_1.cur,C:\WIN4\cursors\pen_1.cur,C:\WIN4\cursors\no_1.cur,C:\WIN4\cursors\size4_1.cur,C:\WIN4\cursors\size3_1.cur,C:\WIN4\cursors\size2_1.cur,C:\WIN4\cursors\size1_1.cur,C:\WIN4\cursors\move_1.cur,C:\WIN4\cursors\up_1.cur
+HKEY_USERS\pierre\Control Panel\Cursors\Schemes\
+  Windows Standard (large)      REG_SZ:               C:\WIN95\cursors\arrow_M.cur,C:\WIN4\cursors\help_M.cur,C:\WIN4\cursors\wait_M.cur,C:\WIN4\cursors\busy_M.cur,C:\WIN4\cursors\cross_M.cur,C:\WIN4\cursors\beam_M.cur,C:\WIN4\cursors\pen_M.cur,C:\WIN4\cursors\no_M.cur,C:\WIN4\cursors\size4_M.cur,C:\WIN4\cursors\size3_M.cur,C:\WIN4\cursors\size2_M.cur,C:\WIN4\cursors\size1_M.cur,C:\WIN4\cursors\move_M.cur,C:\WIN4\cursors\up_M.cur
+HKEY_USERS\pierre\Control Panel\Cursors\Schemes\
+  Windows Stnadard (extra large)REG_SZ:               C:\WIN95\cursors\arrow_L.cur,C:\WIN4\cursors\help_L.cur,C:\WIN4\cursors\wait_L.cur,C:\WIN4\cursors\busy_L.cur,C:\WIN4\cursors\cross_L.cur,C:\WIN4\cursors\beam_L.cur,C:\WIN4\cursors\pen_L.cur,C:\WIN4\cursors\no_L.cur,C:\WIN4\cursors\size4_L.cur,C:\WIN4\cursors\size3_L.cur,C:\WIN4\cursors\size2_L.cur,C:\WIN4\cursors\size1_L.cur,C:\WIN4\cursors\move_L.cur,C:\WIN4\cursors\up_L.cur
+HKEY_USERS\pierre\Control Panel\Cursors\Schemes\
+  Vio                           REG_SZ:               C:\WIN95\CURSORS\3dwarro.cur,C:\WIN4\CURSORS\Yquest.ani,C:\WIN4\CURSORS\Dinosaur.ani,C:\WIN4\CURSORS\Dinosau2.ani,C:\WIN4\cursors\cross_1.cur,C:\WIN4\cursors\beam_1.cur,C:\WIN4\cursors\pen_1.cur,C:\WIN4\cursors\no_1.cur,C:\WIN4\cursors\size4_1.cur,C:\WIN4\cursors\size3_1.cur,C:\WIN4\cursors\size2_1.cur,C:\WIN4\cursors\size1_1.cur,C:\WIN4\cursors\move_1.cur,C:\WIN4\cursors\up_1.cur

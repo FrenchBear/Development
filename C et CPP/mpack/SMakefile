@@ -1,0 +1,32 @@
+
+PACKOBJS = amigapk.o encode.o codes.o magic.o amigados.o string.o \
+		xmalloc.o md5c.o		
+UNPACKOBJS = amigaunpk.o decode.o uudecode.o codes.o amigados.o string.o \
+		xmalloc.o md5c.o
+
+all: mpack munpack
+
+mpack: mpack.ld
+	slink from mpack.ld to mpack stripdebug
+	protect mpack +p
+
+munpack: munpack.ld
+	slink from munpack.ld to munpack stripdebug
+	protect munpack +p
+
+mpack.ld: $(PACKOBJS)
+	$(CC) $(CFLAGS) mod link progamname mpack.ld $(PACKOBJS) $(LIBS)
+
+munpack.ld: $(UNPACKOBJS)
+	$(CC) $(CFLAGS) mod link programname munpack.ld $(UNPACKOBJS) $(LIBS)
+
+clean:
+	delete \#?.lnk \#?.info \#?.o \#?@ \#?! mpack(%|.ld) munpack(%|.ld)
+
+codes.o:	codes.c xmalloc.h md5.h
+decode.o:	decode.c xmalloc.h common.h
+amigapk.o:	amigapk.c version.h xmalloc.h
+amigaunpk.o:	amigaunpk.c version.h
+amigados.o:	amigados.c common.h xmalloc.h
+md5c.o:		md5c.c md5.h
+uudecode.o:	uudecode.c xmalloc.h common.h

@@ -1,0 +1,122 @@
+szRemoteHost: serveur.ercem.com
+filename: /ercem/include/t_etablissement.h
+
+Ensemble des sections de tprof.ini:
+[SmoothTalker]
+[MRU_Files]
+[Microsoft Multimedia Catalog]
+[devices]
+[PrinterPorts]
+[fonts]
+[Netscape]
+[winsetup]
+[RegEdit]
+[Berkeley Systems]
+[ESP_II]
+[CompLex]
+[Kyocera F-1000,LPT1]
+[MS Graphic Export Filters]
+[CorelGraphics5]
+[cps]
+[TCPIP]
+[einet]
+[WINLRE]
+[WinZip]
+[Rasmon]
+[MSDN.Settings]
+[Paintbrush]
+[USANP]
+[Microsoft Graph 3.0]
+[PixFolio]
+[DeskTop Set Jr]
+[READERFILTERS]
+[DBWin]
+[WinMem]
+[Microsoft Word]
+[Spy]
+[sounds]
+[Bookshelf]
+[Hearts]
+[HPPCL5C,LPT1]
+[Calibrateur d'écran 1.O HP]
+[MSCharMap]
+[Mail]
+[BCW4.0 INSTALL]
+[Fax local Microsoft Mail,FAX]
+[Encarta]
+[brequest]
+[btrieve]
+[nsreqDPMI]
+[ABC Flowcharter]
+[Source Viewer]
+[Beeline]
+[Multimedia Viewer]
+[MCIAVI]
+[AAPLAY Animation]
+[drawdib]
+[spooler]
+[CorelSCSI]
+[CorelGraphics4]
+[Clipboard Formats]
+[Designer 3.1]
+[Micrografx]
+[Aldus]
+[colors]
+[Microsoft Query]
+[MS Setup (ACME) Table Files]
+[Microsoft System Info]
+[MS Graphic Import Filters]
+[MS Shareres]
+[MSWord Text Converters]
+[MS Text Converters]
+[MS Proofing Tools]
+[MSAPPS]
+[MS User Info]
+[Windows Help]
+[embedding]
+[Microsoft Word 2.0]
+[Compatibility]
+[mci extensions]
+[TrueType]
+[FontSubstitutes]
+[ports]
+[intl]
+[Extensions]
+[Desktop]
+[windows]
+[WS_PING]
+[machin]
+[wine]
+
+Clés de la section Windows:
+device: Kyocera F-1000,KYOCERA,LPT1:
+defaultqueuesize: 16
+MenuShowDelay: 0
+MenuDropAlignment: 0
+ScreenTurnOffTimeOut: 300
+SwapMouseButtons: 0
+DoubleClickHeight: 10
+DoubleClickWidth: 10
+MouseSpeed: 0
+MouseThreshold2: 0
+MouseThreshold1: 0
+DosPrint: no
+CoolSwitch: 1
+ScreenSaveTimeOut: 240
+ScreenSaveActive: 0
+KeyboardSpeed: 31
+KeyboardDelay: 1
+TransmissionRetryTimeout: 45
+DeviceNotSelectedTimeout: 15
+Documents: 
+Programs: com exe bat pif
+DoubleClickSpeed: 330
+CursorBlinkRate: 500
+BorderWidth: 3
+NullPort: None
+Beep: Yes
+run: 
+load: C:\MOUSE\POINTER.EXE
+NetMessage: Yes
+NetWarn: No
+spooler: yes

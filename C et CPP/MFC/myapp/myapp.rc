@@ -1,0 +1,364 @@
+//Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""res\\myapp.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "\r\n"
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "#include ""l.fra\\afxres.rc""  \011// Standard components\r\n"
+    "#include ""l.fra\\afxprint.rc""\011// printing/print preview resources\r\n"
+    "\0"
+END
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\myapp.ico"
+IDR_MYAPPTYPE           ICON    DISCARDABLE     "res\\myappdoc.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP  MOVEABLE PURE   "res\\toolbar.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "&Fichier"
+    BEGIN
+        MENUITEM "&Nouveau\tCtrl+N",            ID_FILE_NEW
+        MENUITEM "&Ouvrir...\tCtrl+O",          ID_FILE_OPEN
+        MENUITEM SEPARATOR
+        MENUITEM "&Configuration de l'impression...", ID_FILE_PRINT_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM "Fichier récent",              ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "&Quitter",                    ID_APP_EXIT
+    END
+    POPUP "&Affichage"
+    BEGIN
+        MENUITEM "&Barre d'outils",             ID_VIEW_TOOLBAR
+        MENUITEM "B&arre d'état",               ID_VIEW_STATUS_BAR
+    END
+    POPUP "&?"
+    BEGIN
+        MENUITEM "&A propos de myapp...",       ID_APP_ABOUT
+    END
+END
+
+IDR_MYAPPTYPE MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "&Fichier"
+    BEGIN
+        MENUITEM "&Nouveau\tCtrl+N",            ID_FILE_NEW
+        MENUITEM "&Ouvrir...\tCtrl+O",          ID_FILE_OPEN
+        MENUITEM "&Fermer",                     ID_FILE_CLOSE
+        MENUITEM "&Enregistrer\tCtrl+S",        ID_FILE_SAVE
+        MENUITEM "En&registrer sous...",        ID_FILE_SAVE_AS
+        MENUITEM SEPARATOR
+        MENUITEM "&Imprimer...\tCtrl+P",        ID_FILE_PRINT
+        MENUITEM "Aperçu a&vant impression",    ID_FILE_PRINT_PREVIEW
+        MENUITEM "&Configuration de l'impression...", ID_FILE_PRINT_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM "Fichier récent",              ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "&Quitter",                    ID_APP_EXIT
+    END
+    POPUP "&Edition"
+    BEGIN
+        MENUITEM "Changer le &texte...",        ID_EDIT_CHANGETEXT
+    END
+    POPUP "&Affichage"
+    BEGIN
+        MENUITEM "&Barre d'outils",             ID_VIEW_TOOLBAR
+        MENUITEM "B&arre d'état",               ID_VIEW_STATUS_BAR
+    END
+    POPUP "Fe&nêtre"
+    BEGIN
+        MENUITEM "&Nouvelle fenêtre",           ID_WINDOW_NEW
+        MENUITEM "&Cascade",                    ID_WINDOW_CASCADE
+        MENUITEM "&Mosaïque",                   ID_WINDOW_TILE_HORZ
+        MENUITEM "&Réorganiser les icônes",     ID_WINDOW_ARRANGE
+    END
+    POPUP "&?"
+    BEGIN
+        MENUITEM "&A propos de myapp...",       ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL
+    "P",            ID_FILE_PRINT,          VIRTKEY, CONTROL
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY 
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  34, 22, 217, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "A propos de myapp"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,18,20
+    LTEXT           "MyApp Version 1.0",IDC_STATIC,40,10,119,8
+    LTEXT           "Copyright \251 1995",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "OK",IDOK,176,6,32,14,WS_GROUP
+END
+
+IDD_DIALOG1 DIALOG DISCARDABLE  0, 0, 186, 95
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Changer le texte"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,130,6,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,130,23,50,14
+    EDITTEXT        IDC_EDIT1,28,24,94,13,ES_AUTOHSCROLL
+    LTEXT           "Texte:",IDC_STATIC,1,26,22,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040c04e2"
+        BEGIN
+            VALUE "Comments", "Essai de programmation MFC 3 / VC++ 2.0\0"
+            VALUE "CompanyName", "Vio'Home\0"
+            VALUE "FileDescription", "Application MFC MYAPP\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "MYAPP\0"
+            VALUE "LegalCopyright", "Copyright \251 1995\0"
+            VALUE "OriginalFilename", "MYAPP.EXE\0"
+            VALUE "ProductName", "Application MYAPP\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x40c, 1250
+    END
+END
+
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "myapp"
+    IDR_MYAPPTYPE           "\nMyapp\nMyapp\n\n\nMyapp.Document\nMyapp Document"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "myapp"
+    AFX_IDS_IDLEMESSAGE     "Pr\352t"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "MAJ"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "DEF"
+    ID_INDICATOR_OVR        "RFT"
+    ID_INDICATOR_REC        "ENR"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_NEW             "Cr\351e un nouveau document\nNouveau"
+    ID_FILE_OPEN            "Ouvre un document existant\nOuvrir"
+    ID_FILE_CLOSE           "Ferme le document actif\nFermer"
+    ID_FILE_SAVE            "Enregistre le document actif\nEnregistrer"
+    ID_FILE_SAVE_AS         "Enregistre le document actif sous un nouveau nom\nEnregistrer sous"
+    ID_FILE_PAGE_SETUP      "Change d'options d'impression\nOptions d'impression"
+    ID_FILE_PRINT_SETUP     "Change d'imprimante et d'options d'impression\nChangement d'imprimante"
+    ID_FILE_PRINT           "Imprime le document actif\nImprime"
+    ID_FILE_PRINT_PREVIEW   "Affiche les pages enti\350res\nAper\347u avant impression"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "Affiche des informations sur le programme, la version et les droits de copyright\nA propos de"
+    ID_APP_EXIT             "Quitte l'application en invitant l'utilisateur \340 enregistrer les documents\nQuitte"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "Ouvre ce document"
+    ID_FILE_MRU_FILE2       "Ouvre ce document"
+    ID_FILE_MRU_FILE3       "Ouvre ce document"
+    ID_FILE_MRU_FILE4       "Ouvre ce document"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "Passe au volet suivant de la fen\352tre\nVolet suivant"
+    ID_PREV_PANE            "Revient au volet pr\351c\351dent de la fen\352tre\nVolet pr\351c\351dent"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_NEW           "Ouvre une autre fen\352tre pour le document actif\nNouvelle fen\352tre"
+    ID_WINDOW_ARRANGE       "R\351organise les ic\364nes au bas de la fen\352tre\nR\351organise les ic\364nes"
+    ID_WINDOW_CASCADE       "R\351organise les fen\352tres de sorte qu'elles se superposent\nCascade"
+    ID_WINDOW_TILE_HORZ     "R\351organise les fen\352tres en mosa\357que de sorte qu'elles ne se superposent pas\nMosa\357que"
+    ID_WINDOW_TILE_VERT     "R\351organise les fen\352tres en mosa\357que de sorte qu'elles ne se superposent pas\nMosa\357que"
+    ID_WINDOW_SPLIT         "Partage la fen\352tre active en volets\nPartage"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_CLEAR           "Efface la s\351lection\nEfface"
+    ID_EDIT_CLEAR_ALL       "Efface tout\nEfface tout"
+    ID_EDIT_COPY            "Copie la s\351lection et la place dans le Presse-papiers\nCopie"
+    ID_EDIT_CUT             "Coupe la s\351lection et la place dans le Presse-papiers\nCoupe"
+    ID_EDIT_FIND            "Recherche le texte sp\351cifi\351\nRecherche"
+    ID_EDIT_PASTE           "Ins\350re le contenu du Presse-papiers\nColle"
+    ID_EDIT_REPEAT          "R\351p\350te la derni\350re action\nR\351p\350te"
+    ID_EDIT_REPLACE         "Remplace le texte sp\351cifi\351 par un autre texte\nRemplace"
+    ID_EDIT_SELECT_ALL      "S\351lectionne le document entier\nS\351lectionne tout"
+    ID_EDIT_UNDO            "Annule la derni\350re action\nAnnule"
+    ID_EDIT_REDO            "R\351p\350te l'action pr\351c\351demment annul\351e\nR\351p\350te"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Affiche ou masque la barre d'outils\nBarre d'outils"
+    ID_VIEW_STATUS_BAR      "Affiche ou masque la barre d'\351tat\nBarre d'\351tat"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change la taille de la fen\352tre"
+    AFX_IDS_SCMOVE          "Change la position de la fen\352tre"
+    AFX_IDS_SCMINIMIZE      "R\351duit la fen\352tre en ic\364ne"
+    AFX_IDS_SCMAXIMIZE      "Agrandit la fen\352tre au maximum"
+    AFX_IDS_SCNEXTWINDOW    "Passe \340 la fen\352tre de document suivante"
+    AFX_IDS_SCPREVWINDOW    "Passe \340 la fen\352tre de document pr\351c\351dente"
+    AFX_IDS_SCCLOSE         "Ferme la fen\352tre active et invite l'utilisateur \340 enregistrer les documents"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Rend \340 la fen\352tre sa taille normale"
+    AFX_IDS_SCTASKLIST      "Active la Liste des t\342ches"
+    AFX_IDS_MDICHILD        "Active cette fen\352tre"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_PREVIEW_CLOSE   "Ferme le mode Aper\347u avant impression\nFerme l'aper\347u"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_CHANGETEXT      "Ouvre une bo\356te de dialogue pour changer le texte de la fen\352tre"
+END
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#include "res\myapp.rc2"  // non-Microsoft Visual C++ edited resources
+
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+#include "l.fra\afxres.rc"  	// Standard components
+#include "l.fra\afxprint.rc"	// printing/print preview resources
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

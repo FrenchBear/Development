@@ -1,0 +1,16 @@
+Le calcul de la longueur dynamique d'une section de conduite nécessite le découpage de celle-ci en tronçons élémentaires, rectilignes ou courbes de rayon constant.
+
+Champs à saisir :
+- Type de conduite constituant la section (3 caratères)
+- Origine et extrémité de la section (numéro d'ordre, ou numéro de chambre sous la forme XXX/XXX)
+- Coefficient de frottement : il est fixé par défaut à 0.25, ce qui correspond à un câble à enveloppe plastique dans un tuyau PVC.
+
+Valider après chaque champ saisi.
+
+Saisie des paramètres par tronçons élémentaires
+Champs à saisir :
+- Longueur
+- Rayon de courbure pour les tronçons courbes
+
+Le résultat s'affiche au fur et à mesure de la saisie.
+

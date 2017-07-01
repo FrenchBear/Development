@@ -1,0 +1,8 @@
+/* MD.REF */
+#ifdef VLIB_MD
+  void	  md_setattrib(uint1,uint1,uint1,uint1,uint1);
+  void	  md_stocke(MD_MENU *);
+  void	  md_dessin(void);
+  MD_MENU *md_exec(MD_MENU *);
+  extern  MD_MENU *md_tabacc[];
+#endif

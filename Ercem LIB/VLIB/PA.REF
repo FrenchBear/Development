@@ -1,0 +1,4 @@
+/* pa.ref */
+void pa_push(int2,int2,int2,int2);
+void pa_pushecran(void);
+void pa_pop(void);

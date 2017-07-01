@@ -1,0 +1,143 @@
+﻿<Window x:Class="WpfWizard.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Controls="clr-namespace:WpfWizard.Controls"
+    xmlns:TransitionSelectors="clr-namespace:WpfWizard.Controls.TransitionSelectors" Title="Window1" Height="500" Width="600">
+
+    <Window.Resources>
+        <Style TargetType="Border" x:Key="{x:Static Controls:Wizard.HeaderPanelBorderResourceKey}">
+            <Setter Property="Background" Value="#F0F0F0" />
+            <Setter Property="BorderBrush" Value="#A0A0A0" />
+            <Setter Property="BorderThickness" Value="0,0,0,1" />
+            <Setter Property="Padding" Value="5" />
+        </Style>
+
+        <Style TargetType="Border" x:Key="{x:Static Controls:Wizard.SideHeaderPanelBorderResourceKey}">
+            <Setter Property="Background" Value="#F0F0F0" />
+            <Setter Property="BorderBrush" Value="#A0A0A0" />
+            <Setter Property="BorderThickness" Value="0,0,1,0" />
+        </Style>
+
+        <Style TargetType="Border" x:Key="{x:Static Controls:Wizard.ContentPanelBorderResourceKey}">
+            <Setter Property="Background" Value="#F0F0F0" />
+        </Style>
+        <TransitionSelectors:WizardTransitionSelector x:Key="WizardTransitionSelector" />
+    </Window.Resources>
+    
+    <Grid>
+
+        <Controls:Wizard x:Name="m_Wizard"
+                         NextClick="Wizard_NextClick" PreviousClick="Wizard_PreviousClick" CancelClick="Wizard_OnCancelClick" FinishClick="Wizard_OnFinishClick"
+                         ContentTransitionSelector="{StaticResource WizardTransitionSelector}"
+                         TransitionDuration="00:00:00.5">
+            
+            <!--Hello Page-->
+            <Controls:WizardPage>
+                <Controls:WizardPage.Header>
+                    <StackPanel>
+                        <Label FontSize="18" FontWeight="Bold" Content="Welcome to the Sample Wizard" />
+                        <Label Margin="10,-10,0,0" Content="This wizard will guide You (...)" />
+                    </StackPanel>
+                </Controls:WizardPage.Header>
+
+                <Controls:WizardPage.SideHeader>
+
+                    <StackPanel>
+                        <TextBlock Text="SideBar" />
+                        <CheckBox x:Name="checkbox" Content="Bindable checkbox" />
+                    </StackPanel>
+
+                </Controls:WizardPage.SideHeader>
+
+                <Border Margin="20,50,20,20" VerticalAlignment="Top">
+                    <Label Content="You can use this wizard to conveniently do your work." />
+                </Border>
+            </Controls:WizardPage>
+
+            <Controls:WizardPage CanFinish="False">
+                <Controls:WizardPage.Header>
+                    <StackPanel>
+                        <Label FontSize="18" FontWeight="Bold" Content="Welcome to the Sample Wizard2" />
+                        <Label Margin="10,-10,0,0" Content="lorem ipsum lorem ipsum lorem ipsum lorem ipsum" />
+                    </StackPanel>
+                </Controls:WizardPage.Header>
+
+                <Border Margin="20,50,20,20" VerticalAlignment="Top">
+                    <StackPanel>
+                        <Label Content="lorem ipsum lorem ipsum lorem ipsum lorem ipsum" />
+                        <CheckBox Content="Bound to Bindable checkbox" IsChecked="{Binding IsChecked, ElementName=checkbox}" />
+                        <CheckBox Content="Option" IsChecked="{Binding OptionSelected}" />
+                        <ListBox>
+                            <ListBoxItem>Item 1</ListBoxItem>
+                            <ListBoxItem>Item 2</ListBoxItem>
+                            <ListBoxItem>Item 3</ListBoxItem>
+                            <ListBoxItem>Item 4</ListBoxItem>
+                            <ListBoxItem>Item 5</ListBoxItem>
+                            <ListBoxItem>Item 6</ListBoxItem>
+                        </ListBox>
+                    </StackPanel>
+                </Border>
+            </Controls:WizardPage>
+            
+            <Controls:WizardPage CanFinish="True">
+                <Controls:WizardPage.Header>
+                    <StackPanel>
+                        <Label FontSize="18" FontWeight="Bold" Content="This is yet another step in the wizard" />
+                        <Label Margin="10,-10,0,0" Content="lorem ipsum lorem ipsum lorem ipsum lorem ipsum" />
+                    </StackPanel>
+                </Controls:WizardPage.Header>
+
+                <Border Margin="20,50,20,20" VerticalAlignment="Top">
+                    <StackPanel>
+                        <Button Content="Sample button" />
+                        <StackPanel Margin="10,5,5,5">
+                            <RadioButton Content="Option 1" />
+                            <RadioButton Content="Option 2" />
+                            <RadioButton Content="Option 3" />
+                            <RadioButton Content="Option 4" />
+                        </StackPanel>
+                        
+                        <Slider Width="200" Minimum="1" Maximum="100" Value="50" />
+                        <Image Source="C:\Users\Public\Pictures\Sample Pictures\Tulips.jpg" />
+                    </StackPanel>
+                </Border>
+            </Controls:WizardPage>
+
+            <Controls:WizardPage CanFinish="True">
+                <Controls:WizardPage.Header>
+                    <StackPanel>
+                        <Label FontSize="18" FontWeight="Bold" Content="This step shows some cool transitions in TabControl" />
+                        <Label Margin="10,-10,0,0" Content="Switch between content 1 and 2 for a couple of times to see various transitions" />
+                    </StackPanel>
+                </Controls:WizardPage.Header>
+
+                <Border Margin="20,50,20,20" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <TabControl Style="{DynamicResource TabControlStyleKey}">
+                        <TabItem Header="Content 1">
+                            <Border Background="Transparent">
+                                <StackPanel Margin="10,5,5,5">
+                                    <RadioButton Content="Option 1" />
+                                    <RadioButton Content="Option 2" />
+                                    <RadioButton Content="Option 3" />
+                                    <RadioButton Content="Option 4" />
+                                    <Button Content="clicke me" Margin="0,10,0,0"/>
+                                    <Image Source="C:\Users\Public\Pictures\Sample Pictures\Koala.jpg" Width="640" Height="480" HorizontalAlignment="Right" Margin="10"/>
+                                </StackPanel>
+                            </Border>
+                        </TabItem>
+
+                        <TabItem Header="Content 2">
+                            <Border Background="Transparent">
+                                <StackPanel Margin="10,5,5,5">
+                                    <Slider Width="200" Minimum="1" Maximum="100" Value="50" />
+                                    <Image Source="C:\Users\Public\Pictures\Sample Pictures\Desert.jpg" />
+                                </StackPanel>
+                            </Border>
+                        </TabItem>
+                    </TabControl>
+                </Border>
+            </Controls:WizardPage>
+
+        </Controls:Wizard>
+    </Grid>
+</Window>

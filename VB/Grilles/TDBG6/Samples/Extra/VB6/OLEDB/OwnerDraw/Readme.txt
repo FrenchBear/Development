@@ -1,0 +1,1 @@
+This is a small sample that shows how you can use GDI calls in grid's OwnerDraw event.

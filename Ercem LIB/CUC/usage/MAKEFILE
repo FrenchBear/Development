@@ -1,0 +1,81 @@
+# makefile du r‚pertoire labo
+# makefile des programmes du labo
+# PV 29/04/94
+
+.SUFFIXES:
+.SUFFIXES: .per .4gl .ace .frm .ec .4ge .arc .c .o
+
+SHELL = /bin/sh
+CFLAGS = -Od -D$(SYSTEMID)
+#LDFLAGS = ./libcuc.a -lidentif -lbiberc -ltinfo -lx
+LDFLAGS = -lcuc -lidentif -lbiberc -ltinfo -lx
+
+# rŠgles
+
+.per.frm:
+	form4gl $<
+
+.c.o:
+	cc -W3 $(CFLAGS) -c $<
+
+.4gl.o:
+	c4gl $(CFLAGS) -W1 -c $<
+	rm $*.ec $*.c
+
+.ec.o:
+	c4gl $(CFLAGS) -W3 -c $<
+	rm $*.c
+
+.4gl.4ge:
+	c4gl $(CFLAGS) $< -l4glplus -o $@
+	rm $*.ec $*.c
+
+.ace.arc:
+	saceprep $<
+
+
+# d‚pendances
+
+make:	PGM GRILLES ETATS
+
+install:	/u/labo/bin/serie
+
+
+PGM:		p4 serie sres tds
+
+GRILLES:	Fgermelabo.frm Fdilution.frm
+
+ETATS:		Edilution.arc
+
+
+# d‚tails
+
+serie:	serie.o prepimpr.o impr.o ouvreserie.o ajoutboite.o serutil.o ruban.o observ.o
+	tobak $@
+	c4gl $(LDFLAGS) serie.o prepimpr.o impr.o ouvreserie.o ajoutboite.o serutil.o ruban.o observ.o -o $@
+
+serie.o prepimpr.o impr.o ouvreserie.o serutil.o: serie.h
+
+sres:	sres.o  fscral.o escral.o formhelp.o fsger.o germe.o conclusion.o fscri.o fscon.o
+		tobak $@
+		c4gl sres.o fscral.o escral.o formhelp.o fsger.o germe.o conclusion.o fscri.o fscon.o -lsqlplus -lcrit $(LDFLAGS) -o $@
+
+boite:	boite.o impr.o
+	tobak $@
+	c4gl $(LDFLAGS) boite.o impr.o -o $@
+
+tgerme:	tgerme.o germe.o
+		c4gl tgerme.o germe.o -lbiberc -lsqlplus -o tgerme
+
+
+/u/labo/bin/serie:	serie
+		tobak $@
+		cp $? $@
+
+fscral.o:	fscral.h
+fsger.o:	fscral.h
+fscri.o:	fscral.h
+fscon.o:	fscral.h
+
+tds:	tds.o ds.o
+		c4gl tds.o ds.o -lbiberc -o tds

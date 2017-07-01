@@ -1,0 +1,4 @@
+EXPORT Si3(V)
+BEGIN
+  RETURN CAS.int("SIN(a)/a","a",0,V);
+END;

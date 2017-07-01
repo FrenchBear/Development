@@ -1,0 +1,6 @@
+/* chaine.ref */
+char instring(const unsigned char *,unsigned char);
+int2 maj(int2);
+int2 majAZ(int2);
+int2 minaz(int2);
+int2 valid(const char *,int2,booleen *);

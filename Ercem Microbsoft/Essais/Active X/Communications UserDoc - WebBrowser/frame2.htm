@@ -1,0 +1,24 @@
+<HTML>
+
+<script language="VBScript">
+dim sValeur
+
+sValeur="Bonjour !"
+
+sub btnTest_OnClick()
+  msgbox "window.top.frames.length: " & window.top.frames.length
+  msgbox "window.top.frames(1).location: " & window.top.frames(1).location
+  msgbox "txtAutre(1): " & txtAutre.value
+  msgbox "txtAutre(2): " & window.top.frames(1).txtAutre.value
+  msgbox "sValeur: " & sValeur
+end sub
+
+</script>
+
+<BODY>
+<H1>Frame 2</H1>
+<input type=button id="btnTest" value="Test"></P>
+<input id="txtAutre">
+
+</BODY>
+</HTML>

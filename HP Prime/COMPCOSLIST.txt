@@ -1,0 +1,20 @@
+﻿EXPORT COMPCOSLIST()
+BEGIN
+  PRINT("-------------");
+  LOCAL TI:=TICKS;
+  A:=0;
+  FOR I FROM 1 TO 10000 DO
+    B=COS(A);
+    A:=A+π/2;
+  END;
+  PRINT((TICKS-TI)/1000);
+  L1:={1,0,−1,0};
+  A:=0;
+  TI=TICKS;
+  FOR I FROM 1 TO 10000 DO
+    B=L1[A MOD 4+1];
+    A:=A+1;
+  END;
+  PRINT((TICKS-TI)/1000);
+  WAIT;
+END;

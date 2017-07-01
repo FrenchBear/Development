@@ -1,0 +1,37 @@
+  Windows Sockets PING Client Application Release 1 Version 93.10.03
+
+  Written by:
+      John A. Junod             Internet: <junodj@gordon-emh2.army.mil>
+      267 Hillwood Street                 <zj8549@trotter.usma.edu>
+      Martinez, GA 30907      Compuserve: 72321,366 
+
+  This program executable and all source code is released into the public
+  domain.  You may use this code for any purpose but please give me a little
+  credit for any use of this code.  The primary purpose of this application 
+  was to learn what it takes to write a Windows Sockets Application.
+
+  My development and testing was all completed at home on two 386 PC's using
+  the Trumpet Windows Sockets DLL Alpha 15 with NCSA Telnet and WinQVT/Net 2.6
+  and 3.9 as the remote host.  Source code may be compiled with Borland C++
+  in large mode.
+
+  Some code concepts and names are based on code that is copyright by the
+  Regents of the University of California or code published in UNIX Network
+  Programming by W. Richard Stevens or code in WATTCP or other public sources.
+  The rest is based on my knowledge of Windows programming and my 
+  interpretation of RFC 969 and the Windows Sockets API version 1.1.
+
+  This code implements both a blocking and a non-blocking (async) ping.
+
+  You can specify a hostname (or ip address) on the command line.  In that
+  case an Async Ping is performed.
+
+  Known problems:
+
+  1) Most Windows Sockets DLL's do not support the use of RAW_SOCKETS
+     so this application will not work with many implementations.  The
+     only one that I am aware of is Trumpet Windows Sockets DLL Alpha 15.
+
+  2) "Network subsystem failure" probably means that the ARP request for
+     a local host or default gateway failed.
+

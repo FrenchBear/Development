@@ -1,0 +1,30 @@
+[shared-]
+	pmark="d:\c\dumpivt\dumpivt.c" 13 1
+	version=3
+[debug-]
+	target="d:\c\dumpivt\dumpivt.exe"
+	synonym=;D:\C\DUMPIVT
+	srcwin=vs1& /a+b+c+l+s+t+
+[cv]
+	wndstate=0 0 0 0 0 0 0 0 0 0 0 0 0 0 -1
+	wndstate=1 67 8 0 1 0 1 0 24 0 1 0 0 0 -1
+	wndstate=2 34 8 33 1 0 0 0 0 0 0 0 0 0 -1
+	wndstate=3 67 25 0 9 0 1 0 0 0 51 35 0 0 -1
+	wndstate=4 67 9 3 12 0 0 0 0 0 0 0 0 0 -1
+	wndstate=5 67 8 0 18 0 0 0 0 0 0 0 0 0 -1
+	wndstate=6 67 8 3 21 0 0 0 0 0 0 0 0 0 -1
+	wndstate=7 13 41 67 1 0 1 0 0 0 0 0 0 0 -1
+	wndstate=8 67 8 0 26 0 0 0 0 0 0 0 0 0 -1
+	wndstate=9 67 8 0 34 1 1 0 2 0 1 0 0 0 -1
+	command=use auto
+	command=n10
+	screensize=43
+	command=oh+
+	command=ov+
+	command=oa+
+	command=oc+
+	command=of+
+	command=o3-
+	command=ollf   
+	tracespeed=250
+	callargs=1

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<xs:schema xmlns="FD" targetNamespace="FD" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="XMLContainer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="XMLFields" minOccurs="1" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="XMLField">
+                <xs:complexType>
+                  <xs:attribute name="Name" type="NameType" use="required" />
+                  <xs:attribute name="Type" type="XMLTypesEnum" use="required" />
+                  <xs:attribute name="Comment" type="xs:string" use="required" />
+                  <xs:attribute name="ContentHint" type="ContentHintEnum" use="optional" />
+                  <xs:attribute name="Length" type="LengthType" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="v" type="xs:unsignedByte" use="required" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ValidationSchema" minOccurs="1" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any minOccurs="0">
+              </xs:any>
+            </xs:sequence>
+            <xs:attribute name="v" type="xs:unsignedByte" use="required" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="v" type="xs:unsignedByte" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="XMLTypesEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="String" />
+      <xs:enumeration value="Boolean" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ContentHintEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="VBScript" />
+      <xs:enumeration value="XML" />
+      <xs:enumeration value="CSV" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="LengthType">
+    <xs:restriction base="xs:unsignedShort">
+      <xs:minInclusive value="1" />
+      <xs:maxInclusive value="4000" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="NameType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[a-zA-Z]+" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

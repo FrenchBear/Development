@@ -1,0 +1,4 @@
+
+more.exe:  more.c
+	   cl -G2 -W2 -Ox more.c setargv.obj -link /NOE
+

@@ -1,0 +1,39 @@
+[Divers]
+Titre=Ercem consultants
+logo=ercem.bmp
+Aide=ercem.hlp
+
+[Niveaux]
+Niveau1=Etape
+Niveau2=Sujet
+Niveau3=Danger
+Niveau4=Point à maitriser
+Niveau5=Mesure préventive
+Niveau6=Valeur cible
+Niveau7=Eléments de surveillance
+Niveau8=Correction et action corrective
+Niveau9=Vérifica-tion
+Niveau10=Enregistre-ment
+
+[Affichages]
+Titre1=Paramètres
+Commentaire1=Saisissez d'abord les valeurs de cet onglet
+Titre2=Equipe
+Commentaire2=La première étape d'une analyse HACCP consiste à définir l'é
+Titre3=Documentation
+Commentaire3=La documentation HACCP inclus généralement le diagramme de f
+Titre4=Etapes et sujets
+Commentaire4=Définissez les étapes et sujets concernés par l'existant et
+Titre5=Dispositions en place
+Commentaire5=Ce shéma représente la structure existant actuellement dans
+Titre6=Identification des dangers
+Commentaire6=Cette étape dresse l'inventaire des dangers liés au processu
+Titre7=Arbre HACCP
+Commentaire7=Ce shéma représente le tableau d'analyse HACCP
+
+[Menu Documentation Bas]
+NbSujets=2
+Sujet1=mul 1
+Topic1=101
+Sujet2=mul 2
+Topic2=102

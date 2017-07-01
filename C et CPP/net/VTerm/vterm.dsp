@@ -1,0 +1,279 @@
+# Microsoft Developer Studio Project File - Name="VTerm" - Package Owner=<4>
+# Microsoft Developer Studio Generated Build File, Format Version 6.00
+# ** DO NOT EDIT **
+
+# TARGTYPE "Win32 (x86) Application" 0x0101
+
+CFG=VTerm - Win32 Debug
+!MESSAGE This is not a valid makefile. To build this project using NMAKE,
+!MESSAGE use the Export Makefile command and run
+!MESSAGE 
+!MESSAGE NMAKE /f "vterm.mak".
+!MESSAGE 
+!MESSAGE You can specify a configuration when running NMAKE
+!MESSAGE by defining the macro CFG on the command line. For example:
+!MESSAGE 
+!MESSAGE NMAKE /f "vterm.mak" CFG="VTerm - Win32 Debug"
+!MESSAGE 
+!MESSAGE Possible choices for configuration are:
+!MESSAGE 
+!MESSAGE "VTerm - Win32 Debug" (based on "Win32 (x86) Application")
+!MESSAGE "VTerm - Win32 Release" (based on "Win32 (x86) Application")
+!MESSAGE 
+
+# Begin Project
+# PROP AllowPerConfigDependencies 0
+# PROP Scc_ProjName ""
+# PROP Scc_LocalPath ""
+CPP=cl.exe
+MTL=midl.exe
+RSC=rc.exe
+
+!IF  "$(CFG)" == "VTerm - Win32 Debug"
+
+# PROP BASE Use_MFC 6
+# PROP BASE Use_Debug_Libraries 1
+# PROP BASE Output_Dir ".\WinDebug"
+# PROP BASE Intermediate_Dir ".\WinDebug"
+# PROP Use_MFC 6
+# PROP Use_Debug_Libraries 1
+# PROP Output_Dir ".\WinDebug"
+# PROP Intermediate_Dir ".\WinDebug"
+# PROP Ignore_Export_Lib 0
+# ADD BASE CPP /nologo /MD /W3 /GX /Zi /Od /D "_DEBUG" /D "WIN32" /D "_WINDOWS" /D "_MBCS" /D "_AFXDLL" /FR /Yu"stdafx.h" /c
+# ADD CPP /nologo /MD /W3 /GX /ZI /Od /D "_DEBUG" /D "WIN32" /D "_WINDOWS" /D "_MBCS" /D "_AFXDLL" /FR /Yu"stdafx.h" /FD /c
+# ADD MTL /mktyplib203
+# ADD BASE RSC /l 0x40c /d "_DEBUG" /d "_AFXDLL"
+# ADD RSC /l 0x40c /d "_DEBUG" /d "_AFXDLL"
+BSC32=bscmake.exe
+# ADD BASE BSC32 /nologo
+# ADD BSC32 /nologo
+LINK32=link.exe
+# ADD BASE LINK32 /nologo /subsystem:windows /debug /machine:I386
+# SUBTRACT BASE LINK32 /pdb:none
+# ADD LINK32 /nologo /subsystem:windows /debug /machine:I386 /nodefaultlib:"msvcrt"
+# SUBTRACT LINK32 /pdb:none
+
+!ELSEIF  "$(CFG)" == "VTerm - Win32 Release"
+
+# PROP BASE Use_MFC 6
+# PROP BASE Use_Debug_Libraries 0
+# PROP BASE Output_Dir ".\WinRel"
+# PROP BASE Intermediate_Dir ".\WinRel"
+# PROP Use_MFC 6
+# PROP Use_Debug_Libraries 0
+# PROP Output_Dir ".\WinRel"
+# PROP Intermediate_Dir ".\WinRel"
+# ADD BASE CPP /nologo /MD /W3 /GX /O2 /D "NDEBUG" /D "WIN32" /D "_WINDOWS" /D "_MBCS" /D "_AFXDLL" /FR /Yu"stdafx.h" /c
+# ADD CPP /nologo /MD /W3 /Gi /GX /O2 /D "NDEBUG" /D "WIN32" /D "_WINDOWS" /D "_AFXDLL" /FR /Yu"stdafx.h" /FD /c
+# ADD MTL /mktyplib203
+# ADD BASE RSC /l 0x40c /d "NDEBUG" /d "_AFXDLL"
+# ADD RSC /l 0x40c /d "NDEBUG" /d "_AFXDLL"
+BSC32=bscmake.exe
+# ADD BASE BSC32 /nologo
+# ADD BSC32 /nologo
+LINK32=link.exe
+# ADD BASE LINK32 /nologo /subsystem:windows /machine:I386
+# SUBTRACT BASE LINK32 /pdb:none
+# ADD LINK32 /nologo /subsystem:windows /machine:I386
+# SUBTRACT LINK32 /pdb:none
+
+!ENDIF 
+
+# Begin Target
+
+# Name "VTerm - Win32 Debug"
+# Name "VTerm - Win32 Release"
+# Begin Group "Source Files"
+
+# PROP Default_Filter "cpp;c;cxx;rc;def;r;odl;hpj;bat;for;f90"
+# Begin Source File
+
+SOURCE=.\AboutVTerm.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\BufferGlissant.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\ConnexionRecente.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\Couleurs.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\mainfrm.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\Options.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\RemoteHost.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\StatsWindow.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\stdafx.cpp
+# ADD BASE CPP /Yc"stdafx.h"
+# ADD CPP /Yc"stdafx.h"
+# End Source File
+# Begin Source File
+
+SOURCE=.\Terminal.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\VTerm.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\VTerm.rc
+# End Source File
+# Begin Source File
+
+SOURCE=.\VTermDoc.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\VTermGlobal.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\VTermSock.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\VTermView.cpp
+# End Source File
+# End Group
+# Begin Group "Header Files"
+
+# PROP Default_Filter "h;hpp;hxx;hm;inl;fi;fd"
+# Begin Source File
+
+SOURCE=.\AboutVTerm.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\BufferGlissant.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\ConnexionRecente.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\Couleurs.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\mainfrm.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\Options.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\RemoteHost.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\resource.hm
+# End Source File
+# Begin Source File
+
+SOURCE=.\StatsWindow.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\stdafx.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\telnet.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\Terminal.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\VTermDoc.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\VTermGlobal.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\VTermSock.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\vtermview.h
+# End Source File
+# End Group
+# Begin Group "Resource Files"
+
+# PROP Default_Filter "ico;cur;bmp;dlg;rc2;rct;bin;cnt;rtf;gif;jpg;jpeg;jpe"
+# Begin Source File
+
+SOURCE=.\res\ico00001.ico
+# End Source File
+# Begin Source File
+
+SOURCE=.\res\icon1.ico
+# End Source File
+# Begin Source File
+
+SOURCE=.\res\idr_main.ico
+# End Source File
+# Begin Source File
+
+SOURCE=.\res\irr_wins.ico
+# End Source File
+# Begin Source File
+
+SOURCE=.\res\miniconn.bmp
+# End Source File
+# Begin Source File
+
+SOURCE=.\res\toolbar.bmp
+# End Source File
+# Begin Source File
+
+SOURCE=.\VTerm.exe.manifest
+# End Source File
+# Begin Source File
+
+SOURCE=.\VTerm.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\res\VTerm.rc2
+# End Source File
+# Begin Source File
+
+SOURCE=.\res\VTermDoc.ico
+# End Source File
+# End Group
+# End Target
+# End Project
+# Section VTerm : {B6805000-A509-11CE-A5B0-00AA006BBF16}
+# 	1:23:CG_IDR_POPUP_VTERM_VIEW:102
+# End Section
+# Section VTerm : {34C8D273-C9DF-11CF-9014-444553540000}
+# 	1:17:CG_IDS_DISK_SPACE:105
+# 	1:19:CG_IDS_PHYSICAL_MEM:103
+# 	1:25:CG_IDS_DISK_SPACE_UNAVAIL:106
+# 	2:10:SysInfoKey:1234
+# End Section

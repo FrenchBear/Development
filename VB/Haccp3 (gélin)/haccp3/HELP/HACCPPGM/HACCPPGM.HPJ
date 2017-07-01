@@ -1,0 +1,74 @@
+; This file is maintained by HCW. Do not modify this file directly.
+
+[OPTIONS]
+HCW=0
+LCID=0x40c 0x0 0x0 ;Français (standard)
+REPORT=Yes
+CONTENTS=Sommaire
+TITLE=Aide du programme HACCP 3
+BMROOT=..
+HLP=.\HACCPPGM.hlp
+
+[FILES]
+.\haccppgm.rtf
+
+[MAP]
+Menus    1000
+MenuFichier	1001
+Onglets	1002
+DefRepertoire	1003
+FenImpression	86
+FenChoixRep	3
+DefFenOnglet	1004
+MenuAffichage	1005
+DefModuleActif	1006
+MenuFenetre	1007
+MenuAide	1008
+Fenetres	1009
+FenAPropos	88
+MenuEdition	1010
+MenuDocumentation	1011
+OngletParametres	10
+FenAccueil	2
+ModeEvaluation	1012
+OngletEquipe	11
+OngletDocumentation	12
+OngletEtapesSujets	 13
+OngletDispositionsEnPlace	14
+OngletDangers	15
+OngletArbreHACCP	16
+DefDocument	1013
+FenAjoutDonnee	40
+FenAjoutDonnee	41
+FenAjoutDonnee	50
+FenAjoutDonnee	51
+FenAjoutDonnee	52
+FenAjoutDonnee	53
+FenAjoutDonnee	54
+FenAjoutDonnee	55
+FenAjoutDonnee	70
+FenAjoutDonnee	71
+FenAjoutDonnee	72
+FenAjoutDonnee	73
+FenAjoutDonnee	74
+FenAjoutDonnee	75
+FenAjoutDonnee	76
+FenAjoutDanger	60
+QuestPertinence	1014
+FenAjoutSujetDanger	61
+QuestCriticite	30
+VerificationCoherence	80
+FenOptionsProjet	84
+Questionnaires	1015
+CopierCollerDonnee	1016
+DefProjetActif	1017
+FenConfiguration	5
+DocumentsAssocies  81
+FenAjoutDocument  82
+MenusCourt 1
+
+[WINDOWS]
+main="",,0,,(r12632256)
+
+[CONFIG]
+BrowseButtons()

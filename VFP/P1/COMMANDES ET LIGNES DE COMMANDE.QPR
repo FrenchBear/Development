@@ -1,0 +1,9 @@
+
+SELECT ORDERS.Order_id,ORDERS.Cust_id,ORDERS.Emp_id,ORDERS.To_name,;
+    ORDERS.To_address,ORDERS.To_city,ORDERS.To_region,ORDERS.Postalcode,;
+    ORDERS.To_country,ORDERS.Ship_count,ORDERS.Ship_via,ORDERS.Order_date,;
+    ORDERS.Order_amt,ORDERS.Order_dsc,ORDERS.Order_net,ORDERS.Require_by,;
+    ORDERS.Shipped_on,ORDERS.Freight,ORDITEMS.Line_no,ORDITEMS.Order_id,;
+    ORDITEMS.Product_id,ORDITEMS.Unit_price,ORDITEMS.Quantity;
+    FROM TESTDATA!ORDERS ORDERS INNER JOIN TESTDATA!ORDITEMS ORDITEMS ON ORDERS.ORDER_ID = ORDITEMS.ORDER_ID;
+    ORDER BY ORDERS.Order_id,ORDITEMS.Line_no

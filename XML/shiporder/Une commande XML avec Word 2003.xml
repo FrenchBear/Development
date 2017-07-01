@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<shiporder orderid="Cmd 15113" xmlns="Schéma shiporder"><orderperson xmlns="">Pierre Violent</orderperson><shipto xmlns=""><name>Mr Pierre VIOLENT</name><address>12 av du Pont Royal</address><city>94230 CACHAN</city><country>France</country></shipto><item xmlns=""><title>Pomme d’arrosoir</title><note>En promo</note><quantity>1</quantity><price>12.50</price></item></shiporder>

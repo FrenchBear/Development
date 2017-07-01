@@ -1,0 +1,1 @@
+This sample uses Unbound 1 mode and a DBGrid to display records from a recordset.  This unbound mode is provided for compatibility with older products. New applications should use the UnboundExtended mode. 

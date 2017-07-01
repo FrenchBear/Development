@@ -1,0 +1,42 @@
+[Natures]
+NbNatures=1
+Nature1=1
+
+[QuestionsCriticité]
+NbNiveauxCriticité=3
+NbQuestionsCriticité=8
+QuestionCriticité1,1=Q1: Des mesures de maitrise sont-elle en place ou peuvent-elles être mises en place (conception d'un produit) ?
+QuestionCriticité1,2=Q1b: La maitrise à cette étape est-elle nécessaire pour la sécurité du produit ?
+QuestionCriticité1,3=Q2: Cette étape est-elle spécifiquement destinée à éliminer le danger ou à en réduire la probabilité d'apparition à un niveau acceptable ?
+QuestionCriticité1,4=Q3: Une contamination peut-elle intervenir à cette étape oule danger peut-il s'accroître jusqu'à un niveau acceptable ?
+QuestionCriticité1,5=Q4: Une étape ultérieure peut-elle éliminer le danger ou en réduire la probabilité d'apparition à un niveau acceptable ?
+QuestionCriticité1,6=T1: Modifier l'étape, le procédé ou le produit
+QuestionCriticité1,7=T2: Point critique pour la maitrise = CCP
+QuestionCriticité1,8=Stop: L'étape n'est pas un CCP; appliquer l'arbre de décision à la cause, au danger ou à l'étape suivante.
+QuestionCriticité2,1=
+QuestionCriticité2,2=
+QuestionCriticité2,3=
+QuestionCriticité2,4=
+QuestionCriticité2,5=
+QuestionCriticité2,6=
+QuestionCriticité2,7=
+QuestionCriticité2,8=
+QuestionCriticité3,1=
+QuestionCriticité3,2=
+QuestionCriticité3,3=
+QuestionCriticité3,4=
+QuestionCriticité3,5=
+QuestionCriticité3,6=
+QuestionCriticité3,7=
+QuestionCriticité3,8=
+
+[Spécificités]
+Spécificité1,1=2
+NbSpécificités1=1
+
+[QuestionsPertinence]
+IDQuestionPertinence1,1,1=1
+QuestionPertinence1,1,1=1234567890 1234567890 1234567890 1234567890 1234567890 12345
+QuestionPertinenceReponseOui1,1,1=Non Pertinent
+QuestionPertinenceReponseNon1,1,1=Non Pertinent
+NbQuestionsPertinence1,1=1

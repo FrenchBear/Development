@@ -1,0 +1,97 @@
+[Root]
+Most Recent Package=Liste de répertoires
+
+
+[Package|Liste de répertoires|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=C:\Temp\ListeRep\Package
+
+[Package|Liste de répertoires|Configure DAO ISAMs]
+Applicable=No
+
+[Package|Liste de répertoires|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|Liste de répertoires|Files Found]
+
+[Package|Liste de répertoires|Files Released]
+
+[Package|Liste de répertoires|Missing Dependency Information]
+
+[Package|Liste de répertoires|Out-of-Date Dependency Information]
+C:\WINDOWS\SYSTEM32\SCRRUN.DLL=
+
+[Package|Liste de répertoires|Files Added]
+
+[Package|Liste de répertoires|Files Removed]
+
+[Package|Liste de répertoires|Files In Project]
+C:\Temp\ListeRep\ListeRep.exe=Yes
+C:\WINDOWS\SYSTEM32\MSVBVM60.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\WINDOWS\SYSTEM32\vb6fr.dll=Yes
+C:\WINDOWS\SYSTEM32\SCRRUN.DLL=Yes
+C:\WINDOWS\SYSTEM32\MSVCRT.DLL=Yes
+C:\WINDOWS\SYSTEM32\SCRRNFR.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\WINDOWS\SYSTEM32\VB6STKIT.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+
+[Package|Liste de répertoires|Configure Registry Files]
+Applicable=No
+
+[Package|Liste de répertoires|Configure Remote Servers]
+Applicable=No
+
+[Package|Liste de répertoires|Install Locations]
+C:\Temp\ListeRep\ListeRep.exe=$(AppPath)
+C:\WINDOWS\SYSTEM32\MSVBVM60.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM32\vb6fr.dll=$(WinSysPath)
+C:\WINDOWS\SYSTEM32\SCRRUN.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM32\MSVCRT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM32\SCRRNFR.DLL=$(WinSysPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\WINDOWS\SYSTEM32\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+
+[Package|Liste de répertoires|Configure Shared Files]
+Applicable=Yes
+C:\Temp\ListeRep\ListeRep.exe=No
+
+[Package|Liste de répertoires|Distribution]
+Type=single
+Size=
+Title=Liste de répertoires
+
+[Package|Liste de répertoires|IconGroups]
+Group0=Liste de répertoires
+PrivateGroup0=-1
+Parent0=$(Programs)
+
+[Package|Liste de répertoires|Liste de répertoires]
+Icon1=ListeRep.exe
+Title1=Liste de répertoires
+StartIn1=$(AppPath)
+Key1=Icon1
+
+[Package|Liste de répertoires|Package]
+PackageFolder=C:\Temp\ListeRep\Package
+ProjectFolder=C:\Temp\ListeRep
+ServerSideCab=
+File1=C:\Temp\ListeRep\Package\setup.exe
+File2=C:\Temp\ListeRep\Package\Setup.Lst
+File3=C:\Temp\ListeRep\Package\ListeRep.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz

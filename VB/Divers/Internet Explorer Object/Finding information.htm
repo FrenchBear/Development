@@ -1,0 +1,344 @@
+<HTML>
+
+<HEAD>
+<TITLE> ACC97: Finding Information on the Web Browser Control </TITLE>
+
+<STYLE>
+<!--
+	BODY  {font-family: "Verdana, Arial, Helvetica"; font-size: 10pt; color: 000000}
+	STRONG {font-family: "Verdana, Arial, Helvetica"; font-size: 14pt; color: 003366; text-decoration: none}
+	H1 {font-family: "Verdana, Arial, Helvetica"; font-size: 20pt; color: FF3300; text-decoration: none; margin-left=0}
+	H2 {font-family: "Verdana, Arial, Helvetica"; font-size: 14pt; color: 0099FF; text-decoration: none; margin-left=0}
+	PRE {font-family: "Courier New, Courier"; font-size: 9pt; color: 000000}
+	P {font-family: "Verdana, Arial, Helvetica"; font-size: 10pt; color: 000000} 
+	BLOCKQUOTE {font-family: "Verdana, Arial, Helvetica"; font-size: 7pt; color: 000000}
+-->
+</STYLE>
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<meta name="Author" content="Microsoft Technical Support">
+<meta name="KBTitle" content="ACC97: Finding Information on the Web Browser Control">
+<meta name="KBID" content="Q165212">
+<meta name="KBModify" content="02-APR-1997">
+<meta name="KBCreate" content="14-MAR-1997">
+<meta name="KBKeywords" content="IntpCstm kbother">
+<meta name="KBArea" content="KB, access, convert, crossnet, dbweb, odbc, winprint, setup, vbapp, office, officevba">
+
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LEFTMARGIN=0 TOPMARGIN=0>
+<FONT FACE="Arial" SIZE=2>
+<!--TOOLBAR_START-->
+<TABLE WIDTH=100% CELLPADDING=0 CELLSPACING=0 BORDER=0>
+	<TR>
+		<TD WIDTH=500 ROWSPAN=2 VALIGN=TOP>
+		<NOBR>
+		<FONT FACE="Arial, Helvetica" SIZE=1>
+		<A HREF="/" TARGET="_top"><IMG SRC="/library/images/gifs/toolbar/home.gif" WIDTH=103 HEIGHT=21 ALT="Microsoft Home" BORDER=0></A><A HREF="/products/default.asp" TARGET="_top"><IMG SRC="/library/images/gifs/toolbar/prod.gif" WIDTH=81 HEIGHT=21 ALT="Products" BORDER=0></A><A HREF="/search/default.asp" target="_top"><IMG SRC="/library/images/gifs/toolbar/search.gif" WIDTH=68 HEIGHT=21 ALT="Search" BORDER=0></A><A HREF="/support/" TARGET="_top"><IMG SRC="/library/images/gifs/toolbar/support_on.gif" WIDTH=74 HEIGHT=21 ALT="Support" BORDER=0></A><A HREF="/referral/default.asp" TARGET="_top"><IMG SRC="/library/images/gifs/toolbar/shop.gif" WIDTH=55 HEIGHT=21 ALT="Shop" BORDER=0></A><A HREF="/regwiz/regwiz.asp" TARGET="_top"><IMG SRC="/library/images/gifs/toolbar/write.gif" WIDTH=78 HEIGHT=21 ALT="Write Us" BORDER=0></A><IMG SRC="/library/images/gifs/toolbar/spacer.gif" WIDTH=49 HEIGHT=21 ALT="" BORDER=0>
+		</FONT>
+		</NOBR>
+		</TD>
+
+		<TD BGCOLOR="#000000" WIDTH=100% HEIGHT=20>
+		</TD>
+
+		<TD WIDTH=91 ROWSPAN=2 ALIGN=RIGHT VALIGN=TOP>
+		<FONT FACE="Arial, Helvetica" SIZE=1>
+		<A HREF="/" TARGET="_top"><IMG SRC="/library/images/gifs/toolbar/msft.gif" WIDTH=91 HEIGHT=21 ALT="Microsoft Home" BORDER=0></A>
+		</FONT>
+		</TD>
+	</TR>
+	<TR>
+		<TD BGCOLOR="#FFFFFF" WIDTH=100% HEIGHT=1>
+		</TD>
+	</TR>
+</TABLE>
+<!--TOOLBAR_END-->
+
+<!--PRODUCTBAR_START-->
+<TABLE WIDTH=100% CELLPADDING=0 CELLSPACING=0 BORDER=0>
+	<TR>
+		<TD WIDTH=133>
+		<A HREF="/support/mtshome.htm" TARGET="_top">
+		<IMG SRC="/support/images/buttons/mtsico.gif" WIDTH=133 HEIGHT=75 BORDER=0 ALT="Return to Microsoft Technical Support Home Page">
+		</A>
+		</TD>
+
+		<TD WIDTH=100%>
+		<CENTER>
+		<A HREF="/kb/" TARGET="_top">
+		<IMG SRC="/support/images/banners/kb2ban.gif" WIDTH=330 HEIGHT=75 BORDER=0 ALT="Microsoft Knowledge Base">
+		</A>
+		</CENTER>
+		</TD>
+	</TR>
+</TABLE>
+<!--PRODUCTBAR_END-->
+<!--BUTTONBAR_START-->
+<TABLE WIDTH=145 CELLPADDING=0 CELLSPACING=0 BORDER=0 ALIGN=LEFT>
+	<TR>
+		<TD WIDTH=133>
+		<IMG SRC="/support/images/buttons/topbar.gif" WIDTH=133 HEIGHT=4 BORDER=0 ALT=""><BR>
+		<A HREF="/support/sitemap.htm">
+		<IMG SRC="/support/images/buttons/siteup.gif" WIDTH=133 HEIGHT=18 BORDER=0 ALT="Site Map"><BR>
+		</A>
+		<A HREF="/support/default-wizmain.htm">
+		<IMG SRC="/support/images/buttons/tourup.gif" WIDTH=133 HEIGHT=29 BORDER=0 ALT="Guided Tour with the Support Wizard"><BR>
+		</A>
+		<A HREF="/kb/">
+		<IMG SRC="/support/images/buttons/kbdn.gif" WIDTH=133 HEIGHT=18 BORDER=0 ALT="Search the Knowledge Base"><BR>
+		</A>
+		<A HREF="/support/tshooters.htm">
+		<IMG SRC="/support/images/buttons/tshootup.gif" WIDTH=133 HEIGHT=18 BORDER=0 ALT="Troubleshooting Wizards"><BR>
+		</A>
+		<A HREF="/support/default-faq.htm">
+		<IMG SRC="/support/images/buttons/faqup.gif" WIDTH=133 HEIGHT=29 BORDER=0 ALT="Read our Frequently Asked Questions"><BR>
+		</A>
+		<A HREF="/kb/softlib/">
+		<IMG SRC="/support/images/buttons/dloadup.gif" WIDTH=133 HEIGHT=29 BORDER=0 ALT="Download a Help File, Service Pack & Other Files"><BR>
+		</A>
+		<A HREF="/support/news/">
+		<IMG SRC="/support/images/buttons/newsup.gif" WIDTH=133 HEIGHT=18 BORDER=0 ALT="Browse the Newsgroups"><BR>
+		</A>
+		<A HREF="/supportnet/">
+		<IMG SRC="/support/images/buttons/suppup.gif" WIDTH=133 HEIGHT=29 BORDER=0 ALT="Support Options and Numbers"><BR>
+		</A>
+		<A HREF="/support/webresponse.htm">
+		<IMG SRC="/support/images/buttons/webrup.gif" WIDTH=133 HEIGHT=29 BORDER=0 ALT="Submit a Question to a Support Engineer"><BR>
+		</A>
+		<A HREF="/Support/default-hilight.htm">
+		<IMG SRC="/support/images/buttons/highup.gif" WIDTH=133 HEIGHT=18 BORDER=0 ALT="Go to Support Highlights"><BR>
+                </A>
+		<IMG SRC="/support/images/buttons/botbar.gif" WIDTH=133 HEIGHT=4 BORDER=0 ALT=""><BR>
+		
+<!--IESPACE_START-->
+			<BR>
+			<center>
+			<font face="Arial" size=-1 color="000000"><B>
+			<span style="font-size:8pt; color:000000">
+			Best experienced with<BR>
+			<A HREF="/ie/"><IMG SRC="/library/images/gifs/general/ie_animated.gif" WIDTH=88 HEIGHT=31 ALT="Microsoft Internet Explorer" BORDER=0 ALIGN=center></A>
+			<br>Click here to start.
+
+			<BR><BR>
+			</span></b></font>
+
+			</center>
+		<!--IESPACE_END-->
+		</TD>
+
+		<TD WIDTH=20>
+		<!--20 Pixel Space-->
+		</TD>
+	</TR>
+</TABLE>
+<!--BUTTONBAR_END-->
+
+<!--DOCBODY_START-->
+<TABLE CELLPADDING=5 CELLSPACING=0 BORDER=0>
+	<TR>
+		<TD WIDTH=100%>
+<FONT FACE="Verdana, Arial, Helvetica" SIZE=2>
+
+<P>
+<H2>ACC97: Finding Information on the Web Browser Control</H2>
+<B><I>Article ID: Q165212 <BR>
+Creation Date: 14-MAR-1997<BR>
+Revision Date: 02-APR-1997
+</I></B>
+<P>
+
+<FONT FACE="Verdana, Arial, Helvetica" SIZE=2>
+
+ 
+ 
+The information in this article applies to:
+
+<UL>
+<LI>Microsoft Access 97
+</UL>
+ 
+<P>
+<P><FONT SIZE=3><B>SUMMARY</B></FONT> <BR>
+ 
+<P>
+Novice: Requires knowledge of the user interface on single-user computers.
+<P>
+This article lists some of the resources available for the Web Browser
+Control. The following files, Knowledge Base articles, and manuals contain
+helpful information that can guide you when using the Web Browser Control:
+
+<UL>
+<LI>The IEXPLORE.hlp file
+<LI>The Microsoft Knowledge Base
+<LI>"Microsoft Office 97 Visual Basic Programmer's Guide," Chapter 15
+<LI>"Building Applications with Microsoft Access 97," Chapter 21
+<LI>"Microsoft Office 97 Resource Kit," Chapter 25
+<P>
+</UL>
+<FONT SIZE=3><B>MORE INFORMATION</B></FONT> <BR>
+ 
+<P>
+The IEXPLORE.HLP file, which can be found on the Microsoft Office 97
+Professional Edition compact disc in the Valupack\Access\Webhelp
+subfolder, contains the following topics.
+<P>
+NOTE: This file should not be confused with the same named IEXPLORE.HLP
+help file for Microsoft Internet Explorer which can be found in the
+Windows\Help subfolder if you have the Microsoft Internet Explorer
+installed on your computer.
+
+<UL>
+<LI>Introduction
+<LI>Using the WebBrowser Control
+<LI>Possible Uses
+<LI>Navigate to a New Location with the Navigate Method
+<LI>Update Cached Pages with the Refresh or Refresh2 Method
+<LI>Navigate the History List with the GoBack and Goforward Methods
+<LI>Control Browsing Operations with the Busy Property and Stop Method
+<LI>Hide or Show the WebBrowser Control with the Visible Property
+<LI>WebBrowser Events
+<LI>Objects
+<LI>Properties
+<LI>Methods
+<LI>Events
+<P>
+</UL>
+<FONT SIZE=3><B>Microsoft Knowledge Base</B></FONT> <BR>
+ 
+<P>
+The Knowledge Base is currently available on the Internet on the
+Microsoft Technical Support Page at the following address
+<P>
+</FONT>
+<PRE>    <B><A HREF="http://www.microsoft.com/kb">http://www.microsoft.com/kb</A></B>
+
+</PRE><FONT FACE="Verdana, Arial, Helvetica" SIZE=2>
+The following articles contain information on the Web Browser Control.
+<P>
+ARTICLE LISTING:
+<P>
+</FONT>
+<PRE> ITEM ID ARTICLE TITLE                                             DATABASE
+ --------------------------------------------------------------------------
+
+ <B><A HREF="/kb/articles/Q155/9/69.htm">Q155969</A></B> How to Distribute the WebBrowser Control                  Internet
+ <B><A HREF="/kb/articles/Q156/7/32.htm">Q156732</A></B> How To Print From The Microsoft Web Browser Control       Internet
+ <B><A HREF="/kb/articles/Q156/6/93.htm">Q156693</A></B> IEZoom.exe Changes the Font Size of the Web Browser       Internet
+ <B><A HREF="/kb/articles/Q158/2/64.htm">Q158264</A></B> FAQ on Developing with the ActiveX SDK                    Internet
+ <B><A HREF="/kb/articles/Q161/3/97.htm">Q161397</A></B> ACC97: Cannot Resize Web Browser Control on a Form        Access
+ <B><A HREF="/kb/articles/Q163/2/82.htm">Q163282</A></B> Using Forward and Back Buttons for Web Browser Control    Internet
+ <B><A HREF="/kb/articles/Q163/4/12.htm">Q163412</A></B> Web Browser Position Wrong on PageFrame Page              FoxPro
+ <B><A HREF="/kb/articles/Q160/1/26.htm">Q160126</A></B> ACC97: Supported ActiveX Controls for Microsoft Access 97 Access
+ <B><A HREF="/kb/articles/Q161/3/45.htm">Q161345</A></B> ACC97: Contents of the Acread80.wri Readme File           Access
+
+</PRE><FONT FACE="Verdana, Arial, Helvetica" SIZE=2>
+Related articles can be found by entering the search phrase "ActiveX SDK"
+or "Misc Internet Topics" in the Search Phrase box.
+<P>
+<P><FONT SIZE=3><B>"Microsoft Office 97 Visual Basic Programmer's Guide," Chapter 15</B></FONT> <BR>
+ 
+<P>
+Using the WebBrowser Control
+
+<UL>
+<LI>Adding the WebBrowser Control to a Form
+<LI>Displaying Web Pages or Documents in the WebBrowser Control
+<LI>Viewing Descriptions of the Properties, Methods, and Events of the
+   WebBrowser Control
+<LI>Distributing the WebBrowser Control with Your Application
+<P>
+</UL>
+NOTE: The Microsoft Office 97 Visual Basic Programmer's Guide is available
+in the Microsoft Office 97 Developer Edition Tools Package.
+<P>
+<P><FONT SIZE=3><B>"Building Applications with Microsoft Access 97," Chapter 21</B></FONT> <BR>
+ 
+
+<UL>
+<LI>Using the WebBrowser Control
+<LI>Adding the WebBrowser Control to a Form
+<LI>Displaying Web Pages or Documents in the WebBrowser Control
+<LI>Displaying a Document in the WebBrowser Control by Using an
+   Address in a Text Box
+<LI>Displaying a Document in the WebBrowser Control by Using a Hyperlink
+   Stored in a Table
+<LI>Viewing Descriptions of the Properties, Methods, and Events of the
+   WebBrowser Control
+<LI>Distributing the WebBrowser Control with Your Application
+<P>
+</UL>
+NOTE: "Building Applications" is available on the Microsoft Office 97
+Professional Edition compact disc in the \\ValuPack\Access\BldApps
+subfolder. It is also available in hard copy in the Microsoft Office 97
+Developer Edition Tools package.
+<P>
+<P><FONT SIZE=3><B>"Microsoft Office 97 Resource Kit," Chapter 25</B></FONT> <BR>
+ 
+
+<UL>
+<LI>Web Support in Microsoft Access 97
+<LI>Web Support in Microsoft Excel 97
+<LI>Web Support in Microsoft Outlook 97
+<LI>Web Support in Microsoft PowerPoint 97
+<LI>Web Support in Microsoft Word 97
+<P>
+</UL>
+NOTE: The "Microsoft Office 97 Resource Kit" is available on the Microsoft
+World Wide Web at the following address:
+<P>
+</FONT>
+<PRE>   <B><A HREF="http://www.microsoft.com/office/ork/">http://www.microsoft.com/office/ork/</A></B>
+
+</PRE><FONT FACE="Verdana, Arial, Helvetica" SIZE=2>
+<FONT SIZE=3><B>REFERENCES</B></FONT> <BR>
+ 
+<P>
+For more information about ActiveX controls, search the Help Index for
+"ActiveX controls, using," or ask the Microsoft Access 97 Office
+Assistant.
+ </FONT>
+
+
+</FONT>
+		</TD>
+	</TR>
+</TABLE>
+<!--DOCBODY_END-->
+
+<!--FOOTER_START-->
+	<HR WIDTH=80%>
+
+<CENTER>
+<FONT FACE="Verdana, Arial, Helvetica" SIZE="1">
+<SPAN STYLE="font-family:verdana,arial,helvetica; font-size:8pt">
+Keywords            : IntpCstm kbother<BR>
+Version             : 97<BR>
+Platform            : WINDOWS<BR>
+Hardware            : x86<BR>
+Issue type          : kbref<BR>
+
+</SPAN>
+</FONT>
+
+<BLOCKQUOTE>
+THE INFORMATION PROVIDED IN THE MICROSOFT KNOWLEDGE BASE IS
+PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND.  MICROSOFT DISCLAIMS
+ALL WARRANTIES, EITHER EXPRESS OR IMPLIED, INCLUDING THE WARRANTIES
+OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.  IN NO
+EVENT SHALL MICROSOFT CORPORATION OR ITS SUPPLIERS BE LIABLE FOR
+ANY DAMAGES WHATSOEVER INCLUDING DIRECT, INDIRECT, INCIDENTAL,
+CONSEQUENTIAL, LOSS OF BUSINESS PROFITS OR SPECIAL DAMAGES, EVEN IF
+MICROSOFT CORPORATION OR ITS SUPPLIERS HAVE BEEN ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGES.  SOME STATES DO NOT ALLOW THE EXCLUSION
+OR LIMITATION OF LIABILITY FOR CONSEQUENTIAL OR INCIDENTAL DAMAGES
+SO THE FOREGOING LIMITATION MAY NOT APPLY.
+</BLOCKQUOTE>
+<P>
+	<I>
+	<A STYLE="font-size:8pt; font-style:italic">&copy;1997 Microsoft Corporation. All rights reserved. </A> <A STYLE="font-size:8pt; font-style:italic" HREF="/MISC/CPYRIGHT.HTM" HREF="/misc/cpyright.htm">Legal Notices</A>.<BR>
+	</I></CENTER>
+
+<!--FOOTER_END-->
+</FONT>
+</BODY>
+</HTML>

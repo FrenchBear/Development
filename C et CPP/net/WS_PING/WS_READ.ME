@@ -1,0 +1,50 @@
+  Windows Sockets PING Client Application Release 1 Version 94.01.22
+
+  Written by:
+      John A. Junod             Internet: <junodj@css583.gordon.army.mil>
+      267 Hillwood Street                 <zj8549@trotter.usma.edu>
+      Martinez, GA 30907      Compuserve: 72321,366 
+
+  This program executable and all source code is released into the public
+  domain.  You may use this code for any purpose but please give me a little
+  credit for any use of this code.  The primary purpose of this application 
+  was to learn what it takes to write a Windows Sockets Application.
+
+  THE INFORMATION AND CODE PROVIDED IS PROVIDED AS IS WITHOUT WARRANTY 
+  OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO 
+  THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR 
+  PURPOSE. IN NO EVENT SHALL JOHN A. JUNOD BE LIABLE FOR ANY DAMAGES 
+  WHATSOEVER INCLUDING DIRECT, INDIRECT, INCIDENTAL, CONSEQUENTIAL, LOSS 
+  OF BUSINESS PROFITS OR SPECIAL DAMAGES, EVEN IF JOHN A. JUNOD HAS BEEN 
+  ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+  My development and testing was all completed at home on two 386 PC's using
+  the Trumpet Windows Sockets DLL Alpha 18 with NCSA Telnet and WinQVT/Net 2.6
+  and 3.9 as the remote host.  Source code may be compiled with Borland C++
+  in large mode.
+
+  Some code concepts and names are based on code that is copyright by the
+  Regents of the University of California or code published in UNIX Network
+  Programming by W. Richard Stevens or code in WATTCP or other public sources.
+  The rest is based on my knowledge of Windows programming and my 
+  interpretation of RFC 969 and the Windows Sockets API version 1.1.
+
+  This code implements both a blocking and a non-blocking (async) ping.
+
+  You can specify a hostname (or ip address) on the command line.  In that
+  case an Async Ping is performed.
+
+  Known problems:
+
+  1) Most Windows Sockets DLL's do not support the use of RAW_SOCKETS
+     so this application will not work with many implementations.  A
+     couple that do work are: Trumpet Windows Sockets DLL Alpha 18, 
+     FTP Software's PC/TCP
+
+  2) "Network subsystem failure" probably means that the ARP request for
+     a local host or default gateway failed.
+
+94.01.22
+  Increased stack size.
+  Added lookup option.
+

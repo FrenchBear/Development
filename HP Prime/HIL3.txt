@@ -1,0 +1,60 @@
+﻿// HIL3 - Plot Hilbert Curve
+// L-System style
+// 2014-03 PV
+// 2016-07-12 PV  MAJ S3 nom réservé
+
+#pragma mode(separator(.,;) integer(h32))
+
+LS2();
+DR();
+EXPORT X3,Y3, A3, MS3;
+
+EXPORT HIL3(D)
+BEGIN
+  A3:=0;
+  X3:=45;
+  Y3:=235;
+  MS3:=230/(2^D-1);
+  RECT();
+  T:=TICKS;
+  LS2(D,"X");
+  T:=(TICKS-T)/1000;
+  WAIT;
+  RETURN T;
+END;
+
+LS2(D, S)
+BEGIN
+  IF D==0 THEN
+    DR(S);
+  ELSE
+    LOCAL I,C;
+    FOR I FROM 1 TO DIM(S) DO
+      C:=MID(S,I,1);
+      CASE
+        IF C=="X" THEN LS2(D-1, "-YF+XFX+FY-"); END; 
+        IF C=="Y" THEN LS2(D-1, "+XF-YFY-FX+"); END;
+        DEFAULT DR(C);
+      END;
+    END;
+  END; 
+END;
+
+DR(S)
+BEGIN
+  LOCAL X2, Y2, I, C;
+  FOR I FROM 1 TO DIM(S) DO
+    C := MID(S,I,1);
+    CASE
+      IF C=="+" THEN A3:=A3+π/2 END;
+      IF C=="-" THEN A3:=A3-π/2 END;
+      IF C=="F" THEN
+        X2 := X3+MS3*COS(A3);
+        Y2 := Y3+MS3*SIN(A3);
+        LINE_P(X3,Y3,X2,Y2,#FF);
+        X3:=X2;
+        Y3:=Y2;
+      END;
+    END;
+  END;
+END;

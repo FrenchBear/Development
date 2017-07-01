@@ -1,0 +1,46 @@
+Closing a DOS prompt window
+by Chuck Kraatz
+
+After you run a DOS application in Windows 95, the MS-DOS Prompt window doesn't close. To prevent this behavior, you can use the API to find the Window handle for the DOS prompt window, wait for the program to finish running, then zap the DOS prompt window into oblivion.
+This technique doesn't require any forms. It's just a simple VB 4.0 DLL with two properties: the EXE name of the DOS program and the text that will appear as the caption of the DOS prompt window displaying this application. The core of this app lies in three API calls. Place the following code in a standard module: 
+
+     Declare Function FindWindow& Lib "user32" Alias "FindWindowA" _
+     (ByVal lpClassName As String, ByVal lpWindowName As String)
+
+     Declare Function SendMessage Lib "user32" Alias "SendMessageA" (ByVal hwnd As Long, _
+     ByVal wMsg As Long, ByVal wParam As Long, lParam As Any) As Long
+
+     Declare Sub Sleep Lib "kernel32" (ByVal dwMilliseconds As Long)
+
+     Public Const WM_CLOSE = &H10
+
+
+
+The rest of the code goes in the following class module, named Cclose:
+
+
+
+     Private m_sEXEName As String
+     Private m_sDosCaption As String
+
+     Public Sub RunDosApp()
+     Dim vReturnValue As Variant
+     Dim lRet As Long
+     Dim i As Integer
+
+     vReturnValue = Shell(m_sEXEName, 1) ' Run EXE
+     AppActivate vReturnValue ' Activate EXE Window
+
+     Do
+      Sleep (10000)
+      lRet = FindWindow(vbNullString, m_sDosCaption)
+      If (lRet <> 0) Then
+          vReturnValue = SendMessage(lRet, WM_CLOSE, &O0, &O0)
+          Exit Do
+      End If
+     Loop
+     End Sub
+
+
+Read past Tips of the Week! 
+  

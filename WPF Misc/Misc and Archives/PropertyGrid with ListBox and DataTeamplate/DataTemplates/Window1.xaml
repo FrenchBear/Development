@@ -1,0 +1,60 @@
+﻿<Window x:Class="DataTemplates.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:l="clr-namespace:DataTemplates"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    Title="DataTemplates" Height="200" Width="230">
+
+    <Window.Resources>
+
+        <!-- Default DataTemplate -->
+        <DataTemplate x:Key="DefaultDataTemplate">
+            <Grid Margin="4" MinHeight="25">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" SharedSizeGroup="Key" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="{Binding Name}" FontWeight="Bold"  />
+                <TextBox Margin="8,0" Grid.Column="1" Text="{Binding Value }" />
+            </Grid>
+        </DataTemplate>
+
+        <!-- DataTemplate for Booleans -->
+        <DataTemplate x:Key="BooleanDataTemplate">
+            <Grid Margin="4" MinHeight="25">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" SharedSizeGroup="Key" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="{Binding Name}" FontWeight="Bold"  />
+                <CheckBox Margin="8,0" Grid.Column="1" IsChecked="{Binding Value}" />
+            </Grid>
+        </DataTemplate>
+        
+        <!-- DataTemplate for Enums -->
+        <DataTemplate x:Key="EnumDataTemplate">
+            <Grid Margin="4" MinHeight="25">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" SharedSizeGroup="Key" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="{Binding Name}" FontWeight="Bold"  />
+                <ComboBox Margin="8,0" SelectedValue="{Binding Value}" 
+                          ItemsSource="{Binding PropertyType, 
+                          Converter={l:EnumToListConverter}}" Grid.Column="1"  
+                          HorizontalAlignment="Stretch" />
+            </Grid>
+        </DataTemplate>
+
+        <!-- DataTemplate Selector -->
+        <l:PropertyDataTemplateSelector x:Key="templateSelector"
+              DefaultnDataTemplate="{StaticResource DefaultDataTemplate}"
+              BooleanDataTemplate="{StaticResource BooleanDataTemplate}" 
+              EnumDataTemplate="{StaticResource EnumDataTemplate}"/>
+    </Window.Resources>
+    <Grid>
+        <ListBox ItemsSource="{Binding}" Grid.IsSharedSizeScope="True" 
+                 HorizontalContentAlignment="Stretch" 
+                 ItemTemplateSelector="{StaticResource templateSelector}"/>
+    </Grid>
+</Window>

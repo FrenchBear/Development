@@ -1,0 +1,850 @@
+
+
+<HTML>
+<HEAD>
+<TITLE>INFO: Controls Shipped in Visual Basic 6.0</TITLE>
+
+<!--STYLE_START-->
+
+<LINK REL="STYLESHEET" HREF="/support/style.css" TYPE="text/css">
+
+<!--STYLE_END-->
+
+<!--META_START-->
+<META HTTP-EQUIV="CONTENT-Type" CONTENT="text/html; charset=us-ascii">
+<META NAME="ms.locale" CONTENT="EN-US">
+<META NAME="Category" CONTENT="Support; KB Article">
+<META NAME="KBID" CONTENT="Q191524">
+<META NAME="KBModify" CONTENT="1998/09/24">
+<META NAME="KBCreate" CONTENT="1998/08/18">
+<META NAME="Keywords" CONTENT="kbVBp kbVBp600">
+<META NAME="KBArea" CONTENT="Support; KB; vbwin, vstudio">
+<META NAME="Description" CONTENT="  This article lists all the intrinsic and ActiveX controls shipped in Visual Basic. The list includes the ActiveX component file name, display name, version number, date, size, and the controls in the component.  The ActiveX component files installe...">
+<META NAME="Product" CONTENT="Visual Basic for Windows">
+<META NAME="Platform" CONTENT="Windows">
+<META NAME="Premium" CONTENT="support">
+<META HTTP-EQUIV="PICS-Label" CONTENT='(PICS-1.1 "http://www.rsac.org/ratingsv01.html" l gen true comment "RSACi North America Server" by "Inet@microsoft.com" for "http://support.microsoft.com" on "1998.02.17T12:28-0800" r (n 0 s 0 v 0 l 0))'>
+<!--META_END-->
+
+<META NAME="nyms" CONTENT="QAB5,QA7O,QAOE,QAMN,QBXB,QATJ,QAHV,QACE,QALG,QAK6,QAFI,QBS0,QDL9,QBWO,QBWN V02180118">
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" LEFTMARGIN="0" RIGHTMARGIN="0" TOPMARGIN="0">
+
+
+<!--TOOLBAR_START-->
+<A NAME="TOP"></A>
+
+<TABLE BGCOLOR="#000000" WIDTH="100%" CELLPADDING="0" CELLSPACING="0" BORDER="0">
+	<TR>
+<TD ALIGN="left" VALIGN="top" WIDTH="459"><NOBR><A HREF="http://www.microsoft.com/" TARGET="_top" onMouseOver="flipImage('/library/images/support/toolbar/home_ylw.gif', 'home_mo')" onMouseOut="flipImage('/library/images/support/toolbar/home.gif', 'home_mo')"><IMG SRC="/library/images/support/toolbar/home.gif" WIDTH="103" HEIGHT="21" NAME="home_mo" BORDER=0 ALT="Microsoft Home"></A><A HREF="http://www.microsoft.com/products/default.asp" TARGET="_top" onMouseOver="flipImage('/library/images/support/toolbar/prod_ylw.gif', 'prod_mo')" onMouseOut="flipImage('/library/images/support/toolbar/prod.gif', 'prod_mo')"><IMG SRC="/library/images/support/toolbar/prod.gif" WIDTH="81" HEIGHT="21" NAME="prod_mo" BORDER=0 ALT="Products"></A><A HREF="http://www.microsoft.com/search/default.asp?SPath=\support&SName=Support%20Online" TARGET="_top" onMouseOver="flipImage('/library/images/support/toolbar/search_ylw.gif', 'search_mo')" onMouseOut="flipImage('/library/images/support/toolbar/search.gif', 'search_mo')"><IMG SRC="/library/images/support/toolbar/search.gif" WIDTH="68" HEIGHT="21" NAME="search_mo" BORDER=0 ALT="Search"></A><A HREF="/support/default.asp?PR=ALL&T1=7d&FR=0&A=T&T=B&S=F&" TARGET="_top"><IMG SRC="/library/images/support/toolbar/support_on.gif" WIDTH="74" HEIGHT="21" BORDER=0 ALT="Support"></A><A HREF="http://www.microsoft.com/referral/default.asp" TARGET="_top" onMouseOver="flipImage('/library/images/support/toolbar/shop_ylw.gif', 'shop_mo')" onMouseOut="flipImage('/library/images/support/toolbar/shop.gif', 'shop_mo')"><IMG SRC="/library/images/support/toolbar/shop.gif" WIDTH="55" HEIGHT="21" NAME="shop_mo" BORDER=0 ALT="Shop"></A><A HREF="http://register.microsoft.com/regwiz/regwiz.asp" TARGET="_top" onMouseOver="flipImage('/library/images/support/toolbar/write_ylw.gif', 'write_mo')" onMouseOut="flipImage('/library/images/support/toolbar/write.gif', 'write_mo')"><IMG SRC="/library/images/support/toolbar/write.gif" WIDTH="78" HEIGHT="21" NAME="write_mo" BORDER=0 ALT="Write Us"></A></NOBR></TD><TD ALIGN="left" VALIGN="top" WIDTH="100%"><IMG BORDER="0" HEIGHT="21" SRC="/library/images/support/toolbar/spacer.gif" WIDTH="100%"></TD><TD ALIGN="left" VALIGN="top" WIDTH="91"><A HREF="http://www.microsoft.com/" TARGET="_top"><IMG SRC="/library/images/support/toolbar/msft.gif" WIDTH="91" HEIGHT="21" NAME="msft_mo" BORDER=0 ALT="Microsoft Home"></A></TD>
+	</TR>
+</TABLE>
+<!--TOOLBAR_END-->
+
+<!--PRODUCTBAR_START-->
+
+<SCRIPT LANGUAGE="javascript">
+	<!--
+		function flipImage(url, names)
+		{
+		if(navigator.appVersion.lastIndexOf("MSIE 3.0") == -1) document[names].src = url;
+		}
+	// -->
+</SCRIPT>
+<TABLE BGCOLOR="#FFCC00" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%">
+	<TR VALIGN="top">
+		<TD ALIGN="left" HEIGHT="80" VALIGN="top" WIDTH="126">
+			<IMG ALT="Microsoft Technical Support" BORDER="0" HEIGHT="80" ID="MSTech" SRC="/library/images/support/mtsroad.gif" WIDTH="126"><BR>
+		</TD>
+		<TD ALIGN="left" HEIGHT="80" VALIGN="top" WIDTH="199">
+			<IMG ALT="Microsoft Technical Support" BORDER="0" HEIGHT="80" ID="Support" SRC="/library/images/support/support.gif" WIDTH="199"><BR>
+		</TD>
+		<TD ALIGN="left" HEIGHT="80" VALIGN="top" WIDTH="100%">
+			<IMG BORDER="0" HEIGHT="80" ID="ProductbarSpacer" SRC="/library/images/support/ylwspacer.gif" WIDTH="100%"><BR>
+		</TD>
+	</TR>
+</TABLE>
+<TABLE BGCOLOR="#000000" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%">
+	<TR>
+		<TD>
+			<IMG HEIGHT="1" SRC="/library/images/support/line.gif" WIDTH="100%"><BR>
+		</TD>
+	</TR>
+</TABLE>
+
+<!--PRODUCTBAR_END-->
+
+<!--BUTTONBAR_START-->
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" HEIGHT="82" VALIGN="top" WIDTH="100%">
+	<TR VALIGN="top">
+		<TD VALIGN="top" WIDTH="126">
+			<A HREF="/support/default.asp?PR=ALL&T1=7d&FR=0&A=T&T=B&S=F&"><IMG ALT="Search Support Online: Search the entire collection of articles and self-help tools." BORDER="0" SRC="/library/images/support/searchso_up.gif" HEIGHT="20" NAME="SearchHome" WIDTH="126"></A><BR>
+			<A HREF="/support/glossary/default.asp?PR=ALL&T1=7d&FR=0&A=T&T=B&S=F&"><IMG ALT="Glossary: Learn computer terms and abbreviations used throughout Support Online." BORDER=0 WIDTH=126 HEIGHT=20 NAME="Glossary" SRC="/library/images/support/glossary_up.gif"></A><BR>
+			<A HREF="/support/contact/default_wrtest.asp?PR=ALL&T1=7d&FR=0&A=T&T=B&S=F&"><IMG ALT="Contact Microsoft Technical Support: Give feedback, look up phone numbers, and submit or look up Web Response incidents." BORDER="0" SRC="/library/images/support/contact_up.gif" HEIGHT="30" NAME="Contact" WIDTH="126"></A><BR>
+			
+				<IMG BORDER="0" HEIGHT="28" ID="Returnto" SRC="/library/images/support/endcap.gif" WIDTH="126">
+			
+		</TD>
+		<TD>
+<!--BUTTONBAR_END-->
+
+<!--DOCBODY_START-->
+<BR>
+<CENTER>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" VALIGN="top" WIDTH="90%">
+	<TR>
+		<TD VALIGN="top">
+			<H1>INFO: Controls Shipped in Visual Basic 6.0</H1>
+			<P ALIGN="right">
+			<FONT FACE="verdana,arial,helvetica" SIZE="2"><B>Last reviewed: September 24, 1998</B></FONT><BR>
+			<FONT FACE="verdana,arial,helvetica" SIZE="2"><B>Article ID: Q191524</B></FONT>
+		</TD>
+	</TR>
+</TABLE>
+		</TD>
+	</TR>
+</TABLE>
+</CENTER>
+<HR width=90%>
+<CENTER>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" VALIGN="top" WIDTH="90%">
+	<TR>
+		<TD>
+			<FONT FACE="Verdana, Arial, Helvetica" SIZE=2>
+
+
+ 
+ 
+The information in this article applies to:
+
+<UL><LI>Microsoft Visual Basic Learning, Professional, and Enterprise Editions
+   for Windows, version 6.0
+</UL> 
+<P>
+<P><h2>SUMMARY</h2>
+ 
+<P>
+This article lists all the intrinsic and ActiveX controls shipped in Visual
+Basic. The list includes the ActiveX component file name, display name,
+version number, date, size, and the controls in the component.
+<P>
+The ActiveX component files installed depend on the options chosen during
+installation. Many files are not installed with the product and must be
+installed separately. Instructions for installing these controls will be in
+a Readme.txt file in the same directory as the uninstalled controls.
+<P>
+<P><h2>MORE INFORMATION</h2>
+ 
+<P>
+<P><h3>Control Summary</h3>
+ 
+<P>
+The following is a summary of ActiveX control files shipped with the
+different editions of Visual Basic.
+<P>
+<PRE>   ActiveX Control                       FileName      Version     Edition*
+   ------------------------------------------------------------------------
+
+   ADO Data Control 6.0                  Msadodc.ocx   6.00.8171   L,P,E
+
+   AxBrowse                              Vcmaxb.ocx    6.00.8169   P,E
+
+   CDlg                                  Repcdlg.ocx   6.00.8161   P,E
+
+   Chart Control 6.0                     Mschrt20.ocx  6.00.8177   P,E
+
+   Comm Control 6.0                      Mscomm32.ocx  6.00.8169   P,E
+
+   Common Dialog Control 6.0             Comdlg32.ocx  6.00.8169   L,P,E
+
+   Data Bound List Controls 6.0          Dblist32.ocx  6.00.8169   L,P,E
+
+   DataGrid Control 6.0                  Msdatgrd.ocx  6.00.8169   L,P,E
+
+   DataList Controls 6.0                 Msdatlst.ocx  6.00.8169   L,P,E
+
+   DataRepeater Control 6.0              Msdatrep.ocx  6.00.8169   P,E
+
+   FlexGrid Control 6.0                  Msflxgrd.ocx  6.00.8169   L,P,E
+
+   Hierarchical FlexGrid Control 6.0     Mshflxgd.ocx  6.00.3005   L,P,E
+
+   Internet Transfer Control 6.0         Msinet.ocx    6.00.8169   L,P,E
+
+   MAPI Controls 6.0                     Msmapi32.ocx  6.00.8169   L,P,E
+
+   Masked Edit  Control 6.0              Msmask32.ocx  6.00.8169   L,P,E
+
+   MSFlexGrid Wizard                     Flexwiz.ocx   6.00.8169   L,P,E
+
+   Multimedia Control 6.0                Mci32.ocx     6.00.8169   L,P,E
+
+   Package And Deployment Wizard         Pdwizard.ocx  6.00.8169   L,P,E
+
+   PictureClip Control 6.0               Picclp32.ocx  6.00.8169   L,P,E
+
+   RemoteData Control 6.0                Msrdc20.ocx   6.00.8169   E
+
+   Rich Textbox Control 6.0              Richtx32.ocx  6.00.8169   L,P,E
+
+   SysInfo Control 6.0                   Sysinfo.ocx   6.00.8169   L,P,E
+
+   Tabbed Dialog Control 6.0             Tabctl32.ocx  6.00.8169   L,P,E
+
+   Visual Basic 6.0 Application Wizard   Appwiz.ocx    6.00.8177   L,P,E
+
+   Visual Basic 6.0 Data Form Wizard     Dataform.ocx  6.00.8169   L,P,E
+
+   Visual Basic 6.0 MSChart Wizard       Chartwiz.ocx  6.00.8177   L,P,E
+
+   VisModelBrowser                       Vcmvmb.ocx    6.00.8169   L,P,E
+
+   Windows Common Controls-3 6.0         Comct332.ocx  6.00.8169   L,P,E
+
+   Windows Common Controls 5.0 (SP2)     Comctl32.ocx  6.00.8022   L,P,E
+
+   Windows Common Controls 6.0           Mscomctl.ocx  6.00.8177   L,P,E
+
+   Windows Common Controls-2 5.0 (SP2)   Comct232.ocx  6.00.8022   L,P,E
+
+   Windows Common Controls-2 6.0         Mscomct2.ocx  6.00.8177   L,P,E
+
+   Winsock Control 6.0                   Mswinsck.ocx  6.00.8169   L,P,E
+
+</PRE>*L = Learning Edition
+*P = Professional Edition
+*E = Enterprise Edition
+<P>
+<P><h3>Intrinsic Controls</h3>
+ 
+<P>
+The following controls are contained inside the Visual Basic executable
+file and always appear in the ToolBox:
+
+<UL><LI>Check Box
+<LI>Combo Box
+<LI>Command Button
+<LI>Data
+<LI>Directory List Box
+<LI>Drive List Box
+<LI>File List Box
+<LI>Frame
+<LI>Horizontal Scroll Bar
+<LI>Image
+<LI>Label
+<LI>Line
+<LI>List Box
+<LI>Menu
+<LI>OLE Container
+<LI>Option Button
+<LI>Picture Box
+<LI>Shape
+<LI>Text Box
+<LI>Timer
+<LI>Vertical Scroll Bar
+<P>
+</UL><h3>ActiveX Components</h3>
+ 
+<P>
+The components listed below are arranged by the edition in which the
+component ships and the file name. Each file name contains the following:
+
+<UL><LI>Display name
+<LI>Version number
+<LI>File date
+<LI>File size
+<LI>File location on the distribution disk
+<LI>Controls included with the components.
+<P>
+</UL><h3>Learning Edition</h3>
+ 
+<P>
+The following ActiveX components ship in the Learning Edition:
+<P>
+<PRE>   ComCtl32.ocx   Microsoft Windows Common Controls 5.0 (SP2)
+                  Version: 6.00.8022
+                  Date: 7/8/98 6:24:43 PM
+                  Size: 609,584 bytes
+                  Source Directory: \os\system
+                  Controls: ImageList
+                            ListView
+                            ProgressBar
+                            Slider
+                            Status Bar
+                            TabStrip
+                            Toolbar
+                            TreeView
+
+   ComCt232.ocx   Microsoft Windows Common Controls-2 5.0 (SP2)
+                  Version: 6.00.8022
+                  Date: 7/8/98 6:24:43 PM
+                  Size: 164,144 bytes
+                  Source Directory: \os\system
+                  Controls: Animation
+                            UpDown
+
+   ComDlg32.ocx   Microsoft Common Dialog Control 6.0
+                  Version: 6.00.8169
+                  Date: 7/8/98 6:24:44 PM
+                  Size: 140,096 bytes
+                  Source Directory: \os\system
+                  Controls: CommonDialog
+
+   DBList32.ocx   Microsoft Data Bound List Controls 6.0 (OLEDB)
+                  Version: 6.00.8169
+                  Date: 7/8/98 6:24:46 PM
+                  Size: 200,496 bytes
+                  Source Directory: \os\system
+                  Controls: DBCombo
+                            DBList
+
+   MSADODC.ocx   Microsoft ADO Data Control 6.0 (OLEDB)
+                 Version: 6.00.8171
+                 Date: 7/8/98 6:24:57 PM
+                 Size: 118,064 bytes
+                 Source Directory: \os\system
+                 Controls: ADODC
+
+   MSComCt2.ocx   Microsoft Windows Common Controls-2 6.0
+                  Version: 6.00.8177
+                  Date: 7/8/98 6:24:57 PM
+                  Size: 644,400 bytes
+                  Source Directory: \os\system
+                  Controls: Animation
+                            UpDown
+                            MonthView
+                            DTPicker
+                            FlatScrollBar
+
+   MSComCtl.ocx   Microsoft Windows Common Controls 6.0
+                  Version: 6.00.8177
+                  Date: 7/8/98 6:24:59 PM
+                  Size: 1,062,704 bytes
+                  Source Directory: \os\system
+                  Controls: ImageCombo
+                            ImageList
+                            ListView
+                            ProgressBar
+                            Slider
+                            StatusBar
+                            TabStrip
+                            ToolBar
+                            TreeView
+
+   MSDatGrd.ocx   Microsoft DataGrid Control 6.0 (OLEDB)
+                  Version: 6.00.8169
+                  Date: 7/8/98 6:25:01 PM
+                  Size: 260,920 bytes
+                  Source Directory: \os\system
+                  Controls: DataGrid
+
+   MSDatLst.ocx    Microsoft DataList Control 6.0 (OLEDB)
+                  Version: 6.00.8169
+                  Date: 7/8/98 6:25:02 PM
+                  Size: 232,248 bytes
+                  Source Directory: \os\system
+                  Controls: DataCombo
+                            DataList
+
+   MSFlxGrd.ocx   Microsoft FlexGrid Control 6.0
+                  Version: 6.00.8169
+                  Date: 7/8/98 6:25:03 PM
+                  Size: 244,024 bytes
+                  Source Directory: \os\system
+                  Controls: MSFlexGrid
+
+   MSHFlxGd.ocx   Microsoft Hierarchical FlexGrid Control 6.0
+                  Version: 6.00.3005
+                  Date: 7/8/98 6:25:04 PM
+                  Size: 407,104 bytes
+                  Source Directory: \os\system
+                  Controls: MSHFlexGrid
+
+   RichTx32.ocx   Microsoft Rich TextBox Control 6.0
+                  Version: 6.00.8169
+                  Date: 7/8/98 6:25:26 PM
+                  Size: 203,576 bytes
+                  Source Directory: \os\system
+                  Controls: RichTextBox
+
+   TabCtl32.ocx   Microsoft Tabbed Dialog Control 6.0
+                  Version: 6.00.8169
+                  Date: 7/8/98 6:25:27 PM
+                  Size: 209,192 bytes
+                  Source Directory: \os\system
+                  Controls: SSTab
+
+</PRE><h3>Professional Edition</h3>
+ 
+<P>
+In addition to all the components in the Learning Edition, the following
+ActiveX components are included in the Professional Edition:
+<P>
+<PRE>   AniBtn32.OCX   Desaware Animated Button Control
+                  Version: 1.00.036
+                  Date: 7/6/98 6:53:42 PM
+                  Size: 149,552 bytes
+                  Source Directory: \Common\Tools\VB\Controls
+                  Controls: AniPushButton
+
+   AppWiz.OCX     Visual Basic 6.0 Application Wizard
+                  Version: 6.00.8177
+                  Date: 7/6/98 8:27:15 PM
+                  Size: 831,488 bytes
+                  Source Directory: \VB98\Wizards
+                  Controls: SubWizard
+
+   ChartWiz.ocx   Visual Basic 6.0 MSChart Wizard
+                  Version: 6.00.8177
+                  Date: 7/6/98 8:27:22 PM
+                  Size: 147,456 bytes
+                  Source Directory: \VB98\Wizards
+                  Controls: SubWizard
+
+   ComCt332.ocx   Microsoft Common Controls[ASCII 150]3 6.0
+                  Version: 6.00.8169
+                  Date: 7/6/98 8:18:16 PM
+                  Size: 369,696 bytes
+                  Source Directory: \os\system
+                  Controls: CoolBar
+
+   DataForm.ocx   Visual Basic 6.0 DataForm Wizard
+                  Version: 6.00.8169
+                  Date: 7/6/98 8:27:29 PM
+                  Size: 541,728 bytes
+                  Source Directory: \vb98\wizards
+                  Controls: ctlWizards
+
+   DBGrid32.OCX   Microsoft Data Bound Grid Control 5.0(SP3)
+                  Version: 5.1.814
+                  Date: 7/6/98 6:54:14 PM
+                  Size: 525,352 bytes
+                  Source Directory: \common\tools\vb\controls
+                  Controls: DBGrid
+
+   FlexWiz.ocx    MSFlexGrid Wizard
+                  Version: 6.00.8169
+                  Date: 7/6/98 8:27:33 PM
+                  Size: 226,328 bytes
+                  Source Directory: \vb98\wizards
+                  Controls: SubWizard
+
+   Gauge32.ocx    MicroHelp Gauge Control
+                  Version: 1.00.0024
+                  Date: 7/6/98 6:54:25 PM
+                  Size: 68,640 bytes
+                  Source Directory: \common\tools\vb\controls
+                  Controls: Gauge
+
+   Graph32.ocx    Pinnacle-BPS Graph Control
+                  Version: 1.00.047
+                  Date: 7/6/98 6:54:30 PM
+                  Size: 216,096 bytes
+                  Source Directory: \common\tools\vb\controls
+                  Controls: Graph
+
+   Grid32.ocx     Microsoft Grid Control
+                  Version: 1.0.2908
+                  Date: 7/6/98 6:54:39 PM
+                  Size: 94,744 bytes
+                  Source Directory: \common\tools\vb\controls
+                  Controls: Grid
+
+   Grid32.ocx     Microsoft Grid Control
+                  Version: 1.00.2930
+                  Date: 7/6/98 6:56:31 PM
+                  Size: 92,160 bytes
+                  Source Directory: \common\tools\vb\controls\bidi
+                  Controls: Grid
+
+   KeySta32.ocx   MicroHelp Key State Control
+                  Version: 1.00.0024
+                  Date: 7/6/98 6:54:57 PM
+                  Size: 123432 bytes
+                  Source Directory: \common\tools\vb\controls
+                  Controls: MhState
+
+   MSChart.ocx    Microsoft Chart Control 6.0
+                  Version: 6.00.8079
+                  Date: 7/6/98 6:55:03 PM
+                  Size: 97,9728 bytes
+                  Source Directory: \common\tools\vb\controls
+                  Controls: MSChart
+
+   MSChrt20.ocx   Microsoft Chart Control 6.0 (OLEDB)
+                  Version: 6.00.8177
+                  Date: 7/6/98 8:18:57 PM
+                  Size: 1,008,432 bytes
+                  Source Directory: \os\system
+                  Controls: MSChart
+
+   Mci32.ocx      Microsoft Multimedia Control 6.0
+                  Version: 6.00.8169
+                  Date: 7/6/98 8:18:41 PM
+                  Size: 198,456 bytes
+                  Source Directory: \os\system
+                  Controls: MMControl
+
+   MSComm32.ocx   Microsoft Comm Control 6.0
+                  Version: 6.00.8169
+                  Date: 7/6/98 8:19:15 PM
+                  Size: 103,744 bytes
+                  Source Directory: \os\system
+                  Controls: MSComm
+
+   MSDatRep.ocx   Microsoft DataRepeater Control 6.0 (OLEDB)
+                  Version: 6.00.8169
+                  Date: 7/6/98 8:19:19 PM
+                  Size: 187,712 bytes
+                  Source Directory: \os\system
+                  Controls: DataRepeater
+
+   MSInet.ocx     Microsoft Internet Transfer Control 6.0
+                  Version: 6.00.8169
+                  Date: 7/6/98 8:19:35 PM
+                  Size: 115,016 bytes
+                  Source Directory: \os\system
+                  Controls: Inet
+
+   MSMAPI32.ocx   Microsoft MAPI Controls 6.0
+                  Version: 6.00.8169
+                  Date: 7/6/98 8:19:53 PM
+                  Size: 137,000 bytes
+                  Source Directory: \os\system
+                  Controls: MAPIMessages
+                            MAPISession
+
+   MSMask32.ocx   Microsoft Masked Edit Control 6.0
+                  Version: 6.00.8169
+                  Date: 7/6/98 8:19:54 PM
+                  Size: 166,200 bytes
+                  Source Directory: \os\system
+                  Controls: MaskEdBox
+
+   MSOutl32.ocx   Microsoft Outline Control
+                  Version: 1.00.2922
+                  Date: 7/6/98 6:56:04 PM
+                  Size: 84,000 bytes
+                  Source Directory: \common\tools\vb\controls
+                  Controls: Outline
+
+   MSScript.ocx   Microsoft Script Control 1.0
+                  Version: 1.0.02604
+                  Date: 7/6/98 7:16:18 PM
+                  Size: 133,392 bytes
+                  Source Directory: \common\tools\vb\script
+                  Controls: ScriptControl
+
+   MSWinsck.OCX   Microsoft Winsock Control 6.0
+                  Version: 6.00.8169
+                  Date: 7/6/98 8:20:46 PM
+                  Size: 108,336 bytes
+                  Source Directory: \os\system
+                  Controls: Winsock
+
+   MSWLess.ocx    Microsoft Windowless Controls 6.0
+                  Version: 6.00.8169
+                  Date: 7/6/98 7:42:43 PM
+                  Size: 386,872 bytes
+                  Source Directory: \common\tools\vb\winless
+                  Controls: WLCheck
+                            WLCombo
+                            WLCommand
+                            WLFrame
+                            WLHScroll
+                            WLList
+                            WLOption
+                            WLText
+                            WLVScroll
+
+   PicClp32.ocx   Microsoft PictureClip Control 6.0
+                  Version: 6.00.8169
+                  Date: 7/6/98 8:21:07 PM
+                  Size: 82,744 bytes
+                  Source Directory: \os\system
+                  Controls: PictureClip
+
+   RepCdlg.ocx    Cdlg
+                  Version: 6.00.8161
+                  Date: 7/6/98 8:17:57 PM
+                  Size: 119,848 bytes
+                  Source Directory: \os\msapps\repostry
+                  Controls:   RepCdg
+
+   Spin32.ocx     Outrider SpinButton Control
+                  Version: 1.00.0044
+                  Date: 7/6/98 6:56:20 PM
+                  Size: 57,880 bytes
+                  Source Directory: \common\tools\vb\controls
+                  Controls: SpinButton
+
+   SysInfo.ocx    Microsoft SysInfo Control 6.0
+                  Version: 6.00.8169
+                  Date: 7/6/98 8:21:21 PM
+                  Size: 67,376 bytes
+                  Source Directory: \os\system
+                  Controls: SysInfo
+
+   Threed32.ocx
+                  Version: 1.00.0041
+                  Date: 7/6/98 6:56:22 PM
+                  Size: 205,848 bytes
+                  Source Directory: \common\tools\vb\controls
+                  Controls: SSCheck
+                            SSCommand
+                            SSFrame
+                            SSOption
+                            SSPanel
+                            SSRibbon
+
+   VCMAXB.ocx     AXBrowse
+                  Version: 6.00.8169
+                  Date: 7/6/98 7:43:11 PM
+                  Size: 74,792 bytes
+                  Source Directory: \common\tools\vcm
+                  Controls: AxBrowser
+
+   VCMVMB.ocx     VisModelBrowser
+                  Version: 6.00.8169
+                  Date: 7/6/98 7:43:25 PM
+                  Size: 95,264 bytes
+                  Source Directory: \common\tools\vcm
+                  Controls: VMBrowser
+
+</PRE><h3>Enterprise Edition</h3>
+ 
+<P>
+In addition to all the components in the Professional Edition, the
+following ActiveX components are included in the Enterprise Edition. Unless
+otherwise documented, the following controls are stored in Disk 1:
+<P>
+<PRE>   Comdlg32.ocx   Microsoft Common Dialog Control 5.0 (SP2)
+                  Version: 5.01.4319
+                  Date: 7/6/98 11:32:48 PM
+                  Size: 129,808 bytes
+                  Source Directory: \disk2\sna4\ntclient\comti
+                  Controls: CommonDialog
+
+   Comct232.ocx   Microsoft Windows Common Controls-2 58.0(SP2)
+                  Version: 5.01.4319
+                  Date: 7/6/98 11:32:46 PM
+                  Size: 155,920 bytes
+                  Source Directory: \disk2\sna4\ntclient\comti
+                  Controls: Animation
+                          UpDown
+
+   Comctl32.ocx   Microsoft Windows Common Controls
+                  Version: 1.00.2415
+                  Date: 7/7/98 12:04:13 AM
+                  Size: 330,752 bytes
+                  Source Directory: \disk2\sql\i386
+                  Controls: ImageList
+                            ListView
+                            ProgressBar
+                            Slider
+                            Status Bar
+                            TabStrip
+                            Toolbar
+                            TreeView
+
+   Comctl32.ocx   Microsoft Windows Common Controls 5.0 (SP2)
+                  Version: 5.1.4319
+                  Date: 7/6/98 11:32:47 PM
+                  Size: 604,432 bytes
+                  Source Directory: \disk2\sna4\ntclient\comti
+                  Controls: ImageList
+                            ListView
+                            ProgressBar
+                            Slider
+                            Status Bar
+                            TabStrip
+                            Toolbar
+                            TreeView
+
+   ComCtl32.ocx   Microsoft Windows Common Controls 5.0 (SP2)
+                  Version: 6.00.8022
+                  Date: 7/8/98 6:24:43 PM
+                  Size: 609,584 bytes
+                  Source Directory: \disk2\ape_ss\os\system
+                  Controls: ImageList
+                            ListView
+                            ProgressBar
+                            Slider
+                            Status Bar
+                            TabStrip
+                            Toolbar
+                            TreeView
+
+   ComDlg32.ocx   Microsoft Common Dialog Control 6.0
+                  Version: 6.00.8169
+                  Date: 7/8/98 6:24:44 PM
+                  Size: 140,096 bytes
+                  Source Directory: \disk2\ape_ss\os\system
+                  Controls: CommonDialog
+
+   MSComCtl.ocx   Microsoft Windows Common Controls 6.0
+                  Version: 6.00.8177
+                  Date: 7/8/98 6:24:59 PM
+                  Size: 1,062,704 bytes
+                  Source Directory: \disk2\ape_ss\os\system
+                  Controls: ImageCombo
+                            ImageList
+                            ListView
+                            ProgressBar
+                            Slider
+                            StatusBar
+                            TabStrip
+                            ToolBar
+                            TreeView
+
+   Msflxgrd.ocx   Microsoft FlexGrid Control 5.0 (SP2)
+                  Version: 5.01.4319
+                  Date: 7/6/98 11:33:05 PM
+                  Size: 227,600 bytes
+                  Source Directory: \disk2\sna4\ntclient\comti
+                  Controls: MSFlexGrid
+
+   Msrdc20.ocx    Microsoft RemoteData Control 6.0
+                  Version: 6.00.8169
+                  Date: 7/6/98 6:36:46 PM
+                  Size: 176,440 bytes
+                  Source Directory: \os\system and \disk2\ape_ss\os\system
+                  Controls: MSRDC
+
+   SysInfo.ocx    Microsoft SysInfo Control 6.0
+                  Version: 6.00.8169
+                  Date: 7/6/98 8:21:21 PM
+                  Size: 67,376 bytes
+                  Source Directory: \disk2\ape_ss\os\system
+                  Controls: SysInfo
+
+   Spin32.ocx     Outrider SpinButton Control
+                  Version: 1.00.0044
+                  Date: 7/6/98 6:56:20 PM
+                  Size: 57,880 bytes
+                  Source Directory: \disk2\sql\i386
+                  Controls: SpinButton
+
+   Tabctl32.ocx   Microsoft Tabbed Dialog Control 5.0 (SP2)
+                  Version: 5.01.4319
+                  Date: 7/6/98 11:33:19 PM
+                  Size: 192,784 bytes
+                  Source Directory: \disk2\sna4\ntclient\comti
+                  Controls: SSTab
+
+   Vbsql.ocx      Vbsql OLE Custom control module
+                  Version: 6.50.163
+                  Date: 7/7/98 12:08:49 AM
+                  Size: 43,520 bytes
+                  Source Directory: \disk2\sql\ptk\i386
+                  Controls: Vbsql
+
+</PRE><h3>Internet Explorer 4.01 ActiveX Controls</h3>
+ 
+<P>
+The following controls are shipped with Internet Explorer version 4.01.
+<P>
+<PRE>   ActiveX Control                              FileName      Version
+   ------------------------------------------------------------------------
+
+   ActiveMovie Control                          Amovie.ocx    5.01.18.1024
+
+   Active Setup Control Library                 Asctrls.ocx   4.72.3110.6
+
+   DirectAnimation Media Controls               Daxctle.ocx   2.0.0.7310
+
+   FlUpl Control Library                        Flupl.ocx     7.0.794.27
+
+   Intel Procedural Effect Library              Proctexe.ocx  2.0.0.7310
+
+   Internet Controls                            Shdocvw.dll   4.72.3110.3
+
+   NetShow File Transfer Control Type Library   Nsfile.ocx    2.0.0.912
+
+   NetShow Player                               Nsplay.ocx    2.0.0.912
+
+   ShockWave Flash                              Swflash.ocx   2.1.0.12
+
+   Tabular Data Control 1.1 Type Library        tdc.ocx       1.2.0.0031
+
+
+</PRE><h2>REFERENCES</h2>
+ 
+<P>
+Books Online for Microsoft Visual Basic version 6.0.
+<P>
+For additional information, please see the following article in the
+Microsoft Knowledge Base:
+<P>
+<PRE>   ARTICLE-ID: <B><A HREF="/support/kb/articles/Q168/2/43.asp">Q168243</A></B>
+   TITLE     : HOWTO: Search the Knowledge Base for Internet Explorer
+               Articles
+</PRE>(c) Microsoft Corporation 1998, All Rights Reserved. Contributions by
+Arsenio Locsin, Microsoft Corporation
+(c) Microsoft Corporation 1998, All Rights Reserved. Contributions by
+Robert Young, Microsoft Corporation
+<P>
+			</FONT>
+		</TD>
+	</TR>
+</TABLE>
+<P>
+<!--VOTING_START-->
+<P>
+<FORM NAME="VOTE" ACTION="/support/contentvoting/voting_idc.asp?PR=ALL&T1=7d&FR=0&A=T&T=B&S=F&" METHOD="POST">
+	<INPUT TYPE="hidden" NAME="KBID" VALUE="Q191524">
+	<INPUT TYPE="hidden" NAME="PROD" VALUE="Visual Basic for Windows">
+	<INPUT TYPE="hidden" NAME="KBAREA" VALUE="vbwin, vstudio">
+	<INPUT TYPE="hidden" NAME="SRV" VALUE="support.microsoft.com">
+<INPUT TYPE="hidden" NAME="URL" VALUE="/support/kb/articles/Q191/5/24.asp">
+<A NAME="VOTE">&nbsp;</A>
+<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 BGCOLOR="#FFCC00" VALIGN="top" WIDTH=396>
+<TR>
+<TD  WIDTH=396><FONT FACE="Verdana, Arial, Helvetica" SIZE=2>
+<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 BGCOLOR="#FFCC00" VALIGN="top" WIDTH=396><TR><TD>&nbsp;</TD></TR><TR><TD VALIGN="middle" COLSPAN="9"><CENTER><B><FONT SIZE="3">Did this information help answer your&nbsp;question?</FONT></B></CENTER></TD></TR><TR><TD>&nbsp;</TD></TR><TR><TD WIDTH=15>&nbsp;</TD><TD ALIGN="right" VALIGN="middle"><INPUT TYPE="RADIO" NAME="VOTE" VALUE=1></TD><TD>&nbsp;<FONT SIZE="2"><B>Yes</B></FONT></TD><TD WIDTH=15>&nbsp;</TD><TD ALIGN="right" VALIGN="middle"><INPUT TYPE="RADIO" NAME="VOTE" VALUE=2></TD><TD>&nbsp;<FONT SIZE="2"><B>No</B></FONT></TD><TD WIDTH=15>&nbsp;</TD><TD ALIGN="right" VALIGN="middle"><INPUT TYPE="RADIO" NAME="VOTE" VALUE=3></TD><TD WIDTH=80>&nbsp;<FONT SIZE="2"><B>Didn't&nbsp;apply</B></FONT></TD></TR><TR><TD>&nbsp;</TD><TD>&nbsp;</TD></TR></TABLE><TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 BGCOLOR="#FFCC00" VALIGN="top" WIDTH=396><TR><TD><CENTER><FONT SIZE="3"><B>Please comment.</B></FONT><BR><FONT SIZE="2">Comment can be up to 255 characters.</FONT><BR><TEXTAREA WRAP="VIRTUAL" COLS=40 ID="COMMENTS" NAME="COMMENTS" ROWS=4 ONKEYPRESS="if (COMMENTS.value.length > 255) event.returnValue = false;"></TEXTAREA></CENTER></TD></TR></TABLE></TD></TR><TR><TD ALIGN="RIGHT">&nbsp;<INPUT TYPE="IMAGE" SRC="/library/images/support/v_submit.gif" ALT="Submit" WIDTH=66 HEIGHT=30 BORDER=0 ALIGN="RIGHT"></TD></TR></TABLE>
+</FONT>
+</TD>
+</TR>
+</TABLE>
+</FORM>
+
+<!--VOTING_END-->
+
+<!--DOCBODY_END-->
+
+<!--FOOTER_START-->
+<HR WIDTH="90%">
+<TABLE CELLPADDING="5" BORDER="0" WIDTH="90%">
+	<TR>
+		<TD>
+			<BLOCKQUOTE>
+				<FONT FACE="Verdana, Arial, Helvetica" SIZE="1">
+				<SPAN STYLE="font-family:verdana,arial,helvetica; font-size:8pt">
+Additional query words: kbVBp kbVBp600 kbdsd kbDSupport kbSetUp vb6<BR>
+Keywords          : kbVBp kbVBp600<BR>
+Version           : WINDOWS:6.0<BR>
+Platform          : WINDOWS<BR>
+Issue type        : kbinfo<BR>
+
+				</SPAN>
+				</FONT>
+				<BR>
+				<BR>
+				THE INFORMATION PROVIDED IN THE MICROSOFT KNOWLEDGE BASE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND.  MICROSOFT DISCLAIMS ALL WARRANTIES, EITHER EXPRESS OR IMPLIED, INCLUDING THE WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.  IN NO EVENT SHALL MICROSOFT CORPORATION OR ITS SUPPLIERS BE LIABLE FOR ANY DAMAGES WHATSOEVER INCLUDING DIRECT, INDIRECT, INCIDENTAL, CONSEQUENTIAL, LOSS OF BUSINESS PROFITS OR SPECIAL DAMAGES, EVEN IF MICROSOFT CORPORATION OR ITS SUPPLIERS HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.  SOME STATES DO NOT ALLOW THE EXCLUSION OR LIMITATION OF LIABILITY FOR CONSEQUENTIAL OR INCIDENTAL DAMAGES SO THE FOREGOING LIMITATION MAY NOT APPLY.
+			</BLOCKQUOTE>
+		</TD>
+	</TR>
+</TABLE>
+<CENTER>
+<P>
+<!--LAST_REVIEWED_DATE_START-->
+<FONT FACE="Verdana,Arial,Helvetica" SIZE="1">Last reviewed: September 24, 1998<BR>
+<!--LAST_REVIEWED_DATE_END-->
+<!--COPYRIGHT_START-->
+&copy; 1998 Microsoft Corporation. All rights reserved. <A HREF="/support/misc/cpyright.asp?PR=ALL&T1=7d&FR=0&A=T&T=B&S=F&" STYLE="font: bold 7pt Verdana,Arial,Helvetica">Terms of Use.</A></FONT><BR>
+<!--COPYRIGHT_END-->
+</CENTER>
+<!--FOOTER_END-->
+</BODY>
+</HTML>

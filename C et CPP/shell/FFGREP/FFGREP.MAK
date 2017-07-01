@@ -1,0 +1,88 @@
+# Microsoft Visual C++ generated build script - Do not modify
+
+PROJ = FFGREP
+DEBUG = 1
+PROGTYPE = 6
+CALLER = 
+ARGS = 
+DLLS = 
+D_RCDEFINES = -d_DEBUG
+R_RCDEFINES = -dNDEBUG
+ORIGIN = MSVC
+ORIGIN_VER = 1.00
+PROJPATH = C:\C\FFGREP\
+USEMFC = 1
+CC = cl
+CPP = cl
+CXX = cl
+CCREATEPCHFLAG = 
+CPPCREATEPCHFLAG = 
+CUSEPCHFLAG = 
+CPPUSEPCHFLAG = 
+FIRSTC = FFGREP.C    
+FIRSTCPP =             
+RC = rc
+CFLAGS_D_DEXE = /nologo /Zr /Gs /G3 /W2 /O2 /D "_DEBUG" /D "_DOS" /FR 
+CFLAGS_R_DEXE = /nologo /Gs /G2 /W3 /AM /Ox /D "NDEBUG" /D "_DOS" /FR 
+LFLAGS_D_DEXE = /NOLOGO /NOI /STACK:5120 /ONERROR:NOEXE /CO 
+LFLAGS_R_DEXE = /NOLOGO /NOI /STACK:5120 /ONERROR:NOEXE 
+LIBS_D_DEXE = safxcrd oldnames slibce 
+LIBS_R_DEXE = mafxcr oldnames mlibce 
+RCFLAGS = /nologo
+RESFLAGS = /nologo
+RUNFLAGS = 
+OBJS_EXT = 
+LIBS_EXT = 
+!if "$(DEBUG)" == "1"
+CFLAGS = $(CFLAGS_D_DEXE)
+LFLAGS = $(LFLAGS_D_DEXE)
+LIBS = $(LIBS_D_DEXE)
+MAPFILE = nul
+RCDEFINES = $(D_RCDEFINES)
+!else
+CFLAGS = $(CFLAGS_R_DEXE)
+LFLAGS = $(LFLAGS_R_DEXE)
+LIBS = $(LIBS_R_DEXE)
+MAPFILE = nul
+RCDEFINES = $(R_RCDEFINES)
+!endif
+!if [if exist MSVC.BND del MSVC.BND]
+!endif
+SBRS = FFGREP.SBR \
+		CHAINE.SBR
+
+
+FFGREP_DEP = 
+
+CHAINE_DEP = 
+
+all:	$(PROJ).EXE $(PROJ).BSC
+
+FFGREP.OBJ:	FFGREP.C $(FFGREP_DEP)
+	$(CC) $(CFLAGS) $(CCREATEPCHFLAG) /c FFGREP.C
+
+CHAINE.OBJ:	CHAINE.C $(CHAINE_DEP)
+	$(CC) $(CFLAGS) $(CUSEPCHFLAG) /c CHAINE.C
+
+$(PROJ).EXE::	FFGREP.OBJ CHAINE.OBJ $(OBJS_EXT) $(DEFFILE)
+	echo >NUL @<<$(PROJ).CRF
+FFGREP.OBJ +
+CHAINE.OBJ +
+$(OBJS_EXT)
+$(PROJ).EXE
+$(MAPFILE)
+e:\msvc\lib\+
+e:\msvc\mfc\lib\+
+$(LIBS)
+$(DEFFILE);
+<<
+	link $(LFLAGS) @$(PROJ).CRF
+
+run: $(PROJ).EXE
+	$(PROJ) $(RUNFLAGS)
+
+
+$(PROJ).BSC: $(SBRS)
+	bscmake @<<
+/o$@ $(SBRS)
+<<

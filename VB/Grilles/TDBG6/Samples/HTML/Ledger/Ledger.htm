@@ -1,0 +1,322 @@
+<html>
+
+<head>
+<title>General Ledger</title>
+</head>
+
+<body>
+
+<p>
+<P>
+<OBJECT id=tDBGrid CLASSID="clsid:0D6234D0-DBA2-11D1-B5DF-0060976089D0" WIDTH=771 HEIGHT=300>
+	<PARAM NAME="DataSource" DATASRC="#adcLedger">
+</OBJECT>
+
+<table>
+	<tr>
+		<td width="79%">
+			<p>Add a new item:</p>
+			<p>Account #: <input type="text" size="20" name="txtAccountNum">
+			Description:<input type="text" size="20" name="txtDesc"></p>
+			<BUTTON ID="btnAdd">Add</BUTTON>
+		</td>
+		<td width="21%">
+			<BUTTON ID="btnSubmit">Submit Changes</BUTTON>
+		</td>
+	</tr>
+</table>
+<OBJECT CLASSID="CLSID:BD96C556-65A3-11D0-983A-00C04FC29E33" ID="adcLedger" HEIGHT=1 WIDTH=1>
+	<PARAM NAME="Server" VALUE="http://passat">
+	<PARAM NAME="Connect" VALUE="DSN=LEDGERDB">
+	<PARAM NAME="SQL" VALUE="Select * From Accounts Order By AccountID">
+</OBJECT>
+
+<script language="VBSCRIPT">
+Dim GridCols(6)
+
+Sub tDBGrid_DatasourceChanged()
+' The following is necessary to work around a bug in ADO: the ADO Recordset
+' Bookmark property has incorrect type and so it would reject bookmark values
+' originated from the grid (see UnboundColumnFetch, RS.Bookmark = Bookmark).
+' The TDBGrid.BookmarkType property helps to avoid this bug. Setting it to
+' the actual type of Recordset.Bookmark (it may vary in different situations,
+' it is generally unpredictable) makes the grid convert all bookmarks it passes
+' to the user to the specified type.
+
+	tDBGrid.BookmarkType = VarType(adcLedger.RecordSet.Bookmark)
+End Sub
+
+Sub window_OnLoad()
+' The initialization code for the grid. Since design time property
+' pages of the grid are unavailable, all initialization has to be
+' done manually.
+
+	Dim I
+	Dim S, NegativeStyle
+
+	' Remove all columns
+	for i = 1 to tDBGrid.Columns.Count
+		tDBGrid.Columns.Remove(0)
+	next
+
+	' Add columns manually, setting their properties
+
+	set GridCols(0) = tDBGrid.Columns.Add(0)
+	GridCols(0).DataField = "AccountId"
+	GridCols(0).Caption = "GL#"
+	GridCols(0).NumberFormat = "FormatText Event"
+	GridCols(0).DataWidth = 14
+	GridCols(0).Width = 50
+	GridCols(0).HeadAlignment = 2   'dbgCenter
+	GridCols(0).Visible = True
+	set GridCols(1) = tDBGrid.Columns.Add(1)
+	GridCols(1).DataField = "AccountName"
+	GridCols(1).Caption = "Account"
+	GridCols(1).DataWidth = 255
+	GridCols(1).Width = 140
+	GridCols(1).HeadAlignment = 2   'dbgCenter
+	GridCols(1).Visible = True
+	set GridCols(2) = tDBGrid.Columns.Add(2)
+	GridCols(2).DataField = "Comments"
+	GridCols(2).Caption = "Comments"
+	GridCols(2).DataWidth = 65535
+	GridCols(2).Width = 220
+	GridCols(2).HeadAlignment = 0   'dbgLeft
+	GridCols(2).Visible = True
+	set GridCols(3) = tDBGrid.Columns.Add(3)
+	GridCols(3).DataField = "LastPosting"
+	GridCols(3).Caption = "LastPosting"
+	GridCols(3).NumberFormat = "Short Date"
+	GridCols(3).DataWidth = 19
+	GridCols(3).Width = 110
+	GridCols(3).HeadAlignment = 3   'dbgGeneral
+	GridCols(3).Visible = True
+	set GridCols(4) = tDBGrid.Columns.Add(4)
+	GridCols(4).DataField = ""
+	GridCols(4).Caption = "Debit"
+	GridCols(4).DataWidth = 0
+	GridCols(4).NumberFormat = "FormatText Event"
+	GridCols(4).Width = 73
+	GridCols(4).HeadAlignment = 0   'dbgLeft
+	GridCols(4).Visible = True
+	GridCols(4).Alignment = 1   'dbgRight
+
+	set GridCols(5) = tDBGrid.Columns.Add(5)
+	GridCols(5).DataField = ""
+	GridCols(5).Caption = "Credit"
+	GridCols(5).NumberFormat = "FormatText Event"
+	GridCols(5).DataWidth = 0
+	GridCols(5).Width = 73
+	GridCols(5).HeadAlignment = 0   'dbgLeft
+	GridCols(5).Visible = True
+	GridCols(5).Alignment = 1   'dbgRight
+
+	set GridCols(6) = tDBGrid.Columns.Add(6)
+	GridCols(6).DataField = "Balance"
+	GridCols(6).Caption = "Balance"
+	GridCols(6).NumberFormat = "FormatText Event"
+	GridCols(6).DataWidth = 22
+	GridCols(6).Width = 73
+	GridCols(6).HeadAlignment = 3   'dbgGeneral
+	GridCols(6).Visible = True
+	GridCols(6).Alignment = 1   'dbgRight
+
+	' Set some ambient properties and add the regular expression
+	' styles for the grid
+	tDBGrid.Styles.Item("Normal").Font.Name = "Tahoma"
+	tDBGrid.Styles.Item("Normal").Font.Size = 8
+
+	set S = tDBGrid.Styles.Add(0)
+	S.Font.Bold = True
+	GridCols(0).AddRegexCellStyle 0, S, "^[0-9]+$"
+	GridCols(0).AddRegexCellStyle 1, S, "^[0-9]+$"
+
+	set NegativeStyle = tDBGrid.Styles.Add(1)
+	NegativeStyle.ForeColor = vbRed
+
+
+	tDBGrid.Columns.Item(6).AddRegexCellStyle 0, NegativeStyle, "^(.+)$"
+	tDBGrid.Columns.Item(6).AddRegexCellStyle 0, NegativeStyle, "^ *-"
+
+	tDBGrid.EvenRowStyle.BackColor = &H80FFFF
+	tDBGrid.OddRowStyle.BackColor = &HC0FFFF
+
+	tDBGrid.HighlightRowStyle.BackColor = &H400000
+	tDBGrid.HighlightRowStyle.ForeColor = vbWhite
+	tDBGrid.AlternatingRowStyle = True
+	tDBGrid.ExtendRightColumn = True
+
+	tDBGrid.CellTips = 2 'Floating
+	tDBGrid.MarqueeStyle = 1
+
+	' Update the grid
+	tDBGrid.HoldFields
+	tDBGrid.ReBind
+End Sub
+
+Sub tDBGrid_AfterColUpdate(ColIndex)
+	' Refresh grid to update running total column
+	If ColIndex = 3 Or ColIndex = 6 Then
+		tDBGrid.Update
+		tDBGrid.PostMsg 1
+	End If
+End Sub
+
+Sub tDBGrid_BeforeColUpdate(ColIndex, OldValue, Cancel)
+	' When the credit or debit columns are updated set
+	' the LastPosting field and the Balance field.
+	If Trim(GridCols(ColIndex).Value) = "" Then
+		GridCols(6).Value = Null
+		GridCols(3).Text = Now
+	Else
+		If GridCols(ColIndex).Caption = "Debit" Then
+			GridCols(6).Value = GridCols(ColIndex).Value
+			GridCols(3).Text = Now
+		Else
+			If GridCols(ColIndex).Caption = "Credit" Then
+				GridCols(6).Value = -(GridCols(ColIndex).Value)
+				GridCols(3).Text = Now
+			End If
+		End If
+	End If
+End Sub
+
+Sub tDBGrid_FetchCellTips(SplitIndex, ColIndex, RowIndex, CellTip, FullyDisplayed, TipStyle)
+	Dim rowbk
+	Dim tempDate
+
+	If RowIndex >= 0 Then
+		rowbk = tDBGrid.RowBookmark(RowIndex)
+	End If
+
+	If RowIndex = -1 Then
+		' The tip is for the column header
+		Select Case ColIndex
+			Case 0	
+				CellTip = "Account ID Number"
+			Case 1
+				CellTip = "Account Information"
+			Case 2
+				CellTip = "Comments on Account"
+			Case 3
+				CellTip = "Last Posting"
+			Case 4
+				CellTip = "Debit Column"
+			Case 5
+				CellTip = "Credit Column"
+			Case 6
+				CellTip = "Running Account Balance"
+		End Select
+	Else
+		' The tip is for one of the columns
+		If ColIndex = 3 Then
+'eug!!! find out why we can't write GridCols(3) here
+			tempDate = tDBGrid.Columns.Item(3).CellText(rowbk)
+			If tempDate <> "" Then
+				If CDate(tempDate) = Date Then
+					CellTip = "Posted Today"
+				End If
+			End If
+		End If
+		If ColIndex = 6 Then
+'eug!!! find out why we can't write GridCols(6) here
+			If InStr(tDBGrid.Columns.Item(6).CellText(rowbk), "-") Then
+				CellTip = "In the Red"
+			Else
+				CellTip = "In the Black"
+			End If
+		End If
+	End If
+End Sub
+
+Sub tDBGrid_FormatText(ColIndex, Value, Bookmark)
+	Select Case ColIndex
+		Case 0
+			' Indent the AccountId if there is a decimal in
+			' the number.
+			If InStr(Value, ".") <> 0 Then
+				Value = "  " & Value
+			End If
+		Case 4
+			If Not IsNumeric(Value) Then Exit Sub
+			Value = FormatCurrency(Value,,,TristateFalse)
+		Case 5
+			If Not IsNumeric(Value) Then Exit Sub
+			If Value > 0 Then
+				Value = Abs(Value)
+				Value = FormatCurrency(Value)
+			Else
+				Value = ""
+			End If
+		Case 6
+			' Show the negative sign in the number
+			If Not IsNumeric(Value) Then Exit Sub
+			Value = FormatCurrency(Value,,,TristateFalse)
+	End Select
+End Sub
+
+Sub tDBGrid_PostEvent(MsgId)
+	If MsgId = 1 Then tDBGrid.Refresh
+End Sub
+
+Sub tDBGrid_UnboundColumnFetch(Bookmark, Col, Value)
+	Dim Bkmk1
+	Dim Bkmk2
+	Dim Sum
+	Dim Balance	
+
+	set RS = adcLedger.Recordset.clone
+
+	Bkmk1 = Bookmark
+	Select Case Col
+		Case 4
+			' Debit field
+			RS.Bookmark = Bookmark
+			Balance = RS.Fields.Item("balance")
+			If Balance < 0 Then
+				Value = Balance
+			Else
+				Value = ""
+			End If
+		Case 5
+			' Credit field
+			RS.Bookmark = Bookmark
+			Balance = RS.Fields.Item("balance")
+			If Balance > 0 Then
+				Value = Balance
+			Else
+				Value = ""
+			End If
+		Case 6
+			' Running Balance
+			Sum = 0
+			RS.MoveFirst
+			Do
+				Balance = RS.Fields.Item("balance")
+				Bkmk2 = RS.Bookmark
+				If IsNull(Balance) Then
+					Sum = Sum
+				Else
+					Sum = Sum + Balance
+				End If
+				RS.MoveNext
+			Loop Until Bkmk1 = Bkmk2
+			Value = Sum
+	End Select
+End Sub
+
+Sub btnAdd_OnClick()
+' Create a new account entry
+
+	adcLedger.Recordset.AddNew
+	adcLedger.Recordset.Fields.Item("AccountID") = txtAccountNum.Value
+	adcLedger.Recordset.Fields.Item("AccountName") = txtDesc.Value
+	adcLedger.Recordset.Update
+End Sub
+
+Sub btnSubmit_OnClick()
+	adcLedger.SubmitChanges
+End Sub
+</script>
+</body>
+</html>

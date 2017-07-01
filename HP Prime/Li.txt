@@ -1,0 +1,10 @@
+﻿EXPORT Li(V)
+BEGIN
+  LOCAL B;
+  IF V<1 THEN
+    B:=CAS.int("1/LN(x)","x",−∞,V);
+  ELSE
+    B:=CAS.int("1/LN(x)","x",V,∞);
+  END;
+  RETURN B;
+END;

@@ -1,0 +1,13 @@
+<XMLContainer v="1">
+  <MultiField v="1">
+    <Field Name="QCChartFormula" Type="String">If sid Like "STD*" Then
+  Return=Trim(Mid(sid,4))
+Else
+  Return=""
+End If</Field>
+    <Field Name="QCChartDependencyList" Type="String">sid</Field>
+    <Field Name="isBackColorAutomatic" Type="Boolean">True</Field>
+    <Field Name="comment" Type="String">This is the original field comment</Field>
+  </MultiField>
+</XMLContainer>
+

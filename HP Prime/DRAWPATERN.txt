@@ -1,0 +1,15 @@
+﻿EXPORT DRAWPATTERN()
+BEGIN
+  LOCAL xincr,yincr,color;
+  //STARTAPP("Function");
+  RECT();
+  xincr := (Xmax - Xmin)/318;
+  yincr := (Ymax - Ymin)/218;
+  FOR X FROM Xmin TO Xmax STEP xincr DO
+    FOR Y FROM Ymin TO Ymax STEP yincr DO
+      color := RGB(X^3 MOD 255,Y^3 MOD 255, TAN(0.1*(X^3+Y^3)) MOD 255);
+      PIXON(X,Y,color);
+    END;
+  END;
+  WAIT;
+END;

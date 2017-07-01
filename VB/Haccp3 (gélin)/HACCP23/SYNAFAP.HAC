@@ -1,0 +1,1233 @@
+HACCP 2.3
+0,0,0,0,0,0,0,1
+Guide de BPSA des plats préparés réfrigérés$$Projet SYNAFAP
+
+\HACCP\SYNAFAP
+1,0,0,0,0,0,0,0
+Réception
+
+winword $\recept.doc
+1,1,0,0,0,0,0,1
+Matières premières
+
+winword $\matpr.doc
+1,1,1,0,0,0,0,2
+Contamination initiale
+
+
+1,1,1,1,2,0,0,0
+Spécification des cahiers des charges
+
+
+1,1,1,1,1,1,0,0
+Audit méthodes
+
+
+1,1,1,1,2,2,1,0
+Bulletins d'analyse
+
+
+1,1,1,1,2,1,2,0
+Bulletins de livraison
+
+
+1,1,1,1,2,1,1,0
+Bulletins d'analyses
+
+
+1,1,1,1,2,1,0,0
+Contrôles à réception
+
+
+1,1,1,1,1,2,1,0
+Enregistrement des audits
+
+
+1,1,1,1,1,2,0,0
+Audit des sous-traitants
+
+
+1,1,1,1,1,0,0,4
+Evaluation des sous-traitants
+
+excel $\auditfab.xls
+1,1,1,1,0,0,0,3
+Niveau des contaminations
+Physique, microbiologique, chimique
+
+1,1,1,1,2,2,0,0
+Etude d'échantillons
+
+
+1,2,0,0,0,0,0,0
+Action de réception
+
+
+1,2,1,0,0,0,0,0
+Recontamination
+Chimique, physique, microbiologique
+
+1,2,1,1,1,2,0,0
+Suivi de l'encadrement
+Conditions de manutention
+
+1,2,1,1,1,1,0,0
+Examen visuel
+
+
+1,2,1,1,0,0,0,0
+P. conditionnés: Intégrité conditionnement
+
+
+1,2,1,1,1,0,0,0
+Formation du personnel
+
+
+1,2,1,1,2,0,0,0
+Moyens de transport adaptés
+
+
+1,2,1,1,3,0,0,0
+Procédures et instructions de manutention
+
+
+1,2,1,1,4,0,0,0
+Maîtrise des ravageurs
+
+
+1,2,1,2,4,0,0,0
+Maîtrise des corps étrangers
+
+
+1,2,1,2,5,1,0,0
+Suivi par l'encadrement
+Elimination des emballages
+
+1,2,1,2,2,0,0,0
+Moyens de transfert adaptés
+
+
+1,2,1,2,0,0,0,0
+P. vrac: hygiène des manutentions
+Inclut les problèmes de corps étrangers
+
+1,2,1,2,5,0,0,0
+Instruction d'élimination des emballages
+
+
+1,2,1,2,1,0,0,0
+Formation et hygiène du personnel
+
+
+1,2,1,2,3,0,0,0
+Propreté des matériels
+
+
+1,2,1,3,2,0,0,0
+Procédures et instructions
+Nettoyage et désinfection
+
+1,2,1,3,1,0,0,0
+Propreté des locaux et matériels
+
+
+1,2,1,3,1,1,0,0
+Contrôle visuel
+Propreté des locaux et matériels
+
+1,2,1,3,2,1,0,0
+Suivi par l'encadrement
+Application des procédures de nettoyage et de désinfection
+
+1,2,1,3,3,0,0,0
+Maîtrise des ravageurs
+
+
+1,2,1,3,5,0,0,0
+Aire de réception spécialisée
+
+
+1,2,1,3,4,0,0,0
+Maîtrise des corps étrangers
+
+
+1,2,1,3,0,0,0,0
+P. vrac: Hygiène/Etat locaux et matériels
+Inclut les problèmes de corps étrangers
+
+1,2,2,0,0,0,0,0
+Prolifération
+
+
+1,2,2,1,3,1,1,0
+Enregistrement des températures
+
+
+1,2,2,1,3,1,0,0
+Contrôle des températures
+
+
+1,2,2,1,2,1,0,0
+Suivi par l'encadrement
+Applications des règles d'organisation
+
+1,2,2,1,3,0,0,0
+Locaux à température adaptée
+
+
+1,2,2,1,2,0,0,0
+Procédure et instruction d'organisation
+Temps d'attente
+
+1,2,2,1,1,0,0,0
+Formation du personnel
+A l'organisation du déballage
+
+1,2,2,1,0,0,0,0
+Température des produits
+
+
+2,0,0,0,0,0,0,0
+Stockage
+
+
+2,1,0,0,0,0,0,0
+Tous produits
+Matières premières$$Produits intermédiaires$$Produits finis
+
+2,1,1,0,0,0,0,0
+Prolifération microbienne
+
+
+2,1,1,1,2,2,1,0
+Enregistrement des températures
+
+
+2,1,1,1,3,2,1,0
+Enregistrement des audits
+
+
+2,1,1,1,3,2,0,0
+Audit méthodes
+
+
+2,1,1,1,3,1,0,0
+Suivi par l'encadrement
+
+
+2,1,1,1,2,1,1,0
+Enregistrement des températures
+
+
+2,1,1,1,2,2,0,0
+Contrôle des t° des produits
+
+
+2,1,1,1,2,1,0,0
+Contrôle des t° des locaux
+
+
+2,1,1,1,4,0,0,0
+Locaux ou zones spécifiques
+
+
+2,1,1,1,3,0,0,0
+Procédures et instructions
+Relatives au stockage (plan de charge)
+
+2,1,1,1,2,0,0,0
+Equipements adaptés
+Equipements frigorifiques
+
+2,1,1,1,0,0,0,0
+Température des produits
+
+
+2,1,1,1,1,0,0,0
+Formation du personnel
+Aux instructions de stockage et maintenance
+
+2,1,1,2,3,2,0,0
+Contrôle des fiches suiveuses
+Cas des produits intermédiaires
+
+2,1,1,2,3,3,0,0
+Suivi par l'encadrement
+
+
+2,1,1,2,3,2,1,0
+Fiche suiveuse
+
+
+2,1,1,2,0,0,0,0
+Temps de stockage
+
+
+2,1,1,2,2,1,0,0
+Contrôle des fiches de stock
+
+
+2,1,1,2,1,0,0,0
+Formation du personnel
+Aux instructions de gestion des stocks
+
+2,1,1,2,2,0,0,0
+Mise en place de fiches de stock
+Ou suivi informatique
+
+2,1,1,2,2,1,1,0
+Fiche de stock
+
+
+2,1,1,2,3,0,0,0
+Procédures et instructions
+Relatives à la gestion des stocks (FIFO)
+
+2,1,1,2,3,1,0,0
+Contrôles des DLC
+
+
+2,1,1,3,4,1,0,0
+cf mesure préventive 2
+
+
+2,1,1,3,3,2,1,0
+Enregistrement des audits
+
+
+2,1,1,3,3,1,0,0
+Suivi par l'encadrement
+
+
+2,1,1,3,2,1,1,0
+Enregistrement de l'hygrométrie
+
+
+2,1,1,3,2,1,0,0
+Contrôle de l'hygrométrie
+
+
+2,1,1,3,4,0,0,0
+Locaux adaptés
+Locaux secs ou à hygrométrie maîtrisée
+
+2,1,1,3,3,0,0,0
+Procédures et instructions
+De stockage et maintenance
+
+2,1,1,3,2,0,0,0
+Equipements adaptés
+Système de régulation de l'humidité
+
+2,1,1,3,1,0,0,0
+Formation du personnel
+Aux procédures de stockage et de maintenance
+
+2,1,1,3,0,0,0,0
+Humidité de l'ambiance: Hygrométrie
+Cas des produits en vrac ou conditionnement non étanche
+
+2,1,1,3,3,2,0,0
+Audit méthodes
+
+
+2,1,2,0,0,0,0,0
+Recontamination du produit
+Cas des produits en vrac
+
+2,1,2,1,1,0,0,0
+Formation du personnel
+Aux procédures et instructions de manutention
+
+2,1,2,1,3,2,1,0
+Enregistrement des audits
+
+
+2,1,2,1,4,0,0,0
+Maîtrise des ravageurs
+
+
+2,1,2,1,3,2,0,0
+Audit méthodes
+
+
+2,1,2,1,3,1,0,0
+Suivi par l'encadrement
+
+
+2,1,2,1,2,0,0,0
+Equipements adaptés
+Moyens de manutention
+
+2,1,2,1,0,0,0,0
+Hygiène des manutentions
+
+
+2,1,2,1,3,0,0,0
+Procédures et instructions
+Relatives à la manutention
+
+2,1,2,2,2,2,1,0
+Bulletins d'analyses
+
+
+2,1,2,2,0,0,0,0
+Hygiène des locaux
+
+
+2,1,2,2,2,2,0,0
+Frottis de surface
+
+
+2,1,2,2,2,4,1,0
+Enregistrement des audits
+
+
+2,1,2,2,2,4,0,0
+Audit hygiène
+Audit propreté
+
+2,1,2,2,2,3,0,0
+Suivi par l'encadrement
+
+
+2,1,2,2,2,1,0,0
+Examen visuel
+
+
+2,1,2,2,3,0,0,0
+Maîtrise des ravageurs
+
+
+2,1,2,2,2,0,0,0
+Propreté des locaux
+
+
+2,1,2,2,1,0,0,0
+Formation du personnel
+Aux procédures de nettoyage et désinfection
+
+2,1,3,0,0,0,0,0
+Recontamination du produit
+Cas des produits conditionnés
+
+2,1,3,1,0,0,0,0
+Intégrité du conditionnement
+
+
+2,1,3,1,1,0,0,0
+Formation du personnel
+Aux procédures et instructions de manutention
+
+2,1,3,1,2,0,0,0
+Procédures et instructions
+De manutention
+
+2,1,3,1,2,3,0,0
+Audit méthodes
+
+
+2,1,3,1,2,1,0,0
+Contrôle de l'herméticité
+
+
+2,1,3,1,2,2,0,0
+Suivi par l'encadrement
+
+
+2,1,3,1,3,0,0,0
+Maîtrise des ravageurs
+
+
+2,1,3,1,2,3,1,0
+Enregistrement des audits
+
+
+3,0,0,0,0,0,0,1
+Pré-traitements à froid
+Barattage, parage, découpe, ...
+
+3,1,0,0,0,0,0,0
+Tous les produits
+En tenant compte des traitements ultérieurs
+
+3,1,1,0,0,0,0,0
+Prolifération microbienne
+
+
+3,1,1,1,3,1,0,0
+Audit méthodes
+Contrôle des temps d'attente
+
+3,1,1,1,3,1,1,0
+Enregistrement des audits
+
+
+3,1,1,1,4,1,0,0
+Contrôle des t° des locaux
+
+
+3,1,1,1,4,1,1,0
+Enregistrement des températures
+
+
+3,1,1,1,3,3,0,0
+Analyses
+
+
+3,1,1,1,3,2,1,0
+Fiche suiveuse
+
+
+3,1,1,1,2,1,1,0
+Comptes-rendus d'entretien
+
+
+3,1,1,1,3,3,1,0
+Bulletins d'analyses
+
+
+3,1,1,1,3,2,0,0
+Suivi par l'encadrement
+
+
+3,1,1,1,2,1,0,0
+Suivi par l'encadrement
+
+
+3,1,1,1,1,2,1,0
+Enregistrement des températures
+
+
+3,1,1,1,1,1,1,2
+Enregistrement des températures
+
+
+3,1,1,1,1,2,0,0
+Contrôle des t° des locaux
+
+
+3,1,1,1,3,0,0,0
+Procédures et instructions
+de travail, intégrant les temps d'attente
+
+3,1,1,1,4,0,0,0
+Locaux à température adaptée
+
+
+3,1,1,1,1,0,0,0
+Température initiale des produits
+
+
+3,1,1,1,0,0,0,0
+Température des produits
+
+
+3,1,1,1,1,1,0,0
+Contrôle des t° des produits
+
+
+3,1,1,1,2,0,0,0
+Formation du personnel
+(...)
+
+3,1,1,2,3,2,0,0
+Suivi par l'encadrement
+
+
+3,1,1,2,3,1,0,0
+Audit méthodes
+
+
+3,1,1,2,4,1,1,0
+Enregistrement de l'hygrométrie
+
+
+3,1,1,2,4,1,0,0
+Contrôle de l'hygrométrie
+
+
+3,1,1,2,3,3,1,0
+Bulletins d'analyses
+
+
+3,1,1,2,3,3,0,0
+Analyses
+
+
+3,1,1,2,0,0,0,0
+Humidité du produit
+
+
+3,1,1,2,1,0,0,0
+Humidité initiale des produits
+
+
+3,1,1,2,3,0,0,0
+Procédures et instructions
+de travail
+
+3,1,1,2,2,0,0,0
+Formation du personnel
+aux procédures spécifiques
+
+3,1,1,2,4,0,0,0
+Locaux à hygrométrie adaptée
+
+
+3,1,1,2,1,1,0,0
+Analyses chimiques
+
+
+3,1,1,2,1,1,1,0
+Bulletins d'analyses
+
+
+3,1,1,2,2,1,0,0
+Suivi par l'encadrement
+
+
+3,1,1,2,2,1,1,0
+Fiche d'évaluation
+
+
+3,1,1,2,3,1,1,0
+Enregistrement des audits
+
+
+3,1,2,0,0,0,0,0
+Recontamination directe du produit
+microbienne, chimique, physique
+
+3,1,2,1,3,1,0,0
+Suivi par l'encadrement
+
+
+3,1,2,1,3,3,2,0
+Enregistrement des contrôles
+
+
+3,1,2,1,3,3,1,0
+Bulletins d'analyses
+
+
+3,1,2,1,3,1,1,0
+Check-list de contrôle
+
+
+3,1,2,1,3,2,1,0
+Enregistrement des audits
+
+
+3,1,2,1,0,0,0,0
+Hygiène/Etat des locaux et matériels
+
+
+3,1,2,1,3,2,0,0
+Audit hygiène
+Audit propreté
+
+3,1,2,1,2,1,1,0
+Enregistrement des audits
+
+
+3,1,2,1,1,1,1,0
+Enregistrement des audits
+
+
+3,1,2,1,2,1,0,0
+Audit des matériels
+
+
+3,1,2,1,4,0,0,0
+Plan de maintenance
+
+
+3,1,2,1,3,0,0,0
+Procédures et instructions
+Relatives au nettoyage et à la désinfection, et à l'évacuation des déchets
+
+3,1,2,1,2,0,0,0
+Matériels adaptés
+Incluant l'évacuation des déchets
+
+3,1,2,1,1,0,0,0
+Locaux adaptés
+
+
+3,1,2,1,5,0,0,0
+Air maîtrisé
+Selon HRA, HCA, GMP
+
+3,1,2,1,3,3,0,0
+Contrôles de nettoyage
+Dans le cadre d'un plan de contrôle
+
+3,1,2,1,1,1,0,0
+Audit des locaux
+
+
+3,1,2,2,3,1,0,0
+Suivi par l'encadrement
+
+
+3,1,2,2,2,1,1,0
+Enregistrement des audits
+
+
+3,1,2,2,0,0,0,0
+Hygiène des manipulations
+
+
+3,1,2,2,2,3,0,0
+Analyses
+- microbiologiques$$- physiques (détection de particules, hygrométrie, ...)$$- chimiques
+
+3,1,2,2,3,2,2,0
+Bulletins d'analyses
+
+
+3,1,2,2,3,2,0,0
+Contrôle de l'hygiène du personnel
+- Visite médicale$$- Frottis de mains$$- ...
+
+3,1,2,2,2,3,1,0
+Bulletins d'analyses
+
+
+3,1,2,2,1,0,0,0
+Formation du personnel
+Aux procédures et instructions spécifiques
+
+3,1,2,2,2,2,1,0
+Enregistrement des audits
+
+
+3,1,2,2,2,0,0,0
+Procédures et instructions
+de travail
+
+3,1,2,2,3,0,0,0
+Hygiène du personnel
+Tenue, ...
+
+3,1,2,2,1,1,0,0
+Suivi par l'encadrement
+- Evaluation du comportement$$- Entretien d'évaluation
+
+3,1,2,2,1,1,1,0
+Comptes-rendus d'entretien
+
+
+3,1,2,2,2,1,0,0
+Audit hygiène
+Audit propreté
+
+3,1,2,2,2,2,0,0
+Audit méthodes
+
+
+3,1,2,2,3,2,1,0
+Certificat d'aptitude
+
+
+4,0,0,0,0,0,0,0
+Pré-traitements à chaud
+Blanchiment, braisage, suage, pré-cuisson (ou précuisson), ...$$Avant conditionnement
+
+4,1,0,0,0,0,0,0
+Produits intermédiaires
+
+
+4,1,1,0,0,0,0,0
+Prolifération microbienne
+
+
+4,1,1,1,3,2,1,0
+Enregistrement des contrôles
+
+
+4,1,1,1,3,3,1,0
+Enregistrement des températures
+
+
+4,1,1,1,3,3,0,0
+Contrôle des températures
+
+
+4,1,1,1,3,2,0,0
+Contrôle des temps
+
+
+4,1,1,1,3,1,0,0
+Suivi par l'encadrement
+
+
+4,1,1,1,4,1,1,0
+Enregistrement des audits
+
+
+4,1,1,1,4,1,0,0
+Audit des matériels
+
+
+4,1,1,1,3,1,1,0
+Fiche suiveuse
+
+
+4,1,1,1,2,2,0,0
+Audit méthodes
+
+
+4,1,1,1,2,1,1,0
+Comptes-rendus d'entretien
+
+
+4,1,1,1,2,1,0,0
+Suivi par l'encadrement
+
+
+4,1,1,1,2,2,1,0
+Enregistrement des audits
+
+
+4,1,1,1,2,0,0,0
+Formation du personnel
+Aux instructions de travail
+
+4,1,1,1,3,0,0,0
+Procédures et instructions
+De travail.$$Barèmes, conduite, temps d'attente$$Durée d'étape
+
+4,1,1,1,1,1,1,0
+Enregistrement des températures
+
+
+4,1,1,1,0,0,0,0
+Couple temps / température
+Durée de l'étape: 10°C -> 60°C
+
+4,1,1,1,1,1,0,0
+Contrôle des t° des produits
+
+
+4,1,1,1,1,0,0,0
+Température initiale du produit
+
+
+4,1,1,1,4,0,0,0
+Matériels adaptés
+Capacité, capabilité, système de régulation, ...
+
+4,1,2,0,0,0,0,0
+Recontamination du produit
+microbienne, chimique, physique
+
+4,1,2,1,2,0,0,0
+Locaux adaptés
+Respect de la marche en avant$$Evacuation des buées
+
+4,1,2,1,2,1,0,0
+Audit des locaux
+
+
+4,1,2,1,2,1,1,0
+Enregistrement des audits
+
+
+4,1,2,1,1,2,1,0
+Enregistrement des audits
+
+
+4,1,2,1,1,1,0,0
+Suivi par l'encadrement
+
+
+4,1,2,1,1,0,0,0
+Procédures et instructions
+De nettoyage et désinfection
+
+4,1,2,1,3,0,0,0
+Matériels adaptés
+Nettoyabilité, bonne circulation des fluides, ...
+
+4,1,2,1,3,1,1,0
+Enregistrement des audits
+
+
+4,1,2,1,0,0,0,0
+Hygiène/Etat des locaux et matériels
+
+
+4,1,2,1,3,1,0,0
+Audit des matériels
+
+
+4,1,2,1,1,2,0,0
+Audit hygiène
+Audit propreté
+
+4,1,2,2,3,0,0,0
+Procédures et instructions
+de travail
+
+4,1,2,2,1,0,0,0
+Formation du personnel
+Aux procédures et instructions spécifiques
+
+4,1,2,2,2,0,0,0
+Hygiène du personnel
+
+
+4,1,2,2,1,1,0,0
+Suivi par l'encadrement
+Evaluation du comportement$$Entretien d'évaluation
+
+4,1,2,2,1,1,1,0
+Comptes-rendus d'entretien
+
+
+4,1,2,2,2,1,0,0
+Suivi par l'encadrement
+
+
+4,1,2,2,3,1,0,0
+Audit hygiène
+Audit propreté
+
+4,1,2,2,3,1,1,0
+Enregistrement des audits
+
+
+4,1,2,2,0,0,0,0
+Hygiène des manipulations
+
+
+4,1,2,3,1,1,1,0
+Bulletins d'analyses
+
+
+4,1,2,3,1,0,0,0
+Composition des fluides
+Chimique, microbienne
+
+4,1,2,3,1,1,0,0
+Analyses
+Chimiques et microbiologiques
+
+4,1,2,3,0,0,0,0
+Qualité des fluides
+
+
+4,1,3,0,0,0,0,0
+Non décontamination
+
+
+4,1,3,1,3,4,0,0
+Contrôle des temps
+
+
+4,1,3,1,0,0,0,0
+Couple temps / température
+
+
+4,1,3,1,3,3,1,0
+Enregistrement des températures
+Produits et matériels
+
+4,1,3,1,3,4,1,0
+Enregistrement des contrôles
+
+
+4,1,3,1,1,0,0,0
+Température initiale du produit
+
+
+4,1,3,1,2,1,0,0
+Suivi par l'encadrement
+
+
+4,1,3,1,1,1,1,0
+Enregistrement des températures
+
+
+4,1,3,1,1,1,0,0
+Contrôle des t° des produits
+
+
+4,1,3,1,4,0,0,0
+Matériels adaptés
+Pilotage, régulation, adéquation au volume traité (capabilité), ...
+
+4,1,3,1,3,3,0,0
+Contrôle des températures
+
+
+4,1,3,1,2,0,0,0
+Formation du personnel
+Aux procédures spécifiques
+
+4,1,3,1,3,0,0,0
+Procédures et instructions de travail
+- Barème temps / température$$- Maintenance du matériel$$- Vérification et étalonnage des appareils de pilotage et de mesure
+
+4,1,3,1,3,1,0,0
+Suivi par l'encadrement
+
+
+4,1,3,1,4,1,1,0
+Enregistrement des audits
+
+
+4,1,3,1,3,1,1,0
+Fiche suiveuse
+
+
+4,1,3,1,4,1,0,0
+Audit des matériels
+
+
+4,1,3,1,3,2,1,0
+Enregistrement des audits
+
+
+4,1,3,1,3,2,0,0
+Audit méthodes
+
+
+5,0,0,0,0,0,0,0
+Refroidissement intermédiaire
+A l'eau (suite à blanchiment), en cellule, ...
+
+5,1,0,0,0,0,0,0
+Produits intermédiaires
+
+
+5,1,1,0,0,0,0,0
+Prolifération microbienne
+
+
+5,1,1,1,3,1,2,0
+Fiche de vérifications et d'étalonnages
+Appareils de pilotage et de mesure
+
+5,1,1,1,4,1,1,0
+Enregistrement des audits
+
+
+5,1,1,1,3,4,1,0
+Enregistrement des contrôles
+
+
+5,1,1,1,4,1,0,0
+Audit des matériels
+
+
+5,1,1,1,3,4,0,0
+Contrôle des temps
+
+
+5,1,1,1,3,1,0,0
+Suivi par l'encadrement
+
+
+5,1,1,1,3,3,1,0
+Enregistrement des températures
+
+
+5,1,1,1,1,1,0,0
+Contrôle des t° des produits
+
+
+5,1,1,1,0,0,0,0
+Couple temps / température
+Durée de l'étape: 60° -> 10°C
+
+5,1,1,1,1,0,0,0
+Température initiale du produit
+
+
+5,1,1,1,2,0,0,0
+Formation du personnel
+aux instructions de travail
+winword formpers.doc
+5,1,1,1,3,2,0,0
+Audit méthodes
+
+
+5,1,1,1,4,0,0,0
+Matériels adaptés
+Capacité, capabilité, système de pilotage, ...
+
+5,1,1,1,3,3,0,0
+Contrôle des températures
+
+
+5,1,1,1,1,1,1,0
+Enregistrement des températures
+
+
+5,1,1,1,2,1,0,0
+Suivi par l'encadrement
+
+
+5,1,1,1,2,1,1,0
+Comptes-rendus d'entretien
+
+
+5,1,1,1,3,1,1,0
+Fiche suiveuse
+
+
+5,1,1,1,3,2,1,0
+Enregistrement des audits
+
+
+5,1,1,1,3,0,0,0
+Procédures et instructions de travail
+Barème conduite$$Temps d'attente$$Durée d'étape$$Maintenance du matériel$$Vérification et étalonnage des appareils de pilotage et de mesure
+
+5,1,2,0,0,0,0,0
+Recontamination du produit
+microbienne, chimique, physique
+
+5,1,2,1,0,0,0,0
+cf §7.1.2
+Recontamination du produit ayant subi un pré-traitement à chaud
+
+6,0,0,0,0,0,0,0
+Assemblage
+Intégrer les autres caractéristiques des produits (AW, pH, ...)
+
+7,0,0,0,0,0,0,0
+Conditionnement
+Le conditionnement peut être suivi ou non d'un traitement thermique.$$Cette étape inclut le pesage$$Produits assemblés
+
+7,1,0,0,0,0,0,0
+Produits subissant un traitement thermique
+Après conditionnement
+
+7,1,1,0,0,0,0,0
+Prolifération microbienne
+
+
+7,1,1,1,3,1,1,0
+Enregistrement des audits
+
+
+7,1,1,1,0,0,0,0
+Température des produits
+
+
+7,1,1,1,4,1,1,0
+Enregistrement des températures
+
+
+7,1,1,1,4,1,0,0
+Contrôle des t° des locaux
+
+
+7,1,1,1,3,2,0,0
+Suivi par l'encadrement
+
+
+7,1,1,1,3,1,0,0
+Audit méthodes
+Contrôle des temps d'attente
+
+7,1,1,1,2,1,1,0
+Comptes-rendus d'entretien
+
+
+7,1,1,1,2,1,0,0
+Suivi par l'encadrement
+
+
+7,1,1,1,1,1,1,0
+Enregistrement des températures
+
+
+7,1,1,1,1,1,0,0
+Contrôle des t° des produits
+
+
+7,1,1,1,4,0,0,0
+Locaux à température adaptée
+Notamment cas des produits conditionnés à froid
+
+7,1,1,1,3,0,0,0
+Procédures et instructions de travail
+Intégrant les temps d'attente
+
+7,1,1,1,2,0,0,0
+Formation du personnel
+
+
+7,1,1,1,1,0,0,0
+Température initiale des produits
+
+
+7,1,1,1,3,2,1,0
+Fiche suiveuse
+
+
+7,1,2,0,0,0,0,0
+Recontamination du produit
+
+
+7,1,2,1,0,0,0,0
+Hygiène/Etat des locaux et matériels
+
+
+7,1,2,1,3,1,0,0
+Audit des locaux
+
+
+7,1,2,1,4,1,1,0
+Enregistrement des contrôles
+
+
+7,1,2,1,4,1,0,0
+Contrôle de l'air ambiant
+
+
+7,1,2,1,3,1,1,0
+Enregistrement des audits
+
+
+7,1,2,1,4,0,0,0
+Air maîtrisé
+Selon GMP
+
+7,1,2,1,3,0,0,0
+Locaux adaptés
+
+
+7,1,2,1,2,0,0,0
+Procédures et instructions
+- De travail$$- Nettoyage et désinfection$$- De maintenance
+
+7,1,2,1,1,0,0,0
+Formation du personnel
+
+
+7,1,2,1,5,0,0,0
+Matériels adaptés
+
+
+7,1,2,2,0,0,0,0
+Hygiène des manipulations
+
+
+7,1,2,3,0,0,0,0
+Hygiène des matériaux
+De conditionnement
+
+7,1,3,0,0,0,0,0
+Non herméticité
+
+
+7,2,0,0,0,0,0,0
+Produits sans traitement thermique
+Après conditionnement
+

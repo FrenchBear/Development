@@ -1,0 +1,49 @@
+<!-- saved from url=(0022)http://internet.e-mail -->
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<META NAME="Generator" CONTENT="Microsoft Word 97">
+<TITLE>Date</TITLE>
+<META NAME="Version" CONTENT="8.0.3429">
+<META NAME="Date" CONTENT="11/28/96">
+<META NAME="Template" CONTENT="C:\Program Files\Microsoft Office\Modèles\Commande.dot">
+</HEAD>
+<BODY LINK="#0000ff" VLINK="#800080" BGCOLOR="#ffffff">
+
+<B><FONT FACE="Verdana" SIZE=5><P>Date</P>
+</B></FONT><I><FONT FACE="Verdana" SIZE=2><P>Retour &agrave; l'aide </I></FONT><A HREF="Automate.htm"><FONT FACE="Verdana" SIZE=2>g&eacute;n&eacute;rale </FONT></A></P>
+<FONT FACE="Verdana" SIZE=2><P>La commande <B>Date</B> envoie &agrave; l'application active l'&eacute;quivalent de la frappe au clavier d'une date.</P>
+</FONT><P><HR></P>
+<B><U><FONT FACE="Verdana" SIZE=2><P>Syntaxe</U> : Date</B> [<I>Format</I>][<I>, D&eacute;calage</I>]</P>
+<P>La syntaxe de l'instruction <B>Date</B> comprend les arguments suivants :</P></FONT>
+<TABLE CELLSPACING=0 BORDER=0 CELLPADDING=4 WIDTH=585>
+<TR><TD WIDTH="12%" VALIGN="TOP">
+<P><B><FONT FACE="Verdana" SIZE=2>&Eacute;l&eacute;ment</B></FONT></TD>
+<TD WIDTH="88%" VALIGN="TOP">
+<B><FONT FACE="Verdana" SIZE=2><P>Description</B></FONT></TD>
+</TR>
+<TR><TD WIDTH="12%" VALIGN="TOP">
+<I><FONT FACE="Verdana" SIZE=2><P>Format</I></FONT></TD>
+<TD WIDTH="88%" VALIGN="TOP">
+<FONT FACE="Verdana" SIZE=2><P>Expression de type cha&icirc;ne indiquant le format de date attendu par l'application active. Cet argument utilise les symboles anglo-saxons&nbsp;: "d" pour le jour, "m" pour le mois et "y" pour l'ann&eacute;e.<BR>
+Si cet argument est laiss&eacute; vide, <B>Automate</B> utilisera le format par d&eacute;faut qui est "dd/mm/yyyy"</FONT></TD>
+</TR>
+<TR><TD WIDTH="12%" VALIGN="TOP">
+<I><FONT FACE="Verdana" SIZE=2><P>D&eacute;calage</I></FONT></TD>
+<TD WIDTH="88%" VALIGN="TOP">
+<FONT FACE="Verdana" SIZE=2><P>Valeur de type entier indiquant le d&eacute;calage en jours (positif ou n&eacute;gatif) par rapport &agrave; la date du syst&egrave;me.<BR>
+Si cet argument est laiss&eacute; vide, <B>Date</B> retournera la date du syst&egrave;me.</FONT></TD>
+</TR>
+</TABLE>
+
+<B><U><FONT FACE="Verdana" SIZE=2><P>Exemples</U><BR>
+</B></FONT><I><FONT FACE="Courier New">Date "dd/mm/yy", -2<BR>
+</I></FONT><FONT FACE="Verdana" SIZE=2>retourne 08/05/99</FONT><FONT FACE="Courier New" SIZE=2> (</FONT><FONT FACE="Verdana" SIZE=2>si la commande est ex&eacute;cut&eacute; le 10/05/99)</P>
+</FONT><I><FONT FACE="Courier New"><P>Date "dddd d mmmm yyyy"<BR>
+</I></FONT><FONT FACE="Verdana" SIZE=2>retourne Mardi 10 mai 1999</FONT><FONT FACE="Courier New" SIZE=2> (</FONT><FONT FACE="Verdana" SIZE=2>si la commande est ex&eacute;cut&eacute; le 10/05/99)</P>
+</FONT><P><HR></P>
+<B><FONT FACE="Verdana" SIZE=2><P>Remarque<BR>
+</B>M&ecirc;me si la commande Date utilise les termes anglo-saxons (d-m-y) elle conserve l'ordre fran&ccedil;ais Jour-Mois-Ann&eacute;e.</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P></FONT></BODY>
+</HTML>

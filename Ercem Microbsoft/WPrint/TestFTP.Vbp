@@ -1,0 +1,16 @@
+Form=TestFTP.Frm
+Object={831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0; MSCOMCTL.OCX
+Reference=*\G{BEF6E001-A874-101A-8BBA-00AA00300CAB}#2.0#0#C:\WINDOWS\SYSTEM\OLEPRO32.DLL#Standard OLE Types
+Object={B7FC3542-8CE7-11CF-9754-00AA00C00908}#1.0#0; FTPCT.OCX
+ProjWinSize=84,686,295,233
+ProjWinShow=2
+Name="Projet1"
+HelpContextID="0"
+StartMode=0
+VersionCompatible32="0"
+MajorVer=1
+MinorVer=0
+RevisionVer=0
+AutoIncrementVer=0
+ServerSupportFiles=0
+VersionCompanyName="SILLIKER"

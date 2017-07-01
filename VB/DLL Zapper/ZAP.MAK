@@ -1,0 +1,11 @@
+MAIN.FRM
+GLOBAL.BAS
+ADT.BAS
+WAIT.FRM
+ABOUT.FRM
+COPYDEST.FRM
+ProjWinSize=60,724,230,215
+ProjWinShow=2
+IconForm="frmMain"
+Title="DLL Zapper"
+ExeName="ZAP.EXE"

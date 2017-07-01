@@ -1,0 +1,6 @@
+
+make:	adr.exe
+
+adr.exe:      adr.cpp
+
+

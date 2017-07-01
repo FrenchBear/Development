@@ -1,0 +1,385 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0045)http://www.thescarms.com/VBasic/Scripting.asp -->
+<HTML><HEAD><TITLE>Enter and Run Source Code Statements at Runtime Using the Script Control.</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META http-equiv=description 
+content="Enter Source Code into your compiled executable and run it using the Script Control.">
+<META http-equiv=keywords 
+content="The Scarms, TheScarms, Visual Basic Code Library, VB programming, VB5.0, VB6.0 programs, microsoft windows, registry, win32 apis, ActiveX scripting, software, Microsoft Script Control, VBScript, VB Script, JScript, JavaScript, Java Script, Scripting, scriptable, macros, macro processor, windows script hosting, Addobject, expose, microsoft script control, activex scripting, application object model">
+<META content="MSHTML 6.00.2900.2180" name=GENERATOR>
+<META content=none name="Microsoft Border"><!------------------------------------------><!-- Cascading Style Sheet                --><!------------------------------------------><LINK 
+title="VB Page" 
+href="Enter and Run Source Code Statements at Runtime Using the Script Control_files/VBCommon.css" 
+type=text/css rel=stylesheet>
+<SCRIPT language=javascript>
+<!--
+var bIsIE  = navigator.appName == "Microsoft Internet Explorer";
+if (bIsIE) {
+  sCSS = '<link REL="stylesheet" HREF="VBStyleIE.css"  TYPE="text/css">'
+}
+else {
+  sCSS = '<link REL="stylesheet" HREF="VBStyleNav.css" TYPE="text/css">'
+}
+document.write(sCSS);
+//-->
+</SCRIPT>
+</HEAD>
+<BODY class=body><!--------------------------------><!-- Menu JavaScript Code       --><!-------------------------------->
+
+      <H1 class=heading>Interpret Source Statements at Runtime&nbsp;<BR>&amp; 
+      Expose Your App's Object Model<BR>w/ the Script Control</H1>
+      <P>Ever need to create a VB statement at run time and execute it?&nbsp; 
+      Wouldn't it be great if you could read a line of code or a complete 
+      procedure from a database then have your program run it?&nbsp; How about 
+      exposing your application's object model so users can call the methods of 
+      the objects in your application?</P>
+      <P>The <SPAN class=KeyWord>Microsoft Script Control</SPAN> lets you create 
+      an application, called the <SPAN class=KeyWord>Host</SPAN> application, 
+      that runs a scripting language such as <SPAN class=KeyWord>VBScript</SPAN> 
+      or <SPAN class=KeyWord>JavaScript</SPAN>, both of which are included with 
+      the Script Control.&nbsp; The scripting language statements are called 
+      <SPAN class=KeyWord>Scripts</SPAN>. </P>
+      <P>You can add the run-time functionality of any ActiveX object to the 
+      Script Control. &nbsp; Run-time functionality includes <SPAN 
+      class=KeyWord>any</SPAN> public method or property of the object. &nbsp; 
+      The object can be any ActiveX component, such as your forms and controls, 
+      class modules, ActiveX DLLs and so on.&nbsp; Adding methods of your 
+      objects to the script control exposes them and allows your users to call 
+      them dynamically while your program is running.&nbsp; This makes your 
+      application <SPAN class=KeyWord>Scriptable</SPAN>.</P>
+      <P>In other words, the Script Control can behave as a <SPAN 
+      class=KeyWord>macro</SPAN> engine to interpret source code, call the 
+      methods of a component or set a component's properties.&nbsp; For example, 
+      you can run your host program then type a new function into a textbox and 
+      have your application run it.</P><SPAN>
+      <CENTER>
+      <P><IMG height=363 alt="Using the Microsoft Script Control" 
+      src="Enter and Run Source Code Statements at Runtime Using the Script Control_files/Script.gif" 
+      width=285> <BR><A 
+      href="http://www.thescarms.com/Downloads/ScriptCtl.zip">Download Source 
+      Code</A> <BR><SPAN class=LastChg>(Last Updated 03/25/2000)</SPAN> 
+      </P></CENTER></SPAN>
+      <P>
+      <TABLE class=OuterTable borderColor=#808080 cellSpacing=0 
+      borderColorDark=blue cellPadding=0 width="100%" borderColorLight=#c0c0c0 
+      border=2>
+        <TBODY>
+        <TR>
+          <TD>
+            <TABLE cellSpacing=0>
+              <TBODY>
+              <TR>
+                <TD class=InnerTable>Notes 
+      </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <UL>
+        <LI>Download the Microsoft Script Control from the Scripting page of 
+        Microsoft's site.&nbsp; This is also the best reference on using ActiveX 
+        Scripting.<BR><BR>
+        <LI>This project was written in VB6 but the concepts will work in VB5. 
+        <BR><BR>
+        <LI>The Script Control is distributed as <SPAN 
+        class=KeyWord>MSScript.ocx</SPAN>. To use it in your project, select 
+        <SPAN class=KeyWord>Microsoft Script Control</SPAN> from the Project | 
+        Components dialog. <BR><BR>
+        <LI>Scripts must abide by the syntax rules governing the scripting 
+        language, VBScript in this example. </LI></UL>
+      <UL>
+        <LI>Pay attention to the use of double quotes (") in the code to 
+        correctly mark string values. </LI></UL>
+      <UL>
+        <LI>The textboxes used must have their <EM>Multiline</EM> properties set 
+        to True. </LI></UL>
+      <P>
+      <TABLE class=OuterTable borderColor=#808080 cellSpacing=0 
+      borderColorDark=blue cellPadding=0 width="100%" borderColorLight=#c0c0c0 
+      border=2>
+        <TBODY>
+        <TR>
+          <TD>
+            <TABLE cellSpacing=0>
+              <TBODY>
+              <TR>
+                <TD class=InnerTable>Concepts 
+        </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <P>This sample shows how to use the Script Control to:</P>
+      <BLOCKQUOTE>
+        <UL>
+          <LI>Enter individual source code statements, complete procedures or 
+          functions at run time and execute them. </LI></UL>
+        <UL>
+          <LI>Make the methods and properties of any control on your form 
+          available to the Scripting Engine so your script can access and 
+          manipulate them. </LI></UL>
+        <UL>
+          <LI>Expose procedures and functions, i.e. methods,&nbsp; in your 
+          <EM><SPAN class=KeyWord>class</SPAN></EM> modules to the script engine 
+          so they can be called from a script.&nbsp; This exposes your 
+          applications object model and makes your application scriptable. 
+        </LI></UL>
+        <UL>
+          <LI>Retrieve error information when an error occurs in your script 
+          code. </LI></UL></BLOCKQUOTE>
+      <P>
+      <TABLE class=OuterTable borderColor=#808080 cellSpacing=0 
+      borderColorDark=blue cellPadding=0 width="100%" borderColorLight=#c0c0c0 
+      border=2>
+        <TBODY>
+        <TR>
+          <TD>
+            <TABLE cellSpacing=0>
+              <TBODY>
+              <TR>
+                <TD class=InnerTable>Script Control Methods, Properties and 
+                  Events </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <P>&nbsp;</P>
+      <TABLE cellSpacing=1 cellPadding=3 width=700 border=1>
+        <TBODY>
+        <TR>
+          <TD vAlign=top width=132>
+            <P><SPAN class=BoldWord>Property</SPAN></P></TD>
+          <TD vAlign=top width=544>
+            <P><SPAN class=BoldWord>Description</SPAN></P></TD></TR>
+        <TR>
+          <TD vAlign=top width=132>
+            <P>AllowUI</P></TD>
+          <TD vAlign=top width=544>
+            <P>Sets or returns a Boolean value indicating whether a running 
+            script, or the ScriptControl itself, can display user-interface 
+            elements.&nbsp; For example, in VBScript if AllowUI is False, the 
+            MsgBox statement will not work.</P></TD></TR>
+        <TR>
+          <TD vAlign=top width=132>
+            <P>CodeObject</P></TD>
+          <TD vAlign=top width=544>
+            <P>Returns an object that is used to call public members of a 
+            specified module</P></TD></TR>
+        <TR>
+          <TD vAlign=top width=132>
+            <P>Column</P></TD>
+          <TD vAlign=top width=544>
+            <P>Returns the column indicating the approximate place in the 
+            scripting code where an error occurred.</P></TD></TR>
+        <TR>
+          <TD vAlign=top width=132>
+            <P>Description</P></TD>
+          <TD vAlign=top width=544>
+            <P>Returns a short descriptive error message.</P></TD></TR>
+        <TR>
+          <TD vAlign=top width=132>
+            <P>HasReturnValue</P></TD>
+          <TD vAlign=top width=544>
+            <P>Returns True if a procedure has a return value; False if it does 
+            not.</P></TD></TR>
+        <TR>
+          <TD vAlign=top width=132>
+            <P>Language</P></TD>
+          <TD vAlign=top width=544>
+            <P>Tells the Script Control to use the specified language. &nbsp; 
+            The default is VBScript but it can be JScript.</P></TD></TR>
+        <TR>
+          <TD vAlign=top width=132>
+            <P>Line</P></TD>
+          <TD vAlign=top width=544>
+            <P>Returns the line indicating the place in scripting code where an 
+            error occurred.</P></TD></TR>
+        <TR>
+          <TD vAlign=top width=132>
+            <P>NumArgs</P></TD>
+          <TD vAlign=top width=544>
+            <P>Returns the number of arguments required by a 
+procedure.</P></TD></TR>
+        <TR>
+          <TD vAlign=top width=132>
+            <P>Number</P></TD>
+          <TD vAlign=top width=544>
+            <P>Returns a numeric value specifying a run-time error.</P></TD></TR>
+        <TR>
+          <TD vAlign=top width=132>
+            <P>Source</P></TD>
+          <TD vAlign=top width=544>
+            <P>Returns a string specifying the type of error that 
+          occurred.</P></TD></TR>
+        <TR>
+          <TD vAlign=top width=132>
+            <P>State</P></TD>
+          <TD vAlign=top width=544>
+            <P>Set to "Connected" immediately after an AddObject call to to turn 
+            on event handling so your script can respond to events in your 
+            application.&nbsp; See the code.</P></TD></TR>
+        <TR>
+          <TD vAlign=top width=132>
+            <P>Text</P></TD>
+          <TD vAlign=top width=544>
+            <P>Returns a string containing a snippet of the scripting code 
+            surrounding the location where an error occurred in code.</P></TD></TR>
+        <TR>
+          <TD vAlign=top width=132>
+            <P>TimeOut</P></TD>
+          <TD vAlign=top width=544>
+            <P>Sets or returns the time, in milliseconds, after which a user is 
+            presented with the option to discontinue scripting code execution or 
+            allow it to continue.</P>
+            <P>If value is specified using the <SPAN 
+            class=BoldWord>NoTimeout</SPAN> constant (-1), no timeout is 
+            used.&nbsp; When value is 0, the Timeout event occurs as soon as it 
+            is determined that a running script is hung for any 
+reason.</P></TD></TR>
+        <TR>
+          <TD vAlign=top width=132>
+            <P>UseSafeSubset</P></TD>
+          <TD vAlign=top width=544>
+            <P>Sets or returns a Boolean value indicating whether the host 
+            application is concerned about safety.&nbsp; The objects and 
+            procedures that can't be used when UseSafeSubset is True are 
+            identical to those restricted by the browser's highest security 
+            setting.</P></TD></TR></TBODY></TABLE>
+      <P>&nbsp;</P>
+      <TABLE cellSpacing=1 cellPadding=3 width=700 border=1>
+		<TBODY>
+			<TR>
+				<TD vAlign=top width=131>
+				<P><SPAN class=BoldWord>Method</SPAN></P></TD>
+				<TD vAlign=top width=545>
+				<P><SPAN class=BoldWord>Description</SPAN></P></TD>
+			</TR>
+			<TR>
+				<TD vAlign=top width=131>
+				<P>AddCode</P></TD>
+				<TD vAlign=top width=545>
+				<P>Adds the specified code to a module.</P></TD>
+			</TR>
+			<TR>
+				<TD vAlign=top width=131>
+				<P>AddObject</P></TD>
+				<TD vAlign=top width=545>
+				<P>Makes run-time functionality available to a scripting engine. 
+            &nbsp; The AddObject method enables a ScriptControl user to provide 
+            a set of name/object pairs to the scripting code.</P></TD>
+			</TR>
+			<TR>
+				<TD vAlign=top width=131>
+				<P>Clear</P></TD>
+				<TD vAlign=top width=545>
+				<P>Clears all Error object properties.&nbsp; The properties of the 
+            Error object are also cleared when Reset, AddCode, Eval, or 
+            ExecuteStatement methods are executed.</P></TD>
+			</TR>
+			<TR>
+				<TD vAlign=top width=131>
+				<P>Eval</P></TD>
+				<TD vAlign=top width=545>
+				<P>Evaluates an expression and returns the result. The context of 
+            the Eval method is determined by the object argument.&nbsp; If 
+            object is a module, the context is restricted to the named 
+            module.&nbsp; If object is the ScriptControl, the context is 
+            global.</P></TD>
+			</TR>
+			<TR>
+				<TD vAlign=top width=131>
+				<P>ExecuteStatement</P></TD>
+				<TD vAlign=top width=545>
+				<P>Executes a specified statement.&nbsp; The context of the 
+            ExecuteStatement method is determined by the object argument.&nbsp; 
+            If object is a module, the context is restricted to the named 
+            module.&nbsp; If object is the ScriptControl, the context is 
+            global.</P></TD>
+			</TR>
+			<TR>
+				<TD vAlign=top width=131>
+				<P>Reset</P></TD>
+				<TD vAlign=top width=545>
+				<P>Discards all scripting code and objects that have been added to 
+            the ScriptControl.</P></TD>
+			</TR>
+			<TR>
+				<TD vAlign=top width=131>
+				<P>Run</P></TD>
+				<TD vAlign=top width=545>
+				<P>Runs a specified 
+procedure.</P></TD>
+			</TR>
+		</TBODY>
+</TABLE>
+      <P>&nbsp;</P>
+      <TABLE cellSpacing=1 cellPadding=3 width=700 border=1>
+        <TBODY>
+        <TR>
+          <TD vAlign=top width=131>
+            <P><SPAN class=BoldWord>Event</SPAN></P></TD>
+          <TD vAlign=top width=545>
+            <P><SPAN class=BoldWord>Description</SPAN></P></TD></TR>
+        <TR>
+          <TD vAlign=top width=131>
+            <P>Error</P></TD>
+          <TD vAlign=top width=545>
+            <P>Occurs in response to a run-time error.</P></TD></TR>
+        <TR>
+          <TD vAlign=top width=131>
+            <P>TimeOut</P></TD>
+          <TD vAlign=top width=545>
+            <P>Occurs when the time specified in the Timeout property has 
+            elapsed, and a user has selected End from the resulting dialog 
+            box.</P></TD></TR></TBODY></TABLE>
+      <P>
+      <TABLE class=OuterTable borderColor=#808080 cellSpacing=0 
+      borderColorDark=blue cellPadding=0 width="100%" borderColorLight=#c0c0c0 
+      border=2>
+        <TBODY>
+        <TR>
+          <TD>
+            <TABLE cellSpacing=0>
+              <TBODY>
+              <TR>
+                <TD class=InnerTable>Instructions 
+        </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <P><SPAN class=BoldWord>To learn how to add and run your 
+script:</SPAN></P>
+      <OL>
+        <LI>Open the project and set a breakpoint on the first line in procedure 
+        <EM>cmdExecute_Click</EM>.<BR><BR>
+        <LI>Press F5 to run the project.<BR><BR>
+        <LI>Copy the following code and type or paste it into the top 
+        textbox.<BR>
+        <BLOCKQUOTE>
+          <BLOCKQUOTE>
+            <BLOCKQUOTE>
+              <P>Function AddTwoNumbers(X1, X2)<BR>Dim Result 
+              <BR>&nbsp;&nbsp;&nbsp; Result = X1 + X2<BR>&nbsp;&nbsp;&nbsp; 
+              AddTwoNumbers = Result <BR>End Function</P>
+              <P>Sub Hello(sName)<BR>&nbsp;&nbsp;&nbsp; Msgbox "Hello " &amp; 
+              sName<BR>End Sub</P></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+        <LI>Click the <EM>Execute</EM> button.<BR><BR>
+        <LI>Step though the code by pressing F8 and observe how the code you 
+        pasted into the textbox gets executed.<BR><BR>
+        <LI>Click the <EM>Quit</EM> button to end the program.<BR><BR>
+        <LI>Change the following line of code 
+        <P><BR>from "l = .Eval("AddTwoNumbers(5,2)")"<BR>to "l = 
+        .Eval("AddTwoNumbers(5,)")"</P>
+        <P>This will produce an error since the last parameter is missing.</P>
+        <LI>Repeat steps 3 and 5 to see how to retrieve the error information. 
+        </LI></OL>
+      <P>&nbsp;<SPAN class=BoldWord>To learn how to work with controls:</SPAN> 
+      <OL>
+        <LI>Select a control from the listbox.&nbsp; For example, select 
+        <EM>lstCtrls</EM>.<BR><BR>
+        <LI>Click the <EM>Expose the lstCtrls Object</EM> button.<BR><BR>
+        <LI>Enter the name to refer to the <EM>lstCtrls</EM> button by.&nbsp; 
+        For example, enter <EM>lstC</EM> and click OK.<BR><BR>
+        <LI>Click the <EM>Run Script</EM> button.&nbsp; This runs a script that 
+        displays the number of controls on the form.&nbsp; The form’s controls 
+        collection was made available for scripting in the form load 
+        procedure.<BR><BR>
+        <LI>In the bottom textbox enter a VBScript statement to manipulate the 
+        control you selected. &nbsp; For example, enter <EM>lstC.Visible = 
+        False</EM>.<BR><BR>
+        <LI>Click the <EM>Run Script</EM> button and watch the listbox 
+        disappear.&nbsp; Now enter <EM>lstC.Visible = True</EM> and press 
+        <EM>Run Scrip</EM>t to make it visible again. </LI></OL>
+      <P><SPAN class=BoldWord>To learn how to work with your class 
+      modules:</SPAN> 
+      <OL>
+        <LI>Click the <EM>Run Class1 Procedure</EM> button to invoke the 
+        pDisplay method of class1. &nbsp; A parameter is passed to the method to 
+        tell it what message to display. </LI></OL><!------------------------------------------><!-- Common Footer                        --><!------------------------------------------>
+      
+</BODY></HTML>

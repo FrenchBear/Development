@@ -1,0 +1,75 @@
+.TH MUNPACK 1
+.SH NAME
+munpack \- unpack messages in MIME or split-uuencode format
+.SH SYNOPSIS
+.B munpack
+[
+.B \-f
+]
+[
+.B \-q
+]
+[
+.B \-t
+]
+[
+.B \-C
+.I directory
+]
+[
+.I "filename \&..."
+]
+.SH DESCRIPTION
+The 
+.I munpack
+program reads each RFC-822 message
+.I filename
+and writes all non-text MIME parts or split-uuencoded files as files.
+If no filename argument is given, 
+.B munpack
+reads from standard input.
+.LP
+If the message suggests a file name to use for the imbedded part, that
+name is cleaned of potential problem characters and used for the
+output file.  If the suggested filename includes subdirectories, they
+will be created as necessary.
+If the message does not suggest a file name, the names
+"part01", "part02", etc are used in sequence.
+.LP
+If the imbedded part was preceded with textual information, that
+information is also written to a file.  The file is named the same as
+the imbedded part, with any filename extension replaced with ".desc".
+.SH OPTIONS
+.TP
+.B \-f
+Force overwriting of existing files.  If a message suggests a file
+name of an existing file, the file will be overwritten.  Without this
+flag,
+.B
+munpack
+appends ".1", ".2", etc to find a nonexistent file.
+.TP
+.B \-q
+Be quiet.  Supresses messages about saving partial messages and about
+messages with no interesting information.
+.TP
+.B \-t
+Also write the text MIME parts of multipart messages as files.  By
+default, text parts that do not have a filename parameter do not get
+unpacked.  This option effectively disables the ".desc" file feature
+for MIME messages.
+.TP
+.BI \-C " directory"
+Change the current directory to 
+.I directory
+before reading any files.  This is useful when invoking 
+.B munpack
+from a mail or news reader.
+.SH ENVIRONMENT
+.TP
+.B TMPDIR
+Directory to store temporary files.  Default is /tmp.
+.SH FILES
+.TP
+.B $TMPDIR/message-parts-$USER/
+Directory used to store partial messages awaiting reassembly.

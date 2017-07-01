@@ -1,0 +1,49 @@
+set 8bits national autoindent cursorins=0x000d ignorecase report=1 sw=2 dir=d:/tmp tabstop=4
+set nu
+map #home 0
+map #ctrl-home 1G
+map #ctrl-end G
+map #ctrl-ppage H
+map #ctrl-npage L
+map #ctrl-left b
+map #ctrl-right w
+map! #delete  xi
+map! #backtab 
+map! #home 0i
+map! #ctrl-home 1Ga
+map! #ctrl-end Ga
+map! #ctrl-ppage Ha
+map! #ctrl-npage La
+map! #ctrl-left bi
+map! #ctrl-right  wi
+map! #insert a
+map #1 :e vi.hlp
+map #2 :w
+map #3 :x
+map #4 :q
+map #5 :
+map #6 D
+map #7 :w /dev/prn
+map #8 :e
+map #9 o
+map #10 ^
+map #11 "a
+map #12 "b
+map #13 "c
+map #14 "d
+map #15 "e
+map #16 "f
+map #17 "g
+map #18 "h
+map #19 "i
+map #20 "j
+map! #1 :e vi.hlp
+map! #2 :wa
+map! #3 :x
+map! #4 :q
+map! #5 :
+map! #6 lDa
+map! #7 :w /dev/prna
+map! #8 :e
+map! #9 o
+map! #10 ^i

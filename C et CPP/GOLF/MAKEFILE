@@ -1,0 +1,4 @@
+
+sg:	sg.cpp
+	cl sg.cpp -o sg
+

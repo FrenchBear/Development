@@ -1,0 +1,25 @@
+﻿<Window x:Class="AboutWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:QuickFileFilterVB"
+        Title="À propos de QuickFileFilter" Height="200" Width="400" Icon="QuickFileFilter.ico" ResizeMode="NoResize">
+
+    <Grid Margin="12">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Image Stretch="None" Source="{local:Icon /QFFVB;component/QuickFileFilter.ico, 32}" Margin="0,0,12,0" VerticalAlignment="Top" />
+        <StackPanel Orientation="Vertical" Grid.Column="1">
+            <TextBlock Name="AssemblyTitle" FontWeight="Bold" />
+            <TextBlock Name="AssemblyDescription" Margin="0,6,0,0" TextWrapping="Wrap" />
+            <TextBlock Name="AssemblyVersion" Margin="0,6,0,0" />
+            <TextBlock Name="AssemblyCopyright" Margin="0,6,0,0" />
+        </StackPanel>
+        <Button Width="50" Content="OK" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Margin="0,6,0,0" Padding="2" VerticalAlignment="Bottom" Click="OKButton_Click" IsCancel="True" IsDefault="True" />
+    </Grid>
+</Window>

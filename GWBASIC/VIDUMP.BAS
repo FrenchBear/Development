@@ -1,0 +1,18 @@
+10 DEFINT A-Z
+20 OPEN "R",#1,"VI.exe",128
+   open "O",#2,"vi.dmp"
+30 FIELD #1,128 AS BUF$
+40 GET #1,500:P=1:r=500
+50 if eof(1) then end
+55 GOSUB 1000:IF X$<" " OR X$>"~" THEN 50
+60 A$=X$
+70 GOSUB 1000:IF X$<" " OR X$>"~" THEN 50
+80 B$=X$
+90 GOSUB 1000:IF X$<" " OR X$>"~" THEN 50
+100 PRINT r":" A$ B$ X$;
+101 PRINT #2,A$ B$ X$;
+110 GOSUB 1000:IF X$<" " OR X$>"~" THEN PRINT:print #2,"":GOTO 50
+120 PRINT X$;:print #2,x$;:GOTO 110
+1000 X$=MID$(BUF$,P,1):P=P+1
+1010 IF P=129 THEN P=1:GET #1:r=r+1:IF EOF(1) THEN END
+1020 RETURN

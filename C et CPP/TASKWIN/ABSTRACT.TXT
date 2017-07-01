@@ -1,0 +1,25 @@
+ TASKWIND: Maps Instance Handles to Task Handles
+ 
+ TASKWIND implements a method for mapping instance handles
+ to window handles and describes several ways to extract
+ information from the task database structure.
+ 
+ TASKWIND uses GetWindow to walk and display the list of
+ top-level windows, much like the Task Manager that comes
+ with Microsoft(R) Windows(TM). Unlike Task Manager,
+ TASKWIND also displays a list of all the tasks that are
+ currently running. Button selections allow the user to
+ retrieve information pertinent to a certain task, and also
+ to perform operations similar to those offered by Task
+ Manager.
+ 
+ TASKWIND is a companion application for "What's the
+ Difference Between Windows and Tasks in Windows 3.1" by
+ Matt Pietrek (Microsoft Systems Journal, Vol. 8, No. 10).
+ The source code for this application has not been modified
+ or tested for the Microsoft Developer Network CD. The
+ source files may appear in various forms (source code
+ only, ready to build, or ready to run).
+ 
+ KEYWORDS: CD6; HINSTANCE; HTASK; HWND; TDB
+ 

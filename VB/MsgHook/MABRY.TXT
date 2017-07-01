@@ -1,0 +1,365 @@
+
+
+               MABRY SOFTWARE - PRODUCT LIST - November 1, 1995
+
+
+        Listed below are the products Mabry Software currently has in 
+        the shareware market.  If there's a control that you want or
+        need that you don't see here, ask!  If we write it to distribute 
+        as shareware, you'll get a free copy.
+
+        With each order (except for IniCon) we ship a copy of our 
+        manual documenting all of our controls.  Note: if you take
+        the $5 e-mail discount, we will not ship you a manual.
+
+
+        Notes on pricing:
+        
+            * Canada and Mexico are NOT considered international.
+
+            * We accept VISA and Mastercard.
+
+            * Checks should be drawn on a U.S. bank and in 
+              U.S. Dollars
+
+            * We'll E-mail your control(s) to you if provided with
+              an Internet or CompuServe address.  Deduct $5 per
+              control ordered this way (IniCon is $3 via E-mail).
+              E-mail is not considered international.  
+
+            * SWREG refers to CompuServe's Software Registration
+              forum.  If you're a CompuServe member you can
+              register this software there.  Just GO SWREG, and
+              enter the registration ID after the menu.  Not all
+              of the controls are available through here yet.
+
+
+        You can find our controls on our BBS (206-634-0783) in the
+        Mabry Software file area.  Or, on CompuServe in our section.
+        Just GO MABRY.  Look in LIB 3.  Or, on our FTP site, at
+        ftp.halcyon.com in the /local/mabry/files directory.
+
+
+        Here are the custom controls that are currently available:
+        
+            Alarm    This control fires an event at various times of
+                     the day (under your control).  You can specify
+                     times such as 9:12am, 10:45pm, every hour on the
+                     hour, every ten minutes, once per minute, etc.
+                     
+                     Registration: $10 ($15 international)
+                     Source and Registration: $25 ($30 international)
+                     SWREG: 1475 (1476 for Source)
+
+
+            BarCod   BarCod displays bar codes for you.  It supports
+                     Code 3 of 9, Code 2 of 5, UPC, Codabar, Code 93
+                     and more.
+                     
+                     BarCod is very simple.  Place it on your form.
+                     Size it to your liking.  Set the bar code style.
+                     Then, just sent the Caption property.
+                     
+                     Registration: $15 ($20 international)
+                     Source and Registration: $45 ($50 international)
+                     SWREG: 1314 (1315 for Source)
+
+
+            BmpLst   This control is a list box with bitmaps.  The
+                     bitmaps can be placed on any side of the text
+                     (top, bottom, right, left).
+
+                     Registration: $20 ($25 international)
+                     Source and Registration: $45 ($50 international)
+                     SWREG: 1059 (1060 for Source)
+
+
+            DFInfo   This control gives you disk and file information
+                     that VB doesn't provide.  It also allows you to
+                     change some aspects of a file (attributes, size,
+                     date, time, etc.).  
+
+                     Registration: $15 ($20 international)
+                     Source and Registration: $35 ($40 international)
+                     SWREG: 1069 (1070 for Source)
+
+
+            FLabel   This is a label control that lets you
+                     format the text within it.  You can have
+                     different fonts, different colors, multiple
+                     paragraphs, paragraph formatting, etc.
+                     All this and it's bound, too.
+
+                     Registration: $20 ($25 international)
+                     Source and Registration: $50 ($55 international)
+                     SWREG: 4352 (4353 for Source)
+
+
+            FMDrop   This custom control notifies you when a file
+                     has been dragged and dropped from the Windows
+                     File Manager (FILEMAN).
+
+                     Registration: $15 ($20 international)
+                     Source and Registration: $35 ($40 international)
+                     SWREG: 1378 (1379 for Source)
+
+
+            HiTime   This is a high resolution timer custom control
+                     for Visual Basic.  It allows you to have timer
+                     events come in nearly every millisecond, as
+                     opposed to every 55 milliseconds with the
+                     normal Visual Basic Timer control.
+
+                     Registration: $20 ($25 international)
+                     Source and Registration: $45 ($50 international)
+                     SWREG: 3382 (3383 for Source)
+
+
+            IniCon   This VB custom control makes INI file access
+                     simple.  WIN.INI and private INI file
+                     access are both supported.  No API calls 
+                     required.
+
+                     Registration: $5 ($7 international)
+                     Source and Registration: $25 ($30 international)
+                     SWREG: 833 (1003 for Source)
+
+
+            JoyStk   JoyStk gives your program information and events
+                     about the joystick's movement and buttons.  One or
+                     two normal joysticks, or on 3-D joystick are 
+                     supported.
+                     
+                     Registration: $15 ($20 international)
+                     Source and Registration: $35 ($40 international)
+                     SWREG: 1340 (1341 for Source)
+
+
+            LED      This is a custom control for Visual Basic that
+                     behaves like an LED.  3-D effects and colors are
+                     all user-definable.
+                     
+                     Registration: $15 ($20 international)
+                     Source and Registration: $35 ($40 international)
+                     SWREG: 3380 (3381 for Source)
+
+
+            MenuEv   MenuEv provides menu selection notification.  In
+                     other words, it tells you when the user has
+                     selected a menu item.  This is really useful for
+                     status bar-style help.  
+                     
+                     MenuEv is really easy to use.  All you need to do 
+                     is place it on your form.  There's nothing to set.
+                     Events start coming in automatically.  The events
+                     give you the text of the menu item selected.
+                     
+                     Registration: $10 ($15 international)
+                     Source and Registration: $25 ($30 international)
+                     SWREG: 1270 (1271 for Source)
+
+
+            MSlot    Visual Basic custom control that makes mailslot 
+                     use simple.  No Windows API calls required.  
+                     Requires Windows for Workgroups.
+                     
+                     Registration: $30 ($35 international)
+                     Source and Registration: $50 ($55 international)
+                     SWREG: 1848 (1849 for Source)
+
+
+            MS Mega Pack
+                     One dozen of Mabry Software's most popular 
+                     custom controls for Visual Basic.  Alarm, BarCod, 
+                     BmpLst, DFInfo, FMDrop, IniCon, JoyStk, MenuEv, 
+                     PerCnt, RoText, SoundX, and ZipInf.
+
+                     Registration: $90 ($95 international)
+                     Source and Registration: $190 ($195 international)
+                     SWREG: 2909 (2910 for Source)
+
+
+            MSStat   Status bar VBX for Visual Basic.  This 
+                     control displays a multi-element status bar
+                     on the bottom of your form.  It 
+                     automatically handles the NumLock, CapsLock,
+                     ScrollLock, and Insert key indicators.  It
+                     also displays times/dates in International
+                     and programmer defined formats.
+                     
+                     Registration: $20 ($25 international)
+                     Source and Registration: $45 ($50 international)
+                     SWREG: 4462 (4463 for Source)
+
+
+            PerCnt   PerCnt displays a percentage bar on your form.
+                     This makes status reporting very easy.  3-D
+                     effects, fonts, and colors are all at your
+                     control.
+
+                     Registration: $10 ($15 international)
+                     Source and Registration: $25 ($30 international)
+                     SWREG: 966 (1004 for Source)
+
+
+            PicBtn   This custom control for Visual Basic is 
+                     a command button that has both text and 
+                     a picture on it.  The picture can be scaled
+                     and placed above, below, to the right, or 
+                     to the left of the text.  The text may be 
+                     multi-line.
+
+                     Registration: $15 ($20 international)
+                     Source and Registration: $50 ($55 international)
+                     SWREG: 3434 (3435 for Source)
+
+
+
+            Probe    This VBX lets you examine and modify other 
+                     controls' properties at run-time.  After telling 
+                     Probe the name of another control, Probe will give 
+                     you a list of the properties in that control.  
+
+                     Probe can also display a dialog box that will let 
+                     you modify other controls' properties (at run-time).  
+                     Probe's dialog box makes it possible to fiddle with 
+                     the properties of other controls at run-time.  
+                     Common dialog boxes are used for fonts and colors to 
+                     make selection easier.
+
+                     Registration: $15 ($20 international)
+                     Source and Registration: $40 ($45 international)
+                     SWREG: 2449 (2450 for Source)
+
+
+            RoText   This control lets you place a label on your forms
+                     at any angle or degree of rotation.  This control
+                     can be bound to a data control.
+                     
+                     Registration: $15 ($20 international)
+                     Source and Registration: $35 ($40 international)
+                     SWREG: 1338 (1339 for Source)
+
+
+            SoundX   This control provides Soundex and Metaphone
+                     algorithms.  Soundex and Metaphone convert words
+                     or names to codes that represent how they "sound".
+                     This can be really useful in a database
+                     application where users need to find names they
+                     may not know how to spell exactly.
+                     
+                     Use this control to make it easier for them.  
+                     Just put the word or name you want converted in, 
+                     and the appropriate codes come out.
+
+                     Registration: $10 ($15 international)
+                     Source and Registration: $25 ($30 international)
+                     SWREG: 1272 (1273 for Source)
+
+
+            Tips     Tips provides Microsoft(r) style tool tips.
+                     Small windows pop-up with bits of info
+                     when the user pauses the mouse over your
+                     controls.  No code required, just set
+                     the Tag properties.
+
+                     Registration: $20 ($25 international)
+                     Source and Registration: $50 ($55 international)
+                     SWREG: 3482 (3483 for Source)
+
+
+
+            Ver      Ver lets you use the functionality of VER.DLL 
+                     through properties.  It makes getting version 
+                     information from a file (EXE, DLL, VBX, etc.) 
+                     very easy.  Ver also gives you file installation 
+                     functionality.  Included with the control is a 
+                     sample installation/setup utility.  This makes 
+                     it easier for you to write your own installation 
+                     utilities without the bulk of the Setup Wizard.
+
+                     Registration: $20 ($25 international)
+                     Source and Registration: $50 ($55 international)
+                     SWREG: 2529 (2530 for Source)
+
+
+            Wave     This control makes it easy for you to play
+                     and get information about WAV files.  Play
+                     WAV files in the background as your program
+                     performs other tasks; add recorded speech
+                     to your applications; put beeps, whistles,
+                     and laser sounds into your games.  Wave VBX
+                     makes all of this very straight-forward.
+                     Set the Filename property and tell it
+                     to go.  That's it.
+
+                     Registration: $15 ($20 international)
+                     Source and Registration: $40 ($45 international)
+                     SWREG: 4034 (4035 for Source)
+
+
+            ZipInf   This control gives you information about the
+                     content (directory) of a ZIP file.  Many, many
+                     useful uses (File Manager replacement, drive
+                     searching, etc.).
+                     
+                     Registration: $10 ($15 international)
+                     Source and Registration: $35 ($40 international)
+                     SWREG: 1595 (1596 for Source)
+
+
+
+
+                 **********  O R D E R    F O R M ************ 
+
+        SEND CHECK OR MONEY ORDER TO:   Mabry Software
+                                        Post Office Box 31926
+                                        Seattle, WA  98103-1926
+                                        (206) 634-1443
+
+
+       NAME ________________________________________________________ 
+
+       COMPANY _____________________________________________________ 
+
+       ADDRESS _____________________________________________________ 
+
+       CITY _________________________ STATE _______ ZIP ____________  
+
+       PHONE (________)______________________ 
+
+       E-MAIL ADDRESS(ES): _________________________________________
+
+       _____________________________________________________________
+
+
+       PLEASE CIRCLE DISK SIZE:   5.25"   3.5"
+
+
+       PROGRAM NAME                                 QTY    TOTAL COST 
+       
+       _________________________________________  _______  __________  
+
+       _________________________________________  _______  __________  
+
+       _________________________________________  _______  __________  
+
+       _________________________________________  _______  __________  
+
+       _________________________________________  _______  __________  
+
+       _________________________________________  _______  __________  
+
+       _________________________________________  _______  __________  
+
+       _________________________________________  _______  __________  
+
+       _________________________________________  _______  __________  
+
+       
+                                       SUB TOTAL OF ORDER  __________
+     
+                        WASHINGTON RESIDENTS ADD 8.2% TAX  __________
+
+                                               GRAND TOTAL __________
+

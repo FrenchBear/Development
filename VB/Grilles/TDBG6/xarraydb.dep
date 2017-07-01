@@ -1,0 +1,14 @@
+
+; Dependency file for setup wizards.
+
+[Version]
+Version=1.0.0.7
+
+[XArrayDB.ocx]
+Dest=$(WinSysPath)
+Register=$(DLLSelfRegister)
+Version=1.0.0.7
+Uses1=
+CABFileName=
+CABDefaultURL=
+CABINFFile=

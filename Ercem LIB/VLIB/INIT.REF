@@ -1,0 +1,3 @@
+/* init.ref */
+void initvlib(void);
+void vlib_err(const char *);

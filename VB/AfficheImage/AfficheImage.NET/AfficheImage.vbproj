@@ -1,0 +1,209 @@
+<VisualStudioProject>
+    <VisualBasic
+        ProjectType = "Local"
+        ProductVersion = "7.1.2263"
+        SchemaVersion = "2.0"
+        ProjectGuid = "{987AA778-58A5-46D7-B3C9-6DEA210D4322}"
+    >
+        <Build>
+            <Settings
+                AssemblyName = "AfficheImage"
+                OutputType = "WinExe"
+                StartupObject = "AfficheImage.frmAfficheImage"
+                AssemblyMajorVersion = "1"
+                AssemblyMinorVersion = "5"
+                AssemblyRevisionNumber = "46"
+                GenerateRevisionNumber = "True"
+                AssemblyCompanyName = "P.VIOLENT"
+                ApplicationIcon = "AfficheImage.ico"
+                RootNamespace = "AfficheImage"
+            >
+                <Config
+                    Name = "Debug"
+                    DebugSymbols = "True"
+                    DefineDebug = "True"
+                    DefineTrace = "True"
+                    OutputPath = ".\bin\"
+                    DefineConstants = "Win32 = True"
+                    StartArguments = ""
+                />
+                <Config
+                    Name = "Release"
+                    DebugSymbols = "False"
+                    DefineDebug = "False"
+                    DefineTrace = "True"
+                    OutputPath = ".\bin\"
+                    DefineConstants = "Win32 = True"
+                    StartArguments = ""
+                />
+            </Settings>
+            <References>
+                <Reference
+                    Name = "System"
+                    AssemblyName = "System"
+                />
+                <Reference
+                    Name = "System.Data"
+                    AssemblyName = "System.Data"
+                />
+                <Reference
+                    Name = "System.Drawing"
+                    AssemblyName = "System.Drawing"
+                />
+                <Reference
+                    Name = "System.Windows.Forms"
+                    AssemblyName = "System.Windows.Forms"
+                />
+                <Reference
+                    Name = "System.XML"
+                    AssemblyName = "System.XML"
+                />
+                <Reference
+                    Name = "Microsoft.VisualBasic.Compatibility"
+                    AssemblyName = "Microsoft.VisualBasic.Compatibility"
+                />
+                <Reference
+                    Name = "Scripting"
+                    Guid = "{420B2830-E718-11CF-893D-00A0C9054228}"
+                    Lcid = "0"
+                    VersionMajor = "1"
+                    VersionMinor = "0"
+                    WrapperTool = "tlbimp"
+                />
+                <Reference
+                    Name = "MSComctlLib"
+                    Guid = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}"
+                    Lcid = "0"
+                    VersionMajor = "2"
+                    VersionMinor = "0"
+                    WrapperTool = "tlbimp"
+                />
+                <Reference
+                    Name = "AxMSComctlLib"
+                    Guid = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}"
+                    Lcid = "0"
+                    VersionMajor = "2"
+                    VersionMinor = "0"
+                    WrapperTool = "aximp"
+                />
+            </References>
+            <Imports>
+                <Import Namespace = "Microsoft.VisualBasic" />
+                <Import Namespace = "Microsoft.VisualBasic.Compatibility" />
+                <Import Namespace = "System" />
+                <Import Namespace = "System.Collections" />
+                <Import Namespace = "System.Data" />
+                <Import Namespace = "System.Drawing" />
+                <Import Namespace = "System.Diagnostics" />
+                <Import Namespace = "System.Windows.Forms" />
+            </Imports>
+        </Build>
+        <Files>
+            <Include>
+                <File
+                    RelPath = "frmFichiers.vb"
+                    BuildAction = "Compile"
+                    SubType = "Form"
+                />
+                <File
+                    RelPath = "SHFInfo.vb"
+                    BuildAction = "Compile"
+                    SubType = "Code"
+                />
+                <File
+                    RelPath = "SHBrowse.vb"
+                    BuildAction = "Compile"
+                    SubType = "Code"
+                />
+                <File
+                    RelPath = "modShellFileOperation.vb"
+                    BuildAction = "Compile"
+                    SubType = "Code"
+                />
+                <File
+                    RelPath = "Historique.vb"
+                    BuildAction = "Compile"
+                    SubType = "Code"
+                />
+                <File
+                    RelPath = "Global.vb"
+                    BuildAction = "Compile"
+                    SubType = "Code"
+                />
+                <File
+                    RelPath = "modShellExecute.vb"
+                    BuildAction = "Compile"
+                    SubType = "Code"
+                />
+                <File
+                    RelPath = "frmAPropos.vb"
+                    BuildAction = "Compile"
+                    SubType = "Form"
+                />
+                <File
+                    RelPath = "frmAutomatique.vb"
+                    BuildAction = "Compile"
+                    SubType = "Form"
+                />
+                <File
+                    RelPath = "frmOptionsContact.vb"
+                    BuildAction = "Compile"
+                    SubType = "Form"
+                />
+                <File
+                    RelPath = "frmContact.vb"
+                    BuildAction = "Compile"
+                    SubType = "Form"
+                />
+                <File
+                    RelPath = "frmAfficheImage.vb"
+                    BuildAction = "Compile"
+                    SubType = "Form"
+                />
+                <File
+                    RelPath = "frmFichiers.resX"
+                    DependentUpon = "frmFichiers.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "frmAPropos.resX"
+                    DependentUpon = "frmAPropos.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "frmAutomatique.resX"
+                    DependentUpon = "frmAutomatique.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "frmOptionsContact.resX"
+                    DependentUpon = "frmOptionsContact.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "frmContact.resX"
+                    DependentUpon = "frmContact.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "frmAfficheImage.resX"
+                    DependentUpon = "frmAfficheImage.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "AssemblyInfo.vb"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "AfficheImage.ico"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "_UpgradeReport.htm"
+                    BuildAction = "None"
+                    SubType = "Preview"
+                />
+            </Include>
+        </Files>
+    </VisualBasic>
+</VisualStudioProject>

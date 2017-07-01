@@ -1,0 +1,225 @@
+<HTML>
+<HEAD>
+<TITLE>True DBGrid Pro 6.0 (OLEDB)</TITLE>
+</HEAD>
+<BODY>
+Displaying Array Data in Unbound Extended Mode<P>
+
+<OBJECT id=tDBGrid CLASSID="clsid:0D6234D0-DBA2-11D1-B5DF-0060976089D0" WIDTH=400 HEIGHT=300>
+</OBJECT>
+</BODY>
+</HTML>
+<SCRIPT LANGUAGE=VBSCRIPT>
+Const MaxCol = 2
+Const MaxRow = 100
+
+Dim GridArray (2, 100)
+
+Sub window_OnLoad()
+	Dim I
+	Dim TempCol
+
+	tDBGrid.AllowUpdate = False
+
+	For I = 1 to tDBGrid.Columns.Count
+		tDBGrid.Columns.Remove(0)
+	Next
+
+	' Fill the grid with columns and set their properties
+	Set TempCol = tDBGrid.Columns.Add(0)
+	TempCol.Caption = "Column 0"
+	TempCol.Visible = True
+	Set TempCol = tDBGrid.Columns.Add(1)
+	TempCol.Caption = "Column 1"
+	TempCol.Visible = True
+	Set TempCol = tDBGrid.Columns.Add(2)
+	TempCol.Caption = "Column 2"
+	tDBGrid.Columns.Item(2).Visible = True
+
+	For I = 0 To MaxCol
+		For J = 0 To MaxRow
+			GridArray(I, J) = "Row " + CStr(J) + ", Col " + CStr(I)
+		Next
+	Next
+
+	' Inform the grid of how many rows are in the data set.
+	' This helps with scroll bar positioning.
+	tDBGrid.ApproxCount = MaxRow 
+
+	tDBGrid.DataMode = 2 'dbgUnboundEx
+
+	' Force the grid to fetch data
+	tDBGrid.HoldFields
+	tDBGrid.ReBind
+End Sub
+
+Sub tDBGrid_UnboundReadDataEx(RowBuf, StartLocation, Offset, ApproximatePosition)
+' UnboundReadData is fired by an unbound grid whenever
+' it requires data for display.  This event will fire
+' when the grid is first shown, when Refresh or ReBind
+' is used, when the grid is scrolled, and after a
+' record in the grid is modified and the user commits
+' the change by moving off of the current row.  The
+' grid fetches data in "chunks", and the number of rows
+' the grid is asking for is given by RowBuf.RowCount.
+   
+' RowBuf is the row buffer where you place the data
+' the bookmarks for the rows that the grid is
+' requesting to display.  It will also hold the number
+' of rows that were successfully supplied to the grid.
+   
+' StartLocation is a bookmark which, together with
+' Offset, specifies the row for the programmer to start
+' transferring data.  A StartLocation of Null indicates
+' a request for data from BOF or EOF.
+   
+' Offset specifies the relative position (from
+' StartLocation) of the row for the programmer to start
+' transferring data.  A positive number indicates a
+' forward relative position while a negative number
+' indicates a backward relative position.  Regardless
+' of whether the rows to be read are before or after
+' StartLocation, rows are always fetched going forward
+' (this is why there is no ReadPriorRows parameter to
+' the procedure).
+   
+' If you page down on the grid, for instance, the new
+' top row of the grid will have an index greater than
+' the StartLocation (Offset > 0).  If you page up on
+' the grid, the new index is less than that of
+' StartLocation, so Offset < 0.  If StartLocation is
+' a bookmark to row N, the grid always asks for row
+' data in the following order:
+'   (N + Offset), (N + Offset + 1), (N + Offset + 2)...
+   
+' ApproximatePosition is a value you can set to indicate
+' the ordinal position of (StartLocation + Offset).
+' Setting this variable will enhance the ability of the
+' grid to display its vertical scroll bar accurately.
+' If the exact ordinal position of the new location is
+' not known, you can set it to a reasonable,
+' approximate value, or just ignore this parameter.
+
+	Dim RowsFetched, I
+	Dim ColIndex, J
+	Dim Bookmark
+
+	RowsFetched = 0
+
+	For I = 0 To RowBuf.RowCount - 1
+	        ' Get the bookmark of the next available row
+		Bookmark = GetRelativeBookmark(StartLocation, Offset + I)
+ 
+	        ' If the next row is BOF or EOF, then stop fetching
+        	' and return any rows fetched up to this point.
+		If IsNull(Bookmark) Then Exit For
+    
+	        ' Place the record data into the row buffer
+		For J = 0 To RowBuf.ColumnCount - 1
+			ColIndex = RowBuf.ColumnIndex(I, J)
+			RowBuf.Value(I, J) = GetUserData(Bookmark, ColIndex)
+		Next
+    
+	        ' Set the bookmark for the row
+		RowBuf.Bookmark(I) = Bookmark
+		RowsFetched = RowsFetched + 1
+	Next
+
+	' Tell the grid how many rows were fetched
+	RowBuf.RowCount = RowsFetched
+    if Bookmark >= 0 Then ApproximatePosition = Bookmark
+End Sub
+
+Function GetRelativeBookmark(Bookmark, Offset)
+' GetRelativeBookmark is used to get a bookmark for a
+' row that is a specified number of rows away from the
+' given row.  Offset specifies the number of rows to
+' move.  A positive Offset indicates that the desired
+' row is after the one referred to by Bookmark, and a
+' negative Offset means it is before the one referred
+' to by Bookmark.
+
+	Dim Index
+
+	' Compute the row index for the desired row
+	Index = IndexFromBookmark(Bookmark, Offset)
+
+	If Index < 0 Or Index >= MaxRow Then
+		' Index refers to a row before the first or after
+		' the last, so just return Null.
+		GetRelativeBookmark = Null
+	Else
+		GetRelativeBookmark = Index
+	End If
+End Function
+
+Function GetUserData(Bookmark, Col)
+' In this example, GetUserData is called by
+' UnboundReadData to ask the user what data should be
+' displayed in a specific cell in the grid.  The grid
+' row the cell is in is the one referred to by the
+' Bookmark parameter, and the column it is in it given
+' by the Col parameter.  GetUserData is called on a
+' cell-by-cell basis.
+
+	Dim Index
+
+	' Figure out which row the bookmark refers to
+	Index = IndexFromBookmark(Bookmark, 0)
+
+	If Index < 0 Or Index >= MaxRow Then
+		' Cell position is invalid, so just return null to
+		' indicate failure
+		GetUserData = Null
+	Else
+		GetUserData = GridArray(Col, Index)
+	End If
+End Function
+
+Function IndexFromBookmark(Bookmark, Offset)
+' This support function is used only by the remaining
+' support functions.  It is not used directly by the
+' unbound events.
+
+' IndexFromBookmark computes the row index that
+' corresponds to a row that is (Offset) rows from the
+' row specified by the Bookmark parameter.  For example,
+' if Bookmark refers to the index 50 of the dataset
+' array and Offset = -10, then IndexFromBookmark will
+' return 50 + (-10), or 40.  Thus to get the index of
+' the row specified by the bookmark itself, call
+' IndexFromBookmark with an Offset of 0.  If the given
+' Bookmark is Null, it refers to BOF or EOF.  If
+' Offset < 0, the grid is requesting rows before the
+' row specified by Bookmark, and so we must be at EOF
+' because prior rows do not exist for BOF.  Conversely,
+' if Offset > 0, we are at BOF.
+
+	Dim Index
+
+	Index = -1
+
+	If IsNull(Bookmark) Then
+		If Offset <= 0 Then
+			' Bookmark refers to EOF.
+			Index = MaxRow + Offset
+		Else
+			' Bookmark refers to BOF.
+			Index = Offset - 1
+		End If
+	Else
+		Index = Bookmark + Offset
+	End If
+
+	' Check to see if the row index is valid:
+	' If not, set it to BOF or EOF.
+	If Index < 0 Then
+		IndexFromBookmark = -1
+	Else If Index >= MaxRow Then
+		IndexFromBookmark = MaxRow
+             Else
+		IndexFromBookmark = Index
+	     End If	         
+	End If
+End Function
+</SCRIPT>

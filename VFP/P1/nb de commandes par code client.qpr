@@ -1,0 +1,4 @@
+SELECT Orders.cust_id, COUNT(Orders.order_id);
+ FROM testdata!orders;
+ GROUP BY Orders.cust_id;
+ ORDER BY Orders.cust_id

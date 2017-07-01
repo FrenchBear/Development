@@ -1,0 +1,14 @@
+[OPTIONS]
+ERRORLOG=F:\REAL\HACCP\DEVLP\HELP\HACCPPGM.LOG
+Contents=Sommaire
+Copyright=R‚alis‚ avec la version d'‚valuation d'AidEdit Pro
+
+[FILES]
+texte2.rtf
+
+[CONFIG]
+
+
+[WINDOWS]
+main=,,0,,(192,192,192),0
+

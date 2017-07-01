@@ -1,0 +1,2165 @@
+HACCP 2.3
+0,0,0,0,0,0,0,1
+GUIDE DE BONNES PRATIQUES D'HYGIENE$$RESTAURATION
+
+\haccp\RESTAU
+1,0,0,0,0,0,0,0
+Référencement M.P.
+
+
+1,1,0,0,0,0,0,0
+Tous produits
+
+
+1,1,1,0,0,0,0,0
+Contamination initiale
+Microbiologique$$Physique$$Chimique
+
+1,1,1,1,2,1,0,0
+Audit des fournisseurs
+
+
+1,1,1,1,2,0,0,0
+Evaluation des fournisseurs
+
+
+1,1,1,1,2,1,1,0
+Enregistrement des audits
+
+
+1,1,1,1,1,1,1,0
+Enregistrement des contrôles
+
+
+1,1,1,1,1,1,0,0
+Contrôles de conformité aux C.D.C
+
+
+1,1,1,1,1,0,0,0
+Spécifications du cahier des charges
+
+winword $\cdc.doc
+1,1,1,1,0,0,0,0
+Niveau initial de contamination
+
+winword $\niveau.doc
+2,0,0,0,0,0,0,0
+Acheminement des M.P.
+
+
+2,1,0,0,0,0,0,3
+Matières 1ères périssables non conditionnées
+
+
+2,1,1,0,0,0,0,0
+Contamination initiale
+Microbiologique$$Physique$$Chimique
+
+2,1,1,1,0,0,0,0
+Couple temps/température
+
+
+2,1,1,1,1,0,0,0
+Dispositions de travail
+
+
+3,0,0,0,0,0,0,0
+Réception M.P.
+
+
+3,1,0,0,0,0,0,0
+Matiètres 1ères périssables conditionnées
+
+
+3,1,1,0,0,0,0,0
+Contamination initiale
+Microbiologique$$Physique$$Chimique
+
+3,1,1,1,1,0,0,0
+Spécifications du cahier des charges
+
+winword $\cdc.doc
+3,1,1,1,1,1,1,0
+Enregistrement des contrôles
+
+
+3,1,1,1,1,1,0,0
+Contrôles de conformité aux C.D.C
+
+
+3,1,1,1,0,0,0,0
+Niveau initial de contamination
+
+
+3,1,2,0,0,0,0,0
+Prolifération microbienne
+
+
+3,1,2,1,2,1,1,0
+Enregistrement de la formation et du suivi
+
+
+3,1,2,1,1,2,0,0
+Contrôles des DLC
+
+
+3,1,2,1,1,1,0,0
+Contrôle des t° des produits
+
+
+3,1,2,1,1,3,0,0
+Contrôle des temps d'attente
+(produits)
+
+3,1,2,1,1,1,1,0
+Enregistrement des contrôles
+
+
+3,1,2,1,1,0,0,0
+Dispositions d'organisation du travail
+Vérification de la DLC$$Temps de séjour à T°c ambiante 30mn maxi
+
+3,1,2,1,0,0,0,0
+Couple temps/température
+
+
+3,1,2,1,2,0,0,0
+Formation du personnel
+Aux dispositions spécifiques
+
+3,1,2,1,2,1,0,0
+Suivi par l'encadrement
+Evaluation du comportement-Entretien d'évaluation
+
+3,1,3,0,0,0,0,0
+Recontamination des produits
+
+
+3,1,3,1,2,0,0,0
+Formation du personnel
+Aux dispositions spécifiques
+
+3,1,3,1,2,1,1,0
+Enregistrement de la formation et du suivi
+
+
+3,1,3,1,1,1,0,0
+Suivi par l'encadrement
+Evaluation du comportement-Entretien d'évaluation
+
+3,1,3,1,1,0,0,0
+Dispositions de travail
+Relative au traitement du produit en cas de non intégrité du conditionnement$$Relative à la manutention des produits
+
+3,1,3,1,0,0,0,0
+Intégrité du conditionnement
+
+
+3,1,3,1,2,1,0,0
+Suivi par l'encadrement
+Evaluation du comportement-Entretien d'évaluation
+
+3,1,4,0,0,0,0,0
+Recontamination d'autres produits
+Contamination croisée
+
+3,2,0,0,0,0,0,0
+Matières 1ères périssables non conditionnées
+
+
+3,2,1,0,0,0,0,0
+Contamination initiale
+Microbiologique$$Physique$$Chimique
+
+3,2,1,1,1,1,0,0
+Contrôles de conformité aux C.D.C
+
+
+3,2,1,1,1,0,0,0
+Spécifications du cahier des charges
+
+
+3,2,1,1,0,0,0,0
+Niveau initial de contamination
+
+
+3,2,1,1,1,1,1,0
+Enregistrement des contrôles
+
+
+3,2,2,0,0,0,0,0
+Prolifération microbienne
+
+
+3,2,2,1,0,0,0,0
+Couple temps/température
+
+
+3,2,2,1,1,1,0,0
+Contrôle des t° des produits
+
+
+3,2,2,1,1,2,0,0
+Contrôles des DLC
+
+
+3,2,2,1,1,3,0,0
+Contrôle des temps d'attente
+(produits)
+
+3,2,2,1,1,1,1,0
+Enregistrement des contrôles
+
+
+3,2,2,1,2,0,0,0
+Formation du personnel
+Aux dispositions spécifiques
+
+3,2,2,1,2,1,0,0
+Suivi par l'encadrement
+Evaluation du comportement-Entretien d'évaluation
+
+3,2,2,1,2,1,1,0
+Enregistrement de la formation et du suivi
+
+
+3,2,2,1,1,0,0,0
+Dispositions d'organisation du travail
+Vérification de la DLC$$Temps de séjour à T° ambiante 30mn maxi
+
+3,2,3,0,0,0,0,0
+Recontamination des produits
+
+
+3,2,3,1,2,2,0,0
+Suivi par l'encadrement
+Evaluation du comportement-Entretien d'évaluation
+
+3,2,3,1,1,0,0,0
+Locaux adaptés
+Séparation des circuits approvisionnement  et élimination des déchets ( dans le temps ou dans l'espace)
+
+3,2,3,1,2,0,0,0
+Dispositions de nettoyage et désinfection
+Des locaux et matériels
+
+3,2,3,1,1,1,0,0
+Audit locaux
+
+
+3,2,3,1,1,1,1,0
+Enregistrement des audits
+
+
+3,2,3,1,2,1,0,0
+Audit propreté
+
+
+3,2,3,1,2,1,1,0
+Enregistrement des audits
+
+
+3,2,3,1,3,0,0,0
+Formation du personnel
+Aux dispositions spécifiques
+
+3,2,3,1,0,0,0,0
+Hygiène des locaux et matériels
+Zone de réception et matériels de manutention
+
+3,2,3,1,3,1,1,0
+Enregistrement de la formation et du suivi
+
+
+3,2,3,1,3,1,0,0
+Suivi par l'encadrement
+Evaluation du comportement-Entretien d'évaluation
+
+3,2,3,2,0,0,0,0
+Hygiène des manutentions
+
+
+3,3,0,0,0,0,0,0
+Matières 1ères non périssables conditionnées
+Ex: Produits en conserve
+
+3,3,1,0,0,0,0,0
+Contamination initiale
+Microbiologique$$Physique$$Chimique
+
+3,3,1,1,0,0,0,0
+Niveau initial de contamination
+
+
+3,3,1,1,1,0,0,0
+Spécifications du cahier des charges
+
+
+3,3,1,1,1,1,0,0
+Contrôles de conformité aux C.D.C
+
+
+3,3,1,1,1,1,1,0
+Enregistrement des contrôles
+
+
+3,3,2,0,0,0,0,0
+Recontamination des produits
+
+
+3,3,2,1,1,1,1,0
+Enregistrement de la formation et du suivi
+
+
+3,3,2,1,2,1,0,0
+Suivi par l'encadrement
+Evaluation du comportement-Entretien d'évaluation
+
+3,3,2,1,0,0,0,0
+Intégrité du conditionnement
+
+
+3,3,2,1,1,1,0,0
+Suivi par l'encadrement
+Evaluation du comportement-Entretien d'évaluation
+
+3,3,2,1,2,0,0,0
+Formation du personnel
+Aux dispositions spécifiques
+
+3,3,2,1,2,1,1,0
+Enregistrement de la formation et du suivi
+
+
+3,3,2,1,1,0,0,0
+Dispositions de travail
+Relatives au traitement du produit en cas de non intégrité du conditionnement
+
+3,4,0,0,0,0,0,0
+Matières 1ères non périssables non conditionnées
+
+
+3,4,1,0,0,0,0,0
+Contamination initiale
+Microbiologique$$Physique$$Chimique
+
+3,4,1,1,1,1,1,0
+Enregistrement des contrôles
+
+
+3,4,1,1,0,0,0,0
+Niveau initial de contamination
+
+
+3,4,1,1,1,1,0,0
+Contrôles de conformité aux C.D.C
+
+
+3,4,1,1,1,0,0,0
+Spécifications du cahier des charges
+
+
+3,4,2,0,0,0,0,0
+Recontamination des produits
+Microbiologique$$Physique$$Chimique
+
+3,4,2,1,1,2,0,0
+Suivi par l'encadrement
+Evaluation du comportement-Entretien d'évaluation
+
+3,4,2,1,1,1,1,0
+Enregistrement des audits
+
+
+3,4,2,1,1,1,0,0
+Audit propreté
+
+
+3,4,2,1,1,0,0,0
+Dispositions de nettoyage et désinfection
+Des locaux et matériels
+
+3,4,2,1,0,0,0,0
+Hygiène des locaux et matériels
+
+
+3,4,2,1,2,1,1,0
+Enregistrement de la formation et du suivi
+
+
+3,4,2,1,2,1,0,0
+Suivi par l'encadrement
+Evaluation du comportement-Entretien d'évaluation
+
+3,4,2,1,2,0,0,0
+Formation du personnel
+Aux dispositions spécifiques
+
+4,0,0,0,0,0,0,0
+Déballage / décartonnage
+
+
+4,1,0,0,0,0,0,0
+Tous produits emballés
+
+
+4,1,1,0,0,0,0,0
+Recontamination des produits
+Microbiologique$$Physique$$chimique
+
+4,1,1,1,1,1,0,0
+Examen visuel
+
+
+4,1,1,1,0,0,0,0
+Intégrité du conditionnement
+
+
+4,1,1,1,3,0,0,0
+Formation du personnel
+Aux dispositions spécifiques
+
+4,1,1,1,1,0,0,0
+Dispositions de maitrise des ravageurs
+
+
+4,1,1,1,2,1,0,0
+Suivi de l'encadrement
+
+
+4,1,1,1,1,1,1,0
+Enregistrement des contrôles
+Rapport des organismes spécialisés
+
+4,1,1,1,3,1,0,0
+Suivi par l'encadrement
+Evaluation du comportement-Entretien d'évaluation
+
+4,1,1,1,2,0,0,0
+Dispositions de travail
+Relatives au traitement des produits dont le conditionnement n'est plus intègre$$Relatives aux méthodes de déballage
+
+4,1,1,1,3,1,1,0
+Enregistrement de la formation et du suivi
+
+
+4,1,2,0,0,0,0,0
+Recontamination du conditionnement
+Microbiologique$$$$
+
+4,1,2,1,1,2,1,0
+Enregistrement des audits
+
+
+4,1,2,1,2,0,0,0
+Formation du personnel
+Aux dispositions spécifiques
+
+4,1,2,1,2,1,1,0
+Enregistrement de la formation et du suivi
+
+
+4,1,2,1,1,2,0,0
+Audit méthodes
+
+
+4,1,2,1,0,0,0,0
+Hygiène des manipulations
+
+
+4,1,2,1,1,0,0,0
+Dispositions de travail
+Relatives au déballage$$Relatives à l'élimination des déchets
+
+4,1,2,1,2,1,0,0
+Suivi par l'encadrement
+Evaluation du comportement-Entretien d'évaluation
+
+4,1,2,1,1,1,0,0
+Suivi de l'encadrement
+
+
+4,1,3,0,0,0,0,0
+Prolifération microbienne
+
+
+4,1,3,1,0,0,0,0
+Couple temps/température
+
+
+4,1,3,1,1,1,0,0
+Contrôle des t° des produits
+
+
+4,1,3,1,2,0,0,0
+Formation du personnel
+Aux dispositions spécifiques
+
+4,1,3,1,1,0,0,0
+Dispositions d'organisation du travail
+Durée de l'opération: 30mn maxi
+
+4,1,3,1,1,4,0,0
+Suivi de l'encadrement
+
+
+4,1,3,1,2,1,1,0
+Enregistrement de la formation et du suivi
+
+
+4,1,3,1,1,2,0,0
+Contrôle des temps d'attente
+(produits)
+
+4,1,3,1,1,3,0,0
+Audit méthodes
+
+
+4,1,3,1,1,3,1,0
+Enregistrement des audits
+
+
+4,1,3,1,1,1,1,0
+Enregistrement des contrôles
+
+
+4,1,3,1,2,1,0,0
+Suivi par l'encadrement
+Evaluation du comportement-Entretien d'évaluation
+
+5,0,0,0,0,0,0,0
+Stockage des M.P.
+
+
+5,1,0,0,0,0,0,0
+Matiètres 1ères périssables conditionnées
+
+
+5,1,1,0,0,0,0,0
+Recontamination des produits
+Microbiologique$$Physique$$chimique
+
+5,1,1,1,2,1,0,0
+Suivi de l'encadrement
+
+
+5,1,1,1,3,0,0,0
+Formation du personnel
+Aux dispositions spécifiques
+
+5,1,1,1,3,1,0,0
+Suivi par l'encadrement
+Evaluation du comportement-Entretien d'évaluation
+
+5,1,1,1,2,2,1,0
+Enregistrement des audits
+
+
+5,1,1,1,2,2,0,0
+Audit matériels
+
+
+5,1,1,1,1,2,0,0
+Audit méthodes
+
+
+5,1,1,1,1,1,0,0
+Suivi de l'encadrement
+
+
+5,1,1,1,3,1,1,0
+Enregistrement de la formation et du suivi
+
+
+5,1,1,1,2,0,0,0
+Dispositions de Maintenance
+Des étagères (absence d'aspérité susceptible de dénaturer l'intégrité du conditionnement )
+
+5,1,1,1,0,0,0,0
+Intégrité du conditionnement
+
+
+5,1,1,1,1,2,1,0
+Enregistrement des audits
+
+
+5,1,1,1,1,0,0,0
+Dispositions de travail
+Relatives aux conditions de traitement des M.P. dont le conditionnement n'est plus intègre
+
+5,1,2,0,0,0,0,0
+Recontamination d'autres produits
+Contamination croisée
+
+5,1,2,1,2,1,0,0
+Suivi par l'encadrement
+Evaluation du comportement-Entretien d'évaluation
+
+5,1,2,1,0,0,0,0
+Hygiène des conditions de stockage
+Relatives au rangement de la chambre froide
+
+5,1,2,1,2,1,1,0
+Enregistrement de la formation et du suivi
+
+
+5,1,2,1,2,0,0,0
+Formation du personnel
+Aux dispositions spécifiques
+
+5,1,2,1,1,2,1,0
+Enregistrement des audits
+
+
+5,1,2,1,1,1,0,0
+Suivi de l'encadrement
+
+
+5,1,2,1,1,2,0,0
+Audit méthodes
+
+
+5,1,2,1,1,0,0,0
+Dispositions de travail
+Relatives au rangement de la chambre froide
+
+5,1,3,0,0,0,0,0
+Prolifération microbienne
+
+
+5,1,3,1,3,1,1,0
+Enregistrement de la formation et du suivi
+
+
+5,1,3,1,1,2,1,0
+Enregistrement des audits
+
+
+5,1,3,1,0,0,0,0
+Température des produits
+
+
+5,1,3,1,1,0,0,0
+Dispositions de travail
+Relatives au maintien des produits aux températures adaptées
+
+5,1,3,1,2,0,0,0
+Dispositions de Maintenance
+Des systèmes de réfrigération
+
+5,1,3,1,3,0,0,0
+Formation du personnel
+Aux dispositions spécifiques
+
+5,1,3,1,1,2,0,0
+Audit méthodes
+
+
+5,1,3,1,3,1,0,0
+Suivi par l'encadrement
+Evaluation du comportement-Entretien d'évaluation
+
+5,1,3,1,2,1,0,0
+Suivi de l'encadrement
+
+
+5,1,3,1,2,2,0,0
+Audit matériels
+
+
+5,1,3,1,2,2,1,0
+Enregistrement des audits
+
+
+5,1,3,1,1,1,0,0
+Suivi de l'encadrement
+
+
+5,1,3,2,2,1,0,0
+Suivi par l'encadrement
+Evaluation du comportement-Entretien d'évaluation
+
+5,1,3,2,2,1,1,0
+Enregistrement de la formation et du suivi
+
+
+5,1,3,2,2,0,0,0
+Formation du personnel
+Aux dispositions spécifiques
+
+5,1,3,2,1,2,0,0
+Audit méthodes
+
+
+5,1,3,2,0,0,0,0
+Durée de vie des produits
+
+
+5,1,3,2,1,0,0,0
+Dispositions de travail
+Relatives à la gestion des stocks
+
+5,1,3,2,1,2,1,0
+Enregistrement des audits
+
+
+5,1,3,2,1,1,0,0
+Suivi de l'encadrement
+
+
+5,2,0,0,0,0,0,0
+Matières 1ères périssables non conditionnées
+
+
+5,2,1,0,0,0,0,0
+Recontamination des produits et d'autres produits
+Microbiologique$$Physique$$chimique
+
+5,2,1,1,1,2,1,0
+Enregistrement des audits
+
+
+5,2,1,1,2,2,1,0
+Enregistrement des audits
+
+
+5,2,1,1,2,2,0,0
+Audit méthodes
+
+
+5,2,1,1,2,1,0,0
+Suivi de l'encadrement
+
+
+5,2,1,1,2,0,0,0
+Dispositions de travail
+Relatives aux conditions de stockage$$Rangement selon le microbisme
+
+5,2,1,1,3,1,0,0
+Suivi par l'encadrement
+Evaluation du comportement-Entretien d'évaluation
+
+5,2,1,1,1,2,0,0
+Audit propreté
+
+
+5,2,1,1,1,1,0,0
+Suivi de l'encadrement
+
+
+5,2,1,1,3,0,0,0
+Formation du personnel
+Aux dispositions spécifiques
+
+5,2,1,1,1,0,0,0
+Dispositions de nettoyage et désinfection
+Des locaux
+
+5,2,1,1,0,0,0,0
+Hygiène des conditions de stockage
+
+
+5,2,1,1,3,1,1,0
+Enregistrement de la formation et du suivi
+
+
+5,2,1,2,2,1,0,0
+Suivi par l'encadrement
+Evaluation du comportement-Entretien d'évaluation
+
+5,2,1,2,1,2,1,0
+Enregistrement des audits
+
+
+5,2,1,2,2,1,1,0
+Enregistrement de la formation et du suivi
+
+
+5,2,1,2,2,0,0,0
+Formation du personnel
+Aux dispositions spécifiques
+
+5,2,1,2,1,1,0,0
+Suivi de l'encadrement
+
+
+5,2,1,2,0,0,0,0
+Hygiène des manipulations
+Si manipulations
+
+5,2,1,2,1,0,0,0
+Dispositions de travail
+Relatives aux précautions à prendre si les produits sont manipulés
+
+5,2,1,2,1,2,0,0
+Audit méthodes
+
+
+5,2,2,0,0,0,0,0
+Prolifération microbienne
+
+
+5,2,2,1,1,3,0,0
+Contrôle des t° des locaux
+
+
+5,2,2,1,3,1,0,0
+Suivi par l'encadrement
+Evaluation du comportement-Entretien d'évaluation
+
+5,2,2,1,2,2,1,0
+Enregistrement des audits
+
+
+5,2,2,1,2,2,0,0
+Audit méthodes
+
+
+5,2,2,1,2,1,0,0
+Suivi de l'encadrement
+
+
+5,2,2,1,1,4,1,0
+Enregistrement des contrôles
+
+
+5,2,2,1,1,3,1,0
+Enregistrement des contrôles
+
+
+5,2,2,1,1,2,0,0
+Audit matériels
+
+
+5,2,2,1,1,1,0,0
+Suivi de l'encadrement
+
+
+5,2,2,1,3,0,0,0
+Formation du personnel
+Aux dispositions spécifiques
+
+5,2,2,1,2,0,0,0
+Dispositions de travail
+Relatives au stockage des produits aux température adaptées
+
+5,2,2,1,1,0,0,0
+Dispositions de Maintenance
+Des équipements frigorifiques
+
+5,2,2,1,0,0,0,0
+Température des produits
+
+
+5,2,2,1,3,1,1,0
+Enregistrement de la formation et du suivi
+
+
+5,2,2,1,1,4,0,0
+Contrôle des t° des produits
+
+
+5,2,2,2,2,1,0,0
+Suivi par l'encadrement
+Evaluation du comportement-Entretien d'évaluation
+
+5,2,2,2,1,2,1,0
+Enregistrement des audits
+
+
+5,2,2,2,2,1,1,0
+Enregistrement de la formation et du suivi
+
+
+5,2,2,2,2,0,0,0
+Formation du personnel
+Aux dispositions spécifiques
+
+5,2,2,2,1,1,0,0
+Suivi de l'encadrement
+
+
+5,2,2,2,1,0,0,0
+Dispositions de travail
+Relatives à la gestion des stocks
+
+5,2,2,2,0,0,0,0
+Durée de vie des produits
+
+
+5,2,2,2,1,2,0,0
+Audit méthodes
+
+
+5,3,0,0,0,0,0,0
+Matières 1ères non périssables conditionnées
+Ex: Produits en conserve
+
+5,3,1,0,0,0,0,0
+Recontamination des produits
+Microbiologique$$Physique$$chimique
+
+5,3,1,1,2,1,1,0
+Enregistrement de la formation et du suivi
+
+
+5,3,1,1,2,1,0,0
+Suivi par l'encadrement
+Evaluation du comportement-Entretien d'évaluation
+
+5,3,1,1,1,2,0,0
+Audit méthodes
+
+
+5,3,1,1,1,2,1,0
+Enregistrement des audits
+
+
+5,3,1,1,1,1,0,0
+Suivi de l'encadrement
+
+
+5,3,1,1,2,0,0,0
+Formation du personnel
+Aux dispositions spécifiques
+
+5,3,1,1,1,0,0,0
+Dispositions de travail
+Relatives au traitement des produits dont le conditionnement n'est plus intègre
+
+5,3,1,1,0,0,0,0
+Intégrité du conditionnement
+
+
+5,4,0,0,0,0,0,0
+Matières 1ères non périssables non conditionnées
+
+
+5,4,1,0,0,0,0,0
+Recontamination des produits
+Microbiologique$$Physique$$chimique
+
+5,4,1,1,2,0,0,0
+Formation du personnel
+Aux dispositions spécifiques
+
+5,4,1,1,2,1,0,0
+Suivi par l'encadrement
+Evaluation du comportement-Entretien d'évaluation
+
+5,4,1,1,1,2,1,0
+Enregistrement des audits
+
+
+5,4,1,1,1,1,0,0
+Suivi de l'encadrement
+
+
+5,4,1,1,0,0,0,0
+Hygiène des locaux et matériels
+
+
+5,4,1,1,1,0,0,0
+Dispositions de nettoyage et désinfection
+Des locaux et matériels
+
+5,4,1,1,2,1,1,0
+Enregistrement de la formation et du suivi
+
+
+5,4,1,1,1,2,0,0
+Audit propreté
+
+
+5,4,1,2,2,1,1,0
+Enregistrement de la formation et du suivi
+
+
+5,4,1,2,1,0,0,0
+Dispositions relatives au personnel
+Relatives à la tenue du personnel, lhygiène corporelle et leur état de santé
+
+5,4,1,2,2,0,0,0
+Formation du personnel
+Aux dispositions spécifiques
+
+5,4,1,2,1,1,0,0
+Suivi de l'encadrement
+
+
+5,4,1,2,2,1,0,0
+Suivi par l'encadrement
+Evaluation du comportement-Entretien d'évaluation
+
+5,4,1,2,0,0,0,0
+Hygiène du personnel
+
+
+5,4,1,3,1,2,0,0
+Audit méthodes
+
+
+5,4,1,3,2,0,0,0
+Formation du personnel
+Aux dispositions spécifiques
+
+5,4,1,3,2,1,0,0
+Suivi par l'encadrement
+Evaluation du comportement-Entretien d'évaluation
+
+5,4,1,3,2,1,1,0
+Enregistrement de la formation et du suivi
+
+
+5,4,1,3,1,1,0,0
+Suivi de l'encadrement
+
+
+5,4,1,3,1,0,0,0
+Dispositions de travail
+Relatives à la manipulation des produits pendant le stockage
+
+5,4,1,3,1,2,1,0
+Enregistrement des audits
+
+
+5,4,1,3,0,0,0,0
+Hygiène des manipulations
+Si manipulation des produits
+
+6,0,0,0,0,0,0,0
+Déconditionnement
+Ouverture du conditionnement (Changement éventuel de conditionnement)$$
+
+6,1,0,0,0,0,0,0
+Tous produits conditionnés
+
+
+6,1,1,0,0,0,0,0
+Contamination initiale
+Microbiologique$$Physique$$Chimique
+
+6,1,1,1,1,0,0,0
+Spécifications du cahier des charges
+
+
+6,1,1,1,0,0,0,0
+Niveau initial de contamination
+
+
+6,1,1,1,1,1,2,0
+Cahier de contrôle
+
+
+6,1,1,1,1,1,1,0
+Bulletins d'analyses
+
+
+6,1,1,1,1,1,0,0
+Contrôles de conformité aux C.D.C
+
+
+6,1,2,0,0,0,0,0
+Recontamination des produits
+Microbiologique$$Physique$$chimique
+
+6,1,2,1,1,1,0,0
+Audit propreté
+
+
+6,1,2,1,1,0,0,0
+Dispositions de nettoyage et désinfection
+hgfdjgfkgflhg;rehjgtrellhng;rfjhjgl;yurjt'rjhglyutkytkyutlyutml
+
+6,1,2,1,2,0,0,0
+Organisation des locaux
+Emplacement réservé pendant l'operation
+
+6,1,2,1,3,0,0,0
+Formation du personnel
+Aux dispositions spécifiques
+
+6,1,2,1,1,1,1,0
+Enregistrement des audits
+
+
+6,1,2,1,0,0,0,3
+Hygiène des locaux et matériels
+
+
+6,1,2,1,1,3,0,0
+Examen visuel
+
+
+6,1,2,1,1,2,1,0
+Enregistrement des contrôles
+
+
+6,1,2,1,1,2,0,0
+Frottis de surface
+
+
+6,1,2,1,1,3,1,0
+Enregistrement 
+
+
+6,1,2,2,0,0,0,0
+Hygiène des méthodes
+
+
+6,1,2,2,1,0,0,0
+Dispositions de travail
+
+winword§\decondtdoc
+6,1,2,2,2,0,0,0
+Dispositions d'organisation du travail
+
+
+6,1,2,2,1,1,1,0
+Enregistrement des audits
+
+
+6,1,2,2,1,1,0,0
+Audit méthodes
+
+
+6,1,2,2,3,0,0,0
+Formation du personnel
+Aux dispositions spécifiques
+
+6,1,2,3,0,0,0,0
+Hygiène du personnel
+
+
+6,1,3,0,0,0,0,0
+Prolifération microbienne
+
+
+6,1,3,1,0,0,0,0
+Couple temps/température
+
+
+6,1,3,2,2,1,0,0
+Contrôle des t° des locaux
+
+
+6,1,3,2,2,0,0,0
+Locaux à température adaptée
+
+
+6,1,3,2,1,0,0,0
+Dispositions d'organisation du travail
+
+
+6,1,3,2,0,0,0,0
+Durée de vie des produits à l'etat déconditionné
+
+
+6,1,3,2,1,1,1,0
+Enregistrement des audits
+
+
+6,1,3,2,1,1,0,0
+Audit méthodes
+
+
+6,1,3,2,2,1,1,0
+Enregistrement des températures
+
+
+7,0,0,0,0,0,0,0
+Décongélation
+
+
+7,1,0,0,0,0,0,0
+Produits congelés ou surgelés
+
+
+7,1,1,0,0,0,0,0
+Recontamination des produits
+Microbiologique$$Physique$$chimique$$(cas des produits non protégés)
+
+7,1,1,1,2,1,0,0
+Suivi de l'encadrement
+
+
+7,1,1,1,2,2,1,0
+Enregistrement des audits
+
+
+7,1,1,1,1,2,0,0
+Suivi de l'encadrement
+
+
+7,1,1,1,3,1,0,0
+Suivi par l'encadrement
+Evaluation du comportement-Entretien d'évaluation
+
+7,1,1,1,2,2,0,0
+Audit propreté
+
+
+7,1,1,1,1,1,0,0
+Audit locaux et matériels
+
+
+7,1,1,1,3,0,0,0
+Formation du personnel
+Aux dispositions spécifiques
+
+7,1,1,1,0,0,0,0
+Hygiène des locaux et matériels
+
+
+7,1,1,1,2,0,0,0
+Dispositions de nettoyage et désinfection
+Des locaux et matériels
+
+7,1,1,1,1,1,1,0
+Enregistrement des audits
+
+
+7,1,1,1,3,1,1,0
+Enregistrement de la formation et du suivi
+
+
+7,1,1,1,1,0,0,0
+Locaux et matériels adaptés
+
+
+7,1,1,2,1,2,1,0
+Certificat d'aptitude
+
+
+7,1,1,2,2,1,1,0
+Enregistrement de la formation et du suivi
+
+
+7,1,1,2,2,0,0,0
+Formation du personnel
+Aux dispositions spécifiques
+
+7,1,1,2,1,2,0,0
+Contrôle de l'hygiène du personnel
+Visite médicale
+
+7,1,1,2,1,1,0,0
+Suivi de l'encadrement
+
+
+7,1,1,2,1,0,0,0
+Dispositions relatives au personnel
+Relatives à la tenue du personnel, l'hygiène corporelle et leur état de santé (Apparent + visite médicale)
+
+7,1,1,2,0,0,0,0
+Hygiène du personnel
+En cas de manipulation
+
+7,1,1,2,2,1,0,0
+Suivi par l'encadrement
+Evaluation du comportement-Entretien d'évaluation
+
+7,1,1,3,2,1,0,0
+Suivi par l'encadrement
+Evaluation du comportement-Entretien d'évaluation
+
+7,1,1,3,0,0,0,0
+Hygiène des méthodes
+
+
+7,1,1,3,2,1,1,0
+Enregistrement de la formation et du suivi
+
+
+7,1,1,3,1,2,0,0
+Audit méthodes
+
+
+7,1,1,3,1,1,0,0
+Suivi de l'encadrement
+
+
+7,1,1,3,2,0,0,0
+Formation du personnel
+Aux dispositions spécifiques
+
+7,1,1,3,1,0,0,0
+Dispositions de travail
+$$Relatives aux méthodes de décongélation (A l'eau froide courante ou en chambre froide):$$-Emplacement réservé pour l'opération$$-Séparation de l'exudat (Utilisation de grille)$$-Protection des produits
+
+7,1,1,3,1,2,1,0
+Enregistrement des audits
+
+
+7,1,1,4,1,0,0,0
+Dispositions relatives au personnel
+Relatives à la manipulation des produits : Tenue du personnel, hygiène corporelle et état de santé
+
+7,1,1,4,1,1,0,0
+Suivi de l'encadrement
+
+
+7,1,1,4,2,0,0,0
+Formation du personnel
+Aux dispositions spécifiques
+
+7,1,1,4,2,1,0,0
+Suivi par l'encadrement
+Evaluation du comportement-Entretien d'évaluation
+
+7,1,1,4,2,1,1,0
+Enregistrement de la formation et du suivi
+
+
+7,1,1,4,0,0,0,0
+Hygiène des manipulations
+Le cas échéant
+
+7,1,2,0,0,0,0,0
+Prolifération microbienne
+
+
+7,1,2,1,2,1,1,0
+Enregistrement de la formation et du suivi
+
+
+7,1,2,1,1,2,1,0
+Enregistrement des audits
+
+
+7,1,2,1,1,1,0,0
+Suivi de l'encadrement
+
+
+7,1,2,1,2,0,0,0
+Formation du personnel
+Aux dispositions spécifiques
+
+7,1,2,1,1,0,0,0
+Dispositions de travail
+Relatives au méthodes de décongélation (Temps ,température)
+
+7,1,2,1,0,0,0,0
+Couple temps/température
+
+
+7,1,2,1,2,1,0,0
+Suivi par l'encadrement
+Evaluation du comportement-Entretien d'évaluation
+
+7,1,2,1,1,2,0,0
+Audit méthodes
+Contrôles de température
+
+8,0,0,0,0,0,0,0
+Epuchage/ lavage/décontamination
+
+
+8,1,0,0,0,0,0,0
+Cas des légumes
+
+
+8,1,1,0,0,0,0,0
+Non décontamination
+Microbiologique$$Physique$$Chimique$$
+
+8,1,1,1,0,0,0,0
+Niveau final de contamination
+
+
+8,1,1,1,2,1,1,0
+Enregistrement de la formation et du suivi
+
+
+8,1,1,1,1,2,1,0
+Enregistrement des audits
+
+
+8,1,1,1,1,2,0,0
+Audit méthodes
+
+
+8,1,1,1,1,1,0,0
+Suivi de l'encadrement
+
+
+8,1,1,1,1,0,0,0
+Dispositions de travail
+Relatives aux méthodes de décontamination$$Eau vinaigrée$$Eau chlorée$$Autres méthodes appropriées
+
+8,1,1,1,2,1,0,0
+Suivi par l'encadrement
+Evaluation du comportement-Entretien d'évaluation
+
+8,1,1,1,2,0,0,0
+Formation du personnel
+Aux dispositions spécifiques
+
+8,1,2,0,0,0,0,0
+Recontamination des produits ou d'autres produits
+Microbiologique$$Physique$$chimique
+
+8,1,2,1,3,1,1,0
+Enregistrement de la formation et du suivi
+
+
+8,1,2,1,1,0,0,0
+Dispositions d'organisation des locaux
+Emplacement réservé pendant la durée de l'opération
+
+8,1,2,1,2,0,0,0
+Dispositions de nettoyage et désinfection
+Des locaux
+
+8,1,2,1,3,0,0,0
+Formation du personnel
+Aux dispositions spécifiques
+
+8,1,2,1,1,1,0,0
+Suivi de l'encadrement
+
+
+8,1,2,1,2,1,0,0
+Suivi de l'encadrement
+
+
+8,1,2,1,2,2,0,0
+Audit propreté
+
+
+8,1,2,1,2,2,1,0
+Enregistrement des audits
+
+
+8,1,2,1,3,1,0,0
+Suivi par l'encadrement
+Evaluation du comportement-Entretien d'évaluation
+
+8,1,2,1,0,0,0,0
+Hygiène des locaux
+
+
+8,1,2,2,2,2,0,0
+Audit propreté
+
+
+8,1,2,2,0,0,0,0
+Hygiène des matériels
+
+
+8,1,2,2,3,1,1,0
+Enregistrement des audits
+
+
+8,1,2,2,2,2,1,0
+Enregistrement des audits
+
+
+8,1,2,2,2,1,0,0
+Suivi de l'encadrement
+
+
+8,1,2,2,1,2,0,0
+Audit matériels
+
+
+8,1,2,2,1,0,0,0
+Spécifications et état des matériels
+
+
+8,1,2,2,1,1,0,0
+Suivi de l'encadrement
+
+
+8,1,2,2,2,0,0,0
+Dispositions de nettoyage et désinfection
+Des matériels
+
+8,1,2,2,3,0,0,0
+Formation du personnel
+Aux dispositions spécifiques
+
+8,1,2,2,3,1,0,0
+Suivi par l'encadrement
+Evaluation du comportement-Entretien d'évaluation
+
+8,1,2,2,1,2,1,0
+Enregistrement des audits
+
+
+8,1,2,3,1,2,0,0
+Audit hygiène
+Audit propreté
+
+8,1,2,3,2,1,1,0
+Enregistrement de la formation et du suivi
+
+
+8,1,2,3,2,1,0,0
+Suivi par l'encadrement
+Evaluation du comportement-Entretien d'évaluation
+
+8,1,2,3,1,2,1,0
+Enregistrement des audits
+
+
+8,1,2,3,1,1,0,0
+Suivi de l'encadrement
+
+
+8,1,2,3,1,0,0,0
+Dispositions relatives au personnel
+Relatives à la tenue vestimentaire, l'hygiène corporelle et l'état de santé
+
+8,1,2,3,0,0,0,0
+Hygiène du personnel
+
+
+8,1,2,3,2,0,0,0
+Formation du personnel
+Aux dispositions spécifiques
+
+8,1,2,4,1,2,1,0
+Enregistrement des audits
+
+
+8,1,2,4,2,1,1,0
+Enregistrement de la formation et du suivi
+
+
+8,1,2,4,2,1,0,0
+Suivi par l'encadrement
+Evaluation du comportement-Entretien d'évaluation
+
+8,1,2,4,1,1,0,0
+Suivi de l'encadrement
+
+
+8,1,2,4,2,0,0,0
+Formation du personnel
+Aux dispositions spécifiques
+
+8,1,2,4,1,0,0,0
+Dispositions de travail
+Relatives à l'organisation du travail pour assurer la séparation dans le temps ou dans l'espace de l'opération avec d'autres tâches$$Relatives au renouvellement des eaux de lavage$$Relatives à l'élimination des déchets
+
+8,1,2,4,0,0,0,0
+Hygiène des méthodes
+
+
+8,1,2,4,1,2,0,0
+Audit méthodes
+
+
+8,1,3,0,0,0,0,0
+Prolifération microbienne
+Danger mineur
+
+8,1,3,1,2,1,1,0
+Enregistrement de la formation et du suivi
+
+
+8,1,3,1,0,0,0,0
+Couple temps/température
+
+
+8,1,3,1,1,0,0,0
+Dispositions d'organisation du travail
+Relatives à la durée de l'opération
+
+8,1,3,1,1,1,0,0
+Suivi de l'encadrement
+
+
+8,1,3,1,2,0,0,0
+Formation du personnel
+Aux dispositions spécifiques
+
+8,1,3,1,2,1,0,0
+Suivi par l'encadrement
+Evaluation du comportement-Entretien d'évaluation
+
+9,0,0,0,0,0,0,0
+Rinçage/Egouttage
+
+
+9,1,0,0,0,0,0,0
+Produits suivants:
+Oeufs écallés (PPE)$$Produits en conserve$$Etc
+
+9,1,1,0,0,0,0,0
+Recontamination des produits
+Microbiologique$$Physique$$chimique
+
+9,1,1,1,3,1,1,0
+Enregistrement de la formation et du suivi
+
+
+9,1,1,1,3,1,0,0
+Suivi par l'encadrement
+Evaluation du comportement-Entretien d'évaluation
+
+9,1,1,1,3,0,0,0
+Formation du personnel
+Aux dispositions spécifiques
+
+9,1,1,1,1,2,1,0
+Enregistrement des audits
+
+
+9,1,1,1,2,1,0,0
+Suivi de l'encadrement
+
+
+9,1,1,1,1,2,0,0
+Audit méthodes
+
+
+9,1,1,1,2,0,0,0
+Dispositions de nettoyage et désinfection
+Des locaux
+
+9,1,1,1,1,1,0,0
+Suivi de l'encadrement
+
+
+9,1,1,1,1,0,0,0
+Dispositions d'organisation des locaux
+Emplacement réservé pendant la durée de l'opération
+
+9,1,1,1,0,0,0,0
+Hygiène des locaux
+
+
+9,1,1,1,2,2,0,0
+Audit propreté
+
+
+9,1,1,1,2,2,1,0
+Enregistrement des audits
+
+
+9,1,1,2,0,0,0,0
+Hygiène des matériels
+
+
+9,1,1,3,0,0,0,0
+Hygiène du personnel
+
+
+9,1,1,4,0,0,0,0
+Hygiène des méthodes
+
+
+9,1,2,0,0,0,0,0
+Prolifération microbienne
+
+
+9,1,2,1,2,1,1,0
+Enregistrement de la formation et du suivi
+
+
+9,1,2,1,2,1,0,0
+Suivi par l'encadrement
+Evaluation du comportement-Entretien d'évaluation
+
+9,1,2,1,2,0,0,0
+Formation du personnel
+Aux dispositions spécifiques
+
+9,1,2,1,1,1,0,0
+Suivi de l'encadrement
+
+
+9,1,2,1,0,0,0,0
+Couple temps/température
+
+
+9,1,2,1,1,0,0,0
+Dispositions d'organisation du travail
+Durée de l'opération
+
+10,0,0,0,0,0,0,0
+Autres traitements à froid
+Réhydratation$$Foisonnement$$Mélange
+
+10,1,0,0,0,0,0,0
+Produits suivants:
+Produits concernés par la réhydratation,le foisonnement, le mélange ....
+
+10,1,1,0,0,0,0,0
+Recontamination des produits
+Microbiologique$$Physique$$chimique
+
+10,1,1,1,0,0,0,0
+Hygiène des locaux
+
+
+10,1,1,2,0,0,0,0
+Hygiène des matériels
+
+
+10,1,1,3,0,0,0,0
+Hygiène du personnel
+
+
+10,1,1,4,0,0,0,0
+Hygiène des méthodes
+
+
+10,1,2,0,0,0,0,0
+Prolifération microbienne
+
+
+10,1,2,1,0,0,0,0
+Couple temps/température
+
+
+11,0,0,0,0,0,0,0
+Tranchage/Portionnement
+
+
+11,1,0,0,0,0,0,0
+Produits suivants:
+Légumes  à consommer en l'état$$Viandes, charcuteries, pâtisseries....
+
+11,1,1,0,0,0,0,0
+Recontamination des produits
+Microbiologique$$Physique$$chimique
+
+11,1,1,1,0,0,0,0
+Hygiène des locaux
+
+
+11,1,1,2,0,0,0,0
+Hygiène des matériels
+
+
+11,1,1,3,0,0,0,0
+Hygiène du personnel
+
+
+11,1,1,4,2,0,0,0
+Formation du personnel
+Aux dispositions spécifiques
+
+11,1,1,4,1,1,0,0
+Suivi de l'encadrement
+
+
+11,1,1,4,1,2,0,0
+Audit méthodes
+
+
+11,1,1,4,1,2,1,0
+Enregistrement des audits
+
+
+11,1,1,4,2,1,0,0
+Suivi par l'encadrement
+Evaluation du comportement-Entretien d'évaluation
+
+11,1,1,4,2,1,1,0
+Enregistrement de la formation et du suivi
+
+
+11,1,1,4,0,0,0,0
+Hygiène des méthodes
+
+
+11,1,1,4,1,0,0,0
+Dispositions de travail
+Utilisation de matériels différents selon le microbisme des produits$$Nettoyage et désinfection des matériels entre les produits de microbisme différent$$Ordre de tranchage
+
+11,1,2,0,0,0,0,0
+Prolifération microbienne
+
+
+11,1,2,1,2,0,0,0
+Formation du personnel
+Aux dispositions spécifiques
+
+11,1,2,1,2,1,0,0
+Suivi par l'encadrement
+Evaluation du comportement-Entretien d'évaluation
+
+11,1,2,1,1,2,1,0
+Enregistrement des audits
+
+
+11,1,2,1,1,2,0,0
+Audit méthodes
+
+
+11,1,2,1,1,1,0,0
+Suivi de l'encadrement
+
+
+11,1,2,1,1,0,0,0
+Dispositions d'organisation du travail
+Relatives à l'organisation du travail en continu de façon à limiter le temps de éjour à température ambiante à 30mn
+
+11,1,2,1,0,0,0,0
+Couple temps/température
+
+
+11,1,2,1,2,1,1,0
+Enregistrement de la formation et du suivi
+
+
+12,0,0,0,0,0,0,0
+Traitement thermique
+Distinguer $$-cuisson sans assainissement dont la VP est inférieure à 2: 2mn à 70°c (Maitrise du risque Listéria)$$-cuisson avec assainissement
+
+12,1,0,0,0,0,0,0
+Produits suivants:
+Produits faisant l'objet d'un traitement thermique
+
+12,1,1,0,0,0,0,0
+Non décontamination
+Microbiologique$$$$
+
+12,1,1,1,1,0,0,0
+Dispositions de Maintenance
+Des matériels de cuisson
+
+12,1,1,1,2,2,0,0
+Audit méthodes
+
+
+12,1,1,1,3,1,1,0
+Enregistrement de la formation et du suivi
+
+
+12,1,1,1,3,1,0,0
+Suivi par l'encadrement
+Evaluation du comportement-Entretien d'évaluation
+
+12,1,1,1,2,2,1,0
+Enregistrement des audits
+
+
+12,1,1,1,2,1,0,0
+Suivi de l'encadrement
+
+
+12,1,1,1,1,2,1,0
+Enregistrement des audits
+
+
+12,1,1,1,1,2,0,0
+Audit matériels
+
+
+12,1,1,1,1,1,0,0
+Suivi de l'encadrement
+
+
+12,1,1,1,2,0,0,0
+Dispositions de travail
+Relatives aux méthodes de cuisson
+
+12,1,1,1,0,0,0,0
+Couple temps/température
+
+
+12,1,1,1,3,0,0,0
+Formation du personnel
+Aux dispositions spécifiques
+
+12,1,2,0,0,0,0,0
+Prolifération microbienne
+
+
+12,1,2,1,2,1,0,0
+Suivi de l'encadrement
+
+
+12,1,2,1,3,1,1,0
+Enregistrement de la formation et du suivi
+
+
+12,1,2,1,3,1,0,0
+Suivi par l'encadrement
+Evaluation du comportement-Entretien d'évaluation
+
+12,1,2,1,2,2,1,0
+Enregistrement des audits
+
+
+12,1,2,1,2,2,0,0
+Audit méthodes
+
+
+12,1,2,1,1,2,1,0
+Enregistrement des audits
+
+
+12,1,2,1,1,2,0,0
+Audit matériels
+
+
+12,1,2,1,1,1,0,0
+Suivi de l'encadrement
+
+
+12,1,2,1,2,0,0,0
+Dispositions de travail
+Relatives aux méthodes de cuisson
+
+12,1,2,1,3,0,0,0
+Formation du personnel
+Aux dispositions spécifiques
+
+12,1,2,1,0,0,0,0
+Couple temps/température
+Aux températures infériures à 50°c
+
+12,1,2,1,1,0,0,0
+Dispositions de Maintenance
+Relatives aux matériels de cuisson
+
+12,1,3,0,0,0,0,0
+Recontamination des produits
+Microbiologique$$Concerne les produits après cuisson$$$$
+
+12,1,3,1,0,0,0,0
+Cf stockages intermédiaires
+
+
+13,0,0,0,0,0,0,0
+Assemblage/Dressage
+
+
+13,1,0,0,0,0,0,0
+Tous produits
+
+
+13,1,1,0,0,0,0,0
+Recontamination des produits
+Microbiologique$$Physique$$chimique
+
+13,1,1,1,0,0,0,0
+Hygiène des locaux
+
+
+13,1,1,2,0,0,0,0
+Hygiène des matériels
+
+
+13,1,1,3,0,0,0,0
+Hygiène du personnel
+
+
+13,1,1,4,0,0,0,0
+Hygiène des méthodes
+
+
+13,1,2,0,0,0,0,0
+Prolifération microbienne
+
+
+13,1,2,1,0,0,0,0
+Couple temps/température
+
+
+14,0,0,0,0,0,0,0
+Stockages intermédiaires
+
+
+14,1,0,0,0,0,0,0
+Produits réfrigérés
+
+
+14,1,1,0,0,0,0,0
+Recontamination des produits
+Microbiologique$$Physique$$chimique
+
+14,1,1,1,3,0,0,0
+Formation du personnel
+Aux dispositions spécifiques
+
+14,1,1,1,1,0,0,0
+Dispositions d'organisation des locaux
+Emplacement réservé pour assurer le stockage
+
+14,1,1,1,1,2,0,0
+Audit méthodes
+
+
+14,1,1,1,0,0,0,0
+Hygiène des locaux
+Emplacement réservé pour la période de stockage
+
+14,1,1,1,2,0,0,0
+Dispositions de nettoyage et désinfection
+Des locaux
+
+14,1,1,1,1,1,0,0
+Suivi de l'encadrement
+
+
+14,1,1,1,1,2,1,0
+Enregistrement des audits
+
+
+14,1,1,1,2,1,0,0
+Suivi de l'encadrement
+
+
+14,1,1,1,2,2,0,0
+Audit méthodes
+
+
+14,1,1,1,2,2,1,0
+Enregistrement des audits
+
+
+14,1,1,2,0,0,0,0
+Hygiène des matériels
+Con cerne les contenants
+
+14,1,1,2,1,1,0,0
+Suivi de l'encadrement
+
+
+14,1,1,2,1,0,0,0
+Dispositions de nettoyage et désinfection
+Des contenants
+
+14,1,1,2,1,2,0,0
+Audit propreté
+
+
+14,1,1,2,1,2,1,0
+Enregistrement des audits
+
+
+14,1,2,0,0,0,0,0
+Prolifération microbienne
+
+
+14,1,2,1,1,2,1,0
+Enregistrement des audits
+
+
+14,1,2,1,0,0,0,0
+Couple temps/température
+
+
+14,1,2,1,1,0,0,0
+Dispositions d'organisation du travail
+Relatives à l'organisation du travail permettant de limiter le temps de séjour à température ambiante à30mn ou d'assurer le stockage à l'état réfrigéré
+
+14,1,2,1,1,1,0,0
+Suivi de l'encadrement
+
+
+14,1,2,1,1,2,0,0
+Audit méthodes
+
+
+14,1,2,1,2,0,0,0
+Formation du personnel
+Aux dispositions spécifiques
+
+14,1,2,1,2,1,1,0
+Enregistrement de la formation et du suivi
+
+
+14,1,2,1,2,1,0,0
+Suivi par l'encadrement
+Evaluation du comportement-Entretien d'évaluation
+
+14,2,0,0,0,0,0,0
+Produits maintenus chauds
+Concerne les produits en attente de service, en attente de refroidissement,etc
+
+14,2,1,0,0,0,0,0
+Recontamination des produits
+Microbiologique$$Physique$$chimique
+
+14,2,2,0,0,0,0,0
+Prolifération microbienne
+
+
+15,0,0,0,0,0,0,0
+Conditionnement
+
+
+15,1,0,0,0,0,0,0
+Tous produits conditionnés
+En particulier dans le cas de liaison froide ou de la liaison chaude
+
+15,1,1,0,0,0,0,0
+Recontamination des produits
+Microbiologique$$Physique$$chimique
+
+15,1,1,1,0,0,0,0
+Hygiène des locaux
+
+
+15,1,1,2,0,0,0,0
+Hygiène des matériels
+
+
+15,1,1,3,0,0,0,0
+Hygiène du personnel
+
+
+15,1,1,4,0,0,0,0
+Hygiène des manipulations
+
+
+15,1,2,0,0,0,0,0
+Prolifération microbienne
+
+
+16,0,0,0,0,0,0,0
+Refroidissement
+
+
+16,1,0,0,0,0,0,0
+Tous produits refroidis
+
+
+16,1,1,0,0,0,0,0
+Recontamination des produits
+Microbiologique$$Physique$$chimique
+
+16,1,1,1,0,0,0,0
+Hygiène des locaux et matériels
+
+
+16,1,1,2,0,0,0,0
+Hygiène des méthodes
+
+
+16,1,2,0,0,0,0,0
+Prolifération microbienne
+
+
+16,1,2,1,0,0,0,0
+Couple temps/température
+
+
+16,1,2,1,1,0,0,0
+Dispositions de travail
+Relatives aux conditions de refroidissement
+
+17,0,0,0,0,0,0,0
+Stockage en attente de service
+Cf stockages intermédiaires
+
+18,0,0,0,0,0,0,0
+Remise en température
+
+
+19,0,0,0,0,0,0,0
+Présentation à la vente
+
+
+20,0,0,0,0,0,0,0
+Traitement des restes
+
+

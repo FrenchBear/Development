@@ -1,0 +1,81 @@
+<HTML>
+<HEAD>
+<TITLE>True DBGrid Pro 6.0 (OLEDB)</TITLE>
+</HEAD>
+<BODY>
+Tutorial 6 - Defining Unbound Columns in a Bound Grid<P>
+
+<OBJECT CLASSID="CLSID:BD96C556-65A3-11D0-983A-00C04FC29E33" ID="adcTutor" HEIGHT=1 WIDTH=1>
+	<PARAM NAME="Server" VALUE="http://passat">
+	<PARAM NAME="Connect" VALUE="DSN=TDBGDemo">
+	<PARAM NAME="SQL" VALUE="SELECT * FROM Contacts INNER JOIN Customers ON Contacts.UserCode = Customers.UserCode">
+</OBJECT>
+<OBJECT id=tDBGrid CLASSID="clsid:0D6234D0-DBA2-11D1-B5DF-0060976089D0" WIDTH=660 HEIGHT=200>
+	<PARAM NAME="DataSource" DATASRC="#adcTutor">
+</OBJECT>
+</BODY>
+</HTML>
+<SCRIPT LANGUAGE=VBSCRIPT>
+Dim RSClone
+
+Sub tDBGrid_DatasourceChanged()
+' The following is necessary to work around a bug in ADO: the ADO Recordset
+' Bookmark property has incorrect type and so it would reject bookmark values
+' originated from the grid (see UnboundColumnFetch, RSClone.Bookmark = Bookmark).
+' The TDBGrid.BookmarkType property helps to avoid this bug. Setting it to
+' the actual type of Recordset.Bookmark (it may vary in different situations,
+' it is generally unpredictable) makes the grid convert all bookmarks it passes
+' to the user to the specified type.
+
+	tDBGrid.BookmarkType = VarType(adcTutor.RecordSet.Bookmark)
+End Sub
+
+Sub window_OnLoad()
+' The initialization code for the grid. Since design time property
+' pages of the grid are unavailable, all initialization has to be
+' done manually.
+
+	Dim TempCol
+	Dim I
+
+	' Remove all columns
+	For I = 0 to tDBGrid.Columns.Count - 1
+		tDBGrid.Columns.Remove(0)
+	Next
+
+	' Add columns manually
+	set TempCol = tDBGrid.Columns.Add(0)
+	TempCol.Caption = "Customer Name"
+	TempCol.DataField = ""
+	TempCol.Visible = True
+	set TempCol = tDBGrid.Columns.Add(1)
+	TempCol.Caption = "CustType"
+	TempCol.DataField = "CustType"
+	TempCol.Visible = True
+	set TempCol = tDBGrid.Columns.Add(2)
+	TempCol.Caption = "ContactType"
+	TempCol.DataField = "ContactType"
+	TempCol.Visible = True
+	set TempCol = tDBGrid.Columns.Add(3)
+	TempCol.Caption = "Callback"
+	TempCol.DataField = "Callback"
+	TempCol.Visible = True
+	set TempCol = tDBGrid.Columns.Add(4)
+	TempCol.Caption = "ContactDate"
+	TempCol.DataField = "ContactDate"
+	TempCol.Visible = True
+
+	set RSClone = adcTutor.RecordSet.Clone
+
+	' Force the grid to refetch data
+	tDBGrid.HoldFields
+	tDBGrid.ReBind
+
+	tDBGrid.ExtendRightColumn = True
+End Sub
+
+Sub tDBGrid_UnboundColumnFetch(Bookmark, Col, Value)
+	RSClone.Bookmark = Bookmark
+	Value = RSClone.Fields.Item("FirstName") & " " & RSClone.Fields.Item("LastName")
+End Sub
+</SCRIPT>

@@ -1,0 +1,20 @@
+
+March 31, 1997
+Getting a Reference to a Visual Basic 5.0 UserControl
+by David Mendlen
+Visual Basic 5.0 allows you to use UserControls to create ActiveX controls in your projects. The following code snippet does two things: It gets a reference to the form in which a UserControl is placed, and it gets a reference to that control on the form. 
+
+Dim PControl As Object
+Dim MyControl As Control
+Dim AControl As Object
+'Get my UserControl
+For Each AControl In ParentControls
+  If AControl.Name = Ambient.DisplayName Then
+    Set MyControl = AControl
+    Exit For
+  End If
+Next
+'Get the Form UserControl is on
+Set PControl = ParentControls.Item(1).Parent
+While Not (TypeOf PControl Is Form)   Set PControl = PControl.Parent
+Wend

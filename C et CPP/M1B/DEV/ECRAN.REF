@@ -1,0 +1,15 @@
+/* ecran.ref
+*/
+
+void phy_goto(int, int);
+void ecr_init(void);
+void ecr_close(void);
+void ecr_ecritcar(byte);
+void ecr_beep(void);
+void ecr_photo(void);
+void ecr_redisplay(void);
+void ecr_newstatus(int);
+void ecr_mode(int);
+void phy_cls(void);
+void ecr_mode_rouleau(int);
+

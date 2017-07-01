@@ -1,0 +1,30 @@
+*-------------------------------------------------------------------*
+* Dieses Archiv enthält das Control 				    *
+* MDIActiveX.ocx Version 1.0.7 für Visual Basic 6/SP5               *
+* 								    *
+* Im Verzeichnis DEMO ist ein Beispielprojekt gespeichert.          *
+*                                                                   *
+* ----------------------------------------------------------------- *
+*                                                                   *
+* Autor:	Michael Wallner                                     *
+* Datum:        August 2001                                         *
+* WEB:          www.wallner-software.com                            *
+* eMail:        mdiactivex@wallner-software.com                     *
+*                                                                   *
+* ----------------------------------------------------------------- *
+
+
+Das Archiv mdiactivex107svb6.zip enthält dan Quellencode des MDIActiveX6.ocx sowie 
+eines Beispielprojektes für Visual Basic 6.
+
+Das Control ist Freeware! Sie dürfen es jederzeit ohne Einschränkung für eigene
+Projekte Verwenden. Ich wäre jedoch über eine kurze Nachricht per eMail dankbar!
+
+Weiters müssen Sie bei kommerziellen Projekten auf die Verwendung des Controls
+hinzuweisen. (Etwa im INFO Dialog 'Erstellt mit dem MDIActiveX.ocx by
+http://www.wallner-software.com')
+
+Sollten Sie den Beitrag weitergeben wollen, so müssen Sie immer das komplette
+ZIP-Archiv weitergeben!
+
+Wien November 2000/August 2001

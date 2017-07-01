@@ -1,0 +1,30 @@
+Tim Heuer wrote:
+> 
+> I have a logon form which asks the user to input their user id and
+> password, which are then declared as global strings.  In order to have the
+> end-user get the "feel" of actually logging on to the SQL server, is there
+> a way to have (after the OK is clicked) the form present an image, then
+> pause for a few seconds, and then continue?
+> 
+> Just trying to get a little fancy.
+> 
+> Tim Heuer
+> --
+> Market Technologies Group
+> PacifiCare of Arizona (Formerly FHP, Inc.)
+> 410 N. 44th St.
+> PO Box 52078
+> Phoenix, AZ  85072-2078
+> (602) 244-2707 x4577
+> (800) 449-2707 x4577
+> (602) 681-7004-fax
+> Tim.Heuer@fhp.com
+Use the API Sleep function.
+
+Declare Sub Sleep Lib "kernel32" Alias "Sleep" (ByVal dwMilliseconds As
+Long)
+
+Then in the click event add
+Sleep(5000)  '5 second delay
+
+Doug

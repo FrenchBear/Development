@@ -1,0 +1,13 @@
+astruct \\zeus2\donnees\ -> h:\
+\\zeus2\donnees\uop8\audit\Carrefour\Laval\1996\0996.doc: dates différentes
+source:      (2912946688;29076197)
+destination: (1295079168;29075192)
+\\zeus2\donnees\uop8\audit\Carrefour\Laval\1996\0996.doc: tailles différentes
+source:      91136
+destination: 96256
+copy \\zeus2\donnees\uop8\audit\Carrefour\Laval\1996\0996.doc h:\uop8\audit\Carr
+efour\Laval\1996\0996.doc
+"\\zeus2\donnees\uop8\audit\Carrefour\Roche sur yon\1996\9609.doc": inexistant s
+ur la cible
+copy "\\zeus2\donnees\uop8\audit\Carrefour\Roche sur yon\1996\9609.doc" "h:\uop8
+\audit\Carrefour\Roche sur yon\1996\9609.doc"

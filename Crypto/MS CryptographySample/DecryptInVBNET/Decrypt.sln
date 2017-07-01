@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Decrypt", "Decrypt.vbproj", "{AED96D20-C8C6-4AFC-8DB7-2AE0A93DC3D3}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{AED96D20-C8C6-4AFC-8DB7-2AE0A93DC3D3}.Debug.ActiveCfg = Debug|.NET
+		{AED96D20-C8C6-4AFC-8DB7-2AE0A93DC3D3}.Debug.Build.0 = Debug|.NET
+		{AED96D20-C8C6-4AFC-8DB7-2AE0A93DC3D3}.Release.ActiveCfg = Release|.NET
+		{AED96D20-C8C6-4AFC-8DB7-2AE0A93DC3D3}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

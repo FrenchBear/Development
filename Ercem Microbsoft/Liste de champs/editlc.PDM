@@ -1,0 +1,105 @@
+[Root]
+Most Recent Package=Empaquetage editlc
+Most Recent Deploy=Déploiement editlc
+
+[Package|Empaquetage editlc|Package]
+PackageFolder=D:\Microbsoft\Liste de champs\Package
+ProjectFolder=D:\Microbsoft\Liste de champs
+ServerSideCab=D:\Microbsoft\Liste de champs\Package\editlc.cab
+File1=D:\Microbsoft\Liste de champs\Package\editlc.cab
+File2=D:\Microbsoft\Liste de champs\Package\doceditlc.vbd
+File3=D:\Microbsoft\Liste de champs\Package\editlc.htm
+Handler1=PDWizard.WebPostDplySubWiz
+Handler2=PDWizard.FolderDplySubWiz
+
+
+[Deploy|Déploiement editlc|Root]
+Package=Empaquetage editlc
+Handler=PDWizard.WebPostDplySubWiz
+
+[Deploy|Déploiement editlc|Package Files]
+D:\Microbsoft\Liste de champs\Package\editlc.cab=Yes
+D:\Microbsoft\Liste de champs\Package\doceditlc.vbd=Yes
+D:\Microbsoft\Liste de champs\Package\editlc.htm=Yes
+
+[Deploy|Déploiement editlc|Other Files and Folders]
+
+[Deploy|Déploiement editlc|WebPost Site]
+URL=http://uranus.ercem.com/depl/
+Provider={02B5E1D1-8B7C-11D0-AD45-00AA00A219AA}
+Explode=No
+
+[Package|Empaquetage editlc|Root]
+SubWizProgID=PDWizard.InetCABPkgSubWiz
+BuildFolder=D:\Microbsoft\Liste de champs\Package
+RA Server Support=No
+
+[Package|Empaquetage editlc|Configure DAO ISAMs]
+Applicable=No
+
+[Package|Empaquetage editlc|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|Empaquetage editlc|Files Found]
+
+[Package|Empaquetage editlc|Files Released]
+
+[Package|Empaquetage editlc|Missing Dependency Information]
+
+[Package|Empaquetage editlc|Out-of-Date Dependency Information]
+
+[Package|Empaquetage editlc|Files Added]
+C:\WINDOWS\SYSTEM\AutPrx32.dll=Ce fichier est nécessaire pour la gestion du serveur RA.
+C:\WINDOWS\SYSTEM\AutMgr32.exe=Ce fichier est nécessaire pour la gestion du serveur RA.
+C:\WINDOWS\SYSTEM\RACMgr32.exe=Ce fichier est nécessaire pour la gestion du serveur RA.
+
+[Package|Empaquetage editlc|Files Removed]
+c:\windows\system\autprx32.dll=
+c:\windows\system\autmgr32.exe=
+c:\windows\system\racmgr32.exe=
+c:\windows\system\mscomctl.ocx=
+c:\windows\system\mscmcfr.dll=
+c:\windows\system\racreg32.dll=
+c:\windows\system\odkob32.dll=
+
+[Package|Empaquetage editlc|Files In Project]
+D:\Microbsoft\Liste de champs\editlc.exe=Yes
+C:\WINDOWS\SYSTEM\MSVBVM60.DLL=Yes
+C:\WINDOWS\SYSTEM\OLEAUT32.DLL=Yes
+C:\WINDOWS\SYSTEM\OLEPRO32.DLL=Yes
+C:\WINDOWS\SYSTEM\ASYCFILT.DLL=Yes
+C:\WINDOWS\SYSTEM\STDOLE2.TLB=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\WINDOWS\SYSTEM\VB6FR.DLL=Yes
+C:\WINDOWS\SYSTEM\AUTPRX32.DLL=No
+C:\WINDOWS\SYSTEM\AUTMGR32.EXE=No
+C:\WINDOWS\SYSTEM\RACMGR32.EXE=No
+C:\WINDOWS\SYSTEM\MSCOMCTL.OCX=No
+C:\WINDOWS\SYSTEM\MSCMCFR.DLL=No
+C:\WINDOWS\SYSTEM\RACREG32.DLL=No
+C:\WINDOWS\SYSTEM\ODKOB32.DLL=No
+
+[Package|Empaquetage editlc|Configure Registry Files]
+Applicable=No
+
+[Package|Empaquetage editlc|Configure Remote Servers]
+Applicable=No
+
+[Package|Empaquetage editlc|Install Locations]
+
+[Package|Empaquetage editlc|Configure Shared Files]
+Applicable=
+
+[Package|Empaquetage editlc|ComponentInfo]
+editlc.exe=thiscab
+MSVBVM60.DLL=http://activex.microsoft.com/controls/vb6/VBRun60.cab
+OLEAUT32.DLL=http://activex.microsoft.com/controls/vb6/VBRun60.cab
+OLEPRO32.DLL=http://activex.microsoft.com/controls/vb6/VBRun60.cab
+ASYCFILT.DLL=http://activex.microsoft.com/controls/vb6/VBRun60.cab
+STDOLE2.TLB=http://activex.microsoft.com/controls/vb6/VBRun60.cab
+COMCAT.DLL=http://activex.microsoft.com/controls/vb6/VBRun60.cab
+VB6FR.DLL=http://activex.microsoft.com/controls/vb6/VB6FR.cab
+
+[Package|Empaquetage editlc|ObjectInfo]
+doceditlc=true;true

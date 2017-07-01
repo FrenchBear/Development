@@ -1,0 +1,9 @@
+
+/* clavier.ref
+*/
+
+void cla_init(void);
+void cla_close(void);
+
+int  cla_job(void);
+void cla_minuscules(int);
