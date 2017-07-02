@@ -1,0 +1,2583 @@
+From: "Saved by Windows Internet Explorer 7"
+Subject: Retrieve Identity Column Value After Inserting Record in Database Table - SQL Server - Free ADO.NET Tutorials
+Date: Tue, 6 May 2008 03:49:12 +0200
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----=_NextPart_000_0000_01C8AF2C.255D1C20"
+X-MimeOLE: Produced By Microsoft MimeOLE V6.0.6001.18000
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0000_01C8AF2C.255D1C20
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://davidhayden.com/blog/dave/archive/2006/02/16/2803.aspx
+
+=EF=BB=BF<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>Retrieve Identity Column Value After Inserting Record =
+in Database Table - SQL Server - Free ADO.NET Tutorials</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; charset=3Dutf-8">
+<META content=3D"MSHTML 6.00.6001.18023" name=3DGENERATOR><LINK =
+id=3DMainStyle=20
+href=3D"http://davidhayden.com/blog/skins/marvin3/style.css" =
+type=3Dtext/css=20
+rel=3Dstylesheet></LINK><LINK id=3DSecondaryCss=20
+href=3D"http://davidhayden.com/blog/skins/marvin3/blue.css" =
+type=3Dtext/css=20
+rel=3Dstylesheet></LINK><LINK id=3DRSSLink title=3DRSS=20
+href=3D"http://davidhayden.com/blog/dave/rss.aspx" =
+type=3Dapplication/rss+xml=20
+rel=3Dalternate></LINK></HEAD>
+<BODY>
+<FORM id=3DForm1 name=3DForm1 action=3D2803.aspx method=3Dpost><INPUT =
+type=3Dhidden=20
+name=3D__VIEWSTATE>=20
+<TABLE cellSpacing=3D0 cellPadding=3D0 width=3D760 align=3Dcenter =
+border=3D0>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV id=3Dposter></DIV>
+      <DIV id=3Dnavtop>
+      <UL>
+        <LI><A title=3D"David Hayden"=20
+        href=3D"http://www.davidhayden.com/default.aspx">Home</A>=20
+        <LI><A title=3D"ASP.NET Web Development News"=20
+        href=3D"http://www.davidhayden.com/news.aspx">News</A>=20
+        <LI><A title=3D".NET Articles"=20
+        href=3D"http://www.davidhayden.com/articles.aspx">Articles</A>=20
+        <LI><A title=3D"Green Tea"=20
+        href=3D"http://www.davidhayden.com/greentea.aspx">Green Tea</A>=20
+        <LI><A title=3D".NET Developer Presentations"=20
+        =
+href=3D"http://www.davidhayden.com/presentations.aspx">Presentations</A> =
+
+        <LI><A title=3D"Florida .NET C# SQL Server Developer"=20
+        href=3D"http://www.davidhayden.com/contact.aspx">Contact</A>=20
+        <LI><A title=3D".NET Developer Tutorials and Samples"=20
+        href=3D"http://www.davidhayden.com/archive.aspx">Archive</A>=20
+        <LI><A title=3D"Florida .NET Developer Blog"=20
+        href=3D"http://www.davidhayden.com/blog/dave/">Blog</A>=20
+        <LI><A title=3D"Florida ASP.NET Web Development Events"=20
+        href=3D"http://www.davidhayden.com/events.aspx">Events</A> =
+</LI></UL></DIV>
+      <DIV class=3Dnone><A=20
+      =
+href=3D"http://davidhayden.com/blog/dave/archive/2006/02/16/2803.aspx#con=
+tent_start">Skip=20
+      Repetitive Navigational Links</A> </DIV></TD></TR>
+  <TR>
+    <TD>
+      <TABLE cellSpacing=3D0 cellPadding=3D5 width=3D"100%" =
+bgColor=3D#ffffff=20
+        border=3D0><TBODY>
+        <TR><!-- <div id=3D"layout">
+	<div id=3D"body">
+
+		<div id=3D"columnleft"> -->
+          <TD vAlign=3Dtop width=3D540>
+            <SCRIPT type=3Dtext/javascript><!--
+google_ad_client =3D "pub-5540381525225370";
+google_ad_width =3D 468;
+google_ad_height =3D 60;
+google_ad_format =3D "468x60_as";
+google_ad_type =3D "text";
+google_ad_channel =3D"";
+google_color_border =3D "336699";
+google_color_bg =3D "FFFFFF";
+google_color_link =3D "0000FF";
+google_color_url =3D "008000";
+google_color_text =3D "000000";
+//--></SCRIPT>
+
+            <SCRIPT=20
+            =
+src=3D"http://pagead2.googlesyndication.com/pagead/show_ads.js"=20
+            type=3Dtext/javascript>
+</SCRIPT>
+
+            <SCRIPT type=3Dtext/javascript><!--
+google_ad_client =3D "pub-5540381525225370";
+google_ad_width =3D 468;
+google_ad_height =3D 60;
+google_ad_format =3D "468x60_as";
+google_ad_type =3D "text";
+google_ad_channel =3D"";
+google_color_border =3D "336699";
+google_color_bg =3D "FFFFFF";
+google_color_link =3D "0000FF";
+google_color_url =3D "008000";
+google_color_text =3D "000000";
+//--></SCRIPT>
+
+            <SCRIPT=20
+            =
+src=3D"http://pagead2.googlesyndication.com/pagead/show_ads.js"=20
+            type=3Dtext/javascript>
+</SCRIPT>
+
+            <DIV class=3Dpost>
+            <H2><A id=3Dviewpost.ascx_TitleUrl=20
+            =
+href=3D"http://davidhayden.com/blog/dave/archive/2006/02/16/2803.aspx">Re=
+trieve=20
+            Identity Column Value After Inserting Record in Database =
+Table - SQL=20
+            Server - Free ADO.NET Tutorials</A> </H2>
+            <H1><FONT face=3DVerdana>Retrieve Identity Column Value =
+After=20
+            Inserting Record in Database Table</FONT></H1>
+            <P><FONT face=3DVerdana size=3D2>by <A=20
+            href=3D"http://www.davidhayden.com/">David Hayden</A> ( <A=20
+            href=3D"http://www.davidhayden.com/">.NET Developer</A> =
+)</FONT></P>
+            <P><FONT face=3DVerdana size=3D2></FONT>&nbsp;</P>
+            <P><FONT face=3DVerdana size=3D2>Retrieving the value of an =
+identity=20
+            column after inserting a record into the table of a SQL =
+Server=20
+            Database is a fairly common question in the MSDN =
+Forums.&nbsp; There=20
+            are several ways to pull this off and the answer may often =
+be =E2=80=9Cit=20
+            depends=E2=80=9D, but here is&nbsp;one example using the =
+<STRONG>Shippers=20
+            Table</STRONG> in the <STRONG>Northwind=20
+Database</STRONG>.</FONT></P>
+            <P><FONT face=3DVerdana size=3D2></FONT>&nbsp;</P>
+            <H2><FONT face=3DVerdana>Adding a new Shipper</FONT></H2>
+            <P><FONT face=3DVerdana size=3D2>If you take a peek at the =
+Shippers=20
+            Table in Northwind, you will notice that the =
+<STRONG>ShipperID=20
+            Column</STRONG> in the table is an <STRONG>Identity=20
+            PK</STRONG>.&nbsp; This means that the table itself will =
+generate a=20
+            new ShipperID when you insert a new record into the =
+table.&nbsp;=20
+            Since you are probably interested in the value of ShipperID =
+after=20
+            inserting a new record, it is your job to go and get =
+it.</FONT></P>
+            <P><FONT face=3DVerdana size=3D2></FONT>&nbsp;</P>
+            <P align=3Dcenter><FONT face=3DVerdana size=3D2><IMG=20
+            =
+src=3D"http://www.davidhayden.com/photos/shipperstable.jpg"></FONT></P>
+            <P><FONT face=3DVerdana size=3D2></FONT>&nbsp;</P>
+            <P><FONT face=3DVerdana size=3D2>My&nbsp;preference is to =
+use an=20
+            <STRONG>Output Parameter</STRONG> as part of the=20
+            <STRONG>ExecuteNonQuery() Command</STRONG>&nbsp;to return =
+the value=20
+            of <STRONG>ShipperID</STRONG>.&nbsp; This is certainly the =
+fastest=20
+            as you avoid additional roundtrips to the database as well =
+as=20
+            returning any rows.&nbsp; Here is the complete code for =
+inserting a=20
+            new record into the Shippers Table and returning its =
+PK:</FONT></P>
+            <P>&nbsp;</P><PRE><SPAN style=3D"COLOR: =
+#0000ff">private</SPAN><SPAN style=3D"COLOR: #000000"> </SPAN><SPAN =
+style=3D"COLOR: #0000ff">int</SPAN><SPAN style=3D"COLOR: #000000"> =
+AddShipper(</SPAN><SPAN style=3D"COLOR: #0000ff">string</SPAN><SPAN =
+style=3D"COLOR: #000000"> companyName, </SPAN><SPAN style=3D"COLOR: =
+#0000ff">string</SPAN><SPAN style=3D"COLOR: #000000"> phone)
+{
+    </SPAN><SPAN style=3D"COLOR: #0000ff">string</SPAN><SPAN =
+style=3D"COLOR: #000000"> connectionString </SPAN><SPAN style=3D"COLOR: =
+#000000">=3D</SPAN><SPAN style=3D"COLOR: #000000"> </SPAN><SPAN =
+style=3D"COLOR: #000000">"</SPAN><SPAN style=3D"COLOR: =
+#008080">...Northwind...</SPAN><SPAN style=3D"COLOR: =
+#000000">"</SPAN><SPAN style=3D"COLOR: #000000">;
+    </SPAN><SPAN style=3D"COLOR: #0000ff">int</SPAN><SPAN =
+style=3D"COLOR: #000000"> id </SPAN><SPAN style=3D"COLOR: =
+#000000">=3D</SPAN><SPAN style=3D"COLOR: #000000"> </SPAN><SPAN =
+style=3D"COLOR: #ff0000">0</SPAN><SPAN style=3D"COLOR: #000000">;
+    </SPAN><SPAN style=3D"COLOR: #0000ff">using</SPAN><SPAN =
+style=3D"COLOR: #000000"> (SqlConnection connection </SPAN><SPAN =
+style=3D"COLOR: #000000">=3D<BR>                 </SPAN><SPAN =
+style=3D"COLOR: #0000ff">new</SPAN><SPAN style=3D"COLOR: #000000"> =
+SqlConnection(connectionString))
+    {
+        </SPAN><SPAN style=3D"COLOR: #0000ff">using</SPAN><SPAN =
+style=3D"COLOR: #000000"> (SqlCommand insertCommand </SPAN><SPAN =
+style=3D"COLOR: #000000">=3D<BR>                          </SPAN><SPAN =
+style=3D"COLOR: #000000">connection.CreateCommand())
+        {
+            insertCommand.CommandText </SPAN><SPAN style=3D"COLOR: =
+#000000">=3D</SPAN><SPAN style=3D"COLOR: #000000"> </SPAN><SPAN =
+style=3D"COLOR: #000000">"</SPAN><SPAN style=3D"COLOR: #008080">INSERT =
+INTO Shippers<BR>                   (CompanyName, Phone) VALUES =
+(@CompanyName,<BR>                   @Phone) SET @ShipperID =3D =
+SCOPE_IDENTITY()</SPAN><SPAN style=3D"COLOR: #000000">"</SPAN><SPAN =
+style=3D"COLOR: #000000">;<BR>
+            SqlParameter companyNameParameter </SPAN><SPAN =
+style=3D"COLOR: #000000">=3D</SPAN><SPAN style=3D"COLOR: #000000"> =
+</SPAN><SPAN style=3D"COLOR: #0000ff">new<BR>              </SPAN><SPAN =
+style=3D"COLOR: #000000">SqlParameter(</SPAN><SPAN style=3D"COLOR: =
+#000000">"</SPAN><SPAN style=3D"COLOR: #008080">@CompanyName</SPAN><SPAN =
+style=3D"COLOR: #000000">"</SPAN><SPAN style=3D"COLOR: #000000">, =
+SqlDbType.NVarChar,<BR>                                          =
+</SPAN><SPAN style=3D"COLOR: #ff0000">40</SPAN><SPAN style=3D"COLOR: =
+#000000">);
+            companyNameParameter.Value </SPAN><SPAN style=3D"COLOR: =
+#000000">=3D</SPAN><SPAN style=3D"COLOR: #000000"> companyName;
+            insertCommand.Parameters.Add(companyNameParameter);<BR>
+            SqlParameter phoneParameter </SPAN><SPAN style=3D"COLOR: =
+#000000">=3D</SPAN><SPAN style=3D"COLOR: #000000"> </SPAN><SPAN =
+style=3D"COLOR: #0000ff">new</SPAN><SPAN style=3D"COLOR: #000000"> =
+SqlParameter<BR>                                (</SPAN><SPAN =
+style=3D"COLOR: #000000">"</SPAN><SPAN style=3D"COLOR: =
+#008080">@Phone</SPAN><SPAN style=3D"COLOR: #000000">"</SPAN><SPAN =
+style=3D"COLOR: #000000">, SqlDbType.NVarChar<BR>                        =
+                 , </SPAN><SPAN style=3D"COLOR: #ff0000">24</SPAN><SPAN =
+style=3D"COLOR: #000000">);
+            </SPAN><SPAN style=3D"COLOR: #0000ff">if</SPAN><SPAN =
+style=3D"COLOR: #000000"> (phone.Length </SPAN><SPAN style=3D"COLOR: =
+#000000">=3D=3D</SPAN><SPAN style=3D"COLOR: #000000"> </SPAN><SPAN =
+style=3D"COLOR: #ff0000">0</SPAN><SPAN style=3D"COLOR: #000000">)
+                phoneParameter.Value </SPAN><SPAN style=3D"COLOR: =
+#000000">=3D</SPAN><SPAN style=3D"COLOR: #000000"> DBNull.Value;
+            </SPAN><SPAN style=3D"COLOR: #0000ff">else</SPAN><SPAN =
+style=3D"COLOR: #000000">
+                phoneParameter.Value </SPAN><SPAN style=3D"COLOR: =
+#000000">=3D</SPAN><SPAN style=3D"COLOR: #000000"> phone;
+            insertCommand.Parameters.Add(phoneParameter);<BR>
+            SqlParameter shipperIDParameter </SPAN><SPAN style=3D"COLOR: =
+#000000">=3D<BR>                     </SPAN><SPAN style=3D"COLOR: =
+#0000ff">new</SPAN><SPAN style=3D"COLOR: #000000"> =
+SqlParameter(</SPAN><SPAN style=3D"COLOR: #000000">"</SPAN><SPAN =
+style=3D"COLOR: #008080">@ShipperID</SPAN><SPAN style=3D"COLOR: =
+#000000">"</SPAN><SPAN style=3D"COLOR: #000000">,<BR>                    =
+                SqlDbType.Int);
+            shipperIDParameter.Direction </SPAN><SPAN style=3D"COLOR: =
+#000000">=3D<BR>                                </SPAN><SPAN =
+style=3D"COLOR: #000000">ParameterDirection.Output;
+            insertCommand.Parameters.Add(shipperIDParameter);<BR>
+            insertCommand.Connection.Open();
+            insertCommand.ExecuteNonQuery();<BR>
+            id </SPAN><SPAN style=3D"COLOR: #000000">=3D</SPAN><SPAN =
+style=3D"COLOR: #000000"> (</SPAN><SPAN style=3D"COLOR: =
+#0000ff">int</SPAN><SPAN style=3D"COLOR: =
+#000000">)shipperIDParameter.Value;
+        }
+    }<BR>
+    </SPAN><SPAN style=3D"COLOR: #0000ff">return</SPAN><SPAN =
+style=3D"COLOR: #000000"> id;
+}
+</SPAN></PRE>
+            <P>&nbsp;</P>
+            <P><FONT face=3DVerdana size=3D2>The magic is the additional =
+
+            <STRONG>Select Statement</STRONG> in the=20
+            <STRONG>InsertCommand.CommandText</STRONG> shown =
+above:</FONT></P>
+            <P>&nbsp;</P><PRE><SPAN style=3D"COLOR: =
+#000000">insertCommand.CommandText </SPAN><SPAN style=3D"COLOR: =
+#000000">=3D<BR>        </SPAN><SPAN style=3D"COLOR: =
+#000000">"</SPAN><SPAN style=3D"COLOR: #008080">... SET @ShipperID =3D =
+SCOPE_IDENTITY()</SPAN><SPAN style=3D"COLOR: #000000">"</SPAN><SPAN =
+style=3D"COLOR: #000000">;</SPAN></PRE>
+            <P>&nbsp;</P>
+            <P><A=20
+            =
+href=3D"http://davidhayden.com/blog/dave/archive/2006/01/17/2736.aspx"><F=
+ONT=20
+            face=3DVerdana size=3D2>SCOPE_IDENTITY()</FONT></A><FONT =
+face=3DVerdana=20
+            size=3D2> returns the value of the identity column ( =
+ShipperID ) in=20
+            the Insert Statement that just occurred.&nbsp; For more =
+information=20
+            on SCOPE_IDENTITY() you can read the following =
+article:</FONT></P>
+            <P><A=20
+            =
+href=3D"http://davidhayden.com/blog/dave/archive/2006/01/17/2736.aspx"><F=
+ONT=20
+            face=3DVerdana size=3D2>SCOPE_IDENTITY() vs. @@IDENTITY - =
+Retrieving=20
+            Identity for Most Recently Added Row in Table</FONT></A></P>
+            <P><FONT face=3DVerdana size=3D2></FONT>&nbsp;</P>
+            <H2><FONT face=3DVerdana>How Microsoft Does It - Check SQL=20
+            Profiler</FONT></H2>
+            <P><FONT face=3DVerdana size=3D2>So the above code is just =
+my opinion=20
+            and certainly there are others ways to pull it off.&nbsp; My =
+
+            question to myself was how does Microsoft do it? When you =
+drop a=20
+            <STRONG>DataSource</STRONG> on a <STRONG>Windows =
+Form</STRONG> and=20
+            it renders a <STRONG>DataGridView</STRONG>, they do some <A=20
+            =
+href=3D"http://davidhayden.com/blog/dave/category/15.aspx?Show=3DAll">cod=
+e=20
+            generation</A> underneath that generates an <STRONG>Insert=20
+            Statment</STRONG> for you.&nbsp; I started up <STRONG>SQL=20
+            Profiler</STRONG> and took a look.&nbsp; Here is the=20
+            results:</FONT></P>
+            <P>&nbsp;</P><PRE><SPAN style=3D"COLOR: #008080">INSERT INTO =
+[dbo].[Shippers]<BR>     ([CompanyName], [Phone])<BR>   VALUES<BR>     =
+(@CompanyName, @Phone);</SPAN></PRE><PRE><SPAN style=3D"COLOR: =
+#008080"></SPAN><SPAN style=3D"COLOR: #008080"><BR><BR><BR></SPAN><SPAN =
+style=3D"COLOR: #008080"><BR><BR>SELECT ShipperID, CompanyName, =
+Phone<BR>FROM Shippers<BR>WHERE (ShipperID =3D =
+SCOPE_IDENTITY())</SPAN></PRE>
+            <P>&nbsp;</P>
+            <P><FONT face=3DVerdana size=3D2>As you can see, Microsoft =
+is also using=20
+            <STRONG>SCOPE_IDENTITY()</STRONG> to retrieve the identity =
+of the=20
+            new record.&nbsp; But instead of just returning the identity =
+value=20
+            as an output parameter, they return the entire record.&nbsp; =
+Not=20
+            quite as fast, but it does have an added safety value of =
+assuring=20
+            your code accounts for any triggers and default values on =
+columns=20
+            not participating in the original Insert =
+Statement.</FONT></P>
+            <P><FONT face=3DVerdana size=3D2></FONT>&nbsp;</P>
+            <H2><FONT face=3DVerdana>Conclusion</FONT></H2>
+            <P><FONT face=3DVerdana size=3D2>Hopefully this helps one =
+understand how=20
+            to retrieve the value of an identity column after inserting =
+a record=20
+            into the table of a SQL Server Database.</FONT></P>
+            <P><FONT face=3DVerdana size=3D2></FONT>&nbsp;</P>
+            <P><FONT face=3DVerdana size=3D2>Source:&nbsp; <A=20
+            href=3D"http://www.davidhayden.com/">David Hayden</A> ( <A=20
+            href=3D"http://www.davidhayden.com/">Florida .NET =
+Developer</A>=20
+            )</FONT></P>
+            <P><FONT face=3DVerdana size=3D2></FONT>&nbsp;</P>
+            <H2><FONT face=3DVerdana>Free ADO.NET Tutorials</FONT></H2>
+            <UL>
+              <LI><A=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2006/02/11/2798.aspx"><F=
+ONT=20
+              face=3DVerdana color=3D#0000ff size=3D2>DataView Sorting =
+Filtering and=20
+              DataBinding in ADO.NET 2.0 - Converting DataView to Table =
+-=20
+              ADO.NET Tutorials</FONT></A>=20
+              <LI><A=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2006/02/07/2792.aspx"><F=
+ONT=20
+              face=3DVerdana color=3D#0000ff size=3D2>Copy a DataTable =
+in ADO.NET 2.0=20
+              - Free ADO.NET Tutorials</FONT></A>=20
+              <LI><A=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2006/02/01/2785.aspx"><F=
+ONT=20
+              face=3DVerdana color=3D#0000ff size=3D2>Insert Update SQL =
+Query Code=20
+              Generator - Information_Schema.Tables - =
+GetSchema</FONT></A><FONT=20
+              face=3DVerdana size=3D2> </FONT>
+              <LI><A=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2006/01/31/2781.aspx"><F=
+ONT=20
+              face=3DVerdana color=3D#0000ff size=3D2>Get List of Tables =
+in a Database=20
+              - Query INFORMATION_SCHEMA.Tables - =
+ADO.NET</FONT></A><FONT=20
+              face=3DVerdana size=3D2> </FONT>
+              <LI><A=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2006/01/27/2775.aspx"><F=
+ONT=20
+              face=3DVerdana color=3D#0000ff size=3D2>Create Table in =
+SQL Server 2005=20
+              Using C# and SQL Server Management Objects (SMO) - Code=20
+              Generation</FONT></A><FONT face=3DVerdana size=3D2> =
+</FONT>
+              <LI><A=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2006/01/15/2734.aspx"><F=
+ONT=20
+              face=3DVerdana color=3D#0000ff size=3D2>GetSchema -=20
+              DbConnection.GetSchema in ADO.NET 2.0 - Retrieve Databases =
+Tables=20
+              Columns Views etc. from Database =
+Connection</FONT></A><FONT=20
+              face=3DVerdana size=3D2> </FONT>
+              <LI><A=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2006/01/17/2736.aspx"><F=
+ONT=20
+              face=3DVerdana color=3D#0000ff size=3D2>SCOPE_IDENTITY() =
+vs. @@IDENTITY=20
+              - Retrieving Identity for Most Recently Added Row in=20
+              Table</FONT></A><FONT face=3DVerdana size=3D2> </FONT>
+              <LI><A=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2006/01/15/2734.aspx"><F=
+ONT=20
+              face=3DVerdana color=3D#0000ff size=3D2>GetSchema -=20
+              DbConnection.GetSchema in ADO.NET 2.0 - Retrieve Databases =
+Tables=20
+              Columns Views etc. from Database =
+Connection</FONT></A><FONT=20
+              face=3DVerdana size=3D2> </FONT>
+              <LI><A=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2006/01/13/2692.aspx"><F=
+ONT=20
+              face=3DVerdana color=3D#0000ff size=3D2>SqlBulkCopy - Copy =
+Table Data=20
+              Between SQL Servers at High Speeds - ADO.NET 2.0 New=20
+              Feature</FONT></A><FONT face=3DVerdana size=3D2> </FONT>
+              <LI><A=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2006/01/05/2665.aspx"><F=
+ONT=20
+              face=3DVerdana color=3D#0000ff size=3D2>Batch Updates in =
+ADO.NET 2.0 for=20
+              Improved Performance</FONT></A></LI></UL>
+            <P>&nbsp;</P>
+            <P class=3Dpostfoot>posted on Thursday, February 16, 2006 =
+6:03 PM=20
+            </P></DIV>
+            <SCRIPT type=3Dtext/javascript><!--
+google_ad_client =3D "pub-5540381525225370";
+google_ad_width =3D 468;
+google_ad_height =3D 60;
+google_ad_format =3D "468x60_as";
+google_ad_type =3D "text";
+google_ad_channel =3D"";
+google_color_border =3D "336699";
+google_color_bg =3D "FFFFFF";
+google_color_link =3D "0000FF";
+google_color_url =3D "008000";
+google_color_text =3D "000000";
+//--></SCRIPT>
+
+            <SCRIPT=20
+            =
+src=3D"http://pagead2.googlesyndication.com/pagead/show_ads.js"=20
+            type=3Dtext/javascript>
+</SCRIPT>
+            <LINK =
+href=3D"http://davidhayden.com/blog/dave/Services/Pingback.aspx"=20
+            rel=3Dpingback><!--
+<rdf:RDF xmlns:rdf=3D"http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:dc=3D"http://purl.org/dc/elements/1.1/"=0A=
+xmlns:trackback=3D"http://madskills.com/public/xml/rss/module/trackback/"=
+>
+<rdf:Description
+rdf:about=3D"http://davidhayden.com/blog/dave/archive/2006/02/16/2803.asp=
+x"
+dc:identifier=3D"http://davidhayden.com/blog/dave/archive/2006/02/16/2803=
+.aspx"
+dc:title=3D"Retrieve Identity Column Value After Inserting Record in =
+Database Table - SQL Server - Free ADO.NET Tutorials"
+trackback:ping=3D"http://davidhayden.com/blog/dave/services/trackbacks/28=
+03.aspx" />
+</rdf:RDF>
+--></TD><!-- </div>
+		<div id=3D"columnright"> -->
+          <TD vAlign=3Dtop width=3D220>
+            <H3>My Links</H3>
+            <UL>
+              <LI class=3Ddrhcategory><A class=3DdrhCategory2 =
+id=3DMyLinks1_HomeLink=20
+              href=3D"http://davidhayden.com/blog/dave/">Blog Home</A>=20
+              <LI class=3Ddrhcategory><A class=3DdrhCategory2=20
+              id=3DMyLinks1_Syndication=20
+              =
+href=3D"http://davidhayden.com/blog/dave/Rss.aspx">Syndication</A><A=20
+              id=3DMyLinks1_XMLLink=20
+              href=3D"http://davidhayden.com/blog/dave/Rss.aspx"><IMG =
+alt=3D""=20
+              src=3D"http://davidhayden.com/blog/images/xml.gif" =
+border=3D0></A>=20
+              <LI class=3Ddrhcategory><A class=3DdrhCategory2 =
+id=3DMyLinks1_Admin=20
+              =
+href=3D"http://davidhayden.com/blog/dave/login.aspx">Login</A>=20
+            </LI></UL>
+            <H3>Post Categories</H3>
+            <UL>
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl1_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/32.aspx">.NET=20
+              Books</A> <A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl1_RssLink=20
+              title=3D"Subscribe to .NET Books"=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/32.aspx/rss">(rss)</A> =
+
+
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl2_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/53.aspx">.NET=20
+              Developer Community</A> <A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl2_RssLink=20
+              title=3D"Subscribe to .NET Developer Community"=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/53.aspx/rss">(rss)</A> =
+
+
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl3_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/28.aspx">.NET=20
+              Mobile Development</A> <A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl3_RssLink=20
+              title=3D"Subscribe to .NET Mobile Development"=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/28.aspx/rss">(rss)</A> =
+
+
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl4_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/10.aspx">.NET=20
+              Tools</A> <A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl4_RssLink=20
+              title=3D"Subscribe to .NET Tools"=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/10.aspx/rss">(rss)</A> =
+
+
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl5_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/26.aspx">ADO.NET=20
+              2.0</A> <A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl5_RssLink=20
+              title=3D"Subscribe to ADO.NET 2.0"=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/26.aspx/rss">(rss)</A> =
+
+
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl6_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/54.aspx">ADO.NET=20
+              3.0</A> <A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl6_RssLink=20
+              title=3D"Subscribe to ADO.NET 3.0"=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/54.aspx/rss">(rss)</A> =
+
+
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl7_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/68.aspx">ADO.NET=20
+              Data Services</A> <A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl7_RssLink=20
+              title=3D"Subscribe to ADO.NET Data Services"=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/68.aspx/rss">(rss)</A> =
+
+
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl8_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/63.aspx">ADO.NET=20
+              Entity Framework</A> <A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl8_RssLink=20
+              title=3D"Subscribe to ADO.NET Entity Framework"=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/63.aspx/rss">(rss)</A> =
+
+
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl9_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/34.aspx">Agile=20
+              &amp; Iterative Development</A> <A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl9_RssLink=20
+              title=3D"Subscribe to Agile &amp; Iterative Development"=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/34.aspx/rss">(rss)</A> =
+
+
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl10_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/42.aspx">Agile=20
+              Software Development Book Review</A> <A =
+class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl10_RssLink=20
+              title=3D"Subscribe to Agile Software Development Book =
+Review"=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/42.aspx/rss">(rss)</A> =
+
+
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl11_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/33.aspx">Applying=20
+              UML and Design Patterns - An Introduction to =
+Object-Oriented=20
+              Analysis and Design and Iterative Development by Craig =
+Larman</A>=20
+              <A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl11_RssLink=20
+              title=3D"Subscribe to Applying UML and Design Patterns - =
+An Introduction to Object-Oriented Analysis and Design and Iterative =
+Development by Craig Larman"=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/33.aspx/rss">(rss)</A> =
+
+
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl12_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/9.aspx">ASP.NET</A>=20
+              <A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl12_RssLink=20
+              title=3D"Subscribe to ASP.NET"=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/9.aspx/rss">(rss)</A>=20
+
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl13_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/25.aspx">ASP.NET=20
+              2.0</A> <A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl13_RssLink=20
+              title=3D"Subscribe to ASP.NET 2.0"=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/25.aspx/rss">(rss)</A> =
+
+
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl14_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/67.aspx">ASP.NET=20
+              3.5</A> <A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl14_RssLink=20
+              title=3D"Subscribe to ASP.NET 3.5"=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/67.aspx/rss">(rss)</A> =
+
+
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl15_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/69.aspx">ASP.NET=20
+              Dynamic Data</A> <A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl15_RssLink=20
+              title=3D"Subscribe to ASP.NET Dynamic Data"=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/69.aspx/rss">(rss)</A> =
+
+
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl16_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/21.aspx">ASP.NET=20
+              Security</A> <A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl16_RssLink=20
+              title=3D"Subscribe to ASP.NET Security"=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/21.aspx/rss">(rss)</A> =
+
+
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl17_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/12.aspx">C#</A> <A=20
+              class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl17_RssLink=20
+              title=3D"Subscribe to C#"=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/12.aspx/rss">(rss)</A> =
+
+
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl18_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/41.aspx">C#=20
+              2.0</A> <A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl18_RssLink=20
+              title=3D"Subscribe to C# 2.0"=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/41.aspx/rss">(rss)</A> =
+
+
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl19_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/58.aspx">C#=20
+              3.0</A> <A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl19_RssLink=20
+              title=3D"Subscribe to C# 3.0"=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/58.aspx/rss">(rss)</A> =
+
+
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl20_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/62.aspx">Castle</A>=20
+              <A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl20_RssLink=20
+              title=3D"Subscribe to Castle"=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/62.aspx/rss">(rss)</A> =
+
+
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl21_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/15.aspx">Code=20
+              Generation</A> <A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl21_RssLink=20
+              title=3D"Subscribe to Code Generation"=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/15.aspx/rss">(rss)</A> =
+
+
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl22_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/46.aspx">Commerce=20
+              Starter Kit - ASP.NET 2.0 PayPal</A> <A =
+class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl22_RssLink=20
+              title=3D"Subscribe to Commerce Starter Kit - ASP.NET 2.0 =
+PayPal"=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/46.aspx/rss">(rss)</A> =
+
+
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl23_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/22.aspx">Design=20
+              Patterns C#</A> <A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl23_RssLink=20
+              title=3D"Subscribe to Design Patterns C#"=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/22.aspx/rss">(rss)</A> =
+
+
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl24_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/50.aspx">Enterprise=20
+              Library 2.0</A> <A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl24_RssLink=20
+              title=3D"Subscribe to Enterprise Library 2.0"=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/50.aspx/rss">(rss)</A> =
+
+
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl25_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/60.aspx">Enterprise=20
+              Library 3.0</A> <A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl25_RssLink=20
+              title=3D"Subscribe to Enterprise Library 3.0"=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/60.aspx/rss">(rss)</A> =
+
+
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl26_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/47.aspx">Expert=20
+              ASP.NET 2.0 Advanced Application Design</A> <A =
+class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl26_RssLink=20
+              title=3D"Subscribe to Expert ASP.NET 2.0 Advanced =
+Application Design"=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/47.aspx/rss">(rss)</A> =
+
+
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl27_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/30.aspx">Expert C#=20
+              Business Objects - Review</A> <A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl27_RssLink=20
+              title=3D"Subscribe to Expert C# Business Objects - Review" =
+
+              =
+href=3D"http://davidhayden.com/blog/dave/category/30.aspx/rss">(rss)</A> =
+
+
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl28_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/31.aspx">Expert=20
+              Service-Oriented Architecture (SOA) in C#</A> <A=20
+              class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl28_RssLink=20
+              title=3D"Subscribe to Expert Service-Oriented Architecture =
+(SOA) in C#"=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/31.aspx/rss">(rss)</A> =
+
+
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl29_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/11.aspx">General</A>=20
+              <A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl29_RssLink=20
+              title=3D"Subscribe to General"=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/11.aspx/rss">(rss)</A> =
+
+
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl30_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/40.aspx">Green=20
+              Tea</A> <A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl30_RssLink=20
+              title=3D"Subscribe to Green Tea"=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/40.aspx/rss">(rss)</A> =
+
+
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl31_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/55.aspx">Guidance=20
+              Automation Tookit ( GAT )</A> <A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl31_RssLink=20
+              title=3D"Subscribe to Guidance Automation Tookit ( GAT )"=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/55.aspx/rss">(rss)</A> =
+
+
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl32_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/49.aspx">Health=20
+              Aging and Nutrition - Dr. Weil</A> <A class=3Ddrhcategory2 =
+
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl32_RssLink=20
+              title=3D"Subscribe to Health Aging and Nutrition - Dr. =
+Weil"=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/49.aspx/rss">(rss)</A> =
+
+
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl33_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/65.aspx">IIS=20
+              7.0</A> <A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl33_RssLink=20
+              title=3D"Subscribe to IIS 7.0"=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/65.aspx/rss">(rss)</A> =
+
+
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl34_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/61.aspx">IronPython</A>=
+=20
+              <A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl34_RssLink=20
+              title=3D"Subscribe to IronPython"=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/61.aspx/rss">(rss)</A> =
+
+
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl35_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/43.aspx">Japan=20
+              Green Tea</A> <A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl35_RssLink=20
+              title=3D"Subscribe to Japan Green Tea"=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/43.aspx/rss">(rss)</A> =
+
+
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl36_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/52.aspx">LINQ</A>=20
+              <A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl36_RssLink=20
+              title=3D"Subscribe to LINQ"=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/52.aspx/rss">(rss)</A> =
+
+
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl37_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/59.aspx">LINQ to=20
+              SQL - DLINQ</A> <A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl37_RssLink=20
+              title=3D"Subscribe to LINQ to SQL - DLINQ"=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/59.aspx/rss">(rss)</A> =
+
+
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl38_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/23.aspx">NUnit -=20
+              Unit Testing</A> <A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl38_RssLink=20
+              title=3D"Subscribe to NUnit - Unit Testing"=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/23.aspx/rss">(rss)</A> =
+
+
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl39_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/24.aspx">O/R=20
+              Mapper</A> <A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl39_RssLink=20
+              title=3D"Subscribe to O/R Mapper"=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/24.aspx/rss">(rss)</A> =
+
+
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl40_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/35.aspx">Refactoring=20
+              to Patterns</A> <A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl40_RssLink=20
+              title=3D"Subscribe to Refactoring to Patterns"=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/35.aspx/rss">(rss)</A> =
+
+
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl41_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/64.aspx">Repository=20
+              Factory</A> <A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl41_RssLink=20
+              title=3D"Subscribe to Repository Factory"=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/64.aspx/rss">(rss)</A> =
+
+
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl42_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/27.aspx">Sarasota=20
+              .NET Pub Club</A> <A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl42_RssLink=20
+              title=3D"Subscribe to Sarasota .NET Pub Club"=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/27.aspx/rss">(rss)</A> =
+
+
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl43_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/29.aspx">Sarasota=20
+              .NET User Group</A> <A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl43_RssLink=20
+              title=3D"Subscribe to Sarasota .NET User Group"=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/29.aspx/rss">(rss)</A> =
+
+
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl44_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/66.aspx">Silverlight</A=
+>=20
+              <A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl44_RssLink=20
+              title=3D"Subscribe to Silverlight"=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/66.aspx/rss">(rss)</A> =
+
+
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl45_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/17.aspx">Smart=20
+              Clients</A> <A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl45_RssLink=20
+              title=3D"Subscribe to Smart Clients"=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/17.aspx/rss">(rss)</A> =
+
+
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl46_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/4.aspx">Society=20
+              and Politics</A> <A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl46_RssLink=20
+              title=3D"Subscribe to Society and Politics"=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/4.aspx/rss">(rss)</A>=20
+
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl47_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/48.aspx">Software</A>=20
+              <A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl47_RssLink=20
+              title=3D"Subscribe to Software"=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/48.aspx/rss">(rss)</A> =
+
+
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl48_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/14.aspx">SQL=20
+              Server</A> <A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl48_RssLink=20
+              title=3D"Subscribe to SQL Server"=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/14.aspx/rss">(rss)</A> =
+
+
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl49_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/51.aspx">SQL=20
+              Server Management Objects ( SMO )</A> <A =
+class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl49_RssLink=20
+              title=3D"Subscribe to SQL Server Management Objects ( SMO =
+)"=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/51.aspx/rss">(rss)</A> =
+
+
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl50_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/37.aspx">Tampa=20
+              .NET Pub Club</A> <A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl50_RssLink=20
+              title=3D"Subscribe to Tampa .NET Pub Club"=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/37.aspx/rss">(rss)</A> =
+
+
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl51_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/1.aspx">Technology</A> =
+
+              <A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl51_RssLink=20
+              title=3D"Subscribe to Technology"=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/1.aspx/rss">(rss)</A>=20
+
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl52_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/57.aspx">Web=20
+              Client Software Factory</A> <A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl52_RssLink=20
+              title=3D"Subscribe to Web Client Software Factory"=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/57.aspx/rss">(rss)</A> =
+
+
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl53_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/16.aspx">Web=20
+              Design</A> <A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl53_RssLink=20
+              title=3D"Subscribe to Web Design"=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/16.aspx/rss">(rss)</A> =
+
+
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl54_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/13.aspx">Web=20
+              Development</A> <A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl54_RssLink=20
+              title=3D"Subscribe to Web Development"=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/13.aspx/rss">(rss)</A> =
+
+
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl55_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/56.aspx">Web=20
+              Service Software Factory</A> <A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl0_LinkList__ctl55_RssLink=20
+              title=3D"Subscribe to Web Service Software Factory"=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/56.aspx/rss">(rss)</A> =
+
+              </LI></UL>
+            <H3>Article Categories</H3>
+            <UL>
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl1_LinkList__ctl1_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/category/39.aspx">Tea=20
+              Articles</A> </LI></UL>
+            <H3>Archives</H3>
+            <UL>
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl2_LinkList__ctl1_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2008/05.aspx">May,=20
+              2008 (8)</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl2_LinkList__ctl2_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2008/04.aspx">April,=20
+              2008 (30)</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl2_LinkList__ctl3_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2008/03.aspx">March,=20
+              2008 (30)</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl2_LinkList__ctl4_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2008/02.aspx">February, =
+
+              2008 (28)</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl2_LinkList__ctl5_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2008/01.aspx">January,=20
+              2008 (22)</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl2_LinkList__ctl6_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2007/12.aspx">December, =
+
+              2007 (27)</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl2_LinkList__ctl7_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2007/11.aspx">November, =
+
+              2007 (26)</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl2_LinkList__ctl8_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2007/10.aspx">October,=20
+              2007 (23)</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl2_LinkList__ctl9_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2007/09.aspx">September,=
+=20
+              2007 (33)</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl2_LinkList__ctl10_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2007/08.aspx">August,=20
+              2007 (29)</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl2_LinkList__ctl11_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2007/07.aspx">July,=20
+              2007 (28)</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl2_LinkList__ctl12_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2007/06.aspx">June,=20
+              2007 (25)</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl2_LinkList__ctl13_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2007/05.aspx">May,=20
+              2007 (24)</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl2_LinkList__ctl14_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2007/04.aspx">April,=20
+              2007 (23)</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl2_LinkList__ctl15_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2007/03.aspx">March,=20
+              2007 (23)</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl2_LinkList__ctl16_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2007/02.aspx">February, =
+
+              2007 (26)</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl2_LinkList__ctl17_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2007/01.aspx">January,=20
+              2007 (20)</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl2_LinkList__ctl18_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2006/12.aspx">December, =
+
+              2006 (30)</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl2_LinkList__ctl19_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2006/11.aspx">November, =
+
+              2006 (23)</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl2_LinkList__ctl20_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2006/10.aspx">October,=20
+              2006 (6)</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl2_LinkList__ctl21_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2006/09.aspx">September,=
+=20
+              2006 (28)</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl2_LinkList__ctl22_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2006/08.aspx">August,=20
+              2006 (9)</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl2_LinkList__ctl23_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2006/07.aspx">July,=20
+              2006 (16)</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl2_LinkList__ctl24_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2006/06.aspx">June,=20
+              2006 (20)</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl2_LinkList__ctl25_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2006/05.aspx">May,=20
+              2006 (27)</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl2_LinkList__ctl26_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2006/04.aspx">April,=20
+              2006 (32)</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl2_LinkList__ctl27_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2006/03.aspx">March,=20
+              2006 (28)</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl2_LinkList__ctl28_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2006/02.aspx">February, =
+
+              2006 (37)</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl2_LinkList__ctl29_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2006/01.aspx">January,=20
+              2006 (44)</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl2_LinkList__ctl30_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2005/12.aspx">December, =
+
+              2005 (48)</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl2_LinkList__ctl31_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2005/11.aspx">November, =
+
+              2005 (51)</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl2_LinkList__ctl32_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2005/10.aspx">October,=20
+              2005 (46)</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl2_LinkList__ctl33_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2005/09.aspx">September,=
+=20
+              2005 (45)</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl2_LinkList__ctl34_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2005/08.aspx">August,=20
+              2005 (33)</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl2_LinkList__ctl35_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2005/07.aspx">July,=20
+              2005 (31)</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl2_LinkList__ctl36_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2005/06.aspx">June,=20
+              2005 (39)</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl2_LinkList__ctl37_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2005/05.aspx">May,=20
+              2005 (30)</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl2_LinkList__ctl38_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2005/04.aspx">April,=20
+              2005 (26)</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl2_LinkList__ctl39_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2005/03.aspx">March,=20
+              2005 (29)</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl2_LinkList__ctl40_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2005/02.aspx">February, =
+
+              2005 (25)</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl2_LinkList__ctl41_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2005/01.aspx">January,=20
+              2005 (38)</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl2_LinkList__ctl42_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2004/12.aspx">December, =
+
+              2004 (29)</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl2_LinkList__ctl43_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2004/11.aspx">November, =
+
+              2004 (26)</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl2_LinkList__ctl44_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2004/10.aspx">October,=20
+              2004 (29)</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl2_LinkList__ctl45_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2004/09.aspx">September,=
+=20
+              2004 (28)</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl2_LinkList__ctl46_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2004/08.aspx">August,=20
+              2004 (36)</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl2_LinkList__ctl47_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2004/07.aspx">July,=20
+              2004 (38)</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl2_LinkList__ctl48_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2004/06.aspx">June,=20
+              2004 (42)</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl2_LinkList__ctl49_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2004/05.aspx">May,=20
+              2004 (37)</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl2_LinkList__ctl50_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2004/04.aspx">April,=20
+              2004 (28)</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl2_LinkList__ctl51_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2004/03.aspx">March,=20
+              2004 (23)</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DArchiveLinks1_Categories_CatList__ctl2_LinkList__ctl52_Link=20
+              =
+href=3D"http://davidhayden.com/blog/dave/archive/2004/02.aspx">February, =
+
+              2004 (11)</A> </LI></UL>
+            <H3>Loose-Leaf Tea</H3>
+            <UL>
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DCategoryDisplay1_Categories_CatList__ctl0_LinkList__ctl1_Link=20
+              =
+href=3D"http://www.relaxsipenjoy.com/dragon_pearls_china_green_tea.aspx" =
+
+              target=3D_blank>Dragon Pearls</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DCategoryDisplay1_Categories_CatList__ctl0_LinkList__ctl2_Link=20
+              =
+href=3D"http://www.relaxsipenjoy.com/dragon_well_lung_ching_china_green_t=
+ea.aspx"=20
+              target=3D_blank>Dragon Well Lung Ching</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DCategoryDisplay1_Categories_CatList__ctl0_LinkList__ctl3_Link=20
+              =
+href=3D"http://www.relaxsipenjoy.com/emerald_petals_china_green_tea.aspx"=
+=20
+              target=3D_blank>Emerald Petals Green Tea</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DCategoryDisplay1_Categories_CatList__ctl0_LinkList__ctl4_Link=20
+              =
+href=3D"http://www.relaxsipenjoy.com/green_peony_china_green_tea.aspx"=20
+              target=3D_blank>Green Peony Tea</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DCategoryDisplay1_Categories_CatList__ctl0_LinkList__ctl5_Link=20
+              href=3D"http://www.relaxsipenjoy.com/green_teas.aspx"=20
+              target=3D_blank>Green Tea</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DCategoryDisplay1_Categories_CatList__ctl0_LinkList__ctl6_Link=20
+              href=3D"http://www.relaxsipenjoy.com/" =
+target=3D_blank>Green Tea=20
+              Website</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DCategoryDisplay1_Categories_CatList__ctl0_LinkList__ctl7_Link=20
+              =
+href=3D"http://www.relaxsipenjoy.com/gyokuro_japan_green_tea.aspx"=20
+              target=3D_blank>Gyokuro</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DCategoryDisplay1_Categories_CatList__ctl0_LinkList__ctl8_Link=20
+              =
+href=3D"http://www.relaxsipenjoy.com/Huo_Shan_Spring_Tips_china_green_tea=
+.aspx"=20
+              target=3D_blank>Huo Shan Spring Tips</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DCategoryDisplay1_Categories_CatList__ctl0_LinkList__ctl9_Link=20
+              =
+href=3D"http://www.relaxsipenjoy.com/imperial_huangshan_maofeng_china_gre=
+en_tea.aspx"=20
+              target=3D_blank>Imperial Huangshan Maofeng</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DCategoryDisplay1_Categories_CatList__ctl0_LinkList__ctl10_Link=20
+              =
+href=3D"http://www.relaxsipenjoy.com/pi_lo_chun_china_green_tea.aspx"=20
+              target=3D_blank>Imperial Pi Lo Chun</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DCategoryDisplay1_Categories_CatList__ctl0_LinkList__ctl11_Link=20
+              =
+href=3D"http://www.relaxsipenjoy.com/jade_spring_china_green_tea.aspx"=20
+              target=3D_blank>Jade Spring</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DCategoryDisplay1_Categories_CatList__ctl0_LinkList__ctl12_Link=20
+              =
+href=3D"http://www.relaxsipenjoy.com/jasmine_pearls_china_green_tea.aspx"=
+=20
+              target=3D_blank>Jasmine Pearls</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DCategoryDisplay1_Categories_CatList__ctl0_LinkList__ctl13_Link=20
+              =
+href=3D"http://www.relaxsipenjoy.com/phoenix_eyes_china_green_tea.aspx"=20
+              target=3D_blank>Phoenix Eyes</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DCategoryDisplay1_Categories_CatList__ctl0_LinkList__ctl14_Link=20
+              =
+href=3D"http://www.relaxsipenjoy.com/sencha_japan_green_tea.aspx"=20
+              target=3D_blank>Sencha</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DCategoryDisplay1_Categories_CatList__ctl0_LinkList__ctl15_Link=20
+              =
+href=3D"http://www.relaxsipenjoy.com/white_peony_white_tea.aspx"=20
+              target=3D_blank>White Peony</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DCategoryDisplay1_Categories_CatList__ctl0_LinkList__ctl16_Link=20
+              href=3D"http://www.relaxsipenjoy.com/white_teas.aspx"=20
+              target=3D_blank>White Tea</A>=20
+              <LI class=3Ddrhcategory><A class=3Ddrhcategory2=20
+              =
+id=3DCategoryDisplay1_Categories_CatList__ctl0_LinkList__ctl17_Link=20
+              =
+href=3D"http://www.relaxsipenjoy.com/yinzhen_silver_needles_white_tea.asp=
+x"=20
+              target=3D_blank>Yinzhen Silver Needles</A> =
+</LI></UL></TD><!-- </div>
+	</div>
+</div> --></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD>
+      <DIV id=3Dbottomposter></DIV>
+      <DIV id=3Dfooter>
+      <P>=C2=A92006=20
+DavidHayden.com</P></DIV></TD></TR></TBODY></TABLE></FORM></BODY></HTML>
+
+------=_NextPart_000_0000_01C8AF2C.255D1C20
+Content-Type: image/jpeg
+Content-Transfer-Encoding: base64
+Content-Location: http://www.davidhayden.com/photos/shipperstable.jpg
+
+/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAYEBAQFBAYFBQYJBgUGCQsIBgYICwwKCgsKCgwQDAwM
+DAwMEAwODxAPDgwTExQUExMcGxsbHCAgICAgICAgICD/2wBDAQcHBw0MDRgQEBgaFREVGiAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICD/wAARCAB1AVMDAREA
+AhEBAxEB/8QAGwABAAIDAQEAAAAAAAAAAAAAAAUGAgMEBwH/xABSEAABAwIEAgQJBgsFBgUFAAAC
+AQMEBREABhITFCEHFSIxI1FSU5GSotLhFjJBVGPRMzQ1QlVhcoGTsbIIFyQlcyZDVnGz4nWUo7TT
+NnSCwsP/xAAaAQEBAQEBAQEAAAAAAAAAAAAAAQIDBAUG/8QALREBAAEDAwMBCAIDAQAAAAAAAAEC
+ERMSIVEDMWEUBDJBcYGRweEF0aGx8CL/2gAMAwEAAhEDEQA/APd6X+TIn+i3/SmPO03uOadKIKm4
+a6Wmh+cZeJO7xX58kTmvLGqabpM2VzP+aaDlSk1FJ73WOaW6VLqkGiDHkzI4DHBUFyS1GC4x93SK
+uyFEboqio2W3eNuzFr91SyJ0vZbm1GpNZxpdNpkCNBy7IYnx6a+scHq1BB97i5Nn2I7aPuiLaukC
+W71Wyri5KuTRHC//ACt6IuvepLRON47qnd4E+D6w293g+N2eE4jT/ut3Vq7NtXLDJVyaI4Qud895
+Ty3nSNlMaRQmZbtOWquz65LZpMNG9/Ybabd4eWrjxKJko6RsKXuv0MlXJojhHwOkXLcHPea6DnGl
+U2lQKH1MDE2PCffjtvVKOhPJLnbWw22j5iLbjosoqd/02ZKuTRHCVjdIvRek6RT50OJx6VWoUmDE
+psCbUXnjpgtnI1NtwQIXAF5FIQQwt81wudmSrk0Rw2vdJfQe22w6BR5TcinLWgOHS5MtBp4mTRyH
+Vjx3doW3GyFzcsoKlithkq5NEcOuoZ46GIEpY77sAhAIjsiYxDKRDjt1BbRDkzGWnI0cXrooK64N
+xVC7lRcMlXJojhqLpE6DgerDDkumtvUDiut2ji6CY4F1ph66E0il4WQAN6b7hcg1Ki2ZKuTRHCQi
+5h6M5FTpdLWAkWo1o5LdLiTaRKhOPLCaF9+wyY7VhFs0XUtkXuRVVFTDJVyaI4WX5N5d/RcT+A37
+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
+
+------=_NextPart_000_0000_01C8AF2C.255D1C20
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://davidhayden.com/blog/images/xml.gif
+
+R0lGODlhJAAOANUAANVYBPHUwOFdBP/28P9yFeCngvfp4OVeBPRkBe3JsfBjBfr079+ecv+rc/fg
+0NByM+e9of/j0Z9BA//m1eWEQ/+FNP/awc5VBM1nI//t4eezkeirgtRhFPBsFOR3Lt1uJPDBofjX
+wf98JOZ7M/PCofqWU/CugiEOAfmygv/Rsv+PRP+0gn0zAv+aV8JQBD8aAf/IpP////9mAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAAAAAALAAAAAAkAA4AAAbKwAls
+SCwaj8ijpyVrOp/QqDTKYk6vWKq12YgNCDJVLEJYxWKVJuwcjlmmVWgoliBkYo+LOQZBEM4xLmIB
+AFJxTyILMQ4xDC4IZoofKwNngjGEhltOJWcBLgcyZhB0AySWg4VaUWIxBhxNZgUgZxiomKpQh04E
+AwOMGrExBSN0LreZq08pjQ9nFKLDAgguALcGGysrKk+7Ml2fByiuHbICTreAMSYKTt4yB9VNAi4u
+MvTnTvUyCvX++TLeZRlIRcKLgwgTKlzIcOGJIAA7
+
+------=_NextPart_000_0000_01C8AF2C.255D1C20
+Content-Type: text/css;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://davidhayden.com/blog/skins/marvin3/style.css
+
+A:visited {
+	COLOR: #00f; TEXT-DECORATION: none
+}
+A:active {
+	COLOR: #00f; TEXT-DECORATION: none
+}
+A:link {
+	COLOR: #00f; TEXT-DECORATION: none
+}
+A:hover {
+	TEXT-DECORATION: underline
+}
+H1 {
+	FONT-SIZE: 1.5em; MARGIN: 0px
+}
+H1 A:visited {
+	COLOR: #000
+}
+H1 A:active {
+	COLOR: #000
+}
+H1 A:link {
+	COLOR: #000
+}
+H1 A:hover {
+	COLOR: #47f; TEXT-DECORATION: none
+}
+H2 {
+	MARGIN-TOP: 10px; FONT-SIZE: 12px
+}
+H5 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: =
+0px; PADDING-TOP: 0px
+}
+#top {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; PADDING-BOTTOM: 10px; COLOR: =
+#000; PADDING-TOP: 10px; BORDER-BOTTOM: #47f 4px solid; =
+BACKGROUND-COLOR: #adf
+}
+#tagline {
+	FONT-SIZE: 0.8em; MARGIN: 0px
+}
+P.date IMG {
+	VERTICAL-ALIGN: middle
+}
+P.date {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: bold; FONT-SIZE: =
+0.9em; MARGIN-BOTTOM: 0px; PADDING-BOTTOM: 2px; PADDING-TOP: 2px; =
+BORDER-BOTTOM: #aaa 1px solid
+}
+BLOCKQUOTE {
+	FONT-STYLE: italic
+}
+P.postfoot {
+	FONT-SIZE: 0.75em
+}
+#leftmenu {
+	MARGIN-TOP: 10px; LEFT: 10px; WIDTH: 180px; POSITION: absolute
+}
+#leftmenu H3 {
+	PADDING-RIGHT: 4px; PADDING-LEFT: 4px; FONT-SIZE: 0.9em; =
+PADDING-BOTTOM: 4px; MARGIN: 0px; PADDING-TOP: 4px; BORDER-BOTTOM: =
+medium none
+}
+#rightmenu H3 {
+	PADDING-RIGHT: 4px; PADDING-LEFT: 4px; FONT-SIZE: 0.9em; =
+PADDING-BOTTOM: 4px; MARGIN: 0px; PADDING-TOP: 4px; BORDER-BOTTOM: =
+medium none
+}
+#leftmenu UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 0.8em; =
+PADDING-BOTTOM: 0px; MARGIN: 0px 0px 10px 5px; PADDING-TOP: 0px; =
+LIST-STYLE-TYPE: none
+}
+#rightmenu UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 0.8em; =
+PADDING-BOTTOM: 0px; MARGIN: 0px 0px 10px 5px; PADDING-TOP: 0px; =
+LIST-STYLE-TYPE: none
+}
+#rightmenu {
+	MARGIN-TOP: 10px; RIGHT: 0px; WIDTH: 180px; POSITION: absolute
+}
+#main {
+	BORDER-RIGHT: #555 1px solid; PADDING-RIGHT: 10px; PADDING-LEFT: 10px; =
+PADDING-BOTTOM: 10px; MARGIN: 0px 200px; BORDER-LEFT: #555 1px solid; =
+PADDING-TOP: 10px; BORDER-BOTTOM: #47f 4px solid; BACKGROUND-COLOR: #eee
+}
+#footer {
+	FONT-SIZE: 0.7em; MARGIN: 0px; PADDING-TOP: 5px; TEXT-ALIGN: center
+}
+INPUT.text {
+	WIDTH: 300px
+}
+TEXTAREA {
+	WIDTH: 300px; HEIGHT: 200px
+}
+#comments H4 SPAN {
+	COLOR: #999
+}
+#comments H4 {
+	FONT-SIZE: 0.9em; MARGIN: 0px
+}
+P {
+	MARGIN: 10px 0px
+}
+H3 {
+	FONT-SIZE: 14px; COLOR: #0000ff; BORDER-BOTTOM: #ffffff 1px solid
+}
+#relatedlinks UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; =
+MARGIN-LEFT: 10px; PADDING-TOP: 0px; LIST-STYLE-TYPE: none
+}
+.drhcategory {
+	FONT-SIZE: 11px; COLOR: #000000; FONT-FAMILY: Verdana, Arial, =
+Helvetica, sans-serif
+}
+A.drhcategory2:visited {
+	COLOR: #000; TEXT-DECORATION: none
+}
+A.drhcategory2:active {
+	COLOR: #000; TEXT-DECORATION: none
+}
+A.drhcategory2:link {
+	COLOR: #000; TEXT-DECORATION: none
+}
+A.drhcategory2:hover {
+	TEXT-DECORATION: underline
+}
+.defaulttext {
+	FONT-SIZE: 11px; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, =
+sans-serif
+}
+
+------=_NextPart_000_0000_01C8AF2C.255D1C20
+Content-Type: text/css;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://davidhayden.com/blog/skins/marvin3/blue.css
+
+BODY {
+	FONT-SIZE: 14px; BACKGROUND: #333333; MARGIN: 0px; FONT-FAMILY: Tahoma, =
+Verdana, Helvetica, Helvetica-Narrow, sans-serif
+}
+#poster {
+	BACKGROUND: url(http://www.davidhayden.com/images/davidhayden.jpg) =
+no-repeat; MARGIN-LEFT: auto; WIDTH: 760px; MARGIN-RIGHT: auto; HEIGHT: =
+99px
+}
+#navtop {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; BACKGROUND: =
+url(http://www.davidhayden.com/images/menu.jpg) repeat-x; MARGIN-LEFT: =
+auto; WIDTH: 760px; MARGIN-RIGHT: auto; FONT-FAMILY: Verdana, Helvetica, =
+Helvetica-Narrow, Tahoma, sans-serif; HEIGHT: 28px
+}
+#navbottom {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; BACKGROUND: =
+url(http://www.davidhayden.com/images/menu.jpg) repeat-x; MARGIN-LEFT: =
+auto; WIDTH: 760px; MARGIN-RIGHT: auto; FONT-FAMILY: Verdana, Helvetica, =
+Helvetica-Narrow, Tahoma, sans-serif; HEIGHT: 28px
+}
+#navtop UL {
+	MARGIN: 0px; PADDING-TOP: 9px; LIST-STYLE-TYPE: none; HEIGHT: 19px; =
+TEXT-ALIGN: center
+}
+#navbottom UL {
+	MARGIN: 0px; PADDING-TOP: 9px; LIST-STYLE-TYPE: none; HEIGHT: 19px; =
+TEXT-ALIGN: center
+}
+#navtop UL LI {
+	DISPLAY: inline; COLOR: #333333; MARGIN-RIGHT: 25px
+}
+#navbottom UL LI {
+	DISPLAY: inline; COLOR: #333333; MARGIN-RIGHT: 25px
+}
+#navtop A:link {
+	COLOR: #333333; TEXT-DECORATION: none
+}
+#navbottom A:link {
+	COLOR: #333333; TEXT-DECORATION: none
+}
+#navtop A:visited {
+	COLOR: #333333; TEXT-DECORATION: none
+}
+#navbottom A:visited {
+	COLOR: #333333; TEXT-DECORATION: none
+}
+#navtop A:hover {
+	TEXT-DECORATION: underline
+}
+#navbottom A:hover {
+	TEXT-DECORATION: underline
+}
+#navtop A:active {
+	COLOR: #333333; TEXT-DECORATION: none
+}
+#navbottom A:active {
+	COLOR: #333333; TEXT-DECORATION: none
+}
+.none {
+	DISPLAY: none
+}
+#layout {
+	MARGIN-TOP: 0px; BACKGROUND: #ffffff; PADDING-BOTTOM: 10px; =
+MARGIN-LEFT: auto; OVERFLOW: auto; WIDTH: 760px; MARGIN-RIGHT: auto; =
+PADDING-TOP: 0px; POSITION: relative
+}
+#body {
+	MARGIN-TOP: 0px; MARGIN-LEFT: auto; WIDTH: 740px; MARGIN-RIGHT: auto; =
+POSITION: relative; HEIGHT: 100%
+}
+#columnleft {
+	FLOAT: left; MARGIN-LEFT: 10px; WIDTH: 540px; HEIGHT: 100%
+}
+#columnright {
+	MARGIN-LEFT: 560px
+}
+#bottomposter {
+	MARGIN-TOP: 0px; BACKGROUND: =
+url(http://www.davidhayden.com/images/davidhaydenfooter.jpg) no-repeat; =
+MARGIN-LEFT: auto; WIDTH: 760px; MARGIN-RIGHT: auto; HEIGHT: 116px
+}
+#footer {
+	MARGIN-TOP: 10px; PADDING-BOTTOM: 22px; MARGIN-LEFT: auto; WIDTH: =
+760px; COLOR: #ffffff; MARGIN-RIGHT: auto; TEXT-ALIGN: center
+}
+H1 A:visited {
+	COLOR: #000
+}
+H1 A:active {
+	COLOR: #000
+}
+H1 A:link {
+	COLOR: #000
+}
+H1 A:hover {
+	COLOR: #47f
+}
+A:visited {
+	COLOR: #00f
+}
+A:active {
+	COLOR: #00f
+}
+A:link {
+	COLOR: #00f
+}
+#top {
+	COLOR: #000; BORDER-BOTTOM: #47f 4px solid; BACKGROUND-COLOR: #adf
+}
+P.date {
+	BORDER-BOTTOM: #aaa 1px solid
+}
+#main {
+	BORDER-BOTTOM: #47f 4px solid; BACKGROUND-COLOR: #eee
+}
+#comments H4 SPAN {
+	COLOR: #999
+}
+H3 {
+	BORDER-BOTTOM: #aaa 1px solid
+}
+
+------=_NextPart_000_0000_01C8AF2C.255D1C20
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://pagead2.googlesyndication.com/pagead/show_ads.js
+
+(function(){=0A=
+var f=3Ddocument,j=3Dnavigator,l=3Dwindow;function da(){var =
+b=3Df.cookie,a=3DMath.round((new =
+Date).getTime()/1000),c=3Db.indexOf("__utma=3D")>-1,e=3Db.indexOf("__utmb=
+=3D")>-1,d=3Db.indexOf("__utmc=3D")>-1,g,i=3D{};if(c){g=3Db.split("__utma=
+=3D")[1].split(";")[0].split(".");i.sid=3D(!e||!d?a:g[4])+"";i.vid=3Dg[1]=
++"."+g[2];i.from_cookie=3Dtrue}else{i.sid=3Dl&&l.gaGlobal&&l.gaGlobal.sid=
+?l.gaGlobal.sid:a+"";i.vid=3Dl&&l.gaGlobal&&l.gaGlobal.vid?l.gaGlobal.vid=
+:(n()^ea())*2147483647+"."+a;i.from_cookie=3Dfalse}i.hid=3Dl&&l.gaGlobal&=
+&l.gaGlobal.hid?=0A=
+l.gaGlobal.hid:n();l.gaGlobal=3Di;return i}function n(){return =
+Math.round(Math.random()*2147483647)}function ea(){var =
+b=3Df.cookie?f.cookie:"",a=3Dl.history.length,c,e,d=3D[j.appName,j.versio=
+n,j.language?j.language:j.browserLanguage,j.platform,j.userAgent,j.javaEn=
+abled()?1:0].join("");if(l.screen)d+=3Dl.screen.width+"x"+l.screen.height=
++l.screen.colorDepth;else =
+if(l.java){e=3Djava.awt.Toolkit.getDefaultToolkit().getScreenSize();d+=3D=
+e.screen.width+"x"+e.screen.height}d+=3Db;d+=3Df.referrer?f.referrer:"";c=
+=3Dd.length;=0A=
+while(a>0)d+=3Da--^c++;return fa(d)}function fa(b){var =
+a=3D1,c=3D0,e,d;if(!(b=3D=3Dundefined||b=3D=3D"")){a=3D0;for(e=3Db.length=
+-1;e>=3D0;e--){d=3Db.charCodeAt(e);a=3D(a<<6&268435455)+d+(d<<14);c=3Da&2=
+66338304;a=3Dc!=3D0?a^c>>21:a}}return a};var =
+s=3D{google_ad_channel:"channel",google_ad_host:"host",google_ad_host_tie=
+r_id:"ht_id",google_ad_region:"region",google_ad_section:"region",google_=
+ad_type:"ad_type",google_adtest:"adtest",google_alternate_ad_url:"alterna=
+te_ad_url",google_alternate_color:"alt_color",google_bid:"bid",google_cit=
+y:"gcs",google_color_bg:"color_bg",google_color_border:"color_border",goo=
+gle_color_line:"color_line",google_color_link:"color_link",google_color_t=
+ext:"color_text",google_color_url:"color_url",google_contents:"contents",=0A=
+google_country:"gl",google_cust_age:"cust_age",google_cust_ch:"cust_ch",g=
+oogle_cust_gender:"cust_gender",google_cust_id:"cust_id",google_cust_inte=
+rests:"cust_interests",google_cust_job:"cust_job",google_cust_l:"cust_l",=
+google_cust_lh:"cust_lh",google_cust_u_url:"cust_u_url",google_disable_vi=
+deo_autoplay:"disable_video_autoplay",google_ed:"ed",google_encoding:"oe"=
+,google_feedback:"feedback_link",google_flash_version:"flash",google_gl:"=
+gl",google_hints:"hints",google_kw:"kw",google_kw_type:"kw_type",=0A=
+google_language:"hl",google_referrer_url:"ref",google_region:"gr",google_=
+reuse_colors:"reuse_colors",google_safe:"adsafe",google_targeting:"target=
+ing",google_ui_features:"ui"},u=3D{google_ad_format:"format",google_ad_ou=
+tput:"output",google_ad_callback:"callback",google_ad_override:"google_ad=
+_override",google_ad_slot:"slotname",google_analytics_uacct:"ga_wpids",go=
+ogle_correlator:"correlator",google_cpa_choice:"cpa_choice",google_image_=
+size:"image_size",google_last_modified_time:"lmt",google_max_num_ads:"num=
+_ads",=0A=
+google_max_radlink_len:"max_radlink_len",google_num_radlinks:"num_radlink=
+s",google_num_radlinks_per_unit:"num_radlinks_per_unit",google_only_ads_w=
+ith_video:"only_ads_with_video",google_page_location:"loc",google_page_ur=
+l:"url",google_rl_dest_url:"rl_dest_url",google_rl_filtering:"rl_filterin=
+g",google_rl_mode:"rl_mode",google_rt:"rt",google_skip:"skip"};function =
+A(b){return s[b]||u[b]||null};function =
+B(){}B.prototype.c=3Dfunction(){};B.prototype.e=3Dfunction(){};B.prototyp=
+e.o=3Dfunction(){};var E=3Dnull;function =
+G(){this.b=3Dthis.m();this.g=3Dfalse;if(!this.b){this.g=3Dthis.i();if(!th=
+is.g)E.e("Browser does not allow =
+cookies")}}G.prototype.f=3D"__gads=3D";G.prototype.d=3D"GoogleAdServingTe=
+st=3D";G.prototype.l=3Dfunction(){return =
+this.b};G.prototype.setCookieInfo=3Dfunction(b){this.a=3Db._cookies_[0];i=
+f(this.a!=3Dnull){this.b=3Dthis.a._value_;this.n()}};G.prototype.k=3Dfunc=
+tion(b){var a=3D(new Date).valueOf(),c=3Dnew Date;=0A=
+c.setTime(a+b);return =
+c};G.prototype.j=3Dfunction(b){if(this.b!=3Dnull||!this.g){E.c("Skipping =
+fetch cookie call");return}var =
+a=3Ddocument.domain,c=3D"http://partner.googleadservices.com/gampad/cooki=
+e.js?callback=3D_GA_googleCookieHelper.setCookieInfo&client=3D"+H(b)+"&do=
+main=3D"+H(a);E.c("Issuing a fetch cookie call with <a =
+href=3D'"+c+"'>"+c+"</a>");document.write("<script src =3D =
+'"+c+"'><\/script>")};G.prototype.i=3Dfunction(){document.cookie=3Dthis.d=
++"Good";var b=3Dthis.h(this.d),a=3Db=3D=3D"Good";if(a){var =
+c=3Dthis.k(-1);=0A=
+document.cookie=3Dthis.d+"; expires=3D"+c.toGMTString()}return =
+a};G.prototype.m=3Dfunction(){var =
+b=3Dthis.h(this.f);if(b!=3Dnull)E.c("Read first party cookie: "+b);else =
+E.e("No first party cookie found");return =
+b};G.prototype.h=3Dfunction(b){var =
+a=3Ddocument.cookie,c=3Da.indexOf(b),e=3Dnull;if(c!=3D-1){var =
+d=3Dc+b.length,g=3Da.indexOf(";",d);if(g=3D=3D-1)g=3Da.length;e=3Da.subst=
+ring(d,g)}return =
+e};G.prototype.n=3Dfunction(){if(this.a=3D=3Dnull)E.e("Skipping cookie =
+creation: no cookie info");else if(this.b=3D=3Dnull)E.o("Skipping cookie =
+creation: no cookie value");=0A=
+else{var b=3Dnew Date;b.setTime(1000*this.a._expires_);var =
+a=3Dthis.a._domain_,c=3Dthis.f+this.b+"; expires=3D"+b.toGMTString()+"; =
+path=3D"+this.a._path_+"; domain=3D."+a;document.cookie=3Dc;E.c("Written =
+cookie: =
+"+c)}};window.IDICommon=3Dwindow.IDICommon||(function(){return{getHash:fu=
+nction(b){var a=3Db.indexOf("#")+1;return =
+a?b.substr(a):""},htmlEscape:function(b){return/[&<>\"]/.test(b)?b.replac=
+e(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/\"/g,"=
+&quot;"):b},makeIframeTag:function(b){var a=3D"<iframe";for(var c in =
+b)a+=3D" "+c+'=3D"'+IDICommon.htmlEscape(b[c])+'"';return =
+a+"></iframe>"},getIframe:function(b,a){try{return =
+b.frames[a]}catch(c){return null}},makeIframeNode:function(b){var =
+a=3Ddocument.createElement("iframe");=0A=
+for(var c in b)a.setAttribute(c,b[c]);return =
+a},appendHiddenIframe:function(b,a){setTimeout(function(){document.body.a=
+ppendChild(IDICommon.makeIframeNode({id:b,name:b,src:a,width:0,height:0,f=
+rameBorder:0}))},0)},writeHiddenIframe:function(b,a){document.write(IDICo=
+mmon.makeIframeTag({id:b,name:b,src:a,width:0,height:0,frameBorder:0}))},=
+splitURIComponent:function(b,a){var =
+c=3D[],e=3Db.length,d=3D0;while(d<e){var =
+g=3Db.substr(d,a),i=3Dg.length;if(d+i<e)for(var =
+o=3D1;o<3;++o)if(g.charAt(i-o)=3D=3D"%")g=3Dg.substr(0,i-=3D=0A=
+o);c.push(g);d+=3Di}return =
+c},MAX_URL_LENGTH:4095,IDI_DEFAULT_POLLING_INTERVAL:1000}})();window.IDIH=
+ost=3Dwindow.IDIHost||(function(){var =
+b=3Dwindow.location.href.replace(/([^:\/])\/.*$/,"$1/robots.txt"),a=3D"",=
+c=3D{},e=3D{},d=3D{},g=3D{},i=3D{};function o(h,k){for(var p in =
+k)h[p]=3Dk[p]}function v(h,k){var p=3Dwindow.frames[h];if(p){var =
+x;while(x=3DIDICommon.getIframe(p,h+"_"+c[h])){try{if(x.location.href=3D=3D=
+"about:blank")break}catch(t){break}d[h]+=3DIDICommon.getHash(x.location.h=
+ref);++c[h]}var =
+q=3Dd[h].split("$"),y=3Dq.length-1;if(y>0){d[h]=3Dq[y];for(var =
+z=3D0;z<y;++z)k(decodeURIComponent(q[z]),h)}}}function r(h){return a||=0A=
+h.replace(/([^:\/]\/).*$/,"$1ig/idi_relay")}function =
+m(h){window.clearInterval(i[h]);i[h]=3D0}function F(h){b=3Dh}function =
+N(h){a=3Dh}function =
+O(h,k,p){m(h);i[h]=3Dwindow.setInterval(function(){v(h,k)},typeof =
+p=3D=3D"object"&&p.pollingInterval||IDICommon.IDI_DEFAULT_POLLING_INTERVA=
+L)}function I(h,k,p){var x;if(typeof =
+p=3D=3D"object")x=3Dp.moduleRelayUrl;var t=3De[h];if(isNaN(t))throw new =
+Error("Invalid module id");else{var q=3Dtypeof =
+x=3D=3D"string"?x:r(g[h]),y=3DencodeURIComponent(k)+"$",z=3DIDICommon.MAX=
+_URL_LENGTH-1-q.length,=0A=
+C=3DIDICommon.splitURIComponent(y,z),P=3DC.length;for(var =
+w=3D0;w<P;++w)IDICommon.appendHiddenIframe(h+"_"+(t+w),q+"#"+C[w]);e[h]+=3D=
+P}}function J(h,k,p,x,t){var =
+q=3D{frameBorder:0,scrolling:"no"},y,z,C,P,w;if(typeof =
+t=3D=3D"object"){y=3Dt.iframeAttrs;z=3Dt.callback;C=3Dt.userPrefs;P=3Dt.p=
+ollingInterval;w=3Dt.parentDivId}if(typeof =
+y=3D=3D"object")o(q,y);o(q,{id:k,name:k,src:h,width:p,height:x});c[k]=3D0=
+;e[k]=3D0;d[k]=3D"";g[k]=3Dh;var Q=3D[];if(typeof =
+C=3D=3D"object")for(var D in =
+C)Q.push(encodeURIComponent(D)+"=3D"+encodeURIComponent(C[D]));=0A=
+if(typeof =
+z=3D=3D"function"){Q.push("idi_hr=3D"+encodeURIComponent(b));window.IDIHo=
+st.registerListener(k,z,t)}if(Q.length){var =
+K=3DQ.join("&");if(q.src.length+1+K.length>IDICommon.MAX_URL_LENGTH){K+=3D=
+"$";var =
+$=3Dr(h),ka=3DIDICommon.MAX_URL_LENGTH-1-$.length,aa=3DIDICommon.splitURI=
+Component(K,ka),ba=3Daa.length;for(var D=3D0;D<ba;++D){var =
+U=3Dk+"_"+D,ca=3D$+"#"+aa[D];if(w){var =
+V=3Ddocument.getElementById(w);V.innerHTML+=3DIDICommon.makeIframeTag({id=
+:U,name:U,src:ca,width:0,height:0,frameBorder:0})}else =
+IDICommon.writeHiddenIframe(U,=0A=
+ca)}e[k]+=3Dba;K=3D""}q.src+=3D"#"+K}if(w){var =
+V=3Ddocument.getElementById(w);V.innerHTML+=3DIDICommon.makeIframeTag(q)}=
+else =
+document.write(IDICommon.makeIframeTag(q))}return{setHostRelayUrl:F,setMo=
+duleRelayUrl:N,getModuleRelayUrl:r,registerListener:O,unregisterListener:=
+m,postMessageToModule:I,createModule:J}})();function L(b){return =
+b!=3Dnull?'"'+b+'"':'""'}function H(b){return typeof =
+encodeURIComponent=3D=3D"function"?encodeURIComponent(b):escape(b)}functi=
+on M(b,a){if(b&&a)window.google_ad_url+=3D"&"+b+"=3D"+a}function =
+R(b){var a=3Dwindow,c=3DA(b),e=3Da[b];M(c,e)}function =
+S(b,a){if(a)M(b,H(a))}function T(b){var =
+a=3Dwindow,c=3DA(b),e=3Da[b];S(c,e)}function W(b,a){var =
+c=3Dwindow,e=3DA(b),d=3Dc[b];if(e&&d&&typeof =
+d=3D=3D"object")d=3Dd[a%d.length];M(e,d)}function ga(b,a){var =
+c=3Db.screen,e=3Dnavigator.javaEnabled(),d=3D-a.getTimezoneOffset();if(c)=
+{M("u_h",=0A=
+c.height);M("u_w",c.width);M("u_ah",c.availHeight);M("u_aw",c.availWidth)=
+;M("u_cd",c.colorDepth)}M("u_tz",d);M("u_his",history.length);M("u_java",=
+e);if(navigator.plugins)M("u_nplug",navigator.plugins.length);if(navigato=
+r.mimeTypes)M("u_nmime",navigator.mimeTypes.length)}function =
+ha(b){if(!b.google_enable_first_party_cookie)return;if(E=3D=3Dnull)E=3Dne=
+w B;if(b._GA_googleCookieHelper=3D=3Dnull)b._GA_googleCookieHelper=3Dnew =
+G;if(!b._google_cookie_fetched){b._google_cookie_fetched=3Dtrue;b._GA_goo=
+gleCookieHelper.j(X(b.google_ad_client))}}=0A=
+function =
+X(b){if(b){b=3Db.toLowerCase();if(b.substring(0,3)!=3D"ca-")b=3D"ca-"+b}r=
+eturn b}function =
+ia(b){if(b){b=3Db.toLowerCase();if(b.substring(0,9)!=3D"dist-aff-")b=3D"d=
+ist-aff-"+b}return b}function ja(b,a){var =
+c=3Ddocument.getElementById(b);c.style.height=3Da+"px"}function =
+la(b,a,c){window.clearTimeout(c);var =
+e=3D/^google_resize_flash_ad_idi\((\d+)\)/,d=3Db.match(e);if(d)ja(a,d[1])=
+}function =
+ma(b,a,c,e){c=3Dc.substring(0,2000);c=3Dc.replace(/%\w?$/,"");if((b.googl=
+e_ad_output=3D=3D"js"||b.google_ad_output=3D=3D"json_html")&&(b.google_ad=
+_request_done||=0A=
+b.google_radlink_request_done))a.write('<script =
+language=3D"JavaScript1.1" src=3D'+L(c)+"><\/script>");else =
+if(b.google_ad_output=3D=3D"html"){if(b.name!=3D"google_ads_frame"){if(e!=
+=3Dnull)a.write('<div =
+id=3D"'+e+'">');if(na(b.google_ad_output,b.google_ad_client)){IDIHost.set=
+ModuleRelayUrl("http://pagead2.googlesyndication.com/pagead/idi_relay.htm=
+l");var =
+d=3D0;if(b.google_num_0ad_slots)d+=3Db.google_num_0ad_slots;if(b.google_n=
+um_ad_slots)d+=3Db.google_num_ad_slots;if(b.google_num_sdo_slots)d+=3Db.g=
+oogle_num_sdo_slots;=0A=
+var g=3D"google_inline_div"+d,i=3D"<div id=3D"+L(g)+' =
+style=3D"position:relative;width:'+b.google_ad_width+'px"></div><div =
+style=3D"position:relative;width:'+b.google_ad_width+"px;height:"+b.googl=
+e_ad_height+'px;z-index:-1"></div>';a.write(i);var =
+o=3D"google_frame"+d,v=3Db.setTimeout(function(){IDIHost.unregisterListen=
+er(o)},5000);IDIHost.createModule(c,o,b.google_ad_width,b.google_ad_heigh=
+t,{callback:function(r,m){la(r,m,v)},pollingInterval:500,iframeAttrs:{sty=
+le:"position: absolute;left:0px",marginWidth:"0",=0A=
+marginHeight:"0",vspace:"0",hspace:"0",allowTransparency:"true"},parentDi=
+vId:g})}else{a.write('<iframe name=3D"google_ads_frame" =
+width=3D'+L(b.google_ad_width)+" height=3D"+L(b.google_ad_height)+" =
+frameborder=3D"+L(b.google_ad_frameborder)+" src=3D"+L(c)+' =
+marginwidth=3D"0" marginheight=3D"0" vspace=3D"0" hspace=3D"0" =
+allowtransparency=3D"true" =
+scrolling=3D"no">');a.write("</iframe>")}if(e!=3Dnull)a.write("</div>")}}=
+else if(b.google_ad_output=3D=3D"textlink")a.write('<script =
+language=3D"JavaScript1.1" src=3D'+L(c)+"><\/script>")}=0A=
+function oa(b){for(var a in s)b[a]=3Dnull;for(var a in =
+u){if(a=3D=3D"google_correlator")continue;b[a]=3Dnull}}function =
+pa(b){if(b.google_ad_format)return =
+b.google_ad_format.indexOf("_0ads")>0;return =
+b.google_ad_output!=3D"html"&&b.google_num_radlinks>0}function =
+Y(b){return b&&b.indexOf("_sdo")!=3D-1}function qa(){var =
+b=3Dnull,a=3Dwindow,c=3Ddocument,e=3Dnew =
+Date,d=3De.getTime(),g=3Da.google_ad_format;if(a.google_cpa_choice!=3Db){=
+a.google_ad_url=3D"http://pagead2.googlesyndication.com/cpa/ads?";a.googl=
+e_ad_url+=3D"client=3D"+escape(X(a.google_ad_client));=0A=
+a.google_ad_region=3D"_google_cpa_region_";R("google_cpa_choice");if(type=
+of c.characterSet!=3D"undefined")S("oe",c.characterSet);else if(typeof =
+c.charset!=3D"undefined")S("oe",c.charset)}else =
+if(Y(g)){a.google_ad_url=3D"http://pagead2.googlesyndication.com/pagead/s=
+do?";a.google_ad_url+=3D"client=3D"+escape(ia(a.google_ad_client))}else{a=
+.google_ad_url=3D"http://pagead2.googlesyndication.com/pagead/ads?";a.goo=
+gle_ad_url+=3D"client=3D"+escape(X(a.google_ad_client))}R("google_ad_host=
+");R("google_ad_host_tier_id");var i=3D=0A=
+a.google_num_slots_by_client,o=3Da.google_num_slots_by_channel,v=3Da.goog=
+le_prev_ad_formats_by_region,r=3Da.google_prev_ad_slotnames_by_region;if(=
+a.google_ad_region=3D=3Db&&a.google_ad_section!=3Db)a.google_ad_region=3D=
+a.google_ad_section;var =
+m=3Da.google_ad_region=3D=3Db?"":a.google_ad_region;if(Y(g)){a.google_num=
+_sdo_slots=3Da.google_num_sdo_slots?a.google_num_sdo_slots+1:1;if(a.googl=
+e_num_sdo_slots>4)return false}else =
+if(pa(a)){a.google_num_0ad_slots=3Da.google_num_0ad_slots?a.google_num_0a=
+d_slots+1:1;if(a.google_num_0ad_slots>=0A=
+3)return false}else =
+if(a.google_cpa_choice=3D=3Db){a.google_num_ad_slots=3Da.google_num_ad_sl=
+ots?a.google_num_ad_slots+1:1;if(a.google_num_slots_to_rotate){v[m]=3Db;r=
+[m]=3Db;if(a.google_num_slot_to_show=3D=3Db)a.google_num_slot_to_show=3Dd=
+%a.google_num_slots_to_rotate+1;if(a.google_num_slot_to_show!=3Da.google_=
+num_ad_slots)return false}else =
+if(a.google_num_ad_slots>6&&m=3D=3D"")return =
+false}M("dt",e.getTime());R("google_language");if(a.google_country)R("goo=
+gle_country");else R("google_gl");R("google_region");T("google_city");=0A=
+T("google_hints");R("google_safe");R("google_encoding");R("google_last_mo=
+dified_time");T("google_alternate_ad_url");R("google_alternate_color");R(=
+"google_skip");R("google_targeting");var =
+F=3Da.google_ad_client;if(!i[F]){i[F]=3D1;i.length+=3D1}else =
+i[F]+=3D1;if(v[m])if(!Y(g)){S("prev_fmts",v[m].toLowerCase());if(i.length=
+>1)M("slot",i[F])}if(r[m])S("prev_slotnames",r[m].toLowerCase());if(g&&!a=
+.google_ad_slot){S("format",g.toLowerCase());if(!Y(g))v[m]=3Dv[m]?v[m]+",=
+"+g:g}if(a.google_ad_slot)r[m]=3Dr[m]?r[m]+","+=0A=
+a.google_ad_slot:a.google_ad_slot;R("google_max_num_ads");M("output",a.go=
+ogle_ad_output);R("google_adtest");R("google_ad_callback");R("google_ad_s=
+lot");T("google_correlator");if(a.google_ad_channel){T("google_ad_channel=
+");var N=3D"",O=3Da.google_ad_channel.split(/[+, ]/);for(var =
+I=3D0;I<O.length;I++){var J=3DO[I];if(!o[J])o[J]=3D1;else =
+N+=3DJ+"+"}S("pv_ch",N)}if(a.google_enable_first_party_cookie)S("cookie",=
+a._GA_googleCookieHelper.l());T("google_page_url");W("google_color_bg",d)=
+;W("google_color_text",d);W("google_color_link",=0A=
+d);W("google_color_url",d);W("google_color_border",d);W("google_color_lin=
+e",d);if(a.google_reuse_colors)M("reuse_colors",1);else =
+M("reuse_colors",0);R("google_kw_type");T("google_kw");T("google_contents=
+");R("google_num_radlinks");R("google_max_radlink_len");R("google_rl_filt=
+ering");R("google_rl_mode");R("google_rt");T("google_rl_dest_url");R("goo=
+gle_num_radlinks_per_unit");R("google_ad_type");R("google_image_size");R(=
+"google_ad_region");R("google_feedback");T("google_referrer_url");T("goog=
+le_page_location");=0A=
+M("frm",a.google_iframing);R("google_bid");R("google_cust_age");R("google=
+_cust_gender");R("google_cust_interests");R("google_cust_id");R("google_c=
+ust_job");R("google_cust_u_url");R("google_cust_l");R("google_cust_lh");R=
+("google_cust_ch");R("google_ed");T("google_ui_features");T("google_only_=
+ads_with_video");T("google_disable_video_autoplay");if(ra(a,c)&&c.body){v=
+ar =
+h=3Dc.body.scrollHeight,k=3Dc.body.clientHeight;if(k&&h)S("cc",Math.round=
+(k*100/h))}da();M("ga_vid",a.gaGlobal.vid);M("ga_sid",a.gaGlobal.sid);=0A=
+M("ga_hid",a.gaGlobal.hid);M("ga_fc",a.gaGlobal.from_cookie);T("google_an=
+alytics_uacct");R("google_ad_override");R("google_flash_version");ga(a,e)=
+;return true}function sa(){var =
+b=3Dwindow,a=3Ddocument;ha(b);if(!qa())return;ma(b,a,b.google_ad_url,null=
+);oa(b)}function ta(){sa();return true}function ra(b,a){return =
+b.top.location=3D=3Da.location}function ua(b,a){var =
+c=3Da.documentElement;if(ra(b,a))return =
+false;if(b.google_ad_width&&b.google_ad_height){var =
+e=3D1,d=3D1;if(b.innerHeight){e=3Db.innerWidth;d=3Db.innerHeight}else =
+if(c&&=0A=
+c.clientHeight){e=3Dc.clientWidth;d=3Dc.clientHeight}else =
+if(a.body){e=3Da.body.clientWidth;d=3Da.body.clientHeight}if(d>2*b.google=
+_ad_height||e>2*b.google_ad_width)return false}return true}function =
+va(b){var =
+a=3Dwindow,c=3Dnull,e=3Da.onerror;a.onerror=3Db;if(a.google_ad_frameborde=
+r=3D=3Dc)a.google_ad_frameborder=3D0;if(a.google_ad_output=3D=3Dc)a.googl=
+e_ad_output=3D"html";if(Y(a.google_ad_format)){var =
+d=3Da.google_ad_format.match(/^(\d+)x(\d+)_.*/);if(d){a.google_ad_width=3D=
+parseInt(d[1],10);a.google_ad_height=3DparseInt(d[2],10);=0A=
+a.google_ad_output=3D"html"}}if(a.google_ad_format=3D=3Dc&&a.google_ad_ou=
+tput=3D=3D"html")a.google_ad_format=3Da.google_ad_width+"x"+a.google_ad_h=
+eight;wa(a,document);if(a.google_num_slots_by_channel=3D=3Dc)a.google_num=
+_slots_by_channel=3D[];if(a.google_num_slots_by_client=3D=3Dc)a.google_nu=
+m_slots_by_client=3D[];if(a.google_prev_ad_formats_by_region=3D=3Dc)a.goo=
+gle_prev_ad_formats_by_region=3D[];if(a.google_prev_ad_slotnames_by_regio=
+n=3D=3Dc)a.google_prev_ad_slotnames_by_region=3D[];if(a.google_correlator=
+=3D=3Dc)a.google_correlator=3D(new Date).getTime();=0A=
+if(a.google_adslot_loaded=3D=3Dc)a.google_adslot_loaded=3D{};if(a.google_=
+adContentsBySlot=3D=3Dc)a.google_adContentsBySlot=3D{};if(a.google_flash_=
+version=3D=3Dc)a.google_flash_version=3Dxa();a.onerror=3De}function =
+ya(b){if(b in Z)return Z[b];return =
+Z[b]=3Dnavigator.userAgent.toLowerCase().indexOf(b)!=3D-1}var =
+Z=3D{};function na(b,a){if(b!=3D"html")return false;var =
+c=3D{};c["ca-pub-7027491298716603"]=3Dtrue;c["ca-pub-8344185808443527"]=3D=
+true;c["ca-pub-9812682548211238"]=3Dtrue;c["ca-pub-4424308218891706"]=3Dt=
+rue;c["ca-pub-6922559858235084"]=3D=0A=
+true;c["ca-pub-6477563040863705"]=3Dtrue;c["ca-google"]=3Dtrue;return =
+c[X(a)]!=3Dnull}function za(b){var =
+a=3D{},c=3Db.split("?"),e=3Dc[c.length-1].split("&");for(var =
+d=3D0;d<e.length;d++){var =
+g=3De[d].split("=3D");if(g[0])try{a[g[0].toLowerCase()]=3Dg.length>1?(win=
+dow.decodeURIComponent?decodeURIComponent(g[1].replace(/\+/g," =
+")):unescape(g[1])):""}catch(i){}}return a}function Aa(){var =
+b=3Dwindow,a=3Dza(document.URL);if(a.google_ad_override){b.google_ad_over=
+ride=3Da.google_ad_override;b.google_adtest=3D"on"}}function =
+xa(){if(navigator.plugins&&=0A=
+navigator.mimeTypes.length){var b=3Dnavigator.plugins["Shockwave =
+Flash"];if(b&&b.description)return =
+b.description.replace(/([a-zA-Z]|\s)+/,"").replace(/(\s)+r/,".")}else =
+if(navigator.userAgent&&navigator.userAgent.indexOf("Windows =
+CE")>=3D0){var a=3D3,c=3D1;while(c)try{c=3Dnew =
+ActiveXObject("ShockwaveFlash.ShockwaveFlash."+(a+1));a++}catch(e){c=3Dnu=
+ll}return a.toString()}else if(ya("msie")&&!window.opera){var =
+c=3Dnull;try{c=3Dnew =
+ActiveXObject("ShockwaveFlash.ShockwaveFlash.7")}catch(e){var =
+a=3D0;try{c=3Dnew ActiveXObject("ShockwaveFlash.ShockwaveFlash.6");=0A=
+a=3D6;c.AllowScriptAccess=3D"always"}catch(e){if(a=3D=3D6)return =
+a.toString()}try{c=3Dnew =
+ActiveXObject("ShockwaveFlash.ShockwaveFlash")}catch(e){}}if(c!=3Dnull){v=
+ar a=3Dc.GetVariable("$version").split(" ")[1];return =
+a.replace(/,/g,".")}}return"0"}function Ba(b,a){for(var c in =
+a)b["google_"+c]=3Da[c]}function Ca(b,a){if(!a)return b.location;return =
+b.referrer}function =
+Da(b,a){if(!a&&b.google_referrer_url=3D=3Dnull)return"0";else =
+if(a&&b.google_referrer_url=3D=3Dnull)return"1";else =
+if(!a&&b.google_referrer_url!=3Dnull)return"2";=0A=
+else if(a&&b.google_referrer_url!=3Dnull)return"3";return"4"}function =
+Ea(b,a,c,e){b.page_url=3DCa(c,e);b.page_location=3Dnull}function =
+Fa(b,a,c,e){b.page_url=3Da.google_page_url;b.page_location=3DCa(c,e)||"EM=
+PTY"}function Ga(b,a){var =
+c=3D{},e=3Dua(b,a);c.iframing=3DDa(b,e);if(!(!b.google_page_url))Fa(c,b,a=
+,e);else =
+Ea(c,b,a,e);c.last_modified_time=3Da.location=3D=3Dc.page_url?Date.parse(=
+a.lastModified)/1000:null;c.referrer_url=3De?b.google_referrer_url:(b.goo=
+gle_page_url&&b.google_referrer_url?b.google_referrer_url:a.referrer);=0A=
+return c}function Ha(b){var =
+a=3D{},c=3Db.URL.substring(b.URL.lastIndexOf("http"));a.iframing=3Dnull;a=
+.page_url=3Dc;a.page_location=3Db.location;a.last_modified_time=3Dnull;a.=
+referrer_url=3Dc;return a}function wa(b,a){var =
+c;c=3Db.google_page_url=3D=3Dnull&&Ia[a.domain]?Ha(a):Ga(b,a);Ba(b,c)}var=
+ Ia=3D{};Ia["ad.yieldmanager.com"]=3Dtrue;Aa();va(ta);sa();=0A=
+})()=0A=
+
+------=_NextPart_000_0000_01C8AF2C.255D1C20--

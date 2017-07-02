@@ -1,0 +1,1850 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0056)http://www.thecodeproject.com/csharp/genericnumerics.asp -->
+<HTML><HEAD><TITLE>The Code Project - Using generics for calculations - C# Programming</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META http-equiv=Reply-to content=mailto:webmaster@codeproject.com>
+<META content="Free source code and tutorials for Windows developers." 
+name=Description>
+<META 
+content="Free source code, C# Programming, Visual C++, MFC, Windows, generics arithmetic numeric addition struct" 
+name=keywords>
+<META 
+content="Article content copyright Rüdiger Klaehn, 2004, everthing else Copyright © CodeProject, 1999-2004, All Rights Reserved." 
+name=Copyright><LINK href="/favicon.ico" type=image/ico rel=icon><LINK 
+href="/favicon.ico" rel="SHORTCUT ICON"><LINK 
+href="Using generics for calculations_files/global.css" type=text/css 
+rel=stylesheet>
+<SCRIPT language=javascript 
+src="Using generics for calculations_files/oncopy.js"></SCRIPT>
+
+<META content="MSHTML 6.00.2900.2523" name=GENERATOR></HEAD>
+<BODY oncopy="return copyCode();" text=black vLink=purple aLink=red link=blue 
+bgColor=white leftMargin=3 topMargin=3>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" bgColor=#ff9900 border=0>
+  <TBODY>
+  <TR>
+    <TD width="100%">
+      <TABLE cellSpacing=1 cellPadding=0 width="100%" bgColor=#ff9900 
+        border=0><TBODY>
+        <TR>
+          <TD vAlign=top><A href="http://www.codeproject.com/"><IMG height=72 
+            alt="The Code Project" 
+            src="Using generics for calculations_files/logo225x72.gif" width=225 
+            border=0></A></TD>
+          <TD align=right><SPAN id=AdBanner4><A 
+            href="http://www.thecodeproject.com/script/admentor/ads.asp"><IMG 
+            height=60 alt="View our advertisers" 
+            src="Using generics for calculations_files/sponsors.gif" width=20 
+            border=1></A>
+            <SCRIPT language=javascript>document.write("<a href=\"/script/admentor/admentorredir.asp?id=859&way=ban\" target=_blank><img src=\"/script/admentor/include/ServeAd.aspx?File=%2Fscript%2Fadmentor%2Fimages%2FDundasChart41Banner%2Egif&C=False&id=859\" alt=\"\" border=0 width=468 height=60></a>");</SCRIPT>
+            <A href="http://www.thecodeproject.com/info/mediakit"><IMG height=60 
+            alt="Advertise on the CodeProject" 
+            src="Using generics for calculations_files/advertise.gif" width=20 
+            border=1></A></SPAN></TD></TR>
+        <TR>
+          <TD bgColor=#fbedbb colSpan=2>
+            <TABLE cellPadding=3 width="100%" bgColor=#fbedbb border=0>
+              <TBODY>
+              <TR vAlign=top>
+                <TD width="100%"><FONT style="FONT-SIZE: 8pt"><A 
+                  href="http://www.thecodeproject.com/?cat=1">All Topics</A>, <A 
+                  href="http://www.thecodeproject.com/?cat=3">C#</A>, <A 
+                  href="http://www.thecodeproject.com/?cat=5">.NET</A> &gt;&gt; 
+                  <A href="http://www.thecodeproject.com/csharp/">C# 
+                  Programming</A> &gt;&gt; <A 
+                  href="http://www.thecodeproject.com/csharp/#Generics">Generics</A></FONT><BR><BR><B><FONT 
+                  style="FONT-SIZE: 16pt" size=4>Using generics for 
+                  calculations</FONT></B><BR><B>By <A 
+                  href="http://www.thecodeproject.com/script/profile/whos_who.asp?id=422643">Rüdiger 
+                  Klaehn</A> </B><BR><BR><FONT style="FONT-SIZE: 9pt">Performing 
+                  calculations with generic types is not as easy it seems. This 
+                  article shows how to do it.&nbsp;</FONT> </TD>
+                <TD vAlign=top align=right>
+                  <TABLE cellSpacing=0 cellPadding=1 width=200 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD>&nbsp;</TD>
+                      <TD><FONT class=SmallText color=red 
+                        size=1><B>Advanced</B></FONT></TD></TR>
+                    <TR vAlign=top>
+                      <TD>&nbsp;</TD>
+                      <TD class=SmallText>C#<BR>Windows, .NET (.NET 
+                        2.0)<BR>Win32, VS (VS.Whidbey)<BR>Arch, Dev</TD></TR>
+                    <TR>
+                      <TD>&nbsp;</TD>
+                      <TD class=SmallText noWrap>Posted 11 Oct 2004 
+16:20</TD></TR>
+                    <TR vAlign=top>
+                      <TD><IMG height=16 
+                        src="Using generics for calculations_files/hlp.gif" 
+                        width=16></TD>
+                      <TD class=SmallText noWrap><A 
+                        href="http://www.thecodeproject.com/script/Articles/list_articles.asp?userid=422643">Articles 
+                        by this author</A></TD></TR>
+                    <TR vAlign=top>
+                      <TD></TD>
+                      <TD class=SmallText noWrap><B>3,542</B> 
+                    views</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD colSpan=2>
+            <TABLE id=tblSiteToolbar cellSpacing=0 cellPadding=1 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <FORM name=Search action=/info/search.asp method=post>
+                <TD vAlign=top align=left width="100%">
+                  <TABLE cellSpacing=0 cellPadding=1 border=0>
+                    <TBODY>
+                    <TR vAlign=center>
+                      <TD class=smallText><B><FONT 
+                        color=white>Search:</FONT></B></TD>
+                      <TD class=navbar noWrap><INPUT class=smallText 
+                        maxLength=255 size=18 name=target></TD>
+                      <TD vAlign=top><SELECT class=smallText name=st> 
+                          <OPTION value=kw selected>Articles</OPTION> <OPTION 
+                          value=au>Authors</OPTION></SELECT></TD>
+                      <TD><INPUT class=formButton type=submit value=Go></TD></TR></TBODY></TABLE></TD></FORM>
+                <TD>
+                  <DIV id=MenuPos 
+                  style="WIDTH: 380px; POSITION: relative; HEIGHT: 20px">
+                  <TABLE height=20 cellSpacing=0 cellPadding=2 width=375>
+                    <TBODY>
+                    <TR>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.thecodeproject.com/info/faq.asp">Help!</A></TD>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.thecodeproject.com/info/latest.asp">Articles</A></TD>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.thecodeproject.com/script/comments/forums.asp">Message 
+                        Boards</A></TD>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.thecodeproject.com/store/">StoreFront</A></TD>
+                      <TD><A class=NavMenuItem 
+                        href="http://www.thecodeproject.com/lounge.asp">Lounge</A></TD></TR></TBODY></TABLE></DIV></TD></TR></TBODY></TABLE>
+            <SCRIPT type=text/javascript>function Go(){return}</SCRIPT>
+
+            <SCRIPT src="Using generics for calculations_files/cpmenu_var.js" 
+            type=text/javascript></SCRIPT>
+
+            <SCRIPT src="Using generics for calculations_files/menu10_com.js" 
+            type=text/javascript></SCRIPT>
+          </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=1 border=0>
+  <TBODY>
+  <TR vAlign=top>
+    <TD vAlign=top bgColor=#fbedbb rowSpan=2>
+      <TABLE cellSpacing=0 cellPadding=0 border=0>
+        <SCRIPT language=javascript>
+function ErrorHandle() {}
+window.onerror = ErrorHandle;
+
+function OnNLSubmit(option)
+{
+	if (option=="up")
+		document.subForm.action = "/script/profile/modify.asp?ct=%2Fcsharp%2Fgenericnumerics%2Easp";
+	else if (option=="in")
+		document.subForm.action = "/script/profile/process_logon.asp?ct=%2Fcsharp%2Fgenericnumerics%2Easp";
+	document.subForm.submit();
+	return true;
+}
+</SCRIPT>
+
+        <TBODY>
+        <TR>
+          <TD>
+            <TABLE cellSpacing=3 cellPadding=0>
+              <TBODY>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD class=InfoBarHeader>Toolbox</TD></TR>
+              <TR>
+                <TD bgColor=black colSpan=2><IMG height=1 
+                  src="Using generics for calculations_files/space.gif" 
+                width=1></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 
+                  src="Using generics for calculations_files/sitebuild_icon.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.thecodeproject.com/script/submit/ReportProblem.asp?GUID=genericnumerics%2Fcsharp10%2F11%2F2004">Broken 
+                  Article?</A></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 
+                  src="Using generics for calculations_files/support_icon.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.thecodeproject.com/store/"><B>VS.NET 2003 for 
+                  $899</B></A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 
+                  src="Using generics for calculations_files/support_icon.gif" 
+                  width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.thecodeproject.com/store/"><B>MSDN Univ. from 
+                  $1950</B></A></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 
+                  src="Using generics for calculations_files/print.gif" 
+                width=16></TD>
+                <TD class=smallText><A 
+                  href="http://www.thecodeproject.com/csharp/genericnumerics.asp?print=true" 
+                  target=_print>Print version</A></TD></TR>
+              <TR vAlign=top>
+                <TD><IMG height=16 
+                  src="Using generics for calculations_files/mail.gif" 
+                width=16></TD>
+                <TD class=SmallText><A 
+                  href="http://www.thecodeproject.com/script/recommend/form.asp?guid=genericnumerics%2Fcsharp10%2F11%2F2004">Send 
+                  to a friend</A></TD></TR>
+              <TR vAlign=top>
+                <TD></TD>
+                <TD></TD></TR>
+              <TR>
+                <TD bgColor=black colSpan=2><IMG height=1 
+                  src="Using generics for calculations_files/space.gif" 
+                width=1></TD></TR>
+              <TR vAlign=top>
+                <TD class=InfoBarHeader colSpan=2><BR>Sign in / Sign 
+              up</TD></TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD class=smallText>
+            <FORM id=subForm name=subForm 
+            action=/script/profile/process_logon.asp method=post>
+            <TABLE cellSpacing=0 cellPadding=0 width=125 bgColor=#ffcc99 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD colSpan=2><IMG height=3 
+                  src="Using generics for calculations_files/space.gif"></TD></TR>
+              <TR>
+                <TD class=smallText>&nbsp;Email</TD>
+                <TD class=smallText><INPUT class=smallText id=Email 
+                  style="WIDTH: 60px" name=Email> </TD></TR>
+              <TR>
+                <TD class=smallText>&nbsp;Password</TD>
+                <TD><INPUT class=smallText id=Password style="WIDTH: 60px" 
+                  type=password name=Password></TD></TR>
+              <TR>
+                <TD class=smallText vAlign=center colSpan=2><INPUT 
+                  type=checkbox CHECKED name=cookie>Remember me</TD></TR>
+              <TR>
+                <TD colSpan=2><IMG height=3 
+                  src="Using generics for calculations_files/space.gif"></TD></TR>
+              <TR>
+                <TD align=middle><A 
+                  href="http://www.thecodeproject.com/script/profile/modify.asp"><IMG 
+                  src="Using generics for calculations_files/signup.gif" 
+                  border=0></A></TD>
+                <TD align=middle><INPUT type=image 
+                  src="Using generics for calculations_files/signin.gif" 
+                  border=0></TD></TR>
+              <TR>
+                <TD colSpan=2><IMG height=3 
+                  src="Using generics for calculations_files/space.gif"></TD></TR></FORM></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD class=smallText><A class=smallText 
+            href="http://www.thecodeproject.com/script/profile/forgot.asp" 
+            name=HLLink>Lost your Password?</A></TD></TR>
+        <TR>
+          <TD>&nbsp;</TD></TR>
+        <TR>
+          <TD>
+            <CENTER>
+            <SCRIPT language=javascript>document.write("<a href=\"/script/admentor/admentorredir.asp?id=853&way=ban\" target=_blank><img src=\"/script/admentor/include/ServeAd.aspx?File=%2Fscript%2Fadmentor%2Fimages%2FDataDynamicsSUICodeSkyscraper%2Egif&C=False&id=853\" alt=\"SharpUI for .NET--Sweet Controls…Sharper Applications\" border=0 width=120 height=600></a>");</SCRIPT>
+            <BR></CENTER><BR></TD></TR></TBODY></TABLE></TD>
+    <TD width=5 rowSpan=2><IMG height=1 
+      src="Using generics for calculations_files/space.gif" width=5> </TD>
+    <TD align=right width="100%" bgColor=white>
+      <TABLE width="100%">
+        <TBODY>
+        <TR vAlign=top>
+          <TD class=smallText vAlign=top noWrap></TD>
+          <TD noWrap align=right><A name=__top></A>
+            <TABLE>
+              <TBODY>
+              <TR>
+                <TD class=smallText align=right>16 members have rated this 
+                  article. Result:</TD>
+                <TD>
+                  <TABLE cellSpacing=0 cellPadding=0 border=2>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=5 
+                        src="Using generics for calculations_files/red.gif" 
+                        width=20 border=0></TD>
+                      <TD><IMG height=5 
+                        src="Using generics for calculations_files/red.gif" 
+                        width=20 border=0></TD>
+                      <TD><IMG height=5 
+                        src="Using generics for calculations_files/red.gif" 
+                        width=20 border=0></TD>
+                      <TD><IMG height=5 
+                        src="Using generics for calculations_files/red.gif" 
+                        width=20 border=0></TD>
+                      <TD><IMG height=5 
+                        src="Using generics for calculations_files/red.gif" 
+                        width=20 border=0><IMG height=5 
+                        src="Using generics for calculations_files/white.gif" 
+                        width=0 border=0></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD class=smallText align=right colSpan=2><A 
+                  title="Calculated as rating x Log10(# votes)" 
+                  href="http://www.thecodeproject.com/script/articles/top_articles.asp?st=2">Popularity: 
+                  6</A>. Rating: <B>4.98</B> out of 
+        5.</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD vAlign=top width="100%">
+      <DIV id=contentdiv><!-- Article Starts -->
+      <UL class=download>
+        <LI><A 
+        href="http://www.thecodeproject.com/csharp/genericnumerics/genericnumerics_demo.zip">Download 
+        demo project - 32.8 Kb</A> </LI></UL>
+      <H2>Introduction</H2>
+      <P>The current implementation of .NET generics is used mainly to make 
+      type-safe collections faster and more easy to use. Doing calculations on 
+      generic types is not as straightforward.</P>
+      <H2>The problem</H2>
+      <P>An example for doing calculations on generic types would be a generic 
+      method to calculate the sum of all elements in a 
+      <CODE>List&lt;T&gt;</CODE>. Of course, summing up all elements of a list 
+      only makes sense if <CODE>T</CODE> is a type such as <CODE lang=cs><SPAN 
+      class=cs-keyword>int</SPAN></CODE>, <CODE lang=cs><SPAN 
+      class=cs-keyword>double</SPAN></CODE>, <CODE lang=cs><SPAN 
+      class=cs-keyword>decimal</SPAN></CODE> that defines an addition 
+      operation.</P>
+      <P>Somebody coming from a C++ background might implement such a method 
+      like this:</P><PRE lang=cs><SPAN class=cs-keyword>public</SPAN> <SPAN class=cs-keyword>class</SPAN> Lists {
+    ...
+    <SPAN class=cs-keyword>public</SPAN> <SPAN class=cs-keyword>static</SPAN> T Sum(List&lt;T&gt; list) 
+    {
+        T sum=<SPAN class=cs-literal>0</SPAN>;
+        <SPAN class=cs-keyword>for</SPAN>(<SPAN class=cs-keyword>int</SPAN> i=<SPAN class=cs-literal>0</SPAN>;i&lt;list.Count;i++)
+            sum+=list[i];
+        <SPAN class=cs-keyword>return</SPAN> sum;
+    }
+    ...
+}</PRE>
+      <P>This is not possible in C# because unconstrained type parameters are 
+      assumed to be of type <CODE>System.Object</CODE>, which does not define a 
+      <CODE lang=cs>+</CODE> operation.</P>
+      <P>To constrain type parameters in C#/.NET, you specify interfaces that 
+      the type has to implement. The problem is that interfaces may not contain 
+      any static methods, and operator methods <EM>are</EM> static methods.</P>
+      <P><I>So with the current constraint system, it is not possible to define 
+      operator constraints.</I></P>
+      <P>A clean way to enable numerical computations would be to let the basic 
+      data types like <CODE lang=cs><SPAN class=cs-keyword>int</SPAN></CODE>, 
+      <CODE lang=cs><SPAN class=cs-keyword>float</SPAN></CODE>, <CODE 
+      lang=cs><SPAN class=cs-keyword>double</SPAN></CODE>, <CODE lang=cs><SPAN 
+      class=cs-keyword>decimal</SPAN></CODE> etc. implement an interface for 
+      arithmetic operations. Then this interface could be used to constrain the 
+      type parameters. This would work similar to the 
+      <CODE>IComparable&lt;T&gt;</CODE> interface that all basic data types 
+      implement.</P>
+      <P>I <A 
+      href="http://lab.msdn.microsoft.com/productfeedback/viewfeedback.aspx?feedbackid=3048848f-d1e1-42ec-aa47-5b8e2ab544e7" 
+      target=_blank>tried to convince</A> the people at Microsoft to implement 
+      such an interface, but apparently they won't be able to do it in time for 
+      Whidbey.</P>
+      <H2>We are on our own</H2>
+      <P>Many people have been <A 
+      href="http://hyperthink.net/blog/CommentView,guid,8fcad4ad-4f71-48a9-8678-9e2c522209f9.aspx" 
+      target=_blank>thinking </A>about this problem, among them Eric Gunnerson 
+      and even Anders Hejlsberg.</P>
+      <P>The solution proposed by Anders Hejlsberg was to have an abstract class 
+      <CODE>Calculator&lt;T&gt;</CODE> that has to be specialized for each 
+      primitive type. The generic type would then use an instance of the 
+      appropriate calculator to do the calculations.</P>
+      <P>Here is the code (copied from <A 
+      href="http://blogs.msdn.com/ericgu/archive/2003/11/14/52852.aspx" 
+      target=_blank>Eric Gunnerson's Blog</A>):</P>
+      <P>First define the abstract base class:</P><PRE lang=cs><SPAN class=cs-keyword>public</SPAN> <SPAN class=cs-keyword>abstract</SPAN> <SPAN class=cs-keyword>class</SPAN> Calculator&lt;T&gt;
+{
+    <SPAN class=cs-keyword>public</SPAN> <SPAN class=cs-keyword>abstract</SPAN> T Add(T a, T b);
+}</PRE>
+      <P>Then specialize for the types you want to perform calculations on:</P><PRE lang=cs><SPAN class=cs-keyword>namespace</SPAN> Int32
+{
+    <SPAN class=cs-keyword>public</SPAN> <SPAN class=cs-keyword>class</SPAN> Calculator: Calculator&lt;<SPAN class=cs-keyword>int</SPAN>&gt;
+    {
+        <SPAN class=cs-keyword>public</SPAN> <SPAN class=cs-keyword>override</SPAN> <SPAN class=cs-keyword>int</SPAN> Add(<SPAN class=cs-keyword>int</SPAN> a, <SPAN class=cs-keyword>int</SPAN> b)
+        {
+            <SPAN class=cs-keyword>return</SPAN> a + b;
+        }
+    } 
+}</PRE>
+      <P>Then use an appropriate <CODE>Calculator&lt;T&gt;</CODE> to do the 
+      calculations. Here is an example that calculates the sum of all elements 
+      in a <CODE>List&lt;T&gt;</CODE>.</P><PRE lang=cs><SPAN class=cs-keyword>class</SPAN> AlgorithmLibrary&lt;T&gt; where T: <SPAN class=cs-keyword>new</SPAN>() 
+{
+    Calculator&lt;T&gt; calculator;
+
+    <SPAN class=cs-keyword>public</SPAN> AlgorithmLibrary(Calculator&lt;T&gt; calculator)
+    {
+         <SPAN class=cs-keyword>this</SPAN>.calculator = calculator;
+    } 
+
+    <SPAN class=cs-keyword>public</SPAN> T Sum(List&lt;T&gt; items)
+    {
+        T sum = <SPAN class=cs-keyword>new</SPAN> T(); 
+
+        <SPAN class=cs-keyword>for</SPAN> (<SPAN class=cs-keyword>int</SPAN> i = <SPAN class=cs-literal>0</SPAN>; i &lt; items.Count; i++)
+        {
+            sum = calculator.Add(sum, items[i]);
+        } 
+
+        <SPAN class=cs-keyword>return</SPAN> sum;
+    }
+}</PRE>
+      <P>You would use it like this:</P><PRE lang=cs>AlgorithmLibrary library = <SPAN class=cs-keyword>new</SPAN> AlgorithmLibrary&lt;<SPAN class=cs-keyword>int</SPAN>&gt;(<SPAN class=cs-keyword>new</SPAN> Int32.Calculator());</PRE>
+      <P>There are many other <A 
+      href="http://groups.google.com/groups?hl=de&amp;lr=&amp;ie=UTF-8&amp;selm=ORt2BOEbEHA.4092%40TK2MSFTNGP11.phx.gbl" 
+      target=_blank>creative solutions</A>, but all of them have the drawback 
+      that they involve some kind of dynamic method invocation (virtual methods, 
+      interfaces or delegates). So while they make it possible to perform 
+      calculations with generic type parameters, the performance is unacceptably 
+      low for numerical applications.</P>
+      <H2>The Solution</H2>
+      <P>The first person to come up with a solution that does not involve any 
+      virtual method invocation was <A 
+      href="http://weblog.ikvm.net/permalink.aspx?guid=94EED5A8-6C9C-4D1D-A001-321344A2D2F6" 
+      target=_blank>Jeroen Frijters</A>. The solution uses the fact that 
+      <I>constraining type parameters using interfaces is not the same as 
+      casting to interfaces</I>. Calling a method using an interface has the 
+      overhead of dynamic method dispatch, but calling a method on a type 
+      parameter that is constrained by an interface has no such overhead.</P>
+      <P>Here is an example. It is a generic method that sorts two numbers. The 
+      type <CODE>T</CODE> has to implement <CODE>IComparable&lt;T&gt;</CODE> so 
+      that we can be sure that it has the <CODE>CompareTo</CODE> method. But 
+      nevertheless, calling the <CODE>CompareTo</CODE> method does not have the 
+      overhead normally associated with interfaces.</P><PRE lang=cs><SPAN class=cs-keyword>public</SPAN> <SPAN class=cs-keyword>class</SPAN> Sorter
+{
+    <SPAN class=cs-keyword>private</SPAN> <SPAN class=cs-keyword>static</SPAN> <SPAN class=cs-keyword>void</SPAN> Swap&lt;T&gt;(<SPAN class=cs-keyword>ref</SPAN> T a, <SPAN class=cs-keyword>ref</SPAN> T b)
+    {
+        T t=a;a=b;b=t;
+    }
+    <SPAN class=cs-keyword>public</SPAN> <SPAN class=cs-keyword>static</SPAN> <SPAN class=cs-keyword>void</SPAN> Sort&lt;T&gt;(<SPAN class=cs-keyword>ref</SPAN> T a,<SPAN class=cs-keyword>ref</SPAN> T b)
+        where T:IComparable&lt;T&gt;
+    {
+        <SPAN class=cs-keyword>if</SPAN>(a.CompareTo(b)&gt;<SPAN class=cs-literal>0</SPAN>)
+            Swap(<SPAN class=cs-keyword>ref</SPAN> a,<SPAN class=cs-keyword>ref</SPAN> b);
+    }
+}</PRE>
+      <P>The approach suggested by Jeroen Frijters uses a second type parameter. 
+      To avoid unnecessary object creation and virtual method dispatch, it is 
+      best to use a value type for the type containing the operations. Here is a 
+      small example for this approach:</P><PRE lang=cs><SPAN class=cs-keyword>interface</SPAN> ICalculator&lt;T&gt; 
+
+{ 
+    T Sum(T a,T b); 
+
+} 
+
+<SPAN class=cs-keyword>struct</SPAN> IntCalculator : ICalculator&lt;<SPAN class=cs-keyword>int</SPAN>&gt; 
+
+{ 
+    <SPAN class=cs-keyword>public</SPAN> <SPAN class=cs-keyword>int</SPAN> Add(<SPAN class=cs-keyword>int</SPAN> a,<SPAN class=cs-keyword>int</SPAN> b) { <SPAN class=cs-keyword>return</SPAN> a+b; } 
+
+} 
+
+<SPAN class=cs-comment>// struct FloatAdder ... </SPAN>
+
+<SPAN class=cs-comment>// struct DoubleAdder ... </SPAN>
+
+<SPAN class=cs-keyword>class</SPAN> Lists&lt;T,C&gt;
+    where T:<SPAN class=cs-keyword>new</SPAN>() 
+    where C:ICalculator&lt;T&gt;,<SPAN class=cs-keyword>new</SPAN>();{
+    <SPAN class=cs-comment>//since C is a struct with zero size, we can create an instance</SPAN>
+    <SPAN class=cs-comment>//of C whenever we need one without any overhead.</SPAN>
+    <SPAN class=cs-keyword>private</SPAN> <SPAN class=cs-keyword>static</SPAN> C calculator=<SPAN class=cs-keyword>new</SPAN> C();
+    <SPAN class=cs-keyword>public</SPAN> <SPAN class=cs-keyword>static</SPAN> T Sum(List&lt;T&gt; list) 
+    { 
+        T sum=<SPAN class=cs-keyword>new</SPAN> T();
+        <SPAN class=cs-keyword>for</SPAN>(<SPAN class=cs-keyword>int</SPAN> i=<SPAN class=cs-literal>0</SPAN>;i&lt;list.Count;i++)
+            sum=calculator.Add(sum,list[i]); 
+        <SPAN class=cs-keyword>return</SPAN> sum; 
+    } 
+
+}</PRE>
+      <P>The use of this class is a bit awkward because of the second type 
+      parameter. But you could use an alias. Here is how you would use the 
+      <CODE>Lists&lt;T,C&gt;</CODE> type:</P><PRE lang=cs><SPAN class=cs-keyword>using</SPAN> IntLists=Lists&lt;<SPAN class=cs-keyword>int</SPAN>,IntCalculator&gt;;
+<SPAN class=cs-comment>//...</SPAN>
+List&lt;<SPAN class=cs-keyword>int</SPAN>&gt; list=<SPAN class=cs-keyword>new</SPAN> List&lt;<SPAN class=cs-keyword>int</SPAN>&gt;();
+list.Add(<SPAN class=cs-literal>1</SPAN>);
+list.Add(<SPAN class=cs-literal>2</SPAN>);
+list.Add(<SPAN class=cs-literal>3</SPAN>);
+Console.WriteLine(<SPAN class=cpp-string>"The sum of all elements is {0}"</SPAN>,
+IntLists.Sum(list));</PRE>
+      <H2>Performance</H2>
+      <P>Since we made sure that our code does not contain any virtual method 
+      calls or unnecessary object creation, the generic code should be exactly 
+      as fast as non-generic code. To test this, I wrote a small <A 
+      href="http://www.lambda-computing.com/publications/articles/generics2/benchmark/" 
+      target=_blank>benchmark</A>. The result is encouraging. Even the current 
+      very limited JIT compiler manages to inline the <CODE>Sum</CODE> method, 
+      so the generic version is indeed exactly as fast as the non-generic 
+      version on my machine.</P>
+      <P><I>Please make sure that you run the benchmark in release mode, since 
+      in debug mode many very important optimizations such as method inlining 
+      are disabled.</I></P>
+      <H2>Using operators with type parameters</H2>
+      <P>We now can do calculations on generic types with acceptable 
+      performance. But we still can not use operators with type parameters. In 
+      the above example, we had to write <CODE 
+      lang=cs>sum=calculator.Add(sum,list[i])</CODE> instead of simply writing 
+      <CODE lang=cs>sum+=list[i]</CODE>.</P>
+      <P>This might not be a big deal if you want to perform a simple addition. 
+      But if you have large, complex methods that excessively use operators, it 
+      would be a tedious and error-prone process to convert them to use method 
+      calls instead.</P>
+      <P>Fortunately, it is possible to create a wrapper <CODE lang=cs><SPAN 
+      class=cs-keyword>struct</SPAN></CODE> that defines operators. By using 
+      implicit conversions to and from the wrapped type, we can use this wrapper 
+      <CODE lang=cs><SPAN class=cs-keyword>struct</SPAN></CODE> almost 
+      transparently.</P>
+      <P>This is how a wrapper <CODE lang=cs><SPAN 
+      class=cs-keyword>struct</SPAN></CODE> for the above 
+      <CODE>ICalculator</CODE> interface might look like:</P><PRE lang=cs><SPAN class=cs-keyword>public</SPAN> <SPAN class=cs-keyword>struct</SPAN> Number&lt;T,C&gt;
+    where C:ICalculator&lt;T&gt;,<SPAN class=cs-keyword>new</SPAN>()
+{
+    <SPAN class=cs-keyword>private</SPAN> T value;
+    <SPAN class=cs-keyword>private</SPAN> <SPAN class=cs-keyword>static</SPAN> C calculator=<SPAN class=cs-keyword>new</SPAN> C();
+    <SPAN class=cs-keyword>private</SPAN> Number(T value) {
+        <SPAN class=cs-keyword>this</SPAN>.value=value;
+    }
+    <SPAN class=cs-keyword>public</SPAN> <SPAN class=cs-keyword>static</SPAN> <SPAN class=cs-keyword>implicit</SPAN> <SPAN class=cs-keyword>operator</SPAN> Number&lt;T,C&gt;(T a)
+    {
+        <SPAN class=cs-keyword>return</SPAN> <SPAN class=cs-keyword>new</SPAN> Number&lt;T,C&gt;(a);
+    }
+    <SPAN class=cs-keyword>public</SPAN> <SPAN class=cs-keyword>static</SPAN> <SPAN class=cs-keyword>implicit</SPAN> <SPAN class=cs-keyword>operator</SPAN> T(Number&lt;T,C&gt; a)
+    {
+        <SPAN class=cs-keyword>return</SPAN> a.value;
+    }
+    <SPAN class=cs-keyword>public</SPAN> <SPAN class=cs-keyword>static</SPAN> Number&lt;T,C&gt; <SPAN class=cs-keyword>operator</SPAN> + (Number&lt;T,C&gt; a, Number&lt;T,C&gt; b)
+    {
+        <SPAN class=cs-keyword>return</SPAN> calculator.Add(a.value,b.value);
+    }
+    ...other operators...
+}</PRE>
+      <P>Now, instead of using <CODE>T</CODE> in your generic class, you would 
+      just use the wrapper <CODE lang=cs><SPAN 
+      class=cs-keyword>struct</SPAN></CODE> instead. Here is how the 
+      <CODE>Sum</CODE> example would look like using the wrapper <CODE 
+      lang=cs><SPAN class=cs-keyword>struct</SPAN></CODE>:</P><PRE lang=cs><SPAN class=cs-keyword>class</SPAN> Lists&lt;T,C&gt;
+    where T:<SPAN class=cs-keyword>new</SPAN>()
+    where C:ICalculator&lt;T&gt;,<SPAN class=cs-keyword>new</SPAN>()
+{
+    <SPAN class=cs-keyword>public</SPAN> <SPAN class=cs-keyword>static</SPAN> T Sum(List&lt;T&gt; list)
+    {
+        Number&lt;T,C&gt; sum=<SPAN class=cs-keyword>new</SPAN> T();
+        <SPAN class=cs-keyword>for</SPAN>(<SPAN class=cs-keyword>int</SPAN> i=<SPAN class=cs-literal>0</SPAN>;i&lt;list.Count;i++)
+            sum+=list[i];
+        <SPAN class=cs-keyword>return</SPAN> sum;
+    }
+}</PRE>
+      <P>You might expect that this code runs exactly as fast as the 
+      non-operator version. But unfortunately, this is not the case. The current 
+      .NET JIT compiler has some very serious limitations. Basically, it does <A 
+      href="http://weblogs.asp.net/ericgu/archive/2004/01/29/64717.aspx" 
+      target=_blank>not do any inlining if a method has an explicit struct 
+      parameter</A> (Yes, I was shocked too).</P>
+      <P>Since the operator methods in the wrapper <CODE lang=cs><SPAN 
+      class=cs-keyword>struct</SPAN></CODE> have <CODE lang=cs><SPAN 
+      class=cs-keyword>struct</SPAN></CODE> parameters, they will not be 
+      inlined, so the performance will suffer. But I am sure that Microsoft will 
+      fix this important performance issue soon. </P>
+      <P>Here is a <A 
+      href="http://lab.msdn.microsoft.com/productfeedback/viewfeedback.aspx?did=1&amp;t=4dUBy9jV7DiF6sG40vMTue7Zh!xElXA8pMpkuGk5TUnr1f1RVHDLZW!KQlNyvMxcJn99YcdOz7EGrqtRxjwZIyGQ$$&amp;p=4kS5Ao3jJGJXM9poHnh5PQutoEpC!Be7vjfhBZcAV69n*5iJzwpz!Inowgxmdn3pO!YgVugWa4aWudxljPPnrTTCbl1FxcSHBta9HHqRepBCHkQfqSXGjZ!yK5x8D7TQVG6iJgO3A2LnU$&amp;feedbackid=fb7b3c93-a9e9-418b-85b3-b67a195c7e1a" 
+      target=_blank>suggestion</A> about this topic that you can vote for. This 
+      is the only thing that is missing for lightning-fast and easy to use 
+      numerics in C#.</P>
+      <H2>Conclusion</H2>
+      <P>Even though the constraint syntax of .NET generics system is very 
+      limited, it is possible to work around those limits by using a second type 
+      parameter. This approach is a bit more work for the writer of the generic 
+      class library, but it is quite transparent for the user of the class 
+      library and it yields performance that is identical to a non-generic 
+      version. Just like with C++ templates, the runtime cost of the abstraction 
+      is zero.</P>
+      <P>There are some limitations, but these should go away very soon as 
+      Microsoft and the <A href="http://www.mono-project.com/about/index.html" 
+      target=_blank>competing vendors</A> improve the JIT compiler performance. 
+      So, it is possible to write numeric libraries that are as fast or even 
+      faster than compile-time template libraries such as the C++ STL.</P>
+      <H2>About the code</H2>
+      <P>The included project consists of interfaces, implementations and 
+      wrappers for all primitive types with a few nice additions. The list 
+      benchmark calculates the standard deviation of a large list both with 
+      generic and with non-generic methods. Another benchmark compares the 
+      performance of the non-generic <CODE>System.Drawing.Point</CODE> and 
+      <CODE>System.Drawing.PointF</CODE> <CODE lang=cs><SPAN 
+      class=cs-keyword>struct</SPAN></CODE>s with a generic 
+      <CODE>Point&lt;T&gt;</CODE> version.</P>
+      <P>The code is under the BSD license, so feel free to use it for your own 
+      projects.</P>
+      <H2>References</H2>
+      <UL>
+        <LI><A href="http://blogs.msdn.com/ericgu/archive/2003/11/14/52852.aspx" 
+        target=_blank>Anders Hejlsberg</A> proposed using an abstract base 
+        class. 
+        <LI><A 
+        href="http://groups.google.com/groups?hl=de&amp;lr=&amp;ie=UTF-8&amp;selm=ORt2BOEbEHA.4092%40TK2MSFTNGP11.phx.gbl" 
+        target=_blank>A solution</A> using dynamic method generation. 
+        <LI><A 
+        href="http://weblog.ikvm.net/permalink.aspx?guid=94EED5A8-6C9C-4D1D-A001-321344A2D2F6" 
+        target=_blank>Jeroen Frijters</A> proposed using value types for the 
+        calculator. 
+        <LI><A 
+        href="http://groups.google.com/groups?hl=en&amp;lr=&amp;selm=2mn0jeFo6l8tU1%40uni-berlin.de&amp;rnum=1" 
+        target=_blank>This</A> was my first posting about the topic. As you 
+        might notice, I was quite angry... 
+        <LI><A href="http://www.lambda-computing.com/projects/genericnumerics/" 
+        target=_blank>Here</A> is where I will publish newer versions of the 
+        code. 
+        <LI><A href="http://www.osnews.com/story.php?news_id=8484" 
+        target=_blank>Two articles</A> by me on <A href="http://www.osnews.com/" 
+        target=_blank>osnews</A> about the topic. 
+        <LI><A 
+        href="http://lab.msdn.microsoft.com/productfeedback/viewfeedback.aspx?feedbackid=fb7b3c93-a9e9-418b-85b3-b67a195c7e1a" 
+        target=_blank>Please vote</A> for this suggestion. It is more important 
+        than the presidential elections :-) </LI></UL><!-- Article Ends --></DIV>
+      <H2>About Rüdiger Klaehn</H2>
+      <TABLE width="100%" border=0>
+        <TBODY>
+        <TR vAlign=top>
+          <TD class=smallText noWrap><BR></TD>
+          <TD class=smallText width="100%">Rüdiger Klaehn works as freelance 
+            programmer. He is currently trying to start a company with some 
+            friends, but in germany that is a long and tedious process. He is 
+            very interested in functional programming languages and hopes that 
+            .NET will lead to a more widespread adoption in the industry.
+            <P class=smallText>Click <A 
+            href="http://www.thecodeproject.com/script/profile/whos_who.asp?vt=arts&amp;id=422643">here</A> 
+            to view Rüdiger Klaehn's online profile.</P></TD></TR></TBODY></TABLE><BR>
+      <TABLE cellPadding=4 width="100%" border=0>
+        <TBODY>
+        <TR vAlign=top>
+          <TD width="100%">
+            <H2>Other popular articles:</H2>
+            <UL>
+              <LI><A 
+              href="http://www.thecodeproject.com/csharp/cspplcds.asp">I/O Ports 
+              Uncensored Part 2 - Controlling LCDs (Liquid Crystal Displays) and 
+              VFDs (Vacuum Fluorescent Displays) with Parallel Port</A><BR><SPAN 
+              class=smalltext>Controlling LCDs (Liquid Crystal Displays) and 
+              VFDs (Vacuum Fluorescent Displays) with Parallel Port</SPAN>
+              <LI><A href="http://www.thecodeproject.com/csharp/SCCswitch.asp">A 
+              tool to change the default source control client</A><BR><SPAN 
+              class=smalltext>A small tool to change the default source control 
+              provider client, so you can use SourceSafe, SourceOffsite, 
+              Workspaces etc, on the same machine</SPAN>
+              <LI><A 
+              href="http://www.thecodeproject.com/csharp/Reversi.asp">Reversi in 
+              C#</A><BR><SPAN class=smalltext>The game of Reversi in C#.</SPAN>
+              <LI><A 
+              href="http://www.thecodeproject.com/csharp/dotnetbandobjects.asp">Extending 
+              Explorer with Band Objects using .NET and Windows 
+              Forms</A><BR><SPAN class=smalltext>Walks you through the 
+              implementation of an Explorer bar with the help of BandObject base 
+              class. Describes implementation details of the BandObject 
+              class.</SPAN></LI></UL></TD>
+          <TD width=360>
+            <SCRIPT language=javascript>document.write("<IFRAME src=\"/script/admentor/include/ServeAdHTML.aspx?C=False&id=786\" border=0 frameborder=0 scrolling=no width=300 height=250></IFRAME>");</SCRIPT>
+          </TD></TR></TBODY></TABLE>
+      <FORM action=/script/rating/code/app/insert_vote.asp method=post><INPUT 
+      type=hidden value=genericnumerics/csharp10/11/2004 name=vote_name> <INPUT 
+      type=hidden value=/csharp/genericnumerics.asp name=goal> 
+      <TABLE cellSpacing=0 cellPadding=1 width="100%" bgColor=#ff9900 
+        border=0><TBODY>
+        <TR>
+          <TD width="100%">
+            <TABLE cellSpacing=0 cellPadding=4 width="100%" bgColor=#fbedbb 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD class=smalltext vAlign=center>[<A 
+                  href="http://www.thecodeproject.com/csharp/genericnumerics.asp#__top">Top</A>]</TD>
+                <TD vAlign=center noWrap align=right><A 
+                  href="http://www.thecodeproject.com/script/profile/logon.asp?ct=%2Fcsharp%2Fgenericnumerics%2Easp"><B>Sign 
+                  in</B></A> to vote for this article:&nbsp;&nbsp;&nbsp;&nbsp; 
+                  <I>Poor</I><INPUT style="disabled: true" type=radio value=1 
+                  name=rate><INPUT style="disabled: true" type=radio value=2 
+                  name=rate><INPUT style="disabled: true" type=radio value=3 
+                  name=rate><INPUT style="disabled: true" type=radio value=4 
+                  name=rate><INPUT style="disabled: true" type=radio value=5 
+                  name=rate><I>Excellent</I>&nbsp;&nbsp;<INPUT class=FormButton style="disabled: true" type=submit value=Vote> 
+                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></FORM>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR vAlign=top>
+          <TD vAlign=top>
+            <CENTER>
+            <SCRIPT language=javascript>document.write("<a href=\"/script/admentor/admentorredir.asp?id=156&way=ban\" target=_blank><img src=\"/script/admentor/include/ServeAd.aspx?File=%2Fscript%2Fadmentor%2Fimages%2Fmsdn%5Fbutton%2Egif&C=False&id=156\" alt=\"MSDN Magazine - Your guide to Microsoft tools, development environments, and technologies for Windows and the Web.\" border=0 width=120 height=60></a>");</SCRIPT>
+            <BR><FONT size=1><A 
+            href="http://www.thecodeproject.com/info/MediaKit/">Premium 
+            Sponsor</A></FONT></CENTER><BR></TD>
+          <TD vAlign=top noWrap align=middle><SPAN id=AdBanner5>
+            <SCRIPT language=javascript>document.write("<a href=\"/script/admentor/admentorredir.asp?id=782&way=ban\" target=_blank><img src=\"/script/admentor/include/ServeAd.aspx?File=%2Fscript%2Fadmentor%2Fimages%2Fwholetomato%5Fxpect%5Fmore%2Egif&C=False&id=782\" alt=\"The intellisense upgrade for Visual Studio .NET - make your IDE as smart as you.\" border=0 width=468 height=60></a>");</SCRIPT>
+            </SPAN></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><A 
+name=__comments></A>
+<SCRIPT language=JavaScript>
+var Selected = "";
+var AdTime = new Date();
+
+function SwitchMessage(elm)
+{
+	
+	var elmref;
+	if (Selected != "")
+	{
+		elmref = eval("document.getElementById('" + Selected + "_h1')");
+		if (elmref) elmref.style.display = 'none';
+		elmref = eval("document.getElementById('" + Selected + "_h0')");
+		if (elmref) elmref.bgColor = '#FEF9E7';
+	}
+	if (Selected != elm.name) 
+	{
+		Selected = elm.name;
+		elmref = eval("document.getElementById('" + Selected + "_h1')");
+		if (elmref) 
+		{
+			if (elmref.style.display=='none') elmref.style.display='';
+			else elmref.style.display = 'none';
+		}
+		elmref = eval("document.getElementById('" + Selected + "_h0')");
+		if (elmref) 
+			elmref.bgColor = '#99CCFF';
+	}
+	else
+		Selected="";
+		
+	window.location = "#xx" + Selected + "xx";
+
+	return false;
+}
+
+</SCRIPT>
+
+<SCRIPT language=javascript event=onclick for=DynMessLink>
+return SwitchMessage(this);
+</SCRIPT>
+
+<TABLE cellSpacing=0 cellPadding=0 width="100%" bgColor=#ff9900 border=0>
+  <TBODY>
+  <TR>
+    <TD width="100%">
+      <TABLE id=ForumTable cellSpacing=1 cellPadding=0 width="100%" 
+      bgColor=#ff9900 border=0>
+        <FORM 
+        action=/script/comments/app/do_filtermessages.asp?main=/csharp/genericnumerics.asp&amp;df=100&amp;forumid=117139 
+        method=post>
+        <TBODY>
+        <TR>
+          <TD>
+            <TABLE cellSpacing=0 cellPadding=3 width="100%" bgColor=white 
+            border=0>
+              <TBODY>
+              <TR bgColor=#fbedbb>
+                <TD class=smalltext noWrap><A 
+                  href="http://www.thecodeproject.com/script/comments/faq.asp"><IMG 
+                  height=16 src="Using generics for calculations_files/info.gif" 
+                  width=16 align=absMiddle border=0> <B>FAQ</B></A>&nbsp;</TD>
+                <TD class=smalltext vAlign=top noWrap align=right>Noise level 
+                  <SELECT class=smalltext size=1 name=noise><OPTION 
+                    value=1>Very High</OPTION> <OPTION value=2>High</OPTION> 
+                    <OPTION value=3 selected>Medium</OPTION> <OPTION 
+                    value=4>Low</OPTION> <OPTION value=5>Very 
+                  low</OPTION></SELECT>&nbsp;&nbsp;</TD>
+                <TD class=smalltext vAlign=center noWrap align=right 
+                  colSpan=2><A 
+                  href="http://www.thecodeproject.com/script/comments/search_comments.asp?forumid=117139"><IMG 
+                  height=15 
+                  src="Using generics for calculations_files/search.gif" 
+                  width=16 border=0> Search comments</A> &nbsp;</TD>
+                <TD vAlign=top align=right><INPUT class=FormButton type=submit value="Set Options" name=submit></TD></TR>
+              <TR bgColor=#ff9900>
+                <TD width="100%">&nbsp;</TD>
+                <TD class=smalltext vAlign=top noWrap align=right>View <SELECT 
+                  class=smalltext size=1 name=expand><OPTION value=0>Normal 
+                    (slow)</OPTION> <OPTION value=2>Preview (slow)</OPTION> 
+                    <OPTION value=5 selected>Message View</OPTION> <OPTION 
+                    value=6>Topic View</OPTION> <OPTION value=1>Thread 
+                    View</OPTION> <OPTION value=3>Expanded (Supporters 
+                    only)</OPTION></SELECT>&nbsp;&nbsp;</TD>
+                <TD class=smalltext vAlign=top noWrap>Per page <SELECT 
+                  class=smalltext size=1 name=perpage><OPTION 
+                    value=10>10</OPTION> <OPTION value=25 selected>25</OPTION> 
+                    <OPTION value=50>50 (must logon)</OPTION></SELECT></TD>
+                <TD colSpan=2>&nbsp;</TD></TR></TBODY></TABLE></TD></TR></FORM>
+        <TR bgColor=#fbedbb>
+          <TD><A name=xx0xx></A>
+            <TABLE cellPadding=2 width="100%" bgColor=#fbedbb border=0>
+              <TBODY>
+              <TR>
+                <TD class=messagetitle><A class=HoverLink 
+                  title="Add a new message to the discussions" 
+                  href="http://www.thecodeproject.com/script/comments/user_new.asp?main=/csharp/genericnumerics.asp&amp;df=100&amp;forumid=117139" 
+                  target=_top name=HoverNL><B><IMG height=16 
+                  src="Using generics for calculations_files/admin_modify.gif" 
+                  width=16 align=top border=0> New thread</B></A></TD>
+                <TD class=messagetitle>Msgs 1 to 12 of 12 (Total: 12) (<A 
+                  href="http://www.thecodeproject.com/csharp/genericnumerics.asp?df=100&amp;forumid=117139">Refresh</A>)</TD>
+                <TD noWrap align=right><FONT class=messagetitle><SPAN 
+                  class=HoverLink>First</SPAN> <SPAN class=HoverLink>Prev</SPAN> 
+                  <SPAN class=HoverLink>Next</SPAN> <SPAN 
+                  class=HoverLink>Last</SPAN> </FONT></TD></TR></TBODY></TABLE></TD></TR>
+        <TR bgColor=white>
+          <TD>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=2 bgColor=#fbedbb border=0>
+                    <TBODY>
+                    <TR>
+                      <TD class=messagetitle width="100%">Subject&nbsp;</TD>
+                      <TD class=messagetitle noWrap width=140>Author&nbsp;</TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT 
+                    class=messagetitle>Date&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 
+                  src="Using generics for calculations_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR id=947459_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx947459xx></A><IMG 
+                        src="Using generics for calculations_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.thecodeproject.com/csharp/genericnumerics.asp?df=100&amp;forumid=117139&amp;select=947459#xx947459xx" 
+                        name=947459><B>Tremendously enjoyed your 
+                      article</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.thecodeproject.com/script/profile/whos_who.asp?id=20248"><IMG 
+                        title="CodeProject Staff" height=16 
+                        src="Using generics for calculations_files/staff_sm.gif" 
+                        width=12 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle><B>Nishant 
+                        S</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>23:25 13 Oct 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=947459_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG 
+                        src="Using generics for calculations_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Thank 
+                                you. Got my 5 too <IMG 
+                                src="Using generics for calculations_files/smiley_smile.gif" 
+                                align=absMiddle> <BR><BR>
+                                <HR>
+                                <BIG>My blog on C++/CLI, MFC/Win32, .NET - <A 
+                                href="http://blog.voidnish.com/" 
+                                target=_blank>void Nish(char* szBlog);</A><BR><A 
+                                href="http://www.voidnish.com/" target=_blank>My 
+                                MVP tips, tricks and essays web site - 
+                                www.voidnish.com</A></BIG><BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.thecodeproject.com/script/comments/user_reply.asp?main=/csharp/genericnumerics.asp&amp;df=100&amp;forumid=117139&amp;select=947459">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.thecodeproject.com/script/comments/user_mail.asp?main=/csharp/genericnumerics.asp&amp;df=100&amp;forumid=117139&amp;select=947459">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.thecodeproject.com/csharp/genericnumerics.asp?df=100&amp;tid=947459&amp;forumid=117139&amp;select=947459#xx947459xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.thecodeproject.com/csharp/genericnumerics.asp?msg=947459#xx947459xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.thecodeproject.com/script/comments/owner_modify_pw.asp?main=/csharp/genericnumerics.asp&amp;df=100&amp;forumid=117139&amp;select=947459"><I>Modify</I></A>|<A 
+                                href="http://www.thecodeproject.com/script/comments/owner_delete_pw.asp?main=/csharp/genericnumerics.asp&amp;df=100&amp;forumid=117139&amp;select=947459"><I>Delete</I></A>]<BR></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 
+                  src="Using generics for calculations_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="Using generics for calculations_files/t.gif" 
+              width=1></TD></TR>
+              <TR id=946193_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx946193xx></A><IMG 
+                        src="Using generics for calculations_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.thecodeproject.com/csharp/genericnumerics.asp?df=100&amp;forumid=117139&amp;select=946193#xx946193xx" 
+                        name=946193><B>Excellent article. :)</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.thecodeproject.com/script/profile/whos_who.asp?id=50414"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="Using generics for calculations_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle><B>Jon 
+                        Rista</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>15:32 12 Oct 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=946193_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG 
+                        src="Using generics for calculations_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>This 
+                                was a great article, not so much for the 
+                                practical use of generics, but for the way they 
+                                were implemented, and for the benchmark. I'm 
+                                glad to know that proper use of generics 
+                                produces no impact to performance, and that the 
+                                C# compiler properly optimizes generics code 
+                                (when compiled as a release, of course). 
+                                <BR><BR>Thanks for the work and verification. 
+                                Quite an informative article. <IMG 
+                                src="Using generics for calculations_files/smiley_smile.gif" 
+                                align=absMiddle> <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.thecodeproject.com/script/comments/user_reply.asp?main=/csharp/genericnumerics.asp&amp;df=100&amp;forumid=117139&amp;select=946193">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.thecodeproject.com/script/comments/user_mail.asp?main=/csharp/genericnumerics.asp&amp;df=100&amp;forumid=117139&amp;select=946193">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.thecodeproject.com/csharp/genericnumerics.asp?df=100&amp;tid=946193&amp;forumid=117139&amp;select=946193#xx946193xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.thecodeproject.com/csharp/genericnumerics.asp?msg=946193#xx946193xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.thecodeproject.com/script/comments/owner_modify_pw.asp?main=/csharp/genericnumerics.asp&amp;df=100&amp;forumid=117139&amp;select=946193"><I>Modify</I></A>|<A 
+                                href="http://www.thecodeproject.com/script/comments/owner_delete_pw.asp?main=/csharp/genericnumerics.asp&amp;df=100&amp;forumid=117139&amp;select=946193"><I>Delete</I></A>]<BR></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 
+                  src="Using generics for calculations_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR id=946598_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx946598xx></A><IMG height=1 
+                        src="Using generics for calculations_files/ind.gif" 
+                        width=18><IMG 
+                        src="Using generics for calculations_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.thecodeproject.com/csharp/genericnumerics.asp?df=100&amp;forumid=117139&amp;select=946598#xx946598xx" 
+                        name=946598>Re: Excellent article. :)</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.thecodeproject.com/script/profile/whos_who.asp?id=422643"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="Using generics for calculations_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle>Rüdiger 
+                        Klaehn&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>4:29 13 Oct 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=946598_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 
+                        src="Using generics for calculations_files/ind.gif" 
+                        width=18><IMG 
+                        src="Using generics for calculations_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Thanks. 
+                                <BR><BR>After playing with generics for a few 
+                                months, I can say that they are really 
+                                well-designed. For example a List&lt;int&gt; 
+                                will have performance close to or identical to 
+                                an int[] since it uses an int[] internally and 
+                                the indexer is usually inlined. <BR><BR>Compare 
+                                that to the java version, which uses an object[] 
+                                internally and incurs a huge boxing/unboxing 
+                                overhead each time you access the 
+                                List&lt;Integer&gt;.<BR><BR>Here are two simple 
+                                benchmarks for the java and the .NET version of 
+                                generics:<BR><A 
+                                href="http://www.lambda-computing.com/publications/rants/csvsjava/csgenerics">C#</A><BR><A 
+                                href="http://www.lambda-computing.com/publications/rants/csvsjava/javagenerics">java</A><BR><BR>The 
+                                .NET version blows the java version out of the 
+                                water. On my machine, it is 20 times faster and 
+                                consumes 5 times less memory. The reason is that 
+                                in java 1000001 objects have to be managed on 
+                                the heap: 1000000 objects for the boxed ints, 
+                                and 1 object for the array of references. In C# 
+                                only 1 large object is allocated on the heap, 
+                                the int[]. <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.thecodeproject.com/script/comments/user_reply.asp?main=/csharp/genericnumerics.asp&amp;df=100&amp;forumid=117139&amp;select=946598">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.thecodeproject.com/script/comments/user_mail.asp?main=/csharp/genericnumerics.asp&amp;df=100&amp;forumid=117139&amp;select=946598">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.thecodeproject.com/csharp/genericnumerics.asp?df=100&amp;tid=946193&amp;forumid=117139&amp;select=946598#xx946598xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.thecodeproject.com/csharp/genericnumerics.asp?msg=946598#xx946598xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.thecodeproject.com/script/comments/owner_modify_pw.asp?main=/csharp/genericnumerics.asp&amp;df=100&amp;forumid=117139&amp;select=946598"><I>Modify</I></A>|<A 
+                                href="http://www.thecodeproject.com/script/comments/owner_delete_pw.asp?main=/csharp/genericnumerics.asp&amp;df=100&amp;forumid=117139&amp;select=946598"><I>Delete</I></A>]<BR></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 
+                  src="Using generics for calculations_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="Using generics for calculations_files/t.gif" 
+              width=1></TD></TR>
+              <TR id=945838_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx945838xx></A><IMG 
+                        src="Using generics for calculations_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.thecodeproject.com/csharp/genericnumerics.asp?df=100&amp;forumid=117139&amp;select=945838#xx945838xx" 
+                        name=945838><B>reflection invoke</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.thecodeproject.com/script/profile/whos_who.asp?id=75761"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="Using generics for calculations_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle><B>Roger 
+                        J</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>9:14 12 Oct 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=945838_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG 
+                        src="Using generics for calculations_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>wouldnt 
+                                this be possible by calling the + operator via 
+                                reflection?<BR><BR>this wouldnt require any 
+                                dynamic code generation nor extra helperclasses 
+                                for each type.<BR><BR>//Roger 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.thecodeproject.com/script/comments/user_reply.asp?main=/csharp/genericnumerics.asp&amp;df=100&amp;forumid=117139&amp;select=945838">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.thecodeproject.com/script/comments/user_mail.asp?main=/csharp/genericnumerics.asp&amp;df=100&amp;forumid=117139&amp;select=945838">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.thecodeproject.com/csharp/genericnumerics.asp?df=100&amp;tid=945838&amp;forumid=117139&amp;select=945838#xx945838xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.thecodeproject.com/csharp/genericnumerics.asp?msg=945838#xx945838xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.thecodeproject.com/script/comments/owner_modify_pw.asp?main=/csharp/genericnumerics.asp&amp;df=100&amp;forumid=117139&amp;select=945838"><I>Modify</I></A>|<A 
+                                href="http://www.thecodeproject.com/script/comments/owner_delete_pw.asp?main=/csharp/genericnumerics.asp&amp;df=100&amp;forumid=117139&amp;select=945838"><I>Delete</I></A>]<BR></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 
+                  src="Using generics for calculations_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR id=945854_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx945854xx></A><IMG height=1 
+                        src="Using generics for calculations_files/ind.gif" 
+                        width=18><IMG 
+                        src="Using generics for calculations_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.thecodeproject.com/csharp/genericnumerics.asp?df=100&amp;forumid=117139&amp;select=945854#xx945854xx" 
+                        name=945854>Re: reflection invoke</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.thecodeproject.com/script/profile/whos_who.asp?id=422643"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="Using generics for calculations_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle>Rüdiger 
+                        Klaehn&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>9:26 12 Oct 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=945854_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 
+                        src="Using generics for calculations_files/ind.gif" 
+                        width=18><IMG 
+                        src="Using generics for calculations_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>You 
+                                could write a type that calls the + operator 
+                                using Reflection.Emit without any overhead. But 
+                                since the type would be generated at runtime, 
+                                the only way to refer to it is through an 
+                                interface or a base class. So you have virtual 
+                                methods or interface calls. See <A 
+                                href="http://groups.google.com/groups?hl=de&amp;lr=&amp;ie=UTF-8&amp;selm=ORt2BOEbEHA.4092%40TK2MSFTNGP11.phx.gbl">here</A> 
+                                for an example of this approach<BR><BR>Calling 
+                                the op_Additon method directly through 
+                                reflection would be orders of magnitude slower 
+                                than even virtual dispatch. Just try 
+                                it.<BR><BR>If you can work around this somehow, 
+                                by all means please post the code. But I am not 
+                                holding my breath. <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.thecodeproject.com/script/comments/user_reply.asp?main=/csharp/genericnumerics.asp&amp;df=100&amp;forumid=117139&amp;select=945854">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.thecodeproject.com/script/comments/user_mail.asp?main=/csharp/genericnumerics.asp&amp;df=100&amp;forumid=117139&amp;select=945854">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.thecodeproject.com/csharp/genericnumerics.asp?df=100&amp;tid=945838&amp;forumid=117139&amp;select=945854#xx945854xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.thecodeproject.com/csharp/genericnumerics.asp?msg=945854#xx945854xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.thecodeproject.com/script/comments/owner_modify_pw.asp?main=/csharp/genericnumerics.asp&amp;df=100&amp;forumid=117139&amp;select=945854"><I>Modify</I></A>|<A 
+                                href="http://www.thecodeproject.com/script/comments/owner_delete_pw.asp?main=/csharp/genericnumerics.asp&amp;df=100&amp;forumid=117139&amp;select=945854"><I>Delete</I></A>]<BR></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 
+                  src="Using generics for calculations_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR id=945902_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx945902xx></A><IMG height=1 
+                        src="Using generics for calculations_files/ind.gif" 
+                        width=36><IMG 
+                        src="Using generics for calculations_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.thecodeproject.com/csharp/genericnumerics.asp?df=100&amp;forumid=117139&amp;select=945902#xx945902xx" 
+                        name=945902>Re: reflection invoke</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.thecodeproject.com/script/profile/whos_who.asp?id=75761"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="Using generics for calculations_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle>Roger 
+                        J&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>10:10 12 Oct 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=945902_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 
+                        src="Using generics for calculations_files/ind.gif" 
+                        width=36><IMG 
+                        src="Using generics for calculations_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>oke i 
+                                see the problem , calling op_Addition was about 
+                                500 times slower than res=o1+o2; <IMG 
+                                src="Using generics for calculations_files/smiley_dead.gif" 
+                                align=absMiddle> <BR><BR>//Roger 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.thecodeproject.com/script/comments/user_reply.asp?main=/csharp/genericnumerics.asp&amp;df=100&amp;forumid=117139&amp;select=945902">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.thecodeproject.com/script/comments/user_mail.asp?main=/csharp/genericnumerics.asp&amp;df=100&amp;forumid=117139&amp;select=945902">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.thecodeproject.com/csharp/genericnumerics.asp?df=100&amp;tid=945838&amp;forumid=117139&amp;select=945902#xx945902xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.thecodeproject.com/csharp/genericnumerics.asp?msg=945902#xx945902xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.thecodeproject.com/script/comments/owner_modify_pw.asp?main=/csharp/genericnumerics.asp&amp;df=100&amp;forumid=117139&amp;select=945902"><I>Modify</I></A>|<A 
+                                href="http://www.thecodeproject.com/script/comments/owner_delete_pw.asp?main=/csharp/genericnumerics.asp&amp;df=100&amp;forumid=117139&amp;select=945902"><I>Delete</I></A>]<BR></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 
+                  src="Using generics for calculations_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR id=946357_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx946357xx></A><IMG height=1 
+                        src="Using generics for calculations_files/ind.gif" 
+                        width=36><IMG 
+                        src="Using generics for calculations_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.thecodeproject.com/csharp/genericnumerics.asp?df=100&amp;forumid=117139&amp;select=946357#xx946357xx" 
+                        name=946357>Re: reflection invoke</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.thecodeproject.com/script/profile/whos_who.asp?id=188603"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="Using generics for calculations_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle>Keith 
+                        Farmer&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>19:27 12 Oct 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=946357_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 
+                        src="Using generics for calculations_files/ind.gif" 
+                        width=36><IMG 
+                        src="Using generics for calculations_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>How 
+                                about a method that uses lightweight code 
+                                generation/DynamicMethods to locate and return 
+                                the appropriate method? That would incur a 
+                                penalty on first use, but would it incur any 
+                                further penalties?<BR><BR>Such things are being 
+                                looked at wrt IronPython and other dynamic 
+                                language implementations. 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.thecodeproject.com/script/comments/user_reply.asp?main=/csharp/genericnumerics.asp&amp;df=100&amp;forumid=117139&amp;select=946357">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.thecodeproject.com/script/comments/user_mail.asp?main=/csharp/genericnumerics.asp&amp;df=100&amp;forumid=117139&amp;select=946357">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.thecodeproject.com/csharp/genericnumerics.asp?df=100&amp;tid=945838&amp;forumid=117139&amp;select=946357#xx946357xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.thecodeproject.com/csharp/genericnumerics.asp?msg=946357#xx946357xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.thecodeproject.com/script/comments/owner_modify_pw.asp?main=/csharp/genericnumerics.asp&amp;df=100&amp;forumid=117139&amp;select=946357"><I>Modify</I></A>|<A 
+                                href="http://www.thecodeproject.com/script/comments/owner_delete_pw.asp?main=/csharp/genericnumerics.asp&amp;df=100&amp;forumid=117139&amp;select=946357"><I>Delete</I></A>]<BR></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 
+                  src="Using generics for calculations_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR id=946594_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx946594xx></A><IMG height=1 
+                        src="Using generics for calculations_files/ind.gif" 
+                        width=54><IMG 
+                        src="Using generics for calculations_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.thecodeproject.com/csharp/genericnumerics.asp?df=100&amp;forumid=117139&amp;select=946594#xx946594xx" 
+                        name=946594>Re: reflection invoke</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.thecodeproject.com/script/profile/whos_who.asp?id=422643"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="Using generics for calculations_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle>Rüdiger 
+                        Klaehn&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>4:19 13 Oct 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=946594_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 
+                        src="Using generics for calculations_files/ind.gif" 
+                        width=54><IMG 
+                        src="Using generics for calculations_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Yes, it 
+                                is possible to find out the appropriate method 
+                                at template initialization time. For example you 
+                                could do so in the static constructor of the 
+                                generic type. .NET creates a new type for each 
+                                specialization, so this should work just 
+                                fine.<BR><BR>But how do you store the method 
+                                without using an extra field? And how do you 
+                                call the method without using a delegate or an 
+                                interface? <BR><BR>For scripting languages like 
+                                IronPython a simple virtual method invocation is 
+                                no big deal. But for numerical applications a 
+                                single virtual method call means that your 
+                                performance is ruined.<BR><BR>If you find a way 
+                                to do it, you will have my eternal gratitude 
+                                <IMG 
+                                src="Using generics for calculations_files/smiley_smile.gif" 
+                                align=absMiddle><BR><BR>Write a Point&lt;T&gt; 
+                                that<BR>a) can be used with 
+                                T=int,float,double,decimal,...<BR>b) is not 
+                                larger than 2*sizeof(T)<BR>c) is as fast as 
+                                System.Drawing.Point for ints and as fast as 
+                                System.Drawing.PointF for floats. 
+                                <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.thecodeproject.com/script/comments/user_reply.asp?main=/csharp/genericnumerics.asp&amp;df=100&amp;forumid=117139&amp;select=946594">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.thecodeproject.com/script/comments/user_mail.asp?main=/csharp/genericnumerics.asp&amp;df=100&amp;forumid=117139&amp;select=946594">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.thecodeproject.com/csharp/genericnumerics.asp?df=100&amp;tid=945838&amp;forumid=117139&amp;select=946594#xx946594xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.thecodeproject.com/csharp/genericnumerics.asp?msg=946594#xx946594xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.thecodeproject.com/script/comments/owner_modify_pw.asp?main=/csharp/genericnumerics.asp&amp;df=100&amp;forumid=117139&amp;select=946594"><I>Modify</I></A>|<A 
+                                href="http://www.thecodeproject.com/script/comments/owner_delete_pw.asp?main=/csharp/genericnumerics.asp&amp;df=100&amp;forumid=117139&amp;select=946594"><I>Delete</I></A>]<BR></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 
+                  src="Using generics for calculations_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR id=946773_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx946773xx></A><IMG height=1 
+                        src="Using generics for calculations_files/ind.gif" 
+                        width=72><IMG 
+                        src="Using generics for calculations_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.thecodeproject.com/csharp/genericnumerics.asp?df=100&amp;forumid=117139&amp;select=946773#xx946773xx" 
+                        name=946773>Re: reflection invoke</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.thecodeproject.com/script/profile/whos_who.asp?id=422643"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="Using generics for calculations_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle>Rüdiger 
+                        Klaehn&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>8:48 13 Oct 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=946773_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 
+                        src="Using generics for calculations_files/ind.gif" 
+                        width=72><IMG 
+                        src="Using generics for calculations_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>There 
+                                is one way to do it. <BR><BR>You could have 
+                                dummy methods and insert the appropriate IL for 
+                                the type shortly before the method gets JITed by 
+                                using the <A 
+                                href="http://msdn.microsoft.com/msdnmag/issues/03/09/NETProfilingAPI/default.aspx">ICorProfiler 
+                                COM API</A>.<BR><BR>Or you could use <A 
+                                href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/cpref/html/frlrfsystemreflectionemitmethodrentalclasstopic.asp">System.Reflection.Emit.MethodRental</A> 
+                                to replace the method IL with the IL for the 
+                                type. <BR><BR>But that would be quite complex 
+                                and hackish, and I am not sure wether you still 
+                                get proper inlining when using 
+                                MethodRental.<BR><BR>But it would be a nice hack 
+                                <IMG 
+                                src="Using generics for calculations_files/smiley_smile.gif" 
+                                align=absMiddle> Maybe I should mess with 
+                                MethodRental a bit... 
+<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.thecodeproject.com/script/comments/user_reply.asp?main=/csharp/genericnumerics.asp&amp;df=100&amp;forumid=117139&amp;select=946773">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.thecodeproject.com/script/comments/user_mail.asp?main=/csharp/genericnumerics.asp&amp;df=100&amp;forumid=117139&amp;select=946773">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.thecodeproject.com/csharp/genericnumerics.asp?df=100&amp;tid=945838&amp;forumid=117139&amp;select=946773#xx946773xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.thecodeproject.com/csharp/genericnumerics.asp?msg=946773#xx946773xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.thecodeproject.com/script/comments/owner_modify_pw.asp?main=/csharp/genericnumerics.asp&amp;df=100&amp;forumid=117139&amp;select=946773"><I>Modify</I></A>|<A 
+                                href="http://www.thecodeproject.com/script/comments/owner_delete_pw.asp?main=/csharp/genericnumerics.asp&amp;df=100&amp;forumid=117139&amp;select=946773"><I>Delete</I></A>]<BR></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 
+                  src="Using generics for calculations_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR height=1>
+                <TD bgColor=#ff9900><IMG height=1 
+                  src="Using generics for calculations_files/t.gif" 
+              width=1></TD></TR>
+              <TR id=945792_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx945792xx></A><IMG 
+                        src="Using generics for calculations_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.thecodeproject.com/csharp/genericnumerics.asp?df=100&amp;forumid=117139&amp;select=945792#xx945792xx" 
+                        name=945792><B>Wow!</B></A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.thecodeproject.com/script/profile/whos_who.asp?id=14112"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="Using generics for calculations_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle><B>Nemanja 
+                        Trifunovic</B>&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle><B>8:22 12 Oct 
+                        '04</B>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=945792_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG 
+                        src="Using generics for calculations_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Great 
+                                article. Thanks for writing.<BR><BR>This is very 
+                                interesting. Constraints as implemented with 
+                                .NET have some obvious benefits (easier 
+                                debugging) but there are problems as well and 
+                                your article demonstrates overcoming some of 
+                                them. Maybe it would have been better if 
+                                constraints were optional <IMG 
+                                src="Using generics for calculations_files/smiley_squeamish.gif" 
+                                align=absMiddle><BR><BR>
+                                <HR>
+                                <BR><A 
+                                href="http://www.codeproject.com/script/profile/whos_who.asp?id=14112#Blog">My 
+                                programming blahblahblah blog</A>. If you ever 
+                                find anything useful here, please let me know to 
+                                remove it.<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.thecodeproject.com/script/comments/user_reply.asp?main=/csharp/genericnumerics.asp&amp;df=100&amp;forumid=117139&amp;select=945792">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.thecodeproject.com/script/comments/user_mail.asp?main=/csharp/genericnumerics.asp&amp;df=100&amp;forumid=117139&amp;select=945792">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.thecodeproject.com/csharp/genericnumerics.asp?df=100&amp;tid=945792&amp;forumid=117139&amp;select=945792#xx945792xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.thecodeproject.com/csharp/genericnumerics.asp?msg=945792#xx945792xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.thecodeproject.com/script/comments/owner_modify_pw.asp?main=/csharp/genericnumerics.asp&amp;df=100&amp;forumid=117139&amp;select=945792"><I>Modify</I></A>|<A 
+                                href="http://www.thecodeproject.com/script/comments/owner_delete_pw.asp?main=/csharp/genericnumerics.asp&amp;df=100&amp;forumid=117139&amp;select=945792"><I>Delete</I></A>]<BR></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 
+                  src="Using generics for calculations_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR id=946622_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx946622xx></A><IMG height=1 
+                        src="Using generics for calculations_files/ind.gif" 
+                        width=18><IMG 
+                        src="Using generics for calculations_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.thecodeproject.com/csharp/genericnumerics.asp?df=100&amp;forumid=117139&amp;select=946622#xx946622xx" 
+                        name=946622>Re: Wow!</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.thecodeproject.com/script/profile/whos_who.asp?id=422643"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="Using generics for calculations_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle>Rüdiger 
+                        Klaehn&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>5:07 13 Oct 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=946622_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 
+                        src="Using generics for calculations_files/ind.gif" 
+                        width=18><IMG 
+                        src="Using generics for calculations_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>I used 
+                                to think that the .NET generic constraints are 
+                                too limited. But since you can work around the 
+                                limitations by using a second type parameter, it 
+                                is not that bad. <BR><BR>I would rather have a 
+                                too limited constraint syntax than the mess that 
+                                results if you have implicit constraints like in 
+                                C++. Every time I get intellisense on type 
+                                paramters I know that constraints were a good 
+                                idea.<BR><BR>C# should be simple enough for the 
+                                novice programmer, yet expressive enough for the 
+                                master hacker. Overall it does a very good job. 
+                                Java is not nearly expressive enough for even 
+                                moderately advanced programmers, while C++ has 
+                                way too many opportunities for the novice 
+                                programmer to shoot himself in the foot. 
+                                <BR><BR>By the way: if you are getting bored 
+                                with C#'s features, you can always <A 
+                                href="http://www.lambda-computing.com/projects/autocaster">extend 
+                                them</A> with Reflection.Emit.<BR><BR>p.s. I 
+                                really liked your "Forofobia" blog entry. I 
+                                almost ruined my keyboard by spitting coffee 
+                                over it. <BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.thecodeproject.com/script/comments/user_reply.asp?main=/csharp/genericnumerics.asp&amp;df=100&amp;forumid=117139&amp;select=946622">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.thecodeproject.com/script/comments/user_mail.asp?main=/csharp/genericnumerics.asp&amp;df=100&amp;forumid=117139&amp;select=946622">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.thecodeproject.com/csharp/genericnumerics.asp?df=100&amp;tid=945792&amp;forumid=117139&amp;select=946622#xx946622xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.thecodeproject.com/csharp/genericnumerics.asp?msg=946622#xx946622xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.thecodeproject.com/script/comments/owner_modify_pw.asp?main=/csharp/genericnumerics.asp&amp;df=100&amp;forumid=117139&amp;select=946622"><I>Modify</I></A>|<A 
+                                href="http://www.thecodeproject.com/script/comments/owner_delete_pw.asp?main=/csharp/genericnumerics.asp&amp;df=100&amp;forumid=117139&amp;select=946622"><I>Delete</I></A>]<BR></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=6 
+                  src="Using generics for calculations_files/t.gif" width=1 
+                  border=0></TD></TR>
+              <TR id=946753_h0 bgColor=#fef9e7>
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=white><A name=xx946753xx></A><IMG height=1 
+                        src="Using generics for calculations_files/ind.gif" 
+                        width=36><IMG 
+                        src="Using generics for calculations_files/news_unselected.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD class=messagetitle width="100%"><A 
+                        class=messagetitle id=DynMessLink 
+                        href="http://www.thecodeproject.com/csharp/genericnumerics.asp?df=100&amp;forumid=117139&amp;select=946753#xx946753xx" 
+                        name=946753>Re: Wow!</A></TD>
+                      <TD vAlign=bottom><A 
+                        href="http://www.thecodeproject.com/script/profile/whos_who.asp?id=14112"><IMG 
+                        title="Click for User Profile" height=15 
+                        src="Using generics for calculations_files/userinfo.gif" 
+                        width=14 border=0></A>&nbsp;</TD>
+                      <TD noWrap width=140><FONT class=messagetitle>Nemanja 
+                        Trifunovic&nbsp;</FONT></TD>
+                      <TD style="WIDTH: 9em" noWrap align=right 
+                        width=120><FONT class=messagetitle>8:27 13 Oct 
+                        '04&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR id=946753_h1 style="DISPLAY: none">
+                <TD width="100%">
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=1 
+                        src="Using generics for calculations_files/ind.gif" 
+                        width=36><IMG 
+                        src="Using generics for calculations_files/news_none.gif" 
+                        align=absMiddle>&nbsp;</TD>
+                      <TD width="100%" bgColor=#d5eaff>
+                        <TABLE cellSpacing=5 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD colSpan=2><FONT class=messagecontent>Hehehe, 
+                                I don't really want a templates vs generics 
+                                discussion here. Some MS people argue that such 
+                                comparison does not make sense, because <A 
+                                href="http://weblogs.asp.net/branbray/archive/2003/11/19/51023.aspx">they 
+                                are two different mechanisms.</A>[<A 
+                                title="New Window" 
+                                href="http://weblogs.asp.net/branbray/archive/2003/11/19/51023.aspx" 
+                                target=_blank>^</A>] and it is best to have 
+                                both. Frankly, I think this theory is not 100% 
+                                convincing: both templates and generics were 
+                                invented to serve the same basic task: type-safe 
+                                collections. The fact that templates can be used 
+                                for other programming tasks came out almost 
+                                accidentally.<BR><BR><BR><SMALL><B>Rüdiger 
+                                Klaehn wrote:</B></SMALL><BR><I>I used to think 
+                                that the .NET generic constraints are too 
+                                limited.</I><BR>When I first saw constraints, my 
+                                first thought was: "Why generics at all then? 
+                                You can have the same thing with interfaces.". I 
+                                even asked this question at CP Lounge, and was 
+                                lucky that Bill Kempf answered that for me. The 
+                                funny thing is, there are still <A 
+                                href="http://www.mindview.net/WebLog/log-0050">many 
+                                people who don't get it even if they write books 
+                                on programming</A>[<A title="New Window" 
+                                href="http://www.mindview.net/WebLog/log-0050" 
+                                target=_blank>^</A>] <IMG 
+                                src="Using generics for calculations_files/smiley_wink.gif" 
+                                align=absMiddle><BR><BR>Anyway, constraints in 
+                                general are a good thing (with C++ templates, 
+                                there is <A 
+                                href="http://www.boost.org/libs/concept_check/concept_check.htm">Boost 
+                                Check Concept Library</A>[<A title="New Window" 
+                                href="http://www.boost.org/libs/concept_check/concept_check.htm" 
+                                target=_blank>^</A>] for that purpose), only I 
+                                am not quite sure it is a good thing to have 
+                                <I>mandatory</I> constraints. I'd like to decide 
+                                for myself when to use constraints and when not 
+                                <IMG 
+                                src="Using generics for calculations_files/smiley_smile.gif" 
+                                align=absMiddle><BR><BR><SMALL><B>Rüdiger Klaehn 
+                                wrote:</B></SMALL><BR><I>By the way: if you are 
+                                getting bored with C#'s features, you can always 
+                                extend them with 
+                                Reflection.Emit.</I><BR><BR>Yep, I know that. In 
+                                fact, I have been trying to find a good way to 
+                                introduce a good deterministic cleanup mechanism 
+                                in C# (something like in C++/CLI), but so far 
+                                without any luck <IMG 
+                                src="Using generics for calculations_files/smiley_cry.gif" 
+                                align=absMiddle> <BR><BR><BR><SMALL><B>Rüdiger 
+                                Klaehn wrote:</B></SMALL><BR><I>p.s. I really 
+                                liked your "Forofobia" blog 
+                                entry.</I><BR><BR>Thanks. I love programming 
+                                rants (when appropriate, of course). <BR><BR>
+                                <HR>
+                                <BR><A 
+                                href="http://www.codeproject.com/script/profile/whos_who.asp?id=14112#Blog">My 
+                                programming blahblahblah blog</A>. If you ever 
+                                find anything useful here, please let me know to 
+                                remove it.<BR>&nbsp;</FONT></TD></TR>
+                                <TR vAlign=top>
+                                <TD class=messagetitle>[<A 
+                                title="Reply to this current thread" 
+                                href="http://www.thecodeproject.com/script/comments/user_reply.asp?main=/csharp/genericnumerics.asp&amp;df=100&amp;forumid=117139&amp;select=946753">Reply</A>][<A 
+                                title="Email a reply to the author of this message" 
+                                href="http://www.thecodeproject.com/script/comments/user_mail.asp?main=/csharp/genericnumerics.asp&amp;df=100&amp;forumid=117139&amp;select=946753">Email</A>][<A 
+                                title="View only messages within this thread" 
+                                href="http://www.thecodeproject.com/csharp/genericnumerics.asp?df=100&amp;tid=945792&amp;forumid=117139&amp;select=946753#xx946753xx">View 
+                                Thread</A>][<A 
+                                title="Get the URL for this message" 
+                                href="http://www.thecodeproject.com/csharp/genericnumerics.asp?msg=946753#xx946753xx">Get 
+                                Link</A>]</TD>
+                                <TD class=messagetitle align=right>[<A 
+                                href="http://www.thecodeproject.com/script/comments/owner_modify_pw.asp?main=/csharp/genericnumerics.asp&amp;df=100&amp;forumid=117139&amp;select=946753"><I>Modify</I></A>|<A 
+                                href="http://www.thecodeproject.com/script/comments/owner_delete_pw.asp?main=/csharp/genericnumerics.asp&amp;df=100&amp;forumid=117139&amp;select=946753"><I>Delete</I></A>]<BR></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG height=5 
+                  src="Using generics for calculations_files/t.gif" width=1 
+                  border=0></TD></TR></TBODY></TABLE></TD></TR>
+        <TR bgColor=#fbedbb>
+          <TD>
+            <TABLE cellPadding=2 width="100%">
+              <TBODY>
+              <TR>
+                <TD class=messagetitle>Last Visit: 9:22 Sunday 17th October, 
+                  2004</TD>
+                <TD noWrap align=right><FONT class=messagetitle><SPAN 
+                  class=HoverLink>First</SPAN> <SPAN class=HoverLink>Prev</SPAN> 
+                  <SPAN class=HoverLink>Next</SPAN> <SPAN 
+                  class=HoverLink>Last</SPAN> 
+        </FONT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><BR>
+<TABLE cellSpacing=5 width="100%">
+  <TBODY>
+  <TR vAlign=top>
+    <TD><FONT style="FONT-SIZE: 7pt" size=1><A 
+      href="http://www.thecodeproject.com/?cat=1">All Topics</A>, <A 
+      href="http://www.thecodeproject.com/?cat=3">C#</A>, <A 
+      href="http://www.thecodeproject.com/?cat=5">.NET</A> &gt;&gt; <A 
+      href="http://www.thecodeproject.com/csharp/">C# Programming</A> &gt;&gt; 
+      <A href="http://www.thecodeproject.com/csharp/#Generics">Generics</A> 
+      <BR>Updated: 11 Oct 2004 16:20 </FONT></TD>
+    <TD align=right><FONT style="FONT-SIZE: 7pt" size=1>Article content 
+      copyright Rüdiger Klaehn, 2004<BR>everything else Copyright © <A 
+      href="mailto:webmaster@codeproject.com">CodeProject</A>, 1999-2004</A>. 
+      <BR><A href="http://www.thecodeproject.com/info/MediaKit">Advertise on The 
+      Code Project</A> | <A 
+      href="http://www.thecodeproject.com/info/privacy.asp">Privacy</A> 
+    </FONT></TD></TR></TBODY></TABLE><BR>
+<CENTER>
+<TABLE cellSpacing=0 cellPadding=0 width="95%" border=0>
+  <TBODY>
+  <TR>
+    <TD bgColor=#ff9900 height=1><IMG height=1 
+      src="Using generics for calculations_files/space.gif"></TD></TR>
+  <TR>
+    <TD align=middle><FONT size=1><A 
+      href="http://www.thecodeproject.com/redir.asp?id=235">MSDN Communities</A> 
+      | <A href="http://aspalliance.com/">ASPAlliance</A> • <A 
+      href="http://www.developerfusion.com/">Developer Fusion</A> • <A 
+      href="http://www.devguru.com/">DevGuru</A> • <A 
+      href="http://www.programmersheaven.com/">Programmers Heaven</A> • <A 
+      href="http://www.planet-source-code.com/">Planet Source Code</A> • <A 
+      href="http://www.resourceindex.com/">Resource Index</A> • <A 
+      href="http://www.tek-tips.com/">Tek-Tips Forums</A> • <A 
+      href="http://www.topxml.com/">What is XML?</A> • <A 
+      href="http://www.visualbuilder.com/">VisualBuilder</A> • <A 
+      href="http://www.zvon.org/">ZVON</A> • <A 
+      href="http://www.thecodeproject.com/redir.asp?id=169">Search Us!</A> 
+      </FONT></TD></TR></TBODY></TABLE></CENTER></BODY></HTML>

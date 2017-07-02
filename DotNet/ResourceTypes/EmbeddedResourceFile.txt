@@ -1,0 +1,1 @@
+﻿EmbeddedResourceFile.txt: it is compiled as 'EmbeddedResource'.

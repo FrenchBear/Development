@@ -1,0 +1,11 @@
+Public Function VarPtr(ByVal o As Object) As Integer
+
+Dim GC As System.Runtime.InteropServices.GCHandle = System.Runtime.InteropServices.GCHandle.Alloc(o, System.Runtime.InteropServices.GCHandleType.Pinned)
+
+Dim ret As Integer = GC.AddrOfPinnedObject.ToInt32
+
+GC.Free()
+
+Return ret
+
+End Function

@@ -1,0 +1,76 @@
+Associate a ContextMenu with the TabItem headers of a Tabcontrol. 
+
+ <Flags()> _
+    Private Enum TCHITTESTFLAGS
+        TCHT_NOWHERE = 1
+        TCHT_ONITEMICON = 2
+        TCHT_ONITEMLABEL = 4
+        TCHT_ONITEM = TCHT_ONITEMICON Or TCHT_ONITEMLABEL
+    End Enum
+
+    Private Const TCM_HITTEST As Int32 = &H130D
+
+    <System.Runtime.InteropServices.StructLayout(System.Runtime.InteropServices.LayoutKind.Sequential)> _
+    Private Structure TCHITTESTINFO
+        Public pt As Point
+        Public flags As TCHITTESTFLAGS
+        Public Sub New(ByVal x As Int32, ByVal y As Int32)
+            pt = New Point(x, y)
+        End Sub
+    End Structure
+
+    <System.Runtime.InteropServices.DllImport("user32.dll")> _
+    Private Shared Function SendMessage(ByVal hwnd As IntPtr, ByVal msg As Int32, ByVal wParam As IntPtr, ByRef lParam As TCHITTESTINFO) As Int32
+    End Function
+
+    Private Sub TabControl1_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles TabControl1.MouseDown
+        If e.Button = MouseButtons.Right Then
+            Dim HTI As New TCHITTESTINFO(e.X, e.Y)
+            Dim hotTab As TabPage = TabControl1.TabPages(SendMessage(TabControl1.Handle, TCM_HITTEST, IntPtr.Zero, HTI))
+            TabControl1.ContextMenu = hotTab.ContextMenu
+        End If
+    End Sub
+
+    Private Sub TabControl1_MouseUp(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles TabControl1.MouseUp
+        TabControl1.ContextMenu = Nothing
+    End Sub
+    [Flags()]
+    private enum TCHITTESTFLAGS
+    {
+        TCHT_NOWHERE = 1,
+        TCHT_ONITEMICON = 2,
+        TCHT_ONITEMLABEL = 4,
+        TCHT_ONITEM = TCHT_ONITEMICON | TCHT_ONITEMLABEL
+    }
+
+    private const int TCM_HITTEST = 0x130D;
+        
+    [System.Runtime.InteropServices.StructLayout(System.Runtime.InteropServices.LayoutKind.Sequential)]
+    private struct TCHITTESTINFO
+    {
+        public Point pt;
+        public TCHITTESTFLAGS flags;
+        public TCHITTESTINFO(int x, int y)
+        {
+            pt = new Point(x, y);
+            flags = TCHITTESTFLAGS.TCHT_ONITEM;
+        }
+    }
+        
+    [System.Runtime.InteropServices.DllImport("user32.dll")]
+    private static extern int SendMessage(IntPtr hwnd, int msg, IntPtr wParam, ref TCHITTESTINFO lParam);
+
+    private void tabControl1_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
+    {
+        if (e.Button == MouseButtons.Right)
+        {
+            TCHITTESTINFO HTI = new TCHITTESTINFO(e.X, e.Y);
+            TabPage hotTab = tabControl1.TabPages[SendMessage(tabControl1.Handle, TCM_HITTEST, IntPtr.Zero,ref HTI)];
+            tabControl1.ContextMenu = hotTab.ContextMenu;
+        }
+    }
+
+    private void tabControl1_MouseUp(object sender, System.Windows.Forms.MouseEventArgs e)
+    {
+        tabControl1.ContextMenu = null;
+    }

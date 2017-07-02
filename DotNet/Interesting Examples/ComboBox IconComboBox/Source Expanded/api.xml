@@ -1,0 +1,1069 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>acclIconComboBox</name>
+    </assembly>
+    <members>
+        <member name="T:vbAccelerator.Components.Controls.FlatControl">
+            <summary>
+            A class which can be attached to a combo box to make
+            it render in a flat-style, like the combo boxes in
+            Office and VS.NET
+            </summary>
+        </member>
+        <member name="F:vbAccelerator.Components.Controls.FlatControl.flatComboTextBox">
+            <summary>
+            An object which subclasses the text box within the 
+            combo box.
+            </summary>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.FlatControl.Attach(System.Windows.Forms.Control)">
+            <summary>
+            Attaches this class to a Combo Box.
+            </summary>
+            <param name="comboBox">The Combo Box to attach to and make
+            flat.</param>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.FlatControl.WndProc(System.Windows.Forms.Message@)">
+            <summary>
+            Calls the base WndProc for the control and
+            responds to events allowing the control to be
+            drawn with a flat style.
+            </summary>
+            <param name="m">WndProc Message.</param>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.FlatControl.TextBoxNotify(System.Int32)">
+            <summary>
+            Called by the FlatComboTextBox class when focus or mouse
+            move events occur in the internal text box of the combo
+            box.
+            </summary>
+            <param name="msg">Windows message code.</param>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.FlatControl.ParentNotify">
+            <summary>
+            Called by the FlatComboParent class when the combo box 
+            is closed up.
+            </summary>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.FlatControl.#ctor">
+            <summary>
+            Constructs a new instance of this class
+            </summary>
+        </member>
+        <member name="E:vbAccelerator.Components.Controls.FlatControl.CloseUp">
+            <summary>
+            Raised when the combo portion of the control closes up.
+            </summary>
+        </member>
+        <member name="P:vbAccelerator.Components.Controls.FlatControl.Style">
+            <summary>
+            Gets/sets the style used to render the borders of the flat control.
+            </summary>
+        </member>
+        <member name="P:vbAccelerator.Components.Controls.FlatControl.Active">
+            <summary>
+            Gets/sets whether this class is Active in converting the control's
+            border.
+            </summary>
+        </member>
+        <member name="T:vbAccelerator.Components.Controls.FlatControl.FlatControlStyle">
+            <summary>
+            Specifies the Flat Styles that the control can be drawn
+            with.
+            </summary>
+        </member>
+        <member name="F:vbAccelerator.Components.Controls.FlatControl.FlatControlStyle.FlatStyleOffice9">
+            <summary>
+            Draw in the Office 9 style.
+            </summary>
+        </member>
+        <member name="F:vbAccelerator.Components.Controls.FlatControl.FlatControlStyle.FlatStyleOffice10">
+            <summary>
+            Draw in the Office XP style.
+            </summary>
+        </member>
+        <member name="F:vbAccelerator.Components.Controls.FlatControl.FlatControlStyle.FlatStyleOffice11">
+            <summary>
+            Draw in the Office 2003 style (not implemented yet).
+            </summary>
+        </member>
+        <member name="T:vbAccelerator.Components.Controls.FlatControl.FlatComboParent">
+            <summary>
+            Internal class to perform subclassing on a
+            Combo Box's parent.  This is used to detect
+            drop-down events.
+            </summary>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.FlatControl.FlatComboParent.Attach(System.Windows.Forms.Control,vbAccelerator.Components.Controls.FlatControl)">
+            <summary>
+            Attaches this class to a Combo Box.
+            </summary>
+            <param name="comboBox">The Combo Box to attach to and make
+            flat.</param>
+            <param name="owner">The <c>FlatControl</c> class which will own 
+            this instance</param>
+        </member>
+        <member name="T:vbAccelerator.Components.Controls.FlatControl.FlatComboTextBox">
+            <summary>
+            Internal class to perform subclassing on the text
+            box within the Combo Box.
+            </summary>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.FlatControl.FlatComboTextBox.Attach(System.Windows.Forms.Control,vbAccelerator.Components.Controls.FlatControl)">
+            <summary>
+            Attaches this class to a Combo Box.
+            </summary>
+            <param name="comboBox">The Combo Box to attach to and make
+            flat.</param>
+            <param name="owner">The owning <c>FlatControl</c> class for
+            this class</param>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.FlatControl.FlatComboTextBox.#ctor">
+            <summary>
+            Constructs a new instance of this class
+            </summary>
+        </member>
+        <member name="T:vbAccelerator.Components.Controls.IconComboBox">
+            <summary>
+            A combo box capable of displaying icons and multiple columns
+            in the drop-down portion.	
+            </summary>
+        </member>
+        <member name="T:vbAccelerator.Components.Controls.IIconComboBox">
+            <summary>
+            Interface specifying the contract between an
+            item and the owning control.
+            </summary>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.IIconComboBox.OnItemChanged(vbAccelerator.Components.Controls.IIconComboItem)">
+            <summary>
+            Called when an item's appearance changes.
+            </summary>
+            <param name="item">Item whose appearance has changed</param>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.IIconComboBox.OnItemHeightChanged(vbAccelerator.Components.Controls.IIconComboItem)">
+            <summary>
+            Called when an item's appearance changes.
+            </summary>
+            <param name="item">Item whose appearance has changed</param>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.IIconComboBox.ColumnWidth(System.Int32)">
+            <summary>
+            Returns the width of an item in the specified column
+            </summary>
+            <param name="index">The index of the column to get the width for.</param>
+            <returns>The width in pixels</returns>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.IIconComboBox.ColumnIndex(System.Int32)">
+            <summary>
+            Returns the column index for the column at the specified order in 
+            the display.
+            </summary>
+            <param name="order">Order of column in the display</param>
+            <returns>Index of the column.</returns>
+        </member>
+        <member name="P:vbAccelerator.Components.Controls.IIconComboBox.FullRowSelect">
+            <summary>
+            Gets whether the full row is selected or just the text
+            (single column combo boxes only)
+            </summary>
+        </member>
+        <member name="P:vbAccelerator.Components.Controls.IIconComboBox.GridLines">
+            <summary>
+            Gets whether grid lines should be drawn.  Particularly
+            useful on multi-column text boxes.
+            </summary>
+        </member>
+        <member name="P:vbAccelerator.Components.Controls.IIconComboBox.HighlightStyle">
+            <summary>
+            Gets the selection highlighting style
+            </summary>
+        </member>
+        <member name="P:vbAccelerator.Components.Controls.IIconComboBox.IndentationSize">
+            <summary>
+            Returns the size of the indentation
+            </summary>
+        </member>
+        <member name="P:vbAccelerator.Components.Controls.IIconComboBox.ColumnCount">
+            <summary>
+            Gets the number of columns to display.
+            </summary>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.IconComboBox.ColumnWidth(System.Int32)">
+            <summary>
+            Returns the width of an item in the specified column
+            </summary>
+            <param name="index">The index of the column to get the width for.</param>
+            <returns>The width in pixels</returns>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.IconComboBox.ColumnIndex(System.Int32)">
+            <summary>
+            Returns the index of the column with the specified order
+            </summary>
+            <param name="order">Order of column to display</param>
+            <returns>Index of column or -1 if not a valid column</returns>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.IconComboBox.OnItemChanged(vbAccelerator.Components.Controls.IIconComboItem)">
+            <summary>
+            Responds to a non-height property change event of an item.
+            Forces the ComboBox to redraw the item if necessary
+            </summary>
+            <param name="item">Item which has changed</param>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.IconComboBox.OnItemHeightChanged(vbAccelerator.Components.Controls.IIconComboItem)">
+            <summary>
+            Responds to a height changed event of an item.
+            In a ComboBox, the only way to change the height of an item
+            once it has been Measured is to remove it and then add it
+            again.
+            </summary>
+            <param name="item">Item whose height has changed</param>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.IconComboBox.OnMeasureItem(System.Windows.Forms.MeasureItemEventArgs)">
+            <summary>
+            Measures the item and raises the MeasureItem event
+            </summary>
+            <param name="e">MeasureItemEventArgs for the item</param>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.IconComboBox.OnDrawItem(System.Windows.Forms.DrawItemEventArgs)">
+            <summary>
+            Draws the SListBox item and raises the DrawItem 
+            event.
+            </summary>
+            <param name="e">DrawItemEventArgs for the item</param>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.IconComboBox.OnHandleCreated(System.EventArgs)">
+            <summary>
+            Ensures that the subclasses needed to support the control
+            are installed.
+            </summary>
+            <param name="e">Not used</param>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.IconComboBox.OnKeyPress(System.Windows.Forms.KeyPressEventArgs)">
+            <summary>
+            Handles auto-completion and raises the KeyPress event.
+            </summary>
+            <param name="e">Information about the key press associated with the event</param>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.IconComboBox.OnSelectedIndexChanged(System.EventArgs)">
+            <summary>
+            Handles setting the icon in the text box portion of the control
+            and raises the SelectedIndexChanged event.
+            </summary>
+            <param name="e">Not used</param>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.IconComboBox.OnCloseUp(System.EventArgs)">
+            <summary>
+            Raises the <see cref="F:vbAccelerator.Components.Controls.IconComboBox.CloseUp"/> event for the control.
+            </summary>
+            <param name="e">Not used.</param>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.IconComboBox.#ctor">
+            <summary>
+            Constructs a new instance of the control
+            </summary>
+        </member>
+        <member name="E:vbAccelerator.Components.Controls.IconComboBox.CloseUp">
+            <summary>
+            Raised when the combo box portion of the control is closed up.
+            </summary>
+        </member>
+        <member name="P:vbAccelerator.Components.Controls.IconComboBox.AutoComplete">
+            <summary>
+            Gets/sets whether this item is auto-complete
+            </summary>
+        </member>
+        <member name="P:vbAccelerator.Components.Controls.IconComboBox.HighlightStyle">
+            <summary>
+            Gets/sets the selection highlighting style
+            </summary>
+        </member>
+        <member name="P:vbAccelerator.Components.Controls.IconComboBox.BorderStyle">
+            <summary>
+            Gets/sets the border style for the control.
+            </summary>
+        </member>
+        <member name="P:vbAccelerator.Components.Controls.IconComboBox.FullRowSelect">
+            <summary>
+            Gets/sets whether a full row is shown selected, or
+            just the first column's icon and text.
+            </summary>
+        </member>
+        <member name="P:vbAccelerator.Components.Controls.IconComboBox.GridLines">
+            <summary>
+            Gets/sets whether grid lines are drawn or not.
+            </summary>
+        </member>
+        <member name="P:vbAccelerator.Components.Controls.IconComboBox.TextBoxIcon">
+            <summary>
+            Gets/sets whether the icon is shown when the 
+            ComboBox has DropDown style
+            </summary>
+        </member>
+        <member name="P:vbAccelerator.Components.Controls.IconComboBox.ImageList">
+            <summary>
+            Gets/sets the ImageList associated with this 
+            control.
+            </summary>
+        </member>
+        <member name="P:vbAccelerator.Components.Controls.IconComboBox.DropDownStyle">
+            <summary>
+            Gets/sets the DropDownStyle of the Combo Box control.
+            </summary>
+        </member>
+        <member name="P:vbAccelerator.Components.Controls.IconComboBox.SelectedItem">
+            <summary>
+            Returns the selected <see cref="T:vbAccelerator.Components.Controls.IconComboItem"/> in the control, if any, otherwise
+            <c>null</c>.
+            </summary>
+        </member>
+        <member name="P:vbAccelerator.Components.Controls.IconComboBox.Columns">
+            <summary>
+            Gets the collection of columns in the control.
+            </summary>
+        </member>
+        <member name="P:vbAccelerator.Components.Controls.IconComboBox.ColumnCount">
+            <summary>
+            Returns the number of columns associated with the control.
+            </summary>
+        </member>
+        <member name="P:vbAccelerator.Components.Controls.IconComboBox.IndentationSize">
+            <summary>
+            Gets/sets the size of each unit of indentation for the items within the 
+            Combo Box.
+            </summary>
+        </member>
+        <member name="T:vbAccelerator.Components.Controls.IconComboBox.ObjectCollection">
+            <summary>
+            Strongly-typed collection of objects within the IconComboBox.
+            TODO: Have not found how to attach this to the combo box itself 
+            yet.
+            </summary>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.IconComboBox.ObjectCollection.Add(vbAccelerator.Components.Controls.IIconComboItem)">
+            <summary>
+            Adds an item to the list of items in the IconComboBox
+            </summary>
+            <param name="item">Item to add</param>
+            <returns>Zero-based index of the item in the collection</returns>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.IconComboBox.ObjectCollection.AddRange(vbAccelerator.Components.Controls.IIconComboItem[])">
+            <summary>
+            Adds an array of items to the list of items in the IconComboBox
+            </summary>
+            <param name="items">An array of objects to add to the list</param>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.IconComboBox.ObjectCollection.Contains(vbAccelerator.Components.Controls.IIconComboItem)">
+            <summary>
+            Determines whether the specified item is located within the collection
+            </summary>
+            <param name="value">An IIconComboItem containing the item to locate in the collection</param>
+            <returns>True if the item is located within the collection; otherwise false.</returns>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.IconComboBox.ObjectCollection.CopyTo(vbAccelerator.Components.Controls.IIconComboItem[],System.Int32)">
+            <summary>
+            Copies the entire collection into an existing array of objects at a specified location within the array
+            </summary>
+            <param name="dest">The object array in which the items from the collection are copied to</param>
+            <param name="arrayIndex">The location within the destination array to copy the items from the collection to</param>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.IconComboBox.ObjectCollection.IndexOf(vbAccelerator.Components.Controls.IIconComboItem)">
+            <summary>
+            Returns the index within the collection of the specified item.
+            </summary>
+            <param name="value">The IIconComboItem to locate in the collection.</param>
+            <returns>The zero-based index where the item is located within the collection, otherwise -1</returns>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.IconComboBox.ObjectCollection.Insert(System.Int32,vbAccelerator.Components.Controls.IIconComboItem)">
+            <summary>
+            Inserts an item into the list box at the specified index.
+            </summary>
+            <param name="index">The zero-based index location where the item is inserted.</param>
+            <param name="item">The IIconComboItem to insert.</param>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.IconComboBox.ObjectCollection.#ctor(vbAccelerator.Components.Controls.IconComboBox)">
+            <summary>
+            Initializes a new instance of the ObjectCollection.
+            </summary>
+            <param name="owner">The IconComboBox that owns the collection</param>
+        </member>
+        <member name="P:vbAccelerator.Components.Controls.IconComboBox.ObjectCollection.Item(System.Int32)">
+            <summary>
+            Returns the item at the specified index within the collection
+            </summary>			
+        </member>
+        <member name="T:vbAccelerator.Components.Controls.IconComboBox.DrawingStyle">
+            <summary>
+            Selection highlighting and border style options for the IconComboBox
+            </summary>
+        </member>
+        <member name="F:vbAccelerator.Components.Controls.IconComboBox.DrawingStyle.Standard">
+            <summary>
+            Normal ComboBox style selection
+            </summary>
+        </member>
+        <member name="F:vbAccelerator.Components.Controls.IconComboBox.DrawingStyle.Office10">
+            <summary>
+            Like the VS.NET/Office XP menus
+            </summary>
+        </member>
+        <member name="T:vbAccelerator.Components.Controls.IconComboBoxColumnCollection">
+            <summary>
+            A class which manages the collection of columns associated with an
+            IconComboBox control.
+            </summary>
+        </member>
+        <member name="F:vbAccelerator.Components.Controls.IconComboBoxColumnCollection.owner">
+            <summary>
+            The owning control
+            </summary>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.IconComboBoxColumnCollection.Add(vbAccelerator.Components.Controls.IconComboBoxColumn)">
+            <summary>
+            Adds a column to the column collection.
+            </summary>
+            <param name="column">Column to add</param>
+            <returns>Index of added column</returns>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.IconComboBoxColumnCollection.Clear">
+            <summary>
+            Removes all columns from the collection.
+            </summary>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.IconComboBoxColumnCollection.Contains(vbAccelerator.Components.Controls.IconComboBoxColumn)">
+            <summary>
+            Returns <c>true</c> if the specified column is found in the column
+            collection, or <c>false</c> otherwise.
+            </summary>
+            <param name="column">Column to find</param>
+            <returns><c>true</c> if the specified column is found in the column
+            collection, or <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.IconComboBoxColumnCollection.IndexOf(vbAccelerator.Components.Controls.IconComboBoxColumn)">
+            <summary>
+            Gets the 0-based index of the specified column object.
+            </summary>
+            <param name="column">Column object to find.</param>
+            <returns>0-based index if found, -1 otherwise.</returns>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.IconComboBoxColumnCollection.Insert(System.Int32,vbAccelerator.Components.Controls.IconComboBoxColumn)">
+            <summary>
+            Inserts a column before the specified index.
+            </summary>
+            <param name="index">Index to insert column before</param>
+            <param name="column">Column to insert</param>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.IconComboBoxColumnCollection.RemoveAt(System.Int32)">
+            <summary>
+            Removes the column at the specified index.
+            </summary>
+            <param name="index">Index to remove at</param>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.IconComboBoxColumnCollection.#ctor(vbAccelerator.Components.Controls.IIconComboBox)">
+            <summary>
+            Constructs a new instance of the IconComboBoxColumnCollection
+            object. Called automatically when an instance of an IconComboBox
+            is created.
+            </summary>
+            <param name="owner">The IconComboBox which owns the columns</param>
+        </member>
+        <member name="P:vbAccelerator.Components.Controls.IconComboBoxColumnCollection.Item(System.Int32)">
+            <summary>
+            Gets the Column at the specified index.
+            </summary>
+        </member>
+        <member name="T:vbAccelerator.Components.Controls.IconComboBoxColumn">
+            <summary>
+            Represents a column within an IconComboBox.
+            </summary>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.IconComboBoxColumn.#ctor">
+            <summary>
+            Constructs a new instance of an IconComboBox column
+            with default width and order.
+            </summary>
+        </member>
+        <member name="P:vbAccelerator.Components.Controls.IconComboBoxColumn.Owner">
+            <summary>
+            Gets/sets the IconComboBox which owns this column.
+            </summary>
+        </member>
+        <member name="P:vbAccelerator.Components.Controls.IconComboBoxColumn.ColumnWidth">
+            <summary>
+            Gets/sets the width of this column.  Use -1 for
+            the default width.
+            </summary>
+        </member>
+        <member name="P:vbAccelerator.Components.Controls.IconComboBoxColumn.ColumnOrder">
+            <summary>
+            Gets/sets the order that this column appears in.
+            Orders are 0-based.
+            </summary>
+        </member>
+        <member name="T:vbAccelerator.Components.Controls.IIconComboItem">
+            <summary>
+            Interface specifying the contract between the
+            owning control and an item
+            </summary>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.IIconComboItem.ToString">
+            <summary>
+            Items must support ToString().
+            </summary>
+            <returns>String representation of the item.</returns>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.IIconComboItem.DrawItem(System.Drawing.Graphics,System.Windows.Forms.ImageList,System.Drawing.Rectangle,System.Drawing.Font,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Draws this item.
+            </summary>
+            <param name="graphics">Graphics object to draw to</param>
+            <param name="imageList">Source of images</param>
+            <param name="bounds">Bounding rectangle for the item</param>
+            <param name="defaultFont">Font to use if the item does not have a font specified</param>
+            <param name="selected">Whether the item should be rendered selected or not</param>
+            <param name="rightToLeft">Whether item should be rendered right-to-left</param>
+            <param name="inList">Whether the item to be drawn is in the list portion or the combo portion</param>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.IIconComboItem.MeasureItem(System.Drawing.Graphics,System.Windows.Forms.ImageList,System.Drawing.Font,System.Int32)">
+            <summary>
+            Measures this item.
+            </summary>
+            <param name="graphics">Graphics object to draw to</param>
+            <param name="imageList">Source of images</param>
+            <param name="defaultFont">Font to use if the item does not have a font specified</param>
+            <param name="width">Width to use when calculating height of wrappable text</param>
+            <returns>The size of the item</returns>
+        </member>
+        <member name="P:vbAccelerator.Components.Controls.IIconComboItem.Owner">
+            <summary>
+            Gets/sets the control which owns the item.
+            Called automatically when the item is added to
+            the control.
+            </summary>
+        </member>
+        <member name="P:vbAccelerator.Components.Controls.IIconComboItem.Icon">
+            <summary>
+            Gets/sets the icon to use for the item
+            </summary>
+        </member>
+        <member name="T:vbAccelerator.Components.Controls.IconComboItem">
+            <summary>
+            An item to display in the IconComboBox control.  Items have
+            icons and also may have subitems like the ListView control.
+            </summary>
+        </member>
+        <member name="T:vbAccelerator.Components.Controls.IconComboItemBase">
+            <summary>
+            An abstract base class from which the IconComboItem and 
+            the IconComboSubItem classes derive.  Provides common
+            functionality associated with drawing, measurement and
+            the setting of the display properties of the item.
+            </summary>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.IconComboItemBase.CompareTo(System.Object)">
+            <summary>
+            Compares the current instance with another object of the same type.
+            The class attempts to use the CompareTo method of the text object
+            for comparision.  If this is not available, the ToString() method 
+            of this class is used for comparison.
+            </summary>
+            <param name="obj">An object to compare with this instance.</param>
+            <returns>A 32-bit signed integer that indicates the relative order of the comparands.  
+            The return value has these meanings:
+            Less than zero This instance is less than obj.  
+            Zero This instance is equal to obj.  
+            Greater than zero This instance is greater than obj.</returns>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.IconComboItemBase.ToString">
+            <summary>
+            Returns the text of the item.
+            </summary>
+            <returns>The text for the item</returns>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.IconComboItemBase.OnHeightChanged">
+            <summary>
+            Called whenever a sizing property is changed
+            </summary>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.IconComboItemBase.OnItemChanged">
+            <summary>
+            Called whenever a non-sizing property is changed
+            </summary>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.IconComboItemBase.DrawItem(System.Drawing.Graphics,System.Windows.Forms.ImageList,System.Drawing.Rectangle,System.Drawing.Font,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Draws this item.
+            Used internally to draw the ListBox.
+            </summary>
+            <param name="graphics">Graphics object to draw to</param>
+            <param name="imageList">Source of images</param>
+            <param name="bounds">Bounding rectangle for the item</param>
+            <param name="defaultFont">Font to use if the item does not have a font specified</param>
+            <param name="selected">Whether the item should be rendered selected or not</param>
+            <param name="rightToLeft">Whether item should be rendered right-to-left</param>
+            <param name="inList">Whether the item to be drawn is in the list portion or the combo portion</param>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.IconComboItemBase.DefaultDrawItem(vbAccelerator.Components.Controls.IconComboItemBase,System.Drawing.Graphics,System.Windows.Forms.ImageList,System.Drawing.Rectangle,System.Drawing.Font,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Draws an item.
+            Used internally to draw the ListBox.
+            </summary>
+            <param name="iconComboItem">The IconCombo Item to draw</param>
+            <param name="graphics">Graphics object to draw to</param>
+            <param name="imageList">Source of images</param>
+            <param name="bounds">Bounding rectangle for the item</param>
+            <param name="defaultFont">Font to use if the item does not have a font specified</param>
+            <param name="selected">Whether the item should be rendered selected or not</param>
+            <param name="highlightText">If selected, then highlight the text background</param>
+            <param name="rightToLeft">Whether item should be rendered right-to-left</param>
+            <param name="inList">Whether the item to be drawn is in the list portion or the combo portion</param>		
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.IconComboItemBase.MeasureItem(System.Drawing.Graphics,System.Windows.Forms.ImageList,System.Drawing.Font,System.Int32)">
+            <summary>
+            Measures this item.
+            </summary>
+            <param name="graphics">Graphics object to draw to</param>
+            <param name="imageList">Source of images</param>
+            <param name="defaultFont">Font to use if the item does not have a font specified</param>
+            <param name="width">Width of item</param>
+            <returns>The Size of the item</returns>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.IconComboItemBase.DefaultMeasureItem(vbAccelerator.Components.Controls.IconComboItemBase,System.Drawing.Graphics,System.Windows.Forms.ImageList,System.Drawing.Font,System.Int32)">
+            <summary>
+            Measures this item.
+            </summary>
+            <param name="iconComboItem">The IconCombo Item to draw</param>
+            <param name="graphics">Graphics object to draw to</param>
+            <param name="imageList">Source of images</param>
+            <param name="defaultFont">Font to use if the item does not have a font specified</param>
+            <param name="width">Width to use when measuring (allows multi-line items to wrap)</param>
+            <returns>The Size of the item</returns>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.IconComboItemBase.BlendColor(System.Drawing.Color,System.Drawing.Color,System.Int32)">
+            <summary>
+            Blends two colours together using the specified alpha amount.
+            </summary>
+            <param name="source">Source colour.</param>
+            <param name="dest">Destination colour.</param>
+            <param name="alpha">Alpha amount to use when blending.</param>
+            <returns>The alpha blended colour.</returns>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.IconComboItemBase.#ctor">
+            <summary>
+            Construct a new instance of this type
+            </summary>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.IconComboItemBase.Dispose">
+            <summary>
+            Disposes of any resources associated with the object
+            </summary>
+        </member>
+        <member name="P:vbAccelerator.Components.Controls.IconComboItemBase.Owner">
+            <summary>
+            Gets/sets the control which owns the item.
+            Called automatically when the item is added to
+            the control.
+            </summary>
+        </member>
+        <member name="P:vbAccelerator.Components.Controls.IconComboItemBase.Text">
+            <summary>
+            Gets/sets the text to display for this item.
+            Defaults to no text.  The ToString method of the
+            object will be used to render it unless a TextFormat
+            string is set, in which case the String.Format method
+            will be invoked.
+            </summary>
+        </member>
+        <member name="P:vbAccelerator.Components.Controls.IconComboItemBase.TextFormat">
+            <summary>
+            Gets/sets the text format to use when rendering the text, for example {0:X8}
+            </summary>
+        </member>
+        <member name="P:vbAccelerator.Components.Controls.IconComboItemBase.Icon">
+            <summary>
+            Gets/sets the index of the icon within the ImageList
+            to display for this item.  Set to -1 for no icon.
+            Defaults to -1.
+            </summary>
+        </member>
+        <member name="P:vbAccelerator.Components.Controls.IconComboItemBase.StringFormat">
+            <summary>
+            Gets/sets a specific string format to use
+            when drawing this item.  Set to null to 
+            use default text rendering.  Defaults to 0
+            </summary>		
+        </member>
+        <member name="P:vbAccelerator.Components.Controls.IconComboItemBase.Font">
+            <summary>
+            Gets/sets a specific font to use
+            when drawing this item.  When null, the 
+            owner ListBox font is used for drawing.
+            Default is null.
+            </summary>
+        </member>
+        <member name="P:vbAccelerator.Components.Controls.IconComboItemBase.ForeColor">
+            <summary>
+            Gets/sets a customised foreground
+            color for this item.  Default is
+            WindowText.
+            </summary>
+        </member>
+        <member name="P:vbAccelerator.Components.Controls.IconComboItemBase.BackColor">
+            <summary>
+            Gets/sets a customised background
+            color for this item.  Default is
+            WindowBackground.
+            </summary>
+        </member>
+        <member name="P:vbAccelerator.Components.Controls.IconComboItemBase.Tag">
+            <summary>
+            Gets/sets an object associated with the item.
+            </summary>
+        </member>
+        <member name="P:vbAccelerator.Components.Controls.IconComboItemBase.Height">
+            <summary>
+            Gets/sets the height of this item
+            </summary>
+        </member>
+        <member name="P:vbAccelerator.Components.Controls.IconComboItemBase.AutoHeight">
+            <summary>
+            Gets/sets whether the height of this item is automatically calculated
+            from its contents, or using the Height property.
+            </summary>
+        </member>
+        <member name="P:vbAccelerator.Components.Controls.IconComboItemBase.VSNetSelectionColor">
+            <summary>
+            Returns the selection colour used in VS.NET and Office 10 combo boxes.
+            </summary>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.IconComboItem.DrawItem(System.Drawing.Graphics,System.Windows.Forms.ImageList,System.Drawing.Rectangle,System.Drawing.Font,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Draws this item.
+            Used internally to draw the ListBox.
+            </summary>
+            <param name="graphics">Graphics object to draw to</param>
+            <param name="imageList">Source of images</param>
+            <param name="bounds">Bounding rectangle for the item</param>
+            <param name="defaultFont">Font to use if the item does not have a font specified</param>
+            <param name="selected">Whether the item should be rendered selected or not</param>
+            <param name="rightToLeft">Whether item should be rendered right-to-left</param>
+            <param name="inList">Whether the item to be drawn is in the list portion or the combo portion</param>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.IconComboItem.MeasureItem(System.Drawing.Graphics,System.Windows.Forms.ImageList,System.Drawing.Font,System.Int32)">
+            <summary>
+            Measures this item.
+            </summary>
+            <param name="graphics">Graphics object to draw to</param>
+            <param name="imageList">Source of images</param>
+            <param name="defaultFont">Font to use if the item does not have a font specified</param>
+            <param name="width">Width to use when calculating height</param>
+            <returns>The size of the item</returns>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.IconComboItem.#ctor">
+            <summary>
+            Constructs a new instance of this class.
+            </summary>
+        </member>
+        <member name="P:vbAccelerator.Components.Controls.IconComboItem.LineAbove">
+            <summary>
+            Gets/sets whether this item renders with a line above it or not.
+            </summary>
+        </member>
+        <member name="P:vbAccelerator.Components.Controls.IconComboItem.LineBelow">
+            <summary>
+            Gets/sets whether this item renders with a line below it or not.
+            </summary>
+        </member>
+        <member name="P:vbAccelerator.Components.Controls.IconComboItem.Indentation">
+            <summary>
+            Gets/sets the indentation of this item.
+            </summary>
+        </member>
+        <member name="P:vbAccelerator.Components.Controls.IconComboItem.SubItems">
+            <summary>
+            Gets the collection of sub-items associated with this item.
+            </summary>
+        </member>
+        <member name="P:vbAccelerator.Components.Controls.IconComboItem.GroupRow">
+            <summary>
+            Gets/sets whether this item acts as a group row (in which case
+            the item is drawn extending across the entire row and the 
+            sub-items, if any, are ignored) or not.
+            </summary>
+        </member>
+        <member name="T:vbAccelerator.Components.Controls.IconComboSubItemCollection">
+            <summary>
+            A collection of sub-items associated with an IconComboItem object.
+            </summary>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.IconComboSubItemCollection.Add(vbAccelerator.Components.Controls.IconComboSubItem)">
+            <summary>
+            Adds a new sub item to the collection.
+            </summary>
+            <param name="item">Item to add</param>
+            <returns>Index at which item was added</returns>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.IconComboSubItemCollection.Clear">
+            <summary>
+            Clears the sub-items collection.
+            </summary>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.IconComboSubItemCollection.Contains(vbAccelerator.Components.Controls.IconComboSubItem)">
+            <summary>
+            Returns <c>true</c> if the collection contains the specified
+            object, <c>false</c> otherwise.
+            </summary>
+            <param name="item">Item to look for in the collection</param>
+            <returns><c>true</c> if the collection contains the specified
+            object, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.IconComboSubItemCollection.IndexOf(vbAccelerator.Components.Controls.IconComboSubItem)">
+            <summary>
+            Returns the 0-based index of the specified item in the collection,
+            or -1 if it is not found.
+            </summary>
+            <param name="item">Item to look for</param>
+            <returns>0-based index of item if found, -1 otherwise.</returns>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.IconComboSubItemCollection.Insert(System.Int32,vbAccelerator.Components.Controls.IconComboSubItem)">
+            <summary>
+            Inserts the item at the specified 0-based index.
+            </summary>
+            <param name="index">Index to insert at.</param>
+            <param name="item">Item to insert.</param>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.IconComboSubItemCollection.Remove(vbAccelerator.Components.Controls.IconComboSubItem)">
+            <summary>
+            Removes the specified item.
+            </summary>
+            <param name="item">Item to remove</param>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.IconComboSubItemCollection.RemoveAt(System.Int32)">
+            <summary>
+            Removes the item with the specified index.
+            </summary>
+            <param name="index">Index of item to remove</param>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.IconComboSubItemCollection.#ctor">
+            <summary>
+            Constructs a new instance of this class.
+            </summary>
+        </member>
+        <member name="P:vbAccelerator.Components.Controls.IconComboSubItemCollection.Owner">
+            <summary>
+            Gets/sets the control which owns this object.
+            </summary>
+        </member>
+        <member name="P:vbAccelerator.Components.Controls.IconComboSubItemCollection.Item(System.Int32)">
+            <summary>
+            Gets the item with the specified 0-based index.
+            </summary>
+        </member>
+        <member name="T:vbAccelerator.Components.Controls.IconComboSubItem">
+            <summary>
+            An sub-item to display in the IconComboBox control.
+            </summary>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.IconComboSubItem.DrawItem(System.Drawing.Graphics,System.Windows.Forms.ImageList,System.Drawing.Rectangle,System.Drawing.Font,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Draws this item.
+            Used internally to draw the ListBox.
+            </summary>
+            <param name="graphics">Graphics object to draw to</param>
+            <param name="imageList">Source of images</param>
+            <param name="bounds">Bounding rectangle for the item</param>
+            <param name="defaultFont">Font to use if the item does not have a font specified</param>
+            <param name="selected">Whether the item should be rendered selected or not</param>
+            <param name="rightToLeft">Whether item should be rendered right-to-left</param>
+            <param name="inList">Whether the item to be drawn is in the list portion or the combo portion</param>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.IconComboSubItem.MeasureItem(System.Drawing.Graphics,System.Windows.Forms.ImageList,System.Drawing.Font,System.Int32)">
+            <summary>
+            Measures this item.
+            </summary>
+            <param name="graphics">Graphics object to draw to</param>
+            <param name="imageList">Source of images</param>
+            <param name="defaultFont">Font to use if the item does not have a font specified</param>
+            <param name="width">Width to use when evaluating wrapped text height</param>
+            <returns>The size of the item</returns>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.IconComboSubItem.#ctor">
+            <summary>
+            Constructs a new instance of this class.
+            </summary>
+        </member>
+        <member name="T:vbAccelerator.Components.Controls.TextBoxMarginCustomise">
+            <summary>
+            A class for adding right and left margins to a TextBox
+            or the embedded TextBox within a DropDown ComboBox.
+            The margin can display an icon, a control or can
+            be drawn using a custom routine implemented by the
+            user.  This version also contains code to allow
+            return and escape to be processed correctly in a
+            ComboBox
+            </summary>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.TextBoxMarginCustomise.IsRightToLeft(System.IntPtr)">
+            <summary>
+            Gets whether a Window is <c>RightToLeft.Yes</c> from
+            its <c>Handle</c>.
+            </summary>
+            <param name="handle">Handle of window to check.</param>
+            <returns><c>True</c> if Window is RightToLeft, <c>False</c> otherwise.</returns>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.TextBoxMarginCustomise.FarMargin(System.Windows.Forms.Control)">
+            <summary>
+            Gets the far margin of a TextBox control or the
+            TextBox contained within a ComboBox.
+            </summary>
+            <param name="ctl">The Control to get the far margin
+            for</param>
+            <returns>Far margin, in pixels.</returns>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.TextBoxMarginCustomise.FarMargin(System.Windows.Forms.Control,System.Int32)">
+            <summary>
+            Sets the far margin of a TextBox control or the
+            TextBox contained within a ComboBox.
+            </summary>
+            <param name="ctl">The Control to set the far margin
+            for</param>
+            <param name="margin">New far margin in pixels, or -1
+            to use the default far margin.</param>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.TextBoxMarginCustomise.NearMargin(System.Windows.Forms.Control)">
+            <summary>
+            Gets the near margin of a TextBox control or the
+            TextBox contained within a ComboBox.
+            </summary>
+            <param name="ctl">The Control to get the near margin
+            for</param>
+            <returns>Near margin, in pixels.</returns>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.TextBoxMarginCustomise.NearMargin(System.Windows.Forms.Control,System.Int32)">
+            <summary>
+            Sets the near margin of a TextBox control or the
+            TextBox contained within a ComboBox.
+            </summary>
+            <param name="ctl">The Control to set the near margin
+            for</param>
+            <param name="margin">New near margin in pixels, or -1
+            to use the default near margin.</param>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.TextBoxMarginCustomise.ComboEdithWnd(System.IntPtr)">
+            <summary>
+            Gets the handle of the TextBox contained within a 
+            ComboBox control.
+            </summary>
+            <param name="handle">The ComboBox window handle.</param>
+            <returns>The handle of the contained text box.</returns>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.TextBoxMarginCustomise.Attach(System.Windows.Forms.ComboBox)">
+            <summary>
+            Attaches an instance of this class to a ComboBox control.
+            The control must have the "DropDown" style so it has a 
+            TextBox.
+            </summary>
+            <param name="comboBox">ComboBox with DropDown style to
+            attach to.</param>
+            <remarks>Use the <see cref="M:System.Windows.Forms.NativeWindow.AssignHandle(System.IntPtr)"/> method to attach 
+            this class to an arbitrary TextBox control using its
+            handle.</remarks>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.TextBoxMarginCustomise.Attach(System.Windows.Forms.TextBox)">
+            <summary>
+            Attaches an instance of this class to a TextBox control.
+            </summary>
+            <param name="textBox">TextBox to attach to.</param>
+            <remarks>Use the <see cref="M:System.Windows.Forms.NativeWindow.AssignHandle(System.IntPtr)"/> method to attach 
+            this class to an arbitrary TextBox control using its
+            handle.</remarks>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.TextBoxMarginCustomise.setMargin">
+            <summary>
+            Sets the near margin to accommodate the specified control.
+            </summary>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.TextBoxMarginCustomise.moveControl">
+            <summary>
+            Moves the contained control to the appropriate 
+            position
+            </summary>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.TextBoxMarginCustomise.WndProc(System.Windows.Forms.Message@)">
+            <summary>
+            Calls the base WndProc and performs WM_PAINT
+            processing to draw the icon if necessary.
+            </summary>
+            <param name="m">Windows Message</param>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.TextBoxMarginCustomise.RePaint">
+            <summary>
+            Paints the control if necessary:
+            </summary>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.TextBoxMarginCustomise.#ctor">
+            <summary>
+            Constructs a new instance of this class
+            </summary>
+        </member>
+        <member name="E:vbAccelerator.Components.Controls.TextBoxMarginCustomise.ComboEditKeyDown">
+            <summary>
+            Raised when a return or escape key is pressed in the combo box
+            edit portion.
+            </summary>
+        </member>
+        <member name="P:vbAccelerator.Components.Controls.TextBoxMarginCustomise.ImageList">
+            <summary>
+            Gets/sets the ImageList used to draw icons in the control.
+            </summary>
+        </member>
+        <member name="P:vbAccelerator.Components.Controls.TextBoxMarginCustomise.Icon">
+            <summary>
+            Gets/sets the 0-based icon index to draw in the control.
+            Values &lt; 0 have special meanings. -1 erases the 
+            icon, and &lt; -1 draws a colour sample box.
+            </summary>
+        </member>
+        <member name="P:vbAccelerator.Components.Controls.TextBoxMarginCustomise.Control">
+            <summary>
+            Gets/sets the control to be displayed in the near margin.
+            The <see cref="P:vbAccelerator.Components.Controls.TextBoxMarginCustomise.ImageList"/> property must be <c>null</c> if you
+            want to display a control.
+            </summary>
+        </member>
+        <member name="P:vbAccelerator.Components.Controls.TextBoxMarginCustomise.CustomPainter">
+            <summary>
+            Gets/sets a class which implements the <see cref="T:vbAccelerator.Components.Controls.ITextBoxMarginCustomisePainter"/>
+            interface to perform customised painting in the margin.
+            The <see cref="P:vbAccelerator.Components.Controls.TextBoxMarginCustomise.ImageList"/> and <see cref="P:vbAccelerator.Components.Controls.TextBoxMarginCustomise.Control"/> properties must 
+            be <c>null</c> if you want to use this technique.
+            </summary>
+        </member>
+        <member name="T:vbAccelerator.Components.Controls.ITextBoxMarginCustomisePainter">
+            <summary>
+            An interface which users of the <see cref="T:vbAccelerator.Components.Controls.TextBoxMarginCustomise"/>
+            class can use to provide a customised painting routine for the
+            margin area.  Create an instance of this class and install it
+            using the <see cref="P:vbAccelerator.Components.Controls.TextBoxMarginCustomise.CustomPainter"/>
+            accessor.
+            </summary>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.ITextBoxMarginCustomisePainter.GetMarginWidth">
+            <summary>
+            Called to obtain the width of the margin.
+            </summary>
+            <returns>Width of the margin</returns>
+        </member>
+        <member name="M:vbAccelerator.Components.Controls.ITextBoxMarginCustomisePainter.Draw(System.Drawing.Graphics,System.Drawing.Rectangle,System.Boolean)">
+            <summary>
+            Called whenever the margin area needs to
+            be repainted.
+            </summary>
+            <param name="gfx">Graphics object to paint on.</param>
+            <param name="rcDraw">Boundary of margin area.</param>
+            <param name="rightToLeft">Whether the control is right 
+            to left or not</param>
+        </member>
+    </members>
+</doc>

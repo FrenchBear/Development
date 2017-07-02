@@ -1,0 +1,1 @@
+﻿ResourceFile.txt: it is compiled as 'Resource'.

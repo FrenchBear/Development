@@ -1,0 +1,231 @@
+
+<!-- saved from url=(0078)http://math.purduecal.edu/~rlkraft/cs31600-2012/chapter03/syntax-examples.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><style type="text/css" style="display: none !important;">object:not([type]),object[classid$=":D27CDB6E-AE6D-11cf-96B8-444553540000"],object[classid$=":d27cdb6e-ae6d-11cf-96b8-444553540000"],object[codebase*="swflash.cab"],object[data*=".swf"],embed[type="application/x-shockwave-flash"],embed[src*=".swf"],object[type="application/x-shockwave-flash"],object[src*=".swf"],object[codetype="application/x-shockwave-flash"],iframe[type="application/x-shockwave-flash"],object[classid$=":166B1BCA-3F9C-11CF-8075-444553540000"],object[codebase*="sw.cab"],object[data*=".dcr"],embed[type="application/x-director"],embed[src*=".dcr"],object[type="application/x-director"],object[src*=".dcr"],object[classid$=":15B782AF-55D8-11D1-B477-006097098764"],object[codebase*="awswaxf.cab"],object[data*=".aam"],embed[type="application/x-authorware-map"],embed[src*=".aam"],object[type="application/x-authorware-map"],object[src*=".aam"],object[classid*="32C73088-76AE-40F7-AC40-81F62CB2C1DA"],object[type="application/ag-plugin"],object[type="application/x-silverlight"],object[type="application/x-silverlight-2"],object[source*=".xaml"],object[sourceelement*="xaml"],embed[type="application/ag-plugin"],embed[source*=".xaml"]{display: none !important;}</style></head><body><pre>
+       Ten grammars for simple integer arithmetic expressions.
+
+
+NOTE: In all of the following languages, the "lexical" part of
+      the language is defined by the following grammar.
+
+identifier -&gt; letter | identifier letter | identifier digit
+number -&gt; digit | number digit
+digit -&gt; '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9'
+letter -&gt; 'a' | 'b' | ... | 'x' | 'y' | 'z'
+
+
+Suppose that we change the production for identifier to
+
+identifier -&gt; letter | identifier letter | identifier number
+
+How does that affect the parsing of the following identifiers?
+  x3
+  x32
+  x3y
+  x32y
+
+
+-----------------------------------------------------------------------------
+
+
+1.) A very simple, unambiguous, but not very expressive, BNF syntax.
+
+
+expr -&gt; identifier '+' expr | identifier '*' expr | '(' expr ')' | identifier | number
+
+
+Show that the string "x + 3y" does not parse using this grammar.
+Show that the string "(x + y) * z" does not parse using this grammar.
+Show that the string "z * (x + y)" does parse.
+Parse the strings "x + y * z" and "x * y + z". What can you say about the
+precedence of operators for this grammar?
+Parse the string "x + y + z". What can you say about the associativity
+of '+' for this grammar?
+
+
+Suppose that we change the production for expr to
+
+expr -&gt; identifier oper expr | '(' expr ')' | identifier | number
+oper -&gt; '+' | '*'
+
+Notice that this makes oper a token class.
+How does that affect the parsing of the above strings?
+
+
+-----------------------------------------------------------------------------
+
+2.) An expressive, but ambiguous, BNF syntax.
+
+
+expr -&gt; expr '+' expr | expr '*' expr | '(' expr ')' | identifier | number
+
+
+Show that the string "(x + y) * z" does parse using this grammar.
+
+Show that "x + y + z" has two different parses with this grammar but
+only one parse with the first grammar.
+
+Show that "x + y * z" has two different parses with this grammar but
+only one parse with the first grammar.
+
+Note: This grammar does not define any precedence or associativity for
+      the operators. (Why not?)
+
+
+-----------------------------------------------------------------------------
+
+3.) An expressive, non-ambiguous BNF syntax, but with both operators having
+    the same precedence, and with both operators being right associative.
+
+
+expr -&gt; term '+' expr | term '*' expr | term
+term -&gt; '(' expr ')' | identifier | number
+
+
+Parse the following expressions with this grammar.
+  "(x + y) * z"
+  "z * (x + y)"
+  "x + y + z"
+  "x + y * z"
+  "x * y + z"
+  "x * y * z"
+
+Notice that these expressions are right associative because the grammar is
+right recursive. The next example rewrites this grammar to be left recursive
+and then the operators will be left associative (the way they are usually defined).
+
+
+Here is an EBNF version of this grammar.
+
+expr -&gt; term [ ('+' | '*') expr ]
+term -&gt; '(' expr ')' | identifier | number
+
+
+-----------------------------------------------------------------------------
+
+4.) An expressive, non-ambiguous BNF syntax, but with both operators having
+    the same precedence, and with both operators being left associative.
+
+
+expr -&gt;  expr '+' term | expr '*' term | term
+term -&gt; '(' expr ')' | identifier | number
+
+
+Parse the following expressions with this grammar.
+  "(x + y) * z"
+  "z * (x + y)"
+  "x + y + z"
+  "x + y * z"
+  "x * y + z"
+  "x * y * z"
+
+Notice that these expressions are left associative because the grammar is
+left recursive.
+
+
+Here is an EBNF version of this grammar. Notice that this EBNF grammar
+"repeats" by using iteration (i.e., the Kleene star) but the previous EBNF
+grammar "repeats" by using recursion.
+
+expr -&gt; term [ ('+' | '*') term ]*
+term -&gt; '(' expr ')' | identifier | number
+
+
+-----------------------------------------------------------------------------
+
+5.) An ambiguous BNF syntax, with * having higher precedence then +,
+    but neither operator has its associativity specified.
+
+
+expr -&gt; expr '+' expr | term
+term -&gt; term '*' term | factor
+factor -&gt; '(' expr ')' | identifier | number
+
+
+Parse the following expressions with this grammar.
+  "(x + y) * z"
+  "z * (x + y)"
+  "x + y + z"
+  "x + y * z"
+  "x * y + z"
+  "x * y * z"
+
+Notice how, even though the grammar is ambiguous, it does manage to define
+a precedence for the operators (but not associativity).
+
+
+What happens if your try to use the token class oper from the first example?
+
+
+-----------------------------------------------------------------------------
+
+6.) A non-ambiguous BNF syntax, with * having higher precedence then +,
+    and with both '+' and '*' being left associative.
+
+
+expr -&gt; expr '+' term | term
+term -&gt; term '*' factor | factor
+factor -&gt; '(' expr ')' | identifier | number
+
+
+Parse the following expressions with this grammar.
+  "(x + y) * z"
+  "z * (x + y)"
+  "x + y + z"
+  "x + y * z"
+  "x * y + z"
+  "x * y * z"
+
+
+-----------------------------------------------------------------------------
+
+7.) An "equivalent" EBNF syntax.
+
+
+expr -&gt; term [ '+' term ]*
+term -&gt; factor [ '*' factor ]*
+factor -&gt; '(' expr ')' | identifier | number
+
+
+Notes: (1) But now we are back to being ambiguous. This does not specify
+           if '+' and '*' are left or right associative.
+
+       (2) Syntax diagrams for this language would be derived
+           from this EBNF syntax, not from the BNF syntax.
+
+
+-----------------------------------------------------------------------------
+
+8.) A BNF syntax that includes subtraction and division.
+
+
+expr -&gt; expr '+' term | expr '-' term | term
+term -&gt; term '*' factor | term '/' factor | factor
+factor -&gt; '(' expr ')' | identifier | number
+
+
+-----------------------------------------------------------------------------
+
+9.) A EBNF syntax that includes subtraction and division.
+
+
+expr -&gt; term [ ('+' | '-') term ]*
+term -&gt; factor [ ('*' | '/') factor ]*
+factor -&gt; '(' expr ')' | identifier | number
+
+
+-----------------------------------------------------------------------------
+
+10.) A EBNF syntax with addition, subtraction, multiplication, division,
+     and exponentiation.
+
+expr -&gt; term [ ('+' | '-') term ]*
+term -&gt; factor [ ('*' | '/') factor ]*
+factor -&gt; base [ '^' exponent ]*
+base -&gt; '(' expr ')' | identifier | number
+exponent -&gt; '(' expr ')' | identifier | number
+
+
+Rewrite this using BNF so that exponentiation is right associative (and
+the other operators are left associative).
+
+</pre></body></html>

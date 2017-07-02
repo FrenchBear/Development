@@ -1,0 +1,12 @@
+From https://github.com/dotnet/roslyn
+
+Download C# and Visual Basic
+
+Want to start developing in C# and Visual Basic? Download Visual Studio 2015, which has the latest features built-in. There are also prebuilt Azure VM images available with VS 2015 already installed.
+
+To install the latest release without Visual Studio, run one of the following nuget command lines:
+
+nuget install Microsoft.Net.Compilers   # Install C# and VB compilers
+nuget install Microsoft.CodeAnalysis    # Install Language APIs and Services
+
+To get the latest "preview" drop, published about once per month, add the -pre switch to the nuget commands.
