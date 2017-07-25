@@ -1,2 +1,2 @@
-10 A=A+1:PRINT A:GOSUB 10
-
+10 A = A + 1: PRINT A: GOSUB 10
+
