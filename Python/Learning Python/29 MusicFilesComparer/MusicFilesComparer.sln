@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "24 Folders", "24 Folders.pyproj", "{0B086725-3C89-4E39-BA35-1E4722347D45}"
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "MusicFilesComparer", "MusicFilesComparer.pyproj", "{142D3AC0-8D85-4348-9B1D-773E815129FA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,13 +11,13 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0B086725-3C89-4E39-BA35-1E4722347D45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0B086725-3C89-4E39-BA35-1E4722347D45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{142D3AC0-8D85-4348-9B1D-773E815129FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{142D3AC0-8D85-4348-9B1D-773E815129FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {5F40A40C-48A7-4E2D-B47E-5E6B58113A8A}
+		SolutionGuid = {EE961FE8-148D-4E03-AFB5-F2A19FDADCF0}
 	EndGlobalSection
 EndGlobal

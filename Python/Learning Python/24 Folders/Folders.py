@@ -1,10 +1,28 @@
 # 24 Folders
-# 2016-05-13    PV
-# 2016-12-05    PV      Added os.walk
+# 2016-05-13 PV
+# 2016-12-05 PV Added os.walk
+# 2018-08-16 PV Enum files; Chrono
 
-import os, os.path
+"""
+Skull output:
+
+subdirs1*100 -> 15 in 0.01s
+subdirs2*100 -> 15 in 1.4s
+subdirs3*100 -> 15 in 0.03s
+files1*1 -> 2901 in 0.93s
+files2*1 -> 2901 in 9.33s
+files3*1 -> 2901 in 10.24s
+"""
+
+
+import os
+import os.path
+import time
+from glob import glob
+
 
 source = r"W:\Revues\Science"
+source = r"C:\Public"
 
 # os.scandir is faster
 # see https://www.python.org/dev/peps/pep-0471/
@@ -23,9 +41,85 @@ def subdirs2(path):
 def subdirs3(path):
     _, dirs, _ = next(os.walk(path))        # Takes 1st element of an iterator
     return dirs
-    #for root, directories, filenames in os.walk(path):
-    #    return directories
 
-print(list(subdirs1(source)))
-print(list(subdirs2(source)))
-print(list(subdirs3(source)))
+#print(list(subdirs1(source)))
+#print(list(subdirs2(source)))
+#print(list(subdirs3(source)))
+
+
+
+# And now, files
+
+# Simple iterator based on os.walk
+def files1(path):
+    for root, subs, files in os.walk(path):
+        for file in files:
+            yield os.path.join(root, file)
+
+
+# Recursive list-build based on os.listdir
+def files2(path):
+    if not os.path.isdir(path):
+        print("*** Problème " + path)
+    l = []
+    for f in os.listdir(path):
+        full = os.path.join(path, f)
+        if os.path.isfile(full):
+            #print("Append file "+full)
+            l.append(full)
+        else:
+            l2 = files2(full)
+            #print("Append folder: "+full + " -> "+str(len(l2)))
+            l += l2
+            #l.append(l2)
+    return l
+
+
+# Recursive iterator based on os.listdir()
+def files3(path):
+    if not os.path.isdir(path):
+        print("*** Problème " + path)
+    l = []
+    for f in os.listdir(path):
+        full = os.path.join(path, f)
+        if os.path.isfile(full):
+            yield full
+        else:
+            for f2 in files3(full):
+                yield f2
+
+
+# From https://stackoverflow.com/questions/18394147/recursive-sub-folder-search-and-return-files-in-a-list-python
+# But glob doesn't work for folders like ".vs" or files like ".suo"...
+def files4(path, pattern):
+    return [y for x in os.walk(path) for y in glob(os.path.join(x[0], pattern))]
+
+def files5(path, pattern):
+    return [file for file in glob(path + '/**/' + pattern, recursive=True)]
+
+
+
+def Chrono(name, repeat, action):
+    tstart = time.time()    # Stopwatch start
+    repeatOriginal = repeat
+    while repeat >= 0:
+        repeat -= 1
+        n = action()
+    duration = time.time() - tstart
+    print(name + "*" + str(repeatOriginal) + " -> " + str(n) + " in " + str(round(duration,2)) + 's')
+
+
+
+Chrono("subdirs1", 100, lambda : len(list(subdirs1(source))))
+Chrono("subdirs2", 100, lambda : len(list(subdirs2(source))))
+Chrono("subdirs3", 100, lambda : len(list(subdirs3(source))))
+
+
+Chrono("files1", 1, lambda : len(list(files1(source))))
+#Chrono("files2", 1, lambda : len(files2(source)))
+#Chrono("files3", 1, lambda : len(list(files3(source))))
+Chrono("files4", 1, lambda : len(files4(source, "*.*")))
+Chrono("files5", 1, lambda : len(files5(source, "*.*")))
+
+print(list(files1(source)))
+print(files4(source, "*.*"))
