@@ -31,7 +31,7 @@ for f in list:
 lkn = []
 for k in dicChanteurs.keys():
     lkn.append((k, len(dicChanteurs[k])))
-    if len(dicChanteurs[k])>=5:
+    if len(dicChanteurs[k])>=4:
         print(k)
 #lkn.sort(key=lambda kn: kn[1])
 #print(lkn)
