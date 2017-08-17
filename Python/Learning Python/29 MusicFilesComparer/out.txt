@@ -1,0 +1,40 @@
+New: 609
+Old: 2321
+C:\Temp\Work\Chansons France\Alain Souchon\Alain Souchon - Quand je serai KO.mp3	C:\Temp\Work\LP\Français\Alain Souchon - Quand je serai K-O.mp3
+C:\Temp\Work\Chansons France\Daniel Balavoine\Daniel Balavoine - Aziza.mp3	C:\Temp\Work\LP\Français\Daniel Balavoine - L'aziza.mp3
+C:\Temp\Work\Chansons France\_Divers\Desireless - Voyage, voyage.mp3	C:\Temp\Work\LP\Français\Desireless - Voyage voyage.mp3
+C:\Temp\Work\Chansons France\Étienne Daho\Étienne Daho - Épaule tattoo.mp3	C:\Temp\Work\LP\Français\Etienne Daho - Epaule tatoo.mp3
+C:\Temp\Work\Chansons France\Gilbert Montagné\Gilbert Montagné - Les sunlights des tropiques.mp3	C:\Temp\Work\LP\Français\Gilbert Montagné - Le sunlight des tropiques.mp3
+C:\Temp\Work\Chansons France\_Divers\Hervé Christiani - Il est libre Max.mp3	C:\Temp\Work\LP\Français\Hervé Christiani - Il est libre, Max.mp3
+C:\Temp\Work\Chansons France\_Divers\Jean Schultheis - Confidence pour confidence.mp3	C:\Temp\Work\LP\Français\Jean Schultheis - Confidence pour confidences.mp3
+C:\Temp\Work\Chansons France\Jeanne Mas\Jeanne Mas - Johnny, Johnny.mp3	C:\Temp\Work\LP\Français\Jeanne Mas - Johnny Johnny.mp3
+C:\Temp\Work\Chansons France\Johnny Hallyday\Johnny Hallyday - Quelque chose de Tennessee.mp3	C:\Temp\Work\LP\Français\Johnny Halliday - Quelque chose de Tennessee.mp3
+C:\Temp\Work\Chansons France\_Divers\Julie Piétri - Ève lève-toi.mp3	C:\Temp\Work\LP\Français\Julie Pietri - Eve lève toi.mp3
+C:\Temp\Work\Chansons France\_Divers\L'affaire Louis' Trio - Chic planète.mp3	C:\Temp\Work\LP\Français\L'Affaire Louis Trio - Chic planète.mp3
+C:\Temp\Work\Chansons France\_Divers\L'affaire Louis' Trio - Tout mais pas ça.mp3	C:\Temp\Work\LP\Français\L'Affaire Louis Trio - Tout mais pas ça.mp3
+C:\Temp\Work\Chansons France\_Divers\Léopold Nord et Vous - C'est l'amour.mp3	C:\Temp\Work\LP\Français\Léopold Nord & Vous - C'est l'amour.mp3
+C:\Temp\Work\Chansons France\_Divers\Melody - Y'a pas que les grands qui rêvent.mp3	C:\Temp\Work\LP\Français\Mélody - Y a pas que les grands qui rêvent.mp3
+C:\Temp\Work\Chansons France\_Divers\Peter et Sloane - Besoin de rien, envie de toi.mp3	C:\Temp\Work\LP\Français\Peter & Sloane - Besoin de rien, envie de toi.mp3
+C:\Temp\Work\Chansons Intl\_Divers 2ème\ACDC - Highway to Hell.mp3	C:\Temp\Work\LP\International\AC DC - Highway to hell.mp3
+C:\Temp\Work\Chansons Intl\_Divers\Bobby Mc Ferrin - Don't Worry Be Happy.mp3	C:\Temp\Work\LP\International\Bobby McFerrin - Don't worry be happy.mp3
+C:\Temp\Work\Chansons Intl\Bruce Springsteen\Bruce Springsteen - Born in the U.S.A.mp3	C:\Temp\Work\LP\International\Bruce Springsteen - Born in the USA.mp3
+C:\Temp\Work\Chansons Intl\_Divers\Captain Sensible - Wot.mp3	C:\Temp\Work\LP\International\Captain Sensible's - Wot.mp3
+C:\Temp\Work\Chansons Intl\_Divers\Dexys Midnight Runners - Come on Eileen.mp3	C:\Temp\Work\LP\International\Dexy's Midnight Runners - Come on Eileen.mp3
+C:\Temp\Work\Chansons Intl\_Divers\Earth, Wind & Fire - Boogie Wonderland.mp3	C:\Temp\Work\LP\International\Earth Wind & Fire - Boogie wonderland.mp3
+C:\Temp\Work\Chansons Intl\_Divers 2ème\Hazel O'Conor - Will You.mp3	C:\Temp\Work\LP\International\Hazel O'Connor - Will you.mp3
+C:\Temp\Work\Chansons Intl\_Divers\Hong Kong Syndicate - Concrete and Clay.mp3	C:\Temp\Work\LP\International\Hong Kong Syndicat - Concrete and clay.mp3
+C:\Temp\Work\Chansons Intl\_Divers\Laura Branigan - Self Control.mp3	C:\Temp\Work\LP\International\Laura Branigan - Self-control.mp3
+C:\Temp\Work\Chansons Intl\_Divers\Lionel Richie - Say You, Say Me.mp3	C:\Temp\Work\LP\International\Lionel Richie - Say you say me.mp3
+C:\Temp\Work\Chansons Intl\_Divers\Lipps Inc. - Funkytown.mp3	C:\Temp\Work\LP\International\Lipps Inc - Funkytown.mp3
+C:\Temp\Work\Chansons Intl\Matt Bianco\Matt Bianco - More That I Can Bear.mp3	C:\Temp\Work\LP\International\Matt Bianco - More than I can bear.mp3
+C:\Temp\Work\Chansons Intl\Michael Jackson\Michael Jackson - Billie Jean.mp3	C:\Temp\Work\LP\International\Mickael Jackson - Billie Jean.mp3
+C:\Temp\Work\Chansons Intl\_Divers\Modern' Talking - You're My Heart, You're My Soul.mp3	C:\Temp\Work\LP\International\Modern Talking - You're my heart you're my soul.mp3
+C:\Temp\Work\Chansons Intl\_Divers\Nick Kershaw - The Riddle.mp3	C:\Temp\Work\LP\International\Nik Kershaw - The riddle.mp3
+C:\Temp\Work\Chansons Intl\Orchestral Manoeuvre in the Dark\Orchestral Manoeuvre in the Dark - Electricity.mp3	C:\Temp\Work\LP\International\Orchestral Manoeuvres In The Dark - Electricity.mp3
+C:\Temp\Work\Chansons Intl\Orchestral Manoeuvre in the Dark\Orchestral Manoeuvre in the Dark - Enola Gay.mp3	C:\Temp\Work\LP\International\Orchestral Manoeuvres In The Dark - Enola gay.mp3
+C:\Temp\Work\Chansons Intl\_Divers 2ème\Quaterflash - Harden My Heart.mp3	C:\Temp\Work\LP\International\Quarterflash - Harden my heart.mp3
+C:\Temp\Work\Chansons Intl\_Divers\Richi & Poveri - Sara Perche Ti Amo.mp3	C:\Temp\Work\LP\International\Ricchi e Poveri - Sarà perché ti amo.mp3
+C:\Temp\Work\Chansons Intl\Sandra\Sandra - Maria Magdanela.mp3	C:\Temp\Work\LP\International\Sandra - Maria Magdalena.mp3
+C:\Temp\Work\Chansons Intl\Stevie Wonder\Stevie Wonder - Part-Time Lover.mp3	C:\Temp\Work\LP\International\Stevie Wonder - Part time lover.mp3
+C:\Temp\Work\Chansons Intl\_Divers 2ème\The Cure - In Between Days.mp3	C:\Temp\Work\LP\International\The Cure - In-Between Days.mp3
+C:\Temp\Work\Chansons Intl\_Divers\Unberto Tozzi - Ti Amo.mp3	C:\Temp\Work\LP\International\Umberto Tozzi - Ti amo.mp3

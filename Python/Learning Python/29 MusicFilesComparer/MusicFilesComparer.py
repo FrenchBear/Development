@@ -116,17 +116,21 @@ for nf in newFiles:
     if nf in oldFiles:
         print(oldDic[nf])
         print(newDic[nf])
-        nn = os.path.join(os.path.dirname(newDic[nf]), "Z - "+os.path.basename(oldDic[nf]))
-        print(nn)
         print()
-        #shutil.move(newDic[nf], oldDic[nf])
+        # shutil.move(newDic[nf], oldDic[nf])
+
+        #nn = os.path.join(os.path.dirname(newDic[nf]), "Z - "+os.path.basename(oldDic[nf]))
+        #print(nn)
         #shutil.move(newDic[nf], nn)
 
-# Distance of 1
-#for nf in newFiles:
-#    for of in oldFiles:
-#        if LevenshteinDistance(nf, of)==1:
-#            print(oldDic[of])
-#            print(newDic[nf])
-#            print()
-
+"""
+# Distance of 1 or 2
+for nf in newFiles:
+    for of in oldFiles:
+        if LevenshteinDistance(nf, of)<=2:
+            print(oldDic[of])
+            print(newDic[nf])
+            nn = os.path.join(os.path.dirname(newDic[nf]), "Z - "+os.path.basename(oldDic[of]))
+            print(nn)
+            shutil.move(newDic[nf], nn)
+"""
