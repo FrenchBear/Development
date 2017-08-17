@@ -3,43 +3,55 @@
 # 2017-08-17    PV
 
 
-import os
+import os, shutil
 import re
 
-
-# Returns a flat list of mp3 filenames in path or a subfolder
-def GetFlatMP3FilesList(path):
-    list = []
+# Simple iterator based on os.walk
+def GetAllFiles(path):
     for root, subs, files in os.walk(path):
-        list += ([f for f in files if f.lower().endswith(".mp3")])
-    return list
+        for file in files:
+            yield os.path.join(root, file)
+
+
+accent_tabin =  u'àâäéèêëîïôöûüùÿç'
+accent_tabout = u'aaaeeeeiioouuuyc'
+accent_tabin = [ord(char) for char in accent_tabin]
+accent_table = dict(zip(accent_tabin, accent_tabout))
+def LowerNoAccent(s):
+    return s.lower().translate(accent_table)
+
 
 newFiles = []
-newFolder = "C:\Temp\LP";
-for file in GetFlatMP3FilesList(newFolder):
-    match = re.search(r'^(.*) - (.*)\.mp3', file, re.IGNORECASE)
+newDic = {}
+newFolder = "C:\Temp\Work\LP";
+for file in GetAllFiles(newFolder):
+    match = re.search(r'^.*\\(.*) - (.*)\.mp3', file, re.IGNORECASE)
     if match:
-        name = match.groups(0)[0] + " - " + match.groups(0)[1]
+        name = LowerNoAccent(match.groups(0)[0] + " - " + match.groups(0)[1])
         newFiles.append(name)
+        newDic[name] = file
     else:
         print("No match old: "+file)
 
 
 oldFiles = []
-oldFolder1 = "C:\MusicGD\MP3P\Chansons France"
-oldFolder2 = "C:\MusicGD\MP3P\Chansons Intl"
-for file in GetFlatMP3FilesList(oldFolder1):
-    match = re.search(r'^(.*) - (.*)\.mp3', file, re.IGNORECASE)
+oldDic = {}
+oldFolder1 = "C:\Temp\Work\Chansons France"
+oldFolder2 = "C:\Temp\Work\Chansons Intl"
+for file in GetAllFiles(oldFolder1):
+    match = re.search(r'^.*\\(.*) - (.*)\.mp3', file, re.IGNORECASE)
     if match:
-        name = match.groups(0)[0] + " - " + match.groups(0)[1]
+        name = LowerNoAccent(match.groups(0)[0] + " - " + match.groups(0)[1])
         oldFiles.append(name)
+        oldDic[name] = file
     else:
         print("No match new1: "+file)
-for file in GetFlatMP3FilesList(oldFolder2):
-    match = re.search(r'^(.*) - (.*)\.mp3', file, re.IGNORECASE)
+for file in GetAllFiles(oldFolder2):
+    match = re.search(r'^.*\\(.*) - (.*)\.mp3', file, re.IGNORECASE)
     if match:
-        name = match.groups(0)[0] + " - " + match.groups(0)[1]
+        name = LowerNoAccent(match.groups(0)[0] + " - " + match.groups(0)[1])
         oldFiles.append(name)
+        oldDic[name] = file
     else:
         print("No match new2: "+file)
 
@@ -102,7 +114,19 @@ def tld(a,b,d):
 # Find identical names first
 for nf in newFiles:
     if nf in oldFiles:
-        print(nf)
+        print(oldDic[nf])
+        print(newDic[nf])
+        nn = os.path.join(os.path.dirname(newDic[nf]), "Z - "+os.path.basename(oldDic[nf]))
+        print(nn)
+        print()
+        #shutil.move(newDic[nf], oldDic[nf])
+        #shutil.move(newDic[nf], nn)
 
-
+# Distance of 1
+#for nf in newFiles:
+#    for of in oldFiles:
+#        if LevenshteinDistance(nf, of)==1:
+#            print(oldDic[of])
+#            print(newDic[nf])
+#            print()
 
