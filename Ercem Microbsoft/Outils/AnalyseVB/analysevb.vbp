@@ -1,7 +1,7 @@
 Type=Exe
-Reference=*\G{00020430-0000-0000-C000-000000000046}#2.0#0#c:\windows\SYSTEM\StdOle2.Tlb#OLE Automation
-Object={831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0; MSCOMCTL.OCX
-Reference=*\G{00025E01-0000-0000-C000-000000000046}#4.0#0#C:\PROGRAM FILES\FICHIERS COMMUNS\MICROSOFT SHARED\DAO\DAO350.DLL#Microsoft DAO 3.5 Object Library
+Reference=*\G{00020430-0000-0000-C000-000000000046}#2.0#0#..\..\..\..\..\..\Windows\SysWOW64\stdole2.tlb#OLE Automation
+Object={831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0; MSCOMCTL.OCX
+Reference=*\G{00025E01-0000-0000-C000-000000000046}#4.0#0#..\..\..\..\..\..\Program Files (x86)\Common Files\Microsoft Shared\DAO\DAO350.DLL#Microsoft DAO 3.5 Object Library
 UserControl=ctlTest.ctl
 Form=frmAnalyse.frm
 Module=Lexico; Lexico.bas
