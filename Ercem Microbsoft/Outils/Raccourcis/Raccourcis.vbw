@@ -1,9 +1,0 @@
-frmRaccourcis = 18, 10, 602, 426, , 44, 44, 511, 460, C
-GestionRaccourcis = 22, 22, 511, 438, C
-GestionRegistry = 44, 44, 533, 460, 
-modRegistry = 110, 145, 721, 499, 
-MenuDémarrer = 88, 88, 572, 536, 
-MenuMicrobSoft = 110, 110, 594, 558, C
-modLangueSystème = 0, 0, 504, 448, Z
-SocketInfo = 154, 154, 638, 602, C
-modGlobal = 154, 154, 638, 602, C

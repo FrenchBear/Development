@@ -1,9 +1,0 @@
-modStackWalk = 198, 261, 887, 860, 
-modDbgHelpLoader = 132, 174, 622, 603, 
-modGetIP = 0, 0, 490, 429, 
-modGetESP = 22, 29, 512, 458, 
-modFunctionDelegator = 44, 58, 534, 487, 
-Form1 = 44, 58, 534, 487, , 22, 29, 512, 458, C
-Symbols = 66, 87, 556, 516, 
-modGetEBP = 88, 116, 578, 545, 
-modGetCallingIP = 110, 145, 600, 574, 

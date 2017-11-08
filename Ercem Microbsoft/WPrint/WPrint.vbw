@@ -1,9 +1,0 @@
-frmWPrint = 32, 8, 505, 453, , 10, 17, 668, 498, C
-Rev = 110, 145, 592, 574, 
-UtilImprimante = 66, 87, 548, 516, 
-GlobalWP = 110, 110, 456, 455, C
-frmFormateurs = 0, 0, 0, 0, C, 22, 22, 584, 383, C
-frmSynonymes = 66, 66, 523, 323, C, 88, 88, 588, 457, C
-frmAjoutSynonyme = 0, 0, 0, 0, C, 110, 110, 610, 479, C
-cSysTray = 0, 0, 0, 0, C, 132, 132, 625, 577, C
-mSysTray = 66, 66, 559, 511, C

@@ -1,8 +1,0 @@
-Form1 = 0, 0, 0, 0, C, 22, 29, 621, 455, C
-Form2 = 0, 0, 0, 0, C, 73, 110, 672, 536, C
-Module1 = 66, 87, 665, 513, 
-MDIForm1 = 66, 87, 627, 513, , 88, 116, 687, 542, C
-frmDDESource = 0, 0, 0, 0, C, 154, 203, 715, 629, C
-frmTrace = 0, 0, 0, 0, C, 0, 0, 561, 426, C
-modAPIFindWindow = 66, 87, 538, 513, 
-EnumerateWindowsLabels = 88, 116, 552, 534, Z
