@@ -23,6 +23,7 @@ from glob import glob
 
 source = r"W:\Revues\Science"
 source = r"C:\Public"
+source = r"U:\A_Trier Music\France Gall\France Gall - Collection 1966-2001"
 
 # os.scandir is faster
 # see https://www.python.org/dev/peps/pep-0471/
