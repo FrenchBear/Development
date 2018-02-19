@@ -1,8 +1,14 @@
+# Python Machine Learning Tutorial
+# iris1.py - Data vizualisation using matplotlib
+# 2018-02-19    PV
+
+print("iris1 - Data vizualisation using matplotlib")
+
+from sklearn import datasets
+
 import matplotlib.pyplot as plt
 import matplotlib as mpl
 import numpy as np
-
-from sklearn import datasets
 
 
 iris = datasets.load_iris()
@@ -30,3 +36,4 @@ for ind, s in enumerate(iris.target_names):
 plt.legend(scatterpoints=1, frameon=False, labelspacing=1, bbox_to_anchor=(1.8, .5) , loc="center right", title='Espèces')
 plt.plot()
 plt.show()
+
