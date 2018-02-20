@@ -5,12 +5,12 @@
     <ProjectGuid>38471625-b075-4ed2-b88e-5e25642c930f</ProjectGuid>
     <ProjectHome>
     </ProjectHome>
-    <StartupFile>TestMachineLearning.py</StartupFile>
+    <StartupFile>ML02.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
-    <Name>MachineLearning Tailles et poids</Name>
+    <Name>ML02 Trois paramètres</Name>
     <RootNamespace>TestMachineLearning</RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -22,7 +22,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="TestMachineLearning.py" />
+    <Compile Include="ML02.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

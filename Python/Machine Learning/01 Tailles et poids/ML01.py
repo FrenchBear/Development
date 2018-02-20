@@ -1,3 +1,4 @@
+# ML01 Taille et poids
 # Tests sur le machine learning
 # Génération d'une population bimodale pour s'entraîner avec les tests de scikit-learn
 # 2018-02-20    PV
@@ -43,7 +44,7 @@ for i in range(50):
     target[i] = 0
     target[50+i] = 1
 
-target_names = numpy.ndarray(2, dtype=str)
+target_names = numpy.ndarray(2, dtype='<U10')
 target_names[0] = 'Homme'
 target_names[1] = 'Femme'
 

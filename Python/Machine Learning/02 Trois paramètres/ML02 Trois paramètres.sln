@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "ML02 Trois paramètres", "ML02 Trois paramètres.pyproj", "{38471625-B075-4ED2-B88E-5E25642C930F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{38471625-B075-4ED2-B88E-5E25642C930F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38471625-B075-4ED2-B88E-5E25642C930F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {00F13A30-347A-47A7-B007-B97EE0E5E17E}
+	EndGlobalSection
+EndGlobal
