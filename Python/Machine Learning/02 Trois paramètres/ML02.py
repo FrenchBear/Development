@@ -33,8 +33,8 @@ print("Début de la génération")
 
 random.seed(123)
 
-data = np.ndarray((len(profils) * samples, 3))
-target = np.ndarray(len(profils) * samples, dtype=int)
+data = np.empty((len(profils) * samples, 3))
+target = np.empty(len(profils) * samples, dtype=int)
 
 n = 0
 for ip, p in enumerate(profils):
@@ -45,7 +45,7 @@ for ip, p in enumerate(profils):
         target[n] = ip
         n += 1
 
-target_names = np.ndarray(4, dtype='<U10')
+target_names = np.empty(4, dtype='<U10')
 target_names[0] = 'H c courts'
 target_names[1] = 'H c longs'
 target_names[2] = 'F c courts'

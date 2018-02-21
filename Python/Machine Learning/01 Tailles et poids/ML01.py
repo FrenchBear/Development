@@ -33,8 +33,8 @@ female_height_stddev = 6.2
 
 random.seed(123)
 
-data = numpy.ndarray((100, 2))
-target = numpy.ndarray(100, dtype=int)
+data = numpy.empty((100, 2))
+target = numpy.empty(100, dtype=np.int16)
 
 for i in range(50):
     data[i, 0] = round(random.gauss(male_weight_average, male_weight_stddev), 1)
@@ -44,7 +44,7 @@ for i in range(50):
     target[i] = 0
     target[50+i] = 1
 
-target_names = numpy.ndarray(2, dtype='<U10')
+target_names = numpy.empty(2, dtype='<U10')
 target_names[0] = 'Homme'
 target_names[1] = 'Femme'
 
