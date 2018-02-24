@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "NumpyArrays", "NumpyArrays.pyproj", "{465442ED-CDEE-477F-8EA1-8F611D67B0FB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{465442ED-CDEE-477F-8EA1-8F611D67B0FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{465442ED-CDEE-477F-8EA1-8F611D67B0FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E8B18A09-275D-4D1D-9F3B-F7DBD7463A23}
+	EndGlobalSection
+EndGlobal
