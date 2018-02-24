@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "NumpyChart1", "NumpyChart1.pyproj", "{BCF6924B-F0DD-442A-B3B4-7EEDF9EE885A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BCF6924B-F0DD-442A-B3B4-7EEDF9EE885A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCF6924B-F0DD-442A-B3B4-7EEDF9EE885A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A2D17D87-72F5-4772-A4EE-D49E45E388F5}
+	EndGlobalSection
+EndGlobal

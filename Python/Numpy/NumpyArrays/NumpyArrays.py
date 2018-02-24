@@ -36,3 +36,23 @@ print('\nm_column_stack:\n', m_column_stack)
 m_row_stack = np.row_stack((range(0,5), range(10,15), range(20,25)))
 print('\nm_row_stack:\n', m_row_stack)
 
+
+# Extract columns
+m_c12 = m1[:,1:]
+print('\nm_c23:\n', m_c12)
+
+# Extract rows
+m_r13 = m_vstack[1:3]
+print('\nm_r13:\n', m_r13)
+
+
+# Apply a filter
+m1_ge3 = m1 >= 3
+print('\nm1_ge3:\n', m1_ge3)
+
+# Filter using a boolean matrix (note that the result is a 1D vector)
+m1_ge3b = m1[m1 >= 3]
+print('\nm1_ge3b:\n', m1_ge3b)
+
+# Count number of elements >= 3
+print('\nNb of elements >= 3:\n', len(m1[m1 >= 3]))
