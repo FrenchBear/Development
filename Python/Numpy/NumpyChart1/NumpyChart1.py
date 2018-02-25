@@ -4,9 +4,9 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
-import math
+from numpy import pi
 
-points = np.arange(-math.pi, math.pi, 0.1)
+points = np.linspace(-pi, pi, 100)
 
 xs, ys = np.meshgrid(points, points)
 # 4 graphs
