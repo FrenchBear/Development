@@ -17,9 +17,10 @@ def courbe(xmin, xmax, ymin, ymax, level):
     return np.append(xleft , xright[1:]), np.append(yleft, yright[1:])
 
 
-for i in range(0, 10):
+for i in range(10):
     x, y = courbe(0.0, 1.0, 0.0, 1.0, i)
-    plt.plot(x,y)
+    plt.plot(x,y, label=str(i))
+    plt.legend()
 
 plt.title("Courbe continue mais dérivable nulle part (à la limite)")
 plt.show()
