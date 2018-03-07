@@ -11,6 +11,8 @@ Rules = {'F':'', 'Y':'+FX--FY+', 'X':'-FX++FY-'}
 # Recursive iterator implementation
 # Not the fastest, but for this example, good enough
 def LSystemIterator(depth, axiom, rules):
+    """Implements a L-System engine using a recursive iterator model
+    that uses little memory for complex/deep systems"""
     # End recursivity case, depth==0, simply returns axiom
     if depth==0:
         for c in axiom:
@@ -51,8 +53,11 @@ def PlotLSystem(rule):
     #print('px=', px)
     #print('py=', py)
 
+    plt.figure(num=None, figsize=(10, 7), dpi=100, facecolor='w', edgecolor='k')
     plt.title("Courbe du dragon level="+str(Level))
     plt.plot(px, py)
+    plt.axis('off')
+    plt.savefig(r"C:\Temp\Dragon12.png", bbox_inches='tight')
     plt.show()
 
 
