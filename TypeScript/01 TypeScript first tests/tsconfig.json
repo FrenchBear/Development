@@ -3,6 +3,9 @@
         "target": "es6",
         "module": "commonjs",
         "sourceMap": true,
-        "outDir": "generated"
+        "outDir": "generated",
+        "types": [
+            "node"
+        ]
     }
 }
