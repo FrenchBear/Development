@@ -1,4 +1,3 @@
-
 // Unicode exercices in Java
 // 2018-08-20 PV
 
@@ -9,24 +8,7 @@ import java.util.Arrays;
 
 class Unicode {
     public static void main(String[] args) throws Exception {
-        /*
-        // Switch out to UTF-8, but this doesn't change the console
-        try {
-            System.setOut(new PrintStream(new FileOutputStream(FileDescriptor.out), true, "UTF-8"));
-        } catch (UnsupportedEncodingException e) {
-            throw new InternalError("VM does not support mandatory encoding UTF-8");
-        }
-
-        // switch console to UTF-8
-        try {
-            ProcessBuilder pb = new ProcessBuilder("cmd.exe", "/c", "chcp", "65001").inheritIO();
-            Process p = pb.start();
-            p.waitFor();
-        } catch (Throwable t) {
-            t.printStackTrace();
-        }
-        */
-
+        // UTF-8 support
         System.setOut(new PrintStream(new FileOutputStream(FileDescriptor.out), true, "UTF-8"));
         ProcessBuilder pb = new ProcessBuilder("cmd.exe", "/c", "chcp", "65001").inheritIO();
         Process p = pb.start();
