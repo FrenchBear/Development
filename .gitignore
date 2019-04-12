@@ -253,3 +253,6 @@ paket-files/
 
 # VB6
 *.vbw
+
+github.com/
+golang.org/
