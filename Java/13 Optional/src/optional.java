@@ -1,8 +1,10 @@
+
 // optional.java
 // Play with Java8 Optional class
 // 2019-07-05   PV
 
 import java.util.Optional;
+import java.util.OptionalInt;
 
 public class optional {
     public static void main(String[] args) {
@@ -28,13 +30,19 @@ public class optional {
                                         // Optional source is empty
         System.out.println(n4);
 
-        var z = ou2.map(u -> u.Name);       // Gets an Optional<String>
-        String name = ou2.map(u -> u.Name).orElse("John Doe");  // Add unwrapping+default with .orElse
+        // Specialized Optional for some value types, without boxing
+        OptionalInt oi2 = OptionalInt.of(4);
+        System.out.println(oi2.isEmpty() ? "oi2 is empty" : "oi2=" + Integer.toString(oi2.getAsInt()));
+        OptionalInt oi3 = OptionalInt.empty();
+        System.out.println(oi3.isEmpty() ? "oi3 is empty" : "oi3=" + Integer.toString(oi3.getAsInt()));
 
-        Optional<User> ou5 = ou1.filter(u -> u.Id>2);
+        var z = ou2.map(u -> u.Name); // Gets an Optional<String>
+        String name = ou2.map(u -> u.Name).orElse("John Doe"); // Add unwrapping+default with .orElse
 
-        Optional<User> ou6 = ou2.or(() -> ou1);     // Java 9 and later, or returns an Optional<T> whereas orElse returns a T
-        
+        Optional<User> ou5 = ou1.filter(u -> u.Id > 2);
+
+        Optional<User> ou6 = ou2.or(() -> ou1); // Java 9 and later, or returns an Optional<T> whereas orElse returns a
+                                                // T
 
     }
 }
