@@ -1,0 +1,11 @@
+{
+    "peacock.affectTitleBar": true,
+    "peacock.affectActivityBar": true,
+    "peacock.affectStatusBar": true,
+    "workbench.colorCustomizations": {
+        "titleBar.activeBackground": "#A00000",
+        "titleBar.inactiveBackground": "#800000",
+        "activityBar.background": "#A00000",
+        "statusBar.background": "#A00000",
+    }
+}
