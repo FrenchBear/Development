@@ -143,12 +143,14 @@ namespace SudokuFX
                 MessageBox.Show("Hey! You can't save a timed game!");
                 return;
             }
-            SaveFileDialog sfd = new SaveFileDialog();
-            sfd.OverwritePrompt = true;
-            sfd.Filter = "Sudoku Save Files (*.sudoku)|*.sudoku";
-            sfd.Title = "Select a File to Save to";
-            sfd.ValidateNames = true;
-            sfd.FileName = "SavedGame.sudoku";
+            SaveFileDialog sfd = new SaveFileDialog
+            {
+                OverwritePrompt = true,
+                Filter = "Sudoku Save Files (*.sudoku)|*.sudoku",
+                Title = "Select a File to Save to",
+                ValidateNames = true,
+                FileName = "SavedGame.sudoku"
+            };
             if (sfd.ShowDialog(this) == true)
             {
                 Stream s = new FileStream(sfd.SafeFileName, FileMode.Create);
@@ -160,19 +162,19 @@ namespace SudokuFX
         }
         void LoadGameClicked(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog ofd = new OpenFileDialog();
-            
-            ofd.Filter = "Sudoku Save Files (*.sudoku)|*.sudoku";
-            ofd.Title = "Select a File to Open";
-            ofd.ValidateNames = true;
-            ofd.FileName = "SavedGame.sudoku";
+            OpenFileDialog ofd = new OpenFileDialog
+            {
+                Filter = "Sudoku Save Files (*.sudoku)|*.sudoku",
+                Title = "Select a File to Open",
+                ValidateNames = true,
+                FileName = "SavedGame.sudoku"
+            };
 
             if (ofd.ShowDialog(this) == true)
             {
-                Stream s = null;
+                Stream s;   // = null;
                 try
                 {
-
                    s = new FileStream(ofd.SafeFileName, FileMode.Open);
                 }
                 catch (IOException)
@@ -225,9 +227,10 @@ namespace SudokuFX
         {
             if (ad == null)
             {
-                AppDomainSetup ads = new AppDomainSetup();
-
-                ads.ApplicationBase = AppDomain.CurrentDomain.BaseDirectory;
+                AppDomainSetup ads = new AppDomainSetup
+                {
+                    ApplicationBase = AppDomain.CurrentDomain.BaseDirectory
+                };
                 PermissionSet ps = new PermissionSet(null);
                 ps.AddPermission(new SecurityPermission(SecurityPermissionFlag.Execution));
                 ad = AppDomain.CreateDomain("New AD", null, ads, ps);

@@ -21,8 +21,10 @@ namespace SimpleStyles
 
             for (int i = 0; i < 50; i++)
             {
-                MenuItem newMI = new MenuItem();
-                newMI.Header = "Item " + i.ToString();
+                MenuItem newMI = new MenuItem
+                {
+                    Header = "Item " + i.ToString()
+                };
                 topFour.Items.Add(newMI);
             }
         }

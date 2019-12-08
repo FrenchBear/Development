@@ -8,8 +8,10 @@ namespace SudokuFX
     {
         public Cell(int maxval)
         {
-            possibleValuesValue = new ObservableCollection<int?>();
-            possibleValuesValue.Add(null);
+            possibleValuesValue = new ObservableCollection<int?>
+            {
+                null
+            };
             for (int i = 1; i <= maxval; i++)
             {
                 possibleValuesValue.Add(i);  
@@ -27,7 +29,7 @@ namespace SudokuFX
                 if (readOnlyValue != value)
                 {
                     readOnlyValue = value;
-                    if (PropertyChanged != null) PropertyChanged(this, 
+                    PropertyChanged?.Invoke(this,
                         new PropertyChangedEventArgs("ReadOnly"));
                 }
             }
@@ -44,12 +46,12 @@ namespace SudokuFX
                 if (valueValue != value)
                 {
                     valueValue = value;
-                    if (PropertyChanged != null) PropertyChanged(this, 
-                        new PropertyChangedEventArgs("Value"));  
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Value"));
                 }
             }
         }
-        ObservableCollection<int?> possibleValuesValue;
+
+        readonly ObservableCollection<int?> possibleValuesValue;
         public ObservableCollection<int?> PossibleValues
         {
             get
@@ -69,8 +71,7 @@ namespace SudokuFX
                 if (isValidValue != value)
                 {
                     isValidValue = value;
-                    if (PropertyChanged != null) PropertyChanged(this,
-                        new PropertyChangedEventArgs("IsValid"));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("IsValid"));
                 }
             }
         }
@@ -81,7 +82,7 @@ namespace SudokuFX
 
     public class InnerGrid : INotifyPropertyChanged 
     {
-        ObservableCollection<ObservableCollection<Cell>> Rows;
+        readonly ObservableCollection<ObservableCollection<Cell>> Rows;
         public ObservableCollection<ObservableCollection<Cell>> GridRows
         {
             get
@@ -120,7 +121,7 @@ namespace SudokuFX
                 }
                
                 isValidValue = valid;
-                if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs("IsValid"));  
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("IsValid"));
             }
         }
         bool isValidValue = true;
@@ -172,7 +173,7 @@ namespace SudokuFX
 
     public class Board :  INotifyPropertyChanged
     {
-       ObservableCollection<ObservableCollection<InnerGrid>> Rows;
+        readonly ObservableCollection<ObservableCollection<InnerGrid>> Rows;
         public ObservableCollection<ObservableCollection<InnerGrid>> GridRows
         {
             get
@@ -318,7 +319,7 @@ namespace SudokuFX
                 do
                 {
                     givenFound = false;
-                    Cell cell = null;
+                    Cell cell; // = null;
                     do
                     {
                         int row = rnd.Next(size);
@@ -370,8 +371,8 @@ namespace SudokuFX
                     }
                 }
                 isValidValue = valid;
-                if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs("IsValid"));
-                if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs("IsFull"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("IsValid"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("IsFull"));
             }
         }
         bool isValidValue = true;
