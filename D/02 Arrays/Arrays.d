@@ -15,7 +15,7 @@ int main()
 	writeln("t1copy: ", t1copy);
 
 	int[5] t7 = 7;		// Can initialize with a single value
-	writeln("t7: ", t7);
+	writeln("t7:     ", t7);
 
 	// Dynamic array
 	int[] t2;
@@ -23,7 +23,7 @@ int main()
 	t2 ~= [3,4];
 	t2 ~= 5;
 	t2.length = 10;
-	writeln("t2: ", t2);
+	writeln("t2:     ", t2);
 
 	//while(true) {
 	//    t2 ~= t2;
@@ -45,8 +45,8 @@ int main()
 	writeln("t6 s,r: ", t6);
 
 
-	char cend;
-	write("(Pause)");
-	readf("%c", &cend);
+	// char cend;
+	// write("(Pause)");
+	// readf("%c", &cend);
 	return 0;
 }
