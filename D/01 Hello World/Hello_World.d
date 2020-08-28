@@ -126,8 +126,8 @@ int main()
 	writeln();
 
 
-	// char c;
-	// write("(Pause)");
-	// readf("%c", &c);
+	char c;
+	write("(Pause)");
+	readf("%c", &c);
 	return 0;
 }

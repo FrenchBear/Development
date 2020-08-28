@@ -45,8 +45,8 @@ int main()
 	writeln("t6 s,r: ", t6);
 
 
-	// char cend;
-	// write("(Pause)");
-	// readf("%c", &cend);
+	char cend;
+	write("(Pause)");
+	readf("%c", &cend);
 	return 0;
 }

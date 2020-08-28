@@ -14,9 +14,19 @@
             }
         },
         {
-            "label": "Run",
+            "label": "Run in VSC",
             "type": "shell",
-            "command": ".\\run.bat"
+            "command": ".\\run.bat",
+            "problemMatcher": []
+        },
+        {
+            "label": "Run in WT",
+            "type": "process",
+            "command": "c:\\Users\\Pierr\\AppData\\Local\\Microsoft\\WindowsApps\\wt.exe",
+            "args": [
+                ".\\run.bat"
+            ],
+            "problemMatcher": []
         }
     ]
 }
