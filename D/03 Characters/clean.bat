@@ -1,1 +1,1 @@
-del /f /q Arrays.obj Arrays.exe
+del /f /q Characters.obj Characters.exe

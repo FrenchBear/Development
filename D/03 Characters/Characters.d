@@ -1,12 +1,17 @@
-module Characters;
+// Characters.d
+// Learning D
+// Chars, Strings and Unicode
+// 2020-08-27	PV
+
+module characters;
 
 import std.stdio, std.process, std.uni;
 import std.range.primitives : walkLength;
 
 int main()
 {
-	// Does not work for windows terminal...
-	auto result = ["cmd",  "/c", "chcp", "65001"].execute;
+	// For visual studio terminal, does not work for windows terminal, so it's included in run.bat instead 
+	// auto result = ["cmd",  "/c", "chcp", "65001"].execute;
 
 	string s1 = "Aé♫山𝄞🐗";
 	writeln(s1);
@@ -35,18 +40,18 @@ int main()
 	}
 	writeln('\n');
 
-	char a1 = 'A';
-	char a2 = 65;
-	char a3 = '\x41';
+	const char a1 = 'A';
+	const char a2 = 65;
+	const char a3 = '\x41';
 
-	wchar e1 = '€';
-	wchar e2 = 0x20AC;
-	wchar e3 = '\u20ac';
-	wchar e4 = '\&euro;';
+	const wchar e1 = '€';
+	const wchar e2 = 0x20AC;
+	const wchar e3 = '\u20ac';
+	const wchar e4 = '\&euro;';
 
-	dchar k1 = '𝄞';
-	dchar k2 = 0x1d11e;
-	dchar k3 = '\U0001d11e';
+	const dchar k1 = '𝄞';
+	const dchar k2 = 0x1d11e;
+	const dchar k3 = '\U0001d11e';
 
 	writeln(a1,a2,a3);
 	writeln(e1,e2,e3,e4);
@@ -87,7 +92,7 @@ int main()
 	writeln("NFC len:", ns1.length, "  NFD len:", ns2.length);
 	writeln(ns1);
 	writeln(ns2);
-	wstring ns3 = normalize(ns2);		// By default normalize!NFC
+	const wstring ns3 = normalize(ns2);		// By default normalize!NFC
 	assert(ns1 == ns3);
 	writeln('\n');
 

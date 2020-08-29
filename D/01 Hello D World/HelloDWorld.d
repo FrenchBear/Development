@@ -1,6 +1,6 @@
-// Hello world in D
-// Plus some type info
-// First D program
+// HelloDWworld.d
+// Learning D
+// First D program plus some type info
 // 2020-08-22	PV
 
 import std.stdio;

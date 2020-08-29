@@ -492,7 +492,7 @@
   <postBuildCommand />
   <filesToClean>*.obj;*.cmd;*.build;*.json;*.dep;*.tlog</filesToClean>
  </Config>
- <Folder name="Hello_World">
-  <File path="Hello_World.d" />
+ <Folder name="HelloDWorld">
+  <File path="HelloDWorld.d" />
  </Folder>
 </DProject>

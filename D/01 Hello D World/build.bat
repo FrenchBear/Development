@@ -1,0 +1,1 @@
+dmd HelloDWorld.d
