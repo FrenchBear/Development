@@ -308,7 +308,7 @@ namespace SudokuFX
             {
                 AppDomainSetup ads = new AppDomainSetup();
 
-                ads.ApplicationBase = AppDomain.CurrentDomain.BaseDirectory;
+                ads.ApplicationBase = AppDomain.CurrentDomain.BaseDirectory + "\\Solvers";
                 ads.PrivateBinPath = System.IO.Path.GetDirectoryName(System.IO.Path.GetFullPath(path));
 
                 PermissionSet ps = new PermissionSet(null);

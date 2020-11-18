@@ -3,7 +3,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Controls;
 
-namespace WindowsApplication1
+namespace ThemedProgressPie
 {
     public partial class Window1 : Window
     {

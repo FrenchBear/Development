@@ -21,7 +21,7 @@ xmlns:local="clr-namespace:ThemedProgressPie">
 
           <!-- Visual Tree -->
           <Viewbox>
-            <Grid Width="25" Height="25">
+            <Grid Width="25" Height="25" Background="Chocolate">
               <Rectangle x:Name="background" 
               StrokeThickness="{TemplateBinding BorderThickness}"
               Width="25" Height="25" Fill="{TemplateBinding Background}">
