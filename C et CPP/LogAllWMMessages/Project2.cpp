@@ -68,7 +68,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 //
 ATOM MyRegisterClass(HINSTANCE hInstance)
 {
-    WNDCLASSEXW wcex;
+    WNDCLASSEXW wcex{};
 
     wcex.cbSize = sizeof(WNDCLASSEX);
 
@@ -130,7 +130,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 //
 LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
-    if (ftrace!=NULL) fprintf(ftrace, "%u\t%u\t%lu\n", message, wParam, lParam);
+    if (ftrace!=NULL) fprintf(ftrace, "%u\t%llu\t%llu\n", message, wParam, lParam);
 
     switch (message)
     {
