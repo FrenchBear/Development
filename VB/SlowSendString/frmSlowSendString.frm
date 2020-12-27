@@ -25,7 +25,7 @@ Private Sub Form_Load()
     Loop Until Timer - t > 5
     
     Dim s As String, i As Integer
-    s = "Ok, good.   No problem to bring cell phone, tablet and laptop with me.   I'll wear only shorts no underwear and tanktop, and I'll be ready for the plan.   But I've told you I'd prefer you to pick me up at an airport, this way no need to travel in UK for me, and we can start in the car."
+    s = "pierre.violent@gmail.com"
 
     For i = 1 To Len(s)
         MySendKeys Mid(s, i, 1), True
