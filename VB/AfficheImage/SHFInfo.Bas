@@ -2,19 +2,19 @@ Attribute VB_Name = "ModSHFileInfo"
 Option Explicit
 
 Declare Function DrawIcon Lib "user32" (ByVal hdc As Long, _
-                                                           ByVal x As Long, _
-                                                           ByVal y As Long, _
-                                                           ByVal hIcon As Long) As Boolean
+                                        ByVal x As Long, _
+                                        ByVal y As Long, _
+                                        ByVal hIcon As Long) As Boolean
 
 Declare Function DrawIconEx Lib "user32" (ByVal hdc As Long, _
-                                                              ByVal xLeft As Long, _
-                                                              ByVal yTop As Long, _
-                                                              ByVal hIcon As Long, _
-                                                              ByVal cxWidth As Long, _
-                                                              ByVal cyWidth As Long, _
-                                                              ByVal istepIfAniCur As Long, _
-                                                              ByVal hbrFlickerFreeDraw As Long, _
-                                                              ByVal diFlags As Long) As Boolean
+                                          ByVal xLeft As Long, _
+                                          ByVal yTop As Long, _
+                                          ByVal hIcon As Long, _
+                                          ByVal cxWidth As Long, _
+                                          ByVal cyWidth As Long, _
+                                          ByVal istepIfAniCur As Long, _
+                                          ByVal hbrFlickerFreeDraw As Long, _
+                                          ByVal diFlags As Long) As Boolean
 ' DrawIconEx() diFlags values:
 Public Const DI_MASK = &H1
 Public Const DI_IMAGE = &H2
@@ -23,11 +23,11 @@ Public Const DI_COMPAT = &H4
 Public Const DI_DEFAULTSIZE = &H8
 
 Declare Function SHGetFileInfo Lib "Shell32" Alias "SHGetFileInfoA" _
-                              (ByVal pszPath As Any, _
-                              ByVal dwFileAttributes As Long, _
-                              psfi As SHFILEINFO, _
-                              ByVal cbFileInfo As Long, _
-                              ByVal uFlags As Long) As Long
+                               (ByVal pszPath As Any, _
+                                ByVal dwFileAttributes As Long, _
+                                psfi As SHFILEINFO, _
+                                ByVal cbFileInfo As Long, _
+                                ByVal uFlags As Long) As Long
 
 ' pszPath:
 ' Pointer to a buffer that contains the path and filename. Both absolute and

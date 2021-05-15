@@ -254,27 +254,27 @@ Attribute VB_Exposed = False
 Option Explicit
 
 Private Sub btnAnnuler_Click()
-  Hide
+    Hide
 End Sub
 
 Private Sub btnOK_Click()
-  chkOk = 1
-  
-  If Not CtrlNumeric(txtVignettesLignes, "nombre de vignettes par ligne", 2, 10) Then
-    chkOk = 0
-  ElseIf Not CtrlNumeric(txtVignettesColonnes, "nombre de vignettes par colonne", 2, 10) Then
-    chkOk = 0
-  ElseIf Not CtrlNumeric(txtImageLignes, "nombre de lignes par image", 100, 740) Then
-    chkOk = 0
-  ElseIf Not CtrlNumeric(txtImageColonnes, "nombre de colonnes par image", 100, 1018) Then
-    chkOk = 0
-  Else
-    Hide
-  End If
+    chkOk = 1
+
+    If Not CtrlNumeric(txtVignettesLignes, "nombre de vignettes par ligne", 2, 10) Then
+        chkOk = 0
+    ElseIf Not CtrlNumeric(txtVignettesColonnes, "nombre de vignettes par colonne", 2, 10) Then
+        chkOk = 0
+    ElseIf Not CtrlNumeric(txtImageLignes, "nombre de lignes par image", 100, 740) Then
+        chkOk = 0
+    ElseIf Not CtrlNumeric(txtImageColonnes, "nombre de colonnes par image", 100, 1018) Then
+        chkOk = 0
+    Else
+        Hide
+    End If
 End Sub
 
 Private Sub Form_Load()
-  chkOk = 0
-  txtVignettesLignes.SelStart = 0
-  txtVignettesColonnes.SelLength = 99
+    chkOk = 0
+    txtVignettesLignes.SelStart = 0
+    txtVignettesColonnes.SelLength = 99
 End Sub

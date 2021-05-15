@@ -3,8 +3,8 @@ Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
 Begin VB.Form frmAfficheImage 
    Caption         =   "AfficheImage"
    ClientHeight    =   5145
-   ClientLeft      =   165
-   ClientTop       =   855
+   ClientLeft      =   225
+   ClientTop       =   870
    ClientWidth     =   10245
    ClipControls    =   0   'False
    BeginProperty Font 
@@ -396,9 +396,9 @@ Dim LastKeyAscii As Integer     ' Code de la dernière commande pour répétition a
 Dim hist As New Historique      ' Liste des images parcourues
 
 Enum EnumAuto                   ' Modes de navigation automatique
-  AUTO_AUCUN
-  AUTO_SUIVANT
-  AUTO_HASARD
+    AUTO_AUCUN
+    AUTO_SUIVANT
+    AUTO_HASARD
 End Enum
 
 Dim iAuto As EnumAuto           ' Mode courant de navigation automatique
@@ -407,230 +407,230 @@ Dim fso As FileSystemObject     ' Accès à l'objet FileSystem du scripting
 
 
 Private Sub Analyse1Rep(sRel As String)
-  Dim sFic As String
-  
-  ' D'abord les fichiers du répertoire
-  ' L'accès avec l'objet FileSystem est beaucoup trop lent...
-  sFic = Dir(sRep & sRel & "*", vbNormal Or vbReadOnly Or vbArchive)
-  While sFic <> ""
-    sFic = LCase(sFic)
-    If Right(sFic, 4) = ".gif" Or Right(sFic, 4) = ".bmp" Or Right(sFic, 5) = ".html" Or Right(sFic, 4) = ".jpg" Or Right(sFic, 5) = ".jpeg" Then
-      ' Par convention on ignore les fichiers dont le nom commence par !
-      If Left(sFic, 1) <> "!" Then
-        If cboFichiers.ListCount < 32766 Then
-          cboFichiers.AddItem sRel & sFic
-          If cboFichiers.ListCount Mod 100 = 0 Then
-            sbStatus.SimpleText = "Analyse des images du dossier " & sRep & sRel & ": " & cboFichiers.ListCount & " images"
-          End If
+    Dim sFic As String
+
+    ' D'abord les fichiers du répertoire
+    ' L'accès avec l'objet FileSystem est beaucoup trop lent...
+    sFic = Dir(sRep & sRel & "*", vbNormal Or vbReadOnly Or vbArchive)
+    While sFic <> ""
+        sFic = LCase(sFic)
+        If Right(sFic, 4) = ".gif" Or Right(sFic, 4) = ".bmp" Or Right(sFic, 5) = ".html" Or Right(sFic, 4) = ".jpg" Or Right(sFic, 5) = ".jpeg" Then
+            ' Par convention on ignore les fichiers dont le nom commence par !
+            If Left(sFic, 1) <> "!" Then
+                If cboFichiers.ListCount < 32766 Then
+                    cboFichiers.AddItem sRel & sFic
+                    If cboFichiers.ListCount Mod 100 = 0 Then
+                        sbStatus.SimpleText = "Analyse des images du dossier " & sRep & sRel & ": " & cboFichiers.ListCount & " images"
+                    End If
+                End If
+            End If
         End If
-      End If
-    End If
-    sFic = Dir
-  Wend
-  
-  ' Puis on analyse les sous-répertoires
-  Dim fo As Folder, sfo As Folder
-  Set fo = fso.GetFolder(sRep & sRel)
-  For Each sfo In fo.SubFolders
-    sFic = LCase(sfo.Name)
-    Analyse1Rep sRel & sFic & "\"
-  Next
+        sFic = Dir
+    Wend
+
+    ' Puis on analyse les sous-répertoires
+    Dim fo As Folder, sfo As Folder
+    Set fo = fso.GetFolder(sRep & sRel)
+    For Each sfo In fo.SubFolders
+        sFic = LCase(sfo.Name)
+        Analyse1Rep sRel & sFic & "\"
+    Next
 End Sub
 
 
 Private Sub BalayerImages()
-  Dim sRepNouv As String
-  
-  LastKeyAscii = Asc("?")
-  If sRep = "" Then sRep = GetSetting(App.EXEName, "Config", "Path", "C:\")
-  If Right(sRep, 1) = "\" And Len(sRep) > 3 Then sRep = Left(sRep, Len(sRep) - 1)
-  sRepNouv = sBrowseForFolder(Me.hwnd, sRep, "Sélectionnez le répertoire contenant les images." & vbCrLf & "Précédent: " & sRep)
-  If sRepNouv = "" Then Exit Sub
-  sRep = sRepNouv
-  SaveSetting App.EXEName, "Config", "Path", sRep
-  If Right(sRep, 1) <> "\" Then sRep = sRep & "\"
-  
-  Unload frmFichiers
-  bFrmFichiersChargé = False
-  
-  Screen.MousePointer = vbHourglass
-  cboFichiers.Visible = False
-  cboFichiers.clear
-  hist.clear
-  
-  Set fso = New FileSystemObject
-  sbStatus.SimpleText = "Analyse des images du dossier " & sRep
-  sbStatus.Refresh
-  Analyse1Rep ""
-  Set fso = Nothing
-  
-  sbStatus.SimpleText = ""
-  iPos = 0
-  AfficheImage
-  cboFichiers.Visible = True
-  Screen.MousePointer = vbDefault
+    Dim sRepNouv As String
+
+    LastKeyAscii = Asc("?")
+    If sRep = "" Then sRep = GetSetting(App.EXEName, "Config", "Path", "C:\")
+    If Right(sRep, 1) = "\" And Len(sRep) > 3 Then sRep = Left(sRep, Len(sRep) - 1)
+    sRepNouv = sBrowseForFolder(Me.hwnd, sRep, "Sélectionnez le répertoire contenant les images." & vbCrLf & "Précédent: " & sRep)
+    If sRepNouv = "" Then Exit Sub
+    sRep = sRepNouv
+    SaveSetting App.EXEName, "Config", "Path", sRep
+    If Right(sRep, 1) <> "\" Then sRep = sRep & "\"
+
+    Unload frmFichiers
+    bFrmFichiersChargé = False
+
+    Screen.MousePointer = vbHourglass
+    cboFichiers.Visible = False
+    cboFichiers.clear
+    hist.clear
+
+    Set fso = New FileSystemObject
+    sbStatus.SimpleText = "Analyse des images du dossier " & sRep
+    sbStatus.Refresh
+    Analyse1Rep ""
+    Set fso = Nothing
+
+    sbStatus.SimpleText = ""
+    iPos = 0
+    AfficheImage
+    cboFichiers.Visible = True
+    Screen.MousePointer = vbDefault
 End Sub
 
 Private Sub NavigueHasard()
-  LastKeyAscii = Asc("*")
-  If cboFichiers.ListCount = 0 Then Exit Sub
-  iPos = Int(cboFichiers.ListCount * Rnd)
-  AfficheImage
+    LastKeyAscii = Asc("*")
+    If cboFichiers.ListCount = 0 Then Exit Sub
+    iPos = Int(cboFichiers.ListCount * Rnd)
+    AfficheImage
 End Sub
 
 Private Sub NavigueDébut()
-  iPos = 0
-  AfficheImage
+    iPos = 0
+    AfficheImage
 End Sub
 
 Private Sub NaviguePrécédent()
-  LastKeyAscii = Asc("-")
-  If iPos > 0 Then
-    iPos = iPos - 1
-    AfficheImage
-  End If
+    LastKeyAscii = Asc("-")
+    If iPos > 0 Then
+        iPos = iPos - 1
+        AfficheImage
+    End If
 End Sub
 
 Private Sub NavigueSuivant()
-  LastKeyAscii = Asc("+")
-  If iPos < cboFichiers.ListCount - 1 Then
-    iPos = iPos + 1
-    AfficheImage
-  End If
+    LastKeyAscii = Asc("+")
+    If iPos < cboFichiers.ListCount - 1 Then
+        iPos = iPos + 1
+        AfficheImage
+    End If
 End Sub
 
 Private Sub NavigueFin()
-  iPos = cboFichiers.ListCount - 1
-  If iPos < 0 Then iPos = 0
-  AfficheImage
+    iPos = cboFichiers.ListCount - 1
+    If iPos < 0 Then iPos = 0
+    AfficheImage
 End Sub
 
 
 Sub AfficheImage()
-  ' Cas où il n'y a rien de chargé
-  If cboFichiers.ListCount = 0 Then Exit Sub
-  
-  ' On synchronise la sélction de frmFichiers
-  If bFrmFichiersChargé Then
-    Let frmFichiers.lvFichiers.SelectedItem = frmFichiers.lvFichiers.ListItems(iPos + 1)
-  End If
-  
-  On Error Resume Next
-  cboFichiers.ListIndex = iPos
-  Image2.Picture = LoadPicture(sRep & cboFichiers.Text)
-  If Err Then
-    Image1.Picture = LoadPicture
-    Image1.Print "Échec à l'ouverture de " & sRep & cboFichiers.Text & vbCrLf & "Erreur " & Err & ": " & Error
-    Caption = "AfficheImage"
-    sbStatus.Panels("Fichier") = ""
-    sbStatus.Panels("Résolution") = ""
-    sbStatus.Panels("Taille") = ""
-    sbStatus.Panels("Echelle") = ""
-  Else
-    On Error GoTo 0
-    DoAffichage
-    Caption = cboFichiers.Text & " - AfficheImage"
-    hist.Ajoute iPos
-  End If
-  lblPos = iPos + 1 & "/" & cboFichiers.ListCount
+' Cas où il n'y a rien de chargé
+    If cboFichiers.ListCount = 0 Then Exit Sub
+
+    ' On synchronise la sélction de frmFichiers
+    If bFrmFichiersChargé Then
+        Let frmFichiers.lvFichiers.SelectedItem = frmFichiers.lvFichiers.ListItems(iPos + 1)
+    End If
+
+    On Error Resume Next
+    cboFichiers.ListIndex = iPos
+    Image2.Picture = LoadPicture(sRep & cboFichiers.Text)
+    If Err Then
+        Image1.Picture = LoadPicture
+        Image1.Print "Échec à l'ouverture de " & sRep & cboFichiers.Text & vbCrLf & "Erreur " & Err & ": " & Error
+        Caption = "AfficheImage"
+        sbStatus.Panels("Fichier") = ""
+        sbStatus.Panels("Résolution") = ""
+        sbStatus.Panels("Taille") = ""
+        sbStatus.Panels("Echelle") = ""
+    Else
+        On Error GoTo 0
+        DoAffichage
+        Caption = cboFichiers.Text & " - AfficheImage"
+        hist.Ajoute iPos
+    End If
+    lblPos = iPos + 1 & "/" & cboFichiers.ListCount
 End Sub
 
 Sub DoAffichage()
-  If cboFichiers.Text = "" Then Exit Sub
-  
-  sbStatus.Panels("Fichier") = sRep & cboFichiers.Text
-  sbStatus.Panels("Résolution") = Image2.Width & " x " & Image2.Height
-  sbStatus.Panels("Taille") = Format(FileLen(sRep & cboFichiers.Text) / 1024, "#.0 K")
-  If chkStretch Then
-    Dim r1 As Single, r2 As Single
-    r1 = (frmAfficheImage.ScaleWidth - 8) / Image2.Width
-    r2 = (frmAfficheImage.ScaleHeight - 63) / Image2.Height
-    If r2 < r1 Then r1 = r2
-    If chkAjuster = 0 Then If r1 > 1 Then r1 = 1
-    Image1.Picture = LoadPicture
-    If r1 < 0 Then Exit Sub
-    Image1.Move Image1.Left, Image1.Top, Image2.Width * r1, Image2.Height * r1
-    sbStatus.Panels("Echelle") = Format(r1, "#%")
-  Else
-    sbStatus.Panels("Echelle") = "100%"
-  End If
-  Image1.Picture = Image2.Picture
+    If cboFichiers.Text = "" Then Exit Sub
+
+    sbStatus.Panels("Fichier") = sRep & cboFichiers.Text
+    sbStatus.Panels("Résolution") = Image2.Width & " x " & Image2.Height
+    sbStatus.Panels("Taille") = Format(FileLen(sRep & cboFichiers.Text) / 1024, "#.0 K")
+    If chkStretch Then
+        Dim r1 As Single, r2 As Single
+        r1 = (frmAfficheImage.ScaleWidth - 8) / Image2.Width
+        r2 = (frmAfficheImage.ScaleHeight - 63) / Image2.Height
+        If r2 < r1 Then r1 = r2
+        If chkAjuster = 0 Then If r1 > 1 Then r1 = 1
+        Image1.Picture = LoadPicture
+        If r1 < 0 Then Exit Sub
+        Image1.Move Image1.Left, Image1.Top, Image2.Width * r1, Image2.Height * r1
+        sbStatus.Panels("Echelle") = Format(r1, "#%")
+    Else
+        sbStatus.Panels("Echelle") = "100%"
+    End If
+    Image1.Picture = Image2.Picture
 End Sub
 
 
 Private Sub cboFichiers_Click()
-  If iPos <> cboFichiers.ListIndex Then
-    iPos = cboFichiers.ListIndex
-    AfficheImage
-  End If
+    If iPos <> cboFichiers.ListIndex Then
+        iPos = cboFichiers.ListIndex
+        AfficheImage
+    End If
 End Sub
 
 Private Sub chkAjuster_Click()
-  DoAffichage
+    DoAffichage
 End Sub
 
 Private Sub chkStretch_Click()
-  Image1.Stretch = chkStretch
-  chkAjuster.Enabled = chkStretch
-  DoAffichage
+    Image1.Stretch = chkStretch
+    chkAjuster.Enabled = chkStretch
+    DoAffichage
 End Sub
 
 Private Sub NavigueAutomatique()
-  If cboFichiers.ListCount = 0 Then Exit Sub
-  
-  frmAutomatique.Show 1
-  If frmAutomatique.chkOk = 0 Then Exit Sub
+    If cboFichiers.ListCount = 0 Then Exit Sub
 
-  If frmAutomatique.optAucun Then
-    iAuto = AUTO_AUCUN
-    tmrTim.Enabled = False
-    Exit Sub
-  ElseIf frmAutomatique.optAléatoire Then
-    iAuto = AUTO_HASARD
-  Else
-    iAuto = AUTO_SUIVANT
-  End If
-  tmrTim.Interval = 1000 * frmAutomatique.txtDélai
-  tmrTim.Enabled = True
+    frmAutomatique.Show 1
+    If frmAutomatique.chkOk = 0 Then Exit Sub
+
+    If frmAutomatique.optAucun Then
+        iAuto = AUTO_AUCUN
+        tmrTim.Enabled = False
+        Exit Sub
+    ElseIf frmAutomatique.optAléatoire Then
+        iAuto = AUTO_HASARD
+    Else
+        iAuto = AUTO_SUIVANT
+    End If
+    tmrTim.Interval = 1000 * frmAutomatique.txtDélai
+    tmrTim.Enabled = True
 End Sub
 
 Private Sub NavigueRetour()
-  If hist.count > 1 Then
-    iPos = hist.Back
-    AfficheImage
-  End If
+    If hist.count > 1 Then
+        iPos = hist.Back
+        AfficheImage
+    End If
 End Sub
 
 Private Sub CopieImage()
-  If cboFichiers.Text = "" Then Exit Sub
+    If cboFichiers.Text = "" Then Exit Sub
 
-  Clipboard.clear
-  Clipboard.SetData Image1.Picture
+    Clipboard.clear
+    Clipboard.SetData Image1.Picture
 End Sub
 
 
 Public Sub SupprimeImage()
-  If cboFichiers.Text = "" Then Exit Sub
+    If cboFichiers.Text = "" Then Exit Sub
 
-  sbStatus.SimpleText = sRep & cboFichiers.Text & " : Suppression en cours"
-  Screen.MousePointer = vbHourglass
-  
-  Dim iErr As Long
-  iErr = EffaceFichierCorbeille(Me.hwnd, sRep & cboFichiers.Text)
-  If iErr Then
-    MsgBox "Échec à la suppression du fichier " & sRep & cboFichiers.Text & vbCrLf & "Err: " & Err & Error
-  Else
-    Image1.Picture = LoadPicture
-    sbStatus.SimpleText = sRep & cboFichiers.Text & " : Supprimé (envoyé à la corbeille)"
-  End If
-  Screen.MousePointer = vbDefault
-  
-  Dim i As Integer
-  i = cboFichiers.ListIndex
-  cboFichiers.RemoveItem i
-  If i = cboFichiers.ListCount Then i = i - 1
-  cboFichiers.ListIndex = i
-  AfficheImage
+    sbStatus.SimpleText = sRep & cboFichiers.Text & " : Suppression en cours"
+    Screen.MousePointer = vbHourglass
+
+    Dim iErr As Long
+    iErr = EffaceFichierCorbeille(Me.hwnd, sRep & cboFichiers.Text)
+    If iErr Then
+        MsgBox "Échec à la suppression du fichier " & sRep & cboFichiers.Text & vbCrLf & "Err: " & Err & Error
+    Else
+        Image1.Picture = LoadPicture
+        sbStatus.SimpleText = sRep & cboFichiers.Text & " : Supprimé (envoyé à la corbeille)"
+    End If
+    Screen.MousePointer = vbDefault
+
+    Dim i As Integer
+    i = cboFichiers.ListIndex
+    cboFichiers.RemoveItem i
+    If i = cboFichiers.ListCount Then i = i - 1
+    cboFichiers.ListIndex = i
+    AfficheImage
 End Sub
 
 
@@ -638,79 +638,79 @@ End Sub
 ' Raccourcis clavier
 
 Private Sub Clic(sButtonKey As String, bPressed As Boolean)
-  If bPressed Then
-    tbBoutons.Buttons(sButtonKey).Value = tbrPressed
-    tbBoutons.Refresh
-  Else
-    tbBoutons.Buttons(sButtonKey).Value = tbrUnpressed
-  End If
+    If bPressed Then
+        tbBoutons.Buttons(sButtonKey).Value = tbrPressed
+        tbBoutons.Refresh
+    Else
+        tbBoutons.Buttons(sButtonKey).Value = tbrUnpressed
+    End If
 End Sub
 
 Private Sub ListeFichiers()
-  Dim l As ListView, i As Integer
-  Set l = frmFichiers.lvFichiers
-  Dim x As ListItem
-  If l.ListItems.count = 0 Then
-    Screen.MousePointer = vbHourglass
-    For i = 0 To cboFichiers.ListCount - 1
-      l.ListItems.Add , , cboFichiers.List(i)
-    Next
-    Screen.MousePointer = vbDefault
-  End If
-  
-  bFrmFichiersChargé = True
-  Let frmFichiers.lvFichiers.SelectedItem = frmFichiers.lvFichiers.ListItems(iPos + 1)
-  frmFichiers.Show
+    Dim l As ListView, i As Integer
+    Set l = frmFichiers.lvFichiers
+    Dim x As ListItem
+    If l.ListItems.count = 0 Then
+        Screen.MousePointer = vbHourglass
+        For i = 0 To cboFichiers.ListCount - 1
+            l.ListItems.Add , , cboFichiers.List(i)
+        Next
+        Screen.MousePointer = vbDefault
+    End If
+
+    bFrmFichiersChargé = True
+    Let frmFichiers.lvFichiers.SelectedItem = frmFichiers.lvFichiers.ListItems(iPos + 1)
+    frmFichiers.Show
 End Sub
 
 Private Sub cmdNettoyage_Click()
-  Do While iPos < cboFichiers.ListCount - 1
-    If Image2.Width <= 2 Then
-      Stop
-    Else
-      NavigueSuivant
-    End If
-  Loop
+    Do While iPos < cboFichiers.ListCount - 1
+        If Image2.Width <= 2 Then
+            Stop
+        Else
+            NavigueSuivant
+        End If
+    Loop
 End Sub
 
 Private Sub Form_KeyDown(KeyCode As Integer, Shift As Integer)
-  Select Case KeyCode
+    Select Case KeyCode
     Case vbKeyHome: Clic "First", True: NavigueDébut: Clic "First", False
-    Case vbKeyEnd:  Clic "Last", True: NavigueFin: Clic "Last", False
+    Case vbKeyEnd: Clic "Last", True: NavigueFin: Clic "Last", False
     Case vbKeyBack: NavigueRetour
-  End Select
+    End Select
 End Sub
 
 Private Sub Form_KeyPress(KeyAscii As Integer)
-  If KeyAscii = 32 Then KeyAscii = LastKeyAscii
-  Select Case Chr(KeyAscii)
+    If KeyAscii = 32 Then KeyAscii = LastKeyAscii
+    Select Case Chr(KeyAscii)
     Case "?": Clic "Open", True: BalayerImages: Clic "Open", False
     Case "-": Clic "Previous", True: NaviguePrécédent: Clic "Previous", False
     Case "+", Chr(13): Clic "Next", True: NavigueSuivant: Clic "Next", False
     Case "*": Clic "Random", True: NavigueHasard: Clic "Random", False
-  End Select
+    End Select
 End Sub
 
 Private Sub Form_Unload(Cancel As Integer)
-  On Error Resume Next
-  Unload frmFichiers      ' La feuille des fichiers n'est pas modale
+    On Error Resume Next
+    Unload frmFichiers      ' La feuille des fichiers n'est pas modale
 End Sub
 
 ' ===================================================
 ' Barre de boutons
 
 Private Sub tbBoutons_ButtonClick(ByVal Button As MSComctlLib.Button)
-  Select Case Button.Key
-    Case "Open":      BalayerImages
-    Case "First":     NavigueDébut
-    Case "Previous":  NaviguePrécédent
-    Case "Next":      NavigueSuivant
-    Case "Last":      NavigueFin
-    Case "Random":    NavigueHasard
-    Case "Delete":    SupprimeImage
-    Case "Fichiers":  ListeFichiers
-    Case Else:        Stop
-  End Select
+    Select Case Button.Key
+    Case "Open": BalayerImages
+    Case "First": NavigueDébut
+    Case "Previous": NaviguePrécédent
+    Case "Next": NavigueSuivant
+    Case "Last": NavigueFin
+    Case "Random": NavigueHasard
+    Case "Delete": SupprimeImage
+    Case "Fichiers": ListeFichiers
+    Case Else: Stop
+    End Select
 End Sub
 
 
@@ -719,69 +719,69 @@ End Sub
 ' Menus
 
 Private Sub cmdBalayer_Click()
-  BalayerImages
+    BalayerImages
 End Sub
 
 
 Private Sub cmdDébut_Click()
-  NavigueDébut
+    NavigueDébut
 End Sub
 
 Private Sub cmdPrécédent_Click()
-  NaviguePrécédent
+    NaviguePrécédent
 End Sub
 
 Private Sub cmdSuivant_Click()
-  NavigueSuivant
+    NavigueSuivant
 End Sub
 
 Private Sub cmdFin_Click()
-  NavigueFin
+    NavigueFin
 End Sub
 
 
 Private Sub cmdHasard_Click()
-  NavigueHasard
+    NavigueHasard
 End Sub
 
 Private Sub cmdAutomatique_Click()
-  NavigueAutomatique
+    NavigueAutomatique
 End Sub
 
 Private Sub cmdRetour_Click()
-  NavigueRetour
+    NavigueRetour
 End Sub
 
 
 Private Sub cmdQuitter_Click()
-  Unload Me
+    Unload Me
 End Sub
 
 
 Private Sub cmdCopier_Click()
-  CopieImage
+    CopieImage
 End Sub
 
 Private Sub cmdSupprimer_Click()
-  SupprimeImage
+    SupprimeImage
 End Sub
 
 
 
 Private Sub cmdEditer_Click()
-  If cboFichiers.Text = "" Then Exit Sub
-  FileShellExecute hwnd, Chr(34) & sRep & cboFichiers.Text & Chr(34)
+    If cboFichiers.Text = "" Then Exit Sub
+    FileShellExecute hwnd, Chr(34) & sRep & cboFichiers.Text & Chr(34)
 End Sub
 
 Private Sub cmdListeFichiers_Click()
-  ListeFichiers
+    ListeFichiers
 End Sub
 
 
 
 
 Private Sub cmdAbout_Click()
-  frmAPropos.Show 1
+    frmAPropos.Show 1
 End Sub
 
 
@@ -789,161 +789,161 @@ End Sub
 
 
 Private Sub Form_Load()
-  cmdBalayer.Caption = "&Balayer" & vbTab & "?"
-  cmdDébut.Caption = "&Début" & vbTab & "Début"
-  cmdPrécédent.Caption = "&Précédent" & vbTab & "-"
-  cmdSuivant.Caption = "&Suivant" & vbTab & "+"
-  cmdFin.Caption = "&Fin" & vbTab & "Fin"
-  cmdHasard.Caption = "Au &hasard" & vbTab & "*"
-  cmdRetour.Caption = "&Retour" & vbTab & "Ret.Arr"
-  cmdQuitter.Caption = "&Quitter" & vbTab & "Alt+F4"
-  
-  Randomize
-  Image1.Stretch = chkStretch
-  Show
-  tbBoutons.Refresh
-  
-  cmdBalayer_Click
+    cmdBalayer.Caption = "&Balayer" & vbTab & "?"
+    cmdDébut.Caption = "&Début" & vbTab & "Début"
+    cmdPrécédent.Caption = "&Précédent" & vbTab & "-"
+    cmdSuivant.Caption = "&Suivant" & vbTab & "+"
+    cmdFin.Caption = "&Fin" & vbTab & "Fin"
+    cmdHasard.Caption = "Au &hasard" & vbTab & "*"
+    cmdRetour.Caption = "&Retour" & vbTab & "Ret.Arr"
+    cmdQuitter.Caption = "&Quitter" & vbTab & "Alt+F4"
+
+    Randomize
+    Image1.Stretch = chkStretch
+    Show
+    tbBoutons.Refresh
+
+    cmdBalayer_Click
 End Sub
 
 Private Sub Form_Resize()
-  If ScaleWidth > 500 Then
-    chkAjuster.Left = ScaleWidth - 145
-    chkStretch.Left = ScaleWidth - 145
-    cboFichiers.Width = ScaleWidth - 480
-  End If
-  Form_Paint
-  DoAffichage
+    If ScaleWidth > 500 Then
+        chkAjuster.Left = ScaleWidth - 145
+        chkStretch.Left = ScaleWidth - 145
+        cboFichiers.Width = ScaleWidth - 480
+    End If
+    Form_Paint
+    DoAffichage
 End Sub
 
 Private Sub Form_Paint()
-  Line (0, 0)-Step(ScaleWidth, 0), vbButtonShadow
-  Line (0, 1)-Step(ScaleWidth, 0), vb3DHighlight
+    Line (0, 0)-Step(ScaleWidth, 0), vbButtonShadow
+    Line (0, 1)-Step(ScaleWidth, 0), vb3DHighlight
 
-  Line (0, 33)-Step(ScaleWidth, 0), vbButtonShadow
-  Line (0, 34)-Step(ScaleWidth, 0), vb3DHighlight
+    Line (0, 33)-Step(ScaleWidth, 0), vbButtonShadow
+    Line (0, 34)-Step(ScaleWidth, 0), vb3DHighlight
 End Sub
 
 
 
 Private Sub cmdHTML_Click()
-  If cboFichiers.ListCount = 0 Then Exit Sub
-  
-  Dim i As Integer
-  Dim sFic As String
-  
-  sFic = sRep & "!images.htm"
-  sFic = InputBox("Nom du fichier à générer ?", , sFic)
-  If sFic = "" Then Exit Sub
-  
-  Screen.MousePointer = vbHourglass
-  
-  Open sFic For Output As #1
-  Print #1, "<HTML>"
-  Print #1, "<HEAD>"
-  Print #1, "<TITLE>Images de " & sRep & "</TITLE>"
-  Print #1, "<!-- Généré le " & Format(Now, "ddd dd/mm/yyyy hh:nn:ss") & "-->"
-  Print #1, "</HEAD>"
-  Print #1, "<BODY>"
-  Print #1, "<H1>Images de " & sRep & "</H1>"
-  For i = 0 To cboFichiers.ListCount - 1
-    iPos = i
-    'AfficheImage
-    'Print #1, "<IMG src=" & Chr(34) & "" & cboFichiers.List(i) & Chr(34) & " width=" & Int(Image2.Width * 0.4) & " height="; Int(Image2.Height * 0.4) & "><BR><BR>"
-    'DoEvents
-    
-    Print #1, "<IMG src=" & Chr(34) & "" & cboFichiers.List(i) & Chr(34) & "><BR><BR>"
-  Next
-  Print #1, "</BODY>"
-  Print #1, "</HTML>"
-  Close #1
-  
-  Screen.MousePointer = vbDefault
+    If cboFichiers.ListCount = 0 Then Exit Sub
+
+    Dim i As Integer
+    Dim sFic As String
+
+    sFic = sRep & "!images.htm"
+    sFic = InputBox("Nom du fichier à générer ?", , sFic)
+    If sFic = "" Then Exit Sub
+
+    Screen.MousePointer = vbHourglass
+
+    Open sFic For Output As #1
+    Print #1, "<HTML>"
+    Print #1, "<HEAD>"
+    Print #1, "<TITLE>Images de " & sRep & "</TITLE>"
+    Print #1, "<!-- Généré le " & Format(Now, "ddd dd/mm/yyyy hh:nn:ss") & "-->"
+    Print #1, "</HEAD>"
+    Print #1, "<BODY>"
+    Print #1, "<H1>Images de " & sRep & "</H1>"
+    For i = 0 To cboFichiers.ListCount - 1
+        iPos = i
+        'AfficheImage
+        'Print #1, "<IMG src=" & Chr(34) & "" & cboFichiers.List(i) & Chr(34) & " width=" & Int(Image2.Width * 0.4) & " height="; Int(Image2.Height * 0.4) & "><BR><BR>"
+        'DoEvents
+
+        Print #1, "<IMG src=" & Chr(34) & "" & cboFichiers.List(i) & Chr(34) & "><BR><BR>"
+    Next
+    Print #1, "</BODY>"
+    Print #1, "</HTML>"
+    Close #1
+
+    Screen.MousePointer = vbDefault
 End Sub
 
 
 Private Sub cmdContact_Click()
-  If cboFichiers.ListCount = 0 Then Exit Sub
-  
-  Dim iVignettesLignes As Integer, iVignettesColonnes As Integer
-  Dim iImageLignes As Integer, iImageColonnes As Integer
-  
-  frmOptionsContact.Show 1
-  
-  If frmOptionsContact.chkOk = 0 Then Exit Sub
-  iVignettesLignes = frmOptionsContact.txtVignettesLignes
-  iVignettesColonnes = frmOptionsContact.txtVignettesColonnes
-  iImageLignes = frmOptionsContact.txtImageLignes
-  iImageColonnes = frmOptionsContact.txtImageColonnes
-  
-  Dim iRang As Integer, i As Integer, j As Integer, iPlanche As Integer
-  Dim sContact As String
-  iRang = 0
-  iPlanche = 1
-  
-  frmContact.Show
-  frmContact.Move 0, 0, Screen.TwipsPerPixelX * (frmContact.Width / Screen.TwipsPerPixelX - frmContact.ScaleWidth + iImageColonnes + 1), Screen.TwipsPerPixelY * (frmContact.Height / Screen.TwipsPerPixelY - frmContact.ScaleHeight + iImageLignes + 1)
-  Do
-    sContact = "!contact " & Right(Str(iPlanche + 100), 2) & ".bmp"
-    frmContact.Cls
-    frmContact.Caption = sContact
-    For i = 0 To iVignettesLignes - 1
-      For j = 0 To iVignettesColonnes - 1
-        If iRang < cboFichiers.ListCount Then
-          frmContact.Vignette j, i, sRep, cboFichiers.List(iRang), iVignettesColonnes, iVignettesLignes
-          iRang = iRang + 1
-        End If
-      Next
-    Next
-    SavePicture frmContact.Image, sRep & sContact
-    iPlanche = iPlanche + 1
-  Loop Until iRang >= cboFichiers.ListCount
-  
-  Unload frmContact
+    If cboFichiers.ListCount = 0 Then Exit Sub
+
+    Dim iVignettesLignes As Integer, iVignettesColonnes As Integer
+    Dim iImageLignes As Integer, iImageColonnes As Integer
+
+    frmOptionsContact.Show 1
+
+    If frmOptionsContact.chkOk = 0 Then Exit Sub
+    iVignettesLignes = frmOptionsContact.txtVignettesLignes
+    iVignettesColonnes = frmOptionsContact.txtVignettesColonnes
+    iImageLignes = frmOptionsContact.txtImageLignes
+    iImageColonnes = frmOptionsContact.txtImageColonnes
+
+    Dim iRang As Integer, i As Integer, j As Integer, iPlanche As Integer
+    Dim sContact As String
+    iRang = 0
+    iPlanche = 1
+
+    frmContact.Show
+    frmContact.Move 0, 0, Screen.TwipsPerPixelX * (frmContact.Width / Screen.TwipsPerPixelX - frmContact.ScaleWidth + iImageColonnes + 1), Screen.TwipsPerPixelY * (frmContact.Height / Screen.TwipsPerPixelY - frmContact.ScaleHeight + iImageLignes + 1)
+    Do
+        sContact = "!contact " & Right(Str(iPlanche + 100), 2) & ".bmp"
+        frmContact.Cls
+        frmContact.Caption = sContact
+        For i = 0 To iVignettesLignes - 1
+            For j = 0 To iVignettesColonnes - 1
+                If iRang < cboFichiers.ListCount Then
+                    frmContact.Vignette j, i, sRep, cboFichiers.List(iRang), iVignettesColonnes, iVignettesLignes
+                    iRang = iRang + 1
+                End If
+            Next
+        Next
+        SavePicture frmContact.Image, sRep & sContact
+        iPlanche = iPlanche + 1
+    Loop Until iRang >= cboFichiers.ListCount
+
+    Unload frmContact
 End Sub
 
 ' ========================================================================
 ' Drag and drop OLE: liste de fichiers depuis l'explorateur
 
 Private Sub Form_OLEDragOver(Data As DataObject, Effect As Long, Button As Integer, Shift As Integer, x As Single, y As Single, State As Integer)
-  If Data.GetFormat(vbCFFiles) Then
-    'Si le format des données est approprié, indique à la source l'action à exécuter
-    Effect = vbDropEffectCopy And Effect
-    Exit Sub
-  End If
-  'Si le format des données est incorrect, pas de déplacement.
-  Effect = vbDropEffectNone
+    If Data.GetFormat(vbCFFiles) Then
+        'Si le format des données est approprié, indique à la source l'action à exécuter
+        Effect = vbDropEffectCopy And Effect
+        Exit Sub
+    End If
+    'Si le format des données est incorrect, pas de déplacement.
+    Effect = vbDropEffectNone
 End Sub
 
 Private Sub Form_OLEDragDrop(Data As DataObject, Effect As Long, Button As Integer, Shift As Integer, x As Single, y As Single)
-  cboFichiers.clear
-  hist.clear
-  
-  Dim f, sFic As String
-  sRep = ""       ' Chemin absolu pour le drag'n'drop
-  For Each f In Data.Files
-    sFic = LCase(f)
-    If Right(sFic, 4) = ".gif" Or Right(sFic, 4) = ".bmp" Or Right(sFic, 4) = ".htm" Or Right(sFic, 5) = ".html" Or Right(sFic, 4) = ".jpg" Or Right(sFic, 5) = ".jpeg" Then
-      ' Par convention on ignore les fichiers dont le nom commence par !
-      If Left(sFic, 1) <> "!" Then cboFichiers.AddItem sFic
-    End If
-  Next
-  iPos = 0
-  AfficheImage
+    cboFichiers.clear
+    hist.clear
+
+    Dim f, sFic As String
+    sRep = ""       ' Chemin absolu pour le drag'n'drop
+    For Each f In Data.Files
+        sFic = LCase(f)
+        If Right(sFic, 4) = ".gif" Or Right(sFic, 4) = ".bmp" Or Right(sFic, 4) = ".htm" Or Right(sFic, 5) = ".html" Or Right(sFic, 4) = ".jpg" Or Right(sFic, 5) = ".jpeg" Then
+            ' Par convention on ignore les fichiers dont le nom commence par !
+            If Left(sFic, 1) <> "!" Then cboFichiers.AddItem sFic
+        End If
+    Next
+    iPos = 0
+    AfficheImage
 End Sub
 
 Private Sub Image1_OLEDragDrop(Data As DataObject, Effect As Long, Button As Integer, Shift As Integer, x As Single, y As Single)
-  Call Form_OLEDragDrop(Data, Effect, Button, Shift, x, y)
+    Call Form_OLEDragDrop(Data, Effect, Button, Shift, x, y)
 End Sub
 
 Private Sub Image1_OLEDragOver(Data As DataObject, Effect As Long, Button As Integer, Shift As Integer, x As Single, y As Single, State As Integer)
-  Call Form_OLEDragOver(Data, Effect, Button, Shift, x, y, State)
+    Call Form_OLEDragOver(Data, Effect, Button, Shift, x, y, State)
 End Sub
 
 Private Sub tmrTim_Timer()
-  Select Case iAuto
-    Case AUTO_HASARD:   NavigueHasard
-    Case AUTO_SUIVANT:  NavigueSuivant
-  End Select
+    Select Case iAuto
+    Case AUTO_HASARD: NavigueHasard
+    Case AUTO_SUIVANT: NavigueSuivant
+    End Select
 End Sub
 

@@ -27,47 +27,47 @@ Public Const FOF_NOCONFIRMMKDIR As Long = &H200
 
 
 Type SHFILEOPSTRUCT
-   hwnd As Long
-   wFunc As Long
-   pFrom As String
-   pTo As String
-   fFlags As Long
-   fAnyOperationsAborted As Long
-   hNameMappings As Long
-   lpszProgressTitle As String
+    hwnd As Long
+    wFunc As Long
+    pFrom As String
+    pTo As String
+    fFlags As Long
+    fAnyOperationsAborted As Long
+    hNameMappings As Long
+    lpszProgressTitle As String
 End Type
 
 Declare Function SHFileOperation Lib "Shell32.dll" Alias "SHFileOperationA" (lpFileOp As SHFILEOPSTRUCT) As Long
 
 
 Function EffaceFichierCorbeille(ByVal hwnd As Long, ByVal sNomfic As String) As Long
-  Dim DelFileOp As SHFILEOPSTRUCT
-  Dim result As Long
-  While Right(sNomfic, 2) <> vbNullChar & vbNullChar: sNomfic = sNomfic & vbNullChar: Wend
-  With DelFileOp
-     .hwnd = hwnd
-     .wFunc = FO_DELETE
-     .pFrom = sNomfic
-     .fFlags = FOF_NOCONFIRMATION Or FOF_ALLOWUNDO
+    Dim DelFileOp As SHFILEOPSTRUCT
+    Dim result As Long
+    While Right(sNomfic, 2) <> vbNullChar & vbNullChar: sNomfic = sNomfic & vbNullChar: Wend
+    With DelFileOp
+        .hwnd = hwnd
+        .wFunc = FO_DELETE
+        .pFrom = sNomfic
+        .fFlags = FOF_NOCONFIRMATION Or FOF_ALLOWUNDO
 
-  End With
-  result = SHFileOperation(DelFileOp)
-  EffaceFichierCorbeille = result
+    End With
+    result = SHFileOperation(DelFileOp)
+    EffaceFichierCorbeille = result
 End Function
 
 Function DéplaceFichier(ByVal hwnd As Long, ByVal sSource As String, ByVal sDest As String) As Long
-  Dim MoveFileOp As SHFILEOPSTRUCT
-  Dim result As Long
-  While Right(sSource, 2) <> vbNullChar & vbNullChar: sSource = sSource & vbNullChar: Wend
-  While Right(sDest, 2) <> vbNullChar & vbNullChar: sDest = sDest & vbNullChar: Wend
-  With MoveFileOp
-     .hwnd = hwnd
-     .wFunc = FO_MOVE
-     .pFrom = sSource
-     .pTo = sDest
-     .fFlags = FOF_NOCONFIRMATION & FOF_MULTIDESTFILES
-  End With
-  result = SHFileOperation(MoveFileOp)
-  DéplaceFichier = result
+    Dim MoveFileOp As SHFILEOPSTRUCT
+    Dim result As Long
+    While Right(sSource, 2) <> vbNullChar & vbNullChar: sSource = sSource & vbNullChar: Wend
+    While Right(sDest, 2) <> vbNullChar & vbNullChar: sDest = sDest & vbNullChar: Wend
+    With MoveFileOp
+        .hwnd = hwnd
+        .wFunc = FO_MOVE
+        .pFrom = sSource
+        .pTo = sDest
+        .fFlags = FOF_NOCONFIRMATION & FOF_MULTIDESTFILES
+    End With
+    result = SHFileOperation(MoveFileOp)
+    DéplaceFichier = result
 End Function
 

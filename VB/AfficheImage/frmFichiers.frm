@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
 Begin VB.Form frmFichiers 
    Caption         =   "Liste des fichiers"
    ClientHeight    =   4680
@@ -54,53 +54,53 @@ Dim OriginalParenthWnd As Long
 
 
 Private Sub Form_Resize()
-  lvFichiers.Move 0, 0, ScaleWidth, ScaleHeight
+    lvFichiers.Move 0, 0, ScaleWidth, ScaleHeight
 End Sub
 
 Private Sub lvFichiers_DblClick()
-  Me.Hide
+    Me.Hide
 End Sub
 
 Private Sub lvFichiers_ItemClick(ByVal Item As MSComctlLib.ListItem)
-  frmAfficheImage.cboFichiers.ListIndex = Item.Index - 1
+    frmAfficheImage.cboFichiers.ListIndex = Item.Index - 1
 End Sub
 
 Private Sub lvFichiers_KeyDown(KeyCode As Integer, Shift As Integer)
-  If KeyCode = 46 Then   ' Suppr
-    frmAfficheImage.SupprimeImage
-    'lvFichiers.SelectedItem.Text = "[Supprimé]"
-    lvFichiers.ListItems.Remove lvFichiers.SelectedItem.Index
-    
-    Let frmFichiers.lvFichiers.SelectedItem = frmFichiers.lvFichiers.ListItems(frmAfficheImage.iPos + 1)
-  End If
+    If KeyCode = 46 Then   ' Suppr
+        frmAfficheImage.SupprimeImage
+        'lvFichiers.SelectedItem.Text = "[Supprimé]"
+        lvFichiers.ListItems.Remove lvFichiers.SelectedItem.Index
+
+        Let frmFichiers.lvFichiers.SelectedItem = frmFichiers.lvFichiers.ListItems(frmAfficheImage.iPos + 1)
+    End If
 End Sub
 
 
 ' Optimisation
 ' La fermeture avec la croix ne fait que cacher la fenêtre
 Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
-  If UnloadMode = 0 Then  ' Croix de fermeture
-    Me.Hide
-    Cancel = 1
-    Exit Sub
-  End If
-  Cancel = 0
+    If UnloadMode = 0 Then  ' Croix de fermeture
+        Me.Hide
+        Cancel = 1
+        Exit Sub
+    End If
+    Cancel = 0
 End Sub
 
 
 Sub Form_Load()
-  ' Set parent for the toolbar to display on top of:
-  OriginalParenthWnd = SetWindowWord(Me.hwnd, GWW_HWNDPARENT, frmAfficheImage.hwnd)
+' Set parent for the toolbar to display on top of:
+    OriginalParenthWnd = SetWindowWord(Me.hwnd, GWW_HWNDPARENT, frmAfficheImage.hwnd)
 
-'  Me.Width = Form1.Width \ 3      ' Scale child form
-'  Me.Height = Form1.Height \ 3
+    '  Me.Width = Form1.Width \ 3      ' Scale child form
+    '  Me.Height = Form1.Height \ 3
 End Sub
 
 
 Private Sub Form_Unload(Cancel As Integer)
-  Dim ret As Long
+    Dim ret As Long
 
-  ' Return the original parent handle to avoid a GP Fault
-  ret = SetWindowWord(Me.hwnd, GWW_HWNDPARENT, OriginalParenthWnd)
+    ' Return the original parent handle to avoid a GP Fault
+    ret = SetWindowWord(Me.hwnd, GWW_HWNDPARENT, OriginalParenthWnd)
 End Sub
 

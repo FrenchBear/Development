@@ -47,13 +47,13 @@ End Type
 ' Returns TRUE if successful or FALSE if an error occurs, for example,
 ' if the location specified by the pidl parameter is not part of the file system.
 Declare Function SHGetPathFromIDList Lib "Shell32.dll" Alias "SHGetPathFromIDListA" _
-                              (ByVal pIdl As Long, ByVal pszPath As String) As Long
+                                     (ByVal pIdl As Long, ByVal pszPath As String) As Long
 
 ' Retrieves the location of a special (system) folder.
 ' Returns NOERROR if successful or an OLE-defined error result otherwise.
 Declare Function SHGetSpecialFolderLocation Lib "Shell32.dll" _
-                              (ByVal hwndOwner As Long, ByVal nFolder As Long, _
-                              pIdl As ITEMIDLIST) As Long
+                                            (ByVal hwndOwner As Long, ByVal nFolder As Long, _
+                                             pIdl As ITEMIDLIST) As Long
 
 ' SHGetSpecialFolderLocation successful rtn val
 Public Const NOERROR = 0
@@ -130,42 +130,42 @@ Declare Sub CoTaskMemFree Lib "ole32.dll" (ByVal pv As Long)
 ' of the selected folder relative to the root of the name space. If the user
 ' chooses the Cancel button in the dialog box, the return value is NULL.
 Declare Function SHBrowseForFolder Lib "Shell32.dll" Alias "SHBrowseForFolderA" _
-                              (lpBrowseInfo As BROWSEINFO) As Long ' ITEMIDLIST
+                                   (lpBrowseInfo As BROWSEINFO) As Long    ' ITEMIDLIST
 
 ' Contains parameters for the the SHBrowseForFolder function and receives
 ' information about the folder selected by the user.
 Public Type BROWSEINFO   ' bi
-    
+
     ' Handle of the owner window for the dialog box.
     hOwner As Long
-    
+
     ' Pointer to an item identifier list (an ITEMIDLIST structure) specifying the location
     ' of the "root" folder to browse from. Only the specified folder and its subfolders
     ' appear in the dialog box. This member can be NULL, and in that case, the
     ' name space root (the desktop folder) is used.
     pidlRoot As Long
-    
+
     ' Pointer to a buffer that receives the display name of the folder selected by the
     ' user. The size of this buffer is assumed to be MAX_PATH bytes.
     pszDisplayName As String
-    
+
     ' Pointer to a null-terminated string that is displayed above the tree view control
     ' in the dialog box. This string can be used to specify instructions to the user.
     lpszTitle As String
-    
+
     ' Value specifying the types of folders to be listed in the dialog box as well as
     ' other options. This member can include zero or more of the following values below.
     ulFlags As Long
-    
+
     ' Address an application-defined function that the dialog box calls when events
     ' occur. For more information, see the description of the BrowseCallbackProc
     ' function. This member can be NULL.
     lpfn As Long
-    
+
     ' Application-defined value that the dialog box passes to the callback function
     ' (if one is specified).
     lParam As Long
-    
+
     ' Variable that receives the image associated with the selected folder. The image
     ' is specified as an index to the system image list.
     iImage As Long
@@ -222,71 +222,71 @@ Declare Function SendMessage Lib "user32" Alias "SendMessageA" (ByVal hwnd As Lo
 Private sRépertoireInitial As String
 
 Private Function BrowseNotify(ByVal hwnd As Long, ByVal uMsg As Long, ByVal lParam As Long, ByVal lpData As Long) As Long
-  Select Case uMsg
+    Select Case uMsg
     Case BFFM_INITIALIZED:
-      Dim s As String
-      SendMessage hwnd, BFFM_SETSELECTIONA, 1&, ByVal sRépertoireInitial
-      BrowseNotify = 1
-    
+        Dim s As String
+        SendMessage hwnd, BFFM_SETSELECTIONA, 1&, ByVal sRépertoireInitial
+        BrowseNotify = 1
+
     Case Else:
-      BrowseNotify = 0
-  End Select
-  
+        BrowseNotify = 0
+    End Select
+
 End Function
 
 
 Private Function sBrowseForFolder2(hwnd As Long, sStart As String, sTitle As String, ByVal a As Long) As String
-  Dim BI As BROWSEINFO
-  Dim nFolder As Long
-  Dim IDL As ITEMIDLIST
-  Dim pIdl As Long
-  Dim sPath As String
-  Dim SHFI As SHFILEINFO
-  
-  With BI
-    .hOwner = hwnd              ' The dialog's owner window...
-    nFolder = 0                 ' Set the Browse dialog root folder
+    Dim BI As BROWSEINFO
+    Dim nFolder As Long
+    Dim IDL As ITEMIDLIST
+    Dim pIdl As Long
+    Dim sPath As String
+    Dim SHFI As SHFILEINFO
 
-    ' Fill the item id list with the pointer of the selected folder item, rtns 0 on success
-    ' ==================================================
-    ' If this function fails because the selected folder doesn't exist,
-    ' .pidlRoot will be uninitialized & will equal 0 (CSIDL_DESKTOP)
-    ' and the root will be the Desktop.
-    ' DO NOT specify the CSIDL_ constants for .pidlRoot !!!!
-    ' The SHBrowseForFolder() call below will generate a fatal exception
-    ' (GPF) if the folder indicated by the CSIDL_ constant does not exist!!
-    ' ==================================================
-    'If SHGetSpecialFolderLocation(ByVal Me.hwnd, ByVal nFolder, IDL) = NOERROR Then
-    '  .pidlRoot = IDL.mkid.cb
-    'End If
-    
-    ' Initialize the buffer that rtns the display name of the selected folder
-    .pszDisplayName = String$(MAX_PATH, 0)
-    .lpszTitle = sTitle
-    .ulFlags = BIF_RETURNONLYFSDIRS
-    .lpfn = a
-  End With
-  
-  ' Show the Browse dialog
-  pIdl = SHBrowseForFolder(BI)
-  
-  ' If the dialog was cancelled...
-  If pIdl = 0 Then
-    sBrowseForFolder2 = ""
-    Exit Function
-  End If
-  
-  ' Fill sPath w/ the selected path from the id list
-  ' (will rtn False if the id list can't be converted)
-  sPath = String$(MAX_PATH, 0)
-  SHGetPathFromIDList ByVal pIdl, ByVal sPath
+    With BI
+        .hOwner = hwnd              ' The dialog's owner window...
+        nFolder = 0                 ' Set the Browse dialog root folder
 
-  sBrowseForFolder2 = Left(sPath, InStr(sPath, vbNullChar) - 1)
+        ' Fill the item id list with the pointer of the selected folder item, rtns 0 on success
+        ' ==================================================
+        ' If this function fails because the selected folder doesn't exist,
+        ' .pidlRoot will be uninitialized & will equal 0 (CSIDL_DESKTOP)
+        ' and the root will be the Desktop.
+        ' DO NOT specify the CSIDL_ constants for .pidlRoot !!!!
+        ' The SHBrowseForFolder() call below will generate a fatal exception
+        ' (GPF) if the folder indicated by the CSIDL_ constant does not exist!!
+        ' ==================================================
+        'If SHGetSpecialFolderLocation(ByVal Me.hwnd, ByVal nFolder, IDL) = NOERROR Then
+        '  .pidlRoot = IDL.mkid.cb
+        'End If
+
+        ' Initialize the buffer that rtns the display name of the selected folder
+        .pszDisplayName = String$(MAX_PATH, 0)
+        .lpszTitle = sTitle
+        .ulFlags = BIF_RETURNONLYFSDIRS
+        .lpfn = a
+    End With
+
+    ' Show the Browse dialog
+    pIdl = SHBrowseForFolder(BI)
+
+    ' If the dialog was cancelled...
+    If pIdl = 0 Then
+        sBrowseForFolder2 = ""
+        Exit Function
+    End If
+
+    ' Fill sPath w/ the selected path from the id list
+    ' (will rtn False if the id list can't be converted)
+    sPath = String$(MAX_PATH, 0)
+    SHGetPathFromIDList ByVal pIdl, ByVal sPath
+
+    sBrowseForFolder2 = Left(sPath, InStr(sPath, vbNullChar) - 1)
 End Function
 
 
 Public Function sBrowseForFolder(hwnd As Long, sStart As String, sTitle As String) As String
-  sRépertoireInitial = sStart
-  sBrowseForFolder = sBrowseForFolder2(hwnd, sStart, sTitle, AddressOf BrowseNotify)
+    sRépertoireInitial = sStart
+    sBrowseForFolder = sBrowseForFolder2(hwnd, sStart, sTitle, AddressOf BrowseNotify)
 End Function
 

@@ -22,21 +22,21 @@ Option Explicit
 Private c As New Collection
 
 Sub Ajoute(ByVal iPos As Integer)
-  c.Add iPos
+    c.Add iPos
 End Sub
 
 Function count() As Integer
-  count = c.count
+    count = c.count
 End Function
 
 Function Back() As Integer
-  c.Remove c.count
-  Back = c(c.count)
-  c.Remove c.count
+    c.Remove c.count
+    Back = c(c.count)
+    c.Remove c.count
 End Function
 
 ' Effacement rapide de l'historique
 Sub clear()
-  Set c = Nothing
+    Set c = Nothing
 End Sub
 

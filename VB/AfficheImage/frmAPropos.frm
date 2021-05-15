@@ -113,16 +113,16 @@ Attribute VB_Exposed = False
 Option Explicit
 
 Private Sub btnOK_Click()
-  Unload Me
+    Unload Me
 End Sub
 
 Private Sub Form_Load()
-  Move (Screen.Width - Width) / 2, (Screen.Height - Height) / 2
-  lblBuild = "Version " & App.Major & "." & App.Minor & "." & App.Revision
+    Move (Screen.Width - Width) / 2, (Screen.Height - Height) / 2
+    lblBuild = "Version " & App.Major & "." & App.Minor & "." & App.Revision
 End Sub
 
 Private Sub Image1_Click()
-  Image1.Stretch = True
-  Image1.Picture = imgAuteur.Picture
+    Image1.Stretch = True
+    Image1.Picture = imgAuteur.Picture
 End Sub
 

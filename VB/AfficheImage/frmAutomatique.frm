@@ -163,22 +163,22 @@ Attribute VB_Exposed = False
 Option Explicit
 
 Private Sub btnAnnuler_Click()
-  Hide
+    Hide
 End Sub
 
 Private Sub Form_Load()
-  chkOk = 0
-  txtDélai.SelStart = 0
-  txtDélai.SelLength = 99
+    chkOk = 0
+    txtDélai.SelStart = 0
+    txtDélai.SelLength = 99
 End Sub
 
 Private Sub btnOK_Click()
-  chkOk = 1
-  
-  If Not CtrlNumeric(txtDélai, "délai d'affichage automatique", 1, 60) Then
-    chkOk = 0
-  Else
-    Hide
-  End If
+    chkOk = 1
+
+    If Not CtrlNumeric(txtDélai, "délai d'affichage automatique", 1, 60) Then
+        chkOk = 0
+    Else
+        Hide
+    End If
 End Sub
 
