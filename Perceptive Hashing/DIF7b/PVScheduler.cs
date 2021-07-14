@@ -16,10 +16,10 @@ namespace DIF
         private readonly int _MAX_PARALLISM;
 
         // List of tasks running in parallel
-        private List<Task<T>> lt = new List<Task<T>>();
+        private readonly List<Task<T>> lt = new List<Task<T>>();
 
         // Actions to execute when task is done
-        private Dictionary<Task<T>, Action<T>> wd = new Dictionary<Task<T>, Action<T>>();
+        private readonly Dictionary<Task<T>, Action<T>> wd = new Dictionary<Task<T>, Action<T>>();
 
         // Number of active hashing tasks
         private int n = 0; 

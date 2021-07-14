@@ -26,8 +26,7 @@ namespace DIF
 
         public void NotifyPropertyChanged(string propertyName)
         {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         // Commands public interface
@@ -65,11 +64,10 @@ namespace DIF
         }
 
         // Access to Model and window
-        private Model model;
-        private MainWindow window;
+        private readonly Model model;
+        private readonly MainWindow window;
 
         private bool isHashInProgress = false;
-        private bool isFindDuplicatesInProgress = false;
 
 
         // Helpers for Model
@@ -146,7 +144,6 @@ namespace DIF
                 }
                 FindDuplicatesButtonCaption = "Stop";
                 FindDuplicatesProgress = 0.0;
-                isFindDuplicatesInProgress = true;
                 cts = new CancellationTokenSource();
                 IProgress<Tuple<int, int>> progress = new Progress<Tuple<int, int>>(d => UpdateFindDuplicatesProgress(d));
                 model.DoFindDuplicates(cts.Token, progress);
@@ -155,7 +152,6 @@ namespace DIF
             {
                 FindDuplicatesButtonCaption = "Find Duplicates";
                 cts.Cancel();
-                isFindDuplicatesInProgress = false;
             }
         }
 
@@ -184,7 +180,6 @@ namespace DIF
         public void FindDuplicatesDone()
         {
             FindDuplicatesButtonCaption = "Find Duplicates";
-            isFindDuplicatesInProgress = false;
             NotifyPropertyChanged(nameof(DuplicatesList));
         }
 
@@ -324,8 +319,7 @@ namespace DIF
         // Relay of events
         public void Image_MouseEnter(object sender, MouseEventArgs e)
         {
-            Image i = sender as Image;
-            if (i != null)
+            if (sender is Image i)
             {
                 var s = new Uri(i.Source.ToString()).LocalPath;
                 FilePath = s;
@@ -471,7 +465,7 @@ namespace DIF
 
     public static class ExtensionMethods
     {
-        private static Action EmptyDelegate = delegate () { };
+        private static readonly Action EmptyDelegate = delegate () { };
 
         // Extension method to force the refresh of a UIElement
         public static void Refresh(this UIElement uiElement)

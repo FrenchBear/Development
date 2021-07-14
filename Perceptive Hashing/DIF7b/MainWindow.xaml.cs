@@ -27,7 +27,7 @@ namespace DIF
     /// </summary>
     public partial class MainWindow : Window
     {
-        ViewModel vm;
+        readonly ViewModel vm;
 
         public MainWindow()
         {

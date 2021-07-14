@@ -100,7 +100,7 @@ namespace DIF
             AddTrace("ProcessorCount: " + Environment.ProcessorCount.ToString() + ", MAX_PARALLISM: " + MAX_PARALLISM.ToString());
         }
 
-        private StringBuilder traceStringBuilder = new StringBuilder();
+        private readonly StringBuilder traceStringBuilder = new StringBuilder();
         private void AddTrace(string s)
         {
             lock (traceStringBuilder)
@@ -122,8 +122,8 @@ namespace DIF
 
 
         // Processed files and cache
-        private string DIFCache;                                // Cache filename
-        private SerializableDictionary<string, HashedFile> hashedFilesDictionary;
+        private readonly string DIFCache;                                // Cache filename
+        private readonly SerializableDictionary<string, HashedFile> hashedFilesDictionary;
         public List<string> processedFilesList;                // List of filenames being hashed
         private List<HashedFile> hashedFilesList;
 

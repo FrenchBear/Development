@@ -119,11 +119,9 @@ namespace DIF
 
         // ViewModel
         private ViewModel vm;
-        private MainWindow w;
         public void SetViewModel(ViewModel vm, MainWindow w)
         {
             this.vm = vm;
-            this.w = w;
             Folders = new ObservableCollection<string>();
 
             Assembly myAssembly = System.Reflection.Assembly.GetExecutingAssembly();
@@ -134,7 +132,7 @@ namespace DIF
             AddTrace($"ProcessorCount: {Environment.ProcessorCount}");
         }
 
-        private StringBuilder traceStringBuilder = new StringBuilder();
+        private readonly StringBuilder traceStringBuilder = new StringBuilder();
         private void AddTrace(string s)
         {
             lock (traceStringBuilder)
@@ -155,8 +153,8 @@ namespace DIF
 
 
         // Processed files and cache
-        private string DIFCache;                                // Cache filename
-        private SerializableDictionary<string, HashedFile> hashedFilesDictionary;
+        private readonly string DIFCache;                                // Cache filename
+        private readonly SerializableDictionary<string, HashedFile> hashedFilesDictionary;
         public List<FileInfo> processedFilesList;               // List of filenames being hashed
         private List<HashedFile> hashedFilesList;
 
@@ -279,9 +277,11 @@ namespace DIF
                 if (cacheUpdated)
                 {
                     // Write cache
-                    XmlWriterSettings settings = new XmlWriterSettings();
-                    //settings.OmitXmlDeclaration = true;
-                    settings.ConformanceLevel = ConformanceLevel.Fragment;
+                    XmlWriterSettings settings = new XmlWriterSettings
+                    {
+                        //settings.OmitXmlDeclaration = true;
+                        ConformanceLevel = ConformanceLevel.Fragment
+                    };
                     using (XmlWriter writer = XmlWriter.Create(DIFCache, settings))
                     {
                         writer.WriteStartElement("DIFDictionary");
@@ -495,7 +495,9 @@ namespace DIF
             vm.FindDuplicatesDone();
         }
 
+#pragma warning disable IDE1006 // Naming Styles
         private int ph_hamming_distance_local(UInt64 hash1, UInt64 hash2)
+#pragma warning restore IDE1006 // Naming Styles
         {
             UInt64 x = hash1 ^ hash2;
             const UInt64 m1 = 0x5555555555555555;
