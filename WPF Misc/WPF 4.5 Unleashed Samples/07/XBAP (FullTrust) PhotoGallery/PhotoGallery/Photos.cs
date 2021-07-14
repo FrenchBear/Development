@@ -7,7 +7,7 @@ namespace PhotoGallery
 {
     public class Photos : Collection<Photo>
     {
-        Dictionary<string, FileSystemWatcher> watchers = new Dictionary<string, FileSystemWatcher>();
+        readonly Dictionary<string, FileSystemWatcher> watchers = new Dictionary<string, FileSystemWatcher>();
 
         public event EventHandler ItemsUpdated;
 
@@ -45,8 +45,7 @@ namespace PhotoGallery
             if (index >= 0)
                 Items[index] = new Photo(e.FullPath);
 
-            if (ItemsUpdated != null)
-                ItemsUpdated(this, new EventArgs());
+            ItemsUpdated?.Invoke(this, new EventArgs());
         }
 
         void OnPhotoDeleted(object sender, System.IO.FileSystemEventArgs e)
@@ -63,16 +62,14 @@ namespace PhotoGallery
             if (index >= 0)
                 Items.RemoveAt(index);
 
-            if (ItemsUpdated != null)
-                ItemsUpdated(this, new EventArgs());
+            ItemsUpdated?.Invoke(this, new EventArgs());
         }
 
         void OnPhotoCreated(object sender, System.IO.FileSystemEventArgs e)
         {
             Items.Add(new Photo(e.FullPath));
 
-            if (ItemsUpdated != null)
-                ItemsUpdated(this, new EventArgs());
+            ItemsUpdated?.Invoke(this, new EventArgs());
         }
     }
 }

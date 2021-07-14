@@ -42,10 +42,10 @@ namespace WindowsApplication1
                 current = 359.999;
             
             // Shift by 90 degrees so 0 starts at the top of the circle
-            current = current - 90;
+            current -= 90;
             
             // Convert the angle to radians
-            current = current * 0.017453292519943295;
+            current *= 0.017453292519943295;
             
             // Calculate the circle's point
             double x = 10 + 10 * Math.Cos(current);

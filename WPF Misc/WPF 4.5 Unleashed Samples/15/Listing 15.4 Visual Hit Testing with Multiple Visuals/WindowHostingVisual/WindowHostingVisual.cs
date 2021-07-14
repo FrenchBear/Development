@@ -8,7 +8,7 @@ namespace WindowHostingVisual
 {
     public class WindowHostingVisual : Window
     {
-        List<Visual> visuals = new List<Visual>();
+        readonly List<Visual> visuals = new List<Visual>();
 
         public WindowHostingVisual()
         {

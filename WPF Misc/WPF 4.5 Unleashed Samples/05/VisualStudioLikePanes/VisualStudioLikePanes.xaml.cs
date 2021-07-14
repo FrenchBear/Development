@@ -6,9 +6,9 @@ using System.Windows.Media.Imaging;
 public partial class MainWindow : Window
 {
     // Dummy columns for layers 0 and 1:
-    ColumnDefinition column1CloneForLayer0;
-    ColumnDefinition column2CloneForLayer0;
-    ColumnDefinition column2CloneForLayer1;
+    readonly ColumnDefinition column1CloneForLayer0;
+    readonly ColumnDefinition column2CloneForLayer0;
+    readonly ColumnDefinition column2CloneForLayer1;
 
     public MainWindow()
     {

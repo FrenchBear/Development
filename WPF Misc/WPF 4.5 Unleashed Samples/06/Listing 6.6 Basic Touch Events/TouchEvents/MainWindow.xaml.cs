@@ -11,7 +11,7 @@ namespace TouchEvents
     public partial class MainWindow : Window
     {
         // Keep track of which images are used for which TouchDevices
-        Dictionary<TouchDevice, Image> fingerprints = new Dictionary<TouchDevice, Image>();
+        readonly Dictionary<TouchDevice, Image> fingerprints = new Dictionary<TouchDevice, Image>();
  
         public MainWindow()
         {

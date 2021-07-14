@@ -16,9 +16,9 @@ namespace PhotoGallery
 {
     public partial class MainWindow : Window
     {
-        ScaleTransform st = new ScaleTransform(3, 3);
-        object dummyNode = null;
-        Photos photos = new Photos();
+        readonly ScaleTransform st = new ScaleTransform(3, 3);
+        readonly object dummyNode = null;
+        readonly Photos photos = new Photos();
 
         #region Window Management
 

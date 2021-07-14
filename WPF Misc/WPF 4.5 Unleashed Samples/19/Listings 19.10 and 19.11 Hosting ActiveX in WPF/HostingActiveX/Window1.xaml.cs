@@ -6,7 +6,7 @@ namespace HostingActiveX
 {
     public partial class Window1 : Window
     {
-        AxMSTSCLib.AxMsTscAxNotSafeForScripting termServ;
+        readonly AxMSTSCLib.AxMsTscAxNotSafeForScripting termServ;
 
         public Window1()
         {

@@ -6,7 +6,7 @@ namespace WindowHostingVisual
 {
     public class WindowHostingVisual : Window
     {
-        DrawingVisual ghostVisual = null;
+        readonly DrawingVisual ghostVisual = null;
 
         public WindowHostingVisual()
         {

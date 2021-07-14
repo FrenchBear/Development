@@ -5,10 +5,10 @@ namespace PhotoGallery
 {
     public class Photo
     {
-        string name;
-        DateTime dateTime;
-        string size;
-        string path;
+        readonly string name;
+        readonly DateTime dateTime;
+        readonly string size;
+        readonly string path;
 
         public Photo(string filename)
         {
