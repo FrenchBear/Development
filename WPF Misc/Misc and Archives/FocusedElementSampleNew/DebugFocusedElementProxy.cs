@@ -8,7 +8,7 @@ namespace WpfFocusedElement
 {
     public class DebugFocusedElementProxy : FrameworkElement, INotifyPropertyChanged
     {
-        private readonly string _FocusedElementDescription;
+        //private readonly string _FocusedElementDescription;
 
         public string FocusedElementDescription
         {
