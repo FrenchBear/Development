@@ -1,0 +1,52 @@
+Microsoft (R) Macro Assembler (x64) Version 14.30.30423.0   08/20/21 00:11:37
+Assembly.asm						     Page 1 - 1
+
+
+				; Sample x64 assembly
+				; From doc "Intel Introduction to x64 assembly"
+				; 2021-08-19    PV
+
+ 00000000			.data
+ 00000000			realVal REAL8 +1.5		; Real number on 8 bytes
+	   3FF8000000000000
+
+ 00000000			.code
+				PUBLIC CombineA
+ 00000000			CombineA PROC
+ 00000000  03 4C 24 28			add		ecx, dword ptr [rsp+28h]	; Add overflow parameter to first arg
+ 00000004  41/ 03 D1			add		edx, r9d
+ 00000007  41/ 03 C8			add		ecx, r8d
+ 0000000A  03 CA			add		ecx, edx
+ 0000000C  66| 0F 6E C1			movd	xmm0, ecx					; Move double word ecx into xmm0
+ 00000010  F3/ 0F E6 C0			cvtdq2pd xmm0, xmm0					; convert double word to floating point
+ 00000014  F2/ 0F 10 0D			movsd	xmm1, realVal				; load 1.5
+	   00000000 R
+ 0000001C  F2/ 0F 58 4C 24		addsd	xmm1, mmword ptr [rsp+30h]	; add double parameter f
+	   30
+ 00000022  F2/ 0F 5E C1			divsd	xmm0, xmm1					; do the division, result in xmm0
+ 00000026  C3				ret
+ 00000027			CombineA ENDP
+
+				End
+Microsoft (R) Macro Assembler (x64) Version 14.30.30423.0   08/20/21 00:11:37
+Assembly.asm						     Symbols 2 - 1
+
+
+
+
+Procedures, parameters, and locals:
+
+                N a m e                 Type     Value    Attr
+
+CombineA . . . . . . . . . . . .	P 	 00000000 _TEXT	Length= 00000027 Public
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+WIN_X64  . . . . . . . . . . . .	Text   	 
+realVal  . . . . . . . . . . . .	QWord	 00000000 _DATA	
+
+	   0 Warnings
+	   0 Errors
