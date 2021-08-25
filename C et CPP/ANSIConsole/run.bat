@@ -1,0 +1,1 @@
+ANSIConsole %1
