@@ -18,44 +18,44 @@ Public Dénominateur As Long
 Public Valeur As Double
 
 Public Sub Définit(N As Long, D As Long)
-  If D = 0 Then Stop
-  Numérateur = N
-  Dénominateur = D
-  Valeur = N / D
+    If D = 0 Then Stop
+    Numérateur = N
+    Dénominateur = D
+    Valeur = N / D
 End Sub
 
 Public Sub Affiche()
-  Debug.Print Numérateur; "/"; Dénominateur; "="; Valeur
+    Debug.Print Numérateur; "/"; Dénominateur; "="; Valeur
 End Sub
 
 Public Sub Inverse()
-  If Numérateur = 0 Or Valeur = 0 Then Stop
-  Dim t As Long
-  t = Numérateur
-  Numérateur = Dénominateur
-  Dénominateur = t
-  Valeur = 1 / Valeur
+    If Numérateur = 0 Or Valeur = 0 Then Stop
+    Dim t As Long
+    t = Numérateur
+    Numérateur = Dénominateur
+    Dénominateur = t
+    Valeur = 1 / Valeur
 End Sub
 
 Public Sub Ajoute(g As Fraction)
-  ' Pour la valeur flottante, c'est simple !
-  Valeur = Valeur + g.Valeur
-  
-  Dim n1 As Long, n2 As Long, D1 As Long, D2 As Long
-  n1 = Numérateur
-  D1 = Dénominateur
-  n2 = g.Numérateur
-  D2 = g.Dénominateur
-  
-  Dénominateur = D1 * D2
-  Numérateur = n1 * D2 + n2 * D1
-  
-  ' Simplification de la fraction
-  Dim P As Long
-  P = PGCD(Numérateur, Dénominateur)
-  If P > 1 Then
-    Numérateur = Numérateur / P
-    Dénominateur = Dénominateur / P
-  End If
+' Pour la valeur flottante, c'est simple !
+    Valeur = Valeur + g.Valeur
+
+    Dim n1 As Long, n2 As Long, D1 As Long, D2 As Long
+    n1 = Numérateur
+    D1 = Dénominateur
+    n2 = g.Numérateur
+    D2 = g.Dénominateur
+
+    Dénominateur = D1 * D2
+    Numérateur = n1 * D2 + n2 * D1
+
+    ' Simplification de la fraction
+    Dim P As Long
+    P = PGCD(Numérateur, Dénominateur)
+    If P > 1 Then
+        Numérateur = Numérateur / P
+        Dénominateur = Dénominateur / P
+    End If
 End Sub
 

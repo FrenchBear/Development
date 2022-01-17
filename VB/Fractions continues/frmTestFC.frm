@@ -27,5 +27,5 @@ Option Explicit
 
 
 Private Sub Command1_Click()
-  TestFC 1 + Sqr(5) / 2
+    TestFC 1 + Sqr(5) / 2
 End Sub
