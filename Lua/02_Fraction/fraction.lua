@@ -10,6 +10,8 @@ Fraction = {
     n = 0,
     d = 1,
 
+    __classname = "Fraction",       -- non standard!
+
     new = function(self, object)
         object = object or {}
         setmetatable(object, self)
@@ -77,6 +79,7 @@ local f2 = Fraction:new({ n = 2, d = 3 })
 
 print(f1)
 f2:print()
+print(f1.__classname)
 
 local f3 = f1 + f2
 print(f3)
