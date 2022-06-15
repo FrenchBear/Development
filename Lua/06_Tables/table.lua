@@ -33,3 +33,19 @@ L2 = { 5, 6, 7 }
 
 L3 = TableConcat(L1, L2)
 print(TableToString(L3))
+print("[" .. table.concat(L3, ', ') .. "]")
+
+
+-- Exercise 5.4 and 5.5
+function CalcPolynom(p, x)
+	local r = 0
+	for i = 1, #p do
+		r = r * x + p[i]
+	end
+	return r
+end
+
+local polynom = { 1, -5, 6 } -- x²-5x+6
+for f = 1.0, 4.0, 0.25 do
+	print(f, CalcPolynom(polynom, f))
+end
