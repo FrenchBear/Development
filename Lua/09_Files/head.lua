@@ -4,7 +4,7 @@
 -- 2022-06-16   PV
 
 -- Support for UTF8 -> ANSI 1252 conversions
-local u8a = require('u8a')
+require 'u8a'
 
 -- For VSCode, debug terminal is not utf8 by default
 os.execute("chcp 65001 >NUL")

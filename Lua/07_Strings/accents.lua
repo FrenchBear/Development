@@ -83,3 +83,35 @@ end
 print(remove_utf8(u4, 1, 1))
 print(remove_utf8(u4, 2, 1))
 print(remove_utf8(u4, 3, 1))
+
+
+-- Conversions
+print(tonumber(" -3 ")) --> -3
+print(tonumber(" 10e4 ")) --> 100000.0
+print(tonumber("10e")) --> nil (not a valid number)
+print(tonumber("0x1.3p-4")) --> 0.07421875
+--By default, tonumber assumes decimal notation, but we can specify any base between 2 and 36 for the conversion:
+print(tonumber("100101", 2)) --> 37
+print(tonumber("fff", 16)) --> 4095
+print(tonumber("-ZZ", 36)) --> -1295
+print(tonumber("987", 8)) --> nil
+
+print(tostring(10) == "10") --> true
+
+-- Repeat string
+print(string.rep("-", 50))
+
+-- Reverse string
+print(string.reverse("ABCDEFGH"))
+
+-- Case
+print(string.lower("COFFEE42"))
+print(string.lower("OÙ ÇA? LÀ!"))   -- On ly for ASCII characters...  -> oÙ Ça? lÀ!
+print(string.upper("attention!"))
+
+-- Format
+print(string.format("pi = %.4f", math.pi)) --> pi = 3.1416
+
+-- Locate string in a substring
+print(string.find("hello world", "wor")) --> 7 9
+print(string.find("hello world", "war")) --> nil
