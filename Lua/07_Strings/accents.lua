@@ -76,7 +76,7 @@ assert(sub_utf8(u4, 3, 0) == "")
 -- Delete count utf-8 characters (bytes) from string str starting at index pos (base 1)
 local function remove_utf8(str, pos, count)
     local off = utf8.offset(str, pos, 1)
-    local off2 = utf8.offset(str,  count + 1, off)
+    local off2 = utf8.offset(str, count + 1, off)
     return string.sub(str, 1, off - 1) .. string.sub(str, off2)
 end
 
@@ -106,7 +106,7 @@ print(string.reverse("ABCDEFGH"))
 
 -- Case
 print(string.lower("COFFEE42"))
-print(string.lower("OÙ ÇA? LÀ!"))   -- On ly for ASCII characters...  -> oÙ Ça? lÀ!
+print(string.lower("OÙ ÇA? LÀ!")) -- On ly for ASCII characters...  -> oÙ Ça? lÀ!
 print(string.upper("attention!"))
 
 -- Format
@@ -115,3 +115,30 @@ print(string.format("pi = %.4f", math.pi)) --> pi = 3.1416
 -- Locate string in a substring
 print(string.find("hello world", "wor")) --> 7 9
 print(string.find("hello world", "war")) --> nil
+
+
+-- Decompose a ITF8 string into individual chars
+local sacc = "Où ça? Là!"
+for p, c in utf8.codes(sacc) do
+    -- p is a byte index
+    print(p, c, utf8.char(c))
+end
+print()
+
+for i = 1, utf8.len(sacc) do
+    -- i is a unicode char index
+    local c = utf8.codepoint(sacc, utf8.offset(sacc, i, 1))
+    print(i, c, utf8.char(c))
+end
+
+
+-- Exercise 10.7 Reverse a UTF8 string
+local function reverseu8(str)
+    local r = ""
+    for _, c in utf8.codes(str) do
+        r=utf8.char(c)..r
+    end
+    return r
+end
+
+print(reverseu8(sacc))      -- !àL ?aç ùO

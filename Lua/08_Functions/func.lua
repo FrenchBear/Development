@@ -117,3 +117,48 @@ for c in Combinator(ln, k) do
 	nc = nc + 1
 end
 assert(nc == comb(#ln, k))
+
+
+-- Exercise 9.1
+-- Simple sum of trapezes surface
+local function integral(f, from, to, steps)
+	local sum = 0
+	local x = from
+	local delta = (to - from) / steps
+	for i = 0, steps do
+		local y = f(x)
+		if i == 0 or i == steps then
+			sum = sum + y / 2
+		else
+			sum = sum + y
+		end
+		x = x + delta
+	end
+	return delta * sum
+end
+
+local ix2 = integral(function(x) return x * x end, 0, 1, 10000)
+print("∫x=0,1 x²dx = ", ix2)
+
+local i2 = integral(function(x) return math.sin(math.log(x)) end, 1e-6, 1, 10000)
+print("∫x=0,1 sin(ln(x))dx = ", i2)
+
+
+
+-- Exercises 9.3, variant over 5.4 and 5.5: return a function that evaluates a polynom
+function PolynomFunction(p)
+	return function(x)
+		local r = 0
+		for i = 1, #p do
+			r = r * x + p[i]
+		end
+		return r
+	end
+end
+
+local polynomTable = { 1, -5, 6 } -- x²-5x+6
+local f = PolynomFunction(polynomTable)
+print("\nx","x²-5x+6")
+for x = 1.0, 4.0, 0.25 do
+	print(x, f(x))
+end

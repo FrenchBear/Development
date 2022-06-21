@@ -36,7 +36,7 @@ print(TableToString(L3))
 print("[" .. table.concat(L3, ', ') .. "]")
 
 
--- Exercise 5.4 and 5.5
+-- Exercises 5.4 and 5.5
 function CalcPolynom(p, x)
 	local r = 0
 	for i = 1, #p do
@@ -46,6 +46,7 @@ function CalcPolynom(p, x)
 end
 
 local polynom = { 1, -5, 6 } -- x²-5x+6
-for f = 1.0, 4.0, 0.25 do
-	print(f, CalcPolynom(polynom, f))
+print("\nx","x²-5x+6")
+for x = 1.0, 4.0, 0.25 do
+	print(x, CalcPolynom(polynom, x))
 end

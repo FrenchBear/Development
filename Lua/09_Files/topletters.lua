@@ -16,7 +16,7 @@ f:close()
 print('Bytes', #hp)
 print('chars', utf8.len(hp))
 
-print('Analyse...')
+print('Analyse characters...')
 local tc = {} -- Table of characters
 local tp = {} -- Table of pairs
 local last = nil
@@ -64,3 +64,6 @@ for _, key in ipairs(sortedTpKeys) do
 		if np > 10 then break end
 	end
 end
+
+-- print('Analyse words...')
+-- local tw = {} -- Table of words

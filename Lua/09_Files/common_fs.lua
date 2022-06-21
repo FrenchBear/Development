@@ -2,6 +2,7 @@
 -- Helper functions to manage filesystem
 --
 -- 2022-06-16   PV
+-- 2022-06-20   PV      Extension
 
 -- Check if a file exists
 function File_Exists(filename)
@@ -67,6 +68,20 @@ function Basename(fullpath)
         return fullpath
     else
         return string.sub(fullpath, 1, pp - 1)
+    end
+end
+
+-- Retourne l'extension d'un fichier, point inclus, ou une chaîne vide
+function Extension(fullpath)
+    local pb1 = instrrev(fullpath, [[\]]) or 0
+    local pb2 = instrrev(fullpath, [[/]]) or 0
+    local pb3 = instrrev(fullpath, [[:]]) or 0
+    local pp = instrrev(fullpath, [[.]]) or 0
+    local pb = math.max(pb1, pb2, pb3)
+    if pp < pb then
+        return ""
+    else
+        return string.sub(fullpath, pp)
     end
 end
 
