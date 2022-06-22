@@ -92,17 +92,41 @@ Status = 'great'
 print(string.gsub("$(Language) is $(adverb) $(Status)", "$%((%w+)%)", _G))
 print()
 
--- Classic trim removing spaces and tabs bafore and after a string
-local function trim(str)
-    return "<" .. string.gsub(str, "^[ \t]*(.-)[ \t]*$", "%1") .. ">"
+-- Trim removing spaces and tabs bafore and after a string, using pattern matching
+local function trim1(str)
+    return string.gsub(str, "^[ \t]*(.-)[ \t]*$", "%1")
 end
 
-print(trim("abc"))
-print(trim("   def"))
-print(trim("ghi\t\t"))
-print(trim(" \t jkl\t \t"))
-print(trim(""))
-print(trim(" "))
+-- Exercise 10.4
+-- More complex trim, but actually simpler, and probably faster
+local function trim2(str)
+    local s, e = 1, #str
+    while s <= e do
+        if string.byte(str, s) ~= 32 and string.byte(str, s) ~= 9 then break end
+        s = s + 1
+    end
+    if s < e then
+        while e >= s do
+            if string.byte(str, e) ~= 32 and string.byte(str, e) ~= 9 then break end
+            e = e - 1
+        end
+    end
+    return string.sub(str, s, e)
+end
+
+local function test_trim(str)
+    local t1 = trim1(str)
+    local t2 = trim2(str)
+    print("<" .. str .. "> -> <" .. t1 .. ">")
+    assert(t1 == t2)
+end
+
+test_trim("abc")
+test_trim("   def")
+test_trim("ghi\t\t")
+test_trim(" \t jkl\t \t")
+test_trim("")
+test_trim(" ")
 print()
 
 -- A plain version of string.gsub ignoring patterns

@@ -24,8 +24,8 @@ for _, c in utf8.codes(hp) do
 	tc[c] = (tc[c] or 0) + 1
 	if last then
 		local pair = (last << 32) + c
-		if pair==16387 then
-			local c3=c+last
+		if pair == 16387 then
+			local c3 = c + last
 		end
 		tp[pair] = (tp[pair] or 0) + 1
 	end
@@ -37,7 +37,6 @@ local function getKeysSortedByValue(tbl, sortFunction)
 	for key in pairs(tbl) do
 		table.insert(keys, key)
 	end
-
 	table.sort(keys, function(a, b)
 		return sortFunction(tbl[a], tbl[b])
 	end)
@@ -54,7 +53,7 @@ for i, key in ipairs(sortedTcKeys) do
 	if i > 10 then break end
 end
 
-print('Top 10 pairs without a space')
+print('\nTop 10 pairs without a space')
 local np = 0
 for _, key in ipairs(sortedTpKeys) do
 	local c1, c2 = utf8.char(key >> 32), utf8.char(key & 0xFFFFFFFF)
@@ -65,5 +64,23 @@ for _, key in ipairs(sortedTpKeys) do
 	end
 end
 
--- print('Analyse words...')
--- local tw = {} -- Table of words
+print('\nAnalyse words...')
+local tw = {} -- Table of words
+for word in string.gmatch(hp, "%w+") do
+	tw[word] = (tw[word] or 0) + 1
+end
+local words = {}
+for w in pairs(tw) do -- And not ipairs(tw) !
+	words[#words + 1] = w
+end
+print(#words .. ' words found')
+table.sort(words, function(w1, w2) return tw[w1] > tw[w2] or tw[w1] == tw[w2] and w1 < w2 end)
+print('\nTop 10 words or 4 letters or more')
+local wf = 0
+for i = 1, #words do
+	if #words[i] >= 4 then
+		print(words[i], tw[ words[i] ])
+		wf = wf + 1
+		if wf >= 10 then break end
+	end
+end
