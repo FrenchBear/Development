@@ -9,7 +9,6 @@
 os.execute("chcp 65001 >NUL")
 
 Queue = {
-
     __classname = "Queue", -- non standard!
 
     new = function(self, object)
@@ -17,9 +16,10 @@ Queue = {
         setmetatable(object, self)
         self.__index = self
 
-        object.tb = {}
-        object.head = 0
-        object.tail = 1
+        self:clear()
+        -- object.tb = {}
+        -- object.head = 0
+        -- object.tail = 1
 
         return object
     end,
@@ -27,6 +27,13 @@ Queue = {
     enqueue = function(self, value)
         self.head = self.head + 1
         self.tb[self.head] = value
+    end,
+
+    enqueueRange = function(self, values)
+        for _, v in ipairs(values) do
+            self.head = self.head + 1
+            self.tb[self.head] = v
+        end
     end,
 
     dequeue = function(self)
@@ -40,6 +47,11 @@ Queue = {
         return self.head-self.tail+1
     end,
 
+    clear = function(self)
+        self.tb = {}
+        self.head = 0
+        self.tail = 1
+    end,
     __tostring = function(self)
         return "Queue [" .. table.concat(self.tb, ", ") .. "]"
     end
@@ -55,3 +67,13 @@ print("Count", q:count())
 while q:count() > 0 do
     print(q:dequeue())
 end
+print()
+
+q:clear()
+q:enqueueRange({"one", "two", "three", "four", "five"})
+print(q)
+print("Count", q:count())
+while q:count() > 0 do
+    print(q:dequeue())
+end
+print()

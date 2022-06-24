@@ -8,7 +8,6 @@
 os.execute("chcp 65001 >NUL")
 
 Stack = {
-
     __classname = "Stack", -- non standard!
 
     new = function(self, object)
@@ -23,6 +22,12 @@ Stack = {
 
     push = function(self, value)
         self.tb[#(self.tb) + 1] = value
+    end,
+
+    pushRange = function(self, values)
+        for _, v in ipairs(values) do
+            self.tb[#(self.tb) + 1] = v
+        end
     end,
 
     pop = function(self)
@@ -42,6 +47,10 @@ Stack = {
         return #self.tb
     end,
 
+    clear = function(self)
+        self.tb = {}
+    end,
+
     __tostring = function(self)
         return "Stack ["..table.concat(self.tb, ", ").."]"
     end
@@ -57,3 +66,13 @@ print("Count", s:count())
 while s:count()>0 do
     print(s:pop())
 end
+print()
+
+s:clear()
+s:pushRange({"one", "two", "three", "four", "five"})
+print(s)
+print("Count", s:count())
+while s:count()>0 do
+    print(s:pop())
+end
+print()
