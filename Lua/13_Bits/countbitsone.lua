@@ -1,4 +1,4 @@
--- countbits1.lua
+-- countbitsone.lua
 -- Count the number of 1 in binary representation of an integer (Hamming weight)
 -- Exercise 13.4
 --

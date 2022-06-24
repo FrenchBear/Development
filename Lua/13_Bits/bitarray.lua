@@ -1,16 +1,17 @@
 -- bitarray.lua
 -- Learning lua, bits & bytes manipulation
+-- Exercise 13.6
 --
 -- 2022-06-23   PV
 
-require "tobinary"
+require "binstr"
 
 -- For VSCode, debug terminal is not utf8 by default
 os.execute("chcp 65001 >NUL")
 
 -- Returns binary representation of an integer on 64 positions starting with b0 (reversed)
 local function tobinary64reversed(n)
-    s = ToBinary(n)
+    local s = IntToBstr(n)
     return string.reverse(string.rep("0", 64 - #s) .. s)
 end
 
@@ -91,7 +92,7 @@ BitArray = {
 -- end
 
 -- Primes sieve
-local st=os.clock()
+local st = os.clock()
 
 local verbose = false
 local max = 1000000
@@ -111,4 +112,4 @@ while i < max do
     if i == 2 then i = 3 else i = i + 2 end
 end
 print("\n" .. np .. " primes found <" .. max)
-print("Elapsed", os.clock()-st)
+print("Elapsed", os.clock() - st)
