@@ -1,5 +1,5 @@
--- arg.lua
--- Learning lua, decode arg options
+-- arg1.lua
+-- Learning lua, decode arg options, first version
 -- Start with completely manual code, mays switch to a getopt function later
 --
 -- 2022-06-17   PV
