@@ -3,12 +3,13 @@
 -- Implementation of a set mith minimal operations (inter, union)
 --
 -- 2022-06-23   PV
+-- 2022-06-27   PV      __len/# instead of count(); __name instead of __classname
 
 -- For VSCode, debug terminal is not utf8 by default
 os.execute("chcp 65001 >NUL")
 
 Set = {
-    __classname = "Set", -- non standard!
+    __name = "Set", -- non standard!
 
     new = function(self, object, initlist)
         object = object or {}
@@ -17,8 +18,6 @@ Set = {
 
         object:clear()
         if initlist then object:addRange(initlist) end
-        -- object.tb = {}
-        -- object.nb = 0
 
         return object
     end,
@@ -54,10 +53,6 @@ Set = {
         return pairs(self.tb)
     end,
 
-    count = function(self)
-        return self.nb
-    end,
-
     clear = function(self)
         self.tb = {}
         self.nb = 0
@@ -81,38 +76,44 @@ Set = {
     end,
 
     __tostring = function(self)
-        local t = { "Set [" }
+        local t = { self.__name .. " [" }
         for k in pairs(self.tb) do
             if #t > 1 then t[#t + 1] = ", " end
             t[#t + 1] = k
         end
         t[#t + 1] = "]"
         return table.concat(t)
+    end,
+
+    __len = function(self)
+        return self.nb
     end
 }
 
--- Test
-local s = Set:new()
-s:addRange({ "c", "l", "a", "s", "s", "e" })
-print(s)
-print("Count", s:count())
-for v in s:items() do
-    print(v)
-end
-print()
+-- Tests
+if not pcall(debug.getlocal, 4, 1) then -- https://stackoverflow.com/questions/49375638/how-to-determine-whether-my-code-is-running-in-a-lua-module
+    local s = Set:new()
+    s:addRange({ "c", "l", "a", "s", "s", "e" })
+    print(s)
+    print("Count", #s)
+    for v in s:items() do
+        print(v)
+    end
+    print()
 
-s:clear()
-for i = 1, 10 do
-    s:add(math.random(1, 6))
-end
-print(s)
-print()
+    s:clear()
+    for i = 1, 10 do
+        s:add(math.random(1, 6))
+    end
+    print(s)
+    print()
 
-local s2 = Set:new(nil, { 0, 2, 4, 6, 8, 10, 12 })
-local s3 = Set:new(nil, { 0, 3, 6, 9, 12 })
-print("s2", s2)
-print("s3", s3)
-local su = s2:union(s3)
-print("s2∪s3", su)
-local si = s2:inter(s3)
-print("s2∩s3", si)
+    local s2 = Set:new(nil, { 0, 2, 4, 6, 8, 10, 12 })
+    local s3 = Set:new(nil, { 0, 3, 6, 9, 12 })
+    print("s2", s2)
+    print("s3", s3)
+    local su = s2:union(s3)
+    print("s2∪s3", su)
+    local si = s2:inter(s3)
+    print("s2∩s3", si)
+end

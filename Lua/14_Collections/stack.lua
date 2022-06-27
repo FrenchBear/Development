@@ -3,12 +3,13 @@
 -- Implementation of a stack
 --
 -- 2022-06-23   PV
+-- 2022-06-27   PV      __len/# instead of count(); __name instead of __classname
 
 -- For VSCode, debug terminal is not utf8 by default
 os.execute("chcp 65001 >NUL")
 
 Stack = {
-    __classname = "Stack", -- non standard!
+    __name = "Stack", -- non standard!
 
     new = function(self, object)
         object = object or {}
@@ -43,36 +44,38 @@ Stack = {
         return res
     end,
 
-    count = function(self)
-        return #self.tb
-    end,
-
     clear = function(self)
         self.tb = {}
     end,
 
     __tostring = function(self)
-        return "Stack ["..table.concat(self.tb, ", ").."]"
-    end
+        return self.__name .. " [" .. table.concat(self.tb, ", ") .. "]"
+    end,
+
+    __len = function(self)
+        return #self.tb
+    end,
 }
 
--- Test
-local s = Stack:new()
-s:push("vert")
-s:push("orange")
-s:push("rouge")
-print(s)
-print("Count", s:count())
-while s:count()>0 do
-    print(s:pop())
-end
-print()
+-- Tests
+if not pcall(debug.getlocal, 4, 1) then -- https://stackoverflow.com/questions/49375638/how-to-determine-whether-my-code-is-running-in-a-lua-module
+    local s = Stack:new()
+    s:push("vert")
+    s:push("orange")
+    s:push("rouge")
+    print(s)
+    print("Count", #s)
+    while #s > 0 do
+        print(s:pop())
+    end
+    print()
 
-s:clear()
-s:pushRange({"one", "two", "three", "four", "five"})
-print(s)
-print("Count", s:count())
-while s:count()>0 do
-    print(s:pop())
+    s:clear()
+    s:pushRange({ "one", "two", "three", "four", "five" })
+    print(s)
+    print("Count", #s)
+    while #s > 0 do
+        print(s:pop())
+    end
+    print()
 end
-print()

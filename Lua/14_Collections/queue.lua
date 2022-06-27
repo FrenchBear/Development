@@ -4,12 +4,13 @@
 -- Do not use table.insert/table.remove but head/tail indexes for better performance
 --
 -- 2022-06-23   PV
+-- 2022-06-27   PV      __len/# instead of count(); __name instead of __classname
 
 -- For VSCode, debug terminal is not utf8 by default
 os.execute("chcp 65001 >NUL")
 
 Queue = {
-    __classname = "Queue", -- non standard!
+    __name = "Queue", -- non standard!
 
     new = function(self, object)
         object = object or {}
@@ -43,37 +44,40 @@ Queue = {
         return res
     end,
 
-    count = function(self)
-        return self.head-self.tail+1
-    end,
-
     clear = function(self)
         self.tb = {}
         self.head = 0
         self.tail = 1
     end,
+
     __tostring = function(self)
-        return "Queue [" .. table.concat(self.tb, ", ") .. "]"
+        return self.__name .. " [" .. table.concat(self.tb, ", ") .. "]"
+    end,
+
+    __len = function(self)
+        return self.head - self.tail + 1
     end
 }
 
--- Test
-local q = Queue:new()
-q:enqueue("vert")
-q:enqueue("orange")
-q:enqueue("rouge")
-print(q)
-print("Count", q:count())
-while q:count() > 0 do
-    print(q:dequeue())
-end
-print()
+-- Tests
+if not pcall(debug.getlocal, 4, 1) then -- https://stackoverflow.com/questions/49375638/how-to-determine-whether-my-code-is-running-in-a-lua-module
+    local q = Queue:new()
+    q:enqueue("vert")
+    q:enqueue("orange")
+    q:enqueue("rouge")
+    print(q)
+    print("Count", #q)
+    while #q > 0 do
+        print(q:dequeue())
+    end
+    print()
 
-q:clear()
-q:enqueueRange({"one", "two", "three", "four", "five"})
-print(q)
-print("Count", q:count())
-while q:count() > 0 do
-    print(q:dequeue())
+    q:clear()
+    q:enqueueRange({ "one", "two", "three", "four", "five" })
+    print(q)
+    print("Count", #q)
+    while #q > 0 do
+        print(q:dequeue())
+    end
+    print()
 end
-print()
