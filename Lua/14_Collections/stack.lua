@@ -5,9 +5,6 @@
 -- 2022-06-23   PV
 -- 2022-06-27   PV      __len/# instead of count(); __name instead of __classname
 
--- For VSCode, debug terminal is not utf8 by default
-os.execute("chcp 65001 >NUL")
-
 Stack = {
     __name = "Stack", -- non standard!
 
@@ -59,6 +56,9 @@ Stack = {
 
 -- Tests
 if not pcall(debug.getlocal, 4, 1) then -- https://stackoverflow.com/questions/49375638/how-to-determine-whether-my-code-is-running-in-a-lua-module
+    -- For VSCode, debug terminal is not utf8 by default
+    os.execute("chcp 65001 >NUL")
+
     local s = Stack:new()
     s:push("vert")
     s:push("orange")

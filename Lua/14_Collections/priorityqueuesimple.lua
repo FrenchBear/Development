@@ -114,6 +114,9 @@ PriorityQueue = {
 
 -- Tests
 if not pcall(debug.getlocal, 4, 1) then -- https://stackoverflow.com/questions/49375638/how-to-determine-whether-my-code-is-running-in-a-lua-module
+    -- For VSCode, debug terminal is not utf8 by default
+    os.execute("chcp 65001 >NUL")
+
     local pq = PriorityQueue:new()
     pq:push(14)
     pq:push(2)
