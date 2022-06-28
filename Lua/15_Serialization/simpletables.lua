@@ -1,96 +1,68 @@
 -- simpletables.lua
 -- Learning Lua, playing with serialization
--- This version only formats tables that do not contains loops or recursive references
+-- This version only formats tables that do not contains loops or recursive references, and uses tables constructors
 --
 -- 2022-06-28   PV      First version
+
+require "quote_key"
 
 -- For VSCode, debug terminal is not utf8 by default
 os.execute("chcp 65001 >NUL")
 
-local reserved_words = {
-    ['and'] = true,
-    ['break'] = true,
-    ['do'] = true,
-    ['else'] = true,
-    ['elseif'] = true,
-    ['end'] = true,
-    ['false'] = true,
-    ['for'] = true,
-    ['function'] = true,
-    ['goto'] = true,
-    ['if'] = true,
-    ['in'] = true,
-    ['local'] = true,
-    ['nil'] = true,
-    ['not'] = true,
-    ['or'] = true,
-    ['repeat'] = true,
-    ['return'] = true,
-    ['then'] = true,
-    ['true'] = true,
-    ['until'] = true,
-    ['while'] = true,
-}
-
-local function quote_key(key)
-    if type(key) == "string" then
-        local w = key:match("^[%a_][%w_]*$")
-        if w then
-            return reserved_words[w] == nil and w or "['" .. w .. "']"
+local function serialize_simple(name, v, off, res)
+    if type(v) == "nil" or type(v) == "number" or type(v) == "string" or type(v) == "boolean" then
+        res[#res + 1] = string.format("%s%s = %q,", off, QuoteKey(name), v)
+    elseif type(v) == "table" then
+        res[#res + 1] = string.format("%s%s = {", off, QuoteKey(name))
+        for k, val in pairs(v) do
+            serialize_simple(k, val, off .. "  ", res)
         end
-        return key
-    elseif type(key) == "number" or type(key)=="boolean" then
-        return "[" .. tostring(key) .. "]"
-    else
-        error("Don't know how to represent an index of type " .. type(key))
+        res[#res + 1] = off .. "}" .. (off == "" and "" or ",")
+    else -- "function", "thread", and "userdata"
+        error("Don't know how to serialize member " .. name .. " of type " .. type(v))
     end
 end
 
-local function serialize_simple(t, off)
+local function do_serialize(name, t)
     local res = {}
-    for k, v in pairs(t) do
-        if type(v) == "nil" or type(v) == "number" or type(v) == "string" or type(v) == "boolean" then
-            res[#res + 1] = string.format("%s%s = %q,", off, quote_key(k), v)
-        elseif type(v) == "table" then
-            res[#res + 1] = string.format("%s%s = {", off, quote_key(k))
-            -- Use table.copy instead of a loop
-            for _, l in ipairs(serialize_simple(v, off .. "  ")) do
-                res[#res + 1] = l
-            end
-            res[#res + 1] = string.format("%s},", off)
-        else -- "function", "thread", and "userdata"
-            error("Don't know how to serialize member " .. k .. " of type " .. type(v))
-        end
-    end
-    return res
+    serialize_simple(name, t, "", res)
+    print(table.concat(res, "\n"))
 end
 
-local function do_serialize(t)
-    print("{\n"..table.concat(serialize_simple(t, ""), "\n").."\n}\n")
-end
-
-local mytable = { "one", true, 123, 3.1416, yes = "oui", subtable = {no = nil, [true] = "vrai", [6] = "six", [3.1416] = "π", flag ={ country="France", colors={"bleu","blanc","rouge"}}, green="vert"}, ['goto']="somewhere" }
-do_serialize(mytable)
+local mytable = {
+    [0] = "zero", "one", true, 123, 1.4142136, yes = "oui",
+    subtable = { no = nil, [true] = "vrai", ['true']="vrai", [6] = "six", [1.4142136] = "√2", ["√2"] = 1.4142136,
+        [3.1416] = "π", ["π"] = 3.1416,
+        flag = { country = "France", colors = { "bleu", "blanc", "rouge" }, ['#'] = 3 },
+        green = "vert" },
+    ['goto'] = "somewhere"
+}
+do_serialize("ts", mytable)
 
 local ts = {
     [1] = "one",
     [2] = true,
     [3] = 123,
-    [4] = 0x1.921ff2e48e8a7p+1,
-    yes = "oui",
+    [4] = 0x1.6a09e7098ef5p+0,
+    [0] = "zero",
     ['goto'] = "somewhere",
+    yes = "oui",
     subtable = {
-      flag = {
-        country = "France",
-        colors = {
-          [1] = "bleu",
-          [2] = "blanc",
-          [3] = "rouge",
+        [true] = "vrai",
+        ['π'] = 0x1.921ff2e48e8a7p+1,
+        [6] = "six",
+        [1.4142136] = "√2",
+        green = "vert",
+        flag = {
+            country = "France",
+            colors = {
+                [1] = "bleu",
+                [2] = "blanc",
+                [3] = "rouge",
+            },
+            ['#'] = 3,
         },
-      },
-      [true] = "vrai",
-      [3.1416] = "π",
-      [6] = "six",
-      green = "vert",
+        [3.1416] = "π",
+        ['√2'] = 0x1.6a09e7098ef5p+0,
     },
-    }
+}
