@@ -4,7 +4,7 @@
 -- 2022-06-10   PV
 
 -- For VSCode, debug terminal is not utf8 by default
---os.execute("chcp 65001 >NUL")
+os.execute("chcp 65001 >NUL")
 
 function TableToString(t)
 	local s = "{"
@@ -50,7 +50,7 @@ print(SkipLast(1, 2, 3, 4))
 -- In-place shuffle; returns parameter for convenience (not sure it's a goof idea for in-place shiffling)
 function Shuffle(t)
 	for i = 1, #t do
-		j = math.random(1, #t)
+		local j = math.random(1, #t)
 		t[i], t[j] = t[j], t[i]
 	end
 	return t
@@ -117,32 +117,6 @@ for c in Combinator(ln, k) do
 	nc = nc + 1
 end
 assert(nc == comb(#ln, k))
-
-
--- Exercise 9.1
--- Simple sum of trapezes surface
-local function integral(f, from, to, steps)
-	local sum = 0
-	local x = from
-	local delta = (to - from) / steps
-	for i = 0, steps do
-		local y = f(x)
-		if i == 0 or i == steps then
-			sum = sum + y / 2
-		else
-			sum = sum + y
-		end
-		x = x + delta
-	end
-	return delta * sum
-end
-
-local ix2 = integral(function(x) return x * x end, 0, 1, 10000)
-print("∫x=0,1 x²dx = ", ix2)
-
-local i2 = integral(function(x) return math.sin(math.log(x)) end, 1e-6, 1, 10000)
-print("∫x=0,1 sin(ln(x))dx = ", i2)
-
 
 
 -- Exercises 9.3, variant over 5.4 and 5.5: return a function that evaluates a polynom
