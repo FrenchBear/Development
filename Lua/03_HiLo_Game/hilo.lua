@@ -17,7 +17,7 @@ while true do
     local guess = tonumber(io.read("n"))
     if guess==0 then 
         print("Ok on arrête, le nombre à trouver était " .. secret)
-        break 
+        break
     end
     attempts = attempts+1
     if guess==secret then

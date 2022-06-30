@@ -1,12 +1,13 @@
--- set.lua
+-- set.lua, module version
 -- Learning lua, classical structures
 -- Implementation of a set mith minimal operations (inter, union)
 --
 -- 2022-06-23   PV
 -- 2022-06-27   PV      __len/# instead of count(); __name instead of __classname
--- 2022-06-30   PV      Simpler version of __tostring
+-- 2022-06-30   PV      Module version
 
-Set = {
+-- The module version does not defile global table Set anymore, but returns an anonymous table
+return {
     __name = "Set",
 
     new = function(self, object, initlist)
@@ -73,7 +74,7 @@ Set = {
         return res
     end,
 
-    -- Simpler version
+    -- new, simpler version
     __tostring = function(self)
         local t = {}
         for k in pairs(self.tb) do t[#t + 1] = k end
@@ -84,34 +85,3 @@ Set = {
         return self.nb
     end
 }
-
--- Tests
-if not pcall(debug.getlocal, 4, 1) then -- https://stackoverflow.com/questions/49375638/how-to-determine-whether-my-code-is-running-in-a-lua-module
-    -- For VSCode, debug terminal is not utf8 by default
-    os.execute("chcp 65001 >NUL")
-
-    local s = Set:new()
-    s:addRange({ "c", "l", "a", "s", "s", "e" })
-    print(s)
-    print("Count", #s)
-    for v in s:items() do
-        print(v)
-    end
-    print()
-
-    s:clear()
-    for i = 1, 10 do
-        s:add(math.random(1, 6))
-    end
-    print(s)
-    print()
-
-    local s2 = Set:new(nil, { 0, 2, 4, 6, 8, 10, 12 })
-    local s3 = Set:new(nil, { 0, 3, 6, 9, 12 })
-    print("s2", s2)
-    print("s3", s3)
-    local su = s2:union(s3)
-    print("s2∪s3", su)
-    local si = s2:inter(s3)
-    print("s2∩s3", si)
-end

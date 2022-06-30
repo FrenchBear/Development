@@ -112,7 +112,7 @@ PriorityQueue = {
     __tostring = function(self)
         local t = {}
         for _, v in pairs(self.heap) do
-            t[#t + 1] = "(".. v.priority .. ", " .. v.item .. ")"
+            t[#t + 1] = string.format("(%q, %q)", v.priority, v.item)    --   "(".. v.priority .. ", " .. v.item .. ")"
         end
         return self.__name .. " [" .. table.concat(t, ", ") .. "]"
     end,

@@ -7,7 +7,7 @@
 -- 2022-06-08   PV
 
 -- For VSCode, debug terminal is not utf8 by default
---os.execute("chcp 65001 >NUL")
+os.execute("chcp 65001 >NUL")
 
 function TableConcat(t1, t2)
 	local t = { table.unpack(t1) }

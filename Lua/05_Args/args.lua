@@ -5,6 +5,9 @@
 -- Use Shift+Ctrl+R to start task "Lua current file with 4 arguments" rather than Debug
 -- 2022-06-06   PV
 
+-- For VSCode, debug terminal is not utf8 by default
+os.execute("chcp 65001 >NUL")
+
 -- Print the script name
 print(string.format('Script Name: "%s"', arg[0]))
 
