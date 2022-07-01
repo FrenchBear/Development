@@ -2,9 +2,7 @@
 -- Learning lua, classical structures
 -- Implementation of a simple Counter class
 --
--- This implementation is clearly incomplete, need to add:
--- - An indexer to retrieve count using xx[value] instead of count(value) function, and a setter indexer to force count
--- - An iterator returning key, value in order of decreasing frequency usable by a "for k,v in ..." construction
+-- -ToDo: Add an indexer to retrieve count using xx[value] instead of count(value) function, and a setter indexer to force count
 --
 -- 2022-06-30   PV
 
@@ -68,8 +66,9 @@ Counter = {
     end,
 
     -- build a table of keys sorted by count (highest first)
-    -- returns a function returning a new pair key, count in decreasing count order, ening by nil, nil
-    mostCommonIterator = function(self)
+    -- returns a function returning a new pair key, count in decreasing count order, ending by nil, nil
+    mostCommonIterator = function(self, max)
+        max = max or math.huge
         local keys = {}
         for k in pairs(self.table) do
             keys[#keys + 1] = k
@@ -77,10 +76,10 @@ Counter = {
         table.sort(keys, function(k1, k2) return self.table[k1] > self.table[k2] end)
         local ix = 0
         return function()
-            if ix + 1 > #keys then
+            ix = ix + 1
+            if ix > #keys or ix > max then
                 return nil, nil
             else
-                ix = ix + 1
                 return keys[ix], self.table[ keys[ix] ]
             end
         end
@@ -102,10 +101,16 @@ if not pcall(debug.getlocal, 4, 1) then -- https://stackoverflow.com/questions/4
     print(c, "len = " .. #c)
     print("c.count('t') = " .. c:count("t"))
     print()
-    local it = c:mostCommonIterator()
-    while true do
-        local k, v = it()
-        if k == nil then break end
+
+    print("Top 5 frequencies:")
+    for k, v in c:mostCommonIterator(5) do
         print(QuoteKey(k) .. " = " .. v)
     end
+
+    -- local it = c:mostCommonIterator()
+    -- while true do
+    --     local k, v = it()
+    --     if k == nil then break end
+    --     print(QuoteKey(k) .. " = " .. v)
+    -- end
 end
