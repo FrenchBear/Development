@@ -5,6 +5,7 @@
 --
 -- 2022-06-23   PV
 -- 2022-06-27   PV      __len/# instead of count(); __name instead of __classname
+-- 2022-07-05   PV      Stateless iterator
 
 Queue = {
     __name = "Queue", -- non standard!
@@ -47,6 +48,15 @@ Queue = {
         self.tail = 1
     end,
 
+    -- Stateless iterator, returns queue elements from oldest (next to be dequeld) to the last inserted
+    __pairs = function(self)
+        return function (t, i)
+            i=i+1
+            local v = t[i]
+            if v then return i, v end
+        end, self.tb, self.tail-1
+    end,
+
     __tostring = function(self)
         return self.__name .. " [" .. table.concat(self.tb, ", ") .. "]"
     end,
@@ -80,4 +90,12 @@ if not pcall(debug.getlocal, 4, 1) then -- https://stackoverflow.com/questions/4
         print(q:dequeue())
     end
     print()
+
+    -- Test Stateless iterator
+    q:clear()
+    q:enqueueRange({ "pomme", "poire", "ananas", "scoubidou", "bidoubidou" })
+    q:dequeue() -- Remove Pomme
+    for k, v in pairs(q) do
+        print(k, v)
+    end
 end

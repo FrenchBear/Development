@@ -4,6 +4,7 @@
 --
 -- 2022-06-23   PV
 -- 2022-06-27   PV      __len/# instead of count(); __name instead of __classname
+-- 2022-07-05   PV      Stateless iterator
 
 Stack = {
     __name = "Stack", -- non standard!
@@ -45,6 +46,15 @@ Stack = {
         self.tb = {}
     end,
 
+    -- Stateless iterator, returns stack elements from oldest to the one on top
+    __pairs = function(self)
+        return function (t, i)
+            i=i+1
+            local v = t[i]
+            if v then return i, v end
+        end, self.tb, 0
+    end,
+
     __tostring = function(self)
         return self.__name .. " [" .. table.concat(self.tb, ", ") .. "]"
     end,
@@ -78,4 +88,12 @@ if not pcall(debug.getlocal, 4, 1) then -- https://stackoverflow.com/questions/4
         print(s:pop())
     end
     print()
+
+    -- Test Stateless iterator
+    s:clear()
+    s:pushRange({ "pomme", "poire", "ananas", "scoubidou", "bidoubidou" })
+    s:pop() -- Remove bidoubidou
+    for k, v in pairs(s) do
+        print(k, v)
+    end
 end

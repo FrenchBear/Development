@@ -65,6 +65,23 @@ Counter = {
         return self.nb
     end,
 
+    -- Simple iterator
+    __pairs = function(self)
+        local keys = {}
+        for k in pairs(self.table) do
+            keys[#keys + 1] = k
+        end
+        local ix = 0
+        return function()
+            ix = ix + 1
+            if ix > #keys then
+                return nil, nil
+            else
+                return keys[ix], self.table[ keys[ix] ]
+            end
+        end
+    end,
+
     -- build a table of keys sorted by count (highest first)
     -- returns a function returning a new pair key, count in decreasing count order, ending by nil, nil
     mostCommonIterator = function(self, max)
@@ -106,11 +123,15 @@ if not pcall(debug.getlocal, 4, 1) then -- https://stackoverflow.com/questions/4
     for k, v in c:mostCommonIterator(5) do
         print(QuoteKey(k) .. " = " .. v)
     end
+    print()
 
-    -- local it = c:mostCommonIterator()
-    -- while true do
-    --     local k, v = it()
-    --     if k == nil then break end
-    --     print(QuoteKey(k) .. " = " .. v)
-    -- end
+    c:clear()
+    c:add('Pomme')
+    c:add('Poire', 2)
+    c:add('Ananas', 3)
+    c:add('Pomme')
+    c:add('Poire', -2)
+    for k, v in pairs(c) do
+        print(k, v)
+    end
 end

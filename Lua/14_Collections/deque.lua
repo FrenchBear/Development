@@ -3,7 +3,7 @@
 -- Implementation of a deque as a module
 --
 -- 2022-07-04   PV
-
+-- 2022-07-06   PV      Stateless iterator
 Deque = {
     __name = "Deque",
 
@@ -49,6 +49,15 @@ Deque = {
         return value
     end,
 
+    -- Stateless iterator, returns queue elements from oldest (next to be dequeld) to the last inserted
+    __pairs = function(self)
+        return function (t, i)
+            i=i+1
+            local v = t[i]
+            if v then return i, v end
+        end, self.list, self.first-1
+    end,
+
     __tostring = function(self)
         local t = {}
         for i = self.first, self.last do
@@ -79,4 +88,10 @@ if not pcall(debug.getlocal, 4, 1) then -- https://stackoverflow.com/questions/4
     print("d:popFirst()", d:popFirst())
     print("d:popLast()", d:popLast())
     print(d, "len = " .. #d)
+    print()
+
+    -- Test Stateless iterator
+    for k, v in pairs(d) do
+        print(k, v)
+    end
 end
