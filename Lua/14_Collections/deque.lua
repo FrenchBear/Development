@@ -49,7 +49,7 @@ Deque = {
         return value
     end,
 
-    -- Stateless iterator, returns queue elements from oldest (next to be dequeld) to the last inserted
+    -- Stateless iterator, returns queue elements from oldest (next to be dequed) to the last inserted
     __pairs = function(self)
         return function (t, i)
             i=i+1

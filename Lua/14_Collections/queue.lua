@@ -48,7 +48,7 @@ Queue = {
         self.tail = 1
     end,
 
-    -- Stateless iterator, returns queue elements from oldest (next to be dequeld) to the last inserted
+    -- Stateless iterator, returns queue elements from oldest (next to be dequed) to the last inserted
     __pairs = function(self)
         return function (t, i)
             i=i+1
@@ -94,7 +94,7 @@ if not pcall(debug.getlocal, 4, 1) then -- https://stackoverflow.com/questions/4
     -- Test Stateless iterator
     q:clear()
     q:enqueueRange({ "pomme", "poire", "ananas", "scoubidou", "bidoubidou" })
-    q:dequeue() -- Remove Pomme
+    q:dequeue() -- Remove element
     for k, v in pairs(q) do
         print(k, v)
     end

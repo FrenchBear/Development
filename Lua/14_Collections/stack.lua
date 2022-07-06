@@ -92,7 +92,7 @@ if not pcall(debug.getlocal, 4, 1) then -- https://stackoverflow.com/questions/4
     -- Test Stateless iterator
     s:clear()
     s:pushRange({ "pomme", "poire", "ananas", "scoubidou", "bidoubidou" })
-    s:pop() -- Remove bidoubidou
+    s:pop() -- Remove an element
     for k, v in pairs(s) do
         print(k, v)
     end

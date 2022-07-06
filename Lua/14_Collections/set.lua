@@ -1,11 +1,11 @@
 -- set.lua
 -- Learning lua, classical structures
--- Implementation of a set mith minimal operations (inter, union)
+-- Implementation of a set with minimal operations (inter, union)
 --
 -- 2022-06-23   PV
 -- 2022-06-27   PV      __len/# instead of count(); __name instead of __classname
 -- 2022-06-30   PV      Simpler version of __tostring
--- 2022-07-05   PV      __add/__mul for union/inter, __le/__lt/__eq for seubser/proper subset/equality
+-- 2022-07-05   PV      __add/__mul for union/inter, __le/__lt/__eq for subset/proper subset/equality
 
 Set = {
     __name = "Set",
@@ -91,6 +91,10 @@ Set = {
 Set.__add = Set.union
 Set.__mul = Set.inter
 
+-- Define operator | to do the union and & to do the intersection
+Set.__bor = Set.union
+Set.__band = Set.inter
+
 -- Subset, operator <= (and >= with reversed arguments)
 Set.__le = function(a, b)
     for k in pairs(a.tb) do
@@ -139,10 +143,14 @@ if not pcall(debug.getlocal, 4, 1) then -- https://stackoverflow.com/questions/4
     print("A ∪ B", su)
     local si = s2:inter(s3)
     print("A ∩ B", si)
-
     print()
+
     print("A+B", s2 + s3)
     print("(A+B)*B", (s2 + s3) * s2)
+    print()
+
+    print("A|B", s2 | s3)
+    print("(A|B)&B", (s2 | s3) & s2)
     print()
 
     local sa = Set:new(nil, { 2, 4 })

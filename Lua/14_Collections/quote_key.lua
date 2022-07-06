@@ -4,7 +4,7 @@
 --    if it's a valid identifier and not a keyword:
 --      return the key as is: green, Country
 --    else:
---      return key as a string between brackets: ['goto'], ['false']
+--      return key as a string between brackets: ['function'], ['false']
 --  else raise error
 --
 -- 2022-06-28   PV
