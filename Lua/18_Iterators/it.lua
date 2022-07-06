@@ -3,12 +3,18 @@
 --
 -- 2022-07-06   PV
 
+-- ToDo: Add a step variable (exercise 18.2)
+-- ToDo: Return all non-empty substrings of a string (exercise 18.4)
+-- ToDo: Return all subsets of a given set (exercise 18.5)
+-- ToDo: Return all sums producing an integer
+
 -- For VSCode, debug terminal is not utf8 by default
 os.execute("chcp 65001 >NUL")
 
 -- The for loop calls its iterator function with two arguments: the invariant state and the control variable.
 -- Generator returns three values: the function the iterator function, the invariant state, and initial value for the control variable
 
+-- Exercise 18.1
 -- Simple stateless int iterator from start to stop -- included, we're not un Python :-)
 function Range1(start, stop)
     return function(inv, ctl)
