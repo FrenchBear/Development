@@ -78,13 +78,37 @@ Set = {
     -- Simpler version
     __tostring = function(self)
         local t = {}
-        for k in pairs(self.tb) do t[#t + 1] = k end
+        for k in pairs(self.tb) do t[#t + 1] = string.format("%q", k) end
         return self.__name .. " {" .. table.concat(t, ", ") .. "}"
     end,
 
     __len = function(self)
         return self.nb
-    end
+    end,
+
+    -- Iterator returning all subsets of a set.
+    -- Beware it will return 2^len(self) elements!
+    -- Exercise (exercise 18.5)
+    allSubsets = function(self)
+        local i = math.tointeger( 2 ^ self.nb)
+        local items = {}
+        for item in pairs(self.tb) do
+            items[#items+1] = item
+        end
+        return function()
+            i = i - 1
+            if i < 0 then return nil end
+            local s = Set:new()
+            local i2 = i
+            for j = 1, self.nb do
+                if (i2 & 1) == 1 then
+                    s:add(items[j])
+                end
+                i2 = i2 >> 1
+            end
+            return s
+        end
+    end,
 }
 
 -- Define operator + to do the union and * to do the intersection
@@ -162,4 +186,11 @@ if not pcall(debug.getlocal, 4, 1) then -- https://stackoverflow.com/questions/4
     print("sa>=sa ⊇", sa >= sa) --> true
     print("sa>sb  ⊃", sa > sb) --> false
     print("sa==sb =", sa == sb * sa) --> true
+    print()
+
+    local tss = Set:new(nil, { 1, 2, 3, 4 })
+    print("subsets of " .. tostring(tss))
+    for ss in tss:allSubsets() do
+        print(ss)
+    end
 end
