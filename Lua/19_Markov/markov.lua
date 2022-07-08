@@ -4,9 +4,13 @@
 --
 -- 2022-07-08   PV      First version
 
+-- ToDo: generalize to any number of prefix words
+
 -- For VSCode, debug terminal is not utf8 by default
+
 os.execute("chcp 65001 >NUL")
 
+math.randomseed(3)
 
 -- This version returns words with separator at the end, whether space or line feed
 function AllWordsSplitBySpace(file)
@@ -50,35 +54,91 @@ function AllWordsSplitBySpace(file)
 end
 
 local file = 'Harry Potter and the Prisoner of Azkaban.txt'
-local succ = {}
-local lastw = '\n'
-local na = 0
-local nw = 0
-print("Reading " .. file)
-for w in AllWordsSplitBySpace(file) do
-    local l = succ[lastw]
-    if l == nil then
-        succ[lastw] = { w }
-        na = na + 1
-        nw = nw + 1
-    else
-        l[#l + 1] = w
-        nw = nw + 1
-    end
-    lastw = w
-end
-print("Analysys done, " .. na .. " anchors, " .. nw .. " words.\n")
 
--- Generate 10 random paragraphs
-local start = '\n'
-local np = 0
-while true do
-    local lmax = #succ[start]
-    local nextw = succ[start][math.random(1, lmax)]
-    io.write(nextw)
-    if nextw:byte(#nextw) == 10 then
-        np = np + 1
-        if np == 10 then break end
+-- Simple version with a memory of 1 predecessor
+function Markov1()
+    local succ = {}
+    local lastw = '\n'
+    local na = 0
+    local nw = 0
+    print("Reading " .. file)
+    for w in AllWordsSplitBySpace(file) do
+        local l = succ[lastw]
+        if l == nil then
+            succ[lastw] = { w }
+            na = na + 1
+            nw = nw + 1
+        else
+            l[#l + 1] = w
+            nw = nw + 1
+        end
+        lastw = w
     end
-    start = nextw
+    print("Analysys done, " .. na .. " anchors, " .. nw .. " words.\n")
+
+    -- Generate 10 random paragraphs
+    local start = '\n'
+    local np = 0
+    while true do
+        local lmax = #succ[start]
+        local nextw = succ[start][math.random(1, lmax)]
+        io.write(nextw)
+        if nextw:byte(#nextw) == 10 then
+            np = np + 1
+            if np == 10 then break end
+        end
+        start = nextw
+    end
 end
+
+-- Generalized version with n predecessors
+-- Generate nsent sentences
+function Markov(n, nsent)
+    local succ = {}
+    local lasts = {}
+    for i = 1, n do
+        lasts[i] = '\n'
+    end
+    local firstword = table.concat(lasts, "|")
+    local ix = 1
+    local na = 0
+    local nw = 0
+    for w in AllWordsSplitBySpace(file) do
+        local lastw = table.concat(lasts, "|", ix, ix + n - 1)
+        local l = succ[lastw]
+        if l == nil then
+            succ[lastw] = { w }
+            na = na + 1
+            nw = nw + 1
+        else
+            l[#l + 1] = w
+            nw = nw + 1
+        end
+        lasts[ix + n] = w
+        lasts[ix] = nil
+        ix = ix + 1
+    end
+
+    print("Analysys done, " .. na .. " anchors, " .. nw .. " words.\n")
+
+    -- Generate 10 random paragraphs
+    local start = firstword
+    local np = 0
+    while true do
+        local lmax = #succ[start]
+        local nextw = succ[start][math.random(1, lmax)]
+        io.write(nextw)
+        if nextw:byte(#nextw) == 10 then
+            np = np + 1
+            if np == nsent then break end
+        end
+        if n == 1 then
+            start = nextw
+        else
+            local p = string.find(start, "|", 1, true)
+            start = string.sub(start, p + 1) .. "|" .. nextw
+        end
+    end
+end
+
+Markov(3, 120)
