@@ -27,7 +27,7 @@ function AllWordsASCII(file)
     end
 end
 
-print("\nAllWirds, ASCII version")
+print("\nAllWords, ASCII version")
 for w in AllWordsASCII("texte.txt") do
     print(w)
 end
@@ -42,7 +42,7 @@ function IsLatinLetter(c)
         (c >= 0x100 and c <= 0x17F) -- Latin Extended-A: European Latin
 end
 
-function AllWordsASCII(file)
+function AllWordsUnicode(file)
     local function split_words(line)
         if line==nil then return line end
         local tw = {}
@@ -82,7 +82,7 @@ function AllWordsASCII(file)
     end
 end
 
-print("\nAllWirds, UTF-8 version")
-for w in AllWordsASCII("texte.txt") do
+print("\nAllWords, UTF-8 version")
+for w in AllWordsUnicode("texte.txt") do
     print(w)
 end
