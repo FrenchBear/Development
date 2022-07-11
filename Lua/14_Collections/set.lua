@@ -6,7 +6,7 @@
 -- 2022-06-27   PV      __len/# instead of count(); __name instead of __classname
 -- 2022-06-30   PV      Simpler version of __tostring
 -- 2022-07-05   PV      __add/__mul for union/inter, __le/__lt/__eq for subset/proper subset/equality
-
+-- 2022-07-11   PV      Set difference; __pairs iterator
 Set = {
     __name = "Set",
 
@@ -67,10 +67,17 @@ Set = {
     inter = function(self, other)
         local res = Set:new()
         for k in pairs(self.tb) do
-            -- if other:contains(k) then
-            --     res:add(k)
-            -- end
-            res.tb[k] = other.tb[k] -- Much simpler!
+            res.tb[k] = other.tb[k]
+        end
+        return res
+    end,
+
+    minus = function(self, other)
+        local res = Set:new()
+        for k in pairs(self.tb) do
+            if other.tb[k] == nil then
+                res.tb[k] = true
+            end
         end
         return res
     end,
@@ -86,14 +93,20 @@ Set = {
         return self.nb
     end,
 
+    __pairs = function(self)
+        return function(_, k) -- iteration function
+            return next(self.tb, k)
+        end
+    end,
+
     -- Iterator returning all subsets of a set.
     -- Beware it will return 2^len(self) elements!
     -- Exercise (exercise 18.5)
     allSubsets = function(self)
-        local i = math.tointeger( 2 ^ self.nb)
+        local i = math.tointeger(2 ^ self.nb)
         local items = {}
         for item in pairs(self.tb) do
-            items[#items+1] = item
+            items[#items + 1] = item
         end
         return function()
             i = i - 1
@@ -114,6 +127,7 @@ Set = {
 -- Define operator + to do the union and * to do the intersection
 Set.__add = Set.union
 Set.__mul = Set.inter
+Set.__sub = Set.minus
 
 -- Define operator | to do the union and & to do the intersection
 Set.__bor = Set.union
@@ -167,10 +181,12 @@ if not pcall(debug.getlocal, 4, 1) then -- https://stackoverflow.com/questions/4
     print("A ∪ B", su)
     local si = s2:inter(s3)
     print("A ∩ B", si)
+    print("A ∖ B", s2:minus(s3))
     print()
 
     print("A+B", s2 + s3)
     print("(A+B)*B", (s2 + s3) * s2)
+    print("A-B", s2 - s3)
     print()
 
     print("A|B", s2 | s3)
@@ -192,5 +208,12 @@ if not pcall(debug.getlocal, 4, 1) then -- https://stackoverflow.com/questions/4
     print("subsets of " .. tostring(tss))
     for ss in tss:allSubsets() do
         print(ss)
+    end
+    print()
+
+    local sc = Set:new(nil, { 'C', 'l', 'a', 's', 's', 'e' })
+    print("Iterate over letters of Classe")
+    for k in pairs(sc) do
+        print(k)
     end
 end
