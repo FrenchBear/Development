@@ -36,6 +36,11 @@ Stack = {
         return res
     end,
 
+    top = function(self)
+        if #self.tb == 0 then error("Empty stack") end
+        return self.tb[#self.tb]
+    end,
+
     peek = function(self)
         if #self.tb == 0 then error("Empty stack") end
         local res = self.tb[#self.tb]
@@ -75,6 +80,7 @@ if not pcall(debug.getlocal, 4, 1) then -- https://stackoverflow.com/questions/4
     s:push("rouge")
     print(s)
     print("Count", #s)
+    print("Top", s:top())
     while #s > 0 do
         print(s:pop())
     end
