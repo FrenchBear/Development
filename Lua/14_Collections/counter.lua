@@ -4,6 +4,7 @@
 --
 -- 2022-06-30   PV
 -- 2022-07-11   PV      Indexed access finally done, both getter and setter
+-- 2022-07-14   PV      More efficient __newindex, not testing special keys
 
 require "quote_key"
 
@@ -27,10 +28,15 @@ Counter = {
 
             -- Need to identify special keys that should not be stored in __table
             __newindex = function(z, k, v)
-                if k == "__tostring" or k == "__len" or k == "__pairs" or k == "__table" or k == "__nb" then
-                    rawset(z, k, v)
-                else
+                -- if k == "__tostring" or k == "__len" or k == "__pairs" or k == "__table" or k == "__nb" then
+                --     rawset(z, k, v)
+                -- else
+                --     z.__table[k] = v
+                -- end
+                if type(k)=="number" and math.type(k)=="integer" then
                     z.__table[k] = v
+                else
+                    rawset(z, k, v)
                 end
             end,
 
