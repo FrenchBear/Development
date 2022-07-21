@@ -3,6 +3,7 @@
 -- Markov chain, write next Harry Potter!!
 --
 -- 2022-07-08   PV      First version
+-- 2022-07-21   PV      Use <close> attribute on file variable
 
 -- ToDo: generalize to any number of prefix words
 
@@ -34,7 +35,7 @@ function AllWordsSplitBySpace(file)
         return tw
     end
 
-    local f = assert(io.open(file, "r"))
+    local f <close> = assert(io.open(file, "r"))
     local words = split_words_on_space(f:read("L"))
     local pos = 1
     local word = ''
@@ -48,7 +49,7 @@ function AllWordsSplitBySpace(file)
                 pos = 1
             end
         end
-        if f then f:close() end
+        -- if f then f:close() end
         return nil
     end
 end

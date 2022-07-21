@@ -2,14 +2,17 @@
 -- Play with files in Lua, find the most common letters and pairs
 --
 -- 2022-06-16   PV
-
+-- 2077-07-21	PV		Use <close> on file variable
 -- For VSCode, debug terminal is not utf8 by default
 os.execute("chcp 65001 >NUL")
 
 local filename = [[Data utf-8\Harry Potter and the Prisoner of Azkaban.txt]]
-local f = assert(io.open(filename, "r"))
-local hp = f:read("a")
-f:close()
+local hp
+do
+	local f <close> = assert(io.open(filename, "r"))
+	hp = f:read("a")
+	--f:close()
+end
 
 --local hp = "Il était un petit navire qui n'avait jamais navigué ohé ohé matelot"
 
