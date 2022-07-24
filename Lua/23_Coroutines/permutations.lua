@@ -1,5 +1,6 @@
 -- permutations.lua
 -- Learning Lua, play with coroutines, example of coroutine as an iterator
+-- Shows "manual packaging" and the simplified version using coroutine.wrap()
 --
 -- 2022-07-21   PV      First version
 

@@ -19,7 +19,7 @@ print(coroutine.status(co)) --> suspended
 -- changing its state from suspended to running:
 coroutine.resume(co) --> hi
 
-print(coroutine.status(co))
+print(coroutine.status(co)) --> dead
 
 
 
@@ -31,10 +31,8 @@ co = coroutine.create(function()
         coroutine.yield()
     end
 end)
-
 coroutine.resume(co) --> co 1
 print(coroutine.status(co)) --> suspended
-
 coroutine.resume(co) --> co 2
 coroutine.resume(co) --> co 3
 print(coroutine.status(co)) --> suspended

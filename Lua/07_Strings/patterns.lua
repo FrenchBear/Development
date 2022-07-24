@@ -152,9 +152,9 @@ local function split(str, char)
     local r = {}
     local char_original = char
     local p1 = 1
-    char = string.gsub(char, "(%W)", "%%%1")
+    char = string.gsub(char, "(%W)", "%%%1")        -- In search string, all non-alphanumeric characters are escaped
     for x in string.gmatch(str, "()" .. char) do
-        local pn = tonumber(x)
+        local pn = math.floor(tonumber(x) or 0)
         r[#r + 1] = string.sub(str, p1, pn - 1)
         p1 = pn + #char_original
     end
@@ -163,6 +163,11 @@ local function split(str, char)
 end
 
 for _, w in ipairs(split("Il était une fois", " ")) do
+    print(w)
+end
+print()
+
+for _, w in ipairs(split("Once%upon%a%time", "%")) do
     print(w)
 end
 print()

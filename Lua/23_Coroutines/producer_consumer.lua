@@ -1,12 +1,12 @@
 -- producer_caller.lua
--- Learning Lua, play with coroutines
+-- Learning Lua, play with coroutines, clean implementation pattern
 --
 -- 2022-07-21   PV      First version
 
 -- For VSCode, debug terminal is not utf8 by default
 os.execute("chcp 65001 >NUL")
 
-
+-- returns next value, returned by coroutine.resume
 local function receive(prod)
     local status, value = coroutine.resume(prod)
     return value
