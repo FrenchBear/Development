@@ -2,6 +2,7 @@
 -- Play with patterns in lua
 --
 -- 2022-06-21   PV
+-- 2022-07-26   PV      Added Iterate over a string pattern to clarify
 
 -- For VSCode, debug terminal is not utf8 by default
 os.execute("chcp 65001 >NUL")
@@ -27,6 +28,27 @@ end
 print(nthe .. " fois 'the'")
 
 
+--------------------------
+-- Iterate over a string pattern
+local ss = "Once upon a time"
+
+-- Simple integer loop
+for i = 1, #ss do
+    local c = ss:sub(i,i)
+    -- do something with c
+end
+
+-- Use a pattern with string.gmatch() to get an iterator over the characters:
+for c in ss:gmatch"." do
+    -- do something with c
+end
+
+-- use string.gsub() to call a function for each char:
+_ = ss:gsub(".", function(c)
+    -- do something with c
+end)
+
+--------------------------
 
 -- seach a pattern
 local sd = "Birth date 26/02/1965 in Chambéry"
