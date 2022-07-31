@@ -201,7 +201,7 @@ print()
 
 local tt = split("Lua Quick Start Guide (2018) - [Packt] - Gabor Szauer", " - ")
 local title = tt[1]
-local editor = string.gsub(tt[2], 2, #tt[2] - 2)
+local editor = string.sub(tt[2], 2, #tt[2] - 1)
 local author = tt[3]
 print("title:  " .. title, "\neditor: " .. editor, "\nauthor: " .. author)
 print()
