@@ -1,4 +1,4 @@
--- hilo.lua
+-- hi-lo.lua
 -- Simple Hi-Lo game in lua
 --
 -- 2022-06-06   PV

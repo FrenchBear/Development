@@ -1,6 +1,6 @@
 -- set.lua, module version
 -- Learning lua, classical structures
--- Implementation of a set mith minimal operations (inter, union)
+-- Implementation of a set with minimal operations (inter, union)
 --
 -- 2022-06-23   PV
 -- 2022-06-27   PV      __len/# instead of count(); __name instead of __classname

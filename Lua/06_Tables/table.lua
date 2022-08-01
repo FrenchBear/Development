@@ -1,8 +1,5 @@
--- vp.lua
--- Vietnamese puzzle in Lua
--- Solver for a problem published in the Guardian
--- http://www.theguardian.com/science/alexs-adventures-in-numberland/2015/may/20/can-you-do-the-maths-puzzle-for-vietnamese-eight-year-olds-that-has-stumped-parents-and-teachers
--- All you need to do is place the digits from 1 to 9 in the grid and perform calculations that should give a result of 66
+-- table.lua
+-- Play with tables in Lua
 --
 -- 2022-06-08   PV
 

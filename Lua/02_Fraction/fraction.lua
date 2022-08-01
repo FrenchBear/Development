@@ -2,7 +2,7 @@
 -- Very first test of a class in lua
 --
 -- 2022-06-06   PV
--- 2022-06-26   PV      toperiod
+-- 2022-06-26   PV      to_period
 
 -- For VSCode, debug terminal is not utf8 by default
 os.execute("chcp 65001 >NUL")
@@ -63,7 +63,9 @@ Fraction = {
         return self.n / self.d
     end,
 
-    toperiod = function(self)
+    -- Returns a string of the fraction, with period in brackets
+    -- ex: 679/550 returns "1.23[45]" since the fraction is 1.23454545...
+    to_period = function(self)
         local n, d = self.n, self.d
         if d == 0 then
             if n == 0 then return ("0/0 undefined") else return ("/0 error") end
@@ -98,7 +100,7 @@ Fraction = {
     end
 }
 
--- implement a metatable for Fraction, so it's possible to call Fraction and implement a "constructore-like" call.
+-- implement a metatable for Fraction, so it's possible to call Fraction and implement a "constructor-like" call.
 -- It may be simpler to put this inside Fraction and set Fraction as its own metatable, but then is would be possible
 -- to call a Fraction instance, which does not make much sense...
 MetaFraction = {
@@ -128,7 +130,7 @@ print("pi ≈ " .. tostring(pi) .. " = " .. pi:tofloat())
 --print(f1(22, 7))
 
 local function test(n, d, r)
-    local x = Fraction(n, d):toperiod(n, d)
+    local x = Fraction(n, d):to_period(n, d)
     if x == r then print("Ok", n .. "/" .. d .. " = " .. r) else print('KO', n .. "/" .. d ..
         " found " .. x .. ' expected ' .. r) end
 end

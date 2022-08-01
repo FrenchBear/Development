@@ -18,6 +18,11 @@ local function stringrep(s, n)
     return r .. s
 end
 
+for i = 1, 17 do
+    local r = stringrep("*", i)
+    print(i, #r, r)
+end
+
 local function generate_stringrep_n(n)
     local res = { "function stringrep_" .. n .. "(s)" }
     res[#res + 1] = '  local r = ""'
@@ -32,11 +37,6 @@ local function generate_stringrep_n(n)
     --print(code)
     load(code)()    -- Execute immediately the creation
 end
-
--- for i = 1, 17 do
---     local r = stringrep("*", i)
---     print(i, #r, r)
--- end
 
 for i=1, 9 do
     generate_stringrep_n(i)

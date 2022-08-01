@@ -10,7 +10,7 @@ local expression = "1+2*3^4"
 local res = load("return " .. expression)()
 print(expression .. " = " .. res)
 
--- Can refer to global variables in a loaded scrit, here global x
+-- Can refer to global variables in a loaded script, here global x
 local functext = "1.5+math.sin(x)+1/3*math.cos(3*x)"
 local func = load("return " .. functext)
 if func == nil then error("Invalid function") end

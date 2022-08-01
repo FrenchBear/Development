@@ -27,7 +27,7 @@ local function instrrev(s, pat)
     end
 end
 
--- Retourne un nom de fichier sans son chemin ni son disque
+-- Returns a file name without path or disk parts
 function FilePart(fullpath)
     local pb1 = instrrev(fullpath, [[\]]) or 0
     local pb2 = instrrev(fullpath, [[/]]) or 0
@@ -40,8 +40,8 @@ function FilePart(fullpath)
     end
 end
 
--- Retourne le chemin d'un fichier sans son fichier.  Ne se termine pas par \ sauf si le fichier est à la racine.
--- Retourne une chaîne vide s'il n'y a pas de dossier.
+-- Returns folder without file part.  Does not end by \ unless the file is at the root.
+-- Returns an empty string if there is no folder part.
 function FolderPart(fullpath)
     local pb1 = instrrev(fullpath, [[\]]) or 0
     local pb2 = instrrev(fullpath, [[/]]) or 0
@@ -56,8 +56,7 @@ function FolderPart(fullpath)
     end
 end
 
--- Retourne le chemin d'un fichier sans extension.
--- Les éventuels répertoires en tête sont conservés dans le résultat.
+-- Returns file without extension.  Heading drive and folders are preserved in result.
 function Basename(fullpath)
     local pb1 = instrrev(fullpath, [[\]]) or 0
     local pb2 = instrrev(fullpath, [[/]]) or 0
@@ -71,7 +70,7 @@ function Basename(fullpath)
     end
 end
 
--- Retourne l'extension d'un fichier, point inclus, ou une chaîne vide
+-- Returns file extension, dot included, or an empty string.
 function Extension(fullpath)
     local pb1 = instrrev(fullpath, [[\]]) or 0
     local pb2 = instrrev(fullpath, [[/]]) or 0
@@ -85,7 +84,7 @@ function Extension(fullpath)
     end
 end
 
--- Retourne juste les fichiers d'un dossier, noms.ext sans chemins
+-- Returns only files of a folder, name.ext, without paths
 function GetFiles(source)
     local t = {}
     local pfile = io.popen('dir /b /a-d "' .. source .. '"')
@@ -97,7 +96,7 @@ function GetFiles(source)
     return t
 end
 
--- Retourne juste les sous-dossiers d'un dossier, noms sans chemins
+-- Returns only subfolders of a folder, names without paths
 function GetFolders(source)
     local t = {}
     local pfile = io.popen('dir /b /ad "' .. source .. '"')

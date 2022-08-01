@@ -29,7 +29,7 @@ local function newAccount(initialBalance)
 end
 
 local a = newAccount(1000)
--- there is no way to access intername table self created in NewAccount and its
+-- there is no way to access internal table self created in NewAccount and its
 -- members directly here, we can only use functions
 -- Note: function calls using . and not :
 a.withdraw(250)

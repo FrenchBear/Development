@@ -51,7 +51,7 @@ setDefault(t2, 22)
 print(t2.x, t2.z) --> 10 22
 
 
--- Table with default values, v3, use a exclusive table as a key for defaulf value, so no names clashes
+-- Table with default values, v3, use a exclusive table as a key for default value, so no names clashes
 local defaultkey = {} -- unique key
 local mt3 = { __index = function(t) return t[defaultkey] end }
 function setDefault(t, d)

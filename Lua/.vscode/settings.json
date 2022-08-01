@@ -24,7 +24,6 @@
     ],
     "spellright.documentTypes": [
         "markdown",
-        "latex",
-        "lua"
+        "latex"
     ]
 }

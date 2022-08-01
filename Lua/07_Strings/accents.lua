@@ -106,7 +106,7 @@ print(string.reverse("ABCDEFGH"))
 
 -- Case
 print(string.lower("COFFEE42"))
-print(string.lower("OÙ ÇA? LÀ!")) -- On ly for ASCII characters...  -> oÙ Ça? lÀ!
+print(string.lower("OÙ ÇA? LÀ!")) -- Only for ASCII characters...  -> oÙ Ça? lÀ!
 print(string.upper("attention!"))
 
 -- Format
@@ -126,7 +126,7 @@ end
 print()
 
 for i = 1, utf8.len(sacc) do
-    -- i is a unicode char index
+    -- i is a Unicode char index
     local c = utf8.codepoint(sacc, utf8.offset(sacc, i, 1))
     print(i, c, utf8.char(c))
 end

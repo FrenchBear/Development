@@ -7,6 +7,7 @@
 -- 2022-06-30   PV      Simpler version of __tostring
 -- 2022-07-05   PV      __add/__mul for union/inter, __le/__lt/__eq for subset/proper subset/equality
 -- 2022-07-11   PV      Set difference; __pairs iterator
+
 Set = {
     __name = "Set",
 

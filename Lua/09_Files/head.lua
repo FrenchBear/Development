@@ -9,9 +9,6 @@ require 'u8a'
 -- For VSCode, debug terminal is not utf8 by default
 os.execute("chcp 65001 >NUL")
 
--- local filename_u8 = 'pré.txt'
--- local filename_ansi = u8toansi(filename_u8)
--- local f = assert(io.open(filename_ansi, "r"))
 
 local filename = Utf8toAnsi1252([[Data utf-8\prénoms-utf8.txt]])
 local n = 5

@@ -1,5 +1,5 @@
 -- Tests of Set module
--- Learning Lya, play with modules
+-- Learning Lua, play with modules
 --
 -- 2022-06-30   PV
 

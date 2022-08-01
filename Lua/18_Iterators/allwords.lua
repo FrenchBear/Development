@@ -33,7 +33,7 @@ for w in AllWordsASCII("texte.txt") do
 end
 
 
--- utf8 helper, basic version: Return true for most common latin letters
+-- utf8 helper, basic version: Return true for most common Latin letters
 -- Does not support combining accents
 function IsLatinLetter(c)
     return (c >= 0x41 and c <= 0x5A) or -- Uppercase Latin alphabet

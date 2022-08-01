@@ -33,7 +33,7 @@ function IntToBstr(n, size)
     return s
 end
 
--- Converts a bainary string to an integer
+-- Converts a binary string to an integer
 function BstrToInt(nstr)
     local res = 0
     for i = 1, #nstr do

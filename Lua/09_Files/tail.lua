@@ -42,7 +42,7 @@ local function last2(file, count)
     local f = assert(io.open(filename, "r"))
     local size = f:seek("end")
     local startpos
-    if size < count * 120 then -- Tests, should consized a min of 4K or 8K
+    if size < count * 120 then -- Tests, should consider a min of 4K or 8K
         startpos = 0
     else
         startpos = math.max(0, size - count * 120) -- assume 120 chars per line

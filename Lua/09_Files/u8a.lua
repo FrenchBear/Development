@@ -5,7 +5,7 @@
 
 -- Unicode codepoint to ANSI 1252 map for codepoints 128 to 255, if map[c]~c.
 -- Codepoint('Ç')=8364 and ANSI('Ç')=128, so we have [8364]=128 in this table
--- For instance é has both 233 as unicode codepoint and ANSI code, so it's not in this table
+-- For instance é has both 233 as Unicode codepoint and ANSI code, so it's not in this table
 local CodepointToAnsi1252Map = {
     [8364] = 128, [8218] = 130, [402] = 131, [8222] = 132, [8230] = 133, [8224] = 134, [8225] = 135, [710] = 136,
     [8240] = 137, [352] = 138, [8249] = 139, [338] = 140, [381] = 142, [8216] = 145, [8217] = 146, [8220] = 147,

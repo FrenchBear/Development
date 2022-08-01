@@ -10,7 +10,7 @@ os.execute("chcp 65001 >NUL")
 -- debug.getlocal inspects the local variables of any active function.
 -- This function has two parameters, the stack level of the function we are querying and a variable index.
 -- It returns two values: the name and the current value of the variable.
--- If the variable index is larger than the number of active variables, retuns nil.
+-- If the variable index is larger than the number of active variables, returns nil.
 -- Negative indices get information about the extra arguments of a variadic function:
 -- index -1 refers to the first extra argument. The name of the variable in this case is always "(*vararg)".
 

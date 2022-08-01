@@ -43,14 +43,14 @@ for c in ss:gmatch"." do
     -- do something with c
 end
 
--- use string.gsub() to call a function for each char:
+-- Use string.gsub() to call a function for each char:
 _ = ss:gsub(".", function(c)
     -- do something with c
 end)
 
 --------------------------
 
--- seach a pattern
+-- Search a pattern
 local sd = "Birth date 26/02/1965 in Chambéry"
 local bd = string.match(sd, "%d+/%d+/%d+")
 print("Anniversaire: " .. bd)
@@ -97,7 +97,7 @@ print(expandtabs(s2))
 
 local function unexpandtabs(s, tab)
     tab = tab or 8
-    s = expandtabs(s, tab) -- FIrst expand existing tabs
+    s = expandtabs(s, tab) -- First expand existing tabs
     s = string.gsub(s, string.rep(".", tab), "%0\1") -- Insert a \1 every tab characters
     s = string.gsub(s, " +\1", "\t") -- Replace every group of spaces followed by \1 by a tab
     s = string.gsub(s, "\1", "") -- Remove remaining \1
@@ -114,7 +114,7 @@ Status = 'great'
 print(string.gsub("$(Language) is $(adverb) $(Status)", "$%((%w+)%)", _G))
 print()
 
--- Trim removing spaces and tabs bafore and after a string, using pattern matching
+-- Trim removing spaces and tabs before and after a string, using pattern matching
 local function trim1(str)
     return string.gsub(str, "^[ \t]*(.-)[ \t]*$", "%1")
 end
@@ -153,7 +153,7 @@ print()
 
 -- A plain version of string.gsub ignoring patterns
 local function plaingsub(str, find, replace)
-    find = string.gsub(find, "(%W)", "%%%1") -- Every non-alphanum char is escaped
+    find = string.gsub(find, "(%W)", "%%%1") -- Every non-alphanumeric char is escaped
     replace = string.gsub(replace, "%%", "%%%%") -- In replacement, only % need to be escaped
     return string.gsub(str, find, replace)
 end
@@ -217,7 +217,7 @@ local function transcode_ss(str, from, to)
         if codefrom > 127 then
             sfrom = utf8.char(codefrom) -- No need to escape non-ascii chars
         else
-            sfrom = string.gsub(string.char(codefrom), "(%W)", "%%%1") -- Every non-alphanum char is escaped
+            sfrom = string.gsub(string.char(codefrom), "(%W)", "%%%1") -- Every non-alphanumeric char is escaped
         end
 
         if codeto > 127 then

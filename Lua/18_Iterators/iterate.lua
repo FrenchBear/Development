@@ -1,4 +1,4 @@
--- it.lua
+-- iterate.lua
 -- Learning Lua, play with iterators
 --
 -- 2022-07-06   PV
@@ -50,7 +50,7 @@ print("\nStateless Step iterator")
 for i in RangeStep(0, 8, 2) do print(i) end
 
 
--- Iterator over keys sorted using provided function, default is sorter by keys
+-- Iterator over keys sorted using provided function(key, value), default is sorted by keys
 function PairsSorted(t, f)
     f = f or function(k, v) return k end
     local keys = {}
@@ -60,6 +60,7 @@ function PairsSorted(t, f)
     -- Remember, sorting function must provide strict order, <= will make it fail (invalid order function for sorting)
     table.sort(keys, function(a, b) return f(a, t[a]) < f(b, t[b]) end)
     local i = 0
+    -- Use a simple iterator, that's enough since PairsSorted capture already contains tables t and keys
     return function()
         i = i + 1
         if i <= #keys then return keys[i], t[keys[i]] end

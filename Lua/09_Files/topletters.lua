@@ -14,8 +14,6 @@ do
 	--f:close()
 end
 
---local hp = "Il était un petit navire qui n'avait jamais navigué ohé ohé matelot"
-
 print('Bytes', #hp)
 print('chars', utf8.len(hp))
 
