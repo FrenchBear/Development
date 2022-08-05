@@ -12,6 +12,7 @@
 
 int main(void)
 {
+	printf("Lua barebones interpreter\nEnter commands, ^z or ^d to end loop\n\n");
 	char buff[256];
 	int error;
 	lua_State *L = luaL_newstate(); /* opens Lua */
