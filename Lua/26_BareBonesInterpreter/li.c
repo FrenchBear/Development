@@ -6,9 +6,10 @@
 #include <stdio.h>
 #include <string.h>
 
-#include "..\lua-5.4.4\src\lua.h"
-#include "..\lua-5.4.4\src\lauxlib.h"
-#include "..\lua-5.4.4\src\lualib.h"
+// In c_cpp_properties.json, include "C:\\Development\\GitHub\\Development\\Lua\\lua-5.4.4\\src" into configurations.includePath
+#include "lua.h"
+#include "lauxlib.h"
+#include "lualib.h"
 
 int main(void)
 {

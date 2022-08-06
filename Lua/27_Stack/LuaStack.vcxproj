@@ -19,13 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="li.c" />
+    <ClCompile Include="lstack.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{14821BE8-3D71-4ACF-BA75-C809FBFFD65C}</ProjectGuid>
     <RootNamespace>PrimesC</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>BarebonesInterpreter</ProjectName>
+    <ProjectName>LuaStack</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -91,6 +91,12 @@
     <Link>
       <AdditionalDependencies>$(CoreLibraryDependencies);%(AdditionalDependencies);..\lua-5.4.4\bin\lua.lib</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>if not exist lua.dll copy C:\Development\GitHub\Development\Lua\lua-5.4.4\bin\lua.dll</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Get a copy of lua.dll</Message>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
