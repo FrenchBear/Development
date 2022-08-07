@@ -4,7 +4,7 @@
 -- 2022-06-16   PV
 -- 2077-07-21	PV		Use <close> on file variable
 -- For VSCode, debug terminal is not utf8 by default
-os.execute("chcp 65001 >NUL")
+if package.config:sub(1,1)=='\\' then os.execute("chcp 65001 >NUL") end
 
 local filename = [[Data utf-8\Harry Potter and the Prisoner of Azkaban.txt]]
 local hp

@@ -4,7 +4,7 @@
 -- 2022-06-30   PV
 
 -- For VSCode, debug terminal is not utf8 by default
-os.execute("chcp 65001 >NUL")
+if package.config:sub(1,1)=='\\' then os.execute("chcp 65001 >NUL") end
 
 -- With a clean module, require result must be assigned to a name (just require "set" does nothing useful)
 Set = require "set"

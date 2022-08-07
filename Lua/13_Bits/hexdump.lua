@@ -5,7 +5,7 @@
 -- 2022-06-23   PV
 
 -- For VSCode, debug terminal is not utf8 by default
-os.execute("chcp 65001 >NUL")
+if package.config:sub(1,1)=='\\' then os.execute("chcp 65001 >NUL") end
 
 local file = arg[1] or 'hexdump.lua'
 local f = assert(io.open(file, "rb"))

@@ -1,4 +1,4 @@
--- Very first lua program
+-- Very first Lua program
 --
 -- 2022-06-04   PV
 

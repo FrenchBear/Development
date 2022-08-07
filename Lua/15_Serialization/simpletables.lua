@@ -7,7 +7,7 @@
 require "quote_key"
 
 -- For VSCode, debug terminal is not utf8 by default
-os.execute("chcp 65001 >NUL")
+if package.config:sub(1,1)=='\\' then os.execute("chcp 65001 >NUL") end
 
 local function serialize_simple(name, v, off, res)
     if type(v) == "nil" or type(v) == "number" or type(v) == "string" or type(v) == "boolean" then

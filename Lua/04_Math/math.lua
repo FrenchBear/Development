@@ -4,7 +4,7 @@
 -- 2022-06-06   PV
 
 -- For VSCode, debug terminal is not utf8 by default
-os.execute("chcp 65001 >NUL")
+if package.config:sub(1,1)=='\\' then os.execute("chcp 65001 >NUL") end
 
 local function sind(angle_d) return math.sin(math.rad(angle_d)) end
 

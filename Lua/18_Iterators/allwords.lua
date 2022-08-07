@@ -5,7 +5,7 @@
 -- 2022-07-08   PV      UTF-8 version
 
 -- For VSCode, debug terminal is not utf8 by default
-os.execute("chcp 65001 >NUL")
+if package.config:sub(1,1)=='\\' then os.execute("chcp 65001 >NUL") end
 
 function AllWordsASCII(file)
     local f = assert(io.open(file, "r"))

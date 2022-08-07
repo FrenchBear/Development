@@ -5,7 +5,7 @@
 -- 2022-06-24   PV
 
 -- For VSCode, debug terminal is not utf8 by default
-os.execute("chcp 65001 >NUL")
+if package.config:sub(1,1)=='\\' then os.execute("chcp 65001 >NUL") end
 
 -- Shift right 1 bit at a time until result is 0
 local function countbits1(n)

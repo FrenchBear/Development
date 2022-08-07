@@ -5,7 +5,7 @@
 -- 2022-07-26   PV      Added Iterate over a string pattern to clarify
 
 -- For VSCode, debug terminal is not utf8 by default
-os.execute("chcp 65001 >NUL")
+if package.config:sub(1,1)=='\\' then os.execute("chcp 65001 >NUL") end
 
 -- plain search
 local sonce = "Il était une fois"

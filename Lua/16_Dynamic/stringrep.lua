@@ -5,7 +5,7 @@
 -- 2022-06-28   PV      First version
 
 -- For VSCode, debug terminal is not utf8 by default
-os.execute("chcp 65001 >NUL")
+if package.config:sub(1,1)=='\\' then os.execute("chcp 65001 >NUL") end
 
 -- To test the algorithm
 local function stringrep(s, n)

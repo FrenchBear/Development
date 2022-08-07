@@ -6,7 +6,7 @@
 -- Return all subsets of a given set: See set.lua
 
 -- For VSCode, debug terminal is not utf8 by default
-os.execute("chcp 65001 >NUL")
+if package.config:sub(1,1)=='\\' then os.execute("chcp 65001 >NUL") end
 
 -- The for loop calls its iterator function with two arguments: the invariant state and the control variable.
 -- Generator returns three values: the function the iterator function, the invariant state, and initial value for the control variable

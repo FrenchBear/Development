@@ -9,7 +9,7 @@
 
 -- For VSCode, debug terminal is not utf8 by default
 
-os.execute("chcp 65001 >NUL")
+if package.config:sub(1,1)=='\\' then os.execute("chcp 65001 >NUL") end
 
 math.randomseed(3)
 

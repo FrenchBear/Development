@@ -7,7 +7,7 @@
 require "binstr"
 
 -- For VSCode, debug terminal is not utf8 by default
-os.execute("chcp 65001 >NUL")
+if package.config:sub(1,1)=='\\' then os.execute("chcp 65001 >NUL") end
 
 local function isParlindrome1(n)
     local s1 = IntToBstr(n)

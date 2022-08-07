@@ -4,7 +4,7 @@
 -- 2022-06-06   PV
 
 -- For VSCode, debug terminal is not utf8 by default
-os.execute("chcp 65001 >NUL")
+if package.config:sub(1,1)=='\\' then os.execute("chcp 65001 >NUL") end
 
 -- Seed random generator using number of seconds since a long time ago
 math.randomseed(os.time())

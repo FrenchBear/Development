@@ -4,7 +4,7 @@
 -- 2022-07-13   PV      First version
 
 -- For VSCode, debug terminal is not utf8 by default
-os.execute("chcp 65001 >NUL")
+if package.config:sub(1,1)=='\\' then os.execute("chcp 65001 >NUL") end
 
 do
     local mytable = { i = 3 }   -- Can't put <close> here: Error: variable 'mytable' got a non-closable value

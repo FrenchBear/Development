@@ -69,7 +69,7 @@ Queue = {
 -- Tests
 if not pcall(debug.getlocal, 4, 1) then -- https://stackoverflow.com/questions/49375638/how-to-determine-whether-my-code-is-running-in-a-lua-module
     -- For VSCode, debug terminal is not utf8 by default
-    os.execute("chcp 65001 >NUL")
+    if package.config:sub(1,1)=='\\' then os.execute("chcp 65001 >NUL") end
 
     local q = Queue:new()
     q:enqueue("vert")

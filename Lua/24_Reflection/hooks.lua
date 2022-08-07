@@ -4,7 +4,7 @@
 -- 2022-07-23   PV      First version
 
 -- For VSCode, debug terminal is not utf8 by default
-os.execute("chcp 65001 >NUL")
+if package.config:sub(1,1)=='\\' then os.execute("chcp 65001 >NUL") end
 
 -- The hook mechanism of the debug library allows us to register a function to be called at specific events as a program runs.
 -- There are four kinds of events that can trigger a hook:
