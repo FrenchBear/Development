@@ -14,3 +14,6 @@ Border = 'BLUE'
 function f1(x, y)
     return (x ^ 2 * math.sin(y)) / (1 - x)
 end
+
+-- Calling a C function
+F10 = fact(10)

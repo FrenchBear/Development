@@ -57,11 +57,12 @@ void error(lua_State *L, const char *fmt, ...)
 	exit(EXIT_FAILURE);
 }
 
-int getglobint(lua_State *L, const char *var)
+lua_Integer getglobint(lua_State *L, const char *var)
 {
-	int isnum, result;
+	int isnum;
+	lua_Integer result;
 	lua_getglobal(L, var);
-	result = (int)lua_tointegerx(L, -1, &isnum);
+	result = lua_tointegerx(L, -1, &isnum);
 	if (!isnum)
 		error(L, "'%s' should be a number\n", var);
 	lua_pop(L, 1); // remove result from the stack
@@ -223,6 +224,18 @@ endargs:
 	va_end(vl);
 }
 
+// Example of C function to call from Lua
+static int l_fact(lua_State *L)
+{
+	long long n = lua_tointeger(L, 1);		// Get 1st arg as number or will raise a lua error
+	long long res = 1;
+	while (n>1)
+		res *= n--;
+	// No need to clean the stack
+	lua_pushinteger(L, res);
+	return 1;		// Function returns 1 result
+}
+
 int main(void)
 {
 	printf("App Config\n\n");
@@ -234,14 +247,22 @@ int main(void)
 	while (colortable[i].name != NULL)
 		setcolor(L, &colortable[i++]);
 
+	// Make function l_fact available, quick-and-dirty way
+	lua_pushcfunction(L, l_fact);
+	lua_setglobal(L, "fact");
+
 	// Read file
 	if (luaL_loadfile(L, "app_conf.lua") || lua_pcall(L, 0, 0, 0))
 		error(L, "cannot run config. file: %s", lua_tostring(L, -1));
 
 	// Get variables
-	int w = getglobint(L, "Width");
-	int h = getglobint(L, "Height");
-	printf("w=%d\nh=%d\n\n", w, h);
+	lua_Integer w = getglobint(L, "Width");
+	lua_Integer h = getglobint(L, "Height");
+	printf("w=%lld\nh=%lld\n\n", w, h);
+
+	// Test C function call
+	lua_Integer f10 = getglobint(L, "F10");
+	printf("10!=%lld\n\n", f10);
 
 	struct ColorTable Background, Foreground, Border;
 	getcolortable(L, "Background", &Background);
