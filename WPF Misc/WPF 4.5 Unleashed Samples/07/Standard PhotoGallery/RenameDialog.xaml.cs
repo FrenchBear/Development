@@ -1,6 +1,6 @@
-using System;
 using System.Windows;
-using System.Windows.Controls;
+
+#pragma warning disable IDE1006 // Naming Styles
 
 namespace PhotoGallery
 {
@@ -24,25 +24,16 @@ namespace PhotoGallery
             textBox.Focus();
         }
 
-        void textBox_TextChanged(object sender, RoutedEventArgs e)
-        {
-            newFilename = textBox.Text;
-        }
+        void textBox_TextChanged(object sender, RoutedEventArgs e) => newFilename = textBox.Text;
 
-        void okButton_Click(object sender, RoutedEventArgs e)
-        {
-            this.DialogResult = true;
-        }
+        void okButton_Click(object sender, RoutedEventArgs e) => DialogResult = true;
 
         public string OldFilename
         {
-            get { return oldFilename; }
-            set { oldFilename = value; }
+            get => oldFilename;
+            set => oldFilename = value;
         }
 
-        public string NewFilename
-        {
-            get { return newFilename; }
-        }
+        public string NewFilename => newFilename;
     }
 }

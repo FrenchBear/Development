@@ -12,41 +12,23 @@ namespace PhotoGallery
 
         public Photo(string filename)
         {
-            FileInfo info = new FileInfo(filename);
+            var info = new FileInfo(filename);
             size = (info.Length / 1024).ToString("N0") + " KB";
             dateTime = info.LastWriteTime;
             name = info.Name;
             path = info.DirectoryName;
         }
 
-        public string Name
-        {
-            get { return name; }
-        }
+        public string Name => name;
 
-        public DateTime DateTime
-        {
-            get { return dateTime; }
-        }
+        public DateTime DateTime => dateTime;
 
-        public string Size
-        {
-            get { return size; }
-        }
+        public string Size => size;
 
-        public string Path
-        {
-            get { return path; }
-        }
+        public string Path => path;
 
-        public string FullPath
-        {
-            get { return System.IO.Path.Combine(Path, Name); }
-        }
+        public string FullPath => System.IO.Path.Combine(Path, Name);
 
-        public override string ToString()
-        {
-            return FullPath;
-        }
+        public override string ToString() => FullPath;
     }
 }

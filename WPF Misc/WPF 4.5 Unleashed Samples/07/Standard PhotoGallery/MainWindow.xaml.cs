@@ -10,6 +10,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 
+#pragma warning disable IDE1006 // Naming Styles
+
 namespace PhotoGallery
 {
     public partial class MainWindow : Window
@@ -23,7 +25,7 @@ namespace PhotoGallery
         public MainWindow()
         {
             InitializeComponent();
-            photos.ItemsUpdated += delegate { this.Dispatcher.Invoke(DispatcherPriority.Normal, new ThreadStart(Refresh)); };
+            photos.ItemsUpdated += delegate { Dispatcher.Invoke(DispatcherPriority.Normal, new ThreadStart(Refresh)); };
         }
 
         protected override void OnClosing(CancelEventArgs e)
@@ -40,9 +42,9 @@ namespace PhotoGallery
             base.OnClosed(e);
 
             // Persist the list of favorites
-            IsolatedStorageFile f = IsolatedStorageFile.GetUserStoreForAssembly();
-            using (IsolatedStorageFileStream stream = new IsolatedStorageFileStream("myFile", FileMode.Create, f))
-            using (StreamWriter writer = new StreamWriter(stream))
+            var f = IsolatedStorageFile.GetUserStoreForAssembly();
+            using (var stream = new IsolatedStorageFileStream("myFile", FileMode.Create, f))
+            using (var writer = new StreamWriter(stream))
             {
                 foreach (TreeViewItem item in favoritesItem.Items)
                 {
@@ -56,9 +58,9 @@ namespace PhotoGallery
             base.OnInitialized(e);
 
             // Retrieve the list of favorites
-            IsolatedStorageFile f = IsolatedStorageFile.GetUserStoreForAssembly();
-            using (IsolatedStorageFileStream stream = new IsolatedStorageFileStream("myFile", FileMode.OpenOrCreate, f))
-            using (StreamReader reader = new StreamReader(stream))
+            var f = IsolatedStorageFile.GetUserStoreForAssembly();
+            using (var stream = new IsolatedStorageFileStream("myFile", FileMode.OpenOrCreate, f))
+            using (var reader = new StreamReader(stream))
             {
                 string line = reader.ReadLine();
                 while (line != null)
@@ -81,16 +83,13 @@ namespace PhotoGallery
 
         #region TreeView Management
 
-        void folders_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
-        {
-            Refresh();
-        }
+        void folders_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e) => Refresh();
 
         void Window_Loaded(object sender, RoutedEventArgs e)
         {
             foreach (string s in Directory.GetLogicalDrives())
             {
-                TreeViewItem item = new TreeViewItem();
+                var item = new TreeViewItem();
                 item.Header = s;
                 item.Tag = s;
                 item.Items.Add(dummyNode);
@@ -101,7 +100,7 @@ namespace PhotoGallery
 
         void folder_Expanded(object sender, RoutedEventArgs e)
         {
-            TreeViewItem item = (TreeViewItem)sender;
+            var item = (TreeViewItem)sender;
             if (item.Items.Count == 1 && item.Items[0] == dummyNode)
             {
                 item.Items.Clear();
@@ -109,7 +108,7 @@ namespace PhotoGallery
                 {
                     foreach (string s in Directory.GetDirectories(item.Tag.ToString()))
                     {
-                        TreeViewItem subitem = new TreeViewItem();
+                        var subitem = new TreeViewItem();
                         subitem.Header = s.Substring(s.LastIndexOf("\\") + 1);
                         subitem.Tag = s;
                         subitem.Items.Add(dummyNode);
@@ -123,7 +122,7 @@ namespace PhotoGallery
 
         private void AddFavorite(string folder)
         {
-            TreeViewItem item = new TreeViewItem();
+            var item = new TreeViewItem();
             item.Header = folder;
             item.Tag = folder;
             favoritesItem.Items.Add(item);
@@ -133,7 +132,7 @@ namespace PhotoGallery
         {
             for (int i = 0; i < favoritesItem.Items.Count; i++)
             {
-                if ((favoritesItem.Items[i] as TreeViewItem).Header as string == folder)
+                if (((favoritesItem.Items[i] as TreeViewItem).Header as string) == folder)
                 {
                     favoritesItem.Items.RemoveAt(i);
                     break;
@@ -161,40 +160,40 @@ namespace PhotoGallery
             {
                 foreach (string s in Directory.GetFiles(folder, "*.jpg"))
                 {
-                    Photo photo = new Photo(s);
+                    var photo = new Photo(s);
                     photos.Add(photo);
 
                     // Construct the ListBoxItem with an Image as content:
-                    ListBoxItem item = new ListBoxItem();
+                    var item = new ListBoxItem();
                     item.Padding = new Thickness(3, 8, 3, 8);
                     item.MouseDoubleClick += delegate { ShowPhoto(false); };
-                    TransformGroup tg = new TransformGroup();
+                    var tg = new TransformGroup();
                     tg.Children.Add(st);
                     tg.Children.Add(new RotateTransform());
                     item.LayoutTransform = tg;
                     item.Tag = s;
 
-                    Image image = new Image();
+                    var image = new Image();
                     image.Height = 35;
 
                     // If the image contains a thumbnail, use that instead of the entire image:
-                    Uri uri = new Uri(s);
-                    BitmapDecoder bd = BitmapDecoder.Create(uri, BitmapCreateOptions.DelayCreation, BitmapCacheOption.Default);
+                    var uri = new Uri(s);
+                    var bd = BitmapDecoder.Create(uri, BitmapCreateOptions.DelayCreation, BitmapCacheOption.Default);
                     if (bd.Frames[0].Thumbnail != null)
                         image.Source = bd.Frames[0].Thumbnail;
                     else
                         image.Source = new BitmapImage(uri);
 
                     // Construct a ToolTip for the item:
-                    Image toolImage = new Image();
+                    var toolImage = new Image();
                     toolImage.Source = bd.Frames[0].Thumbnail;
 
-                    TextBlock textBlock1 = new TextBlock();
+                    var textBlock1 = new TextBlock();
                     textBlock1.Text = System.IO.Path.GetFileName(s);
-                    TextBlock textBlock2 = new TextBlock();
+                    var textBlock2 = new TextBlock();
                     textBlock2.Text = photo.DateTime.ToString();
 
-                    StackPanel sp = new StackPanel();
+                    var sp = new StackPanel();
                     sp.Children.Add(toolImage);
                     sp.Children.Add(textBlock1);
                     sp.Children.Add(textBlock2);
@@ -213,7 +212,7 @@ namespace PhotoGallery
         {
             try
             {
-                this.Cursor = Cursors.Wait;
+                Cursor = Cursors.Wait;
 
                 // Go back to the gallery if we're viewing an individual photo:
                 imageView.Visibility = Visibility.Hidden;
@@ -239,7 +238,7 @@ namespace PhotoGallery
                     favoritesMenu.IsEnabled = true;
                     foreach (TreeViewItem item in favoritesItem.Items)
                     {
-                        if (item.Header as string == folder)
+                        if ((item.Header as string) == folder)
                         {
                             favoritesMenu.Header = "Remove Current Folder from Fa_vorites";
                             return;
@@ -250,7 +249,7 @@ namespace PhotoGallery
             }
             finally
             {
-                this.Cursor = Cursors.Arrow;
+                Cursor = Cursors.Arrow;
             }
         }
 
@@ -290,7 +289,7 @@ namespace PhotoGallery
         void favoritesMenu_Click(object sender, RoutedEventArgs e)
         {
             string folder = (treeView.SelectedItem as TreeViewItem).Tag as string;
-            if (favoritesMenu.Header as string == "Add Current Folder to Fa_vorites")
+            if ((favoritesMenu.Header as string) == "Add Current Folder to Fa_vorites")
             {
                 AddFavorite(folder);
                 favoritesMenu.Header = "Remove Current Folder from Fa_vorites";
@@ -302,15 +301,12 @@ namespace PhotoGallery
             }
         }
 
-        void deleteMenu_Click(object sender, RoutedEventArgs e)
-        {
-            DeleteCurrentPhoto();
-        }
+        void deleteMenu_Click(object sender, RoutedEventArgs e) => DeleteCurrentPhoto();
 
         void renameMenu_Click(object sender, RoutedEventArgs e)
         {
             string filename = (pictureBox.SelectedItem as ListBoxItem).Tag as string;
-            RenameDialog dialog = new RenameDialog(Path.GetFileNameWithoutExtension(filename));
+            var dialog = new RenameDialog(Path.GetFileNameWithoutExtension(filename));
             if (dialog.ShowDialog() == true) // Result could be true, false, or null
             {
                 // Attempt to rename the file
@@ -325,28 +321,19 @@ namespace PhotoGallery
             }
         }
 
-        void refreshMenu_Click(object sender, RoutedEventArgs e)
-        {
-            Refresh();
-        }
+        void refreshMenu_Click(object sender, RoutedEventArgs e) => Refresh();
 
-        void exitMenu_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
+        void exitMenu_Click(object sender, RoutedEventArgs e) => Close();
 
-        void fixMenu_Click(object sender, RoutedEventArgs e)
-        {
-            ShowPhoto(true);
-        }
+        void fixMenu_Click(object sender, RoutedEventArgs e) => ShowPhoto(true);
 
         void printMenu_Click(object sender, RoutedEventArgs e)
         {
             string filename = (pictureBox.SelectedItem as ListBoxItem).Tag as string;
-            Image image = new Image();
+            var image = new Image();
             image.Source = new BitmapImage(new Uri(filename, UriKind.RelativeOrAbsolute));
 
-            PrintDialog pd = new PrintDialog();
+            var pd = new PrintDialog();
             if (pd.ShowDialog() == true) // Result could be true, false, or null
                 pd.PrintVisual(image, Path.GetFileName(filename) + " from Photo Gallery");
         }
@@ -378,10 +365,7 @@ namespace PhotoGallery
 
         #region Bottom Button Handlers
 
-        void defaultSizeButton_Click(object sender, RoutedEventArgs e)
-        {
-            zoomSlider.Value = 3;
-        }
+        void defaultSizeButton_Click(object sender, RoutedEventArgs e) => zoomSlider.Value = 3;
 
         void backButton_Click(object sender, RoutedEventArgs e)
         {
@@ -395,26 +379,17 @@ namespace PhotoGallery
             st.ScaleY = zoomSlider.Value;
         }
 
-        void zoomPopup_MouseLeave(object sender, RoutedEventArgs e)
-        {
-            zoomPopup.IsOpen = false;
-        }
+        void zoomPopup_MouseLeave(object sender, RoutedEventArgs e) => zoomPopup.IsOpen = false;
 
-        void zoomButton_Click(object sender, RoutedEventArgs e)
-        {
-            zoomPopup.IsOpen = true;
-        }
+        void zoomButton_Click(object sender, RoutedEventArgs e) => zoomPopup.IsOpen = true;
 
-        void slideshowButton_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("NYI");
-        }
+        void slideshowButton_Click(object sender, RoutedEventArgs e) => MessageBox.Show("NYI");
 
         void clockwiseButton_Click(object sender, RoutedEventArgs e)
         {
             if (pictureBox.SelectedItem != null)
             {
-                RotateTransform rt = ((pictureBox.SelectedItem as ListBoxItem).LayoutTransform as TransformGroup).Children[1] as RotateTransform;
+                var rt = ((pictureBox.SelectedItem as ListBoxItem).LayoutTransform as TransformGroup).Children[1] as RotateTransform;
                 rt.Angle += 90;
             }
         }
@@ -423,7 +398,7 @@ namespace PhotoGallery
         {
             if (pictureBox.SelectedItem != null)
             {
-                RotateTransform rt = ((pictureBox.SelectedItem as ListBoxItem).LayoutTransform as TransformGroup).Children[1] as RotateTransform;
+                var rt = ((pictureBox.SelectedItem as ListBoxItem).LayoutTransform as TransformGroup).Children[1] as RotateTransform;
                 rt.Angle -= 90;
             }
         }
@@ -454,29 +429,17 @@ namespace PhotoGallery
             }
         }
 
-        void deleteButton_Click(object sender, RoutedEventArgs e)
-        {
-            DeleteCurrentPhoto();
-        }
+        void deleteButton_Click(object sender, RoutedEventArgs e) => DeleteCurrentPhoto();
 
         #endregion Buttom Button Handlers
 
         #region Fix Bar Handlers
 
-        void fix_RotateClockwise_Click(object sender, RoutedEventArgs e)
-        {
-            (image.LayoutTransform as RotateTransform).Angle += 90;
-        }
+        void fix_RotateClockwise_Click(object sender, RoutedEventArgs e) => (image.LayoutTransform as RotateTransform).Angle += 90;
 
-        void fix_RotateCounterclockwise_Click(object sender, RoutedEventArgs e)
-        {
-            (image.LayoutTransform as RotateTransform).Angle -= 90;
-        }
+        void fix_RotateCounterclockwise_Click(object sender, RoutedEventArgs e) => (image.LayoutTransform as RotateTransform).Angle -= 90;
 
-        void fix_Save_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("NYI");
-        }
+        void fix_Save_Click(object sender, RoutedEventArgs e) => MessageBox.Show("NYI");
 
         #endregion Fix Bar Handlers
     }

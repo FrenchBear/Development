@@ -4,9 +4,6 @@ namespace PhotoGallery
 {
     public partial class App : Application
     {
-        public App()
-        {
-            InitializeComponent();
-        }
+        public App() => InitializeComponent();
     }
 }

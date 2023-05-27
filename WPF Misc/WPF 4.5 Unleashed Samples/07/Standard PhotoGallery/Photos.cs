@@ -22,7 +22,7 @@ namespace PhotoGallery
             base.InsertItem(index, item);
             if (!watchers.ContainsKey(item.Path))
             {
-                FileSystemWatcher watcher = new FileSystemWatcher(item.Path, "*.jpg");
+                var watcher = new FileSystemWatcher(item.Path, "*.jpg");
                 watcher.EnableRaisingEvents = true;
                 watcher.Created += new System.IO.FileSystemEventHandler(OnPhotoCreated);
                 watcher.Deleted += new System.IO.FileSystemEventHandler(OnPhotoDeleted);
