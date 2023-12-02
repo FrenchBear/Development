@@ -1,0 +1,946 @@
+**********************************************************************
+** Visual Studio 2022 Developer Command Prompt v17.8.2
+** Copyright (c) 2022 Microsoft Corporation
+**********************************************************************
+
+C:\Program Files\Microsoft Visual Studio\2022\Professional cd C:\Users\Pierr\Downloads\libwebp-1.3.2\libwebp-1.3.2\src 
+C:\Users\Pierr\Downloads\libwebp-1.3.2\libwebp-1.3.2\src d
+ Volume in drive C is WOTAN
+ Volume Serial Number is C494-35C2
+
+ Directory of C:\Users\Pierr\Downloads\libwebp-1.3.2\libwebp-1.3.2\src
+
+13/09/2023  23:19    <DIR>          .
+13/09/2023  23:19    <DIR>          ..
+13/09/2023  23:19    <DIR>          dec
+13/09/2023  23:19    <DIR>          demux
+13/09/2023  23:19    <DIR>          dsp
+13/09/2023  23:19    <DIR>          enc
+13/09/2023  23:11               324 libwebp.pc.in
+13/09/2023  23:11             1 020 libwebp.rc
+13/09/2023  23:11               322 libwebpdecoder.pc.in
+13/09/2023  23:11             1 043 libwebpdecoder.rc
+13/09/2023  23:11             1 601 Makefile.am
+13/09/2023  23:19            29 727 Makefile.in
+13/09/2023  23:19    <DIR>          mux
+13/09/2023  23:19    <DIR>          utils
+13/09/2023  23:19    <DIR>          webp
+               6 File(s)         34 037 bytes
+               9 Dir(s)  1 662 904 922 112 bytes free
+
+C:\Users\Pierr\Downloads\libwebp-1.3.2\libwebp-1.3.2\src cd ..
+
+C:\Users\Pierr\Downloads\libwebp-1.3.2\libwebp-1.3.2 d
+ Volume in drive C is WOTAN
+ Volume Serial Number is C494-35C2
+
+ Directory of C:\Users\Pierr\Downloads\libwebp-1.3.2\libwebp-1.3.2
+
+13/09/2023  23:19    <DIR>          .
+02/12/2023  17:19    <DIR>          ..
+13/09/2023  23:11             8 413 .cmake-format.py
+13/09/2023  23:11            14 563 .pylintrc
+13/09/2023  23:11                29 .style.yapf
+13/09/2023  23:19            44 483 aclocal.m4
+13/09/2023  23:11             7 531 Android.mk
+13/09/2023  23:19             5 875 ar-lib
+13/09/2023  23:11             2 734 AUTHORS
+13/09/2023  23:11                34 autogen.sh
+13/09/2023  23:11            11 611 build.gradle
+13/09/2023  23:11           247 209 ChangeLog
+13/09/2023  23:11    <DIR>          cmake
+13/09/2023  23:11            30 684 CMakeLists.txt
+13/09/2023  23:11               170 codereview.settings
+13/09/2023  23:19             7 400 compile
+13/09/2023  23:19            49 482 config.guess
+13/09/2023  23:19            35 406 config.sub
+13/09/2023  23:19           546 314 configure
+13/09/2023  23:11            28 979 configure.ac
+13/09/2023  23:11             2 650 CONTRIBUTING.md
+13/09/2023  23:11             1 496 COPYING
+13/09/2023  23:19            23 568 depcomp
+13/09/2023  23:11    <DIR>          doc
+13/09/2023  23:19    <DIR>          examples
+13/09/2023  23:19    <DIR>          extras
+13/09/2023  23:11    <DIR>          gradle
+13/09/2023  23:11               451 gradle.properties
+13/09/2023  23:11             5 764 gradlew
+13/09/2023  23:11             2 942 gradlew.bat
+13/09/2023  23:19    <DIR>          imageio
+13/09/2023  23:11    <DIR>          infra
+13/09/2023  23:19            15 358 install-sh
+13/09/2023  23:11             5 342 iosbuild.sh
+13/09/2023  23:19           333 441 ltmain.sh
+13/09/2023  23:19    <DIR>          m4
+13/09/2023  23:11               155 Makefile.am
+13/09/2023  23:19            26 804 Makefile.in
+13/09/2023  23:11            17 248 makefile.unix
+13/09/2023  23:11            18 753 Makefile.vc
+13/09/2023  23:19    <DIR>          man
+13/09/2023  23:19             6 878 missing
+13/09/2023  23:11            13 606 NEWS
+13/09/2023  23:11             1 436 PATENTS
+13/09/2023  23:11             9 043 PRESUBMIT.py
+13/09/2023  23:11             1 586 README.md
+13/09/2023  23:19    <DIR>          sharpyuv
+13/09/2023  23:19    <DIR>          src
+13/09/2023  23:11    <DIR>          swig
+13/09/2023  23:11    <DIR>          tests
+13/09/2023  23:11    <DIR>          webp_js
+13/09/2023  23:11             8 670 xcframeworkbuild.sh
+              36 File(s)      1 536 108 bytes
+              16 Dir(s)  1 662 912 032 768 bytes free
+
+C:\Users\Pierr\Downloads\libwebp-1.3.2\libwebp-1.3.2 nmake /f Makefile.vc CFG=release-dynamic RTLIBCFG=dynamic OBJDIR=output
+
+Microsoft (R) Program Maintenance Utility Version 14.38.33130.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+        cl.exe /nologo /O2 /DNDEBUG /Ioutput\release-dynamic\x86\obj /MD /DWEBP_DLL /I. /Isrc /nologo /W3 /EHsc /c /DWIN32 /D_CRT_SECURE_NO_WARNINGS /DWIN32_LEAN_AND_MEAN /DHAVE_WINCODEC_H /DWEBP_USE_THREAD /Fdoutput\release-dynamic\x86\obj\libwebp_dll.pdb /Fooutput\release-dynamic\x86\obj\dec\ src\dec\alpha_dec.c src\dec\buffer_dec.c src\dec\frame_dec.c src\dec\idec_dec.c src\dec\io_dec.c src\dec\quant_dec.c src\dec\tree_dec.c src\dec\vp8_dec.c src\dec\vp8l_dec.c src\dec\webp_dec.c
+alpha_dec.c
+buffer_dec.c
+frame_dec.c
+idec_dec.c
+io_dec.c
+quant_dec.c
+tree_dec.c
+vp8_dec.c
+vp8l_dec.c
+webp_dec.c
+Generating Code...
+        cl.exe /nologo /O2 /DNDEBUG /Ioutput\release-dynamic\x86\obj /MD /DWEBP_DLL /I. /Isrc /nologo /W3 /EHsc /c /DWIN32 /D_CRT_SECURE_NO_WARNINGS /DWIN32_LEAN_AND_MEAN /DHAVE_WINCODEC_H /DWEBP_USE_THREAD /Fdoutput\release-dynamic\x86\obj\libwebp_dll.pdb /Fooutput\release-dynamic\x86\obj\dsp\ src\dsp\alpha_processing.c src\dsp\alpha_processing_mips_dsp_r2.c src\dsp\alpha_processing_neon.c src\dsp\alpha_processing_sse2.c src\dsp\alpha_processing_sse41.c src\dsp\cpu.c src\dsp\dec.c src\dsp\dec_clip_tables.c src\dsp\dec_mips32.c src\dsp\dec_mips_dsp_r2.c src\dsp\dec_msa.c src\dsp\dec_neon.c src\dsp\dec_sse2.c src\dsp\dec_sse41.c src\dsp\filters.c src\dsp\filters_mips_dsp_r2.c src\dsp\filters_msa.c src\dsp\filters_neon.c src\dsp\filters_sse2.c src\dsp\lossless.c src\dsp\lossless_mips_dsp_r2.c src\dsp\lossless_msa.c src\dsp\lossless_neon.c src\dsp\lossless_sse2.c src\dsp\lossless_sse41.c src\dsp\rescaler.c src\dsp\rescaler_mips32.c src\dsp\rescaler_mips_dsp_r2.c src\dsp\rescaler_msa.c src\dsp\rescaler_neon.c src\dsp\rescaler_sse2.c src\dsp\upsampling.c src\dsp\upsampling_mips_dsp_r2.c src\dsp\upsampling_msa.c src\dsp\upsampling_neon.c src\dsp\upsampling_sse2.c src\dsp\upsampling_sse41.c src\dsp\yuv.c src\dsp\yuv_mips32.c src\dsp\yuv_mips_dsp_r2.c src\dsp\yuv_neon.c src\dsp\yuv_sse2.c src\dsp\yuv_sse41.c
+alpha_processing.c
+alpha_processing_mips_dsp_r2.c
+alpha_processing_neon.c
+alpha_processing_sse2.c
+alpha_processing_sse41.c
+cpu.c
+dec.c
+dec_clip_tables.c
+dec_mips32.c
+dec_mips_dsp_r2.c
+dec_msa.c
+dec_neon.c
+dec_sse2.c
+dec_sse41.c
+filters.c
+filters_mips_dsp_r2.c
+filters_msa.c
+filters_neon.c
+filters_sse2.c
+lossless.c
+Generating Code...
+Compiling...
+lossless_mips_dsp_r2.c
+lossless_msa.c
+lossless_neon.c
+lossless_sse2.c
+lossless_sse41.c
+rescaler.c
+rescaler_mips32.c
+rescaler_mips_dsp_r2.c
+rescaler_msa.c
+rescaler_neon.c
+rescaler_sse2.c
+upsampling.c
+upsampling_mips_dsp_r2.c
+upsampling_msa.c
+upsampling_neon.c
+upsampling_sse2.c
+upsampling_sse41.c
+yuv.c
+yuv_mips32.c
+yuv_mips_dsp_r2.c
+Generating Code...
+Compiling...
+yuv_neon.c
+yuv_sse2.c
+yuv_sse41.c
+Generating Code...
+        cl.exe /nologo /O2 /DNDEBUG /Ioutput\release-dynamic\x86\obj /MD /DWEBP_DLL /I. /Isrc /nologo /W3 /EHsc /c /DWIN32 /D_CRT_SECURE_NO_WARNINGS /DWIN32_LEAN_AND_MEAN /DHAVE_WINCODEC_H /DWEBP_USE_THREAD /Fdoutput\release-dynamic\x86\obj\libwebp_dll.pdb /Fooutput\release-dynamic\x86\obj\utils\ src\utils\bit_reader_utils.c src\utils\color_cache_utils.c src\utils\filters_utils.c src\utils\huffman_utils.c src\utils\quant_levels_dec_utils.c src\utils\rescaler_utils.c src\utils\random_utils.c src\utils\thread_utils.c src\utils\utils.c
+bit_reader_utils.c
+color_cache_utils.c
+filters_utils.c
+huffman_utils.c
+quant_levels_dec_utils.c
+rescaler_utils.c
+random_utils.c
+thread_utils.c
+utils.c
+Generating Code...
+        rc.exe /nologo /l"0x0409" /fooutput\release-dynamic\x86\obj\libwebpdecoder.res src\libwebpdecoder.rc
+        link.exe /DLL /nologo /out:output\release-dynamic\x86\bin\libwebpdecoder.dll /implib:output\release-dynamic\x86\lib\libwebpdecoder_dll.lib  output\release-dynamic\x86\obj\dec\alpha_dec.obj output\release-dynamic\x86\obj\dec\buffer_dec.obj output\release-dynamic\x86\obj\dec\frame_dec.obj output\release-dynamic\x86\obj\dec\idec_dec.obj output\release-dynamic\x86\obj\dec\io_dec.obj output\release-dynamic\x86\obj\dec\quant_dec.obj output\release-dynamic\x86\obj\dec\tree_dec.obj output\release-dynamic\x86\obj\dec\vp8_dec.obj output\release-dynamic\x86\obj\dec\vp8l_dec.obj output\release-dynamic\x86\obj\dec\webp_dec.obj output\release-dynamic\x86\obj\dsp\alpha_processing.obj output\release-dynamic\x86\obj\dsp\alpha_processing_mips_dsp_r2.obj output\release-dynamic\x86\obj\dsp\alpha_processing_neon.obj output\release-dynamic\x86\obj\dsp\alpha_processing_sse2.obj output\release-dynamic\x86\obj\dsp\alpha_processing_sse41.obj output\release-dynamic\x86\obj\dsp\cpu.obj output\release-dynamic\x86\obj\dsp\dec.obj output\release-dynamic\x86\obj\dsp\dec_clip_tables.obj output\release-dynamic\x86\obj\dsp\dec_mips32.obj output\release-dynamic\x86\obj\dsp\dec_mips_dsp_r2.obj output\release-dynamic\x86\obj\dsp\dec_msa.obj output\release-dynamic\x86\obj\dsp\dec_neon.obj output\release-dynamic\x86\obj\dsp\dec_sse2.obj output\release-dynamic\x86\obj\dsp\dec_sse41.obj output\release-dynamic\x86\obj\dsp\filters.obj output\release-dynamic\x86\obj\dsp\filters_mips_dsp_r2.obj output\release-dynamic\x86\obj\dsp\filters_msa.obj output\release-dynamic\x86\obj\dsp\filters_neon.obj output\release-dynamic\x86\obj\dsp\filters_sse2.obj output\release-dynamic\x86\obj\dsp\lossless.obj output\release-dynamic\x86\obj\dsp\lossless_mips_dsp_r2.obj output\release-dynamic\x86\obj\dsp\lossless_msa.obj output\release-dynamic\x86\obj\dsp\lossless_neon.obj output\release-dynamic\x86\obj\dsp\lossless_sse2.obj output\release-dynamic\x86\obj\dsp\lossless_sse41.obj output\release-dynamic\x86\obj\dsp\rescaler.obj output\release-dynamic\x86\obj\dsp\rescaler_mips32.obj output\release-dynamic\x86\obj\dsp\rescaler_mips_dsp_r2.obj output\release-dynamic\x86\obj\dsp\rescaler_msa.obj output\release-dynamic\x86\obj\dsp\rescaler_neon.obj output\release-dynamic\x86\obj\dsp\rescaler_sse2.obj output\release-dynamic\x86\obj\dsp\upsampling.obj output\release-dynamic\x86\obj\dsp\upsampling_mips_dsp_r2.obj output\release-dynamic\x86\obj\dsp\upsampling_msa.obj output\release-dynamic\x86\obj\dsp\upsampling_neon.obj output\release-dynamic\x86\obj\dsp\upsampling_sse2.obj output\release-dynamic\x86\obj\dsp\upsampling_sse41.obj output\release-dynamic\x86\obj\dsp\yuv.obj output\release-dynamic\x86\obj\dsp\yuv_mips32.obj output\release-dynamic\x86\obj\dsp\yuv_mips_dsp_r2.obj output\release-dynamic\x86\obj\dsp\yuv_neon.obj output\release-dynamic\x86\obj\dsp\yuv_sse2.obj output\release-dynamic\x86\obj\dsp\yuv_sse41.obj output\release-dynamic\x86\obj\utils\bit_reader_utils.obj output\release-dynamic\x86\obj\utils\color_cache_utils.obj output\release-dynamic\x86\obj\utils\filters_utils.obj output\release-dynamic\x86\obj\utils\huffman_utils.obj output\release-dynamic\x86\obj\utils\quant_levels_dec_utils.obj output\release-dynamic\x86\obj\utils\rescaler_utils.obj output\release-dynamic\x86\obj\utils\random_utils.obj output\release-dynamic\x86\obj\utils\thread_utils.obj output\release-dynamic\x86\obj\utils\utils.obj output\release-dynamic\x86\obj\libwebpdecoder.res
+   Creating library output\release-dynamic\x86\lib\libwebpdecoder_dll.lib and object output\release-dynamic\x86\lib\libwebpdecoder_dll.exp
+        xcopy output\release-dynamic\x86\obj\*.pdb output\release-dynamic\x86\lib /y
+File not found - *.pdb
+0 File(s) copied
+        cl.exe /nologo /O2 /DNDEBUG /Ioutput\release-dynamic\x86\obj /MD /DWEBP_DLL /I. /Isrc /nologo /W3 /EHsc /c /DWIN32 /D_CRT_SECURE_NO_WARNINGS /DWIN32_LEAN_AND_MEAN /DHAVE_WINCODEC_H /DWEBP_USE_THREAD /Fdoutput\release-dynamic\x86\obj\sharpyuv\ /Fooutput\release-dynamic\x86\obj\sharpyuv\ sharpyuv\sharpyuv.c sharpyuv\sharpyuv_cpu.c sharpyuv\sharpyuv_csp.c sharpyuv\sharpyuv_dsp.c sharpyuv\sharpyuv_gamma.c sharpyuv\sharpyuv_neon.c sharpyuv\sharpyuv_sse2.c
+sharpyuv.c
+sharpyuv_cpu.c
+sharpyuv_csp.c
+sharpyuv_dsp.c
+sharpyuv_gamma.c
+sharpyuv_neon.c
+sharpyuv_sse2.c
+Generating Code...
+        rc.exe /nologo /l"0x0409" /fooutput\release-dynamic\x86\obj\sharpyuv\libsharpyuv.res sharpyuv\libsharpyuv.rc
+        link.exe /DLL /nologo /out:output\release-dynamic\x86\bin\libsharpyuv.dll /implib:output\release-dynamic\x86\lib\libsharpyuv_dll.lib  output\release-dynamic\x86\obj\sharpyuv\sharpyuv.obj output\release-dynamic\x86\obj\sharpyuv\sharpyuv_cpu.obj output\release-dynamic\x86\obj\sharpyuv\sharpyuv_csp.obj output\release-dynamic\x86\obj\sharpyuv\sharpyuv_dsp.obj output\release-dynamic\x86\obj\sharpyuv\sharpyuv_gamma.obj output\release-dynamic\x86\obj\sharpyuv\sharpyuv_neon.obj output\release-dynamic\x86\obj\sharpyuv\sharpyuv_sse2.obj output\release-dynamic\x86\obj\sharpyuv\libsharpyuv.res
+   Creating library output\release-dynamic\x86\lib\libsharpyuv_dll.lib and object output\release-dynamic\x86\lib\libsharpyuv_dll.exp
+        xcopy output\release-dynamic\x86\obj\*.pdb output\release-dynamic\x86\lib /y
+File not found - *.pdb
+0 File(s) copied
+        cl.exe /nologo /O2 /DNDEBUG /Ioutput\release-dynamic\x86\obj /MD /DWEBP_DLL /I. /Isrc /nologo /W3 /EHsc /c /DWIN32 /D_CRT_SECURE_NO_WARNINGS /DWIN32_LEAN_AND_MEAN /DHAVE_WINCODEC_H /DWEBP_USE_THREAD /Fdoutput\release-dynamic\x86\obj\libwebp_dll.pdb /Fooutput\release-dynamic\x86\obj\enc\ src\enc\alpha_enc.c src\enc\analysis_enc.c src\enc\backward_references_cost_enc.c src\enc\backward_references_enc.c src\enc\config_enc.c src\enc\cost_enc.c src\enc\filter_enc.c src\enc\frame_enc.c src\enc\histogram_enc.c src\enc\iterator_enc.c src\enc\near_lossless_enc.c src\enc\picture_enc.c src\enc\picture_csp_enc.c src\enc\picture_psnr_enc.c src\enc\picture_rescale_enc.c src\enc\picture_tools_enc.c src\enc\predictor_enc.c src\enc\quant_enc.c src\enc\syntax_enc.c src\enc\token_enc.c src\enc\tree_enc.c src\enc\vp8l_enc.c src\enc\webp_enc.c
+alpha_enc.c
+analysis_enc.c
+backward_references_cost_enc.c
+backward_references_enc.c
+config_enc.c
+cost_enc.c
+filter_enc.c
+frame_enc.c
+histogram_enc.c
+iterator_enc.c
+near_lossless_enc.c
+picture_enc.c
+picture_csp_enc.c
+picture_psnr_enc.c
+picture_rescale_enc.c
+picture_tools_enc.c
+predictor_enc.c
+quant_enc.c
+syntax_enc.c
+token_enc.c
+Generating Code...
+Compiling...
+tree_enc.c
+vp8l_enc.c
+webp_enc.c
+Generating Code...
+        cl.exe /nologo /O2 /DNDEBUG /Ioutput\release-dynamic\x86\obj /MD /DWEBP_DLL /I. /Isrc /nologo /W3 /EHsc /c /DWIN32 /D_CRT_SECURE_NO_WARNINGS /DWIN32_LEAN_AND_MEAN /DHAVE_WINCODEC_H /DWEBP_USE_THREAD /Fdoutput\release-dynamic\x86\obj\libwebp_dll.pdb /Fooutput\release-dynamic\x86\obj\dsp\ src\dsp\cost.c src\dsp\cost_mips32.c src\dsp\cost_mips_dsp_r2.c src\dsp\cost_neon.c src\dsp\cost_sse2.c src\dsp\enc.c src\dsp\enc_mips32.c src\dsp\enc_mips_dsp_r2.c src\dsp\enc_msa.c src\dsp\enc_neon.c src\dsp\enc_sse2.c src\dsp\enc_sse41.c src\dsp\lossless_enc.c src\dsp\lossless_enc_mips32.c src\dsp\lossless_enc_mips_dsp_r2.c src\dsp\lossless_enc_msa.c src\dsp\lossless_enc_neon.c src\dsp\lossless_enc_sse2.c src\dsp\lossless_enc_sse41.c src\dsp\ssim.c src\dsp\ssim_sse2.c
+cost.c
+cost_mips32.c
+cost_mips_dsp_r2.c
+cost_neon.c
+cost_sse2.c
+enc.c
+enc_mips32.c
+enc_mips_dsp_r2.c
+enc_msa.c
+enc_neon.c
+enc_sse2.c
+enc_sse41.c
+lossless_enc.c
+lossless_enc_mips32.c
+lossless_enc_mips_dsp_r2.c
+lossless_enc_msa.c
+lossless_enc_neon.c
+lossless_enc_sse2.c
+lossless_enc_sse41.c
+ssim.c
+Generating Code...
+Compiling...
+ssim_sse2.c
+Generating Code...
+        cl.exe /nologo /O2 /DNDEBUG /Ioutput\release-dynamic\x86\obj /MD /DWEBP_DLL /I. /Isrc /nologo /W3 /EHsc /c /DWIN32 /D_CRT_SECURE_NO_WARNINGS /DWIN32_LEAN_AND_MEAN /DHAVE_WINCODEC_H /DWEBP_USE_THREAD /Fdoutput\release-dynamic\x86\obj\libwebp_dll.pdb /Fooutput\release-dynamic\x86\obj\utils\ src\utils\bit_writer_utils.c src\utils\huffman_encode_utils.c src\utils\quant_levels_utils.c
+bit_writer_utils.c
+huffman_encode_utils.c
+quant_levels_utils.c
+Generating Code...
+        rc.exe /nologo /l"0x0409" /fooutput\release-dynamic\x86\obj\libwebp.res src\libwebp.rc
+        link.exe /DLL /nologo /out:output\release-dynamic\x86\bin\libwebp.dll /implib:output\release-dynamic\x86\lib\libwebp_dll.lib  output\release-dynamic\x86\obj\dec\alpha_dec.obj output\release-dynamic\x86\obj\dec\buffer_dec.obj output\release-dynamic\x86\obj\dec\frame_dec.obj output\release-dynamic\x86\obj\dec\idec_dec.obj output\release-dynamic\x86\obj\dec\io_dec.obj output\release-dynamic\x86\obj\dec\quant_dec.obj output\release-dynamic\x86\obj\dec\tree_dec.obj output\release-dynamic\x86\obj\dec\vp8_dec.obj output\release-dynamic\x86\obj\dec\vp8l_dec.obj output\release-dynamic\x86\obj\dec\webp_dec.obj output\release-dynamic\x86\obj\dsp\alpha_processing.obj output\release-dynamic\x86\obj\dsp\alpha_processing_mips_dsp_r2.obj output\release-dynamic\x86\obj\dsp\alpha_processing_neon.obj output\release-dynamic\x86\obj\dsp\alpha_processing_sse2.obj output\release-dynamic\x86\obj\dsp\alpha_processing_sse41.obj output\release-dynamic\x86\obj\dsp\cpu.obj output\release-dynamic\x86\obj\dsp\dec.obj output\release-dynamic\x86\obj\dsp\dec_clip_tables.obj output\release-dynamic\x86\obj\dsp\dec_mips32.obj output\release-dynamic\x86\obj\dsp\dec_mips_dsp_r2.obj output\release-dynamic\x86\obj\dsp\dec_msa.obj output\release-dynamic\x86\obj\dsp\dec_neon.obj output\release-dynamic\x86\obj\dsp\dec_sse2.obj output\release-dynamic\x86\obj\dsp\dec_sse41.obj output\release-dynamic\x86\obj\dsp\filters.obj output\release-dynamic\x86\obj\dsp\filters_mips_dsp_r2.obj output\release-dynamic\x86\obj\dsp\filters_msa.obj output\release-dynamic\x86\obj\dsp\filters_neon.obj output\release-dynamic\x86\obj\dsp\filters_sse2.obj output\release-dynamic\x86\obj\dsp\lossless.obj output\release-dynamic\x86\obj\dsp\lossless_mips_dsp_r2.obj output\release-dynamic\x86\obj\dsp\lossless_msa.obj output\release-dynamic\x86\obj\dsp\lossless_neon.obj output\release-dynamic\x86\obj\dsp\lossless_sse2.obj output\release-dynamic\x86\obj\dsp\lossless_sse41.obj output\release-dynamic\x86\obj\dsp\rescaler.obj output\release-dynamic\x86\obj\dsp\rescaler_mips32.obj output\release-dynamic\x86\obj\dsp\rescaler_mips_dsp_r2.obj output\release-dynamic\x86\obj\dsp\rescaler_msa.obj output\release-dynamic\x86\obj\dsp\rescaler_neon.obj output\release-dynamic\x86\obj\dsp\rescaler_sse2.obj output\release-dynamic\x86\obj\dsp\upsampling.obj output\release-dynamic\x86\obj\dsp\upsampling_mips_dsp_r2.obj output\release-dynamic\x86\obj\dsp\upsampling_msa.obj output\release-dynamic\x86\obj\dsp\upsampling_neon.obj output\release-dynamic\x86\obj\dsp\upsampling_sse2.obj output\release-dynamic\x86\obj\dsp\upsampling_sse41.obj output\release-dynamic\x86\obj\dsp\yuv.obj output\release-dynamic\x86\obj\dsp\yuv_mips32.obj output\release-dynamic\x86\obj\dsp\yuv_mips_dsp_r2.obj output\release-dynamic\x86\obj\dsp\yuv_neon.obj output\release-dynamic\x86\obj\dsp\yuv_sse2.obj output\release-dynamic\x86\obj\dsp\yuv_sse41.obj output\release-dynamic\x86\obj\utils\bit_reader_utils.obj output\release-dynamic\x86\obj\utils\color_cache_utils.obj output\release-dynamic\x86\obj\utils\filters_utils.obj output\release-dynamic\x86\obj\utils\huffman_utils.obj output\release-dynamic\x86\obj\utils\quant_levels_dec_utils.obj output\release-dynamic\x86\obj\utils\rescaler_utils.obj output\release-dynamic\x86\obj\utils\random_utils.obj output\release-dynamic\x86\obj\utils\thread_utils.obj output\release-dynamic\x86\obj\utils\utils.obj output\release-dynamic\x86\obj\enc\alpha_enc.obj output\release-dynamic\x86\obj\enc\analysis_enc.obj output\release-dynamic\x86\obj\enc\backward_references_cost_enc.obj output\release-dynamic\x86\obj\enc\backward_references_enc.obj output\release-dynamic\x86\obj\enc\config_enc.obj output\release-dynamic\x86\obj\enc\cost_enc.obj output\release-dynamic\x86\obj\enc\filter_enc.obj output\release-dynamic\x86\obj\enc\frame_enc.obj output\release-dynamic\x86\obj\enc\histogram_enc.obj output\release-dynamic\x86\obj\enc\iterator_enc.obj output\release-dynamic\x86\obj\enc\near_lossless_enc.obj output\release-dynamic\x86\obj\enc\picture_enc.obj output\release-dynamic\x86\obj\enc\picture_csp_enc.obj output\release-dynamic\x86\obj\enc\picture_psnr_enc.obj output\release-dynamic\x86\obj\enc\picture_rescale_enc.obj output\release-dynamic\x86\obj\enc\picture_tools_enc.obj output\release-dynamic\x86\obj\enc\predictor_enc.obj output\release-dynamic\x86\obj\enc\quant_enc.obj output\release-dynamic\x86\obj\enc\syntax_enc.obj output\release-dynamic\x86\obj\enc\token_enc.obj output\release-dynamic\x86\obj\enc\tree_enc.obj output\release-dynamic\x86\obj\enc\vp8l_enc.obj output\release-dynamic\x86\obj\enc\webp_enc.obj output\release-dynamic\x86\obj\dsp\cost.obj output\release-dynamic\x86\obj\dsp\cost_mips32.obj output\release-dynamic\x86\obj\dsp\cost_mips_dsp_r2.obj output\release-dynamic\x86\obj\dsp\cost_neon.obj output\release-dynamic\x86\obj\dsp\cost_sse2.obj output\release-dynamic\x86\obj\dsp\enc.obj output\release-dynamic\x86\obj\dsp\enc_mips32.obj output\release-dynamic\x86\obj\dsp\enc_mips_dsp_r2.obj output\release-dynamic\x86\obj\dsp\enc_msa.obj output\release-dynamic\x86\obj\dsp\enc_neon.obj output\release-dynamic\x86\obj\dsp\enc_sse2.obj output\release-dynamic\x86\obj\dsp\enc_sse41.obj output\release-dynamic\x86\obj\dsp\lossless_enc.obj output\release-dynamic\x86\obj\dsp\lossless_enc_mips32.obj output\release-dynamic\x86\obj\dsp\lossless_enc_mips_dsp_r2.obj output\release-dynamic\x86\obj\dsp\lossless_enc_msa.obj output\release-dynamic\x86\obj\dsp\lossless_enc_neon.obj output\release-dynamic\x86\obj\dsp\lossless_enc_sse2.obj output\release-dynamic\x86\obj\dsp\lossless_enc_sse41.obj output\release-dynamic\x86\obj\dsp\ssim.obj output\release-dynamic\x86\obj\dsp\ssim_sse2.obj output\release-dynamic\x86\obj\utils\bit_writer_utils.obj output\release-dynamic\x86\obj\utils\huffman_encode_utils.obj output\release-dynamic\x86\obj\utils\quant_levels_utils.obj output\release-dynamic\x86\lib\libsharpyuv_dll.lib output\release-dynamic\x86\lib\libsharpyuv_dll.lib output\release-dynamic\x86\obj\libwebp.res
+   Creating library output\release-dynamic\x86\lib\libwebp_dll.lib and object output\release-dynamic\x86\lib\libwebp_dll.exp
+        xcopy output\release-dynamic\x86\obj\*.pdb output\release-dynamic\x86\lib /y
+File not found - *.pdb
+0 File(s) copied
+        cl.exe /nologo /O2 /DNDEBUG /Ioutput\release-dynamic\x86\obj /MD /DWEBP_DLL /I. /Isrc /nologo /W3 /EHsc /c /DWIN32 /D_CRT_SECURE_NO_WARNINGS /DWIN32_LEAN_AND_MEAN /DHAVE_WINCODEC_H /DWEBP_USE_THREAD /Fdoutput\release-dynamic\x86\obj\examples\ /Fooutput\release-dynamic\x86\obj\examples\ examples\cwebp.c
+cwebp.c
+        cl.exe /nologo /O2 /DNDEBUG /Ioutput\release-dynamic\x86\obj /MD /DWEBP_DLL /I. /Isrc /nologo /W3 /EHsc /c /DWIN32 /D_CRT_SECURE_NO_WARNINGS /DWIN32_LEAN_AND_MEAN /DHAVE_WINCODEC_H /DWEBP_USE_THREAD /Fdoutput\release-dynamic\x86\obj\imageio\ /Fooutput\release-dynamic\x86\obj\imageio\ imageio\image_dec.c imageio\jpegdec.c imageio\metadata.c imageio\pngdec.c imageio\pnmdec.c imageio\tiffdec.c imageio\webpdec.c imageio\wicdec.c
+image_dec.c
+jpegdec.c
+metadata.c
+pngdec.c
+pnmdec.c
+tiffdec.c
+webpdec.c
+wicdec.c
+Generating Code...
+        cl.exe /nologo /O2 /DNDEBUG /Ioutput\release-dynamic\x86\obj /MD /DWEBP_DLL /I. /Isrc /nologo /W3 /EHsc /c /DWIN32 /D_CRT_SECURE_NO_WARNINGS /DWIN32_LEAN_AND_MEAN /DHAVE_WINCODEC_H /DWEBP_USE_THREAD /Fdoutput\release-dynamic\x86\obj\imageio\ /Fooutput\release-dynamic\x86\obj\imageio\ imageio\imageio_util.c
+imageio_util.c
+        cl.exe /nologo /O2 /DNDEBUG /Ioutput\release-dynamic\x86\obj /MD /DWEBP_DLL /I. /Isrc /nologo /W3 /EHsc /c /DWIN32 /D_CRT_SECURE_NO_WARNINGS /DWIN32_LEAN_AND_MEAN /DHAVE_WINCODEC_H /DWEBP_USE_THREAD /Fdoutput\release-dynamic\x86\obj\libwebp_dll.pdb /Fooutput\release-dynamic\x86\obj\demux\ src\demux\anim_decode.c src\demux\demux.c
+anim_decode.c
+demux.c
+Generating Code...
+        rc.exe /nologo /l"0x0409" /fooutput\release-dynamic\x86\obj\demux\libwebpdemux.res src\demux\libwebpdemux.rc
+        link.exe /DLL /nologo /out:output\release-dynamic\x86\bin\libwebpdemux.dll /implib:output\release-dynamic\x86\lib\libwebpdemux_dll.lib  output\release-dynamic\x86\obj\demux\anim_decode.obj output\release-dynamic\x86\obj\demux\demux.obj output\release-dynamic\x86\lib\libwebp_dll.lib output\release-dynamic\x86\obj\demux\libwebpdemux.res
+   Creating library output\release-dynamic\x86\lib\libwebpdemux_dll.lib and object output\release-dynamic\x86\lib\libwebpdemux_dll.exp
+        xcopy output\release-dynamic\x86\obj\*.pdb output\release-dynamic\x86\lib /y
+File not found - *.pdb
+0 File(s) copied
+        cl.exe /nologo /O2 /DNDEBUG /Ioutput\release-dynamic\x86\obj /MD /DWEBP_DLL /I. /Isrc /nologo /W3 /EHsc /c /DWIN32 /D_CRT_SECURE_NO_WARNINGS /DWIN32_LEAN_AND_MEAN /DHAVE_WINCODEC_H /DWEBP_USE_THREAD /Fdoutput\release-dynamic\x86\obj\examples\ /Fooutput\release-dynamic\x86\obj\examples\ examples\example_util.c
+example_util.c
+        link.exe /nologo /LARGEADDRESSAWARE /MANIFEST:EMBED /NXCOMPAT /DYNAMICBASE /SAFESEH /OUT:output\release-dynamic\x86\bin\cwebp.exe output\release-dynamic\x86\obj\examples\cwebp.obj output\release-dynamic\x86\obj\imageio\image_dec.obj output\release-dynamic\x86\obj\imageio\jpegdec.obj output\release-dynamic\x86\obj\imageio\metadata.obj output\release-dynamic\x86\obj\imageio\pngdec.obj output\release-dynamic\x86\obj\imageio\pnmdec.obj output\release-dynamic\x86\obj\imageio\tiffdec.obj output\release-dynamic\x86\obj\imageio\webpdec.obj output\release-dynamic\x86\obj\imageio\wicdec.obj output\release-dynamic\x86\obj\imageio\imageio_util.obj output\release-dynamic\x86\lib\libwebpdemux_dll.lib output\release-dynamic\x86\lib\libsharpyuv_dll.lib output\release-dynamic\x86\obj\examples\example_util.obj output\release-dynamic\x86\lib\libwebp_dll.lib ole32.lib windowscodecs.lib shlwapi.lib
+        cl.exe /nologo /O2 /DNDEBUG /Ioutput\release-dynamic\x86\obj /MD /DWEBP_DLL /I. /Isrc /nologo /W3 /EHsc /c /DWIN32 /D_CRT_SECURE_NO_WARNINGS /DWIN32_LEAN_AND_MEAN /DHAVE_WINCODEC_H /DWEBP_USE_THREAD /Fdoutput\release-dynamic\x86\obj\examples\ /Fooutput\release-dynamic\x86\obj\examples\ examples\dwebp.c
+dwebp.c
+        cl.exe /nologo /O2 /DNDEBUG /Ioutput\release-dynamic\x86\obj /MD /DWEBP_DLL /I. /Isrc /nologo /W3 /EHsc /c /DWIN32 /D_CRT_SECURE_NO_WARNINGS /DWIN32_LEAN_AND_MEAN /DHAVE_WINCODEC_H /DWEBP_USE_THREAD /Fdoutput\release-dynamic\x86\obj\imageio\ /Fooutput\release-dynamic\x86\obj\imageio\ imageio\image_enc.c
+image_enc.c
+        link.exe /nologo /LARGEADDRESSAWARE /MANIFEST:EMBED /NXCOMPAT /DYNAMICBASE /SAFESEH /OUT:output\release-dynamic\x86\bin\dwebp.exe output\release-dynamic\x86\obj\examples\dwebp.obj output\release-dynamic\x86\obj\imageio\image_dec.obj output\release-dynamic\x86\obj\imageio\jpegdec.obj output\release-dynamic\x86\obj\imageio\metadata.obj output\release-dynamic\x86\obj\imageio\pngdec.obj output\release-dynamic\x86\obj\imageio\pnmdec.obj output\release-dynamic\x86\obj\imageio\tiffdec.obj output\release-dynamic\x86\obj\imageio\webpdec.obj output\release-dynamic\x86\obj\imageio\wicdec.obj output\release-dynamic\x86\obj\imageio\image_enc.obj output\release-dynamic\x86\obj\imageio\imageio_util.obj output\release-dynamic\x86\lib\libwebpdemux_dll.lib output\release-dynamic\x86\obj\examples\example_util.obj output\release-dynamic\x86\lib\libwebp_dll.lib ole32.lib windowscodecs.lib shlwapi.lib
+
+C:\Users\Pierr\Downloads\libwebp-1.3.2\libwebp-1.3.2 dir
+ Volume in drive C is WOTAN
+ Volume Serial Number is C494-35C2
+
+ Directory of C:\Users\Pierr\Downloads\libwebp-1.3.2\libwebp-1.3.2
+
+02/12/2023  17:22    <DIR>          .
+02/12/2023  17:19    <DIR>          ..
+13/09/2023  23:11             8 413 .cmake-format.py
+13/09/2023  23:11            14 563 .pylintrc
+13/09/2023  23:11                29 .style.yapf
+13/09/2023  23:19            44 483 aclocal.m4
+13/09/2023  23:11             7 531 Android.mk
+13/09/2023  23:19             5 875 ar-lib
+13/09/2023  23:11             2 734 AUTHORS
+13/09/2023  23:11                34 autogen.sh
+13/09/2023  23:11            11 611 build.gradle
+13/09/2023  23:11           247 209 ChangeLog
+13/09/2023  23:11    <DIR>          cmake
+13/09/2023  23:11            30 684 CMakeLists.txt
+13/09/2023  23:11               170 codereview.settings
+13/09/2023  23:19             7 400 compile
+13/09/2023  23:19            49 482 config.guess
+13/09/2023  23:19            35 406 config.sub
+13/09/2023  23:19           546 314 configure
+13/09/2023  23:11            28 979 configure.ac
+13/09/2023  23:11             2 650 CONTRIBUTING.md
+13/09/2023  23:11             1 496 COPYING
+13/09/2023  23:19            23 568 depcomp
+13/09/2023  23:11    <DIR>          doc
+13/09/2023  23:19    <DIR>          examples
+13/09/2023  23:19    <DIR>          extras
+13/09/2023  23:11    <DIR>          gradle
+13/09/2023  23:11               451 gradle.properties
+13/09/2023  23:11             5 764 gradlew
+13/09/2023  23:11             2 942 gradlew.bat
+13/09/2023  23:19    <DIR>          imageio
+13/09/2023  23:11    <DIR>          infra
+13/09/2023  23:19            15 358 install-sh
+13/09/2023  23:11             5 342 iosbuild.sh
+13/09/2023  23:19           333 441 ltmain.sh
+13/09/2023  23:19    <DIR>          m4
+13/09/2023  23:11               155 Makefile.am
+13/09/2023  23:19            26 804 Makefile.in
+13/09/2023  23:11            17 248 makefile.unix
+13/09/2023  23:11            18 753 Makefile.vc
+13/09/2023  23:19    <DIR>          man
+13/09/2023  23:19             6 878 missing
+13/09/2023  23:11            13 606 NEWS
+02/12/2023  17:22    <DIR>          output
+13/09/2023  23:11             1 436 PATENTS
+13/09/2023  23:11             9 043 PRESUBMIT.py
+13/09/2023  23:11             1 586 README.md
+13/09/2023  23:19    <DIR>          sharpyuv
+13/09/2023  23:19    <DIR>          src
+13/09/2023  23:11    <DIR>          swig
+13/09/2023  23:11    <DIR>          tests
+13/09/2023  23:11    <DIR>          webp_js
+13/09/2023  23:11             8 670 xcframeworkbuild.sh
+              36 File(s)      1 536 108 bytes
+              17 Dir(s)  1 662 902 616 064 bytes free
+
+C:\Users\Pierr\Downloads\libwebp-1.3.2\libwebp-1.3.2 cd output
+
+C:\Users\Pierr\Downloads\libwebp-1.3.2\libwebp-1.3.2\output d
+ Volume in drive C is WOTAN
+ Volume Serial Number is C494-35C2
+
+ Directory of C:\Users\Pierr\Downloads\libwebp-1.3.2\libwebp-1.3.2\output
+
+02/12/2023  17:22    <DIR>          .
+02/12/2023  17:22    <DIR>          ..
+02/12/2023  17:22    <DIR>          release-dynamic
+               0 File(s)              0 bytes
+               3 Dir(s)  1 662 666 833 920 bytes free
+
+C:\Users\Pierr\Downloads\libwebp-1.3.2\libwebp-1.3.2\output cd release-dynamic
+
+C:\Users\Pierr\Downloads\libwebp-1.3.2\libwebp-1.3.2\output\release-dynamic d
+ Volume in drive C is WOTAN
+ Volume Serial Number is C494-35C2
+
+ Directory of C:\Users\Pierr\Downloads\libwebp-1.3.2\libwebp-1.3.2\output\release-dynamic
+
+02/12/2023  17:22    <DIR>          .
+02/12/2023  17:22    <DIR>          ..
+02/12/2023  17:22    <DIR>          x86
+               0 File(s)              0 bytes
+               3 Dir(s)  1 662 666 436 608 bytes free
+
+C:\Users\Pierr\Downloads\libwebp-1.3.2\libwebp-1.3.2\output\release-dynamic cd ..
+
+C:\Users\Pierr\Downloads\libwebp-1.3.2\libwebp-1.3.2\output cd ..
+
+C:\Users\Pierr\Downloads\libwebp-1.3.2\libwebp-1.3.2 cd ..
+
+C:\Users\Pierr\Downloads\libwebp-1.3.2 d
+ Volume in drive C is WOTAN
+ Volume Serial Number is C494-35C2
+
+ Directory of C:\Users\Pierr\Downloads\libwebp-1.3.2
+
+02/12/2023  17:19    <DIR>          .
+02/12/2023  17:19    <DIR>          ..
+02/12/2023  17:22    <DIR>          libwebp-1.3.2
+               0 File(s)              0 bytes
+               3 Dir(s)  1 662 663 774 208 bytes free
+
+C:\Users\Pierr\Downloads\libwebp-1.3.2 cd ..
+
+C:\Users\Pierr\Downloads cd libwebp-1.3.2
+
+C:\Users\Pierr\Downloads\libwebp-1.3.2 cd libwebp-1.3.2
+
+C:\Users\Pierr\Downloads\libwebp-1.3.2\libwebp-1.3.2 d
+ Volume in drive C is WOTAN
+ Volume Serial Number is C494-35C2
+
+ Directory of C:\Users\Pierr\Downloads\libwebp-1.3.2\libwebp-1.3.2
+
+02/12/2023  17:22    <DIR>          .
+02/12/2023  17:19    <DIR>          ..
+13/09/2023  23:11             8 413 .cmake-format.py
+13/09/2023  23:11            14 563 .pylintrc
+13/09/2023  23:11                29 .style.yapf
+13/09/2023  23:19            44 483 aclocal.m4
+13/09/2023  23:11             7 531 Android.mk
+13/09/2023  23:19             5 875 ar-lib
+13/09/2023  23:11             2 734 AUTHORS
+13/09/2023  23:11                34 autogen.sh
+13/09/2023  23:11            11 611 build.gradle
+13/09/2023  23:11           247 209 ChangeLog
+13/09/2023  23:11    <DIR>          cmake
+13/09/2023  23:11            30 684 CMakeLists.txt
+13/09/2023  23:11               170 codereview.settings
+13/09/2023  23:19             7 400 compile
+13/09/2023  23:19            49 482 config.guess
+13/09/2023  23:19            35 406 config.sub
+13/09/2023  23:19           546 314 configure
+13/09/2023  23:11            28 979 configure.ac
+13/09/2023  23:11             2 650 CONTRIBUTING.md
+13/09/2023  23:11             1 496 COPYING
+13/09/2023  23:19            23 568 depcomp
+13/09/2023  23:11    <DIR>          doc
+13/09/2023  23:19    <DIR>          examples
+13/09/2023  23:19    <DIR>          extras
+13/09/2023  23:11    <DIR>          gradle
+13/09/2023  23:11               451 gradle.properties
+13/09/2023  23:11             5 764 gradlew
+13/09/2023  23:11             2 942 gradlew.bat
+13/09/2023  23:19    <DIR>          imageio
+13/09/2023  23:11    <DIR>          infra
+13/09/2023  23:19            15 358 install-sh
+13/09/2023  23:11             5 342 iosbuild.sh
+13/09/2023  23:19           333 441 ltmain.sh
+13/09/2023  23:19    <DIR>          m4
+13/09/2023  23:11               155 Makefile.am
+13/09/2023  23:19            26 804 Makefile.in
+13/09/2023  23:11            17 248 makefile.unix
+13/09/2023  23:11            18 753 Makefile.vc
+13/09/2023  23:19    <DIR>          man
+13/09/2023  23:19             6 878 missing
+13/09/2023  23:11            13 606 NEWS
+02/12/2023  17:22    <DIR>          output
+13/09/2023  23:11             1 436 PATENTS
+13/09/2023  23:11             9 043 PRESUBMIT.py
+13/09/2023  23:11             1 586 README.md
+13/09/2023  23:19    <DIR>          sharpyuv
+13/09/2023  23:19    <DIR>          src
+13/09/2023  23:11    <DIR>          swig
+13/09/2023  23:11    <DIR>          tests
+13/09/2023  23:11    <DIR>          webp_js
+13/09/2023  23:11             8 670 xcframeworkbuild.sh
+              36 File(s)      1 536 108 bytes
+              17 Dir(s)  1 662 662 639 616 bytes free
+
+C:\Users\Pierr\Downloads\libwebp-1.3.2\libwebp-1.3.2 nvv Makefile.vc
+'nvv' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\Pierr\Downloads\libwebp-1.3.2\libwebp-1.3.2 npp Makefile.vc
+
+C:\Users\Pierr\Downloads\libwebp-1.3.2\libwebp-1.3.2 set ARCH=x64
+
+C:\Users\Pierr\Downloads\libwebp-1.3.2\libwebp-1.3.2 nmake /?
+
+Microsoft (R) Program Maintenance Utility Version 14.38.33130.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+Usage:  NMAKE @commandfile
+        NMAKE [options] [/f makefile] [/x stderrfile] [macrodefs] [targets]
+
+Options:
+
+/A Build all evaluated targets
+/B Build if time stamps are equal
+/C Suppress output messages
+/D Display build information
+/E Override env-var macros
+/ERRORREPORT:{NONE|PROMPT|QUEUE|SEND} Report errors to Microsoft
+/G Display !include filenames
+/HELP Display brief usage message
+/I Ignore exit codes from commands
+/K Build unrelated targets on error
+/N Display commands but do not execute
+/NOLOGO Suppress copyright message
+/P Display NMAKE information
+/Q Check time stamps but do not build
+/R Ignore predefined rules/macros
+/S Suppress executed-commands display
+/T Change time stamps but do not build
+/U Dump inline files
+/Y Disable batch-mode
+/W Display full command of any failed child process
+/? Display brief usage message
+
+C:\Users\Pierr\Downloads\libwebp-1.3.2\libwebp-1.3.2 nmake /f Makefile.vc ARCH=x64 CFG=release-dynamic RTLIBCFG=dynamic OBJDIR=output
+
+Microsoft (R) Program Maintenance Utility Version 14.38.33130.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+        cl.exe /nologo /O2 /DNDEBUG /Ioutput\release-dynamic\x64\obj /MD /DWEBP_DLL /I. /Isrc /nologo /W3 /EHsc /c /DWIN32 /D_CRT_SECURE_NO_WARNINGS /DWIN32_LEAN_AND_MEAN /DHAVE_WINCODEC_H /DWEBP_USE_THREAD /Fdoutput\release-dynamic\x64\obj\libwebp_dll.pdb /Fooutput\release-dynamic\x64\obj\dec\ src\dec\alpha_dec.c src\dec\buffer_dec.c src\dec\frame_dec.c src\dec\idec_dec.c src\dec\io_dec.c src\dec\quant_dec.c src\dec\tree_dec.c src\dec\vp8_dec.c src\dec\vp8l_dec.c src\dec\webp_dec.c
+alpha_dec.c
+buffer_dec.c
+frame_dec.c
+idec_dec.c
+io_dec.c
+quant_dec.c
+tree_dec.c
+vp8_dec.c
+vp8l_dec.c
+webp_dec.c
+Generating Code...
+        cl.exe /nologo /O2 /DNDEBUG /Ioutput\release-dynamic\x64\obj /MD /DWEBP_DLL /I. /Isrc /nologo /W3 /EHsc /c /DWIN32 /D_CRT_SECURE_NO_WARNINGS /DWIN32_LEAN_AND_MEAN /DHAVE_WINCODEC_H /DWEBP_USE_THREAD /Fdoutput\release-dynamic\x64\obj\libwebp_dll.pdb /Fooutput\release-dynamic\x64\obj\dsp\ src\dsp\alpha_processing.c src\dsp\alpha_processing_mips_dsp_r2.c src\dsp\alpha_processing_neon.c src\dsp\alpha_processing_sse2.c src\dsp\alpha_processing_sse41.c src\dsp\cpu.c src\dsp\dec.c src\dsp\dec_clip_tables.c src\dsp\dec_mips32.c src\dsp\dec_mips_dsp_r2.c src\dsp\dec_msa.c src\dsp\dec_neon.c src\dsp\dec_sse2.c src\dsp\dec_sse41.c src\dsp\filters.c src\dsp\filters_mips_dsp_r2.c src\dsp\filters_msa.c src\dsp\filters_neon.c src\dsp\filters_sse2.c src\dsp\lossless.c src\dsp\lossless_mips_dsp_r2.c src\dsp\lossless_msa.c src\dsp\lossless_neon.c src\dsp\lossless_sse2.c src\dsp\lossless_sse41.c src\dsp\rescaler.c src\dsp\rescaler_mips32.c src\dsp\rescaler_mips_dsp_r2.c src\dsp\rescaler_msa.c src\dsp\rescaler_neon.c src\dsp\rescaler_sse2.c src\dsp\upsampling.c src\dsp\upsampling_mips_dsp_r2.c src\dsp\upsampling_msa.c src\dsp\upsampling_neon.c src\dsp\upsampling_sse2.c src\dsp\upsampling_sse41.c src\dsp\yuv.c src\dsp\yuv_mips32.c src\dsp\yuv_mips_dsp_r2.c src\dsp\yuv_neon.c src\dsp\yuv_sse2.c src\dsp\yuv_sse41.c
+alpha_processing.c
+alpha_processing_mips_dsp_r2.c
+alpha_processing_neon.c
+alpha_processing_sse2.c
+alpha_processing_sse41.c
+cpu.c
+dec.c
+dec_clip_tables.c
+dec_mips32.c
+dec_mips_dsp_r2.c
+dec_msa.c
+dec_neon.c
+dec_sse2.c
+dec_sse41.c
+filters.c
+filters_mips_dsp_r2.c
+filters_msa.c
+filters_neon.c
+filters_sse2.c
+lossless.c
+Generating Code...
+Compiling...
+lossless_mips_dsp_r2.c
+lossless_msa.c
+lossless_neon.c
+lossless_sse2.c
+lossless_sse41.c
+rescaler.c
+rescaler_mips32.c
+rescaler_mips_dsp_r2.c
+rescaler_msa.c
+rescaler_neon.c
+rescaler_sse2.c
+upsampling.c
+upsampling_mips_dsp_r2.c
+upsampling_msa.c
+upsampling_neon.c
+upsampling_sse2.c
+upsampling_sse41.c
+yuv.c
+yuv_mips32.c
+yuv_mips_dsp_r2.c
+Generating Code...
+Compiling...
+yuv_neon.c
+yuv_sse2.c
+yuv_sse41.c
+Generating Code...
+        cl.exe /nologo /O2 /DNDEBUG /Ioutput\release-dynamic\x64\obj /MD /DWEBP_DLL /I. /Isrc /nologo /W3 /EHsc /c /DWIN32 /D_CRT_SECURE_NO_WARNINGS /DWIN32_LEAN_AND_MEAN /DHAVE_WINCODEC_H /DWEBP_USE_THREAD /Fdoutput\release-dynamic\x64\obj\libwebp_dll.pdb /Fooutput\release-dynamic\x64\obj\utils\ src\utils\bit_reader_utils.c src\utils\color_cache_utils.c src\utils\filters_utils.c src\utils\huffman_utils.c src\utils\quant_levels_dec_utils.c src\utils\rescaler_utils.c src\utils\random_utils.c src\utils\thread_utils.c src\utils\utils.c
+bit_reader_utils.c
+color_cache_utils.c
+filters_utils.c
+huffman_utils.c
+quant_levels_dec_utils.c
+rescaler_utils.c
+random_utils.c
+thread_utils.c
+utils.c
+Generating Code...
+        rc.exe /nologo /l"0x0409" /fooutput\release-dynamic\x64\obj\libwebpdecoder.res src\libwebpdecoder.rc
+        link.exe /DLL /nologo /out:output\release-dynamic\x64\bin\libwebpdecoder.dll /implib:output\release-dynamic\x64\lib\libwebpdecoder_dll.lib  output\release-dynamic\x64\obj\dec\alpha_dec.obj output\release-dynamic\x64\obj\dec\buffer_dec.obj output\release-dynamic\x64\obj\dec\frame_dec.obj output\release-dynamic\x64\obj\dec\idec_dec.obj output\release-dynamic\x64\obj\dec\io_dec.obj output\release-dynamic\x64\obj\dec\quant_dec.obj output\release-dynamic\x64\obj\dec\tree_dec.obj output\release-dynamic\x64\obj\dec\vp8_dec.obj output\release-dynamic\x64\obj\dec\vp8l_dec.obj output\release-dynamic\x64\obj\dec\webp_dec.obj output\release-dynamic\x64\obj\dsp\alpha_processing.obj output\release-dynamic\x64\obj\dsp\alpha_processing_mips_dsp_r2.obj output\release-dynamic\x64\obj\dsp\alpha_processing_neon.obj output\release-dynamic\x64\obj\dsp\alpha_processing_sse2.obj output\release-dynamic\x64\obj\dsp\alpha_processing_sse41.obj output\release-dynamic\x64\obj\dsp\cpu.obj output\release-dynamic\x64\obj\dsp\dec.obj output\release-dynamic\x64\obj\dsp\dec_clip_tables.obj output\release-dynamic\x64\obj\dsp\dec_mips32.obj output\release-dynamic\x64\obj\dsp\dec_mips_dsp_r2.obj output\release-dynamic\x64\obj\dsp\dec_msa.obj output\release-dynamic\x64\obj\dsp\dec_neon.obj output\release-dynamic\x64\obj\dsp\dec_sse2.obj output\release-dynamic\x64\obj\dsp\dec_sse41.obj output\release-dynamic\x64\obj\dsp\filters.obj output\release-dynamic\x64\obj\dsp\filters_mips_dsp_r2.obj output\release-dynamic\x64\obj\dsp\filters_msa.obj output\release-dynamic\x64\obj\dsp\filters_neon.obj output\release-dynamic\x64\obj\dsp\filters_sse2.obj output\release-dynamic\x64\obj\dsp\lossless.obj output\release-dynamic\x64\obj\dsp\lossless_mips_dsp_r2.obj output\release-dynamic\x64\obj\dsp\lossless_msa.obj output\release-dynamic\x64\obj\dsp\lossless_neon.obj output\release-dynamic\x64\obj\dsp\lossless_sse2.obj output\release-dynamic\x64\obj\dsp\lossless_sse41.obj output\release-dynamic\x64\obj\dsp\rescaler.obj output\release-dynamic\x64\obj\dsp\rescaler_mips32.obj output\release-dynamic\x64\obj\dsp\rescaler_mips_dsp_r2.obj output\release-dynamic\x64\obj\dsp\rescaler_msa.obj output\release-dynamic\x64\obj\dsp\rescaler_neon.obj output\release-dynamic\x64\obj\dsp\rescaler_sse2.obj output\release-dynamic\x64\obj\dsp\upsampling.obj output\release-dynamic\x64\obj\dsp\upsampling_mips_dsp_r2.obj output\release-dynamic\x64\obj\dsp\upsampling_msa.obj output\release-dynamic\x64\obj\dsp\upsampling_neon.obj output\release-dynamic\x64\obj\dsp\upsampling_sse2.obj output\release-dynamic\x64\obj\dsp\upsampling_sse41.obj output\release-dynamic\x64\obj\dsp\yuv.obj output\release-dynamic\x64\obj\dsp\yuv_mips32.obj output\release-dynamic\x64\obj\dsp\yuv_mips_dsp_r2.obj output\release-dynamic\x64\obj\dsp\yuv_neon.obj output\release-dynamic\x64\obj\dsp\yuv_sse2.obj output\release-dynamic\x64\obj\dsp\yuv_sse41.obj output\release-dynamic\x64\obj\utils\bit_reader_utils.obj output\release-dynamic\x64\obj\utils\color_cache_utils.obj output\release-dynamic\x64\obj\utils\filters_utils.obj output\release-dynamic\x64\obj\utils\huffman_utils.obj output\release-dynamic\x64\obj\utils\quant_levels_dec_utils.obj output\release-dynamic\x64\obj\utils\rescaler_utils.obj output\release-dynamic\x64\obj\utils\random_utils.obj output\release-dynamic\x64\obj\utils\thread_utils.obj output\release-dynamic\x64\obj\utils\utils.obj output\release-dynamic\x64\obj\libwebpdecoder.res
+   Creating library output\release-dynamic\x64\lib\libwebpdecoder_dll.lib and object output\release-dynamic\x64\lib\libwebpdecoder_dll.exp
+        xcopy output\release-dynamic\x64\obj\*.pdb output\release-dynamic\x64\lib /y
+File not found - *.pdb
+0 File(s) copied
+        cl.exe /nologo /O2 /DNDEBUG /Ioutput\release-dynamic\x64\obj /MD /DWEBP_DLL /I. /Isrc /nologo /W3 /EHsc /c /DWIN32 /D_CRT_SECURE_NO_WARNINGS /DWIN32_LEAN_AND_MEAN /DHAVE_WINCODEC_H /DWEBP_USE_THREAD /Fdoutput\release-dynamic\x64\obj\sharpyuv\ /Fooutput\release-dynamic\x64\obj\sharpyuv\ sharpyuv\sharpyuv.c sharpyuv\sharpyuv_cpu.c sharpyuv\sharpyuv_csp.c sharpyuv\sharpyuv_dsp.c sharpyuv\sharpyuv_gamma.c sharpyuv\sharpyuv_neon.c sharpyuv\sharpyuv_sse2.c
+sharpyuv.c
+sharpyuv_cpu.c
+sharpyuv_csp.c
+sharpyuv_dsp.c
+sharpyuv_gamma.c
+sharpyuv_neon.c
+sharpyuv_sse2.c
+Generating Code...
+        rc.exe /nologo /l"0x0409" /fooutput\release-dynamic\x64\obj\sharpyuv\libsharpyuv.res sharpyuv\libsharpyuv.rc
+        link.exe /DLL /nologo /out:output\release-dynamic\x64\bin\libsharpyuv.dll /implib:output\release-dynamic\x64\lib\libsharpyuv_dll.lib  output\release-dynamic\x64\obj\sharpyuv\sharpyuv.obj output\release-dynamic\x64\obj\sharpyuv\sharpyuv_cpu.obj output\release-dynamic\x64\obj\sharpyuv\sharpyuv_csp.obj output\release-dynamic\x64\obj\sharpyuv\sharpyuv_dsp.obj output\release-dynamic\x64\obj\sharpyuv\sharpyuv_gamma.obj output\release-dynamic\x64\obj\sharpyuv\sharpyuv_neon.obj output\release-dynamic\x64\obj\sharpyuv\sharpyuv_sse2.obj output\release-dynamic\x64\obj\sharpyuv\libsharpyuv.res
+   Creating library output\release-dynamic\x64\lib\libsharpyuv_dll.lib and object output\release-dynamic\x64\lib\libsharpyuv_dll.exp
+        xcopy output\release-dynamic\x64\obj\*.pdb output\release-dynamic\x64\lib /y
+File not found - *.pdb
+0 File(s) copied
+        cl.exe /nologo /O2 /DNDEBUG /Ioutput\release-dynamic\x64\obj /MD /DWEBP_DLL /I. /Isrc /nologo /W3 /EHsc /c /DWIN32 /D_CRT_SECURE_NO_WARNINGS /DWIN32_LEAN_AND_MEAN /DHAVE_WINCODEC_H /DWEBP_USE_THREAD /Fdoutput\release-dynamic\x64\obj\libwebp_dll.pdb /Fooutput\release-dynamic\x64\obj\enc\ src\enc\alpha_enc.c src\enc\analysis_enc.c src\enc\backward_references_cost_enc.c src\enc\backward_references_enc.c src\enc\config_enc.c src\enc\cost_enc.c src\enc\filter_enc.c src\enc\frame_enc.c src\enc\histogram_enc.c src\enc\iterator_enc.c src\enc\near_lossless_enc.c src\enc\picture_enc.c src\enc\picture_csp_enc.c src\enc\picture_psnr_enc.c src\enc\picture_rescale_enc.c src\enc\picture_tools_enc.c src\enc\predictor_enc.c src\enc\quant_enc.c src\enc\syntax_enc.c src\enc\token_enc.c src\enc\tree_enc.c src\enc\vp8l_enc.c src\enc\webp_enc.c
+alpha_enc.c
+analysis_enc.c
+backward_references_cost_enc.c
+backward_references_enc.c
+config_enc.c
+cost_enc.c
+filter_enc.c
+frame_enc.c
+histogram_enc.c
+iterator_enc.c
+near_lossless_enc.c
+picture_enc.c
+picture_csp_enc.c
+picture_psnr_enc.c
+picture_rescale_enc.c
+picture_tools_enc.c
+predictor_enc.c
+quant_enc.c
+syntax_enc.c
+token_enc.c
+Generating Code...
+Compiling...
+tree_enc.c
+vp8l_enc.c
+webp_enc.c
+Generating Code...
+        cl.exe /nologo /O2 /DNDEBUG /Ioutput\release-dynamic\x64\obj /MD /DWEBP_DLL /I. /Isrc /nologo /W3 /EHsc /c /DWIN32 /D_CRT_SECURE_NO_WARNINGS /DWIN32_LEAN_AND_MEAN /DHAVE_WINCODEC_H /DWEBP_USE_THREAD /Fdoutput\release-dynamic\x64\obj\libwebp_dll.pdb /Fooutput\release-dynamic\x64\obj\dsp\ src\dsp\cost.c src\dsp\cost_mips32.c src\dsp\cost_mips_dsp_r2.c src\dsp\cost_neon.c src\dsp\cost_sse2.c src\dsp\enc.c src\dsp\enc_mips32.c src\dsp\enc_mips_dsp_r2.c src\dsp\enc_msa.c src\dsp\enc_neon.c src\dsp\enc_sse2.c src\dsp\enc_sse41.c src\dsp\lossless_enc.c src\dsp\lossless_enc_mips32.c src\dsp\lossless_enc_mips_dsp_r2.c src\dsp\lossless_enc_msa.c src\dsp\lossless_enc_neon.c src\dsp\lossless_enc_sse2.c src\dsp\lossless_enc_sse41.c src\dsp\ssim.c src\dsp\ssim_sse2.c
+cost.c
+cost_mips32.c
+cost_mips_dsp_r2.c
+cost_neon.c
+cost_sse2.c
+enc.c
+enc_mips32.c
+enc_mips_dsp_r2.c
+enc_msa.c
+enc_neon.c
+enc_sse2.c
+enc_sse41.c
+lossless_enc.c
+lossless_enc_mips32.c
+lossless_enc_mips_dsp_r2.c
+lossless_enc_msa.c
+lossless_enc_neon.c
+lossless_enc_sse2.c
+lossless_enc_sse41.c
+ssim.c
+Generating Code...
+Compiling...
+ssim_sse2.c
+Generating Code...
+        cl.exe /nologo /O2 /DNDEBUG /Ioutput\release-dynamic\x64\obj /MD /DWEBP_DLL /I. /Isrc /nologo /W3 /EHsc /c /DWIN32 /D_CRT_SECURE_NO_WARNINGS /DWIN32_LEAN_AND_MEAN /DHAVE_WINCODEC_H /DWEBP_USE_THREAD /Fdoutput\release-dynamic\x64\obj\libwebp_dll.pdb /Fooutput\release-dynamic\x64\obj\utils\ src\utils\bit_writer_utils.c src\utils\huffman_encode_utils.c src\utils\quant_levels_utils.c
+bit_writer_utils.c
+huffman_encode_utils.c
+quant_levels_utils.c
+Generating Code...
+        rc.exe /nologo /l"0x0409" /fooutput\release-dynamic\x64\obj\libwebp.res src\libwebp.rc
+        link.exe /DLL /nologo /out:output\release-dynamic\x64\bin\libwebp.dll /implib:output\release-dynamic\x64\lib\libwebp_dll.lib  output\release-dynamic\x64\obj\dec\alpha_dec.obj output\release-dynamic\x64\obj\dec\buffer_dec.obj output\release-dynamic\x64\obj\dec\frame_dec.obj output\release-dynamic\x64\obj\dec\idec_dec.obj output\release-dynamic\x64\obj\dec\io_dec.obj output\release-dynamic\x64\obj\dec\quant_dec.obj output\release-dynamic\x64\obj\dec\tree_dec.obj output\release-dynamic\x64\obj\dec\vp8_dec.obj output\release-dynamic\x64\obj\dec\vp8l_dec.obj output\release-dynamic\x64\obj\dec\webp_dec.obj output\release-dynamic\x64\obj\dsp\alpha_processing.obj output\release-dynamic\x64\obj\dsp\alpha_processing_mips_dsp_r2.obj output\release-dynamic\x64\obj\dsp\alpha_processing_neon.obj output\release-dynamic\x64\obj\dsp\alpha_processing_sse2.obj output\release-dynamic\x64\obj\dsp\alpha_processing_sse41.obj output\release-dynamic\x64\obj\dsp\cpu.obj output\release-dynamic\x64\obj\dsp\dec.obj output\release-dynamic\x64\obj\dsp\dec_clip_tables.obj output\release-dynamic\x64\obj\dsp\dec_mips32.obj output\release-dynamic\x64\obj\dsp\dec_mips_dsp_r2.obj output\release-dynamic\x64\obj\dsp\dec_msa.obj output\release-dynamic\x64\obj\dsp\dec_neon.obj output\release-dynamic\x64\obj\dsp\dec_sse2.obj output\release-dynamic\x64\obj\dsp\dec_sse41.obj output\release-dynamic\x64\obj\dsp\filters.obj output\release-dynamic\x64\obj\dsp\filters_mips_dsp_r2.obj output\release-dynamic\x64\obj\dsp\filters_msa.obj output\release-dynamic\x64\obj\dsp\filters_neon.obj output\release-dynamic\x64\obj\dsp\filters_sse2.obj output\release-dynamic\x64\obj\dsp\lossless.obj output\release-dynamic\x64\obj\dsp\lossless_mips_dsp_r2.obj output\release-dynamic\x64\obj\dsp\lossless_msa.obj output\release-dynamic\x64\obj\dsp\lossless_neon.obj output\release-dynamic\x64\obj\dsp\lossless_sse2.obj output\release-dynamic\x64\obj\dsp\lossless_sse41.obj output\release-dynamic\x64\obj\dsp\rescaler.obj output\release-dynamic\x64\obj\dsp\rescaler_mips32.obj output\release-dynamic\x64\obj\dsp\rescaler_mips_dsp_r2.obj output\release-dynamic\x64\obj\dsp\rescaler_msa.obj output\release-dynamic\x64\obj\dsp\rescaler_neon.obj output\release-dynamic\x64\obj\dsp\rescaler_sse2.obj output\release-dynamic\x64\obj\dsp\upsampling.obj output\release-dynamic\x64\obj\dsp\upsampling_mips_dsp_r2.obj output\release-dynamic\x64\obj\dsp\upsampling_msa.obj output\release-dynamic\x64\obj\dsp\upsampling_neon.obj output\release-dynamic\x64\obj\dsp\upsampling_sse2.obj output\release-dynamic\x64\obj\dsp\upsampling_sse41.obj output\release-dynamic\x64\obj\dsp\yuv.obj output\release-dynamic\x64\obj\dsp\yuv_mips32.obj output\release-dynamic\x64\obj\dsp\yuv_mips_dsp_r2.obj output\release-dynamic\x64\obj\dsp\yuv_neon.obj output\release-dynamic\x64\obj\dsp\yuv_sse2.obj output\release-dynamic\x64\obj\dsp\yuv_sse41.obj output\release-dynamic\x64\obj\utils\bit_reader_utils.obj output\release-dynamic\x64\obj\utils\color_cache_utils.obj output\release-dynamic\x64\obj\utils\filters_utils.obj output\release-dynamic\x64\obj\utils\huffman_utils.obj output\release-dynamic\x64\obj\utils\quant_levels_dec_utils.obj output\release-dynamic\x64\obj\utils\rescaler_utils.obj output\release-dynamic\x64\obj\utils\random_utils.obj output\release-dynamic\x64\obj\utils\thread_utils.obj output\release-dynamic\x64\obj\utils\utils.obj output\release-dynamic\x64\obj\enc\alpha_enc.obj output\release-dynamic\x64\obj\enc\analysis_enc.obj output\release-dynamic\x64\obj\enc\backward_references_cost_enc.obj output\release-dynamic\x64\obj\enc\backward_references_enc.obj output\release-dynamic\x64\obj\enc\config_enc.obj output\release-dynamic\x64\obj\enc\cost_enc.obj output\release-dynamic\x64\obj\enc\filter_enc.obj output\release-dynamic\x64\obj\enc\frame_enc.obj output\release-dynamic\x64\obj\enc\histogram_enc.obj output\release-dynamic\x64\obj\enc\iterator_enc.obj output\release-dynamic\x64\obj\enc\near_lossless_enc.obj output\release-dynamic\x64\obj\enc\picture_enc.obj output\release-dynamic\x64\obj\enc\picture_csp_enc.obj output\release-dynamic\x64\obj\enc\picture_psnr_enc.obj output\release-dynamic\x64\obj\enc\picture_rescale_enc.obj output\release-dynamic\x64\obj\enc\picture_tools_enc.obj output\release-dynamic\x64\obj\enc\predictor_enc.obj output\release-dynamic\x64\obj\enc\quant_enc.obj output\release-dynamic\x64\obj\enc\syntax_enc.obj output\release-dynamic\x64\obj\enc\token_enc.obj output\release-dynamic\x64\obj\enc\tree_enc.obj output\release-dynamic\x64\obj\enc\vp8l_enc.obj output\release-dynamic\x64\obj\enc\webp_enc.obj output\release-dynamic\x64\obj\dsp\cost.obj output\release-dynamic\x64\obj\dsp\cost_mips32.obj output\release-dynamic\x64\obj\dsp\cost_mips_dsp_r2.obj output\release-dynamic\x64\obj\dsp\cost_neon.obj output\release-dynamic\x64\obj\dsp\cost_sse2.obj output\release-dynamic\x64\obj\dsp\enc.obj output\release-dynamic\x64\obj\dsp\enc_mips32.obj output\release-dynamic\x64\obj\dsp\enc_mips_dsp_r2.obj output\release-dynamic\x64\obj\dsp\enc_msa.obj output\release-dynamic\x64\obj\dsp\enc_neon.obj output\release-dynamic\x64\obj\dsp\enc_sse2.obj output\release-dynamic\x64\obj\dsp\enc_sse41.obj output\release-dynamic\x64\obj\dsp\lossless_enc.obj output\release-dynamic\x64\obj\dsp\lossless_enc_mips32.obj output\release-dynamic\x64\obj\dsp\lossless_enc_mips_dsp_r2.obj output\release-dynamic\x64\obj\dsp\lossless_enc_msa.obj output\release-dynamic\x64\obj\dsp\lossless_enc_neon.obj output\release-dynamic\x64\obj\dsp\lossless_enc_sse2.obj output\release-dynamic\x64\obj\dsp\lossless_enc_sse41.obj output\release-dynamic\x64\obj\dsp\ssim.obj output\release-dynamic\x64\obj\dsp\ssim_sse2.obj output\release-dynamic\x64\obj\utils\bit_writer_utils.obj output\release-dynamic\x64\obj\utils\huffman_encode_utils.obj output\release-dynamic\x64\obj\utils\quant_levels_utils.obj output\release-dynamic\x64\lib\libsharpyuv_dll.lib output\release-dynamic\x64\lib\libsharpyuv_dll.lib output\release-dynamic\x64\obj\libwebp.res
+   Creating library output\release-dynamic\x64\lib\libwebp_dll.lib and object output\release-dynamic\x64\lib\libwebp_dll.exp
+        xcopy output\release-dynamic\x64\obj\*.pdb output\release-dynamic\x64\lib /y
+File not found - *.pdb
+0 File(s) copied
+        cl.exe /nologo /O2 /DNDEBUG /Ioutput\release-dynamic\x64\obj /MD /DWEBP_DLL /I. /Isrc /nologo /W3 /EHsc /c /DWIN32 /D_CRT_SECURE_NO_WARNINGS /DWIN32_LEAN_AND_MEAN /DHAVE_WINCODEC_H /DWEBP_USE_THREAD /Fdoutput\release-dynamic\x64\obj\examples\ /Fooutput\release-dynamic\x64\obj\examples\ examples\cwebp.c
+cwebp.c
+        cl.exe /nologo /O2 /DNDEBUG /Ioutput\release-dynamic\x64\obj /MD /DWEBP_DLL /I. /Isrc /nologo /W3 /EHsc /c /DWIN32 /D_CRT_SECURE_NO_WARNINGS /DWIN32_LEAN_AND_MEAN /DHAVE_WINCODEC_H /DWEBP_USE_THREAD /Fdoutput\release-dynamic\x64\obj\imageio\ /Fooutput\release-dynamic\x64\obj\imageio\ imageio\image_dec.c imageio\jpegdec.c imageio\metadata.c imageio\pngdec.c imageio\pnmdec.c imageio\tiffdec.c imageio\webpdec.c imageio\wicdec.c
+image_dec.c
+jpegdec.c
+metadata.c
+pngdec.c
+pnmdec.c
+tiffdec.c
+webpdec.c
+wicdec.c
+Generating Code...
+        cl.exe /nologo /O2 /DNDEBUG /Ioutput\release-dynamic\x64\obj /MD /DWEBP_DLL /I. /Isrc /nologo /W3 /EHsc /c /DWIN32 /D_CRT_SECURE_NO_WARNINGS /DWIN32_LEAN_AND_MEAN /DHAVE_WINCODEC_H /DWEBP_USE_THREAD /Fdoutput\release-dynamic\x64\obj\imageio\ /Fooutput\release-dynamic\x64\obj\imageio\ imageio\imageio_util.c
+imageio_util.c
+        cl.exe /nologo /O2 /DNDEBUG /Ioutput\release-dynamic\x64\obj /MD /DWEBP_DLL /I. /Isrc /nologo /W3 /EHsc /c /DWIN32 /D_CRT_SECURE_NO_WARNINGS /DWIN32_LEAN_AND_MEAN /DHAVE_WINCODEC_H /DWEBP_USE_THREAD /Fdoutput\release-dynamic\x64\obj\libwebp_dll.pdb /Fooutput\release-dynamic\x64\obj\demux\ src\demux\anim_decode.c src\demux\demux.c
+anim_decode.c
+demux.c
+Generating Code...
+        rc.exe /nologo /l"0x0409" /fooutput\release-dynamic\x64\obj\demux\libwebpdemux.res src\demux\libwebpdemux.rc
+        link.exe /DLL /nologo /out:output\release-dynamic\x64\bin\libwebpdemux.dll /implib:output\release-dynamic\x64\lib\libwebpdemux_dll.lib  output\release-dynamic\x64\obj\demux\anim_decode.obj output\release-dynamic\x64\obj\demux\demux.obj output\release-dynamic\x64\lib\libwebp_dll.lib output\release-dynamic\x64\obj\demux\libwebpdemux.res
+   Creating library output\release-dynamic\x64\lib\libwebpdemux_dll.lib and object output\release-dynamic\x64\lib\libwebpdemux_dll.exp
+        xcopy output\release-dynamic\x64\obj\*.pdb output\release-dynamic\x64\lib /y
+File not found - *.pdb
+0 File(s) copied
+        cl.exe /nologo /O2 /DNDEBUG /Ioutput\release-dynamic\x64\obj /MD /DWEBP_DLL /I. /Isrc /nologo /W3 /EHsc /c /DWIN32 /D_CRT_SECURE_NO_WARNINGS /DWIN32_LEAN_AND_MEAN /DHAVE_WINCODEC_H /DWEBP_USE_THREAD /Fdoutput\release-dynamic\x64\obj\examples\ /Fooutput\release-dynamic\x64\obj\examples\ examples\example_util.c
+example_util.c
+        link.exe /nologo /LARGEADDRESSAWARE /MANIFEST:EMBED /NXCOMPAT /DYNAMICBASE  /OUT:output\release-dynamic\x64\bin\cwebp.exe output\release-dynamic\x64\obj\examples\cwebp.obj output\release-dynamic\x64\obj\imageio\image_dec.obj output\release-dynamic\x64\obj\imageio\jpegdec.obj output\release-dynamic\x64\obj\imageio\metadata.obj output\release-dynamic\x64\obj\imageio\pngdec.obj output\release-dynamic\x64\obj\imageio\pnmdec.obj output\release-dynamic\x64\obj\imageio\tiffdec.obj output\release-dynamic\x64\obj\imageio\webpdec.obj output\release-dynamic\x64\obj\imageio\wicdec.obj output\release-dynamic\x64\obj\imageio\imageio_util.obj output\release-dynamic\x64\lib\libwebpdemux_dll.lib output\release-dynamic\x64\lib\libsharpyuv_dll.lib output\release-dynamic\x64\obj\examples\example_util.obj output\release-dynamic\x64\lib\libwebp_dll.lib ole32.lib windowscodecs.lib shlwapi.lib
+        cl.exe /nologo /O2 /DNDEBUG /Ioutput\release-dynamic\x64\obj /MD /DWEBP_DLL /I. /Isrc /nologo /W3 /EHsc /c /DWIN32 /D_CRT_SECURE_NO_WARNINGS /DWIN32_LEAN_AND_MEAN /DHAVE_WINCODEC_H /DWEBP_USE_THREAD /Fdoutput\release-dynamic\x64\obj\examples\ /Fooutput\release-dynamic\x64\obj\examples\ examples\dwebp.c
+dwebp.c
+        cl.exe /nologo /O2 /DNDEBUG /Ioutput\release-dynamic\x64\obj /MD /DWEBP_DLL /I. /Isrc /nologo /W3 /EHsc /c /DWIN32 /D_CRT_SECURE_NO_WARNINGS /DWIN32_LEAN_AND_MEAN /DHAVE_WINCODEC_H /DWEBP_USE_THREAD /Fdoutput\release-dynamic\x64\obj\imageio\ /Fooutput\release-dynamic\x64\obj\imageio\ imageio\image_enc.c
+image_enc.c
+        link.exe /nologo /LARGEADDRESSAWARE /MANIFEST:EMBED /NXCOMPAT /DYNAMICBASE  /OUT:output\release-dynamic\x64\bin\dwebp.exe output\release-dynamic\x64\obj\examples\dwebp.obj output\release-dynamic\x64\obj\imageio\image_dec.obj output\release-dynamic\x64\obj\imageio\jpegdec.obj output\release-dynamic\x64\obj\imageio\metadata.obj output\release-dynamic\x64\obj\imageio\pngdec.obj output\release-dynamic\x64\obj\imageio\pnmdec.obj output\release-dynamic\x64\obj\imageio\tiffdec.obj output\release-dynamic\x64\obj\imageio\webpdec.obj output\release-dynamic\x64\obj\imageio\wicdec.obj output\release-dynamic\x64\obj\imageio\image_enc.obj output\release-dynamic\x64\obj\imageio\imageio_util.obj output\release-dynamic\x64\lib\libwebpdemux_dll.lib output\release-dynamic\x64\obj\examples\example_util.obj output\release-dynamic\x64\lib\libwebp_dll.lib ole32.lib windowscodecs.lib shlwapi.lib
+
+C:\Users\Pierr\Downloads\libwebp-1.3.2\libwebp-1.3.2 cd output
+
+C:\Users\Pierr\Downloads\libwebp-1.3.2\libwebp-1.3.2\output d
+ Volume in drive C is WOTAN
+ Volume Serial Number is C494-35C2
+
+ Directory of C:\Users\Pierr\Downloads\libwebp-1.3.2\libwebp-1.3.2\output
+
+02/12/2023  17:22    <DIR>          .
+02/12/2023  17:22    <DIR>          ..
+02/12/2023  17:24    <DIR>          release-dynamic
+               0 File(s)              0 bytes
+               3 Dir(s)  1 662 666 600 448 bytes free
+
+C:\Users\Pierr\Downloads\libwebp-1.3.2\libwebp-1.3.2\output cd release-dynamic
+
+C:\Users\Pierr\Downloads\libwebp-1.3.2\libwebp-1.3.2\output\release-dynamic d
+ Volume in drive C is WOTAN
+ Volume Serial Number is C494-35C2
+
+ Directory of C:\Users\Pierr\Downloads\libwebp-1.3.2\libwebp-1.3.2\output\release-dynamic
+
+02/12/2023  17:24    <DIR>          .
+02/12/2023  17:22    <DIR>          ..
+02/12/2023  17:24    <DIR>          x64
+02/12/2023  17:22    <DIR>          x86
+               0 File(s)              0 bytes
+               4 Dir(s)  1 662 666 440 704 bytes free
+
+C:\Users\Pierr\Downloads\libwebp-1.3.2\libwebp-1.3.2\output\release-dynamic cd x64
+
+C:\Users\Pierr\Downloads\libwebp-1.3.2\libwebp-1.3.2\output\release-dynamic\x64 d
+ Volume in drive C is WOTAN
+ Volume Serial Number is C494-35C2
+
+ Directory of C:\Users\Pierr\Downloads\libwebp-1.3.2\libwebp-1.3.2\output\release-dynamic\x64
+
+02/12/2023  17:24    <DIR>          .
+02/12/2023  17:24    <DIR>          ..
+02/12/2023  17:24    <DIR>          bin
+02/12/2023  17:24    <DIR>          include
+02/12/2023  17:24    <DIR>          lib
+02/12/2023  17:24    <DIR>          obj
+               0 File(s)              0 bytes
+               6 Dir(s)  1 662 666 047 488 bytes free
+
+C:\Users\Pierr\Downloads\libwebp-1.3.2\libwebp-1.3.2\output\release-dynamic\x64 cd bin
+
+C:\Users\Pierr\Downloads\libwebp-1.3.2\libwebp-1.3.2\output\release-dynamic\x64\bin d
+ Volume in drive C is WOTAN
+ Volume Serial Number is C494-35C2
+
+ Directory of C:\Users\Pierr\Downloads\libwebp-1.3.2\libwebp-1.3.2\output\release-dynamic\x64\bin
+
+02/12/2023  17:24    <DIR>          .
+02/12/2023  17:24    <DIR>          ..
+02/12/2023  17:24            45 056 cwebp.exe
+02/12/2023  17:24            26 624 dwebp.exe
+02/12/2023  17:24            22 528 libsharpyuv.dll
+02/12/2023  17:24           393 728 libwebp.dll
+02/12/2023  17:24           201 728 libwebpdecoder.dll
+02/12/2023  17:24            16 896 libwebpdemux.dll
+               6 File(s)        706 560 bytes
+               2 Dir(s)  1 662 665 064 448 bytes free
+
+C:\Users\Pierr\Downloads\libwebp-1.3.2\libwebp-1.3.2\output\release-dynamic\x64\bin start .
+
+C:\Users\Pierr\Downloads\libwebp-1.3.2\libwebp-1.3.2\output\release-dynamic\x64\bin
+C:\Users\Pierr\Downloads\libwebp-1.3.2\libwebp-1.3.2\output\release-dynamic\x64\bin
+C:\Users\Pierr\Downloads\libwebp-1.3.2\libwebp-1.3.2\output\release-dynamic\x64\bin cd ..
+
+C:\Users\Pierr\Downloads\libwebp-1.3.2\libwebp-1.3.2\output\release-dynamic\x64 cd ..
+
+C:\Users\Pierr\Downloads\libwebp-1.3.2\libwebp-1.3.2\output\release-dynamic cd x86
+
+C:\Users\Pierr\Downloads\libwebp-1.3.2\libwebp-1.3.2\output\release-dynamic\x86 d
+ Volume in drive C is WOTAN
+ Volume Serial Number is C494-35C2
+
+ Directory of C:\Users\Pierr\Downloads\libwebp-1.3.2\libwebp-1.3.2\output\release-dynamic\x86
+
+02/12/2023  17:22    <DIR>          .
+02/12/2023  17:24    <DIR>          ..
+02/12/2023  17:22    <DIR>          bin
+02/12/2023  17:22    <DIR>          include
+02/12/2023  17:22    <DIR>          lib
+02/12/2023  17:22    <DIR>          obj
+               0 File(s)              0 bytes
+               6 Dir(s)  1 662 289 395 712 bytes free
+
+C:\Users\Pierr\Downloads\libwebp-1.3.2\libwebp-1.3.2\output\release-dynamic\x86 cd bin
+
+C:\Users\Pierr\Downloads\libwebp-1.3.2\libwebp-1.3.2\output\release-dynamic\x86\bin f
+'f' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\Pierr\Downloads\libwebp-1.3.2\libwebp-1.3.2\output\release-dynamic\x86\bin dumpbin
+Microsoft (R) COFF/PE Dumper Version 14.38.33130.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+usage: DUMPBIN [options] [files]
+
+   options:
+
+      /ALL
+      /ARCHIVEMEMBERS
+      /CLRHEADER
+      /DEPENDENTS
+      /DIRECTIVES
+      /DISASM[:{BYTES|NOBYTES|NOWIDE|WIDE}]
+      /ERRORREPORT:{NONE|PROMPT|QUEUE|SEND}
+      /EXPORTS
+      /FPO
+      /HEADERS
+      /IMPORTS[:filename]
+      /LINENUMBERS
+      /LINKERMEMBER[:{1|2|4|8|16|32}]
+      /LOADCONFIG
+      /NOLOGO
+      /NOPDB
+      /NOSECTION:name
+      /OUT:filename
+      /OTHERARCHEXPORTS (requires /EXPORTS)
+      /PDATA
+      /PDBPATH[:VERBOSE]
+      /RANGE:vaMin[,vaMax]
+      /RAWDATA[:{NONE|1|2|4|8}[,#]]
+      /RELOCATIONS
+      /SECTION:name
+(press <return> to continue)      /SUMMARY
+      /SYMBOLS
+      /TLS
+      /UNWINDINFO
+^C
+C:\Users\Pierr\Downloads\libwebp-1.3.2\libwebp-1.3.2\output\release-dynamic\x86\bin
+
+C:\Users\Pierr\Downloads\libwebp-1.3.2\libwebp-1.3.2\output\release-dynamic\x86\bin dumpbin /exports libwebp.dll
+Microsoft (R) COFF/PE Dumper Version 14.38.33130.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file libwebp.dll
+
+File Type: DLL
+
+  Section contains the following exports for libwebp.dll
+
+    00000000 characteristics
+    FFFFFFFF time date stamp
+        0.00 version
+           1 ordinal base
+          85 number of functions
+          85 number of names
+
+    ordinal hint RVA      name
+
+          1    0 00007410 VP8CheckSignature
+          2    1 0005F008 VP8GetCPUInfo
+          3    2 00007C70 VP8GetInfo
+          4    3 0000A210 VP8LCheckSignature
+          5    4 0000A780 VP8LGetInfo
+          6    5 0003D060 WebPBlendAlpha
+          7    6 0003D480 WebPCleanupTransparentArea
+          8    7 00030FF0 WebPConfigInitInternal
+          9    8 00031190 WebPConfigLosslessPreset
+         10    9 0002BDC0 WebPCopyPixels
+         11    A 0002BDF0 WebPCopyPlane
+         12    B 0000B200 WebPDecode
+         13    C 0000B3A0 WebPDecodeARGB
+         14    D 0000B3C0 WebPDecodeARGBInto
+         15    E 0000B3E0 WebPDecodeBGR
+         16    F 0000B400 WebPDecodeBGRA
+         17   10 0000B420 WebPDecodeBGRAInto
+         18   11 0000B440 WebPDecodeBGRInto
+         19   12 0000B460 WebPDecodeRGB
+         20   13 0000B480 WebPDecodeRGBA
+         21   14 0000B4A0 WebPDecodeRGBAInto
+         22   15 0000B4C0 WebPDecodeRGBInto
+         23   16 0000B4E0 WebPDecodeYUV
+         24   17 0000B5A0 WebPDecodeYUVInto
+         25   18 00047CA0 WebPEncode
+         26   19 00038D10 WebPEncodeBGR
+         27   1A 00038D40 WebPEncodeBGRA
+         28   1B 00038D70 WebPEncodeLosslessBGR
+         29   1C 00038DA0 WebPEncodeLosslessBGRA
+         30   1D 00038DD0 WebPEncodeLosslessRGB
+         31   1E 00038E00 WebPEncodeLosslessRGBA
+         32   1F 00038E30 WebPEncodeRGB
+         33   20 00038E60 WebPEncodeRGBA
+         34   21 0002BE30 WebPFree
+         35   22 00001BF0 WebPFreeDecBuffer
+         36   23 0002BE40 WebPGetColorPalette
+         37   24 00007E60 WebPGetDecoderVersion
+         38   25 00007E60 WebPGetEncoderVersion
+         39   26 0000B6C0 WebPGetFeaturesInternal
+         40   27 0000B720 WebPGetInfo
+         41   28 0002BD60 WebPGetWorkerInterface
+         42   29 00003C40 WebPIAppend
+         43   2A 00003DF0 WebPIDecGetRGB
+         44   2B 00003E60 WebPIDecGetYUVA
+         45   2C 00003F20 WebPIDecode
+         46   2D 00003FC0 WebPIDecodedArea
+         47   2E 00004040 WebPIDelete
+         48   2F 000040C0 WebPINewDecoder
+         49   30 000040D0 WebPINewRGB
+         50   31 00004140 WebPINewYUV
+         51   32 00004180 WebPINewYUVA
+         52   33 00004330 WebPIUpdate
+         53   34 00001C20 WebPInitDecBufferInternal
+         54   35 0000B7C0 WebPInitDecoderConfigInternal
+         55   36 0002BFB0 WebPMalloc
+         56   37 00038E90 WebPMemoryWrite
+         57   38 00038F50 WebPMemoryWriterClear
+         58   39 00038F80 WebPMemoryWriterInit
+         59   3A 0003B6B0 WebPPictureARGBToYUVA
+         60   3B 0003B720 WebPPictureARGBToYUVADithered
+         61   3C 00038FA0 WebPPictureAlloc
+         62   3D 0003C860 WebPPictureCopy
+         63   3E 0003C960 WebPPictureCrop
+         64   3F 0003C2A0 WebPPictureDistortion
+         65   40 000393D0 WebPPictureFree
+         66   41 0003B790 WebPPictureHasTransparency
+         67   42 0003B7E0 WebPPictureImportBGR
+         68   43 0003B810 WebPPictureImportBGRA
+         69   44 0003B8D0 WebPPictureImportBGRX
+         70   45 0003B900 WebPPictureImportRGB
+         71   46 0003B930 WebPPictureImportRGBA
+         72   47 0003B9F0 WebPPictureImportRGBX
+         73   48 00039450 WebPPictureInitInternal
+         74   49 0003CB80 WebPPictureIsView
+         75   4A 0003CBB0 WebPPictureRescale
+         76   4B 0003BA20 WebPPictureSharpARGBToYUVA
+         77   4C 0003BA20 WebPPictureSmartARGBToYUVA
+         78   4D 0003CE70 WebPPictureView
+         79   4E 0003BA70 WebPPictureYUVAToARGB
+         80   4F 0003C500 WebPPlaneDistortion
+         81   50 0002BFD0 WebPSafeCalloc
+         82   51 0002BE30 WebPSafeFree
+         83   52 0002C030 WebPSafeMalloc
+         84   53 0002BD70 WebPSetWorkerInterface
+         85   54 000311D0 WebPValidateConfig
+
+  Summary
+
+        1000 .data
+        9000 .rdata
+        2000 .reloc
+        1000 .rsrc
+       55000 .text
