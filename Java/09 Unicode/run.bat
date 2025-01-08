@@ -1,1 +1,1 @@
-java Unicode %4 %5 %6
+java Unicode %*
