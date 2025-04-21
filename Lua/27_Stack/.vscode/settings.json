@@ -1,18 +1,8 @@
 {
-    "spellright.language": ["en"],
-    "spellright.documentTypes": [
-        "markdown",
-        "latex",
-        "plaintext"
-    ],
     "files.associations": {
         "stdbool.h": "c",
         "time.h": "c"
     },
-    "peacock.affectActivityBar": true,
-    "peacock.affectTitleBar": true,
-    "peacock.affectStatusBar": true,
-    "peacock.color": "#215732",
     "workbench.colorCustomizations": {
         "activityBar.background": "#2f7c47",
         "activityBar.activeBorder": "#422c74",

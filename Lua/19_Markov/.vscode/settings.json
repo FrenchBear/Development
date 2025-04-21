@@ -19,11 +19,4 @@
         "titleBar.inactiveForeground": "#e7e7e799"
     },
     "peacock.color": "#451195",
-    "spellright.language": [
-        "en"
-    ],
-    "spellright.documentTypes": [
-        "markdown",
-        "latex"
-    ]
 }
