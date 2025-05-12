@@ -10,7 +10,8 @@ require 'u8a'
 if package.config:sub(1,1)=='\\' then os.execute("chcp 65001 >NUL") end
 
 
-local filename = Utf8toAnsi1252([[Data utf-8\prénoms-utf8.txt]])
+-- local filename = Utf8toAnsi1252([[C:\Development\TestFiles\Text\prénoms-utf8.txt]])
+local filename = [[C:\Development\TestFiles\Text\prénoms-utf8.txt]]
 local n = 5
 
 local f = assert(io.open(filename, "r"))

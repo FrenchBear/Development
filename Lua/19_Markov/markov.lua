@@ -54,7 +54,7 @@ function AllWordsSplitBySpace(file)
     end
 end
 
-local file = 'Harry Potter and the Prisoner of Azkaban.txt'
+local file = [[C:\Development\TestFiles\Text\Harry Potter and the Prisoner of Azkaban.txt]]
 
 -- Simple version with a memory of 1 predecessor
 function Markov1()

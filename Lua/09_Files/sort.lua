@@ -11,8 +11,8 @@ require 'common_fs'
 -- For VSCode, debug terminal is not utf8 by default
 if package.config:sub(1,1)=='\\' then os.execute("chcp 65001 >NUL") end
 
-local infile = Utf8toAnsi1252([[ZData utf-8\prénoms-utf8.txt]])
-local outfile = Utf8toAnsi1252([[C:\temp\prénoms-utf8-triés.txt]])
+local infile = [[C:\Development\TestFiles\Text\prénoms-utf8.txt]]
+local outfile = [[C:\temp\prénoms-utf8-triés.txt]]
 -- local infile = nil
 -- local outfile = nil
 

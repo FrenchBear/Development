@@ -9,7 +9,7 @@ require 'u8a'
 -- For VSCode, debug terminal is not utf8 by default
 if package.config:sub(1,1)=='\\' then os.execute("chcp 65001 >NUL") end
 
-local filename = Utf8toAnsi1252([[Data utf-8\prénoms-utf8.txt]])
+local filename = [[C:\Development\TestFiles\Text\prénoms-utf8.txt]]
 local n = 5
 
 -- Read all lines, only keeping the last count lines
