@@ -2,7 +2,7 @@ Option Strict Off
 Option Explicit On
 Friend Class frmAutomatique
 	Inherits System.Windows.Forms.Form
-#Region "Code généré par le Concepteur Windows Form "
+#Region "Code gÃ©nÃ©rÃ© par le Concepteur Windows Form "
 	Public Sub New()
 		MyBase.New()
 		If m_vb6FormDefInstance Is Nothing Then
@@ -10,7 +10,7 @@ Friend Class frmAutomatique
 				m_vb6FormDefInstance = Me
 			Else
 				Try 
-					'Pour le formulaire de démarrage, la première instance créée est l'instance par défaut.
+					'Pour le formulaire de dÃ©marrage, la premiÃ¨re instance crÃ©Ã©e est l'instance par dÃ©faut.
 					If System.Reflection.Assembly.GetExecutingAssembly.EntryPoint.DeclaringType Is Me.GetType Then
 						m_vb6FormDefInstance = Me
 					End If
@@ -21,7 +21,7 @@ Friend Class frmAutomatique
 		'Cet appel est requis par le Concepteur Windows Form.
 		InitializeComponent()
 	End Sub
-	'La méthode substituée Dispose du formulaire pour nettoyer la liste des composants.
+	'La mÃ©thode substituÃ©e Dispose du formulaire pour nettoyer la liste des composants.
 	Protected Overloads Overrides Sub Dispose(ByVal Disposing As Boolean)
 		If Disposing Then
 			If Not components Is Nothing Then
@@ -34,25 +34,25 @@ Friend Class frmAutomatique
 	Private components As System.ComponentModel.IContainer
 	Public ToolTip1 As System.Windows.Forms.ToolTip
 	Public WithEvents optAucun As System.Windows.Forms.RadioButton
-	Public WithEvents txtDélai As System.Windows.Forms.TextBox
+	Public WithEvents txtDÃ©lai As System.Windows.Forms.TextBox
 	Public WithEvents optSuivant As System.Windows.Forms.RadioButton
-	Public WithEvents optAléatoire As System.Windows.Forms.RadioButton
+	Public WithEvents optAlÃ©atoire As System.Windows.Forms.RadioButton
 	Public WithEvents btnOk As System.Windows.Forms.Button
 	Public WithEvents btnAnnuler As System.Windows.Forms.Button
 	Public WithEvents chkOk As System.Windows.Forms.CheckBox
 	Public WithEvents Label1 As System.Windows.Forms.Label
-	'REMARQUE : la procédure suivante est requise par le Concepteur Windows Form
-	'Il peut être modifié à l'aide du Concepteur Windows Form.
-	'Ne pas le modifier à l'aide de l'éditeur de code.
+	'REMARQUEÂ : la procÃ©dure suivante est requise par le Concepteur Windows Form
+	'Il peut Ãªtre modifiÃ© Ã  l'aide du Concepteur Windows Form.
+	'Ne pas le modifier Ã  l'aide de l'Ã©diteur de code.
 	<System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
 		Dim resources As System.Resources.ResourceManager = New System.Resources.ResourceManager(GetType(frmAutomatique))
 		Me.components = New System.ComponentModel.Container()
 		Me.ToolTip1 = New System.Windows.Forms.ToolTip(components)
 		Me.ToolTip1.Active = True
 		Me.optAucun = New System.Windows.Forms.RadioButton
-		Me.txtDélai = New System.Windows.Forms.TextBox
+		Me.txtDÃ©lai = New System.Windows.Forms.TextBox
 		Me.optSuivant = New System.Windows.Forms.RadioButton
-		Me.optAléatoire = New System.Windows.Forms.RadioButton
+		Me.optAlÃ©atoire = New System.Windows.Forms.RadioButton
 		Me.btnOk = New System.Windows.Forms.Button
 		Me.btnAnnuler = New System.Windows.Forms.Button
 		Me.chkOk = New System.Windows.Forms.CheckBox
@@ -93,29 +93,29 @@ Friend Class frmAutomatique
 		Me.optAucun.TabStop = True
 		Me.optAucun.Visible = True
 		Me.optAucun.Name = "optAucun"
-		Me.txtDélai.AutoSize = False
-		Me.txtDélai.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.txtDélai.Size = New System.Drawing.Size(49, 19)
-		Me.txtDélai.Location = New System.Drawing.Point(64, 61)
-		Me.txtDélai.TabIndex = 4
-		Me.txtDélai.Text = "5"
-		Me.txtDélai.AcceptsReturn = True
-		Me.txtDélai.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-		Me.txtDélai.BackColor = System.Drawing.SystemColors.Window
-		Me.txtDélai.CausesValidation = True
-		Me.txtDélai.Enabled = True
-		Me.txtDélai.ForeColor = System.Drawing.SystemColors.WindowText
-		Me.txtDélai.HideSelection = True
-		Me.txtDélai.ReadOnly = False
-		Me.txtDélai.Maxlength = 0
-		Me.txtDélai.Cursor = System.Windows.Forms.Cursors.IBeam
-		Me.txtDélai.MultiLine = False
-		Me.txtDélai.RightToLeft = System.Windows.Forms.RightToLeft.No
-		Me.txtDélai.ScrollBars = System.Windows.Forms.ScrollBars.None
-		Me.txtDélai.TabStop = True
-		Me.txtDélai.Visible = True
-		Me.txtDélai.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-		Me.txtDélai.Name = "txtDélai"
+		Me.txtDÃ©lai.AutoSize = False
+		Me.txtDÃ©lai.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.txtDÃ©lai.Size = New System.Drawing.Size(49, 19)
+		Me.txtDÃ©lai.Location = New System.Drawing.Point(64, 61)
+		Me.txtDÃ©lai.TabIndex = 4
+		Me.txtDÃ©lai.Text = "5"
+		Me.txtDÃ©lai.AcceptsReturn = True
+		Me.txtDÃ©lai.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+		Me.txtDÃ©lai.BackColor = System.Drawing.SystemColors.Window
+		Me.txtDÃ©lai.CausesValidation = True
+		Me.txtDÃ©lai.Enabled = True
+		Me.txtDÃ©lai.ForeColor = System.Drawing.SystemColors.WindowText
+		Me.txtDÃ©lai.HideSelection = True
+		Me.txtDÃ©lai.ReadOnly = False
+		Me.txtDÃ©lai.Maxlength = 0
+		Me.txtDÃ©lai.Cursor = System.Windows.Forms.Cursors.IBeam
+		Me.txtDÃ©lai.MultiLine = False
+		Me.txtDÃ©lai.RightToLeft = System.Windows.Forms.RightToLeft.No
+		Me.txtDÃ©lai.ScrollBars = System.Windows.Forms.ScrollBars.None
+		Me.txtDÃ©lai.TabStop = True
+		Me.txtDÃ©lai.Visible = True
+		Me.txtDÃ©lai.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+		Me.txtDÃ©lai.Name = "txtDÃ©lai"
 		Me.optSuivant.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
 		Me.optSuivant.Text = "&Suivant"
 		Me.optSuivant.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -134,24 +134,24 @@ Friend Class frmAutomatique
 		Me.optSuivant.Checked = False
 		Me.optSuivant.Visible = True
 		Me.optSuivant.Name = "optSuivant"
-		Me.optAléatoire.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-		Me.optAléatoire.Text = "Au &hasard"
-		Me.optAléatoire.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.optAléatoire.Size = New System.Drawing.Size(81, 17)
-		Me.optAléatoire.Location = New System.Drawing.Point(8, 24)
-		Me.optAléatoire.TabIndex = 1
-		Me.optAléatoire.CheckAlign = System.Drawing.ContentAlignment.MiddleLeft
-		Me.optAléatoire.BackColor = System.Drawing.SystemColors.Control
-		Me.optAléatoire.CausesValidation = True
-		Me.optAléatoire.Enabled = True
-		Me.optAléatoire.ForeColor = System.Drawing.SystemColors.ControlText
-		Me.optAléatoire.Cursor = System.Windows.Forms.Cursors.Default
-		Me.optAléatoire.RightToLeft = System.Windows.Forms.RightToLeft.No
-		Me.optAléatoire.Appearance = System.Windows.Forms.Appearance.Normal
-		Me.optAléatoire.TabStop = True
-		Me.optAléatoire.Checked = False
-		Me.optAléatoire.Visible = True
-		Me.optAléatoire.Name = "optAléatoire"
+		Me.optAlÃ©atoire.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+		Me.optAlÃ©atoire.Text = "Au &hasard"
+		Me.optAlÃ©atoire.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.optAlÃ©atoire.Size = New System.Drawing.Size(81, 17)
+		Me.optAlÃ©atoire.Location = New System.Drawing.Point(8, 24)
+		Me.optAlÃ©atoire.TabIndex = 1
+		Me.optAlÃ©atoire.CheckAlign = System.Drawing.ContentAlignment.MiddleLeft
+		Me.optAlÃ©atoire.BackColor = System.Drawing.SystemColors.Control
+		Me.optAlÃ©atoire.CausesValidation = True
+		Me.optAlÃ©atoire.Enabled = True
+		Me.optAlÃ©atoire.ForeColor = System.Drawing.SystemColors.ControlText
+		Me.optAlÃ©atoire.Cursor = System.Windows.Forms.Cursors.Default
+		Me.optAlÃ©atoire.RightToLeft = System.Windows.Forms.RightToLeft.No
+		Me.optAlÃ©atoire.Appearance = System.Windows.Forms.Appearance.Normal
+		Me.optAlÃ©atoire.TabStop = True
+		Me.optAlÃ©atoire.Checked = False
+		Me.optAlÃ©atoire.Visible = True
+		Me.optAlÃ©atoire.Name = "optAlÃ©atoire"
 		Me.btnOk.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
 		Me.btnOk.Text = "OK"
 		Me.AcceptButton = Me.btnOk
@@ -199,7 +199,7 @@ Friend Class frmAutomatique
 		Me.chkOk.Appearance = System.Windows.Forms.Appearance.Normal
 		Me.chkOk.CheckState = System.Windows.Forms.CheckState.Unchecked
 		Me.chkOk.Name = "chkOk"
-		Me.Label1.Text = "Délai (s) :"
+		Me.Label1.Text = "DÃ©lai (s) :"
 		Me.Label1.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.Label1.Size = New System.Drawing.Size(58, 13)
 		Me.Label1.Location = New System.Drawing.Point(13, 64)
@@ -216,16 +216,16 @@ Friend Class frmAutomatique
 		Me.Label1.BorderStyle = System.Windows.Forms.BorderStyle.None
 		Me.Label1.Name = "Label1"
 		Me.Controls.Add(optAucun)
-		Me.Controls.Add(txtDélai)
+		Me.Controls.Add(txtDÃ©lai)
 		Me.Controls.Add(optSuivant)
-		Me.Controls.Add(optAléatoire)
+		Me.Controls.Add(optAlÃ©atoire)
 		Me.Controls.Add(btnOk)
 		Me.Controls.Add(btnAnnuler)
 		Me.Controls.Add(chkOk)
 		Me.Controls.Add(Label1)
 	End Sub
 #End Region 
-#Region "Prise en charge de la mise à niveau "
+#Region "Prise en charge de la mise Ã  niveau "
 	Private Shared m_vb6FormDefInstance As frmAutomatique
 	Private Shared m_InitializingDefInstance As Boolean
 	Public Shared Property DefInstance() As frmAutomatique
@@ -249,14 +249,14 @@ Friend Class frmAutomatique
 	
 	Private Sub frmAutomatique_Load(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles MyBase.Load
 		chkOk.CheckState = System.Windows.Forms.CheckState.Unchecked
-		txtDélai.SelectionStart = 0
-		txtDélai.SelectionLength = 99
+		txtDÃ©lai.SelectionStart = 0
+		txtDÃ©lai.SelectionLength = 99
 	End Sub
 	
 	Private Sub btnOK_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles btnOK.Click
 		chkOk.CheckState = System.Windows.Forms.CheckState.Checked
 		
-		If Not CtrlNumeric(txtDélai, "délai d'affichage automatique", 1, 60) Then
+		If Not CtrlNumeric(txtDÃ©lai, "dÃ©lai d'affichage automatique", 1, 60) Then
 			chkOk.CheckState = System.Windows.Forms.CheckState.Unchecked
 		Else
 			Hide()

@@ -14,7 +14,7 @@ Imports System.Reflection
 <Assembly: AssemblyDescription("Microsoft Visual Basic .NET How-To: Win32 API Calls")> 
 <Assembly: AssemblyCompany("Microsoft Corporation")> 
 <Assembly: AssemblyProduct("Microsoft Visual Basic .NET How To: 2002")> 
-<Assembly: AssemblyCopyright("Copyright © 2002 Microsoft Corporation.  All rights reserved.")> 
+<Assembly: AssemblyCopyright("Copyright Â© 2002 Microsoft Corporation.  All rights reserved.")> 
 <Assembly: CLSCompliant(True)> 
 
 <Assembly: AssemblyVersion("1.0.0.0")> 

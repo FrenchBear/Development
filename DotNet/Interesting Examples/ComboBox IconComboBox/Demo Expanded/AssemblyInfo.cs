@@ -11,7 +11,7 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("vbAccelerator")]
 [assembly: AssemblyProduct("vbAccelerator IconComboBox Development Project")]
-[assembly: AssemblyCopyright("Copyright © 2003 Steve McMahon for vbAccelerator")]
+[assembly: AssemblyCopyright("Copyright Â© 2003 Steve McMahon for vbAccelerator")]
 [assembly: AssemblyTrademark("vbAccelerator and vbAccelerator.com are TradeMarks of vbAccelerator Ltd.  All Rights Reserved.")]
 [assembly: AssemblyCulture("")]		
 

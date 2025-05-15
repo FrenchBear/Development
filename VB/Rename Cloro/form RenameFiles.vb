@@ -174,7 +174,7 @@ Public Class frmRenameFiles
             mac = re.Matches(sBaseName)
             'For i As Integer = mac.Count - 1 To 0 Step -1
             If mac.Count = 0 Then
-                MsgBox("Fichier malformé: " & sBaseName, MsgBoxStyle.Exclamation)
+                MsgBox("Fichier malformÃ©: " & sBaseName, MsgBoxStyle.Exclamation)
                 sNewName = sBaseName
             Else
                 Dim ma As Match = mac(0)

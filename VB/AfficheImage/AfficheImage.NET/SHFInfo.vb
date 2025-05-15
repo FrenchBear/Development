@@ -12,8 +12,8 @@ Module ModSHFileInfo
 	Public Const DI_COMPAT As Short = &H4s
 	Public Const DI_DEFAULTSIZE As Short = &H8s
 	
-	'UPGRADE_WARNING: La structure SHFILEINFO peut nécessiter que des attributs de marshaling soient passés en tant qu'argument dans cette instruction Declare. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup1050"'
-	'UPGRADE_ISSUE: La déclaration d'un paramètre 'As Any' n'est pas prise en charge. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup1016"'
+	'UPGRADE_WARNING: La structure SHFILEINFO peut nÃ©cessiter que des attributs de marshaling soient passÃ©s en tant qu'argument dans cette instruction Declare. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup1050"'
+	'UPGRADE_ISSUE: La dÃ©claration d'un paramÃ¨tre 'As Any' n'est pas prise en charge. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup1016"'
 	Declare Function SHGetFileInfo Lib "Shell32"  Alias "SHGetFileInfoA"(ByVal pszPath As Any, ByVal dwFileAttributes As Integer, ByRef psfi As SHFILEINFO, ByVal cbFileInfo As Integer, ByVal uFlags As Integer) As Integer
 	
 	' pszPath:

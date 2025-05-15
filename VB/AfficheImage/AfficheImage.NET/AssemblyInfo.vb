@@ -2,12 +2,12 @@ Imports System.Reflection
 Imports System.Runtime.CompilerServices
 Imports System.Runtime.InteropServices
 
-' Les informations générales relatives à un assembly dépendent de l'ensemble
-' d'attributs suivant. Pour modifier les informations associées à un assembly,
+' Les informations gÃ©nÃ©rales relatives Ã  un assembly dÃ©pendent de l'ensemble
+' d'attributs suivant. Pour modifier les informations associÃ©es Ã  un assembly,
 'changez les valeurs de ces attributs
 
 
-' TODO : contrôlez les valeurs des attributs d'assembly
+' TODOÂ : contrÃ´lez les valeurs des attributs d'assembly
 
 
 <Assembly: AssemblyTitle("")>
@@ -18,15 +18,15 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyTrademark("")>
 <Assembly: AssemblyCulture("")>
 
-' Les informations de version pour un assembly se composent des quatre valeurs suivantes :
+' Les informations de version pour un assembly se composent des quatre valeurs suivantesÂ :
 
 '	Version principale
 '	Version secondaire
-'	Révision
-'	Numéro de build
+'	RÃ©vision
+'	NumÃ©ro de build
 
-' Vous pouvez spécifier toutes les valeurs ou indiquer des numéros de révision et de build par défaut
-' en utilisant '*', comme ci-dessous 
+' Vous pouvez spÃ©cifier toutes les valeurs ou indiquer des numÃ©ros de rÃ©vision et de build par dÃ©faut
+' en utilisant '*', comme ci-dessousÂ 
 
 
 <Assembly:  AssemblyVersion("1.5.*")>

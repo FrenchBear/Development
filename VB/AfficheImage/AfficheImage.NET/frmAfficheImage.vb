@@ -3,7 +3,7 @@ Option Explicit On
 Imports VB = Microsoft.VisualBasic
 Friend Class frmAfficheImage
 	Inherits System.Windows.Forms.Form
-#Region "Code généré par le Concepteur Windows Form "
+#Region "Code gÃ©nÃ©rÃ© par le Concepteur Windows Form "
 	Public Sub New()
 		MyBase.New()
 		If m_vb6FormDefInstance Is Nothing Then
@@ -11,7 +11,7 @@ Friend Class frmAfficheImage
 				m_vb6FormDefInstance = Me
 			Else
 				Try 
-					'Pour le formulaire de démarrage, la première instance créée est l'instance par défaut.
+					'Pour le formulaire de dÃ©marrage, la premiÃ¨re instance crÃ©Ã©e est l'instance par dÃ©faut.
 					If System.Reflection.Assembly.GetExecutingAssembly.EntryPoint.DeclaringType Is Me.GetType Then
 						m_vb6FormDefInstance = Me
 					End If
@@ -22,7 +22,7 @@ Friend Class frmAfficheImage
 		'Cet appel est requis par le Concepteur Windows Form.
 		InitializeComponent()
 	End Sub
-	'La méthode substituée Dispose du formulaire pour nettoyer la liste des composants.
+	'La mÃ©thode substituÃ©e Dispose du formulaire pour nettoyer la liste des composants.
 	Protected Overloads Overrides Sub Dispose(ByVal Disposing As Boolean)
 		If Disposing Then
 			If Not components Is Nothing Then
@@ -46,8 +46,8 @@ Friend Class frmAfficheImage
 	Public WithEvents Image1 As System.Windows.Forms.PictureBox
 	Public WithEvents cmdBalayer As System.Windows.Forms.MenuItem
 	Public WithEvents sep1 As System.Windows.Forms.MenuItem
-	Public WithEvents cmdDébut As System.Windows.Forms.MenuItem
-	Public WithEvents cmdPrécédent As System.Windows.Forms.MenuItem
+	Public WithEvents cmdDÃ©but As System.Windows.Forms.MenuItem
+	Public WithEvents cmdPrÃ©cÃ©dent As System.Windows.Forms.MenuItem
 	Public WithEvents cmdSuivant As System.Windows.Forms.MenuItem
 	Public WithEvents cmdFin As System.Windows.Forms.MenuItem
 	Public WithEvents sep2b As System.Windows.Forms.MenuItem
@@ -75,9 +75,9 @@ Friend Class frmAfficheImage
 	Public WithEvents cmdAbout As System.Windows.Forms.MenuItem
 	Public WithEvents mnuAide As System.Windows.Forms.MenuItem
 	Public MainMenu1 As System.Windows.Forms.MainMenu
-	'REMARQUE : la procédure suivante est requise par le Concepteur Windows Form
-	'Il peut être modifié à l'aide du Concepteur Windows Form.
-	'Ne pas le modifier à l'aide de l'éditeur de code.
+	'REMARQUEÂ : la procÃ©dure suivante est requise par le Concepteur Windows Form
+	'Il peut Ãªtre modifiÃ© Ã  l'aide du Concepteur Windows Form.
+	'Ne pas le modifier Ã  l'aide de l'Ã©diteur de code.
 	<System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
 		Dim resources As System.Resources.ResourceManager = New System.Resources.ResourceManager(GetType(frmAfficheImage))
 		Me.components = New System.ComponentModel.Container()
@@ -97,8 +97,8 @@ Friend Class frmAfficheImage
 		Me.mnuFichier = New System.Windows.Forms.MenuItem
 		Me.cmdBalayer = New System.Windows.Forms.MenuItem
 		Me.sep1 = New System.Windows.Forms.MenuItem
-		Me.cmdDébut = New System.Windows.Forms.MenuItem
-		Me.cmdPrécédent = New System.Windows.Forms.MenuItem
+		Me.cmdDÃ©but = New System.Windows.Forms.MenuItem
+		Me.cmdPrÃ©cÃ©dent = New System.Windows.Forms.MenuItem
 		Me.cmdSuivant = New System.Windows.Forms.MenuItem
 		Me.cmdFin = New System.Windows.Forms.MenuItem
 		Me.sep2b = New System.Windows.Forms.MenuItem
@@ -147,7 +147,7 @@ Friend Class frmAfficheImage
 		Me.HelpButton = False
 		Me.WindowState = System.Windows.Forms.FormWindowState.Normal
 		Me.Name = "frmAfficheImage"
-		Me.chkStretch.Text = "&Réduire si trop grand"
+		Me.chkStretch.Text = "&RÃ©duire si trop grand"
 		Me.chkStretch.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.chkStretch.Size = New System.Drawing.Size(144, 14)
 		Me.chkStretch.Location = New System.Drawing.Point(536, 4)
@@ -199,7 +199,7 @@ Friend Class frmAfficheImage
 		Me.sbStatus.Location = New System.Drawing.Point(0, 323)
 		Me.sbStatus.TabIndex = 3
 		Me.sbStatus.Name = "sbStatus"
-		Me.chkAjuster.Text = "Aj&uster à la fenêtre"
+		Me.chkAjuster.Text = "Aj&uster Ã  la fenÃªtre"
 		Me.chkAjuster.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.chkAjuster.Size = New System.Drawing.Size(136, 17)
 		Me.chkAjuster.Location = New System.Drawing.Point(536, 16)
@@ -266,16 +266,16 @@ Friend Class frmAfficheImage
 		Me.sep1.Enabled = True
 		Me.sep1.Visible = True
 		Me.sep1.MDIList = False
-		Me.cmdDébut.Text = "&Début"
-		Me.cmdDébut.Checked = False
-		Me.cmdDébut.Enabled = True
-		Me.cmdDébut.Visible = True
-		Me.cmdDébut.MDIList = False
-		Me.cmdPrécédent.Text = "&Précédent"
-		Me.cmdPrécédent.Checked = False
-		Me.cmdPrécédent.Enabled = True
-		Me.cmdPrécédent.Visible = True
-		Me.cmdPrécédent.MDIList = False
+		Me.cmdDÃ©but.Text = "&DÃ©but"
+		Me.cmdDÃ©but.Checked = False
+		Me.cmdDÃ©but.Enabled = True
+		Me.cmdDÃ©but.Visible = True
+		Me.cmdDÃ©but.MDIList = False
+		Me.cmdPrÃ©cÃ©dent.Text = "&PrÃ©cÃ©dent"
+		Me.cmdPrÃ©cÃ©dent.Checked = False
+		Me.cmdPrÃ©cÃ©dent.Enabled = True
+		Me.cmdPrÃ©cÃ©dent.Visible = True
+		Me.cmdPrÃ©cÃ©dent.MDIList = False
 		Me.cmdSuivant.Text = "&Suivant"
 		Me.cmdSuivant.Checked = False
 		Me.cmdSuivant.Enabled = True
@@ -363,7 +363,7 @@ Friend Class frmAfficheImage
 		Me.mnuCommandes.Enabled = True
 		Me.mnuCommandes.Visible = True
 		Me.mnuCommandes.MDIList = False
-		Me.cmdHTML.Text = "&Générer HTML..."
+		Me.cmdHTML.Text = "&GÃ©nÃ©rer HTML..."
 		Me.cmdHTML.Checked = False
 		Me.cmdHTML.Enabled = True
 		Me.cmdHTML.Visible = True
@@ -422,8 +422,8 @@ Friend Class frmAfficheImage
 		MainMenu1.MenuItems.AddRange(New System.Windows.Forms.MenuItem(){Me.mnuFichier, Me.mnuEdition, Me.mnuCommandes, Me.mnuAide})
 		Me.cmdBalayer.Index = 0
 		Me.sep1.Index = 1
-		Me.cmdDébut.Index = 2
-		Me.cmdPrécédent.Index = 3
+		Me.cmdDÃ©but.Index = 2
+		Me.cmdPrÃ©cÃ©dent.Index = 3
 		Me.cmdSuivant.Index = 4
 		Me.cmdFin.Index = 5
 		Me.sep2b.Index = 6
@@ -434,7 +434,7 @@ Friend Class frmAfficheImage
 		Me.cmdRetour.Index = 11
 		Me.sep2.Index = 12
 		Me.cmdQuitter.Index = 13
-		mnuFichier.MenuItems.AddRange(New System.Windows.Forms.MenuItem(){Me.cmdBalayer, Me.sep1, Me.cmdDébut, Me.cmdPrécédent, Me.cmdSuivant, Me.cmdFin, Me.sep2b, Me.cmdHasard, Me.sep3c, Me.cmdAutomatique, Me.sep4b2, Me.cmdRetour, Me.sep2, Me.cmdQuitter})
+		mnuFichier.MenuItems.AddRange(New System.Windows.Forms.MenuItem(){Me.cmdBalayer, Me.sep1, Me.cmdDÃ©but, Me.cmdPrÃ©cÃ©dent, Me.cmdSuivant, Me.cmdFin, Me.sep2b, Me.cmdHasard, Me.sep3c, Me.cmdAutomatique, Me.sep4b2, Me.cmdRetour, Me.sep2, Me.cmdQuitter})
 		Me.cmdCopier.Index = 0
 		Me.sep3.Index = 1
 		Me.cmdSupprimer.Index = 2
@@ -453,7 +453,7 @@ Friend Class frmAfficheImage
 		Me.Menu = MainMenu1
 	End Sub
 #End Region 
-#Region "Prise en charge de la mise à niveau "
+#Region "Prise en charge de la mise Ã  niveau "
 	Private Shared m_vb6FormDefInstance As frmAfficheImage
 	Private Shared m_InitializingDefInstance As Boolean
 	Public Shared Property DefInstance() As frmAfficheImage
@@ -474,24 +474,24 @@ Friend Class frmAfficheImage
 	' Application de navigation simple dans une liste d'images
 	' Avril 1997, P.Violent
 	' 15/05/97 PV     Drag'n'drop OLE
-	' 24/05/97 PV     Édition, effacement de l'image après un suppr, contrôle du dossier à balayer, dossier par défaut
-	' 25/05/97 PV     Historique, paramétrage de la planche de contact
-	' 26/05/97 PV     Mode automatique; Boîte A propos spécialisée; police Verdana
-	' 11/11/97 PV     Effacement dans la corbeille (suite à un effacement malheureux !)
+	' 24/05/97 PV     Ã‰dition, effacement de l'image aprÃ¨s un suppr, contrÃ´le du dossier Ã  balayer, dossier par dÃ©faut
+	' 25/05/97 PV     Historique, paramÃ©trage de la planche de contact
+	' 26/05/97 PV     Mode automatique; BoÃ®te A propos spÃ©cialisÃ©e; police Verdana
+	' 11/11/97 PV     Effacement dans la corbeille (suite Ã  un effacement malheureux !)
 	' 15/11/97 PV     Edition correcte des fichiers contenant des espaces
 	' 07/09/98 PV 1.2 Utilisation du dialogue "Browse for folder"
-	' 12/09/98 PV 1.3 Barre de boutons, navigation complète
-	' 11/10/98 PV 1.4 Mécanisme LastKey (espace) fonctionne su action précédente à la souris
+	' 12/09/98 PV 1.3 Barre de boutons, navigation complÃ¨te
+	' 11/10/98 PV 1.4 MÃ©canisme LastKey (espace) fonctionne su action prÃ©cÃ©dente Ã  la souris
 	' 20/12/98 PV 1.5 Liste des fichiers
-	' 10/01/99 PV     Bouton "Liste des fichiers" dans la barre de boutons; synchro image affichée/sélection de frmFichiers
-	'  7/02/99 PV     Sélection récursive à 1 niveau
-	' 20/04/02 PV     Limite à 32767 images (une combo ne peut pas contenur un nb d'éléments long...)
+	' 10/01/99 PV     Bouton "Liste des fichiers" dans la barre de boutons; synchro image affichÃ©e/sÃ©lection de frmFichiers
+	'  7/02/99 PV     SÃ©lection rÃ©cursive Ã  1 niveau
+	' 20/04/02 PV     Limite Ã  32767 images (une combo ne peut pas contenur un nb d'Ã©lÃ©ments long...)
 	
 	
 	
-	Dim sRep As String ' Répertoire contenant les images
-	Public iPos As Short ' N° de l'image courante, de 0 à ...
-	Dim LastKeyAscii As Short ' Code de la dernière commande pour répétition avec la barre d'espace
+	Dim sRep As String ' RÃ©pertoire contenant les images
+	Public iPos As Short ' NÂ° de l'image courante, de 0 Ã  ...
+	Dim LastKeyAscii As Short ' Code de la derniÃ¨re commande pour rÃ©pÃ©tition avec la barre d'espace
 	
 	Dim hist As New Historique ' Liste des images parcourues
 	
@@ -503,15 +503,15 @@ Friend Class frmAfficheImage
 	
 	Dim iAuto As EnumAuto ' Mode courant de navigation automatique
 	
-	Dim fso As Scripting.FileSystemObject ' Accès à l'objet FileSystem du scripting
+	Dim fso As Scripting.FileSystemObject ' AccÃ¨s Ã  l'objet FileSystem du scripting
 	
 	
 	Private Sub Analyse1Rep(ByRef sRel As String)
 		Dim sFic As String
 		
-		' D'abord les fichiers du répertoire
-		' L'accès avec l'objet FileSystem est beaucoup trop lent...
-		'UPGRADE_ISSUE: Impossible de déterminer à quelle constante mettre à niveau vbNormal. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2049"'
+		' D'abord les fichiers du rÃ©pertoire
+		' L'accÃ¨s avec l'objet FileSystem est beaucoup trop lent...
+		'UPGRADE_ISSUE: Impossible de dÃ©terminer Ã  quelle constante mettre Ã  niveau vbNormal. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2049"'
 		'UPGRADE_WARNING: Dir a un nouveau comportement. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup1041"'
 		sFic = Dir(sRep & sRel & "*", vbNormal Or FileAttribute.ReadOnly Or FileAttribute.Archive)
 		While sFic <> ""
@@ -531,7 +531,7 @@ Friend Class frmAfficheImage
 			sFic = Dir()
 		End While
 		
-		' Puis on analyse les sous-répertoires
+		' Puis on analyse les sous-rÃ©pertoires
 		Dim fo, sfo As Scripting.Folder
 		fo = fso.GetFolder(sRep & sRel)
 		For	Each sfo In fo.SubFolders
@@ -547,16 +547,16 @@ Friend Class frmAfficheImage
 		LastKeyAscii = Asc("?")
 		If sRep = "" Then sRep = GetSetting(VB6.GetExeName(), "Config", "Path", "C:\")
 		If VB.Right(sRep, 1) = "\" And Len(sRep) > 3 Then sRep = VB.Left(sRep, Len(sRep) - 1)
-		sRepNouv = sBrowseForFolder(Me.Handle.ToInt32, sRep, "Sélectionnez le répertoire contenant les images." & vbCrLf & "Précédent: " & sRep)
+		sRepNouv = sBrowseForFolder(Me.Handle.ToInt32, sRep, "SÃ©lectionnez le rÃ©pertoire contenant les images." & vbCrLf & "PrÃ©cÃ©dent: " & sRep)
 		If sRepNouv = "" Then Exit Sub
 		sRep = sRepNouv
 		SaveSetting(VB6.GetExeName(), "Config", "Path", sRep)
 		If VB.Right(sRep, 1) <> "\" Then sRep = sRep & "\"
 		
 		frmFichiers.DefInstance.Close()
-		bFrmFichiersChargé = False
+		bFrmFichiersChargÃ© = False
 		
-		'UPGRADE_WARNING: propriété Screen.MousePointer de Screen a un nouveau comportement. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2065"'
+		'UPGRADE_WARNING: propriÃ©tÃ© Screen.MousePointer de Screen a un nouveau comportement. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2065"'
 		System.Windows.Forms.Cursor.Current = System.Windows.Forms.Cursors.WaitCursor
 		cboFichiers.Visible = False
 		cboFichiers.Items.Clear()
@@ -566,14 +566,14 @@ Friend Class frmAfficheImage
 		sbStatus.SimpleText = "Analyse des images du dossier " & sRep
 		sbStatus.CtlRefresh()
 		Analyse1Rep("")
-		'UPGRADE_NOTE: L'objet fso ne peut pas être détruit tant qu'il n'est pas récupéré par le garbage collector (ramasse-miettes). Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup1029"'
+		'UPGRADE_NOTE: L'objet fso ne peut pas Ãªtre dÃ©truit tant qu'il n'est pas rÃ©cupÃ©rÃ© par le garbage collector (ramasse-miettes). Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup1029"'
 		fso = Nothing
 		
 		sbStatus.SimpleText = ""
 		iPos = 0
 		AfficheImage()
 		cboFichiers.Visible = True
-		'UPGRADE_WARNING: propriété Screen.MousePointer de Screen a un nouveau comportement. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2065"'
+		'UPGRADE_WARNING: propriÃ©tÃ© Screen.MousePointer de Screen a un nouveau comportement. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2065"'
 		System.Windows.Forms.Cursor.Current = System.Windows.Forms.Cursors.Default
 	End Sub
 	
@@ -584,12 +584,12 @@ Friend Class frmAfficheImage
 		AfficheImage()
 	End Sub
 	
-	Private Sub NavigueDébut()
+	Private Sub NavigueDÃ©but()
 		iPos = 0
 		AfficheImage()
 	End Sub
 	
-	Private Sub NaviguePrécédent()
+	Private Sub NaviguePrÃ©cÃ©dent()
 		LastKeyAscii = Asc("-")
 		If iPos > 0 Then
 			iPos = iPos - 1
@@ -613,11 +613,11 @@ Friend Class frmAfficheImage
 	
 	
 	Sub AfficheImage()
-		' Cas où il n'y a rien de chargé
+		' Cas oÃ¹ il n'y a rien de chargÃ©
 		If cboFichiers.Items.Count = 0 Then Exit Sub
 		
-		' On synchronise la sélction de frmFichiers
-		If bFrmFichiersChargé Then
+		' On synchronise la sÃ©lction de frmFichiers
+		If bFrmFichiersChargÃ© Then
 			frmFichiers.DefInstance.lvFichiers.SelectedItem = frmFichiers.DefInstance.lvFichiers.ListItems(iPos + 1)
 		End If
 		
@@ -626,11 +626,11 @@ Friend Class frmAfficheImage
 		Image2.Image = System.Drawing.Image.FromFile(sRep & cboFichiers.Text)
 		If Err.Number Then
 			Image1.Image = Nothing
-			'UPGRADE_ISSUE: Image méthode Image1.Print - Mise à niveau non effectuée Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2064"'
-			Image1.Print("Échec à l'ouverture de " & sRep & cboFichiers.Text & vbCrLf & "Erreur " & Err.Number & ": " & ErrorToString())
+			'UPGRADE_ISSUE: Image mÃ©thode Image1.Print - Mise Ã  niveau non effectuÃ©e Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2064"'
+			Image1.Print("Ã‰chec Ã  l'ouverture de " & sRep & cboFichiers.Text & vbCrLf & "Erreur " & Err.Number & ": " & ErrorToString())
 			Text = "AfficheImage"
 			sbStatus.Panels("Fichier")._ObjectDefault = ""
-			sbStatus.Panels("Résolution")._ObjectDefault = ""
+			sbStatus.Panels("RÃ©solution")._ObjectDefault = ""
 			sbStatus.Panels("Taille")._ObjectDefault = ""
 			sbStatus.Panels("Echelle")._ObjectDefault = ""
 		Else
@@ -646,7 +646,7 @@ Friend Class frmAfficheImage
 		If cboFichiers.Text = "" Then Exit Sub
 		
 		sbStatus.Panels("Fichier")._ObjectDefault = sRep & cboFichiers.Text
-		sbStatus.Panels("Résolution")._ObjectDefault = Image2.Width & " x " & Image2.Height
+		sbStatus.Panels("RÃ©solution")._ObjectDefault = Image2.Width & " x " & Image2.Height
 		sbStatus.Panels("Taille")._ObjectDefault = VB6.Format(FileLen(sRep & cboFichiers.Text) / 1024, "#.0 K")
 		Dim r1, r2 As Single
 		If chkStretch.CheckState Then
@@ -665,7 +665,7 @@ Friend Class frmAfficheImage
 	End Sub
 	
 	
-	'UPGRADE_WARNING: L'événement cboFichiers.SelectedIndexChanged peut se déclencher lorsque le formulaire est initialisé. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2075"'
+	'UPGRADE_WARNING: L'Ã©vÃ©nement cboFichiers.SelectedIndexChanged peut se dÃ©clencher lorsque le formulaire est initialisÃ©. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2075"'
 	Private Sub cboFichiers_SelectedIndexChanged(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles cboFichiers.SelectedIndexChanged
 		If iPos <> cboFichiers.SelectedIndex Then
 			iPos = cboFichiers.SelectedIndex
@@ -673,12 +673,12 @@ Friend Class frmAfficheImage
 		End If
 	End Sub
 	
-	'UPGRADE_WARNING: L'événement chkAjuster.CheckStateChanged peut se déclencher lorsque le formulaire est initialisé. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2075"'
+	'UPGRADE_WARNING: L'Ã©vÃ©nement chkAjuster.CheckStateChanged peut se dÃ©clencher lorsque le formulaire est initialisÃ©. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2075"'
 	Private Sub chkAjuster_CheckStateChanged(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles chkAjuster.CheckStateChanged
 		DoAffichage()
 	End Sub
 	
-	'UPGRADE_WARNING: L'événement chkStretch.CheckStateChanged peut se déclencher lorsque le formulaire est initialisé. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2075"'
+	'UPGRADE_WARNING: L'Ã©vÃ©nement chkStretch.CheckStateChanged peut se dÃ©clencher lorsque le formulaire est initialisÃ©. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2075"'
 	Private Sub chkStretch_CheckStateChanged(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles chkStretch.CheckStateChanged
 		'UPGRADE_WARNING:  . de  a un nouveau comportement. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2065"'
 		Image1.SizeMode = chkStretch.CheckState
@@ -696,13 +696,13 @@ Friend Class frmAfficheImage
 			iAuto = EnumAuto.AUTO_AUCUN
 			tmrTim.Enabled = False
 			Exit Sub
-		ElseIf frmAutomatique.DefInstance.optAléatoire.Checked Then 
+		ElseIf frmAutomatique.DefInstance.optAlÃ©atoire.Checked Then 
 			iAuto = EnumAuto.AUTO_HASARD
 		Else
 			iAuto = EnumAuto.AUTO_SUIVANT
 		End If
-		'UPGRADE_WARNING: La propriété tmrTim.Interval de la minuterie ne peut pas avoir la valeur 0. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2020"'
-		tmrTim.Interval = 1000 * CDbl(frmAutomatique.DefInstance.txtDélai.Text)
+		'UPGRADE_WARNING: La propriÃ©tÃ© tmrTim.Interval de la minuterie ne peut pas avoir la valeur 0. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2020"'
+		tmrTim.Interval = 1000 * CDbl(frmAutomatique.DefInstance.txtDÃ©lai.Text)
 		tmrTim.Enabled = True
 	End Sub
 	
@@ -716,9 +716,9 @@ Friend Class frmAfficheImage
 	Private Sub CopieImage()
 		If cboFichiers.Text = "" Then Exit Sub
 		
-		'UPGRADE_ISSUE: Clipboard méthode Clipboard.clear - Mise à niveau non effectuée Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2069"'
+		'UPGRADE_ISSUE: Clipboard mÃ©thode Clipboard.clear - Mise Ã  niveau non effectuÃ©e Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2069"'
 		Clipboard.clear()
-		'UPGRADE_ISSUE: Clipboard méthode Clipboard.SetData - Mise à niveau non effectuée Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2069"'
+		'UPGRADE_ISSUE: Clipboard mÃ©thode Clipboard.SetData - Mise Ã  niveau non effectuÃ©e Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2069"'
 		Clipboard.SetData(Image1.Image)
 	End Sub
 	
@@ -727,18 +727,18 @@ Friend Class frmAfficheImage
 		If cboFichiers.Text = "" Then Exit Sub
 		
 		sbStatus.SimpleText = sRep & cboFichiers.Text & " : Suppression en cours"
-		'UPGRADE_WARNING: propriété Screen.MousePointer de Screen a un nouveau comportement. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2065"'
+		'UPGRADE_WARNING: propriÃ©tÃ© Screen.MousePointer de Screen a un nouveau comportement. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2065"'
 		System.Windows.Forms.Cursor.Current = System.Windows.Forms.Cursors.WaitCursor
 		
 		Dim iErr As Integer
 		iErr = EffaceFichierCorbeille(Me.Handle.ToInt32, sRep & cboFichiers.Text)
 		If iErr Then
-			MsgBox("Échec à la suppression du fichier " & sRep & cboFichiers.Text & vbCrLf & "Err: " & Err.Number & ErrorToString())
+			MsgBox("Ã‰chec Ã  la suppression du fichier " & sRep & cboFichiers.Text & vbCrLf & "Err: " & Err.Number & ErrorToString())
 		Else
 			Image1.Image = Nothing
-			sbStatus.SimpleText = sRep & cboFichiers.Text & " : Supprimé (envoyé à la corbeille)"
+			sbStatus.SimpleText = sRep & cboFichiers.Text & " : SupprimÃ© (envoyÃ© Ã  la corbeille)"
 		End If
-		'UPGRADE_WARNING: propriété Screen.MousePointer de Screen a un nouveau comportement. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2065"'
+		'UPGRADE_WARNING: propriÃ©tÃ© Screen.MousePointer de Screen a un nouveau comportement. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2065"'
 		System.Windows.Forms.Cursor.Current = System.Windows.Forms.Cursors.Default
 		
 		Dim i As Short
@@ -768,16 +768,16 @@ Friend Class frmAfficheImage
 		l = frmFichiers.DefInstance.lvFichiers
 		Dim x As MSComctlLib.ListItem
 		If l.ListItems.count = 0 Then
-			'UPGRADE_WARNING: propriété Screen.MousePointer de Screen a un nouveau comportement. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2065"'
+			'UPGRADE_WARNING: propriÃ©tÃ© Screen.MousePointer de Screen a un nouveau comportement. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2065"'
 			System.Windows.Forms.Cursor.Current = System.Windows.Forms.Cursors.WaitCursor
 			For i = 0 To cboFichiers.Items.Count - 1
 				l.ListItems.Add( ,  , VB6.GetItemString(cboFichiers, i))
 			Next 
-			'UPGRADE_WARNING: propriété Screen.MousePointer de Screen a un nouveau comportement. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2065"'
+			'UPGRADE_WARNING: propriÃ©tÃ© Screen.MousePointer de Screen a un nouveau comportement. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2065"'
 			System.Windows.Forms.Cursor.Current = System.Windows.Forms.Cursors.Default
 		End If
 		
-		bFrmFichiersChargé = True
+		bFrmFichiersChargÃ© = True
 		frmFichiers.DefInstance.lvFichiers.SelectedItem = frmFichiers.DefInstance.lvFichiers.ListItems(iPos + 1)
 		frmFichiers.DefInstance.Show()
 	End Sub
@@ -799,7 +799,7 @@ Friend Class frmAfficheImage
 		Dim KeyCode As Short = eventArgs.KeyCode
 		Dim Shift As Short = eventArgs.KeyData \ &H10000
 		Select Case KeyCode
-			Case System.Windows.Forms.Keys.Home : Clic("First", True) : NavigueDébut() : Clic("First", False)
+			Case System.Windows.Forms.Keys.Home : Clic("First", True) : NavigueDÃ©but() : Clic("First", False)
 			Case System.Windows.Forms.Keys.End : Clic("Last", True) : NavigueFin() : Clic("Last", False)
 			Case System.Windows.Forms.Keys.Back : NavigueRetour()
 		End Select
@@ -808,12 +808,12 @@ Friend Class frmAfficheImage
 	Private Sub frmAfficheImage_KeyPress(ByVal eventSender As System.Object, ByVal eventArgs As System.Windows.Forms.KeyPressEventArgs) Handles MyBase.KeyPress
 		Dim KeyAscii As Short = Asc(eventArgs.KeyChar)
 		If KeyAscii = 32 Then
-			'UPGRADE_ISSUE: Assignation non prise en charge : KeyAscii avec une valeur différente de zéro Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup1058"'
+			'UPGRADE_ISSUE: Assignation non prise en chargeÂ : KeyAscii avec une valeur diffÃ©rente de zÃ©ro Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup1058"'
 			KeyAscii = LastKeyAscii
 		End If
 		Select Case Chr(KeyAscii)
 			Case "?" : Clic("Open", True) : BalayerImages() : Clic("Open", False)
-			Case "-" : Clic("Previous", True) : NaviguePrécédent() : Clic("Previous", False)
+			Case "-" : Clic("Previous", True) : NaviguePrÃ©cÃ©dent() : Clic("Previous", False)
 			Case "+", Chr(13) : Clic("Next", True) : NavigueSuivant() : Clic("Next", False)
 			Case "*" : Clic("Random", True) : NavigueHasard() : Clic("Random", False)
 		End Select
@@ -822,7 +822,7 @@ Friend Class frmAfficheImage
 		End If
 	End Sub
 	
-	'UPGRADE_WARNING: événement frmAfficheImage.Unload de Form a un nouveau comportement. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2065"'
+	'UPGRADE_WARNING: Ã©vÃ©nement frmAfficheImage.Unload de Form a un nouveau comportement. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2065"'
 	Private Sub frmAfficheImage_Closed(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles MyBase.Closed
 		On Error Resume Next
 		frmFichiers.DefInstance.Close() ' La feuille des fichiers n'est pas modale
@@ -834,8 +834,8 @@ Friend Class frmAfficheImage
 	Private Sub tbBoutons_ButtonClick(ByVal eventSender As System.Object, ByVal eventArgs As AxMSComctlLib.IToolbarEvents_ButtonClickEvent) Handles tbBoutons.ButtonClick
 		Select Case eventArgs.Button.Key
 			Case "Open" : BalayerImages()
-			Case "First" : NavigueDébut()
-			Case "Previous" : NaviguePrécédent()
+			Case "First" : NavigueDÃ©but()
+			Case "Previous" : NaviguePrÃ©cÃ©dent()
 			Case "Next" : NavigueSuivant()
 			Case "Last" : NavigueFin()
 			Case "Random" : NavigueHasard()
@@ -858,18 +858,18 @@ Friend Class frmAfficheImage
 	End Sub
 	
 	
-	Public Sub cmdDébut_Popup(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles cmdDébut.Popup
-		cmdDébut_Click(eventSender, eventArgs)
+	Public Sub cmdDÃ©but_Popup(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles cmdDÃ©but.Popup
+		cmdDÃ©but_Click(eventSender, eventArgs)
 	End Sub
-	Public Sub cmdDébut_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles cmdDébut.Click
-		NavigueDébut()
+	Public Sub cmdDÃ©but_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles cmdDÃ©but.Click
+		NavigueDÃ©but()
 	End Sub
 	
-	Public Sub cmdPrécédent_Popup(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles cmdPrécédent.Popup
-		cmdPrécédent_Click(eventSender, eventArgs)
+	Public Sub cmdPrÃ©cÃ©dent_Popup(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles cmdPrÃ©cÃ©dent.Popup
+		cmdPrÃ©cÃ©dent_Click(eventSender, eventArgs)
 	End Sub
-	Public Sub cmdPrécédent_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles cmdPrécédent.Click
-		NaviguePrécédent()
+	Public Sub cmdPrÃ©cÃ©dent_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles cmdPrÃ©cÃ©dent.Click
+		NaviguePrÃ©cÃ©dent()
 	End Sub
 	
 	Public Sub cmdSuivant_Popup(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles cmdSuivant.Popup
@@ -964,8 +964,8 @@ Friend Class frmAfficheImage
 	
 	Private Sub frmAfficheImage_Load(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles MyBase.Load
 		cmdBalayer.Text = "&Balayer" & vbTab & "?"
-		cmdDébut.Text = "&Début" & vbTab & "Début"
-		cmdPrécédent.Text = "&Précédent" & vbTab & "-"
+		cmdDÃ©but.Text = "&DÃ©but" & vbTab & "DÃ©but"
+		cmdPrÃ©cÃ©dent.Text = "&PrÃ©cÃ©dent" & vbTab & "-"
 		cmdSuivant.Text = "&Suivant" & vbTab & "+"
 		cmdFin.Text = "&Fin" & vbTab & "Fin"
 		cmdHasard.Text = "Au &hasard" & vbTab & "*"
@@ -981,7 +981,7 @@ Friend Class frmAfficheImage
 		cmdBalayer_Click(cmdBalayer, New System.EventArgs())
 	End Sub
 	
-	'UPGRADE_WARNING: L'événement frmAfficheImage.Resize peut se déclencher lorsque le formulaire est initialisé. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2075"'
+	'UPGRADE_WARNING: L'Ã©vÃ©nement frmAfficheImage.Resize peut se dÃ©clencher lorsque le formulaire est initialisÃ©. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2075"'
 	Private Sub frmAfficheImage_Resize(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles MyBase.Resize
 		If ClientRectangle.Width > 500 Then
 			chkAjuster.Left = ClientRectangle.Width - 145
@@ -993,14 +993,14 @@ Friend Class frmAfficheImage
 	End Sub
 	
 	Private Sub frmAfficheImage_Paint(ByVal eventSender As System.Object, ByVal eventArgs As System.Windows.Forms.PaintEventArgs) Handles MyBase.Paint
-		'UPGRADE_ISSUE: Form méthode frmAfficheImage.Line - Mise à niveau non effectuée Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2064"'
+		'UPGRADE_ISSUE: Form mÃ©thode frmAfficheImage.Line - Mise Ã  niveau non effectuÃ©e Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2064"'
 		Me.Line (0, 0) - (ClientRectangle.Width, 0), System.Drawing.ColorTranslator.ToOle(System.Drawing.SystemColors.ControlDark)
-		'UPGRADE_ISSUE: Form méthode frmAfficheImage.Line - Mise à niveau non effectuée Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2064"'
+		'UPGRADE_ISSUE: Form mÃ©thode frmAfficheImage.Line - Mise Ã  niveau non effectuÃ©e Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2064"'
 		Me.Line (0, 1) - (ClientRectangle.Width, 0), System.Drawing.ColorTranslator.ToOle(System.Drawing.SystemColors.ControlLightLight)
 		
-		'UPGRADE_ISSUE: Form méthode frmAfficheImage.Line - Mise à niveau non effectuée Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2064"'
+		'UPGRADE_ISSUE: Form mÃ©thode frmAfficheImage.Line - Mise Ã  niveau non effectuÃ©e Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2064"'
 		Me.Line (0, 33) - (ClientRectangle.Width, 0), System.Drawing.ColorTranslator.ToOle(System.Drawing.SystemColors.ControlDark)
-		'UPGRADE_ISSUE: Form méthode frmAfficheImage.Line - Mise à niveau non effectuée Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2064"'
+		'UPGRADE_ISSUE: Form mÃ©thode frmAfficheImage.Line - Mise Ã  niveau non effectuÃ©e Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2064"'
 		Me.Line (0, 34) - (ClientRectangle.Width, 0), System.Drawing.ColorTranslator.ToOle(System.Drawing.SystemColors.ControlLightLight)
 	End Sub
 	
@@ -1016,17 +1016,17 @@ Friend Class frmAfficheImage
 		Dim sFic As String
 		
 		sFic = sRep & "!images.htm"
-		sFic = InputBox("Nom du fichier à générer ?",  , sFic)
+		sFic = InputBox("Nom du fichier Ã  gÃ©nÃ©rer ?",  , sFic)
 		If sFic = "" Then Exit Sub
 		
-		'UPGRADE_WARNING: propriété Screen.MousePointer de Screen a un nouveau comportement. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2065"'
+		'UPGRADE_WARNING: propriÃ©tÃ© Screen.MousePointer de Screen a un nouveau comportement. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2065"'
 		System.Windows.Forms.Cursor.Current = System.Windows.Forms.Cursors.WaitCursor
 		
 		FileOpen(1, sFic, OpenMode.Output)
 		PrintLine(1, "<HTML>")
 		PrintLine(1, "<HEAD>")
 		PrintLine(1, "<TITLE>Images de " & sRep & "</TITLE>")
-		PrintLine(1, "<!-- Généré le " & VB6.Format(Now, "ddd dd/mm/yyyy hh:nn:ss") & "-->")
+		PrintLine(1, "<!-- GÃ©nÃ©rÃ© le " & VB6.Format(Now, "ddd dd/mm/yyyy hh:nn:ss") & "-->")
 		PrintLine(1, "</HEAD>")
 		PrintLine(1, "<BODY>")
 		PrintLine(1, "<H1>Images de " & sRep & "</H1>")
@@ -1042,7 +1042,7 @@ Friend Class frmAfficheImage
 		PrintLine(1, "</HTML>")
 		FileClose(1)
 		
-		'UPGRADE_WARNING: propriété Screen.MousePointer de Screen a un nouveau comportement. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2065"'
+		'UPGRADE_WARNING: propriÃ©tÃ© Screen.MousePointer de Screen a un nouveau comportement. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2065"'
 		System.Windows.Forms.Cursor.Current = System.Windows.Forms.Cursors.Default
 	End Sub
 	
@@ -1073,7 +1073,7 @@ Friend Class frmAfficheImage
 		frmContact.DefInstance.SetBounds(0, 0, VB6.TwipsToPixelsX(VB6.TwipsPerPixelX * (VB6.PixelsToTwipsX(frmContact.DefInstance.Width) / VB6.TwipsPerPixelX - frmContact.DefInstance.ClientRectangle.Width + iImageColonnes + 1)), VB6.TwipsToPixelsY(VB6.TwipsPerPixelY * (VB6.PixelsToTwipsY(frmContact.DefInstance.Height) / VB6.TwipsPerPixelY - frmContact.DefInstance.ClientRectangle.Height + iImageLignes + 1)))
 		Do 
 			sContact = "!contact " & VB.Right(Str(iPlanche + 100), 2) & ".bmp"
-			'UPGRADE_ISSUE: Form méthode frmContact.Cls - Mise à niveau non effectuée Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2064"'
+			'UPGRADE_ISSUE: Form mÃ©thode frmContact.Cls - Mise Ã  niveau non effectuÃ©e Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2064"'
 			frmContact.Cls()
 			frmContact.DefInstance.Text = sContact
 			For i = 0 To iVignettesLignes - 1
@@ -1084,7 +1084,7 @@ Friend Class frmAfficheImage
 					End If
 				Next 
 			Next 
-			'UPGRADE_WARNING: SavePicture a été mis à niveau vers System.Drawing.Image.Save et a un nouveau comportement. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup1041"'
+			'UPGRADE_WARNING: SavePicture a Ã©tÃ© mis Ã  niveau vers System.Drawing.Image.Save et a un nouveau comportement. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup1041"'
 			frmContact.DefInstance.Image.Save(sRep & sContact)
 			iPlanche = iPlanche + 1
 		Loop Until iRang >= cboFichiers.Items.Count
@@ -1095,22 +1095,22 @@ Friend Class frmAfficheImage
 	' ========================================================================
 	' Drag and drop OLE: liste de fichiers depuis l'explorateur
 	
-	'UPGRADE_ISSUE: DataObject L'objet - Mise à niveau non effectuée Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2068"'
-	'UPGRADE_WARNING: Form de l'événement Form. OLEDragOver n'a pas été mis à niveau. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2050"'
+	'UPGRADE_ISSUE: DataObject L'objet - Mise Ã  niveau non effectuÃ©e Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2068"'
+	'UPGRADE_WARNING: Form de l'Ã©vÃ©nement Form. OLEDragOver n'a pas Ã©tÃ© mis Ã  niveau. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2050"'
 	Private Sub Form_OLEDragOver(ByRef Data As DataObject, ByRef Effect As Integer, ByRef Button As Short, ByRef Shift As Short, ByRef x As Single, ByRef y As Single, ByRef State As Short)
-		'UPGRADE_ISSUE: La constante vbCFFiles n'a pas été mise à niveau. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2070"'
-		'UPGRADE_ISSUE: DataObject méthode Data.GetFormat - Mise à niveau non effectuée Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2069"'
+		'UPGRADE_ISSUE: La constante vbCFFiles n'a pas Ã©tÃ© mise Ã  niveau. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2070"'
+		'UPGRADE_ISSUE: DataObject mÃ©thode Data.GetFormat - Mise Ã  niveau non effectuÃ©e Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2069"'
 		If Data.GetFormat(vbCFFiles) Then
-			'Si le format des données est approprié, indique à la source l'action à exécuter
+			'Si le format des donnÃ©es est appropriÃ©, indique Ã  la source l'action Ã  exÃ©cuter
 			Effect = System.Windows.Forms.DragDropEffects.Copy And Effect
 			Exit Sub
 		End If
-		'Si le format des données est incorrect, pas de déplacement.
+		'Si le format des donnÃ©es est incorrect, pas de dÃ©placement.
 		Effect = System.Windows.Forms.DragDropEffects.None
 	End Sub
 	
-	'UPGRADE_ISSUE: DataObject L'objet - Mise à niveau non effectuée Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2068"'
-	'UPGRADE_WARNING: Form de l'événement Form. OLEDragDrop n'a pas été mis à niveau. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2050"'
+	'UPGRADE_ISSUE: DataObject L'objet - Mise Ã  niveau non effectuÃ©e Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2068"'
+	'UPGRADE_WARNING: Form de l'Ã©vÃ©nement Form. OLEDragDrop n'a pas Ã©tÃ© mis Ã  niveau. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2050"'
 	Private Sub Form_OLEDragDrop(ByRef Data As DataObject, ByRef Effect As Integer, ByRef Button As Short, ByRef Shift As Short, ByRef x As Single, ByRef y As Single)
 		cboFichiers.Items.Clear()
 		hist.clear()
@@ -1118,9 +1118,9 @@ Friend Class frmAfficheImage
 		Dim f As Object
 		Dim sFic As String
 		sRep = "" ' Chemin absolu pour le drag'n'drop
-		'UPGRADE_ISSUE: DataObject propriété Data.Files - Mise à niveau non effectuée Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2069"'
+		'UPGRADE_ISSUE: DataObject propriÃ©tÃ© Data.Files - Mise Ã  niveau non effectuÃ©e Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2069"'
 		For	Each f In Data.Files
-			'UPGRADE_WARNING: Impossible de résoudre la propriété par défaut de l'objet f. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup1037"'
+			'UPGRADE_WARNING: Impossible de rÃ©soudre la propriÃ©tÃ© par dÃ©faut de l'objet f. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup1037"'
 			sFic = LCase(f)
 			If VB.Right(sFic, 4) = ".gif" Or VB.Right(sFic, 4) = ".bmp" Or VB.Right(sFic, 4) = ".htm" Or VB.Right(sFic, 5) = ".html" Or VB.Right(sFic, 4) = ".jpg" Or VB.Right(sFic, 5) = ".jpeg" Then
 				' Par convention on ignore les fichiers dont le nom commence par !
@@ -1131,17 +1131,17 @@ Friend Class frmAfficheImage
 		AfficheImage()
 	End Sub
 	
-	'UPGRADE_ISSUE: DataObject L'objet - Mise à niveau non effectuée Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2068"'
-	'UPGRADE_WARNING: Image1 de l'événement Image. OLEDragDrop n'a pas été mis à niveau. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2050"'
+	'UPGRADE_ISSUE: DataObject L'objet - Mise Ã  niveau non effectuÃ©e Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2068"'
+	'UPGRADE_WARNING: Image1 de l'Ã©vÃ©nement Image. OLEDragDrop n'a pas Ã©tÃ© mis Ã  niveau. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2050"'
 	Private Sub Image1_OLEDragDrop(ByRef Data As DataObject, ByRef Effect As Integer, ByRef Button As Short, ByRef Shift As Short, ByRef x As Single, ByRef y As Single)
-		'UPGRADE_WARNING: Form de l'événement Form. OLEDragDrop n'a pas été mis à niveau. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2050"'
+		'UPGRADE_WARNING: Form de l'Ã©vÃ©nement Form. OLEDragDrop n'a pas Ã©tÃ© mis Ã  niveau. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2050"'
 		Form_OLEDragDrop(Data, Effect, Button, Shift, x, y)
 	End Sub
 	
-	'UPGRADE_ISSUE: DataObject L'objet - Mise à niveau non effectuée Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2068"'
-	'UPGRADE_WARNING: Image1 de l'événement Image. OLEDragOver n'a pas été mis à niveau. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2050"'
+	'UPGRADE_ISSUE: DataObject L'objet - Mise Ã  niveau non effectuÃ©e Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2068"'
+	'UPGRADE_WARNING: Image1 de l'Ã©vÃ©nement Image. OLEDragOver n'a pas Ã©tÃ© mis Ã  niveau. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2050"'
 	Private Sub Image1_OLEDragOver(ByRef Data As DataObject, ByRef Effect As Integer, ByRef Button As Short, ByRef Shift As Short, ByRef x As Single, ByRef y As Single, ByRef State As Short)
-		'UPGRADE_WARNING: Form de l'événement Form. OLEDragOver n'a pas été mis à niveau. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2050"'
+		'UPGRADE_WARNING: Form de l'Ã©vÃ©nement Form. OLEDragOver n'a pas Ã©tÃ© mis Ã  niveau. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2050"'
 		Form_OLEDragOver(Data, Effect, Button, Shift, x, y, State)
 	End Sub
 	

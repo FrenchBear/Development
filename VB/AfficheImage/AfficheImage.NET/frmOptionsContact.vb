@@ -2,7 +2,7 @@ Option Strict Off
 Option Explicit On
 Friend Class frmOptionsContact
 	Inherits System.Windows.Forms.Form
-#Region "Code généré par le Concepteur Windows Form "
+#Region "Code gÃ©nÃ©rÃ© par le Concepteur Windows Form "
 	Public Sub New()
 		MyBase.New()
 		If m_vb6FormDefInstance Is Nothing Then
@@ -10,7 +10,7 @@ Friend Class frmOptionsContact
 				m_vb6FormDefInstance = Me
 			Else
 				Try 
-					'Pour le formulaire de démarrage, la première instance créée est l'instance par défaut.
+					'Pour le formulaire de dÃ©marrage, la premiÃ¨re instance crÃ©Ã©e est l'instance par dÃ©faut.
 					If System.Reflection.Assembly.GetExecutingAssembly.EntryPoint.DeclaringType Is Me.GetType Then
 						m_vb6FormDefInstance = Me
 					End If
@@ -21,7 +21,7 @@ Friend Class frmOptionsContact
 		'Cet appel est requis par le Concepteur Windows Form.
 		InitializeComponent()
 	End Sub
-	'La méthode substituée Dispose du formulaire pour nettoyer la liste des composants.
+	'La mÃ©thode substituÃ©e Dispose du formulaire pour nettoyer la liste des composants.
 	Protected Overloads Overrides Sub Dispose(ByVal Disposing As Boolean)
 		If Disposing Then
 			If Not components Is Nothing Then
@@ -46,9 +46,9 @@ Friend Class frmOptionsContact
 	Public WithEvents chkOk As System.Windows.Forms.CheckBox
 	Public WithEvents btnAnnuler As System.Windows.Forms.Button
 	Public WithEvents btnOk As System.Windows.Forms.Button
-	'REMARQUE : la procédure suivante est requise par le Concepteur Windows Form
-	'Il peut être modifié à l'aide du Concepteur Windows Form.
-	'Ne pas le modifier à l'aide de l'éditeur de code.
+	'REMARQUEÂ : la procÃ©dure suivante est requise par le Concepteur Windows Form
+	'Il peut Ãªtre modifiÃ© Ã  l'aide du Concepteur Windows Form.
+	'Ne pas le modifier Ã  l'aide de l'Ã©diteur de code.
 	<System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
 		Dim resources As System.Resources.ResourceManager = New System.Resources.ResourceManager(GetType(frmOptionsContact))
 		Me.components = New System.ComponentModel.Container()
@@ -325,7 +325,7 @@ Friend Class frmOptionsContact
 		Me.Frame1.Controls.Add(Label1)
 	End Sub
 #End Region 
-#Region "Prise en charge de la mise à niveau "
+#Region "Prise en charge de la mise Ã  niveau "
 	Private Shared m_vb6FormDefInstance As frmOptionsContact
 	Private Shared m_InitializingDefInstance As Boolean
 	Public Shared Property DefInstance() As frmOptionsContact
@@ -343,7 +343,7 @@ Friend Class frmOptionsContact
 	End Property
 #End Region 
 	' frmOptionsContact
-	' Options de génération de la feuille de contact
+	' Options de gÃ©nÃ©ration de la feuille de contact
 	' PV
 	
 	

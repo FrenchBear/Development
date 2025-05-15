@@ -2,7 +2,7 @@ Option Strict Off
 Option Explicit On
 Module ModSHBrowse
 	' modSHBrowser
-	' Constantes et déclarations pour l'appel à SHBrowseForFolder
+	' Constantes et dÃ©clarations pour l'appel Ã  SHBrowseForFolder
 	' 8/09/1998 PV  Callback
 	
 	
@@ -15,9 +15,9 @@ Module ModSHBrowse
 	'///////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 	' A little info...
-	' Objects in the shell’s namespace are assigned item identifiers and item
+	' Objects in the shellâ€™s namespace are assigned item identifiers and item
 	' identifier lists. An item identifier uniquely identifies an item within its parent
-	' folder. An item identifier list uniquely identifies an item within the shell’s
+	' folder. An item identifier list uniquely identifies an item within the shellâ€™s
 	' namespace by tracing a path to the item from the desktop.
 	
 	'///////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -25,7 +25,7 @@ Module ModSHBrowse
 	' An item identifier is defined by the variable-length SHITEMID structure.
 	' The first two bytes of this structure specify its size, and the format of
 	' the remaining bytes depends on the parent folder, or more precisely
-	' on the software that implements the parent folder’s IShellFolder interface.
+	' on the software that implements the parent folderâ€™s IShellFolder interface.
 	' Except for the first two bytes, item identifiers are not strictly defined, and
 	' applications should make no assumptions about their format.
 	Structure SHITEMID ' mkid
@@ -51,7 +51,7 @@ Module ModSHBrowse
 	
 	' Retrieves the location of a special (system) folder.
 	' Returns NOERROR if successful or an OLE-defined error result otherwise.
-	'UPGRADE_WARNING: La structure ITEMIDLIST peut nécessiter que des attributs de marshaling soient passés en tant qu'argument dans cette instruction Declare. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup1050"'
+	'UPGRADE_WARNING: La structure ITEMIDLIST peut nÃ©cessiter que des attributs de marshaling soient passÃ©s en tant qu'argument dans cette instruction Declare. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup1050"'
 	Declare Function SHGetSpecialFolderLocation Lib "Shell32.dll" (ByVal hwndOwner As Integer, ByVal nFolder As Integer, ByRef pIdl As ITEMIDLIST) As Integer
 	
 	' SHGetSpecialFolderLocation successful rtn val
@@ -122,14 +122,14 @@ Module ModSHBrowse
 	'========================================================
 	
 	' Frees memory allocated by SHBrowseForFolder()
-	'UPGRADE_NOTE: pva été mis à niveau vers pv_Renamed. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup1061"'
+	'UPGRADE_NOTE: pva Ã©tÃ© mis Ã  niveau vers pv_Renamed. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup1061"'
 	Declare Sub CoTaskMemFree Lib "ole32.dll" (ByVal pv_Renamed As Integer)
 	
 	' Displays a dialog box that enables the user to select a shell folder.
 	' Returns a pointer to an item identifier list that specifies the location
 	' of the selected folder relative to the root of the name space. If the user
 	' chooses the Cancel button in the dialog box, the return value is NULL.
-	'UPGRADE_WARNING: La structure BROWSEINFO peut nécessiter que des attributs de marshaling soient passés en tant qu'argument dans cette instruction Declare. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup1050"'
+	'UPGRADE_WARNING: La structure BROWSEINFO peut nÃ©cessiter que des attributs de marshaling soient passÃ©s en tant qu'argument dans cette instruction Declare. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup1050"'
 	Declare Function SHBrowseForFolder Lib "Shell32.dll"  Alias "SHBrowseForFolderA"(ByRef lpBrowseInfo As BROWSEINFO) As Integer ' ITEMIDLIST
 	
 	' Contains parameters for the the SHBrowseForFolder function and receives
@@ -208,16 +208,16 @@ Module ModSHBrowse
 	
 	
 	
-	'UPGRADE_ISSUE: La déclaration d'un paramètre 'As Any' n'est pas prise en charge. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup1016"'
+	'UPGRADE_ISSUE: La dÃ©claration d'un paramÃ¨tre 'As Any' n'est pas prise en charge. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup1016"'
 	Declare Function SendMessage Lib "user32"  Alias "SendMessageA"(ByVal hwnd As Integer, ByVal wMsg As Integer, ByVal wParam As Integer, ByRef lParam As Any) As Integer
 	
-	Private sRépertoireInitial As String
+	Private sRÃ©pertoireInitial As String
 	
 	Private Function BrowseNotify(ByVal hwnd As Integer, ByVal uMsg As Integer, ByVal lParam As Integer, ByVal lpData As Integer) As Integer
 		Dim s As String
 		Select Case uMsg
 			Case BFFM_INITIALIZED
-				SendMessage(hwnd, BFFM_SETSELECTIONA, 1, sRépertoireInitial)
+				SendMessage(hwnd, BFFM_SETSELECTIONA, 1, sRÃ©pertoireInitial)
 				BrowseNotify = 1
 				
 			Case Else
@@ -278,8 +278,8 @@ Module ModSHBrowse
 	
 	
 	Public Function sBrowseForFolder(ByRef hwnd As Integer, ByRef sStart As String, ByRef sTitle As String) As String
-		sRépertoireInitial = sStart
-		'UPGRADE_WARNING: Ajouter un délégué pour AddressOf BrowseNotify Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup1048"'
+		sRÃ©pertoireInitial = sStart
+		'UPGRADE_WARNING: Ajouter un dÃ©lÃ©guÃ© pour AddressOf BrowseNotify Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup1048"'
 		sBrowseForFolder = sBrowseForFolder2(hwnd, sStart, sTitle, AddressOf BrowseNotify)
 	End Function
 End Module

@@ -2,7 +2,7 @@ Option Strict Off
 Option Explicit On
 Friend Class frmFichiers
 	Inherits System.Windows.Forms.Form
-#Region "Code généré par le Concepteur Windows Form "
+#Region "Code gÃ©nÃ©rÃ© par le Concepteur Windows Form "
 	Public Sub New()
 		MyBase.New()
 		If m_vb6FormDefInstance Is Nothing Then
@@ -10,7 +10,7 @@ Friend Class frmFichiers
 				m_vb6FormDefInstance = Me
 			Else
 				Try 
-					'Pour le formulaire de démarrage, la première instance créée est l'instance par défaut.
+					'Pour le formulaire de dÃ©marrage, la premiÃ¨re instance crÃ©Ã©e est l'instance par dÃ©faut.
 					If System.Reflection.Assembly.GetExecutingAssembly.EntryPoint.DeclaringType Is Me.GetType Then
 						m_vb6FormDefInstance = Me
 					End If
@@ -21,7 +21,7 @@ Friend Class frmFichiers
 		'Cet appel est requis par le Concepteur Windows Form.
 		InitializeComponent()
 	End Sub
-	'La méthode substituée Dispose du formulaire pour nettoyer la liste des composants.
+	'La mÃ©thode substituÃ©e Dispose du formulaire pour nettoyer la liste des composants.
 	Protected Overloads Overrides Sub Dispose(ByVal Disposing As Boolean)
 		If Disposing Then
 			If Not components Is Nothing Then
@@ -34,9 +34,9 @@ Friend Class frmFichiers
 	Private components As System.ComponentModel.IContainer
 	Public ToolTip1 As System.Windows.Forms.ToolTip
 	Public WithEvents lvFichiers As AxMSComctlLib.AxListView
-	'REMARQUE : la procédure suivante est requise par le Concepteur Windows Form
-	'Il peut être modifié à l'aide du Concepteur Windows Form.
-	'Ne pas le modifier à l'aide de l'éditeur de code.
+	'REMARQUEÂ : la procÃ©dure suivante est requise par le Concepteur Windows Form
+	'Il peut Ãªtre modifiÃ© Ã  l'aide du Concepteur Windows Form.
+	'Ne pas le modifier Ã  l'aide de l'Ã©diteur de code.
 	<System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
 		Dim resources As System.Resources.ResourceManager = New System.Resources.ResourceManager(GetType(frmFichiers))
 		Me.components = New System.ComponentModel.Container()
@@ -72,7 +72,7 @@ Friend Class frmFichiers
 		CType(Me.lvFichiers, System.ComponentModel.ISupportInitialize).EndInit()
 	End Sub
 #End Region 
-#Region "Prise en charge de la mise à niveau "
+#Region "Prise en charge de la mise Ã  niveau "
 	Private Shared m_vb6FormDefInstance As frmFichiers
 	Private Shared m_InitializingDefInstance As Boolean
 	Public Shared Property DefInstance() As frmFichiers
@@ -90,7 +90,7 @@ Friend Class frmFichiers
 	End Property
 #End Region 
 	' frmFichiers
-	' Affichage de la liste complète des fichiers
+	' Affichage de la liste complÃ¨te des fichiers
 	' 20/12/98 PV
 	'  2/01/99 PV Optimisation: hide au lieu de unload sur fermeture; ListView au lieu de la liste standard
 	' 10/01/99 PV Toujours au-dessus de frmAfficheImage
@@ -104,7 +104,7 @@ Friend Class frmFichiers
 	
 	
 	
-	'UPGRADE_WARNING: L'événement frmFichiers.Resize peut se déclencher lorsque le formulaire est initialisé. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2075"'
+	'UPGRADE_WARNING: L'Ã©vÃ©nement frmFichiers.Resize peut se dÃ©clencher lorsque le formulaire est initialisÃ©. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2075"'
 	Private Sub frmFichiers_Resize(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles MyBase.Resize
 		lvFichiers.SetBounds(0, 0, ClientRectangle.Width, ClientRectangle.Height)
 	End Sub
@@ -120,7 +120,7 @@ Friend Class frmFichiers
 	Private Sub lvFichiers_KeyDownEvent(ByVal eventSender As System.Object, ByVal eventArgs As AxMSComctlLib.ListViewEvents_KeyDownEvent) Handles lvFichiers.KeyDownEvent
 		If eventArgs.KeyCode = 46 Then ' Suppr
 			frmAfficheImage.DefInstance.SupprimeImage()
-			'lvFichiers.SelectedItem.Text = "[Supprimé]"
+			'lvFichiers.SelectedItem.Text = "[SupprimÃ©]"
 			lvFichiers.ListItems.Remove(lvFichiers.SelectedItem.Index)
 			
 			frmFichiers.DefInstance.lvFichiers.SelectedItem = frmFichiers.DefInstance.lvFichiers.ListItems(frmAfficheImage.DefInstance.iPos + 1)
@@ -129,11 +129,11 @@ Friend Class frmFichiers
 	
 	
 	' Optimisation
-	' La fermeture avec la croix ne fait que cacher la fenêtre
-	'UPGRADE_WARNING: événement frmFichiers.QueryUnload de Form a un nouveau comportement. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2065"'
+	' La fermeture avec la croix ne fait que cacher la fenÃªtre
+	'UPGRADE_WARNING: Ã©vÃ©nement frmFichiers.QueryUnload de Form a un nouveau comportement. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2065"'
 	Private Sub frmFichiers_Closing(ByVal eventSender As System.Object, ByVal eventArgs As System.ComponentModel.CancelEventArgs) Handles MyBase.Closing
 		Dim Cancel As Short = eventArgs.Cancel
-		'UPGRADE_ISSUE: Le paramètre d'événement UnloadMode n'a pas été mis à niveau. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup1057"'
+		'UPGRADE_ISSUE: Le paramÃ¨tre d'Ã©vÃ©nement UnloadMode n'a pas Ã©tÃ© mis Ã  niveau. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup1057"'
 		If UnloadMode = 0 Then ' Croix de fermeture
 			Me.Hide()
 			Cancel = 1
@@ -154,7 +154,7 @@ EventExitSub:
 	End Sub
 	
 	
-	'UPGRADE_WARNING: événement frmFichiers.Unload de Form a un nouveau comportement. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2065"'
+	'UPGRADE_WARNING: Ã©vÃ©nement frmFichiers.Unload de Form a un nouveau comportement. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2065"'
 	Private Sub frmFichiers_Closed(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles MyBase.Closed
 		Dim ret As Integer
 		

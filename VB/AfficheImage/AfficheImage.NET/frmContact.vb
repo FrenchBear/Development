@@ -2,7 +2,7 @@ Option Strict Off
 Option Explicit On
 Friend Class frmContact
 	Inherits System.Windows.Forms.Form
-#Region "Code généré par le Concepteur Windows Form "
+#Region "Code gÃ©nÃ©rÃ© par le Concepteur Windows Form "
 	Public Sub New()
 		MyBase.New()
 		If m_vb6FormDefInstance Is Nothing Then
@@ -10,7 +10,7 @@ Friend Class frmContact
 				m_vb6FormDefInstance = Me
 			Else
 				Try 
-					'Pour le formulaire de démarrage, la première instance créée est l'instance par défaut.
+					'Pour le formulaire de dÃ©marrage, la premiÃ¨re instance crÃ©Ã©e est l'instance par dÃ©faut.
 					If System.Reflection.Assembly.GetExecutingAssembly.EntryPoint.DeclaringType Is Me.GetType Then
 						m_vb6FormDefInstance = Me
 					End If
@@ -21,7 +21,7 @@ Friend Class frmContact
 		'Cet appel est requis par le Concepteur Windows Form.
 		InitializeComponent()
 	End Sub
-	'La méthode substituée Dispose du formulaire pour nettoyer la liste des composants.
+	'La mÃ©thode substituÃ©e Dispose du formulaire pour nettoyer la liste des composants.
 	Protected Overloads Overrides Sub Dispose(ByVal Disposing As Boolean)
 		If Disposing Then
 			If Not components Is Nothing Then
@@ -34,9 +34,9 @@ Friend Class frmContact
 	Private components As System.ComponentModel.IContainer
 	Public ToolTip1 As System.Windows.Forms.ToolTip
 	Public WithEvents Img As System.Windows.Forms.PictureBox
-	'REMARQUE : la procédure suivante est requise par le Concepteur Windows Form
-	'Il peut être modifié à l'aide du Concepteur Windows Form.
-	'Ne pas le modifier à l'aide de l'éditeur de code.
+	'REMARQUEÂ : la procÃ©dure suivante est requise par le Concepteur Windows Form
+	'Il peut Ãªtre modifiÃ© Ã  l'aide du Concepteur Windows Form.
+	'Ne pas le modifier Ã  l'aide de l'Ã©diteur de code.
 	<System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
 		Dim resources As System.Resources.ResourceManager = New System.Resources.ResourceManager(GetType(frmContact))
 		Me.components = New System.ComponentModel.Container()
@@ -72,7 +72,7 @@ Friend Class frmContact
 		Me.Controls.Add(Img)
 	End Sub
 #End Region 
-#Region "Prise en charge de la mise à niveau "
+#Region "Prise en charge de la mise Ã  niveau "
 	Private Shared m_vb6FormDefInstance As frmContact
 	Private Shared m_InitializingDefInstance As Boolean
 	Public Shared Property DefInstance() As frmContact
@@ -90,7 +90,7 @@ Friend Class frmContact
 	End Property
 #End Region 
 	' AfficheImage - frmContact
-	' Feuille utilisée pour la génération des plances de contact
+	' Feuille utilisÃ©e pour la gÃ©nÃ©ration des plances de contact
 	' PV mai 97
 	
 	
@@ -104,18 +104,18 @@ Friend Class frmContact
 		h = (ClientRectangle.Height - 1) / iVignettesLignes
 		x = i * w
 		y = h * j
-		'UPGRADE_ISSUE: Form méthode frmContact.Line - Mise à niveau non effectuée Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2064"'
+		'UPGRADE_ISSUE: Form mÃ©thode frmContact.Line - Mise Ã  niveau non effectuÃ©e Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2064"'
 		Me.Line (x, y) - (w, h), B
 		
-		'UPGRADE_ISSUE: Form méthode frmContact.TextHeight - Mise à niveau non effectuée Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2064"'
-		TexteCentré(Me, x, x + w, y + h - TextHeight(sFic), sFic)
+		'UPGRADE_ISSUE: Form mÃ©thode frmContact.TextHeight - Mise Ã  niveau non effectuÃ©e Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2064"'
+		TexteCentrÃ©(Me, x, x + w, y + h - TextHeight(sFic), sFic)
 		
 		x = x + 2
 		y = y + 2
 		w = w - 3
 		h = h - 4
 		
-		'UPGRADE_ISSUE: Form méthode frmContact.TextHeight - Mise à niveau non effectuée Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2064"'
+		'UPGRADE_ISSUE: Form mÃ©thode frmContact.TextHeight - Mise Ã  niveau non effectuÃ©e Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2064"'
 		h = h - TextHeight(sFic)
 		On Error Resume Next
 		Img.Image = System.Drawing.Image.FromFile(sRep & sFic)
@@ -133,20 +133,20 @@ Friend Class frmContact
 			r = r2
 		End If
 		On Error Resume Next
-		'UPGRADE_ISSUE: Form méthode frmContact.PaintPicture - Mise à niveau non effectuée Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2064"'
+		'UPGRADE_ISSUE: Form mÃ©thode frmContact.PaintPicture - Mise Ã  niveau non effectuÃ©e Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup2064"'
 		PaintPicture(Img.Image, x, y, Img.Width * r, Img.Height * r)
 		On Error GoTo 0
 		System.Windows.Forms.Application.DoEvents()
 	End Sub
 	
 	
-	Private Sub TexteCentré(ByRef o As Object, ByRef x1 As Single, ByRef x2 As Single, ByRef y As Single, ByRef sTexte As String)
-		'UPGRADE_WARNING: Impossible de résoudre la propriété par défaut de l'objet o.CurrentX. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup1037"'
-		'UPGRADE_WARNING: Impossible de résoudre la propriété par défaut de l'objet o.TextWidth. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup1037"'
+	Private Sub TexteCentrÃ©(ByRef o As Object, ByRef x1 As Single, ByRef x2 As Single, ByRef y As Single, ByRef sTexte As String)
+		'UPGRADE_WARNING: Impossible de rÃ©soudre la propriÃ©tÃ© par dÃ©faut de l'objet o.CurrentX. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup1037"'
+		'UPGRADE_WARNING: Impossible de rÃ©soudre la propriÃ©tÃ© par dÃ©faut de l'objet o.TextWidth. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup1037"'
 		o.CurrentX = x1 + (x2 - x1 - o.TextWidth(sTexte)) / 2
-		'UPGRADE_WARNING: Impossible de résoudre la propriété par défaut de l'objet o.CurrentY. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup1037"'
+		'UPGRADE_WARNING: Impossible de rÃ©soudre la propriÃ©tÃ© par dÃ©faut de l'objet o.CurrentY. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup1037"'
 		o.CurrentY = y
-		'UPGRADE_WARNING: Impossible de résoudre la propriété par défaut de l'objet o.Print. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup1037"'
+		'UPGRADE_WARNING: Impossible de rÃ©soudre la propriÃ©tÃ© par dÃ©faut de l'objet o.Print. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup1037"'
 		o.Print(sTexte)
 	End Sub
 End Class

@@ -97,7 +97,7 @@ Public Class frmAstruct
         Me.lblDestination.Name = "lblDestination"
         Me.lblDestination.Size = New System.Drawing.Size(128, 16)
         Me.lblDestination.TabIndex = 9
-        Me.lblDestination.Text = "Répertoire destination :"
+        Me.lblDestination.Text = "RÃ©pertoire destination :"
         '
         'txtSource
         '
@@ -114,7 +114,7 @@ Public Class frmAstruct
         Me.lblSource.Name = "lblSource"
         Me.lblSource.Size = New System.Drawing.Size(100, 16)
         Me.lblSource.TabIndex = 6
-        Me.lblSource.Text = "Répertoire source :"
+        Me.lblSource.Text = "RÃ©pertoire source :"
         '
         'fraExclusions
         '
@@ -157,7 +157,7 @@ Public Class frmAstruct
     Private Sub btnLookupSource_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         FolderBrowser.SelectedPath = txtSource.Text
         FolderBrowser.ShowNewFolderButton = False
-        FolderBrowser.Description = "Sélectionnez le dossier contenant les images source :"
+        FolderBrowser.Description = "SÃ©lectionnez le dossier contenant les images source :"
         If FolderBrowser.ShowDialog(Me) = DialogResult.OK Then
             txtSource.Text = FolderBrowser.SelectedPath
             txtSource.SelectionStart = 0

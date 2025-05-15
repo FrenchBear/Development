@@ -12,7 +12,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("vbAccelerator")]
 [assembly: AssemblyProduct("vbAccelerator Icon Combo Box Control")]
-[assembly: AssemblyCopyright("Copyright © 2003 Steve McMahon for vbAccelerator.com")]
+[assembly: AssemblyCopyright("Copyright Â© 2003 Steve McMahon for vbAccelerator.com")]
 [assembly: AssemblyTrademark("vbAccelerator and vbAccelerator.com are Trademarks of vbAccelerator Ltd.  All Rights Reserved.")]
 [assembly: AssemblyCulture("")]		
 

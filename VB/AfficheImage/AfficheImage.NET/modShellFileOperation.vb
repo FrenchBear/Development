@@ -2,10 +2,10 @@ Option Strict Off
 Option Explicit On
 Module modShellFileOperation
 	' ShellFileOperation
-	' Acces VB ‡ SHFileOperation (effacement -> poubelle, copie, ...)
-	' 11/11/97 PV CrÈÈ d'aprËs la KB VB Microsoft
-	'  3/01/98 PV DÈplaceFichier
-	'  5/08/99 PV EffaceFichierCorbeille envoie rÈellement dans la corbeille !!!
+	' Acces VB √† SHFileOperation (effacement -> poubelle, copie, ...)
+	' 11/11/97 PV Cr√©√© d'apr√®s la KB VB Microsoft
+	'  3/01/98 PV D√©placeFichier
+	'  5/08/99 PV EffaceFichierCorbeille envoie r√©ellement dans la corbeille !!!
 	
 	
 	Public Const FO_MOVE As Integer = &H1s
@@ -38,7 +38,7 @@ Module modShellFileOperation
 		Dim lpszProgressTitle As String
 	End Structure
 	
-	'UPGRADE_WARNING: La structure SHFILEOPSTRUCT peut nÈcessiter que des attributs de marshaling soient passÈs en tant qu'argument dans cette instruction Declare. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup1050"'
+	'UPGRADE_WARNING: La structure SHFILEOPSTRUCT peut n√©cessiter que des attributs de marshaling soient pass√©s en tant qu'argument dans cette instruction Declare. Cliquez ici : 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="vbup1050"'
 	Declare Function SHFileOperation Lib "Shell32.dll"  Alias "SHFileOperationA"(ByRef lpFileOp As SHFILEOPSTRUCT) As Integer
 	
 	
@@ -57,7 +57,7 @@ Module modShellFileOperation
 		EffaceFichierCorbeille = result
 	End Function
 	
-	Function DÈplaceFichier(ByVal hwnd As Integer, ByVal sSource As String, ByVal sDest As String) As Integer
+	Function D√©placeFichier(ByVal hwnd As Integer, ByVal sSource As String, ByVal sDest As String) As Integer
 		Dim MoveFileOp As SHFILEOPSTRUCT
 		Dim result As Integer
 		While Right(sSource, 2) <> vbNullChar & vbNullChar : sSource = sSource & vbNullChar : End While
@@ -70,6 +70,6 @@ Module modShellFileOperation
 			.fFlags = CInt(FOF_NOCONFIRMATION & FOF_MULTIDESTFILES)
 		End With
 		result = SHFileOperation(MoveFileOp)
-		DÈplaceFichier = result
+		D√©placeFichier = result
 	End Function
 End Module
