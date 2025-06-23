@@ -40,5 +40,3 @@ typedef struct
   int insmode;
   int police;
 } CONTEXTE;
-
-

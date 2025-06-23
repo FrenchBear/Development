@@ -120,7 +120,7 @@ init_syntax_once ()
 #define SYNTAX(c) re_syntax_table[c]
 
 #endif /* not emacs */
-
+
 /* Get the interface, including the syntax bits.  */
 #include "regex.h"
 
@@ -168,7 +168,7 @@ init_syntax_once ()
 /* As in Harbison and Steele.  */
 #define SIGN_EXTEND_CHAR(c) ((((unsigned char) (c)) ^ 128) - 128)
 #endif
-
+
 /* Should we use malloc or alloca?  If REGEX_MALLOC is not defined, we
    use `alloca' instead of `malloc'.  This is because using malloc in
    re_search* or re_match* could cause memory leaks when C-g is used in
@@ -236,7 +236,7 @@ char *alloca ();
 typedef char boolean;
 #define false 0
 #define true 1
-
+
 /* These are the command codes that appear in compiled regular
    expressions.  Some opcodes are followed by argument bytes.  A
    command code can specify any interpretation whatsoever for its
@@ -376,7 +376,7 @@ typedef enum
   notsyntaxspec
 #endif /* emacs */
 } re_opcode_t;
-
+
 /* Common operations on the compiled pattern.  */
 
 /* Store NUMBER in two contiguous bytes starting at DESTINATION.  */
@@ -450,7 +450,7 @@ extract_number_and_incr (destination, source)
 #endif /* not EXTRACT_MACROS */
 
 #endif /* DEBUG */
-
+
 /* If DEBUG is defined, Regex prints many voluminous messages about what
    it is doing (if the variable `debug' is nonzero).  If linked with the
    main program in `iregex.c', you can enter patterns and strings
@@ -790,7 +790,7 @@ print_double_string (where, string1, size1, string2, size2)
 #define DEBUG_PRINT_DOUBLE_STRING(w, s1, sz1, s2, sz2)
 
 #endif /* not DEBUG */
-
+
 /* Set by `re_set_syntax' to the current regexp syntax to recognize.  Can
    also be assigned to arbitrarily: each pattern buffer stores its own
    syntax, so it can be changed between regex compilations.  */
@@ -4922,7 +4922,7 @@ regfree (preg)
 }
 
 #endif /* not emacs  */
-
+
 /*
 Local variables:
 make-backup-files: t
