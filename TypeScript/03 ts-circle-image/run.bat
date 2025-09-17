@@ -1,0 +1,1 @@
+node generated\create-image.js %*

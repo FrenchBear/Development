@@ -1,0 +1,8 @@
+{
+    "dependencies": {
+        "jimp": "^1.6.0"
+    },
+    "devDependencies": {
+        "@types/pngjs": "^6.0.5"
+    }
+}
