@@ -1,6 +1,8 @@
 {
     "dependencies": {
-        "jimp": "^1.6.0"
+        "@types/node": "^24.5.2",
+        "jimp": "^1.6.0",
+        "typescript": "^5.9.2"
     },
     "devDependencies": {
         "@types/pngjs": "^6.0.5"
