@@ -1,0 +1,1 @@
+@del /f /q hello.exe hello.obj mllink$.lnk
