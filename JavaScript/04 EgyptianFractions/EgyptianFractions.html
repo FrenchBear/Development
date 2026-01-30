@@ -1,0 +1,52 @@
+<!--
+EgyptianFractions, HTML+CSS+Javascript
+
+2026-01-30 	PV		First version
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Egyptian Fractions</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Egyptian Fractions</h1>
+        <span id="Left"></span> = <span id="Right"></span>
+    </div>
+
+    <script src="fraction.js"></script>
+    <script>
+        // State management
+        const MAX_HISTORY = 4;
+        let history = []; // Array of { word: string, likeness: number }
+
+        // DOM Elements
+        const numInput = document.getElementById("num");
+        const denInput = document.getElementById("den");
+        const beforePeriodTxt = document.getElementById("beforePeriod");
+        const periodTxt = document.getElementById("period");
+        const clearBtn = document.getElementById("clearBtn");
+
+        const left = document.getElementById("Left");
+        const right = document.getElementById("Right");
+        let l = new Fraction(8, 11);
+        let r = [new Fraction(1, 2), new Fraction(1, 5), new Fraction(1, 37), new Fraction(1, 4070)];
+        console.log(l);
+        console.log(r);
+        left.innerText = JSON.stringify(l, null, 2);
+        right.innerText = JSON.stringify(r, null, 2);
+    </script>
+
+</body>
+
+</html>
