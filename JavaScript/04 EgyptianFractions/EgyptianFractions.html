@@ -1,5 +1,6 @@
 <!--
 EgyptianFractions, HTML+CSS+Javascript
+Convert a fraction in a sum of fractions of type 1/k
 
 2026-01-30 	PV		First version
 -->
@@ -39,7 +40,25 @@ EgyptianFractions, HTML+CSS+Javascript
 
     <div class="container">
         <h1>Egyptian Fractions</h1>
-        <span id="Left" class="fraction"></span> = <span id="Right"></span>
+
+        <div class="helper-text">Enter numerator and denominator</div>
+
+        <table>
+            <tbody>
+                <tr>
+                    <td><input id="num" style="width: 5ch;" autofocus></td>
+                </tr>
+                <tr>
+                    <td><input id="den" style="width: 5ch;"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        </p>
+
+        <span id="left" class="fraction"> </span><span id="equals"></span> <span id="right"></span>
+
+        <div id="status"></div>
     </div>
 
     <script src="fraction.js"></script>
@@ -51,16 +70,97 @@ EgyptianFractions, HTML+CSS+Javascript
         // DOM Elements
         const numInput = document.getElementById("num");
         const denInput = document.getElementById("den");
-        const beforePeriodTxt = document.getElementById("beforePeriod");
-        const periodTxt = document.getElementById("period");
-        const clearBtn = document.getElementById("clearBtn");
+        //const clearBtn = document.getElementById("clearBtn");
+        const left = document.getElementById("left");
+        const equals = document.getElementById("equals");
+        const right = document.getElementById("right");
+        const status = document.getElementById("status");
 
-        const left = document.getElementById("Left");
-        const right = document.getElementById("Right");
-        let l = new Fraction(8, 11);
-        let r = [new Fraction(1, 2), new Fraction(1, 5), new Fraction(1, 37), new Fraction(1, 4070)];
-        left.innerHTML = `<span class="numerator">${l.Num}</span><span class="denominator">${l.Den}</span>`;
-        right.innerHTML = r.map(f => `<span class="fraction"><span class="numerator">${f.Num}</span><span class="denominator">${f.Den}</span></span>`).join(' + ');
+        function decompose(f) {
+            if (f.num == 1)
+                return [f]
+
+            let d1 = Math.floor(f.den / f.num + 1);
+            let f1 = new Fraction(1, d1);
+            let f2 = f.subtract(f1);
+            let l = decompose(f2);
+            l.unshift(f1);
+            return l;
+        }
+
+        function showDecomposition() {
+            let num = numInput.value;
+            let den = denInput.value;
+
+            // Keep original values to display fraction at the end
+            let num0 = num;
+            let den0 = den;
+
+            left.innerText = "";
+            right.innerText = "";
+            equals.innerText = "";
+            status.innerText = "";
+
+            // No value, no result
+            if (num.trim() == "" || den.trim() == "")
+                return;
+
+            num = Number(num);
+            den = Number(den);
+
+            if (!Number.isInteger(num) || num < 0) {
+                status.innerText = "Invalid numerator";
+                return;
+            }
+            if (!Number.isInteger(den) || den <= 0) {
+                status.innerText = "Invalid denominator";
+                return;
+            }
+
+            let ip = Math.floor(num / den);
+            if (ip == 0) {
+                equals.innerText = " = ";
+            } else {
+                num = num - ip * den;
+                if (num > 0)
+                    equals.innerText = ` = ${ip} +`;
+                else
+                    equals.innerText = ` = ${ip}`;
+            }
+            let l = new Fraction(num0, den0);
+            left.innerHTML = `<span class="numerator">${l.num}</span><span class="denominator">${l.den}</span>`;
+
+            if (num > 0) {
+                let r = decompose(new Fraction(num, den).simplify());
+                right.innerHTML = r.map(f => `<span class="fraction"><span class="numerator">${f.num}</span><span class="denominator">${f.den}</span></span>`).join(' + ');
+            }
+        }
+
+        showDecomposition();
+
+        // --- Event Handlers
+
+        // Real-time typing check
+        numInput.addEventListener("keyup", () => {
+            showDecomposition();
+        });
+
+        // Also trigger on input (for pasting etc)
+        numInput.addEventListener("input", () => {
+            showDecomposition();
+        });
+
+        // Real-time typing check
+        denInput.addEventListener("keyup", () => {
+            showDecomposition();
+        });
+
+        // Also trigger on input (for pasting etc)
+        denInput.addEventListener("input", () => {
+            showDecomposition();
+        });
+
+
     </script>
 
 </body>
