@@ -1,0 +1,19 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Execute with node.js",
+            "type": "shell",
+            "command": "node",
+            "args": [
+                "${file}"
+            ],
+            "problemMatcher": [],
+            // Trick: Shift+Ctrl+B will trigger execution too
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
