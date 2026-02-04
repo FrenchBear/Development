@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Test of sectioning content</title>
+
+    <style>
+        section {
+            border: double medium;
+            margin: 2em;
+        }
+
+        section.chapter h2 {
+            font: 2em Roboto, Helvetica Neue, sans-serif;
+        }
+
+        section.appendix h2 {
+            font: small-caps 2em Roboto, Helvetica Neue, sans-serif;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>Top level H1 tag</h1>
+    <header>
+        <h2>Global Header</h2>
+        Some header text
+    </header>
+    <nav>
+        <h2>Navigation</h2>
+        Some text in nav section
+    </nav>
+    <main>
+        <article itemscope itemtype="http://schema.org/BlogPosting">
+            <header>
+                <h2 itemprop="headline">The Very First Rule of Life</h2>
+                <p><time itemprop="datePublished" datetime="2009-10-09">3 days ago</time></p>
+                <link itemprop="url" href="?comments=0">
+            </header>
+            <p>If there's a microphone anywhere near you, assume it's hot and
+                sending whatever you're saying to the world. Seriously.</p>
+            <p>...</p>
+            <div>And a classic division</div>
+            <section>
+                <h2>Comments</h2>
+                <article itemprop="comment" itemscope itemtype="http://schema.org/Comment" id="c1">
+                    <h2>First comment</h2>
+                    <link itemprop="url" href="#c1">
+                    <footer>
+                        <p>Posted by: <span itemprop="creator" itemscope itemtype="http://schema.org/Person">
+                                <span itemprop="name">George Washington</span>
+                            </span></p>
+                        <p><time itemprop="dateCreated" datetime="2009-10-10">15 minutes ago</time></p>
+                    </footer>
+                    <p>Yeah! Especially when talking about your lobbyist friends!</p>
+                </article>
+                <article itemprop="comment" itemscope itemtype="http://schema.org/Comment" id="c2">
+                    <link itemprop="url" href="#c2">
+                    <h2>Second comment</h2>
+                    <footer>
+                        <p>Posted by: <span itemprop="creator" itemscope itemtype="http://schema.org/Person">
+                                <span itemprop="name">George Hammond</span>
+                            </span></p>
+                        <p><time itemprop="dateCreated" datetime="2009-10-10">5 minutes ago</time></p>
+                    </footer>
+                    <p>Hey, you have the same first name as me.</p>
+                </article>
+            </section>
+            <header>
+                <hgroup>
+                    <h2>My Book</h2>
+                    <p>A sample with not much content</p>
+                </hgroup>
+                <p><small>Published by Dummy Publicorp Ltd.</small></p>
+            </header>
+            <section class="chapter">
+                <h2>My First Chapter</h2>
+                <p>This is the first of my chapters. It doesn't say much.</p>
+                <p>But it has two paragraphs!</p>
+            </section>
+            <section class="chapter">
+                <h2>It Continues: The Second Chapter</h2>
+                <p>Bla dee bla, dee bla dee bla. Boom.</p>
+            </section>
+            <section class="chapter">
+                <h2>Chapter Three: A Further Example</h2>
+                <p>It's not like a battle between brightness and earthtones would go
+                    unnoticed.</p>
+                <p>But it might ruin my story.</p>
+            </section>
+            <section class="appendix">
+                <h2>Appendix A: Overview of Examples</h2>
+                <p>These are demonstrations.</p>
+            </section>
+            <section class="appendix">
+                <h2>Appendix B: Some Closing Remarks</h2>
+                <p>Hopefully this long example shows that you <em>can</em> style
+                    sections, so long as they are used to indicate actual sections.</p>
+            </section>
+            <aside>
+                <h2>Aside block</h2>
+                <section>
+                    <h2>First section</h2>
+                    in aside block
+                </section>
+                <section>
+                    <h2>Second section</h2>
+                    in aside block
+                    <article>
+                        <h2>Article 1 in 2nd section</h2>
+                        of aside block
+                    </article>
+                    <article>
+                        <h2>Article 2 in 2nd section</h2>
+                        of aside block, again
+                    </article>
+                </section>
+            </aside>
+        </article>
+    </main>
+    <footer>
+        <h2>Global Footer</h2>
+        Some footer text
+    </footer>
+</body>
+
+</html>

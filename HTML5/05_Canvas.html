@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Example of canvas drawing in HTML 5</title>
+</head>
+
+<body>
+    <canvas id="myCanvas">Your browser does not support the canvas
+        tag.</canvas>
+    <script>
+        var canvas = document.getElementById('myCanvas');
+        var ctx = canvas.getContext('2d');
+        // Draw blue rectangle
+        ctx.fillStyle = '#0065BD';
+        ctx.fillRect(0, 0, 125, 75);
+        // Draw white X
+        ctx.beginPath();
+        ctx.lineWidth = "15";
+        ctx.strokeStyle = "white";
+        ctx.moveTo(0, 0);
+        ctx.lineTo(125, 75);
+        ctx.moveTo(125, 0);
+        ctx.lineTo(0, 75);
+        ctx.stroke();
+    </script>
+</body>
+
+</html>
