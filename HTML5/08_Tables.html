@@ -1,0 +1,220 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Example of HTML 5 tables</title>
+
+    <style>
+        #Periodic td {
+            width: 35px;
+            border: 1px solid black;
+            padding: 1px;
+            margin: 1px;
+            text-align: center;
+        }
+
+        #Periodic th {
+            border: 1px solid black;
+            background-color: #0ff;
+            padding: 1px;
+            margin: 1px;
+            text-align: center;
+        }
+
+        #Periodic th.empty {
+            background-color: transparent;
+            border: 1px solid transparent;
+        }
+
+    </style>
+</head>
+
+<body>
+    <article>
+        <h2>Simple table</h2>
+        <table style="border: 1pt;">
+            <caption>Simple table</caption>
+            <colgroup span="2"></colgroup>
+            <colgroup span="1" style="background-color: blanchedalmond"></colgroup>
+            <thead>
+                <tr>
+                    <th>a</th>
+                    <th>b</th>
+                    <th>a and b</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>False</td>
+                    <td>False</td>
+                    <td>False</td>
+                </tr>
+                <tr>
+                    <td>False</td>
+                    <td>True</td>
+                    <td>False</td>
+                </tr>
+                <tr>
+                    <td>True</td>
+                    <td>False</td>
+                    <td>False</td>
+                </tr>
+                <tr>
+                    <td>True</td>
+                    <td>True</td>
+                    <td>True</td>
+                </tr>
+            </tbody>
+        </table>
+    </article>
+
+    <article>
+        <h2>Periodic Table</h2>
+        <table id="Periodic">
+            <caption>Periodic Table of the Elements</caption>
+            <tr>
+                <th>I</th>
+                <th>II</th>
+                <th colspan="10" rowspan="4" class="empty"></th>
+                <th>III</th>
+                <th>IV</th>
+                <th>V</th>
+                <th>VI</th>
+                <th>VII</th>
+                <th>VII</th>
+            </tr>
+            <tr>
+                <th>1</th>
+                <th>2</th>
+                <!-- Skipping 10 cells-->
+                <th>13</th>
+                <th>14</th>
+                <th>15</th>
+                <th>16</th>
+                <th>17</th>
+                <th>18</th>
+            </tr>
+            <tr>
+                <td>H</td>
+                <th class="empty"></th> <!-- empty cell -->
+                <!-- Skipping 10 cells-->
+                <th class="empty" colspan="5"></th>
+                <td>He</td>
+            </tr>
+            <tr>
+                <td>Li</td>
+                <td>Be</td>
+                <!-- Skipping 10 cells-->
+                <td>B</td>
+                <td>C</td>
+                <td>N</td>
+                <td>O</td>
+                <td>F</td>
+                <td>Ne</td>
+            </tr>
+            <tr>
+                <td>Na</td>
+                <td>Mg</td>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+                <th>6</th>
+                <th>7</th>
+                <th>8</th>
+                <th>9</th>
+                <th>10</th>
+                <th>11</th>
+                <th>12</th>
+                <td>Al</td>
+                <td>Si</td>
+                <td>P</td>
+                <td>S</td>
+                <td>Cl</td>
+                <td>Ar</td>
+            </tr>
+            <tr>
+                <td>K</td>
+                <td>Ca</td>
+                <td>Sc</td>
+                <td>Ti</td>
+                <td>V</td>
+                <td>Cr</td>
+                <td>Mn</td>
+                <td>Fe</td>
+                <td>Co</td>
+                <td>Ni</td>
+                <td>Cu</td>
+                <td>Zn</td>
+                <td>Ga</td>
+                <td>Ge</td>
+                <td>As</td>
+                <td>Se</td>
+                <td>Br</td>
+                <td>Kr</td>
+            </tr>
+            <tr>
+                <td>Rb</td>
+                <td>Sr</td>
+                <td>Y</td>
+                <td>Zr</td>
+                <td>Nb</td>
+                <td>Mo</td>
+                <td>Tc</td>
+                <td>Ru</td>
+                <td>Rh</td>
+                <td>Pd</td>
+                <td>Ag</td>
+                <td>Cd</td>
+                <td>In</td>
+                <td>Sn</td>
+                <td>Sb</td>
+                <td>Te</td>
+                <td>I</td>
+                <td>Xe</td>
+            </tr>
+            <tr>
+                <td>Cs</td>
+                <td>Ba</td>
+                <td></td>
+                <td>Hf</td>
+                <td>Ta</td>
+                <td>W</td>
+                <td>Re</td>
+                <td>Os</td>
+                <td>Ir</td>
+                <td>Pt</td>
+                <td>Au</td>
+                <td>Hg</td>
+                <td>Tl</td>
+                <td>Pb</td>
+                <td>Bi</td>
+                <td>Po</td>
+                <td>At</td>
+                <td>Rn</td>
+            </tr>
+            <tr>
+                <td>Fr</td>
+                <td>Ra</td>
+                <td></td>
+                <td>Rf</td>
+                <td>Db</td>
+                <td>Sg</td>
+                <td>Bh</td>
+                <td>Hs</td>
+                <td>Mt</td>
+                <td>Ds</td>
+                <td>Rg</td>
+                <td>Cn</td>
+                <td>Uut</td>
+                <td>Fl</td>
+                <td>Uup</td>
+                <td>Lv</td>
+                <td>Uus</td>
+                <td>Uuo</td>
+            </tr>
+        </table>
+    </article>
+
+</body>
+
+</html>
