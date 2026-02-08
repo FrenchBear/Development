@@ -1,0 +1,226 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Example of HTML 5 forms</title>
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <h1>HTML 5 Forms</h1>
+
+    <article>
+        <h2>Simple form</h2>
+        <form action="http://localhost:5000" method="get">
+            <label for="iFirstName">First Name:</label>
+            <input id="iFirstName" type="text">
+            <label for="iLastName">Last Name:</label>
+            <input id="iLastName" type="text">
+            <input type="submit" value="Submit">
+        </form>
+    </article>
+
+    <article>
+        <h2 style="margin-bottom: 0;">Inputs</h2>
+
+        <datalist id="sports">
+            <option value="Baseball">
+            <option value="Basketball">
+            <option value="Hockey">
+            <option value="Football">
+        </datalist>
+
+        <form action="http://localhost:5000" method="get">
+            <table>
+                <tr>
+                    <td colspan="2">
+                        <h3>Text input</h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td>text</td>
+                    <td><input type="text" maxlength="4" placeholder="Guess" style="text-transform: uppercase;">
+                    </td>
+                </tr>
+                <tr>
+                    <td>number</td>
+                    <td><input type="number" min="0" max="100"></td>
+                </tr>
+                <tr>
+                    <td>email</td>
+                    <td><input type="email"></td>
+                </tr>
+                <tr>
+                    <td>password</td>
+                    <td><input type="password"></td>
+                </tr>
+                <tr>
+                    <td>search</td>
+                    <td><input type="search"></td>
+                </tr>
+                <tr>
+                    <td>tel</td>
+                    <td><input type="tel"></td>
+                </tr>
+                <tr>
+                    <td>url</td>
+                    <td><input type="url"></td>
+                </tr>
+                <tr>
+                    <td>textarea</td>
+                    <td><textarea cols="25" rows="5" spellcheck></textarea></td>
+                </tr>
+
+                <tr>
+                    <td colspan="2">
+                        <h3>Select input</h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td>text+list</td>
+                    <td><input type="text" list="sports"></td>
+                </tr>
+                <tr>
+                    <td>drop-down list</td>
+                    <td><select name="Addons" required>
+                            <option value="">Please select...</option>
+                            <option value="None">Pizza only</option>
+                            <optgroup label="Addons">
+                                <option value="Wings">Side of Buffalo Wings</option>
+                                <option value="GarlicBread">Add Garlic Bread</option>
+                            </optgroup>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>multi-select list</td>
+                    <td><select name="Toppings" multiple size="4">
+                            <option label="Mushrooms?" value="Mushrooms">
+                            <option label="Sausage?" value="Sausage">
+                            <option label="Olives?" value="Olives">
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2">
+                        <h3>Date/Time input</h3>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>date</td>
+                    <td><input type="date"></td>
+                </tr>
+                <tr>
+                    <td>time</td>
+                    <td><input type="time"></td>
+                </tr>
+                <tr>
+                    <td>datetime-local</td>
+                    <td><input type="datetime-local"></td>
+                </tr>
+                <tr>
+                    <td>month</td>
+                    <td><input type="month"></td>
+                </tr>
+                <tr>
+                    <td>week</td>
+                    <td><input type="week"></td>
+                </tr>
+
+                <tr>
+                    <td colspan="2">
+                        <h3>Options input</h3>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>checkbox</td>
+                    <td><input type="checkbox" name="CheeseOrDessert" value="Cheese">Cheese <input type="checkbox"
+                            name="CheeseOrDessert" value="Dessert">Desert</td>
+                </tr>
+                <tr>
+                    <td>radio</td>
+                    <td><input type="radio" name="Answer" value="Yes">Yes <input type="radio" name="Answer"
+                            value="No">No <input type="radio" name="Answer" value="Maybe">Maybe </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2">
+                        <h3>Misc input</h3>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>color</td>
+                    <td><input type="color"></td>
+                </tr>
+                <tr>
+                    <td>file</td>
+                    <td><input type="file"></td>
+                </tr>
+                <tr>
+                    <td>range</td>
+                    <td><input type="range" min="0" max="20" value="0" step="2"></td>
+                </tr>
+
+                <tr>
+                    <td colspan="2">
+                        <h3>Button input</h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td>button</td>
+                    <td><input type="button" value="Click on me"> </td>
+                </tr>
+                <tr>
+                    <td>reset</td>
+                    <td><input type="reset" value="Clear form"> </td>
+                </tr>
+                <tr>
+                    <td>image</td>
+                    <td><input type="image" alt="an save button" src="save_32x32.png"></td>
+                </tr>
+
+                <tr>
+                    <td colspan="2">
+                        <h3>Output</h3>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>meter</td>
+                    <td><meter min="0" max="100" low="33" high="65" optimum="66" value="25"></meter>
+                        <meter min="0" max="100" low="33" high="65" optimum="66" value="50"></meter>
+                        <meter min="0" max="100" low="33" high="65" optimum="66" value="75"></meter>
+                        Optimal: high<br>
+                        <meter min="0" max="100" low="34" high="66" optimum="33" value="25"></meter>
+                        <meter min="0" max="100" low="34" high="66" optimum="33" value="50"></meter>
+                        <meter min="0" max="100" low="34" high="66" optimum="33" value="75"></meter>
+                        Optimal: low<br>
+                        <meter min="0" max="100" low="32" high="66" optimum="33" value="25"></meter>
+                        <meter min="0" max="100" low="32" high="66" optimum="33" value="50"></meter>
+                        <meter min="0" max="100" low="32" high="66" optimum="33" value="75"></meter>
+                        Optimal: medium<br>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>progress</td>
+                    <td>
+                        <progress max="7" value="3">
+                            Your browser does not support the progress element! Value is 3 of 7.
+                        </progress>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </article>
+
+</body>
+
+</html>
