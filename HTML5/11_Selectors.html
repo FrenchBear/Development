@@ -1,0 +1,314 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Example of HTML/CSS selectors</title>
+
+    <style>
+        /* Element selector */
+        i {
+            background-color: orange;
+        }
+
+        /* =============================== */
+        /* Class Selector, must contain the word */
+        .attention {
+            font-weight: bold;
+            color: coral;
+        }
+
+        .extreme {
+            text-decoration: underline;
+        }
+
+        /* =============================== */
+
+        /* ID Selectors */
+        #SpecialH3 {
+            color: blue;
+            font-variant: small-caps;
+        }
+
+        /* =============================== */
+        /* Attribute selector */
+        [class="book"] {
+            /* identical to .book selector, attribute class must be exactly "book" */
+            color: green;
+        }
+
+        [title~="jeunes"] {
+            /* title attribute must contain the word "jeunes" */
+            color: brown;
+        }
+
+        [class^="buch"] {
+            /* class attribute must begin with sim */
+            color: lightgreen;
+        }
+
+        [class|="simple"] {
+            /* class attribute must begin exactly simple or start by simple-  */
+            color: purple;
+        }
+
+        [class$="livre"] {
+            /* class attribute must end with livre  */
+            color: palevioletred;
+        }
+
+        [class*="iobo"] {
+            /* class attribute must contain iobo  */
+            color: salmon;
+        }
+
+        img[src^="save"] {
+            /* All img elements whose src attribute begins with save */
+            border: 10px solid red;
+        }
+
+        [class~="PENIble" i] {
+            /* Suffix s indicates case sensitive, i indicates case insesitive (ASCII range). Complex default, depends on attribute */
+            font-variant: small-caps;
+        }
+
+        [data-prénom="Pierre"] {
+            /* data- attribute */
+            color: goldenrod;
+        }
+
+        img [src^="https"] [target="_self"] {
+            /* AND combining */
+            color: blue;
+        }
+
+        /* =============================== */
+        /* Pseudo-Class Selectors, automatically added by the browser instead of set in the HTML markup, start with : */
+
+        :visited {
+            color: blue;
+        }
+
+        a:hover {
+            background-color: yellow;
+        }
+
+        li:first-child {
+            font-style: italic;
+        }
+
+        li:last-child {
+            font-variant: small-caps;
+        }
+
+        /* Loot at https://www.smashingmagazine.com/2016/05/an-ultimate-guide-to-css-pseudo-classes-and-pseudo-elements/
+Here is the complete list of pseudo-classes:
+• :active - Selects the link that has just been clicked.
+• :checked - Selects elements that are checked (applies to checkboxes).
+• :default - Selects the default element on a form, usually the submit button.
+• :disabled - Selects elements that are currently disabled (typically used for input elements.)
+• :empty - Selects elements that have no children (elements that include text are not selected).
+• :enabled - Selects elements that are enabled (typically used for input elements).
+• :first-child - Selects the elements that are the first child of its immediate parent.
+• <tag>:first-of-type - Selects the elements that is the first of the specified type within its parent.
+• :focus - Selects the element that currently has the focus.
+• :hover - Selects the element that the mouse is currently hovering over.
+• :in-range - Selects input elements that have values within the specified range.
+• :indeterminate - Selects radio buttons where none in a group have been selected. This will also select checkboxes that have the indeterminate state (this must be set through JavaScript).
+• :invalid - Selects input elements that do not have a valid value.
+• :lang(value) - Selects the elements that have a lang attribute that start with the specified value.
+• :last-child - Selects the elements that are the last child within its parent.
+• <tag>:last-of-type - Selects the elements that are the last of the specified type within its parent.
+• :link - Selects all unvisited links.
+• :nth-child(n) - Selects the elements that are the nth child within its parent.
+• :nth-last-child(n) - Selects the elements that are the nth child within its parent, counting in reverse.
+• <tag>:nth-last-of-type(n) - Selects the nth child of the specified type within its parent, counting in reverse.
+• <tag>:nth-of-type(n) - Selects the nth child of the specified type within its parent.
+• :only-child - Selects the elements that are the only child element of its parent.
+• <tag>:only-of-type - Selects the elements that are the only sibling of the specified type within its parent.
+• :optional - Selects input elements that are not required (that is, do not have the required attribute).
+• :out-of-range - selects input elements whose value is outside of the allowed range.
+• :read-only - Selects input elements that have the readonly attribute.
+• :read-write - Selects input elements that do not have the readonly attribute.
+• :required - Selects input elements that have the required attribute.
+• :root - Selects the root element of the document.
+• :target - Selects the elements with a target attribute where the target is the active element.
+• :valid - Selects input elements that have a valid value.
+• :visited - Selects all visited links.
+        */
+
+        /* =============================== */
+        /* Pseudo-Elements Selectors return new, virtual elements that can be styled without being part of the DOM, start with :: */
+
+        /*
+• ::after - this creates an empty element just after the selected elements.
+• ::before - this creates an empty element just before the selected elements.
+• ::first-letter: Selects the first character of every selected element.
+• ::first-line: Selects the first line of every selected element. The first line is the portion of text up to the point where the text wraps to the next line.
+• ::selection : Returns the portion of an element that is selected by the user.
+        */
+
+        ::selection {
+            background-color: burlywood;
+        }
+
+        #BigInitial::first-letter {
+            font-size: 24pt;
+        }
+
+        p+ul::before {
+            content: "Example: ";
+            color: blue;
+        }
+
+        /* =============================== */
+        /* Combinators */
+
+        /* Combine element and class */
+        p.featured {
+            background-color: aliceblue;
+        }
+
+        /*all paragraph elements that have both the featured and new classes */
+        p.featured.new {
+            background-color: cyan;
+        }
+
+        /* Element and pseudo-class */
+        a:visited {
+            color: crimson;
+        }
+
+        /* Combinator operators */
+        /*
+• Group            ,        p, h1       A logical OR operator, selects all p elements as well as all h1 elements.
+• Descendant       space    header p    Selects the second element when it is inside the first element. For example, if you want all p elements
+                                        that are inside a header element, use header p. The header element does not have to be the immediate parent, 
+                                        just somewhere in the node’s ancestry.
+• Child            >        header>p    Selects the second element when the first element is the immediate parent. The header>p selector returns all 
+                                        p elements whose immediate parent is a header element.
+• Adjacent sibling +        header+p    Selects the second element when the first element is the preceding sibling of the second element.
+• Follows          ~        p~header    Selects the second element when it follows the first element (not necessarily immediately).
+
+h1+p selector will not return any element, but both h2+p and h1~p will both return the p element
+<h1>Some header</h1>
+<h2>Some sub-header</h2>
+<p>Some text</p>
+
+Examples of grouping with OR:
+p, h1, h2
+{
+    color:green;
+    font-size:12px;
+}
+header+p, .book, a:visited {
+    ...
+}
+
+*/
+        /* * is the universal selector */
+        article * p {
+            background-color: aquamarine;
+        }
+
+        /* :not */
+        aside:not(p) {
+            background-color: chartreuse;
+        }
+
+        /* =============================== */
+        /* Media queries */
+
+        @media print {
+            .AutoResizeText {
+                font-size: 24pt;
+            }
+        }
+
+        @media screen and (max-width:500px) {
+            .AutoResizeText {
+                font-size: 12pt;
+            }
+        }
+
+        @media screen and (min-width:500px) and (max-width:1000px) {
+            .AutoResizeText {
+                font-size: 18pt;
+            }
+        }
+
+        @media screen and (min-width:1000px) {
+            .AutoResizeText {
+                font-size: 24pt;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>HTML/CSS Selectors Forms</h1>
+
+    <article>
+        <h2>Element Selectors</h2>
+        <p>Text with an <i>italic</i> word using selector &lt;i>, styled as orange backbround.</p>
+    </article>
+
+    <article>
+        <h2>Class Selectors</h2>
+        <p class="attention">Paragraph with class "attention"</p>
+        <p class="extreme attention">Paragraph with class "extreme attention"</p>
+        <p class="attentioned">Paragraph with class "attentioned"</p>
+    </article>
+
+    <article>
+        <h2>ID Selectors</h2>
+        <h3 Id="SpecialH3">This is element ID SpecialH3</h3>
+    </article>
+
+    <article>
+        <h2>Attribute Selectors</h2>
+        <p class="book">A simple book</p>
+        <p title="Un livre pour les jeunes">Un simple livre pour la jeunesse</p>
+        <p class="buch german">Ein Buch</p>
+        <p class="simple-fr">Un livre en français</p>
+        <p class="minilivre">A miniature book</p>
+        <p class="audiobook">An audiobook</p>
+        <img src="save_32x32.png" alt="Alt">
+        <p class="animal PENIBLE">My dog</p>
+        <p data-prénom="Pierre">Example of data- attribute</p>
+    </article>
+
+    <article>
+        <h2>Pseudo-Class Selectors</h2>
+        <p>a:hover <a href="https://microsoft.com">Site Web Microsoft</a></p>
+        <p>First and last element of the list have been restyled using pseudo-classes</p>
+        <ul>
+            <li>First</li>
+            <li>Middle</li>
+            <li>Last</li>
+        </ul>
+    </article>
+
+    <article>
+        <h2>Pseudo-Element Selectors</h2>
+        <p id="BigInitial">Selection appears on a burlywood background</p>
+    </article>
+
+    <article>
+        <h2>Combinators</h2>
+        <div>
+            <p>A paragraph in a div in an article</p>
+        </div>
+        <aside>
+            <p>A paragraph in a side section</p>
+            <div>A div in a side section</div>
+        </aside>
+    </article>
+
+    <article>
+        <h2>Media queries</h2>
+        <p class="AutoResizeText">The font size of this paragraph depends on windows width, and 24pt when printing</p>
+    </article>
+
+</body>
+
+</html>
