@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Example of HTML/CSS positioning content #2</title>
+
+    <style>
+        div {
+            border: 1px solid black;
+            padding: 1px;
+            margin: 1px;
+        }
+
+        header {
+            background-color: #f3f3f3;
+        }
+
+        header>div {
+            padding: 25px;
+        }
+
+        header>div:nth-of-type(odd) {
+            float: left;
+            clear: left;
+        }
+
+        header>div:nth-of-type(even) {
+            float: right;
+            clear: right;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>HTML/CSS Positioning #2</h1>
+
+    <article>
+        <h2>Floated content is not considered when calculating the height of a container.</h2>
+        <header style="width: 400px;">
+            <div>div 1</div>
+            <div>div 2</div>
+            <div>div 3</div>
+            <div>div 4</div>
+            <div>div 5</div>
+            <p>To make your doc look professionally produced, use header, footer, cover page, and text box
+                designs that complement each other. For example, you can add a matching cover page, header, and sidebar.
+            </p>
+        </header>
+    </article>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr>
+
+    <article>
+        <h2>Using overflow: auto</h2>
+        <header style="width: 400px; overflow: auto;">
+            <div>div 1</div>
+            <div>div 2</div>
+            <div>div 3</div>
+            <div>div 4</div>
+            <div>div 5</div>
+            <p>To make your doc look professionally produced, use header, footer, cover page, and text box
+                designs that complement each other. For example, you can add a matching cover page, header, and sidebar.
+            </p>
+        </header>
+    </article>
+
+</body>
+
+</html>

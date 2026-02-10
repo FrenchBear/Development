@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Example of HTML/CSS positioning content #3</title>
+
+    <style>
+        div {
+            border: 1px solid black;
+            padding: 1px;
+            margin: 1px;
+        }
+
+        header {
+            background-color: antiquewhite;
+            height: 100px;
+        }
+
+        header>div.square {
+            padding: 0px;
+            float: left;
+            clear: none;
+            width: 100px;
+            height: 100px;
+        }
+
+        .blue {
+            position: relative;
+            top: 20px;
+            left: 20px;
+        }
+
+        .bleu {
+            position: absolute;
+            top: -10px;
+            left: 50px;
+        }
+
+        .blau {
+            position: fixed;
+            top: 500px;
+            left: 250px;
+        }
+
+        .red {
+            background-color: pink;
+        }
+
+        .yellow {
+            background-color: yellow;
+        }
+
+        .blue,
+        .bleu,
+        .blau {
+            background-color: cyan;
+        }
+
+        .green {
+            background-color: chartreuse;
+        }
+
+        .center {
+            width: 200px;
+            height: 40px;
+            background-color:cornflowerblue;
+
+            /* Center the div itself */
+            margin: 0 auto;
+
+            /* Center content H and V */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>HTML/CSS Positioning #3</h1>
+
+    <article>
+        <h2>Relative positioning</h2>
+        <header>
+            <div class="square red">div 1</div>
+            <div class="square yellow">div 2</div>
+            <div class="square blue">div 3</div>
+            <div class="square green">div 4</div>
+        </header>
+    </article>
+
+    <article>
+        <h2>Absolute positioning</h2>
+        <header style="position: relative;">
+            <div class="square red">div 1</div>
+            <div class="square yellow">div 2</div>
+            <div class="square bleu">div 3</div>
+            <div class="square green">div 4</div>
+        </header>
+    </article>
+
+    <article>
+        <h2>Fixed positioning</h2>
+        <header style="position: relative;">
+            <div class="square red">div 1</div>
+            <div class="square yellow">div 2</div>
+            <div class="square blau">div 3</div>
+            <div class="square green">div 4</div>
+        </header>
+    </article>
+
+    <article>
+        <h2>Center div</h2>
+        <div class="center">Centered</div>
+    </article>
+</body>
+
+</html>

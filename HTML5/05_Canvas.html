@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Example of canvas and svg drawing in HTML 5</title>
+    <title>Example of canvas and SVG drawing in HTML 5</title>
 </head>
 
 <body>
@@ -10,23 +10,23 @@
         tag.</canvas>
     <script>
         var canvas = document.getElementById('myCanvas');
-        var ctx = canvas.getContext('2d');
+        var context = canvas.getContext('2d');
         // Draw blue rectangle
-        ctx.fillStyle = '#0065BD';
-        ctx.fillRect(0, 0, 125, 75);
+        context.fillStyle = '#0065BD';
+        context.fillRect(0, 0, 125, 75);
         // Draw white X
-        ctx.beginPath();
-        ctx.lineWidth = "15";
-        ctx.strokeStyle = "white";
-        ctx.moveTo(0, 0);
-        ctx.lineTo(125, 75);
-        ctx.moveTo(125, 0);
-        ctx.lineTo(0, 75);
-        ctx.stroke();
+        context.beginPath();
+        context.lineWidth = "15";
+        context.strokeStyle = "white";
+        context.moveTo(0, 0);
+        context.lineTo(125, 75);
+        context.moveTo(125, 0);
+        context.lineTo(0, 75);
+        context.stroke();
     </script>
 
     <article>
-        <h2>Some minimal svg, a green circle</h2>
+        <h2>Some minimal SVG, a green circle</h2>
         <svg>
             <circle r="50" cx="50" cy="50" fill="green" />
         </svg>
