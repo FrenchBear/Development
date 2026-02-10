@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Example of HTML/CSS positioning content</title>
+
+    <style>
+        h2 {
+            margin-bottom: 6pt;
+        }
+
+        div {
+            border: 1px solid black;
+            padding: 1px;
+            margin: 1px;
+        }
+
+        figure {
+            border: 5px solid olive;
+            margin: 1px;
+            padding: 3px;
+            width: min-content;
+        }
+
+        header>div {
+            padding: 25px;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>HTML/CSS Selectors Forms</h1>
+
+    <article>
+        <h2>display="block"</h2>
+        <div class="container" style="width: 150px;">Container
+            <div style="display: block;">div a</div>
+            <div style="display: block;">div b</div>
+            <div style="display: block;">div c</div>
+        </div>
+    </article>
+
+    <article>
+        <h2>display="inline"</h2>
+        <div class="container" style="width: 150px;">Container
+            <div style="display: inline;">div a</div>
+            <div style="display: inline;">div b</div>
+            <div style="display: inline;">div c</div>
+        </div>
+    </article>
+
+    <article>
+        <h2>display="none"</h2>
+        <div class="container" style="width: 150px;">Container
+            <div style="display: none;">div a</div>
+            <div style="display: none;">div b</div>
+            <div style="display: none;">div c</div>
+        </div>
+    </article>
+
+    <article>
+        <h2>width: 300px;</h2>
+        <div class="container" style="width: 300px;">Container
+            <p>To make your document look professionally produced, use header, footer, cover page, and text box
+                designs that complement each other. For example, you can add a matching cover page, header, and sidebar.
+            </p>
+        </div>
+    </article>
+
+    <article>
+        <h2>width: min-content;</h2>
+        <div class="container" style="width: min-content; ">Container
+            <p>To make your document look professionally produced, use header, footer, cover page, and text box
+                designs that complement each other. For example, you can add a matching cover page, header, and sidebar.
+            </p>
+        </div>
+    </article>
+
+    <article>
+        <h2>min-content example with an image</h2>
+        <figure>
+            <img src="HTML5_logo.png" alt="HTML5 Badge">
+            <figcaption>
+                The HTML5 badge is a well-recognized symbol in the web design community.
+            </figcaption>
+        </figure>
+    </article>
+
+    <article>
+        <h2>float</h2>
+        <header style="width: 300px;">
+            <div>div 1</div>
+            <div>div 2</div>
+            <div>div 3</div>
+            <div>div 4</div>
+            <div>div 5</div>
+            <p>To make your doc look professionally produced, use header, footer, cover page, and text box
+                designs that complement each other. For example, you can add a matching cover page, header, and sidebar.
+            </p>
+        </header>
+
+        <h3>Continuing float</h3>
+        <aside style="width: 300px;">
+            <div style="float: left; padding: 25px">div 1</div>
+            <div style="padding: 25px">div 2</div>
+            <div style="float: right; padding: 25px">div 3</div>
+            <div style="padding: 25px">div 4</div>
+        </aside>
+
+        <h3>Clearing float</h3>
+        <aside style="width: 300px;">
+            <div style="float: left; padding: 25px">div 1</div>
+            <div style="clear: left; padding: 25px">div 2</div>
+            <div style="float: right; padding: 25px">div 3</div>
+            <div style="clear: right; padding: 25px">div 4</div>
+        </aside>
+    </article>
+
+</body>
+
+</html>
