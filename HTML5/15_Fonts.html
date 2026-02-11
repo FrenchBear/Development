@@ -1,0 +1,152 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Example of HTML/CSS fonts</title>
+    <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wdth,wght@25..150,400&display=swap"
+        rel="stylesheet">
+
+    <style>
+        @import url(//fonts.googleapis.com/css?family=Oswald);
+        @import url(//fonts.googleapis.com/css?family=Inconsolata);
+
+        @font-face {
+            font-family: 'Sudo';
+            src: url('SudoVariable.ttf') format('truetype'),
+                url('SudoWebVariable.woff') format('woff'),
+                url('SudoWebVariable.woff2') format('woff2');
+        }
+
+        @font-face {
+            font-family: 'Inter';
+            src: url('InterVariable.woff2') format('woff2');
+        }
+
+        h1 {
+            color: darkblue;
+        }
+
+        h2 {
+            color: mediumblue;
+        }
+
+        h3 {
+            color: blue;
+        }
+
+        .kerning,
+        .noKerning {
+            font-family: serif;
+            font-size: 48px;
+        }
+
+        .kerning {
+            font-kerning: normal;
+        }
+
+        .noKerning {
+            font-kerning: none;
+        }
+
+        .cond {
+            font-family: Inconsolata;
+            font-stretch: extra-condensed;
+        }
+
+        .diagonal {
+            font-family: Verdana;
+            font-size: xx-large;
+            font-variant-numeric: diagonal-fractions;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>HTML/CSS Fonts</h1>
+
+    <article>
+        <h2>Font selection</h2>
+        <h3>Using a link in head</h3>
+        <p style="font-family: Cabin; font-size: large;">This is a text in Cabin font, loaded from Google servers</p>
+        <p style="font-family: Playfair Display; font-size: large;">This is a text in Playfair Display font, loaded from
+            Google servers</p>
+        <h3>Using CSS @import</h3>
+        <p style="font-family: Oswald; font-size: large;">This is a text in Oswald font, loaded from Google servers</p>
+        <h3>Using a font resource</h3>
+        <p style="font-family: Sudo; font-size: large;">This is a text in Sudo font, loaded from a resource file</p>
+    </article>
+
+    <article>
+        <h2>font-size</h2>
+        <h3>Absolute font sizes</h3>
+        <p style="font-size: xx-small;">This is a xx-small font size</p>
+        <p style="font-size: x-small;">This is a x-small font size</p>
+        <p style="font-size: small;">This is a small font size</p>
+        <p style="font-size: medium;">This is a medium font size</p>
+        <p style="font-size: large;">This is a large font size</p>
+        <p style="font-size: x-large;">This is a x-large font size</p>
+        <p style="font-size: xx-large;">This is a xx-large font size</p>
+
+        <h3>Relative font sizes</h3>
+        <p>Default size, <span style="font-size: larger;">larger size, <span style="font-size: larger;">larger size,
+                    <span style="font-size: larger;">larger size</span></span></span></p>
+        <p>Default size, <span style="font-size: smaller;">smaller size, <span style="font-size: smaller;">smaller size,
+                    <span style="font-size: smaller;">smaller size</span></span></span></p>
+    </article>
+
+    <article>
+        <h2>font-style</h2>
+        <p style="font-style: normal">This is normal font style</p>
+        <p style="font-style: italic">This is italic font style</p>
+    </article>
+
+    <article>
+        <h2>font-weight</h2>
+        <p style="font-family: Inter; font-weight: 100;">This is Inter font weight 100</p>
+        <p style="font-family: Inter; font-weight: 200;">This is Inter font weight 200</p>
+        <p style="font-family: Inter; font-weight: 300;">This is Inter font weight 300</p>
+        <p style="font-family: Inter; font-weight: 400;">This is Inter font weight 400</p>
+        <p style="font-family: Inter; font-weight: 500;">This is Inter font weight 500</p>
+        <p style="font-family: Inter; font-weight: 600;">This is Inter font weight 600</p>
+        <p style="font-family: Inter; font-weight: 700;">This is Inter font weight 700</p>
+        <p style="font-family: Inter; font-weight: 800;">This is Inter font weight 800</p>
+        <p style="font-family: Inter; font-weight: 900;">This is Inter font weight 900</p>
+    </article>
+
+    <article>
+        <h2>font-stretch</h2>
+        <p style="font-family: Roboto Flex; font-stretch: 25%;">This is Roboto Flex at font-stretch: 25%</p>
+        <p style="font-family: Roboto Flex; font-stretch: 50%;">This is Roboto Flex at font-stretch: 50%</p>
+        <p style="font-family: Roboto Flex; font-stretch: 75%;">This is Roboto Flex at font-stretch: 75%</p>
+        <p style="font-family: Roboto Flex; font-stretch: 100%;">This is Roboto Flex at font-stretch: 100%</p>
+        <p style="font-family: Roboto Flex; font-stretch: 125%;">This is Roboto Flex at font-stretch: 125%</p>
+        <p style="font-family: Roboto Flex; font-stretch: 200%;">This is Roboto Flex at font-stretch: 200%</p>
+    </article>
+
+    <article>
+        <h2>Kerning</h2>
+        <p class="kerning">T,VAY. - with kerning</p>
+        <p class="noKerning">T,VAY. - w/o kerning</p>
+    </article>
+
+    <article>
+        <h2>Numeric</h2>
+        <p class="diagonal">1/2 2/3 3/4 4/5</p>
+    </article>
+
+        <article>
+        <h2>Special fonts</h2>
+        <p >Default font</p>
+        <p style="font: icon;">Icon font</p>
+        <p style="font: menu;">Menu font</p>
+        <p style="font: message-box;">Message-box font</p>
+        <p style="font: small-caption;">Small-caption font</p>
+        <p style="font: status-bar;">Status-bar font</p>
+    </article>
+
+
+</body>
+
+</html>
