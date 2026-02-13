@@ -222,6 +222,10 @@ header+p, .book, a:visited {
             .AutoResizeText {
                 font-size: 24pt;
             }
+
+            .skippagebeforewhenprinting {
+                page-break-before: always;
+            }
         }
 
         @media screen and (max-width:500px) {
@@ -264,8 +268,8 @@ header+p, .book, a:visited {
         <h3 Id="SpecialH3">This is element ID SpecialH3</h3>
     </article>
 
-    <article>
-        <h2>Attribute Selectors</h2>
+    <article class="skippagebeforewhenprinting">
+        <h2>Attribute Selectors (printed on page top)</h2>
         <p class="book">A simple book</p>
         <p title="Un livre pour les jeunes">Un simple livre pour la jeunesse</p>
         <p class="buch german">Ein Buch</p>

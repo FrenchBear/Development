@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Example of HTML/CSS text</title>
+    <style>
+        .sideblock {
+            border: 1px black solid;
+            padding: 4px;
+            display: inline-block;
+            width: 200px;
+        }
+
+        .overflow {
+            font-size: large;
+            border: 1px solid black;
+            padding: 4px;
+            width: 200px;
+            overflow: hidden;
+            display: inline-block;
+        }
+
+        .shadow {
+            font-size: xx-large;
+            text-shadow: 10px 5px 1px gray;
+        }
+
+        .background {
+            font-size: xx-large;
+            text-shadow: 0px 0px 5px gray;
+        }
+
+        .blurred {
+            font-size: xx-large;
+            text-shadow: 10px 5px 10px gray;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>HTML/CSS Text formatting</h1>
+
+    <article>
+        <h2>Text alignment</h2>
+
+        <div class="sideblock" style="text-align: left;">
+            To make your document look professionally produced, use header, footer, cover page, and text box
+            designs that complement each other. For example, you can add a matching cover page, header, and sidebar.
+        </div>
+        <div class="sideblock" style="text-align: right;">
+            To make your document look professionally produced, use header, footer, cover page, and text box
+            designs that complement each other. For example, you can add a matching cover page, header, and sidebar.
+        </div>
+        <div class="sideblock" style="text-align: center;">
+            To make your document look professionally produced, use header, footer, cover page, and text box
+            designs that complement each other. For example, you can add a matching cover page, header, and sidebar.
+        </div>
+    </article>
+
+    <article>
+        <h2>Justified text</h2>
+
+        <div class="sideblock" style="text-align: justify;">
+            To make your document look professionally produced, use header, footer, cover page, and text box
+            designs that complement each other. For example, you can add a matching cover page, header, and sidebar.
+        </div>
+        <div class="sideblock" style="text-align: justify; text-justify: inter-character;">
+            To make your document look professionally produced, use header, footer, cover page, and text box
+            designs that complement each other. For example, you can add a matching cover page, header, and sidebar.
+        </div>
+    </article>
+
+    <article>
+        <h2>Spacing</h2>
+        <div class="sideblock" style="letter-spacing: 1px;">
+            To make your document look professionally produced, use header, footer, cover page, and text box
+            designs that complement each other. For example, you can add a matching cover page, header, and sidebar.
+        </div>
+        <div class="sideblock" style="letter-spacing: -0.2px;">
+            To make your document look professionally produced, use header, footer, cover page, and text box
+            designs that complement each other. For example, you can add a matching cover page, header, and sidebar.
+        </div>
+        <div class="sideblock" style="word-spacing: 1em;">
+            To make your document look professionally produced, use header, footer, cover page, and text box
+            designs that complement each other. For example, you can add a matching cover page, header, and sidebar.
+        </div>
+        <div class="sideblock" style="line-height: 100%;">
+            To make your document look professionally produced, use header, footer, cover page, and text box
+            designs that complement each other. For example, you can add a matching cover page, header, and sidebar.
+        </div>
+    </article>
+
+    <article>
+        <h2>Overflow</h2>
+
+        <div class="overflow">Supercalifragilisticexpialidocious</div>
+        <div class="overflow" style="text-overflow: ellipsis;">Supercalifragilisticexpialidocious</div>
+    </article>
+
+    <article>
+        <h2>Quotes</h2>
+        <p><q>What do you mean <q>I can't believe he <q>really</q> said <q>No</q></q>?</q></p>
+        <p style="quotes: '«' '»' '‹' '›' '<' '>';"><q>What do you mean <q>I can't believe he <q>really</q> said
+                    <q>No</q></q>?</q></p>
+    </article>
+
+    <article>
+        <h2>Shadows</h2>
+        <p class="shadow">This text has shadows</p>
+        <p class="background">This text has shadows</p>
+        <p class="blurred">This text has shadows</p>
+    </article>
+
+</body>
+
+</html>
