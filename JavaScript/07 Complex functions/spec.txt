@@ -1,0 +1,19 @@
+I'd like to write an HTML+CSS+javascript file to implement an interactive viewer of a complex function.
+
+The user interface should contain two parts:
+- a form area containing input elements such as text and range inputs where the parameters of the drawing are entered. Upon modification, the function should be redrawn.
+- a canvas area where the function is drawn
+
+The drawing area represent a part of the complex plan, real axis (x axis) between x_plan_min and x_plan_max, imaginary axis (y axis) between y_plan_min and y_plan_max. A checkbox should be used to decide whether a light gray grid should be drawn for integer values on real and imaginary axes, the line for x=0 and y=0 being a bit darker or thicker.
+Note that the scale should be identical on x and y axes, and the graph centered in the canvas area, so either x range or y range may be expandad as needed for drawing depending on the actual size of the carvas on the browser screen.
+
+Several complex functions (from C to C) should be implemented in javascript in a separate file, such as f1(z)=z^1.5 or f2(z)=1/z and a drop down or a list selector should be used the form area to chose which function to draw. Two numerical real values a and b can be entered in the interface and used by the calculation of the function, for example, f3(z)=z^(a+b*i)
+
+To represent the complex function, draw a square grid of lines, vertical lines with x constant and y between y_grid_min and y_grid_max using a step of y_grid_step, and horizontal lines with y constant between x_grid_min and x_grid_max using a step of x_grid_step, and then draw the transformation of this grid using selected function.
+
+A gradient of colors should be used when drawing the grid, before and after transformation through the function, using 4 colors (ex: red, blue, green, dark yellow), one for each corner of the grid, intermediate points using an interpolated color between each corner.
+
+The forms area should contain should contain several areas (fieldset elements) to enter values:
+- an area to enter the part of represented complex plan: x_plan_min, x_plan_max, y_plan_min, y_plan_max, and a checkbox to draw axes.
+- an area to enter the parameters of the grid: x_grid_min, x_grid_max, x_grid_step and y_grid_min, y_grid_max, y_grid_step
+- an area to select the predefined function, plus the two numerical parameters a and b that can be used by the function
