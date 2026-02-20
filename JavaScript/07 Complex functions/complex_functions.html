@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,12 +13,14 @@
             height: 100vh;
             margin: 0;
         }
+
         #controls {
             width: 350px;
             padding: 10px;
             overflow-y: auto;
             border-right: 1px solid #ccc;
         }
+
         #canvas-container {
             flex-grow: 1;
             display: flex;
@@ -25,30 +28,38 @@
             align-items: center;
             overflow: hidden;
         }
+
         canvas {
             border: 1px solid black;
         }
+
         fieldset {
             margin-bottom: 15px;
         }
+
         label {
             display: block;
             margin-bottom: 5px;
         }
-        input[type="number"], select {
+
+        input[type="number"],
+        select {
             width: 100%;
             box-sizing: border-box;
             margin-bottom: 10px;
         }
+
         .input-group {
             display: flex;
             gap: 10px;
         }
-        .input-group > div {
+
+        .input-group>div {
             flex: 1;
         }
     </style>
 </head>
+
 <body>
     <div id="controls">
         <form id="control-form">
@@ -57,11 +68,11 @@
                 <div class="input-group">
                     <div>
                         <label for="x_plan_min">X Min:</label>
-                        <input type="number" id="x_plan_min" value="-1">
+                        <input type="number" id="x_plan_min" value="-4">
                     </div>
                     <div>
                         <label for="x_plan_max">X Max:</label>
-                        <input type="number" id="x_plan_max" value="6">
+                        <input type="number" id="x_plan_max" value="8">
                     </div>
                 </div>
                 <div class="input-group">
@@ -71,7 +82,7 @@
                     </div>
                     <div>
                         <label for="y_plan_max">Y Max:</label>
-                        <input type="number" id="y_plan_max" value="6">
+                        <input type="number" id="y_plan_max" value="8">
                     </div>
                 </div>
                 <label>
@@ -84,29 +95,29 @@
                 <div class="input-group">
                     <div>
                         <label for="x_grid_min">X Min:</label>
-                        <input type="number" id="x_grid_min" value="1">
+                        <input type="number" id="x_grid_min" value="0">
                     </div>
                     <div>
                         <label for="x_grid_max">X Max:</label>
-                        <input type="number" id="x_grid_max" value="5">
+                        <input type="number" id="x_grid_max" value="2">
                     </div>
                     <div>
                         <label for="x_grid_step">X Step:</label>
-                        <input type="number" id="x_grid_step" value="0.2">
+                        <input type="number" id="x_grid_step" value="0.1">
                     </div>
                 </div>
                 <div class="input-group">
                     <div>
                         <label for="y_grid_min">Y Min:</label>
-                        <input type="number" id="y_grid_min" value="1">
+                        <input type="number" id="y_grid_min" value="0">
                     </div>
                     <div>
                         <label for="y_grid_max">Y Max:</label>
-                        <input type="number" id="y_grid_max" value="5">
+                        <input type="number" id="y_grid_max" value="2">
                     </div>
                     <div>
                         <label for="y_grid_step">Y Step:</label>
-                        <input type="number" id="y_grid_step" value="0.2">
+                        <input type="number" id="y_grid_step" value="0.1">
                     </div>
                 </div>
             </fieldset>
@@ -118,8 +129,8 @@
                     <option value="f_z_pow_1_5">f(z) = z^1.5</option>
                     <option value="f_1_div_z">f(z) = 1/z</option>
                     <option value="f_z_pow_a_bi">f(z) = z^(a+bi)</option>
-                    <option value="f_b_times_z_pow_a" selected>f(z) = b*z^a</option>
-                    <option value="f_exp_z">f(z) = exp(z)</option>
+                    <option value="f_a_times_z_pow_b">f(z) = a*z^b</option>
+                    <option value="f_a_times_exp_z" selected>f(z) = a*exp(z)</option>
                     <option value="f_log_z">f(z) = log(z)</option>
                 </select>
                 <div class="input-group">
@@ -141,282 +152,291 @@
 
     <script src="functions.js"></script>
     <script>
-        
-                document.addEventListener('DOMContentLoaded', () => {
-                    const canvas = document.getElementById('complex_canvas');
-                    const ctx = canvas.getContext('2d');
-                    const form = document.getElementById('control-form');
-                    const canvasContainer = document.getElementById('canvas-container');
-        
-                    // Corner colors for the gradient
-                    const cornerColors = {
-                        topLeft: { r: 255, g: 0, b: 0 },      // Red
-                        topRight: { r: 0, g: 0, b: 255 },     // Blue
-                        bottomLeft: { r: 0, g: 255, b: 0 },   // Green
-                        bottomRight: { r: 255, g: 255, b: 0 } // Yellow
-                    };
-        
-                    let config = {};
-        
-                    function updateConfig() {
-                        const formElements = form.elements;
-                        config = {
-                            x_plan_min: parseFloat(formElements.x_plan_min.value),
-                            x_plan_max: parseFloat(formElements.x_plan_max.value),
-                            y_plan_min: parseFloat(formElements.y_plan_min.value),
-                            y_plan_max: parseFloat(formElements.y_plan_max.value),
-                            draw_axes: formElements.draw_axes.checked,
-        
-                            x_grid_min: parseFloat(formElements.x_grid_min.value),
-                            x_grid_max: parseFloat(formElements.x_grid_max.value),
-                            x_grid_step: parseFloat(formElements.x_grid_step.value),
-                            y_grid_min: parseFloat(formElements.y_grid_min.value),
-                            y_grid_max: parseFloat(formElements.y_grid_max.value),
-                            y_grid_step: parseFloat(formElements.y_grid_step.value),
-        
-                            func: formElements.function_selector.value,
-                            param_a: parseFloat(formElements.param_a.value),
-                            param_b: parseFloat(formElements.param_b.value),
-                        };
-                        draw();
-                    }
-        
-                    function resizeCanvas() {
-                        const size = Math.min(canvasContainer.clientWidth, canvasContainer.clientHeight) - 20;
-                        canvas.width = size;
-                        canvas.height = size;
-                        draw();
-                    }
-        
-                    // --- Coordinate Transformation ---
-                    let scale, x_offset, y_offset, view;
-                    function setupCoordinates() {
-                        view = {
-                            xMin: config.x_plan_min,
-                            xMax: config.x_plan_max,
-                            yMin: config.y_plan_min,
-                            yMax: config.y_plan_max
-                        };
-        
-                        const xRange = view.xMax - view.xMin;
-                        const yRange = view.yMax - view.yMin;
-        
-                        if (xRange / yRange > 1) { // Wider than tall
-                            const yCenter = (view.yMin + view.yMax) / 2;
-                            const newYRange = xRange;
-                            view.yMin = yCenter - newYRange / 2;
-                            view.yMax = yCenter + newYRange / 2;
-                        } else { // Taller than wide
-                            const xCenter = (view.xMin + view.xMax) / 2;
-                            const newXRange = yRange;
-                            view.xMin = xCenter - newXRange / 2;
-                            view.xMax = xCenter + newXRange / 2;
+
+        const canvas = document.getElementById('complex_canvas');
+        const ctx = canvas.getContext('2d');
+        const form = document.getElementById('control-form');
+        const canvasContainer = document.getElementById('canvas-container');
+
+        // Corner colors for the gradient
+        const cornerColors = {
+            topLeft: { r: 255, g: 0, b: 0 },      // Red
+            topRight: { r: 0, g: 0, b: 255 },     // Blue
+            bottomLeft: { r: 0, g: 255, b: 0 },   // Green
+            bottomRight: { r: 255, g: 255, b: 0 } // Yellow
+        };
+
+        let config = {};
+
+        function updateConfig() {
+            const formElements = form.elements;
+            config = {
+                x_plan_min: parseFloat(formElements.x_plan_min.value),
+                x_plan_max: parseFloat(formElements.x_plan_max.value),
+                y_plan_min: parseFloat(formElements.y_plan_min.value),
+                y_plan_max: parseFloat(formElements.y_plan_max.value),
+                draw_axes: formElements.draw_axes.checked,
+
+                x_grid_min: parseFloat(formElements.x_grid_min.value),
+                x_grid_max: parseFloat(formElements.x_grid_max.value),
+                x_grid_step: parseFloat(formElements.x_grid_step.value),
+                y_grid_min: parseFloat(formElements.y_grid_min.value),
+                y_grid_max: parseFloat(formElements.y_grid_max.value),
+                y_grid_step: parseFloat(formElements.y_grid_step.value),
+
+                func: formElements.function_selector.value,
+                param_a: parseFloat(formElements.param_a.value),
+                param_b: parseFloat(formElements.param_b.value),
+            };
+
+            // Disable/enable parameter inputs based on function metadata
+            const selectedFunctionData = complexFunctions[config.func];
+            if (selectedFunctionData) {
+                formElements.param_a.disabled = !selectedFunctionData.usesA;
+                formElements.param_b.disabled = !selectedFunctionData.usesB;
+            }
+
+            draw();
+        }
+
+        function resizeCanvas() {
+            const size = Math.min(canvasContainer.clientWidth, canvasContainer.clientHeight) - 20;
+            canvas.width = size;
+            canvas.height = size;
+            draw();
+        }
+
+        // --- Coordinate Transformation ---
+        let scale, x_offset, y_offset, view;
+        function setupCoordinates() {
+            view = {
+                xMin: config.x_plan_min,
+                xMax: config.x_plan_max,
+                yMin: config.y_plan_min,
+                yMax: config.y_plan_max
+            };
+
+            const xRange = view.xMax - view.xMin;
+            const yRange = view.yMax - view.yMin;
+
+            if (xRange / yRange > 1) { // Wider than tall
+                const yCenter = (view.yMin + view.yMax) / 2;
+                const newYRange = xRange;
+                view.yMin = yCenter - newYRange / 2;
+                view.yMax = yCenter + newYRange / 2;
+            } else { // Taller than wide
+                const xCenter = (view.xMin + view.xMax) / 2;
+                const newXRange = yRange;
+                view.xMin = xCenter - newXRange / 2;
+                view.xMax = xCenter + newXRange / 2;
+            }
+
+            scale = canvas.width / (view.xMax - view.xMin);
+            x_offset = -view.xMin * scale;
+            y_offset = view.yMax * scale;
+        }
+
+        function toCanvas(p) {
+            if (!isFinite(p.re) || !isFinite(p.im)) {
+                return null;
+            }
+            return {
+                x: p.re * scale + x_offset,
+                y: -p.im * scale + y_offset,
+            };
+        }
+
+        // --- Color Interpolation ---
+        function interpolate(c1, c2, factor) {
+            return c1 * (1 - factor) + c2 * factor;
+        }
+
+        function getColor(x, y) {
+            const xFactor = (x - config.x_grid_min) / (config.x_grid_max - config.x_grid_min);
+            const yFactor = (y - config.y_grid_min) / (config.y_grid_max - config.y_grid_min);
+
+            const topColor = {
+                r: interpolate(cornerColors.topLeft.r, cornerColors.topRight.r, xFactor),
+                g: interpolate(cornerColors.topLeft.g, cornerColors.topRight.g, xFactor),
+                b: interpolate(cornerColors.topLeft.b, cornerColors.topRight.b, xFactor),
+            };
+            const bottomColor = {
+                r: interpolate(cornerColors.bottomLeft.r, cornerColors.bottomRight.r, xFactor),
+                g: interpolate(cornerColors.bottomLeft.g, cornerColors.bottomRight.g, xFactor),
+                b: interpolate(cornerColors.bottomLeft.b, cornerColors.bottomRight.b, xFactor),
+            };
+
+            const finalColor = {
+                r: Math.round(interpolate(topColor.r, bottomColor.r, yFactor)),
+                g: Math.round(interpolate(topColor.g, bottomColor.g, yFactor)),
+                b: Math.round(interpolate(topColor.b, bottomColor.b, yFactor)),
+            };
+
+            return `rgb(${finalColor.r},${finalColor.g},${finalColor.b})`;
+        }
+
+        // --- Drawing Functions ---
+        function drawAxes() {
+            ctx.strokeStyle = '#ddd';
+            ctx.lineWidth = 1;
+
+            for (let i = Math.floor(view.xMin); i <= Math.ceil(view.xMax); i++) {
+                if (i === 0) continue;
+                const canvasPos = toCanvas(new Complex(i, 0));
+                if (!canvasPos) continue;
+                ctx.beginPath();
+                ctx.moveTo(canvasPos.x, 0);
+                ctx.lineTo(canvasPos.x, canvas.height);
+                ctx.stroke();
+            }
+            for (let i = Math.floor(view.yMin); i <= Math.ceil(view.yMax); i++) {
+                if (i === 0) continue;
+                const canvasPos = toCanvas(new Complex(0, i));
+                if (!canvasPos) continue;
+                ctx.beginPath();
+                ctx.moveTo(0, canvasPos.y);
+                ctx.lineTo(canvas.width, canvasPos.y);
+                ctx.stroke();
+            }
+
+            // Main axes
+            const origin = toCanvas(new Complex(0, 0));
+            if (origin) {
+                ctx.strokeStyle = '#aaa';
+                ctx.lineWidth = 2;
+                ctx.beginPath();
+                ctx.moveTo(origin.x, 0);
+                ctx.lineTo(origin.x, canvas.height);
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.moveTo(0, origin.y);
+                ctx.lineTo(canvas.width, origin.y);
+                ctx.stroke();
+            }
+        }
+
+        function drawAxisLabels() {
+            ctx.fillStyle = '#333';
+            ctx.font = '12px sans-serif';
+            ctx.textBaseline = 'bottom';
+            ctx.textAlign = 'left';
+            ctx.fillText(view.xMin.toFixed(3), 5, canvas.height - 5);
+
+            ctx.textBaseline = 'bottom';
+            ctx.textAlign = 'right';
+            ctx.fillText(view.xMax.toFixed(3), canvas.width - 5, canvas.height - 5);
+
+            ctx.textBaseline = 'bottom';
+            ctx.textAlign = 'left';
+            ctx.fillText(view.yMin.toFixed(3) + "i", 5, canvas.height - 20);
+
+            ctx.textBaseline = 'top';
+            ctx.textAlign = 'left';
+            ctx.fillText(view.yMax.toFixed(3) + "i", 5, 5);
+        }
+
+        function drawGrid(transform) {
+            const funcData = complexFunctions[config.func];
+            if (!funcData) return;
+            const func = funcData.func;
+
+            // Ensure step is not zero to avoid infinite loops
+            if (config.x_grid_step <= 0 || config.y_grid_step <= 0) return;
+
+            const x_grid_range = config.x_grid_max - config.x_grid_min;
+            const y_grid_range = config.y_grid_max - config.y_grid_min;
+
+            const num_x_lines = Math.max(1, Math.round(x_grid_range / config.x_grid_step));
+            const num_y_lines = Math.max(1, Math.round(y_grid_range / config.y_grid_step));
+
+            const y_fine_segments = Math.max(1, Math.round(y_grid_range / (config.y_grid_step / 10)));
+            const x_fine_segments = Math.max(1, Math.round(x_grid_range / (config.x_grid_step / 10)));
+
+            // Vertical lines
+            for (let i = 0; i <= num_x_lines; i++) {
+                const x = config.x_grid_min + (i / num_x_lines) * x_grid_range;
+                ctx.beginPath();
+                let firstPoint = true;
+                for (let j = 0; j <= y_fine_segments; j++) {
+                    const y = config.y_grid_min + (j / y_fine_segments) * y_grid_range;
+                    const p = new Complex(x, y);
+                    const transformedP = transform ? func(p, config.param_a, config.param_b) : p;
+                    const canvasP = toCanvas(transformedP);
+
+                    if (canvasP) {
+                        if (firstPoint) {
+                            ctx.moveTo(canvasP.x, canvasP.y);
+                            firstPoint = false;
+                        } else {
+                            ctx.lineTo(canvasP.x, canvasP.y);
                         }
-        
-                        scale = canvas.width / (view.xMax - view.xMin);
-                        x_offset = -view.xMin * scale;
-                        y_offset = view.yMax * scale;
+                    } else {
+                        firstPoint = true; // Reset if point is off-screen
                     }
-        
-                    function toCanvas(p) {
-                        if (!isFinite(p.re) || !isFinite(p.im)) {
-                            return null;
+                }
+                ctx.strokeStyle = getColor(x, config.y_grid_min); // Color based on the starting x
+                ctx.stroke();
+            }
+
+            // Horizontal lines
+            for (let i = 0; i <= num_y_lines; i++) {
+                const y = config.y_grid_min + (i / num_y_lines) * y_grid_range;
+                ctx.beginPath();
+                let firstPoint = true;
+                for (let j = 0; j <= x_fine_segments; j++) {
+                    const x = config.x_grid_min + (j / x_fine_segments) * x_grid_range;
+                    const p = new Complex(x, y);
+                    const transformedP = transform ? func(p, config.param_a, config.param_b) : p;
+                    const canvasP = toCanvas(transformedP);
+
+                    if (canvasP) {
+                        if (firstPoint) {
+                            ctx.moveTo(canvasP.x, canvasP.y);
+                            firstPoint = false;
+                        } else {
+                            ctx.lineTo(canvasP.x, canvasP.y);
                         }
-                        return {
-                            x: p.re * scale + x_offset,
-                            y: -p.im * scale + y_offset,
-                        };
+                    } else {
+                        firstPoint = true;
                     }
-        
-                    // --- Color Interpolation ---
-                    function interpolate(c1, c2, factor) {
-                        return c1 * (1 - factor) + c2 * factor;
-                    }
-        
-                    function getColor(x, y) {
-                        const xFactor = (x - config.x_grid_min) / (config.x_grid_max - config.x_grid_min);
-                        const yFactor = (y - config.y_grid_min) / (config.y_grid_max - config.y_grid_min);
-                        
-                        const topColor = {
-                            r: interpolate(cornerColors.topLeft.r, cornerColors.topRight.r, xFactor),
-                            g: interpolate(cornerColors.topLeft.g, cornerColors.topRight.g, xFactor),
-                            b: interpolate(cornerColors.topLeft.b, cornerColors.topRight.b, xFactor),
-                        };
-                        const bottomColor = {
-                            r: interpolate(cornerColors.bottomLeft.r, cornerColors.bottomRight.r, xFactor),
-                            g: interpolate(cornerColors.bottomLeft.g, cornerColors.bottomRight.g, xFactor),
-                            b: interpolate(cornerColors.bottomLeft.b, cornerColors.bottomRight.b, xFactor),
-                        };
-        
-                        const finalColor = {
-                            r: Math.round(interpolate(topColor.r, bottomColor.r, yFactor)),
-                            g: Math.round(interpolate(topColor.g, bottomColor.g, yFactor)),
-                            b: Math.round(interpolate(topColor.b, bottomColor.b, yFactor)),
-                        };
-        
-                        return `rgb(${finalColor.r},${finalColor.g},${finalColor.b})`;
-                    }
-        
-                    // --- Drawing Functions ---
-                    function drawAxes() {
-                        ctx.strokeStyle = '#ddd';
-                        ctx.lineWidth = 1;
-                        
-                        for (let i = Math.floor(view.xMin); i <= Math.ceil(view.xMax); i++) {
-                            if (i === 0) continue;
-                            const canvasPos = toCanvas(new Complex(i, 0));
-                            if (!canvasPos) continue;
-                            ctx.beginPath();
-                            ctx.moveTo(canvasPos.x, 0);
-                            ctx.lineTo(canvasPos.x, canvas.height);
-                            ctx.stroke();
-                        }
-                        for (let i = Math.floor(view.yMin); i <= Math.ceil(view.yMax); i++) {
-                            if (i === 0) continue;
-                            const canvasPos = toCanvas(new Complex(0, i));
-                            if (!canvasPos) continue;
-                            ctx.beginPath();
-                            ctx.moveTo(0, canvasPos.y);
-                            ctx.lineTo(canvas.width, canvasPos.y);
-                            ctx.stroke();
-                        }
-                        
-                        // Main axes
-                        const origin = toCanvas(new Complex(0, 0));
-                        if(origin) {
-                            ctx.strokeStyle = '#aaa';
-                            ctx.lineWidth = 2;
-                            ctx.beginPath();
-                            ctx.moveTo(origin.x, 0);
-                            ctx.lineTo(origin.x, canvas.height);
-                            ctx.stroke();
-                            ctx.beginPath();
-                            ctx.moveTo(0, origin.y);
-                            ctx.lineTo(canvas.width, origin.y);
-                            ctx.stroke();
-                        }
-                    }
+                }
+                ctx.strokeStyle = getColor(config.x_grid_min, y); // Color based on the starting y
+                ctx.stroke();
+            }
+        }
+    
 
-                    function drawAxisLabels() {
-                        ctx.fillStyle = '#333';
-                        ctx.font = '12px sans-serif';
-                        ctx.textBaseline = 'bottom';
-                        ctx.textAlign = 'left';
-                        ctx.fillText(view.xMin.toFixed(3), 5, canvas.height - 5);
-                        
-                        ctx.textBaseline = 'bottom';
-                        ctx.textAlign = 'right';
-                        ctx.fillText(view.xMax.toFixed(3), canvas.width - 5, canvas.height - 5);
 
-                        ctx.textBaseline = 'bottom';
-                        ctx.textAlign = 'left';
-                        ctx.fillText(view.yMin.toFixed(3) + "i", 5, canvas.height - 20);
+        function draw() {
+            if (!ctx || Object.keys(config).length === 0) return;
 
-                        ctx.textBaseline = 'top';
-                        ctx.textAlign = 'left';
-                        ctx.fillText(view.yMax.toFixed(3) + "i", 5, 5);
-                    }
-        
-                    function drawGrid(transform) {
-                        const func = complexFunctions[config.func];
-                        if (!func) return;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-                        // Ensure step is not zero to avoid infinite loops
-                        if (config.x_grid_step <= 0 || config.y_grid_step <= 0) return;
+            setupCoordinates();
 
-                        const x_grid_range = config.x_grid_max - config.x_grid_min;
-                        const y_grid_range = config.y_grid_max - config.y_grid_min;
+            if (config.draw_axes) {
+                drawAxes();
+            }
 
-                        const num_x_lines = Math.max(1, Math.round(x_grid_range / config.x_grid_step));
-                        const num_y_lines = Math.max(1, Math.round(y_grid_range / config.y_grid_step));
+            drawAxisLabels();
 
-                        const y_fine_segments = Math.max(1, Math.round(y_grid_range / (config.y_grid_step / 10)));
-                        const x_fine_segments = Math.max(1, Math.round(x_grid_range / (config.x_grid_step / 10)));
+            // Draw source grid (thin)
+            ctx.lineWidth = 1;
+            drawGrid(false);
 
-                        // Vertical lines
-                        for (let i = 0; i <= num_x_lines; i++) {
-                            const x = config.x_grid_min + (i / num_x_lines) * x_grid_range;
-                            ctx.beginPath();
-                            let firstPoint = true;
-                            for (let j = 0; j <= y_fine_segments; j++) {
-                                const y = config.y_grid_min + (j / y_fine_segments) * y_grid_range;
-                                const p = new Complex(x, y);
-                                const transformedP = transform ? func(p, config.param_a, config.param_b) : p;
-                                const canvasP = toCanvas(transformedP);
+            // Draw transformed grid (thick)
+            ctx.lineWidth = 3;
+            drawGrid(true);
+        }
 
-                                if (canvasP) {
-                                    if (firstPoint) {
-                                        ctx.moveTo(canvasP.x, canvasP.y);
-                                        firstPoint = false;
-                                    } else {
-                                        ctx.lineTo(canvasP.x, canvasP.y);
-                                    }
-                                } else {
-                                    firstPoint = true; // Reset if point is off-screen
-                                }
-                            }
-                            ctx.strokeStyle = getColor(x, config.y_grid_min); // Color based on the starting x
-                            ctx.stroke();
-                        }
+        // --- Initial Setup ---
+        form.addEventListener('input', updateConfig);
+        window.addEventListener('resize', resizeCanvas);
 
-                        // Horizontal lines
-                        for (let i = 0; i <= num_y_lines; i++) {
-                            const y = config.y_grid_min + (i / num_y_lines) * y_grid_range;
-                            ctx.beginPath();
-                            let firstPoint = true;
-                            for (let j = 0; j <= x_fine_segments; j++) {
-                                const x = config.x_grid_min + (j / x_fine_segments) * x_grid_range;
-                                const p = new Complex(x, y);
-                                const transformedP = transform ? func(p, config.param_a, config.param_b) : p;
-                                const canvasP = toCanvas(transformedP);
+        resizeCanvas(); // Initial size
+        updateConfig(); // Initial draw
 
-                                if (canvasP) {
-                                    if (firstPoint) {
-                                        ctx.moveTo(canvasP.x, canvasP.y);
-                                        firstPoint = false;
-                                    } else {
-                                        ctx.lineTo(canvasP.x, canvasP.y);
-                                    }
-                                } else {
-                                    firstPoint = true;
-                                }
-                            }
-                            ctx.strokeStyle = getColor(config.x_grid_min, y); // Color based on the starting y
-                            ctx.stroke();
-                        }
-                    }
-        
-        
-                    function draw() {
-                        if (!ctx || Object.keys(config).length === 0) return;
-                        
-                        ctx.clearRect(0, 0, canvas.width, canvas.height);
-                        
-                        setupCoordinates();
-        
-                        if (config.draw_axes) {
-                            drawAxes();
-                        }
-                        
-                        drawAxisLabels();
-
-                        // Draw source grid (thin)
-                        ctx.lineWidth = 1;
-                        drawGrid(false);
-
-                        // Draw transformed grid (thick)
-                        ctx.lineWidth = 3;
-                        drawGrid(true);
-                    }
-        
-                    // --- Initial Setup ---
-                    form.addEventListener('input', updateConfig);
-                    window.addEventListener('resize', resizeCanvas);
-        
-                    resizeCanvas(); // Initial size
-                    updateConfig(); // Initial draw
-                });
-                
     </script>
 </body>
+
 </html>
