@@ -67,6 +67,7 @@ const complexFunctions = {
     f_z_pow_1_5: (z) => z.pow(new Complex(1.5, 0)),
     f_1_div_z: (z) => new Complex(1, 0).div(z),
     f_z_pow_a_bi: (z, a, b) => z.pow(new Complex(a, b)),
+    f_b_times_z_pow_a: (z, a, b) => new Complex(b,0).mul(z.pow(new Complex(a, 0))),
     f_exp_z: (z) => z.exp(),
     f_log_z: (z) => z.log(),
 };

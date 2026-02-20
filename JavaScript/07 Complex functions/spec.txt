@@ -17,3 +17,15 @@ The forms area should contain should contain several areas (fieldset elements) t
 - an area to enter the part of represented complex plan: x_plan_min, x_plan_max, y_plan_min, y_plan_max, and a checkbox to draw axes.
 - an area to enter the parameters of the grid: x_grid_min, x_grid_max, x_grid_step and y_grid_min, y_grid_max, y_grid_step
 - an area to select the predefined function, plus the two numerical parameters a and b that can be used by the function
+
+---
+
+Almost perfect!
+Some updates:
+- I'd like to draw the initial grid before the transformation using normal, thin lines, and then the transformed grid, using thicker lines (say, using a line width of 3px). Both should use the same gradiend of colors.
+- When drawing the complex plan, after optionally drawing the grid, print the values of x_plan_min and x_plan_max at the bottom of the calvas, and y_plan_min, y_plan_max at the lext of the canvas, using three decimals maximum
+
+---
+
+I'd like an improvement in the function drawGrid to ensure that the last horizontan and vertical line is always drawn:
+adjust the actual value of x_grid_step and y_grid_step so that an integer number of lines is drawn, including the last line. Either use integer parameters in the loop or if using float values for the loop, use a testing for the final value that ignore possible rounding error

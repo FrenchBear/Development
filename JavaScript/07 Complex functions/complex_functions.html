@@ -57,21 +57,21 @@
                 <div class="input-group">
                     <div>
                         <label for="x_plan_min">X Min:</label>
-                        <input type="number" id="x_plan_min" value="-2">
+                        <input type="number" id="x_plan_min" value="-1">
                     </div>
                     <div>
                         <label for="x_plan_max">X Max:</label>
-                        <input type="number" id="x_plan_max" value="2">
+                        <input type="number" id="x_plan_max" value="6">
                     </div>
                 </div>
                 <div class="input-group">
                     <div>
                         <label for="y_plan_min">Y Min:</label>
-                        <input type="number" id="y_plan_min" value="-2">
+                        <input type="number" id="y_plan_min" value="-1">
                     </div>
                     <div>
                         <label for="y_plan_max">Y Max:</label>
-                        <input type="number" id="y_plan_max" value="2">
+                        <input type="number" id="y_plan_max" value="6">
                     </div>
                 </div>
                 <label>
@@ -84,11 +84,11 @@
                 <div class="input-group">
                     <div>
                         <label for="x_grid_min">X Min:</label>
-                        <input type="number" id="x_grid_min" value="-2">
+                        <input type="number" id="x_grid_min" value="1">
                     </div>
                     <div>
                         <label for="x_grid_max">X Max:</label>
-                        <input type="number" id="x_grid_max" value="2">
+                        <input type="number" id="x_grid_max" value="5">
                     </div>
                     <div>
                         <label for="x_grid_step">X Step:</label>
@@ -98,11 +98,11 @@
                 <div class="input-group">
                     <div>
                         <label for="y_grid_min">Y Min:</label>
-                        <input type="number" id="y_grid_min" value="-2">
+                        <input type="number" id="y_grid_min" value="1">
                     </div>
                     <div>
                         <label for="y_grid_max">Y Max:</label>
-                        <input type="number" id="y_grid_max" value="2">
+                        <input type="number" id="y_grid_max" value="5">
                     </div>
                     <div>
                         <label for="y_grid_step">Y Step:</label>
@@ -117,7 +117,8 @@
                 <select id="function_selector">
                     <option value="f_z_pow_1_5">f(z) = z^1.5</option>
                     <option value="f_1_div_z">f(z) = 1/z</option>
-                    <option value="f_z_pow_a_bi" selected>f(z) = z^(a+bi)</option>
+                    <option value="f_z_pow_a_bi">f(z) = z^(a+bi)</option>
+                    <option value="f_b_times_z_pow_a" selected>f(z) = b*z^a</option>
                     <option value="f_exp_z">f(z) = exp(z)</option>
                     <option value="f_log_z">f(z) = log(z)</option>
                 </select>
@@ -128,7 +129,7 @@
                     </div>
                     <div>
                         <label for="param_b">b:</label>
-                        <input type="number" id="param_b" value="0" step="0.1">
+                        <input type="number" id="param_b" value="1" step="0.1">
                     </div>
                 </div>
             </fieldset>
@@ -262,16 +263,18 @@
                         ctx.lineWidth = 1;
                         
                         for (let i = Math.floor(view.xMin); i <= Math.ceil(view.xMax); i++) {
-                            const canvasPos = toCanvas(new Complex(i, 0));
                             if (i === 0) continue;
+                            const canvasPos = toCanvas(new Complex(i, 0));
+                            if (!canvasPos) continue;
                             ctx.beginPath();
                             ctx.moveTo(canvasPos.x, 0);
                             ctx.lineTo(canvasPos.x, canvas.height);
                             ctx.stroke();
                         }
                         for (let i = Math.floor(view.yMin); i <= Math.ceil(view.yMax); i++) {
+                            if (i === 0) continue;
                             const canvasPos = toCanvas(new Complex(0, i));
-                             if (i === 0) continue;
+                            if (!canvasPos) continue;
                             ctx.beginPath();
                             ctx.moveTo(0, canvasPos.y);
                             ctx.lineTo(canvas.width, canvasPos.y);
@@ -280,31 +283,67 @@
                         
                         // Main axes
                         const origin = toCanvas(new Complex(0, 0));
-                        ctx.strokeStyle = '#aaa';
-                        ctx.lineWidth = 2;
-                        ctx.beginPath();
-                        ctx.moveTo(origin.x, 0);
-                        ctx.lineTo(origin.x, canvas.height);
-                        ctx.stroke();
-                        ctx.beginPath();
-                        ctx.moveTo(0, origin.y);
-                        ctx.lineTo(canvas.width, origin.y);
-                        ctx.stroke();
+                        if(origin) {
+                            ctx.strokeStyle = '#aaa';
+                            ctx.lineWidth = 2;
+                            ctx.beginPath();
+                            ctx.moveTo(origin.x, 0);
+                            ctx.lineTo(origin.x, canvas.height);
+                            ctx.stroke();
+                            ctx.beginPath();
+                            ctx.moveTo(0, origin.y);
+                            ctx.lineTo(canvas.width, origin.y);
+                            ctx.stroke();
+                        }
+                    }
+
+                    function drawAxisLabels() {
+                        ctx.fillStyle = '#333';
+                        ctx.font = '12px sans-serif';
+                        ctx.textBaseline = 'bottom';
+                        ctx.textAlign = 'left';
+                        ctx.fillText(view.xMin.toFixed(3), 5, canvas.height - 5);
+                        
+                        ctx.textBaseline = 'bottom';
+                        ctx.textAlign = 'right';
+                        ctx.fillText(view.xMax.toFixed(3), canvas.width - 5, canvas.height - 5);
+
+                        ctx.textBaseline = 'bottom';
+                        ctx.textAlign = 'left';
+                        ctx.fillText(view.yMin.toFixed(3) + "i", 5, canvas.height - 20);
+
+                        ctx.textBaseline = 'top';
+                        ctx.textAlign = 'left';
+                        ctx.fillText(view.yMax.toFixed(3) + "i", 5, 5);
                     }
         
                     function drawGrid(transform) {
                         const func = complexFunctions[config.func];
                         if (!func) return;
-        
+
+                        // Ensure step is not zero to avoid infinite loops
+                        if (config.x_grid_step <= 0 || config.y_grid_step <= 0) return;
+
+                        const x_grid_range = config.x_grid_max - config.x_grid_min;
+                        const y_grid_range = config.y_grid_max - config.y_grid_min;
+
+                        const num_x_lines = Math.max(1, Math.round(x_grid_range / config.x_grid_step));
+                        const num_y_lines = Math.max(1, Math.round(y_grid_range / config.y_grid_step));
+
+                        const y_fine_segments = Math.max(1, Math.round(y_grid_range / (config.y_grid_step / 10)));
+                        const x_fine_segments = Math.max(1, Math.round(x_grid_range / (config.x_grid_step / 10)));
+
                         // Vertical lines
-                        for (let x = config.x_grid_min; x <= config.x_grid_max; x += config.x_grid_step) {
+                        for (let i = 0; i <= num_x_lines; i++) {
+                            const x = config.x_grid_min + (i / num_x_lines) * x_grid_range;
                             ctx.beginPath();
                             let firstPoint = true;
-                            for (let y = config.y_grid_min; y <= config.y_grid_max; y += config.y_grid_step / 10) { // finer steps for smooth curves
+                            for (let j = 0; j <= y_fine_segments; j++) {
+                                const y = config.y_grid_min + (j / y_fine_segments) * y_grid_range;
                                 const p = new Complex(x, y);
                                 const transformedP = transform ? func(p, config.param_a, config.param_b) : p;
                                 const canvasP = toCanvas(transformedP);
-        
+
                                 if (canvasP) {
                                     if (firstPoint) {
                                         ctx.moveTo(canvasP.x, canvasP.y);
@@ -313,31 +352,33 @@
                                         ctx.lineTo(canvasP.x, canvasP.y);
                                     }
                                 } else {
-                                   firstPoint = true; // Reset if point is off-screen
+                                    firstPoint = true; // Reset if point is off-screen
                                 }
                             }
                             ctx.strokeStyle = getColor(x, config.y_grid_min); // Color based on the starting x
                             ctx.stroke();
                         }
-        
+
                         // Horizontal lines
-                        for (let y = config.y_grid_min; y <= config.y_grid_max; y += config.y_grid_step) {
+                        for (let i = 0; i <= num_y_lines; i++) {
+                            const y = config.y_grid_min + (i / num_y_lines) * y_grid_range;
                             ctx.beginPath();
                             let firstPoint = true;
-                            for (let x = config.x_grid_min; x <= config.x_grid_max; x += config.x_grid_step / 10) {
+                            for (let j = 0; j <= x_fine_segments; j++) {
+                                const x = config.x_grid_min + (j / x_fine_segments) * x_grid_range;
                                 const p = new Complex(x, y);
                                 const transformedP = transform ? func(p, config.param_a, config.param_b) : p;
                                 const canvasP = toCanvas(transformedP);
-                                
+
                                 if (canvasP) {
-                                     if (firstPoint) {
+                                    if (firstPoint) {
                                         ctx.moveTo(canvasP.x, canvasP.y);
                                         firstPoint = false;
                                     } else {
                                         ctx.lineTo(canvasP.x, canvasP.y);
                                     }
                                 } else {
-                                   firstPoint = true;
+                                    firstPoint = true;
                                 }
                             }
                             ctx.strokeStyle = getColor(config.x_grid_min, y); // Color based on the starting y
@@ -347,7 +388,7 @@
         
         
                     function draw() {
-                        if (!ctx) return;
+                        if (!ctx || Object.keys(config).length === 0) return;
                         
                         ctx.clearRect(0, 0, canvas.width, canvas.height);
                         
@@ -356,9 +397,15 @@
                         if (config.draw_axes) {
                             drawAxes();
                         }
-        
-                        ctx.lineWidth = 1.5;
-                        // Draw transformed grid first
+                        
+                        drawAxisLabels();
+
+                        // Draw source grid (thin)
+                        ctx.lineWidth = 1;
+                        drawGrid(false);
+
+                        // Draw transformed grid (thick)
+                        ctx.lineWidth = 3;
                         drawGrid(true);
                     }
         
