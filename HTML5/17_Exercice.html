@@ -1,0 +1,177 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Exercice, drawing a function</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            overflow: hidden;
+            margin: 0;
+        }
+
+        .donnees {
+            width: 350px;
+            height: 100vh;
+            padding: 10px;
+            border-right: 1px solid #ccc;
+        }
+
+        .dessin {
+            display: flex;
+            flex: 1;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            border: 1px solid black;
+            margin: 15px;
+        }
+
+        fieldset {
+            margin-bottom: 15px;
+            padding: 6px;
+        }
+
+        .inputrow {
+            display: flex;
+            width: 100%;
+            box-sizing: border-box;
+            gap: 10px;
+        }
+
+        .xparams {
+            display: block;
+        }
+
+        select {
+            width: 100%;
+        }
+
+        canvas {
+            /* width: 100%;
+            height: 100%; */
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="donnees">
+        <form id="dataform">
+            <fieldset id="xparams">
+                <legend>Paramètres de dessin</legend>
+
+                <div class="inputrow">
+                    <div>
+                        <label for="xmin">XMin</label>
+                        <input id="xmin" type="number" value="-2">
+                    </div>
+                    <div>
+                        <label for="xmax">XMax</label>
+                        <input id="xmax" type="number" value="2">
+                    </div>
+                </div>
+
+                <div class="inputrow">
+                    <div>
+                        <label for="ymin">YMin</label>
+                        <input id="ymin" type="number" value="-1">
+                    </div>
+                    <div>
+                        <label for="ymax">YMax</label>
+                        <input id="ymax" type="number" value="5">
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset id="fparams">
+                <legend>Function</legend>
+
+                <label>Function:</label>
+                <select id="function">
+                    <option value="sqr" selected>f(x) = x²</option>
+                    <option value="sqrt">f(x) = √x</option>
+                </select>
+
+            </fieldset>
+        </form>
+    </div>
+
+    <div class="dessin">
+        <canvas id="canvas"></canvas>
+    </div>
+
+    <script>
+        let form = document.getElementById("dataform");
+        let canvas = document.getElementById("canvas");
+        let ctx = canvas.getContext('2d');
+
+        config = {}
+
+        function update_config() {
+            let elements = form.elements;
+            config.xmin = parseFloat(elements.xmin.value);
+            config.xmax = parseFloat(elements.xmax.value);
+            config.ymin = parseFloat(elements.ymin.value);
+            config.ymax = parseFloat(elements.ymax.value);
+            config.ftag = elements.function.value;
+
+            console.log(`xmin: ${config.xmin}  xmax: ${config.xmax}`);
+            console.log(`ymin: ${config.ymin}  ymax: ${config.ymax}`);
+            console.log(`ftag: ${config.ftag}`);
+
+            draw();
+        }
+
+        functions_dic = {
+            "sqr": (x) => x*x,
+            "sqrt": (x) => Math.sqrt(x),
+        };
+
+        function draw() {
+            if (Object.keys(config).length == 0) return;
+
+            if (config.ftag == null)
+                return;
+            let f = functions_dic[config.ftag];
+
+            // let y = f(2);
+            // console.log(`y=${y}`);
+            // return;
+
+            let nsteps = 100;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            ctx.beginPath();
+            let penup = true;
+            for (let ix = 0; ix <= nsteps; ix++) {
+                let x = config.xmin + (config.xmax - config.xmin) / nsteps * ix;
+                let y = f(x);
+                //console.log(`ix=${ix}     x=${x}, y=${y}`);
+
+                // calculate canvas coordinates
+                let xc = (x-config.xmin)/(config.xmax-config.xmin) * canvas.width;
+                let yc = (y-config.ymin)/(config.ymax-config.ymin) * canvas.height;
+
+                console.log(`ix=${ix}     x=${x}, y=${y}    xc=${xc}, yc=${yc}`);
+
+                if (penup) {
+                    ctx.moveTo(xc, yc);
+                    penup = false;
+                } else {
+                    ctx.lineTo(xc, yc);
+                }
+            }
+            ctx.stroke();
+        }
+
+        form.addEventListener('input', update_config);
+
+        update_config();    // Initial draw
+
+    </script>
+
+</body>
+
+</html>
