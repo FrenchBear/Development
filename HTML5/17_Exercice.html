@@ -31,6 +31,9 @@
 
         canvas {
             border: 1px solid red;
+            margin: 50px;
+            /* width: 95vw;
+            height: 95vh; */
         }
 
         fieldset {
@@ -182,6 +185,7 @@
             // const size = Math.min(canvasContainer.clientWidth, canvasContainer.clientHeight) - 20;
             // canvas.width = size;
             // canvas.height = size;
+            console.log('zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz')
             canvas.width = canvasContainer.clientWidth-20;
             canvas.height = canvasContainer.clientHeight-20;
             draw();
@@ -189,9 +193,9 @@
 
 
         form.addEventListener('input', update_config);
-        window.addEventListener('resize', resizeCanvas);
+        // window.addEventListener('resize', resizeCanvas);
 
-        resizeCanvas();     // Initial size
+        //resizeCanvas();     // Initial size
         update_config();    // Initial draw
 
     </script>
