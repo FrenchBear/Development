@@ -298,7 +298,7 @@ Attribute VB_Exposed = False
 ' 25/01/1997 P.Violent
 '  3/08/1999 PV OLE Drag'n'drop
 '  1/09/2008 PV Compatibilité styles XP
-
+' 22/02/2026 PV Couper/Copier/Coller sans SendKeys, invalide avec les versions récentes de Windows
 
 Option Explicit
 
@@ -327,7 +327,7 @@ Private Sub cmdAnnuler_Click()
 End Sub
 
 Private Sub cmdAPropos_Click()
-  MsgBox sNomApp & " " & App.Major & "." & App.Minor & "." & App.Revision & vbCrLf & "Editeur implantant le rechercher/remplacer sur plusieurs fichiers à la fois" & vbCrLf & vbCrLf & "(c) P.VIOLENT 1997-2005"
+  MsgBox sNomApp & " " & App.Major & "." & App.Minor & "." & App.Revision & vbCrLf & "Editeur implantant le rechercher/remplacer sur plusieurs fichiers à la fois" & vbCrLf & vbCrLf & "Copyright ©Pierre Violent 1997-2026"
 End Sub
 
 Private Sub cmdCascade_Click()
@@ -335,15 +335,33 @@ Private Sub cmdCascade_Click()
 End Sub
 
 Private Sub cmdColler_Click()
-  SendKeys "^V"
+  'SendKeys "^V"
+  On Error GoTo Sortie
+  If TypeOf ActiveForm Is frmDocument Then
+    ActiveForm.txtDocument.SelText = Clipboard.GetText
+  End If
+Sortie:
 End Sub
 
 Private Sub cmdCopier_Click()
-  SendKeys "^C"
+  'SendKeys "^C"
+  On Error GoTo Sortie
+  If TypeOf ActiveForm Is frmDocument Then
+    Clipboard.Clear
+    Clipboard.SetText ActiveForm.txtDocument.SelText
+  End If
+Sortie:
 End Sub
 
 Private Sub cmdCouper_Click()
-  SendKeys "^X"
+  'SendKeys "^X"
+  On Error GoTo Sortie
+  If TypeOf ActiveForm Is frmDocument Then
+    Clipboard.Clear
+    Clipboard.SetText ActiveForm.txtDocument.SelText
+    ActiveForm.txtDocument.SelText = ""
+  End If
+Sortie:
 End Sub
 
 Private Sub cmdEnregistrer_Click()
